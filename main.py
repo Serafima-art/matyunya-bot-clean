@@ -56,3 +56,17 @@ async def handle_message(message: Message):
 if __name__ == "__main__":
     print("Матюня запущен на aiogram!")
     asyncio.run(dp.start_polling(bot))
+    from flask import Flask
+import threading
+
+def run_flask():
+    app = Flask(__name__)
+
+    @app.route('/')
+    def home():
+        return "Матюня работает 🧮"
+
+    app.run(host='0.0.0.0', port=10000)
+
+# Запускаем Flask-сервер в отдельном потоке
+threading.Thread(target=run_flask).start()
