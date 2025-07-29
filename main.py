@@ -1,11 +1,14 @@
 import os
 import asyncio
+import threading
 from aiogram import Bot, Dispatcher, types
 from aiogram.types import Message
 from aiogram.filters import CommandStart
 from dotenv import load_dotenv
 from openai import OpenAI
+from flask import Flask
 
+# Загрузка переменных из .env
 load_dotenv()
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
@@ -41,24 +44,18 @@ async def ask_gpt(message_text: str) -> str:
     except Exception as e:
         return f"Ошибка при обращении к GPT: {e}"
 
-# Ответ на команду /start
+# Обработчик команды /start
 @dp.message(CommandStart())
 async def start_handler(message: Message):
     await message.answer("Привет! Я Матюня, твой добрый репетитор по математике 🧮 Спрашивай что угодно!")
 
-# Ответ на обычные сообщения
+# Обработчик обычных сообщений
 @dp.message()
 async def handle_message(message: Message):
     reply = await ask_gpt(message.text)
     await message.answer(reply)
 
-# Запуск бота
-if __name__ == "__main__":
-    print("Матюня запущен на aiogram!")
-    asyncio.run(dp.start_polling(bot))
-    from flask import Flask
-import threading
-
+# Мини-сервер Flask (для Render)
 def run_flask():
     app = Flask(__name__)
 
@@ -66,7 +63,15 @@ def run_flask():
     def home():
         return "Матюня работает 🧮"
 
+    print("Запускаем Flask-сервер на порту 10000 🚀")
     app.run(host='0.0.0.0', port=10000)
 
-# Запускаем Flask-сервер в отдельном потоке
-threading.Thread(target=run_flask).start()
+# Точка входа
+if __name__ == "__main__":
+    print("Матюня запускается...")
+
+    # Запускаем Flask в отдельном потоке, чтобы Render видел порт
+    threading.Thread(target=run_flask).start()
+
+    # Запускаем бота
+    asyncio.run(dp.start_polling(bot))
