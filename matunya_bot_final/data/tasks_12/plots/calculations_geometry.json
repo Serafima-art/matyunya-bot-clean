@@ -1,0 +1,317 @@
+[
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Геометрия",
+    "subtype_id": "area_triangle",
+    "plot_id": "find_S_by_a_and_h",
+    "variable_to_find": "S",
+    "generation_rules": {
+      "a": { "type": "int", "min": 6, "max": 40, "is_even": true },
+      "h": { "type": "int", "min": 6, "max": 40, "is_even": true }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "area_triangle_find_S_by_a_and_h",
+    "units": {
+      "a": "м",
+      "h": "м",
+      "S": "м²"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Геометрия",
+    "subtype_id": "area_triangle",
+    "plot_id": "find_S_by_b_c_sinA",
+    "variable_to_find": "S",
+    "generation_rules": {
+      "b": { "type": "int", "min": 6, "max": 30 },
+      "c": { "type": "int", "min": 6, "max": 30 },
+      "sin_alpha": { "type": "choice", "values": [0.2, 0.4, 0.5, 0.6, 0.8, 1.0] }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "area_triangle_find_S_by_b_c_sinA",
+    "units": {
+      "b": "м",
+      "c": "м",
+      "S": "м²"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Геометрия",
+    "subtype_id": "area_triangle",
+    "plot_id": "find_S_by_perimeter_and_inradius",
+    "variable_to_find": "S",
+    "generation_rules": {
+      "P": { "type": "int", "min": 20, "max": 80, "is_even": true },
+      "r": { "type": "int", "min": 2, "max": 12 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "area_triangle_find_S_by_P_and_r",
+    "units": {
+      "P": "м",
+      "r": "м",
+      "S": "м²"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Геометрия",
+    "subtype_id": "area_parallelogram",
+    "plot_id": "find_S_by_a_and_h",
+    "variable_to_find": "S",
+    "generation_rules": {
+      "a": { "type": "int", "min": 5, "max": 30 },
+      "h": { "type": "int", "min": 5, "max": 30 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "area_parallelogram_find_S_by_a_and_h",
+    "units": {
+      "a": "м",
+      "h": "м",
+      "S": "м²"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Геометрия",
+    "subtype_id": "area_parallelogram",
+    "plot_id": "find_S_by_a_b_sinA",
+    "variable_to_find": "S",
+    "generation_rules": {
+      "a": { "type": "int", "min": 5, "max": 25 },
+      "b": { "type": "int", "min": 5, "max": 25 },
+      "sin_alpha": { "type": "choice", "values": [0.5, 0.6, 0.8, 1.0] }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "area_parallelogram_find_S_by_a_b_sinA",
+    "units": {
+      "a": "м",
+      "b": "м",
+      "S": "м²",
+      "sin_alpha": null
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Геометрия",
+    "subtype_id": "area_rhombus",
+    "plot_id": "find_S_by_d1_d2",
+    "variable_to_find": "S",
+    "generation_rules": {
+      "d1": { "type": "int", "min": 8, "max": 40, "is_even": true },
+      "d2": { "type": "int", "min": 8, "max": 40, "is_even": true }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "area_rhombus_find_S_by_d1_d2",
+    "units": {
+      "d1": "м",
+      "d2": "м",
+      "S": "м²"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Геометрия",
+    "subtype_id": "area_trapezoid",
+    "plot_id": "find_S_by_a_b_h",
+    "variable_to_find": "S",
+    "generation_rules": {
+      "a": { "type": "int", "min": 4, "max": 20 },
+      "b": { "type": "int", "min": 6, "max": 30 },
+      "h": { "type": "int", "min": 4, "max": 20, "is_even": true }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "area_trapezoid_find_S_by_a_b_h",
+    "units": {
+      "a": "м",
+      "b": "м",
+      "h": "м",
+      "S": "м²"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Геометрия",
+    "subtype_id": "area_quadrilateral_d1d2_sin",
+    "plot_id": "find_S_by_d1_d2_sinA",
+    "variable_to_find": "S",
+    "generation_rules": {
+      "d1": { "type": "int", "min": 8, "max": 30 },
+      "d2": { "type": "int", "min": 8, "max": 30 },
+      "sin_alpha": { "type": "choice", "values": [0.2, 0.4, 0.5, 0.6, 0.8, 1.0] }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "area_quadrilateral_d1d2_sin_find_S_by_d1_d2_sinA",
+    "units": {
+      "d1": "м",
+      "d2": "м",
+      "S": "м²",
+      "sin_alpha": null
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Геометрия",
+    "subtype_id": "bisector_length",
+    "plot_id": "find_l_a_by_a_b_c",
+    "variable_to_find": "l_a",
+    "generation_rules": {
+      "a": { "type": "int", "min": 6, "max": 20 },
+      "b": { "type": "int", "min": 6, "max": 25 },
+      "c": { "type": "int", "min": 6, "max": 25 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "bisector_length_find_l_a_by_a_b_c",
+    "units": {
+      "a": "см",
+      "b": "см",
+      "c": "см",
+      "l_a": "см"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Геометрия",
+    "subtype_id": "inscribed_circle_radius",
+    "plot_id": "find_r_by_S_and_perimeter",
+    "variable_to_find": "r",
+    "generation_rules": {
+      "S": { "type": "int", "min": 20, "max": 300, "step": 2 },
+      "P": { "type": "int", "min": 20, "max": 120, "is_even": true }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "inscribed_circle_radius_find_r_by_S_and_perimeter",
+    "units": {
+      "S": "см²",
+      "P": "см",
+      "r": "см"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Геометрия",
+    "subtype_id": "inscribed_circle_radius",
+    "plot_id": "find_r_in_right_triangle",
+    "variable_to_find": "r",
+    "generation_rules": {
+      "a": { "type": "int", "min": 6, "max": 40 },
+      "b": { "type": "int", "min": 6, "max": 40 },
+      "c": { "type": "int", "min": 8, "max": 60 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "inscribed_circle_radius_find_r_in_right_triangle",
+    "units": {
+      "a": "см",
+      "b": "см",
+      "c": "см",
+      "r": "см"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Геометрия",
+    "subtype_id": "circumscribed_circle_radius",
+    "plot_id": "find_S_by_abc_and_R",
+    "variable_to_find": "S",
+    "generation_rules": {
+      "a": { "type": "int", "min": 5, "max": 20 },
+      "b": { "type": "int", "min": 5, "max": 20 },
+      "c": { "type": "int", "min": 5, "max": 20 },
+      "R": { "type": "int", "min": 3, "max": 15 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "circumscribed_circle_radius_find_S_by_abc_and_R",
+    "units": {
+      "a": "см",
+      "b": "см",
+      "c": "см",
+      "R": "см",
+      "S": "см²"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Геометрия",
+    "subtype_id": "circumscribed_circle_radius",
+    "plot_id": "find_R_by_a_and_angle",
+    "variable_to_find": "R",
+    "generation_rules": {
+      "a": { "type": "int", "min": 6, "max": 30 },
+      "sin_alpha": { "type": "choice", "values": [0.5, 0.6, 0.8, 1.0] }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "circumscribed_circle_radius_find_R_by_a_and_angle",
+    "units": {
+      "a": "см",
+      "sin_alpha": null,
+      "R": "см"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Геометрия",
+    "subtype_id": "polygon_angles_sum",
+    "plot_id": "find_Sigma_by_n",
+    "variable_to_find": "Sigma",
+    "generation_rules": {
+      "n": { "type": "int", "min": 3, "max": 12 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "polygon_angles_sum_find_Sigma_by_n",
+    "units": {
+      "n": null,
+      "Sigma": "°"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Геометрия",
+    "subtype_id": "height_pyramid",
+    "plot_id": "find_V_by_Sbase_and_h",
+    "variable_to_find": "V",
+    "generation_rules": {
+      "S_base": { "type": "int", "min": 6, "max": 60 },
+      "h": { "type": "int", "min": 3, "max": 30, "multiple_of": 3 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "height_pyramid_find_V_by_Sbase_and_h",
+    "units": {
+      "S_base": "м²",
+      "h": "м",
+      "V": "м³"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Геометрия",
+    "subtype_id": "circumference_length",
+    "plot_id": "find_L_by_R_pi_3_14",
+    "variable_to_find": "L",
+    "generation_rules": {
+      "R": { "type": "int", "min": 4, "max": 30 }
+    },
+    "constants": { "pi": 3.14 },
+    "rounding_rules": null,
+    "text_template_id": "circumference_length_find_L_by_R_pi_3_14",
+    "units": {
+      "R": "м",
+      "L": "м"
+    }
+  }
+]

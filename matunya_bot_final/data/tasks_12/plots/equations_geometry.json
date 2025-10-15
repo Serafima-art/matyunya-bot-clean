@@ -1,0 +1,118 @@
+[
+  {
+    "category": "Линейные уравнения",
+    "subcategory": "Геометрия",
+    "subtype_id": "area_triangle",
+    "plot_id": "find_a_by_S_and_h",
+    "variable_to_find": "a",
+    "generation_rules": {
+      "_hidden_a": { "type": "int", "min": 6, "max": 40, "is_even": true },
+      "h": { "type": "int", "min": 6, "max": 30, "is_even": true }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "area_triangle_find_a_by_S_and_h",
+    "units": {
+      "a": "м",
+      "h": "м",
+      "S": "м²"
+    }
+  },
+  {
+    "category": "Линейные уравнения",
+    "subcategory": "Геометрия",
+    "subtype_id": "area_trapezoid",
+    "plot_id": "find_h_by_area_and_bases",
+    "variable_to_find": "h",
+    "generation_rules": {
+      "a": { "type": "int", "min": 4, "max": 20 },
+      "b": { "type": "int", "min": 6, "max": 30 },
+      "_hidden_h": { "type": "int", "min": 4, "max": 20, "is_even": true }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "area_trapezoid_find_h_by_area_and_bases",
+    "units": {
+      "a": "м",
+      "b": "м",
+      "S": "м²",
+      "h": "м"
+    }
+  },
+  {
+    "category": "Линейные уравнения",
+    "subcategory": "Геометрия",
+    "subtype_id": "area_rhombus",
+    "plot_id": "find_d1_by_S_and_d2",
+    "variable_to_find": "d1",
+    "generation_rules": {
+      "d2": { "type": "int", "min": 8, "max": 40, "is_even": true },
+      "_hidden_d1": { "type": "int", "min": 8, "max": 40, "is_even": true }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "area_rhombus_find_d1_by_S_and_d2",
+    "units": {
+      "d1": "м",
+      "d2": "м",
+      "S": "м²"
+    }
+  },
+  {
+    "category": "Линейные уравнения",
+    "subcategory": "Геометрия",
+    "subtype_id": "height_pyramid",
+    "plot_id": "find_h_by_V_and_Sbase",
+    "variable_to_find": "h",
+    "generation_rules": {
+      "S_base": { "type": "int", "min": 6, "max": 60 },
+      "_hidden_h": { "type": "int", "min": 3, "max": 30, "multiple_of": 3 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "height_pyramid_find_h_by_V_and_Sbase",
+    "units": {
+      "S_base": "м²",
+      "V": "м³",
+      "h": "м"
+    }
+  },
+  {
+    "category": "Линейные уравнения",
+    "subcategory": "Геометрия",
+    "subtype_id": "circumference_length",
+    "plot_id": "find_R_by_L_pi_3_14",
+    "variable_to_find": "R",
+    "generation_rules": {
+      "_hidden_R": { "type": "int", "min": 4, "max": 30 }
+    },
+    "constants": { "pi": 3.14 },
+    "rounding_rules": null,
+    "text_template_id": "circumference_length_find_R_by_L_pi_3_14",
+    "units": {
+      "L": "м",
+      "R": "м"
+    }
+  },
+  {
+    "category": "Линейные уравнения",
+    "subcategory": "Геометрия",
+    "subtype_id": "area_quadrilateral_d1d2_sin",
+    "plot_id": "find_d1_by_S_d2_sinA",
+    "variable_to_find": "d1",
+    "generation_rules": {
+      "d2": { "type": "int", "min": 8, "max": 30 },
+      "sin_alpha": { "type": "choice", "values": [0.2, 0.4, 0.5, 0.6, 0.8, 1.0] },
+      "_hidden_d1": { "type": "int", "min": 8, "max": 30 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "area_quadrilateral_d1d2_sin_find_d1_by_S_d2_sinA",
+    "units": {
+      "d1": "м",
+      "d2": "м",
+      "S": "м²",
+      "sin_alpha": null
+    }
+  }
+]

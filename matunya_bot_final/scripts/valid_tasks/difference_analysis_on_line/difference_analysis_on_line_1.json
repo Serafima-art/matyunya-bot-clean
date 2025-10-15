@@ -1,0 +1,31 @@
+{
+  "id": "gen_3480",
+  "task_type": "7",
+  "subtype": "difference_analysis_on_line",
+  "text": "На координатной прямой отмечены числа a, b и c.\n\nКакая из разностей b - a, c - b, a - c отрицательна?",
+  "options": [
+    "b - a",
+    "c - b",
+    "a - c",
+    "ни одна из них"
+  ],
+  "answer": "3",
+  "image_params": {
+    "min_val": -6,
+    "max_val": 6,
+    "points": [
+      {
+        "label": "a",
+        "pos": -5
+      },
+      {
+        "label": "b",
+        "pos": -3
+      },
+      {
+        "label": "c",
+        "pos": 5
+      }
+    ]
+  }
+}

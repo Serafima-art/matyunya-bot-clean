@@ -1,0 +1,31 @@
+{
+  "id": "gen_1105",
+  "task_type": "7",
+  "subtype": "expression_analysis_on_line",
+  "text": "На координатной прямой отмечены числа m и n.\n\n←── m ●────0────● n ──→\n\nКакое из приведённых утверждений для этих чисел неверно?\n\n1) m + n < 0\n2) mn > 0\n3) m - n < 0\n4) m²n > 0\nОтвет:",
+  "options": [
+    "m * n < 0",
+    "m < 0",
+    "m - n < 0",
+    "m > 0"
+  ],
+  "answer": "4",
+  "image_params": {
+    "min_val": -2,
+    "max_val": 2,
+    "points": [
+      {
+        "label": "m",
+        "pos": -1.0
+      },
+      {
+        "label": "n",
+        "pos": 1.0
+      },
+      {
+        "label": "0",
+        "pos": 0.0
+      }
+    ]
+  }
+}

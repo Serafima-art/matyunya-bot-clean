@@ -1,0 +1,1 @@
+from .task_8 import MAIN_PROMPT, SUBTYPES

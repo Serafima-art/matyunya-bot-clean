@@ -1,0 +1,216 @@
+[
+  {
+    "category": "Разные задачи",
+    "subcategory": null,
+    "subtype_id": "step_length_distance",
+    "plot_id": "find_s_km_by_steps_and_length_cm",
+    "variable_to_find": "s",
+    "generation_rules": {
+      "n": { "type": "int", "min": 800, "max": 5000, "step": 50 },
+      "l_cm": { "type": "int", "min": 50, "max": 90, "step": 5 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "step_length_distance_find_s_km_by_steps_and_length_cm",
+    "units": {
+      "n": null,
+      "l_cm": "см",
+      "s": "км"
+    }
+  },
+  {
+    "category": "Разные задачи",
+    "subcategory": null,
+    "subtype_id": "step_length_distance",
+    "plot_id": "find_s_km_by_steps_and_length_m",
+    "variable_to_find": "s",
+    "generation_rules": {
+      "n": { "type": "int", "min": 800, "max": 5000, "step": 50 },
+      "l_m": { "type": "float", "min": 0.5, "max": 1.2, "step": 0.05 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "step_length_distance_find_s_km_by_steps_and_length_m",
+    "units": {
+      "n": null,
+      "l_m": "м",
+      "s": "км"
+    }
+  },
+  {
+    "category": "Разные задачи",
+    "subcategory": null,
+    "subtype_id": "lightning_distance",
+    "plot_id": "find_s_km_by_t_sec_speed_330",
+    "variable_to_find": "s",
+    "generation_rules": {
+      "t": { "type": "int", "min": 2, "max": 25 }
+    },
+    "constants": { "speed": 330 },
+    "rounding_rules": null,
+    "text_template_id": "lightning_distance_find_s_km_by_t_sec_speed_330",
+    "units": {
+      "t": "с",
+      "s": "км",
+      "speed": "м/с"
+    }
+  },
+  {
+    "category": "Разные задачи",
+    "subcategory": null,
+    "subtype_id": "taxi_cost",
+    "plot_id": "calculate_cost_simple_linear",
+    "variable_to_find": "C",
+    "generation_rules": {
+      "k": { "type": "int", "min": 8, "max": 20 },
+      "t": { "type": "int", "min": 5, "max": 60 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "taxi_cost_calculate_cost_simple_linear",
+    "units": {
+      "k": "руб/мин",
+      "t": "мин",
+      "C": "руб"
+    }
+  },
+  {
+    "category": "Разные задачи",
+    "subcategory": null,
+    "subtype_id": "taxi_cost",
+    "plot_id": "calculate_cost_with_threshold",
+    "variable_to_find": "C",
+    "generation_rules": {
+      "c0": { "type": "int", "min": 100, "max": 200, "step": 10 },
+      "c1": { "type": "int", "min": 8, "max": 20 },
+      "free_minutes": { "type": "int", "min": 3, "max": 7 },
+      "t": { "type": "int", "min": 6, "max": 60 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "taxi_cost_calculate_cost_with_threshold",
+    "units": {
+      "c0": "руб",
+      "c1": "руб/мин",
+      "free_minutes": "мин",
+      "t": "мин",
+      "C": "руб"
+    }
+  },
+  {
+    "category": "Разные задачи",
+    "subcategory": null,
+    "subtype_id": "well_cost",
+    "plot_id": "calculate_cost_simple_linear",
+    "variable_to_find": "C",
+    "generation_rules": {
+      "k": { "type": "int", "min": 2000, "max": 6000, "step": 500 },
+      "n": { "type": "int", "min": 4, "max": 15 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "well_cost_calculate_cost_simple_linear",
+    "units": {
+      "k": "руб/кольцо",
+      "n": null,
+      "C": "руб"
+    }
+  },
+  {
+    "category": "Разные задачи",
+    "subcategory": null,
+    "subtype_id": "well_cost",
+    "plot_id": "calculate_cost_A_plus_Bn",
+    "variable_to_find": "C",
+    "generation_rules": {
+      "A": { "type": "int", "min": 4000, "max": 9000, "step": 500 },
+      "B": { "type": "int", "min": 3000, "max": 8000, "step": 500 },
+      "n": { "type": "int", "min": 4, "max": 15 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "well_cost_calculate_cost_A_plus_Bn",
+    "units": {
+      "A": "руб",
+      "B": "руб/кольцо",
+      "n": null,
+      "C": "руб"
+    }
+  },
+  {
+    "category": "Разные задачи",
+    "subcategory": null,
+    "subtype_id": "well_cost",
+    "plot_id": "calculate_cost_company_A",
+    "variable_to_find": "C",
+    "generation_rules": {
+      "A": { "type": "int", "min": 3500, "max": 5500, "step": 500 },
+      "B": { "type": "int", "min": 4000, "max": 6000, "step": 500 },
+      "n": { "type": "int", "min": 4, "max": 15 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "well_cost_calculate_cost_company_A",
+    "units": {
+      "A": "руб",
+      "B": "руб/кольцо",
+      "n": null,
+      "C": "руб"
+    }
+  },
+  {
+    "category": "Разные задачи",
+    "subcategory": null,
+    "subtype_id": "well_cost",
+    "plot_id": "calculate_cost_company_B",
+    "variable_to_find": "C",
+    "generation_rules": {
+      "A": { "type": "int", "min": 6000, "max": 8000, "step": 500 },
+      "B": { "type": "int", "min": 2500, "max": 4500, "step": 500 },
+      "n": { "type": "int", "min": 4, "max": 15 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "well_cost_calculate_cost_company_B",
+    "units": {
+      "A": "руб",
+      "B": "руб/кольцо",
+      "n": null,
+      "C": "руб"
+    }
+  },
+  {
+    "category": "Разные задачи",
+    "subcategory": null,
+    "subtype_id": "temperature_conversion",
+    "plot_id": "find_C_from_F",
+    "variable_to_find": "C",
+    "generation_rules": {
+      "F": { "type": "int", "min": -40, "max": 212 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "temperature_conversion_find_C_from_F",
+    "units": {
+      "F": "°F",
+      "C": "°C"
+    }
+  },
+  {
+    "category": "Разные задачи",
+    "subcategory": null,
+    "subtype_id": "temperature_conversion",
+    "plot_id": "find_F_from_C",
+    "variable_to_find": "F",
+    "generation_rules": {
+      "C": { "type": "int", "min": -40, "max": 100 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "temperature_conversion_find_F_from_C",
+    "units": {
+      "C": "°C",
+      "F": "°F"
+    }
+  }
+]
