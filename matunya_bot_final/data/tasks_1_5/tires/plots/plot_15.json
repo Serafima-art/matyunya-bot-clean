@@ -1,0 +1,109 @@
+{
+    "plot_type": "tires_ogge_2025_v1_FINAL",
+    "vehicle_id": "car_universal",
+    "base_tire_marking": {
+        "width": 185,
+        "profile": 60,
+        "construction": "R",
+        "diameter": 17,
+        "full_marking": "185/60 R17"
+    },
+    "allowed_tire_sizes": {
+        "185": {
+            "16": [
+                "185/65"
+            ],
+            "17": [
+                "185/60"
+            ],
+            "18": []
+        },
+        "195": {
+            "16": [
+                "195/60"
+            ],
+            "17": [
+                "195/55"
+            ],
+            "18": []
+        },
+        "205": {
+            "16": [
+                "205/55",
+                "205/60"
+            ],
+            "17": [
+                "205/50"
+            ],
+            "18": [
+                "205/45"
+            ]
+        },
+        "215": {
+            "16": [
+                "215/55"
+            ],
+            "17": [
+                "215/50"
+            ],
+            "18": [
+                "215/40",
+                "215/45"
+            ]
+        }
+    },
+    "constants": {
+        "inch_to_mm": 25.4,
+        "pi": 3.141592653589793
+    },
+    "task_specific_data": {
+        "task_1_data": {
+            "target_diameter": 17,
+            "question_type": "minimum_width"
+        },
+        "task_2_data": {
+            "tire_1": "195/60 R16",
+            "tire_2": "215/45 R18",
+            "comparison_type": "radius_difference"
+        },
+        "task_3_data": {
+            "tire_marking": "185/60 R17",
+            "calculation_type": "wheel_diameter"
+        },
+        "task_4_data": {
+            "original_tire": "185/60 R17",
+            "replacement_tire": "205/55 R16",
+            "calculation_type": "diameter_change"
+        },
+        "task_5_data": {
+            "original_tire": "185/60 R17",
+            "replacement_tire": "215/40 R18",
+            "calculation_type": "mileage_change_percent",
+            "service_choice_data": {
+                "services": [
+                    {
+                        "name": "A",
+                        "road_cost": 256,
+                        "operations": {
+                            "removal": 50,
+                            "tire_change": 100,
+                            "balancing": 245,
+                            "installation": 312
+                        }
+                    },
+                    {
+                        "name": "B",
+                        "road_cost": 201,
+                        "operations": {
+                            "removal": 234,
+                            "tire_change": 269,
+                            "balancing": 101,
+                            "installation": 52
+                        }
+                    }
+                ],
+                "wheels_count": 4
+            }
+        }
+    }
+}

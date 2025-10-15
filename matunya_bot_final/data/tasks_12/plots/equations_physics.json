@@ -1,0 +1,132 @@
+[
+  {
+    "category": "Линейные уравнения",
+    "subcategory": "Физика",
+    "subtype_id": "newton_gravity",
+    "plot_id": "find_m1_by_F_r_G_m2",
+    "variable_to_find": "m1",
+    "generation_rules": {
+      "_hidden_m1": { "type": "int", "min": 1000, "max": 20000, "step": 1000 },
+      "m2": { "type": "int", "min": 1000, "max": 1000000, "step": 1000 },
+      "r": { "type": "int", "min": 10, "max": 1000 }
+    },
+    "constants": { "G": 6.67e-11 },
+    "rounding_rules": null,
+    "text_template_id": "newton_gravity_find_m1_by_F_r_G_m2",
+    "units": {
+      "m1": "кг",
+      "m2": "кг",
+      "r": "м",
+      "F": "Н",
+      "G": "Н·м²/кг²"
+    }
+  },
+  {
+    "category": "Линейные уравнения",
+    "subcategory": "Физика",
+    "subtype_id": "mechanical_energy",
+    "plot_id": "find_h_by_E_m_v",
+    "variable_to_find": "h",
+    "generation_rules": {
+      "m": { "type": "int", "min": 1, "max": 50 },
+      "v": { "type": "int", "min": 0, "max": 30 },
+      "_hidden_h": { "type": "int", "min": 1, "max": 40 }
+    },
+    "constants": { "g": 9.8 },
+    "rounding_rules": null,
+    "text_template_id": "mechanical_energy_find_h_by_E_m_v",
+    "units": {
+      "m": "кг",
+      "v": "м/с",
+      "E": "Дж",
+      "h": "м",
+      "g": "м/с²"
+    }
+  },
+  {
+    "category": "Линейные уравнения",
+    "subcategory": "Физика",
+    "subtype_id": "ohm_power",
+    "plot_id": "find_R_by_P_I_linear",
+    "variable_to_find": "R",
+    "generation_rules": {
+      "P": { "type": "int", "min": 20, "max": 2000, "step": 10 },
+      "_hidden_R": { "type": "float", "min": 1.0, "max": 50.0, "step": 0.5 },
+      "I": { "type": "float", "min": 0.5, "max": 15.0, "step": 0.5 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "ohm_power_find_R_by_P_I_linear",
+    "units": {
+      "P": "Вт",
+      "I": "А",
+      "R": "Ом"
+    }
+  },
+  {
+    "category": "Линейные уравнения",
+    "subcategory": "Физика",
+    "subtype_id": "coulomb_law",
+    "plot_id": "find_q1_by_F_k_r_q2",
+    "variable_to_find": "q1",
+    "generation_rules": {
+      "_hidden_q1": { "type": "float", "min": 0.0002, "max": 0.005, "step": 0.0001 },
+      "q2": { "type": "float", "min": 0.0002, "max": 0.005, "step": 0.0001 },
+      "r": { "type": "int", "min": 10, "max": 2000, "step": 10 }
+    },
+    "constants": { "k": 9000000000 },
+    "rounding_rules": null,
+    "text_template_id": "coulomb_law_find_q1_by_F_k_r_q2",
+    "units": {
+      "q1": "Кл",
+      "q2": "Кл",
+      "r": "м",
+      "F": "Н",
+      "k": "Н·м²/Кл²"
+    }
+  },
+  {
+    "category": "Линейные уравнения",
+    "subcategory": "Физика",
+    "subtype_id": "joule_lenz",
+    "plot_id": "find_t_by_Q_I_R",
+    "variable_to_find": "t",
+    "generation_rules": {
+      "Q": { "type": "int", "min": 100, "max": 50000, "step": 10 },
+      "I": { "type": "float", "min": 1.0, "max": 15.0, "step": 0.5 },
+      "_hidden_t": { "type": "int", "min": 5, "max": 120 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "joule_lenz_find_t_by_Q_I_R",
+    "units": {
+      "Q": "Дж",
+      "I": "А",
+      "R": "Ом",
+      "t": "с"
+    }
+  },
+  {
+    "category": "Линейные уравнения",
+    "subcategory": "Физика",
+    "subtype_id": "gas_law",
+    "plot_id": "find_T_by_P_V_n",
+    "variable_to_find": "T",
+    "generation_rules": {
+      "P": { "type": "int", "min": 1000, "max": 100000 },
+      "V": { "type": "float", "min": 0.5, "max": 20.0, "step": 0.1 },
+      "n": { "type": "float", "min": 1.0, "max": 60.0, "step": 0.1 },
+      "_hidden_T": { "type": "int", "min": 230, "max": 700 }
+    },
+    "constants": { "R": 8.31 },
+    "rounding_rules": null,
+    "text_template_id": "gas_law_find_T_by_P_V_n",
+    "units": {
+      "P": "Па",
+      "V": "м³",
+      "n": "моль",
+      "T": "К",
+      "R": "Дж/(моль·К)"
+    }
+  }
+]

@@ -1,0 +1,228 @@
+Line 4: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd"
+�� ��������� ������� ������.\n\n��������� "�������� ��������� ������":\n- ��������� ������� "����", "���������
+------------------------------------------------------------
+Line 5: "\ufffd\ufffd\ufffd\ufffd"
+ ��������� ������":\n- ��������� ������� "����", "���������" � "������" (??????)\n- ����
+------------------------------------------------------------
+Line 5: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd"
+�� ������":\n- ��������� ������� "����", "���������" � "������" (??????)\n- ��������� � �����
+------------------------------------------------------------
+Line 5: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd"
+��������� ������� "����", "���������" � "������" (??????)\n- ��������� � ������� "?? ����
+------------------------------------------------------------
+Line 6: "?? \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd"
+"������" (??????)\n- ��������� � ������� "?? ������"\n- ������� ������ ����� MessageManager\n\n
+------------------------------------------------------------
+Line 56: "?? \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd"
+oardBuilder()\n        \n        # ������ "?? ������" (���� ���� ��������� �������)\n        i
+------------------------------------------------------------
+Line 59: "?? \ufffd\ufffd\ufffd\ufffd"
+level_names = {\n                "hint": "?? ����",\n                "partial": "?? �������
+------------------------------------------------------------
+Line 60: "?? \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd"
+: "?? ����",\n                "partial": "?? ���������", \n                "step": "?? ������",\n
+------------------------------------------------------------
+Line 61: "?? \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd"
+?? ���������", \n                "step": "?? ������",\n                "solution": "?? ������
+------------------------------------------------------------
+Line 62: "?? \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd"
+?? ������",\n                "solution": "?? �������"\n            }\n            \n            
+------------------------------------------------------------
+Line 65: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd"
+evel_name = level_names.get(next_level, "������")\n            \n            builder.row(I
+------------------------------------------------------------
+Line 72: "? \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd"
+           ))\n        \n        # ������ "? ������ ������"\n        builder.row(InlineKeyboardButto
+------------------------------------------------------------
+Line 74: "? \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd"
+(InlineKeyboardButton(\n            text="? ������ ������",\n            callback_data=f"hide_help:
+------------------------------------------------------------
+Line 81: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd: {e}"
+t Exception as e:\n        logger.error(f"������ �������� ������������� ����������: {e}")\n        # ���������� ���������� ������
+------------------------------------------------------------
+Line 85: "? \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd"
+ineKeyboardButton(\n                text="? ������ ������",\n                callback_data=f"hide_h
+------------------------------------------------------------
+Line 117: "?? \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd"
+�.\n    \n    ������������ ������� ������ "?? ������" � ���������� ���� �������.\n    \n    Arg
+------------------------------------------------------------
+Line 126: "?? DEBUG: \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd callback: {callback.data}"
+k_type"\n    """\n    try:\n        print(f"?? DEBUG: ������� callback: {callback.data}")  # �������\n        logger.info(f"?? DE
+------------------------------------------------------------
+Line 127: "?? DEBUG: \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd callback: {callback.data}"
+data}")  # �������\n        logger.info(f"?? DEBUG: ������� callback: {callback.data}")  # �������\n        \n        # ������ c
+------------------------------------------------------------
+Line 132: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd callback_data: {callback.data}"
+a_parts) < 2:\n            logger.error(f"������������ ������ callback_data: {callback.data}")\n            await callback.message.edi
+------------------------------------------------------------
+Line 134: "? <b>\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd</b>\\n\\n\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd."
+back.message.edit_text(\n                "? <b>������</b>\n\n������������ ������ ������.",\n                parse_mode="HTML"\n    
+------------------------------------------------------------
+Line 143: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd: task_type=<b>{task_type}</b>, subtype=<b>{task_subtype}</b>"
+���������\n        \n        logger.info(f"������ ������: task_type=<b>{task_type}</b>, subtype=<b>{task_subtype}</b>")\n        \n        # ������� ���� � ����
+------------------------------------------------------------
+Line 160: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd <b>{task_type}</b>/<b>{task_subtype}</b>"
+y_markup=None)\n            logger.info(f"������� �������� ���� ������ ��� <b>{task_type}</b>/<b>{task_subtype}</b>")\n            \n        except TelegramBa
+------------------------------------------------------------
+Line 164: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd"
+).lower():\n                logger.debug("��������� �� ����������")\n            else:\n                logg
+------------------------------------------------------------
+Line 166: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd: {e}"
+    else:\n                logger.error(f"������ �������������� ���������: {e}")\n                raise\n                
+------------------------------------------------------------
+Line 170: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd handle_help_request: {e}"
+t Exception as e:\n        logger.error(f"����������� ������ � handle_help_request: {e}")\n        \n        try:\n            erro
+------------------------------------------------------------
+Line 174: "? <b>\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd</b>\\n\\n"
+         error_text = (\n                "? <b>��������� ������</b>\n\n"\n                "�� ������� ��������� �
+------------------------------------------------------------
+Line 175: "\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd.\\n"
+������� ������</b>\n\n"\n                "�� ������� ��������� ���� ������.\n"\n                "���������� ��� ���."\n 
+------------------------------------------------------------
+Line 176: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd \ufffd\ufffd\ufffd."
+������� ���� ������.\n"\n                "���������� ��� ���."\n            )\n            \n            
+------------------------------------------------------------
+Line 185: "\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd: {edit_error}"
+s edit_error:\n            logger.error(f"�� ������� ��������� ��������� �� ������: {edit_error}")\n\n    finally:\n        # Завершаем call
+------------------------------------------------------------
+Line 205: "?? <b>\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd</b>\\n\\n"
+����� ����\n    """\n    return (\n        "?? <b>������ �� �������</b>\n\n"\n        f"?? <b>�������:</b> �<b>{task_
+------------------------------------------------------------
+Line 206: "?? <b>\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd:</b> \ufffd<b>{task_type}</b>\\n"
+ <b>������ �� �������</b>\n\n"\n        f"?? <b>�������:</b> �<b>{task_type}</b>\n"\n        f"?? <b>���:</b> <b>{task_subty
+------------------------------------------------------------
+Line 207: "?? <b>\ufffd\ufffd\ufffd:</b> <b>{task_subtype}</b>\\n\\n"
+��:</b> �<b>{task_type}</b>\n"\n        f"?? <b>���:</b> <b>{task_subtype}</b>\n\n"\n        "?? <b>������ ������� ������:</
+------------------------------------------------------------
+Line 208: "?? <b>\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd:</b>\\n\\n"
+</b> <b>{task_subtype}</b>\n\n"\n        "?? <b>������ ������� ������:</b>\n\n"\n        "?? <b>����</b> � ����� ������ 
+------------------------------------------------------------
+Line 209: "?? <b>\ufffd\ufffd\ufffd\ufffd</b> \ufffd \ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\\n"
+������ ������� ������:</b>\n\n"\n        "?? <b>����</b> � ����� ������ � �����������\n"\n        "?? <b>���������</b> � ��������
+------------------------------------------------------------
+Line 210: "?? <b>\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd</b> \ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\\n"
+� ����� ������ � �����������\n"\n        "?? <b>���������</b> � ���������� ������� �������\n"\n        "?? <b>������</b> � ��������� �
+------------------------------------------------------------
+Line 211: "?? <b>\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd</b> \ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\\n"
+� ���������� ������� �������\n"\n        "?? <b>������</b> � ��������� �������� �������\n"\n        "?? <b>�������</b> � ������ ���
+------------------------------------------------------------
+Line 212: "?? <b>\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd</b> \ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\\n\\n"
+� ��������� �������� �������\n"\n        "?? <b>�������</b> � ������ ������� � �������\n\n"\n        "? ������ ����� ������ ���� ���
+------------------------------------------------------------
+Line 213: "? \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd!"
+� ������ ������� � �������\n\n"\n        "? ������ ����� ������ ���� ������!"\n    )\n\n\ndef create_help_menu_keyboard(t
+------------------------------------------------------------
+Line 232: "?? \ufffd\ufffd\ufffd\ufffd"
+� 2 � ���)\n    help_levels = [\n        ("?? ����", "hint"),\n        ("?? ���������", "par
+------------------------------------------------------------
+Line 233: "?? \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd"
+[\n        ("?? ����", "hint"),\n        ("?? ���������", "partial"),\n        ("?? ������", "ste
+------------------------------------------------------------
+Line 234: "?? \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd"
+  ("?? ���������", "partial"),\n        ("?? ������", "step"),\n        ("?? �������", "solut
+------------------------------------------------------------
+Line 235: "?? \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd"
+        ("?? ������", "step"),\n        ("?? �������", "solution"),\n    ]\n    \n    for i in r
+------------------------------------------------------------
+Line 256: "? \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd"
+ InlineKeyboardButton(\n            text="? ������ ������",\n            callback_data=f"ask_questi
+------------------------------------------------------------
+Line 294: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd callback_data: {callback.data}"
+a_parts) < 3:\n            logger.error(f"������������ ������ callback_data: {callback.data}")\n            return\n        \n        ac
+------------------------------------------------------------
+Line 302: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd: {current_level} \ufffd\ufffd\ufffd \ufffd<b>{task_type}</b>/{task_subtype}"
+���������\n        \n        logger.info(f"������ ��������� ������: {current_level} ��� �<b>{task_type}</b>/{task_subtype}")\n        \n        # ������: �����������
+------------------------------------------------------------
+Line 307: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd {current_level} \ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd, \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd"
+tic_levels:\n            logger.warning(f"������� {current_level} �� �������� ���������, ����������")\n            return\n        \n        # 
+------------------------------------------------------------
+Line 323: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd-\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd {current_level}"
+\n            \n            logger.debug(f"���������� �����-������ ��� {current_level}")\n            \n        except Exception 
+------------------------------------------------------------
+Line 326: "\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd-\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd: {e}"
+ption as e:\n            logger.warning(f"�� ������� ��������� �����-������: {e}")\n        \n        # 3. ��������� ������
+------------------------------------------------------------
+Line 334: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd \ufffd<b>{task_type}</b>/{task_subtype}"
+p_data:\n                logger.warning(f"������ ������ �� ������� ��� �<b>{task_type}</b>/{task_subtype}")\n                await send_help_unavai
+------------------------------------------------------------
+Line 339: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd: {e}"
+ception as e:\n            logger.error(f"������ �������� ������ ������: {e}")\n            await send_help_unavailabl
+------------------------------------------------------------
+Line 348: "\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd {current_level}"
+t variants:\n            logger.warning(f"��� ��������� ��� ������ {current_level}")\n            await send_help_unavailabl
+------------------------------------------------------------
+Line 376: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd {current_level}"
+)\n            \n            logger.info(f"������� ���������� ��������� ������ ������ {current_level}")\n            \n        except Exception 
+------------------------------------------------------------
+Line 379: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd: {e}"
+ception as e:\n            logger.error(f"������ �������� ��������� ���������: {e}")\n        \n        # ��������� ���������
+------------------------------------------------------------
+Line 390: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd handle_static_help_level: {e}"
+t Exception as e:\n        logger.error(f"����������� ������ � handle_static_help_level: {e}")\n\n\n@help_router.callback_query(F.data.s
+------------------------------------------------------------
+Line 402: "? \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd"
+     callback: CallbackQuery �� ������� "? ������ ������"\n        bot: ��������� ����\n        sta
+------------------------------------------------------------
+Line 407: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd..."
+\n    try:\n        await callback.answer("������� ������...")\n        \n        # ������ callback_dat
+------------------------------------------------------------
+Line 413: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd {task_subtype}"
+1 else ""\n        \n        logger.info(f"������ ������� ������ ��� {task_subtype}")\n        \n        # ������� tracked-���
+------------------------------------------------------------
+Line 423: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd help_{task_subtype} \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd"
+\n            )\n            logger.info(f"��������� ��������� help_{task_subtype} �������")\n        except Exception as e:\n       
+------------------------------------------------------------
+Line 425: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd help_{task_subtype}: {e}"
+ception as e:\n            logger.error(f"������ ��� ������� ��������� ��������� help_{task_subtype}: {e}")\n        \n        # ���������� ��������
+------------------------------------------------------------
+Line 431: "? <b>\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd</b>\\n\\n?? \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd!"
+k.message.chat.id,\n                text="? <b>������ ������</b>\n\n?? ������������ � �������!",\n                parse_mode="HTML"\n    
+------------------------------------------------------------
+Line 441: "\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd: {e}"
+ption as e:\n            logger.warning(f"�� ������� ��������� ����������� � �������: {e}")\n        \n        # ������� ��������� �
+------------------------------------------------------------
+Line 449: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd {task_subtype}"
+       })\n        \n        logger.info(f"������ ������� ������ ��� {task_subtype}")\n        \n    except Exception as e:\n  
+------------------------------------------------------------
+Line 452: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd handle_hide_help: {e}"
+t Exception as e:\n        logger.error(f"����������� ������ � handle_hide_help: {e}")\n        \n        # �������� �������� �
+------------------------------------------------------------
+Line 457: "? \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd.\\n\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd \ufffd\ufffd\ufffd."
+back.message.edit_text(\n                "? ��������� ������ ��� ������� ������.\n���������� ��� ���.",\n                parse_mode="HTML"\n    
+------------------------------------------------------------
+Line 476: "?? <b>\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd</b>\\n\\n"
+   """\n    unavailable_text = (\n        "?? <b>������ ����������</b>\n\n"\n        f"?? ������� �<b>{task_type}</b
+------------------------------------------------------------
+Line 477: "?? \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd<b>{task_type}</b> (<b>{task_subtype}</b>)\\n\\n"
+ <b>������ ����������</b>\n\n"\n        f"?? ������� �<b>{task_type}</b> (<b>{task_subtype}</b>)\n\n"\n        "?? ������ ��� ����� ���� �����
+------------------------------------------------------------
+Line 478: "?? \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd \ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd.\\n"
+b> (<b>{task_subtype}</b>)\n\n"\n        "?? ������ ��� ����� ���� ������� ���� �� ������.\n"\n        "�� �������� ��� ����!"\n    )\n 
+------------------------------------------------------------
+Line 479: "\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd!"
+���� ������� ���� �� ������.\n"\n        "�� �������� ��� ����!"\n    )\n    \n    try:\n        await callb
+------------------------------------------------------------
+Line 488: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd: {e}"
+t Exception as e:\n        logger.error(f"������ �������� ��������� � �������������: {e}")\n\n\nasync def delete_message_after_delay
+------------------------------------------------------------
+Line 504: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd <b>{message_id}</b> \ufffd\ufffd\ufffd\ufffd\ufffd <b>{delay_seconds}</b>\ufffd"
+ge_id=message_id)\n        logger.debug(f"������������� ������� ��������� <b>{message_id}</b> ����� <b>{delay_seconds}</b>�")\n    except Exception as e:\n        log
+------------------------------------------------------------
+Line 506: "\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd: {e}"
+t Exception as e:\n        logger.debug(f"�� ������� ������������� ������� ���������: {e}")\n\n\n# ========== ������� ==========\n\n__a
+------------------------------------------------------------
+Line 522: "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd"
+=\n\nasync def _test_static_help():\n    """�������� ������� ��� �������� ��������� ������"""\n    print("?? ������������ ��������� 
+------------------------------------------------------------
+Line 523: "?? \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd..."
+ �������� ��������� ������"""\n    print("?? ������������ ��������� ������...")\n    \n    # ���� ������������� ��������
+------------------------------------------------------------
+Line 527: "? \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd: <b>{len(keyboard.inline_keyboard)}</b> \ufffd\ufffd\ufffd\ufffd\ufffd"
+partial", "match_signs_a_c")\n    print(f"? ������������� ����������: <b>{len(keyboard.inline_keyboard)}</b> �����")\n    \n    # ���� ����������� ����������
+------------------------------------------------------------
+Line 532: "? \ufffd\ufffd\ufffd\ufffd\ufffd <b>{level}</b> \ufffd\ufffd\ufffd\ufffd: <b>{next_level}</b>"
+next_static_level(level)\n        print(f"? ����� <b>{level}</b> ����: <b>{next_level}</b>")\n    \n    # ���� ����-������\n    from h
+------------------------------------------------------------
+Line 538: "? \ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd <b>{level}</b>: {phrase}"
+get_random_phrase(level)\n        print(f"? ����� ��� <b>{level}</b>: {phrase}")\n\n\nif __name__ == "__main__":\n    impor
+------------------------------------------------------------

@@ -1,0 +1,681 @@
+[
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "pendulum_period",
+    "plot_id": "find_T_by_l",
+    "variable_to_find": "T",
+    "generation_rules": {
+      "l": { "type": "int", "min": 1, "max": 200 }
+    },
+    "constants": { "g": 9.8, "pi": 3.14 },
+    "rounding_rules": null,
+    "text_template_id": "pendulum_period_find_T_by_l",
+    "units": {
+      "l": "м",
+      "T": "с",
+      "g": "м/с²"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "pendulum_period",
+    "plot_id": "find_l_by_T",
+    "variable_to_find": "l",
+    "generation_rules": {
+      "T": { "type": "int", "min": 2, "max": 12, "is_even": true }
+    },
+    "constants": { "g": 9.8, "pi": 3.14 },
+    "rounding_rules": null,
+    "text_template_id": "pendulum_period_find_l_by_T",
+    "units": {
+      "T": "с",
+      "l": "м",
+      "g": "м/с²"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "kinetic_energy",
+    "plot_id": "find_E_by_m_and_v",
+    "variable_to_find": "E",
+    "generation_rules": {
+      "m": { "type": "int", "min": 50, "max": 3000, "step": 50 },
+      "v": { "type": "int", "min": 2, "max": 40 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "kinetic_energy_find_E_by_m_and_v",
+    "units": {
+      "m": "кг",
+      "v": "м/с",
+      "E": "Дж"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "kinetic_energy",
+    "plot_id": "find_v_by_m_and_E",
+    "variable_to_find": "v",
+    "generation_rules": {
+      "m": { "type": "int", "min": 50, "max": 3000, "step": 50 },
+      "E": { "type": "int", "min": 500, "max": 300000, "step": 100 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "kinetic_energy_find_v_by_m_and_E",
+    "units": {
+      "m": "кг",
+      "E": "Дж",
+      "v": "м/с"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "potential_energy",
+    "plot_id": "find_E_by_m_and_h",
+    "variable_to_find": "E",
+    "generation_rules": {
+      "m": { "type": "int", "min": 2, "max": 200 },
+      "h": { "type": "int", "min": 1, "max": 50 }
+    },
+    "constants": { "g": 9.8 },
+    "rounding_rules": null,
+    "text_template_id": "potential_energy_find_E_by_m_and_h",
+    "units": {
+      "m": "кг",
+      "h": "м",
+      "E": "Дж",
+      "g": "м/с²"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "potential_energy",
+    "plot_id": "find_m_by_E_and_h",
+    "variable_to_find": "m",
+    "generation_rules": {
+      "E": { "type": "int", "min": 100, "max": 20000, "step": 10 },
+      "h": { "type": "int", "min": 1, "max": 40 }
+    },
+    "constants": { "g": 9.8 },
+    "rounding_rules": null,
+    "text_template_id": "potential_energy_find_m_by_E_and_h",
+    "units": {
+      "E": "Дж",
+      "h": "м",
+      "m": "кг",
+      "g": "м/с²"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "mechanical_energy",
+    "plot_id": "find_E_total_by_m_v_h",
+    "variable_to_find": "E",
+    "generation_rules": {
+      "m": { "type": "int", "min": 1, "max": 50 },
+      "v": { "type": "int", "min": 0, "max": 30 },
+      "h": { "type": "int", "min": 0, "max": 40 }
+    },
+    "constants": { "g": 9.8 },
+    "rounding_rules": null,
+    "text_template_id": "mechanical_energy_find_E_total_by_m_v_h",
+    "units": {
+      "m": "кг",
+      "v": "м/с",
+      "h": "м",
+      "E": "Дж",
+      "g": "м/с²"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "mechanical_energy",
+    "plot_id": "find_m_by_E_v_h",
+    "variable_to_find": "m",
+    "generation_rules": {
+      "E": { "type": "int", "min": 1000, "max": 50000, "step": 100 },
+      "v": { "type": "int", "min": 5, "max": 30 },
+      "h": { "type": "int", "min": 5, "max": 40 }
+    },
+    "constants": { "g": 9.8 },
+    "rounding_rules": null,
+    "text_template_id": "mechanical_energy_find_m_by_E_v_h",
+    "units": {
+      "E": "Дж",
+      "v": "м/с",
+      "h": "м",
+      "m": "кг",
+      "g": "м/с²"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "mechanical_energy",
+    "plot_id": "find_h_by_E_m_v",
+    "variable_to_find": "h",
+    "generation_rules": {
+      "E": { "type": "int", "min": 1000, "max": 50000, "step": 100 },
+      "m": { "type": "int", "min": 5, "max": 50 },
+      "v": { "type": "int", "min": 0, "max": 25 }
+    },
+    "constants": { "g": 9.8 },
+    "rounding_rules": null,
+    "text_template_id": "mechanical_energy_find_h_by_E_m_v",
+    "units": {
+      "E": "Дж",
+      "m": "кг",
+      "v": "м/с",
+      "h": "м",
+      "g": "м/с²"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "archimedes_force",
+    "plot_id": "find_F_by_rho_g_V",
+    "variable_to_find": "F",
+    "generation_rules": {
+      "rho": { "type": "int", "min": 800, "max": 1300, "step": 50 },
+      "V": { "type": "float", "min": 0.1, "max": 5.0, "step": 0.1 }
+    },
+    "constants": { "g": 9.8 },
+    "rounding_rules": null,
+    "text_template_id": "archimedes_force_find_F_by_rho_g_V",
+    "units": {
+      "rho": "кг/м³",
+      "V": "м³",
+      "F": "Н",
+      "g": "м/с²"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "archimedes_force",
+    "plot_id": "find_V_by_F_rho_g",
+    "variable_to_find": "V",
+    "generation_rules": {
+      "rho": { "type": "int", "min": 800, "max": 1300, "step": 50 },
+      "F": { "type": "int", "min": 50, "max": 20000, "step": 10 }
+    },
+    "constants": { "g": 9.8 },
+    "rounding_rules": null,
+    "text_template_id": "archimedes_force_find_V_by_F_rho_g",
+    "units": {
+      "rho": "кг/м³",
+      "F": "Н",
+      "V": "м³",
+      "g": "м/с²"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "newton_gravity",
+    "plot_id": "find_F_by_m1_m2_r",
+    "variable_to_find": "F",
+    "generation_rules": {
+      "m1": { "type": "int", "min": 1000, "max": 20000, "step": 1000 },
+      "m2": { "type": "int", "min": 1000, "max": 1000000, "step": 1000 },
+      "r": { "type": "int", "min": 10, "max": 1000 }
+    },
+    "constants": { "G": 6.67e-11 },
+    "rounding_rules": null,
+    "text_template_id": "newton_gravity_find_F_by_m1_m2_r",
+    "units": {
+      "m1": "кг",
+      "m2": "кг",
+      "r": "м",
+      "F": "Н",
+      "G": "Н·м²/кг²"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "newton_gravity",
+    "plot_id": "find_m1_by_F_m2_r",
+    "variable_to_find": "m1",
+    "generation_rules": {
+      "F": { "type": "float", "min": 1e-6, "max": 1e-3, "step": 1e-7 },
+      "m2": { "type": "int", "min": 10000, "max": 1000000, "step": 10000 },
+      "r": { "type": "int", "min": 50, "max": 500 }
+    },
+    "constants": { "G": 6.67e-11 },
+    "rounding_rules": null,
+    "text_template_id": "newton_gravity_find_m1_by_F_m2_r",
+    "units": {
+      "F": "Н",
+      "m2": "кг",
+      "r": "м",
+      "m1": "кг",
+      "G": "Н·м²/кг²"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "newton_gravity",
+    "plot_id": "find_m2_by_F_m1_r",
+    "variable_to_find": "m2",
+    "generation_rules": {
+      "F": { "type": "float", "min": 1e-6, "max": 1e-3, "step": 1e-7 },
+      "m1": { "type": "int", "min": 5000, "max": 50000, "step": 1000 },
+      "r": { "type": "int", "min": 50, "max": 500 }
+    },
+    "constants": { "G": 6.67e-11 },
+    "rounding_rules": null,
+    "text_template_id": "newton_gravity_find_m2_by_F_m1_r",
+    "units": {
+      "F": "Н",
+      "m1": "кг",
+      "r": "м",
+      "m2": "кг",
+      "G": "Н·м²/кг²"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "coulomb_law",
+    "plot_id": "find_F_by_k_q1_q2_r",
+    "variable_to_find": "F",
+    "generation_rules": {
+      "q1": { "type": "float", "min": 0.0002, "max": 0.005, "step": 0.0001 },
+      "q2": { "type": "float", "min": 0.0002, "max": 0.005, "step": 0.0001 },
+      "r": { "type": "int", "min": 10, "max": 2000, "step": 10 }
+    },
+    "constants": { "k": 9000000000 },
+    "rounding_rules": null,
+    "text_template_id": "coulomb_law_find_F_by_k_q1_q2_r",
+    "units": {
+      "q1": "Кл",
+      "q2": "Кл",
+      "r": "м",
+      "F": "Н",
+      "k": "Н·м²/Кл²"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "coulomb_law",
+    "plot_id": "find_q1_by_F_q2_r",
+    "variable_to_find": "q1",
+    "generation_rules": {
+      "F": { "type": "float", "min": 0.1, "max": 1000, "step": 0.1 },
+      "q2": { "type": "float", "min": 0.0002, "max": 0.005, "step": 0.0001 },
+      "r": { "type": "int", "min": 50, "max": 1000, "step": 10 }
+    },
+    "constants": { "k": 9000000000 },
+    "rounding_rules": null,
+    "text_template_id": "coulomb_law_find_q1_by_F_q2_r",
+    "units": {
+      "F": "Н",
+      "q2": "Кл",
+      "r": "м",
+      "q1": "Кл",
+      "k": "Н·м²/Кл²"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "coulomb_law",
+    "plot_id": "find_q2_by_F_q1_r",
+    "variable_to_find": "q2",
+    "generation_rules": {
+      "F": { "type": "float", "min": 0.1, "max": 1000, "step": 0.1 },
+      "q1": { "type": "float", "min": 0.0002, "max": 0.005, "step": 0.0001 },
+      "r": { "type": "int", "min": 50, "max": 1000, "step": 10 }
+    },
+    "constants": { "k": 9000000000 },
+    "rounding_rules": null,
+    "text_template_id": "coulomb_law_find_q2_by_F_q1_r",
+    "units": {
+      "F": "Н",
+      "q1": "Кл",
+      "r": "м",
+      "q2": "Кл",
+      "k": "Н·м²/Кл²"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "coulomb_law",
+    "plot_id": "find_r_by_F_q1_q2",
+    "variable_to_find": "r",
+    "generation_rules": {
+      "F": { "type": "float", "min": 1.0, "max": 500, "step": 0.5 },
+      "q1": { "type": "float", "min": 0.001, "max": 0.01, "step": 0.0005 },
+      "q2": { "type": "float", "min": 0.001, "max": 0.01, "step": 0.0005 }
+    },
+    "constants": { "k": 9000000000 },
+    "rounding_rules": null,
+    "text_template_id": "coulomb_law_find_r_by_F_q1_q2",
+    "units": {
+      "F": "Н",
+      "q1": "Кл",
+      "q2": "Кл",
+      "r": "м",
+      "k": "Н·м²/Кл²"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "ohm_power",
+    "plot_id": "find_P_by_I_R",
+    "variable_to_find": "P",
+    "generation_rules": {
+      "I": { "type": "float", "min": 0.5, "max": 15.0, "step": 0.5 },
+      "R": { "type": "float", "min": 0.5, "max": 50.0, "step": 0.5 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "ohm_power_find_P_by_I_R",
+    "units": {
+      "I": "А",
+      "R": "Ом",
+      "P": "Вт"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "ohm_power",
+    "plot_id": "find_R_by_P_I",
+    "variable_to_find": "R",
+    "generation_rules": {
+      "P": { "type": "int", "min": 20, "max": 2000, "step": 10 },
+      "I": { "type": "float", "min": 0.5, "max": 15.0, "step": 0.5 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "ohm_power_find_R_by_P_I",
+    "units": {
+      "P": "Вт",
+      "I": "А",
+      "R": "Ом"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "joule_lenz",
+    "plot_id": "find_Q_by_I_R_t",
+    "variable_to_find": "Q",
+    "generation_rules": {
+      "I": { "type": "float", "min": 1.0, "max": 15.0, "step": 0.5 },
+      "R": { "type": "float", "min": 0.5, "max": 20.0, "step": 0.5 },
+      "t": { "type": "int", "min": 5, "max": 120 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "joule_lenz_find_Q_by_I_R_t",
+    "units": {
+      "I": "А",
+      "R": "Ом",
+      "t": "с",
+      "Q": "Дж"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "joule_lenz",
+    "plot_id": "find_t_by_Q_I_R",
+    "variable_to_find": "t",
+    "generation_rules": {
+      "Q": { "type": "int", "min": 100, "max": 50000, "step": 100 },
+      "I": { "type": "float", "min": 1.0, "max": 15.0, "step": 0.5 },
+      "R": { "type": "float", "min": 1.0, "max": 20.0, "step": 0.5 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "joule_lenz_find_t_by_Q_I_R",
+    "units": {
+      "Q": "Дж",
+      "I": "А",
+      "R": "Ом",
+      "t": "с"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "joule_lenz",
+    "plot_id": "find_R_by_Q_I_t",
+    "variable_to_find": "R",
+    "generation_rules": {
+      "Q": { "type": "int", "min": 100, "max": 50000, "step": 100 },
+      "I": { "type": "float", "min": 1.0, "max": 15.0, "step": 0.5 },
+      "t": { "type": "int", "min": 10, "max": 120 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "joule_lenz_find_R_by_Q_I_t",
+    "units": {
+      "Q": "Дж",
+      "I": "А",
+      "t": "с",
+      "R": "Ом"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "work_of_current",
+    "plot_id": "find_A_by_U_t_R",
+    "variable_to_find": "A",
+    "generation_rules": {
+      "U": { "type": "int", "min": 3, "max": 220 },
+      "t": { "type": "int", "min": 5, "max": 120 },
+      "R": { "type": "float", "min": 0.5, "max": 50.0, "step": 0.5 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "work_of_current_find_A_by_U_t_R",
+    "units": {
+      "U": "В",
+      "t": "с",
+      "R": "Ом",
+      "A": "Дж"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "capacitor_energy",
+    "plot_id": "find_W_by_C_U",
+    "variable_to_find": "W",
+    "generation_rules": {
+      "C": { "type": "float", "min": 1e-5, "max": 1e-3, "step": 1e-5 },
+      "U": { "type": "int", "min": 5, "max": 220 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "capacitor_energy_find_W_by_C_U",
+    "units": {
+      "C": "Ф",
+      "U": "В",
+      "W": "Дж"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "capacitor_energy",
+    "plot_id": "find_W_by_q_C",
+    "variable_to_find": "W",
+    "generation_rules": {
+      "q": { "type": "float", "min": 1e-4, "max": 5e-3, "step": 1e-4 },
+      "C": { "type": "float", "min": 1e-5, "max": 1e-2, "step": 1e-5 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "capacitor_energy_find_W_by_q_C",
+    "units": {
+      "q": "Кл",
+      "C": "Ф",
+      "W": "Дж"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "gas_law",
+    "plot_id": "find_P_by_n_R_T_V",
+    "variable_to_find": "P",
+    "generation_rules": {
+      "n": { "type": "float", "min": 1.0, "max": 60.0, "step": 0.1 },
+      "T": { "type": "int", "min": 200, "max": 800 },
+      "V": { "type": "float", "min": 0.5, "max": 20.0, "step": 0.1 }
+    },
+    "constants": { "R": 8.31 },
+    "rounding_rules": null,
+    "text_template_id": "gas_law_find_P_by_n_R_T_V",
+    "units": {
+      "n": "моль",
+      "T": "К",
+      "V": "м³",
+      "P": "Па",
+      "R": "Дж/(моль·К)"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "gas_law",
+    "plot_id": "find_T_by_P_V_n_R",
+    "variable_to_find": "T",
+    "generation_rules": {
+      "P": { "type": "int", "min": 1000, "max": 100000 },
+      "V": { "type": "float", "min": 0.5, "max": 20.0, "step": 0.1 },
+      "n": { "type": "float", "min": 1.0, "max": 60.0, "step": 0.1 }
+    },
+    "constants": { "R": 8.31 },
+    "rounding_rules": null,
+    "text_template_id": "gas_law_find_T_by_P_V_n_R",
+    "units": {
+      "P": "Па",
+      "V": "м³",
+      "n": "моль",
+      "T": "К",
+      "R": "Дж/(моль·К)"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "gas_law",
+    "plot_id": "find_V_by_P_n_R_T",
+    "variable_to_find": "V",
+    "generation_rules": {
+      "P": { "type": "int", "min": 1000, "max": 100000 },
+      "n": { "type": "float", "min": 1.0, "max": 60.0, "step": 0.1 },
+      "T": { "type": "int", "min": 200, "max": 800 }
+    },
+    "constants": { "R": 8.31 },
+    "rounding_rules": null,
+    "text_template_id": "gas_law_find_V_by_P_n_R_T",
+    "units": {
+      "P": "Па",
+      "n": "моль",
+      "T": "К",
+      "V": "м³",
+      "R": "Дж/(моль·К)"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "gas_law",
+    "plot_id": "find_n_by_P_V_R_T",
+    "variable_to_find": "n",
+    "generation_rules": {
+      "P": { "type": "int", "min": 1000, "max": 100000 },
+      "V": { "type": "float", "min": 0.5, "max": 20.0, "step": 0.1 },
+      "T": { "type": "int", "min": 200, "max": 800 }
+    },
+    "constants": { "R": 8.31 },
+    "rounding_rules": null,
+    "text_template_id": "gas_law_find_n_by_P_V_R_T",
+    "units": {
+      "P": "Па",
+      "V": "м³",
+      "T": "К",
+      "n": "моль",
+      "R": "Дж/(моль·К)"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "centripetal_acceleration",
+    "plot_id": "find_a_by_omega_and_R",
+    "variable_to_find": "a",
+    "generation_rules": {
+      "omega": { "type": "float", "min": 1.0, "max": 20.0, "step": 0.5 },
+      "R": { "type": "float", "min": 0.5, "max": 20.0, "step": 0.5 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "centripetal_acceleration_find_a_by_omega_and_R",
+    "units": {
+      "omega": "с⁻¹",
+      "R": "м",
+      "a": "м/с²"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "centripetal_acceleration",
+    "plot_id": "find_R_by_a_and_omega",
+    "variable_to_find": "R",
+    "generation_rules": {
+      "a": { "type": "int", "min": 5, "max": 500 },
+      "omega": { "type": "float", "min": 1.0, "max": 20.0, "step": 0.5 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "centripetal_acceleration_find_R_by_a_and_omega",
+    "units": {
+      "a": "м/с²",
+      "omega": "с⁻¹",
+      "R": "м"
+    }
+  },
+  {
+    "category": "Расчёты по формулам",
+    "subcategory": "Физика",
+    "subtype_id": "centripetal_acceleration",
+    "plot_id": "find_omega_by_a_and_R",
+    "variable_to_find": "omega",
+    "generation_rules": {
+      "a": { "type": "int", "min": 10, "max": 500 },
+      "R": { "type": "float", "min": 1.0, "max": 20.0, "step": 0.5 }
+    },
+    "constants": null,
+    "rounding_rules": null,
+    "text_template_id": "centripetal_acceleration_find_omega_by_a_and_R",
+    "units": {
+      "a": "м/с²",
+      "R": "м",
+      "omega": "с⁻¹"
+    }
+  }
+]

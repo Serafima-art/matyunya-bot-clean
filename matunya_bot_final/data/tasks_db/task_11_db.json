@@ -1,0 +1,417 @@
+[
+  {
+    "id": "11_match_signs_a_c_e36f70",
+    "task_id": "11_03",
+    "task_type": 11,
+    "subtype": "match_signs_a_c",
+    "category": "matching",
+    "subcategory": "coefficients",
+    "text": "На рисунках изображены графики квадратичных функций\ny = ax² + bx + c.\n\nУстанови соответствие между графиками и знаками коэффициентов a и c.\n\n1) a > 0, c > 0\n2) a < 0, c > 0\n3) a < 0, c < 0\n\nОтвет:  А ___   Б ___   В ___\n\n👉 В ответе укажи соответствующий номер\n(например: 3 2 1)",
+    "answer": [
+      "1",
+      "2",
+      "3"
+    ],
+    "func_data": [
+      {
+        "func": null,
+        "color": "orange",
+        "label": "y=1x²+0x+1",
+        "graphs": [
+          "temp/task_11/parabola_A_ae11bc.png"
+        ],
+        "_debug_coeffs": {
+          "a": 1,
+          "b": 0,
+          "c": 1
+        }
+      },
+      {
+        "func": null,
+        "color": "orange",
+        "label": "y=-2x²+1x+3",
+        "graphs": [
+          "temp/task_11/parabola_Б_4f507c.png"
+        ],
+        "_debug_coeffs": {
+          "a": -2,
+          "b": 1,
+          "c": 3
+        }
+      },
+      {
+        "func": null,
+        "color": "orange",
+        "label": "y=-2x²-3x-2",
+        "graphs": [
+          "temp/task_11/parabola_В_efb4c9.png"
+        ],
+        "_debug_coeffs": {
+          "a": -2,
+          "b": -3,
+          "c": -2
+        }
+      }
+    ],
+    "x_lim": [
+      -5,
+      5
+    ],
+    "y_lim": [
+      -5,
+      5
+    ],
+    "source_plot": {
+      "plot_id": "match_signs_a_c",
+      "params": {
+        "labels": [
+          "A",
+          "Б",
+          "В"
+        ],
+        "graphs": [
+          "temp/task_11/parabola_A_ae11bc.png",
+          "temp/task_11/parabola_Б_4f507c.png",
+          "temp/task_11/parabola_В_efb4c9.png"
+        ],
+        "options": {
+          "1": "a > 0, c > 0",
+          "2": "a < 0, c > 0",
+          "3": "a < 0, c < 0"
+        }
+      }
+    }
+  },
+  {
+    "id": "11_match_signs_a_c_a87bd1",
+    "task_id": "11_19",
+    "task_type": 11,
+    "subtype": "match_signs_a_c",
+    "category": "matching",
+    "subcategory": "coefficients",
+    "text": "На рисунках изображены графики квадратичных функций\ny = ax² + bx + c.\n\nУстанови соответствие между графиками и знаками коэффициентов a и c.\n\n1) a > 0, c > 0\n2) a < 0, c > 0\n3) a < 0, c < 0\n\nОтвет:  А ___   Б ___   В ___\n\n👉 В ответе укажи соответствующий номер\n(например: 3 2 1)",
+    "answer": [
+      "3",
+      "1",
+      "2"
+    ],
+    "func_data": [
+      {
+        "func": null,
+        "color": "orange",
+        "label": "y=-2x²-2x-3",
+        "graphs": [
+          "temp/task_11/parabola_A_962959.png"
+        ],
+        "_debug_coeffs": {
+          "a": -2,
+          "b": -2,
+          "c": -3
+        }
+      },
+      {
+        "func": null,
+        "color": "orange",
+        "label": "y=1x²+2x+1",
+        "graphs": [
+          "temp/task_11/parabola_Б_671c21.png"
+        ],
+        "_debug_coeffs": {
+          "a": 1,
+          "b": 2,
+          "c": 1
+        }
+      },
+      {
+        "func": null,
+        "color": "orange",
+        "label": "y=-2x²-3x+3",
+        "graphs": [
+          "temp/task_11/parabola_В_7282b6.png"
+        ],
+        "_debug_coeffs": {
+          "a": -2,
+          "b": -3,
+          "c": 3
+        }
+      }
+    ],
+    "x_lim": [
+      -5,
+      5
+    ],
+    "y_lim": [
+      -5,
+      5
+    ],
+    "source_plot": {
+      "plot_id": "match_signs_a_c",
+      "params": {
+        "labels": [
+          "A",
+          "Б",
+          "В"
+        ],
+        "graphs": [
+          "temp/task_11/parabola_A_962959.png",
+          "temp/task_11/parabola_Б_671c21.png",
+          "temp/task_11/parabola_В_7282b6.png"
+        ],
+        "options": {
+          "1": "a > 0, c > 0",
+          "2": "a < 0, c > 0",
+          "3": "a < 0, c < 0"
+        }
+      }
+    }
+  },
+  {
+    "id": "11_match_signs_a_c_158017",
+    "task_id": "11_57",
+    "task_type": 11,
+    "subtype": "match_signs_a_c",
+    "category": "matching",
+    "subcategory": "coefficients",
+    "text": "На рисунках изображены графики квадратичных функций\ny = ax² + bx + c.\n\nУстанови соответствие между графиками и знаками коэффициентов a и c.\n\n1) a > 0, c > 0\n2) a > 0, c < 0\n3) a < 0, c > 0\n\nОтвет:  А ___   Б ___   В ___\n\n👉 В ответе укажи соответствующий номер\n(например: 3 2 1)",
+    "answer": [
+      "3",
+      "2",
+      "1"
+    ],
+    "func_data": [
+      {
+        "func": null,
+        "color": "orange",
+        "label": "y=-2x²-1x+1",
+        "graphs": [
+          "temp/task_11/parabola_A_f2eb3b.png"
+        ],
+        "_debug_coeffs": {
+          "a": -2,
+          "b": -1,
+          "c": 1
+        }
+      },
+      {
+        "func": null,
+        "color": "orange",
+        "label": "y=2x²-3x-3",
+        "graphs": [
+          "temp/task_11/parabola_Б_8d586b.png"
+        ],
+        "_debug_coeffs": {
+          "a": 2,
+          "b": -3,
+          "c": -3
+        }
+      },
+      {
+        "func": null,
+        "color": "orange",
+        "label": "y=1x²-2x+2",
+        "graphs": [
+          "temp/task_11/parabola_В_988e42.png"
+        ],
+        "_debug_coeffs": {
+          "a": 1,
+          "b": -2,
+          "c": 2
+        }
+      }
+    ],
+    "x_lim": [
+      -5,
+      5
+    ],
+    "y_lim": [
+      -5,
+      5
+    ],
+    "source_plot": {
+      "plot_id": "match_signs_a_c",
+      "params": {
+        "labels": [
+          "A",
+          "Б",
+          "В"
+        ],
+        "graphs": [
+          "temp/task_11/parabola_A_f2eb3b.png",
+          "temp/task_11/parabola_Б_8d586b.png",
+          "temp/task_11/parabola_В_988e42.png"
+        ],
+        "options": {
+          "1": "a > 0, c > 0",
+          "2": "a > 0, c < 0",
+          "3": "a < 0, c > 0"
+        }
+      }
+    }
+  },
+  {
+    "id": "11_match_signs_a_c_13cccc",
+    "task_id": "11_71",
+    "task_type": 11,
+    "subtype": "match_signs_a_c",
+    "category": "matching",
+    "subcategory": "coefficients",
+    "text": "На рисунках изображены графики квадратичных функций\ny = ax² + bx + c.\n\nУстанови соответствие между графиками и знаками коэффициентов a и c.\n\n1) a > 0, c > 0\n2) a > 0, c < 0\n3) a < 0, c > 0\n\nОтвет:  А ___   Б ___   В ___\n\n👉 В ответе укажи соответствующий номер\n(например: 3 2 1)",
+    "answer": [
+      "2",
+      "1",
+      "3"
+    ],
+    "func_data": [
+      {
+        "func": null,
+        "color": "orange",
+        "label": "y=2x²+2x-1",
+        "graphs": [
+          "temp/task_11/parabola_A_aa3e5b.png"
+        ],
+        "_debug_coeffs": {
+          "a": 2,
+          "b": 2,
+          "c": -1
+        }
+      },
+      {
+        "func": null,
+        "color": "orange",
+        "label": "y=1x²-1x+1",
+        "graphs": [
+          "temp/task_11/parabola_Б_409cfe.png"
+        ],
+        "_debug_coeffs": {
+          "a": 1,
+          "b": -1,
+          "c": 1
+        }
+      },
+      {
+        "func": null,
+        "color": "orange",
+        "label": "y=-2x²+3x+1",
+        "graphs": [
+          "temp/task_11/parabola_В_180620.png"
+        ],
+        "_debug_coeffs": {
+          "a": -2,
+          "b": 3,
+          "c": 1
+        }
+      }
+    ],
+    "x_lim": [
+      -5,
+      5
+    ],
+    "y_lim": [
+      -5,
+      5
+    ],
+    "source_plot": {
+      "plot_id": "match_signs_a_c",
+      "params": {
+        "labels": [
+          "A",
+          "Б",
+          "В"
+        ],
+        "graphs": [
+          "temp/task_11/parabola_A_aa3e5b.png",
+          "temp/task_11/parabola_Б_409cfe.png",
+          "temp/task_11/parabola_В_180620.png"
+        ],
+        "options": {
+          "1": "a > 0, c > 0",
+          "2": "a > 0, c < 0",
+          "3": "a < 0, c > 0"
+        }
+      }
+    }
+  },
+  {
+    "id": "11_match_signs_a_c_a49c4a",
+    "task_id": "11_47",
+    "task_type": 11,
+    "subtype": "match_signs_a_c",
+    "category": "matching",
+    "subcategory": "coefficients",
+    "text": "На рисунках изображены графики квадратичных функций\ny = ax² + bx + c.\n\nУстанови соответствие между графиками и знаками коэффициентов a и c.\n\n1) a > 0, c > 0\n2) a > 0, c < 0\n3) a < 0, c < 0\n\nОтвет:  А ___   Б ___   В ___\n\n👉 В ответе укажи соответствующий номер\n(например: 3 2 1)",
+    "answer": [
+      "3",
+      "1",
+      "2"
+    ],
+    "func_data": [
+      {
+        "func": null,
+        "color": "orange",
+        "label": "y=-1x²-1x-1",
+        "graphs": [
+          "temp/task_11/parabola_A_71b16c.png"
+        ],
+        "_debug_coeffs": {
+          "a": -1,
+          "b": -1,
+          "c": -1
+        }
+      },
+      {
+        "func": null,
+        "color": "orange",
+        "label": "y=1x²+0x+2",
+        "graphs": [
+          "temp/task_11/parabola_Б_9f23b8.png"
+        ],
+        "_debug_coeffs": {
+          "a": 1,
+          "b": 0,
+          "c": 2
+        }
+      },
+      {
+        "func": null,
+        "color": "orange",
+        "label": "y=1x²+2x-2",
+        "graphs": [
+          "temp/task_11/parabola_В_912693.png"
+        ],
+        "_debug_coeffs": {
+          "a": 1,
+          "b": 2,
+          "c": -2
+        }
+      }
+    ],
+    "x_lim": [
+      -5,
+      5
+    ],
+    "y_lim": [
+      -5,
+      5
+    ],
+    "source_plot": {
+      "plot_id": "match_signs_a_c",
+      "params": {
+        "labels": [
+          "A",
+          "Б",
+          "В"
+        ],
+        "graphs": [
+          "temp/task_11/parabola_A_71b16c.png",
+          "temp/task_11/parabola_Б_9f23b8.png",
+          "temp/task_11/parabola_В_912693.png"
+        ],
+        "options": {
+          "1": "a > 0, c > 0",
+          "2": "a > 0, c < 0",
+          "3": "a < 0, c < 0"
+        }
+      }
+    }
+  }
+]
