@@ -162,7 +162,7 @@ git push origin main
 
 ```bash
 git add .
-git commit -m "feat: добавлен подтип задания 20"--no-verify
+git commit -m "feat: добавлен подтип задания 20" --no-verify — пробел перед --no-verify важен.
 git push origin feat/help-system-dev
 git checkout main
 git merge feat/help-system-dev
