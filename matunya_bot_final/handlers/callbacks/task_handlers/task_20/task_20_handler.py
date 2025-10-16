@@ -111,33 +111,28 @@ async def handle_task_20(
 @router.callback_query(TaskCallback.filter(F.action == "20_carousel_nav"))
 async def task_20_carousel_nav(
     query: CallbackQuery,
-    state: FSMContext,
     callback_data: TaskCallback,
     bot: Bot,
 ) -> None:
-    """Rotate carousel to a different theme."""
+    current_key = callback_data.subtype_key or THEMES[0]
+    overview_text = generate_task_20_overview_text(list(THEMES), current_key)
+    keyboard = get_task_20_carousel_keyboard(list(THEMES), current_key)
+
+    try:
+        await query.message.edit_text(
+            overview_text,
+            parse_mode="HTML",
+            reply_markup=keyboard,
+        )
+    except Exception:
+        await bot.send_message(
+            chat_id=query.message.chat.id,
+            text=overview_text,
+            parse_mode="HTML",
+            reply_markup=keyboard,
+        )
+
     await query.answer()
-
-    chat_id = query.message.chat.id
-    theme_key = callback_data.subtype_key or THEMES[0]
-    if theme_key not in THEMES:
-        theme_key = THEMES[0]
-
-    overview_text = generate_task_20_overview_text(list(THEMES), theme_key)
-    keyboard = get_task_20_carousel_keyboard(list(THEMES), theme_key)
-
-    await cleanup_messages_by_category(bot, state, chat_id, "menus")
-    await send_tracked_message(
-        bot=bot,
-        chat_id=chat_id,
-        state=state,
-        text=overview_text,
-        reply_markup=keyboard,
-        message_tag="task_20_carousel",
-        category="menus",
-        parse_mode="HTML",
-    )
-    await state.update_data(current_theme=theme_key)
 
 
 @router.callback_query(TaskCallback.filter(F.action == "20_select_theme"))

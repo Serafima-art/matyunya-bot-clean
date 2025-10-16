@@ -272,3 +272,273 @@ JSON
     "extraneous_roots": []
   }
 }
+
+
+СТАНДАРТ JSON: ЗАДАНИЕ 20, ПОДТИП rational_inequalities
+
+Статус: УТВЕРЖДЕНО (проект к утверждению)
+Дата: 16.10.2025
+
+1. Общая структура
+
+Каждый объект задачи для подтипа rational_inequalities должен содержать следующие ключи верхнего уровня:
+
+id, task_number, topic, subtype, question_text, answer, variables
+
+
+Назначение ключей:
+
+id — уникальный идентификатор задачи, формируется как 20_rational_inequalities_<short_uuid>;
+
+task_number — номер задания (всегда 20);
+
+topic — всегда "inequalities";
+
+subtype — всегда "rational_inequalities";
+
+question_text — формулировка задания в стиле ФИПИ/Ященко;
+
+answer — строка или список интервалов решения;
+
+variables — структурированные данные для “Решателя”, различающиеся по solution_pattern.
+
+2. Поле variables
+
+Это ключевое поле, содержащее всю необходимую информацию для “Решателя” и “Валидатора”.
+Его структура зависит от типа дробного неравенства, который указывается в solution_pattern.
+
+2.1. Паттерн compare_unit_fractions_linear
+
+📘 Сравнение дробей с линейными знаменателями.
+
+
+Структура variables:
+
+"variables": {
+  "solution_pattern": "compare_unit_fractions_linear",
+  "coefficients": {
+    "a": 5,
+    "sign": ">=",
+    "as_list": [1, 5]
+  },
+  "domain": {
+    "restrictions": ["x ≠ 0", "x ≠ 5"]
+  },
+  "critical_points": [0, 5],
+  "intervals": {
+    "negative": "(-∞;0)",
+    "solution": "(0;5)",
+    "positive": "(5;+∞)"
+  }
+}
+
+
+Эталонный пример:
+
+{
+  "id": "20_rational_inequalities_9c12f0",
+  "task_number": 20,
+  "topic": "inequalities",
+  "subtype": "rational_inequalities",
+  "question_text": "Решите неравенство: 1/x ≥ 1/(x−5).",
+  "answer": "(0;5)",
+  "variables": {
+    "solution_pattern": "compare_unit_fractions_linear",
+    "coefficients": {
+      "a": 5,
+      "sign": ">=",
+      "as_list": [1, 5]
+    },
+    "domain": {
+      "restrictions": ["x ≠ 0", "x ≠ 5"]
+    },
+    "critical_points": [0, 5],
+    "intervals": {
+      "negative": "(-∞;0)",
+      "solution": "(0;5)",
+      "positive": "(5;+∞)"
+    }
+  }
+}
+
+2.2. Паттерн const_over_quadratic_nonpos_nonneg
+
+📘 Дробь с квадратным знаменателем и постоянным числителем.
+
+Структура variables:
+
+"variables": {
+  "solution_pattern": "const_over_quadratic_nonpos_nonneg",
+  "coefficients": {
+    "b": 1,
+    "c": -12,
+    "C": -19,
+    "sign": "<=",
+    "as_list": [-19, 1, -12]
+  },
+  "domain": {
+    "restrictions": ["x ≠ -4", "x ≠ 3"]
+  },
+  "critical_points": [-4, 3],
+  "intervals": {
+    "solution": "(-∞;-4) ∪ (3;+∞)",
+    "excluded": "(-4;3)"
+  }
+}
+
+
+Эталонный пример:
+
+{
+  "id": "20_rational_inequalities_5a4f9b",
+  "task_number": 20,
+  "topic": "inequalities",
+  "subtype": "rational_inequalities",
+  "question_text": "Решите неравенство: −19/(x² + x − 12) ≤ 0.",
+  "answer": "(-∞;-4) ∪ (3;+∞)",
+  "variables": {
+    "solution_pattern": "const_over_quadratic_nonpos_nonneg",
+    "coefficients": {
+      "b": 1,
+      "c": -12,
+      "C": -19,
+      "sign": "<=",
+      "as_list": [-19, 1, -12]
+    },
+    "domain": {
+      "restrictions": ["x ≠ -4", "x ≠ 3"]
+    },
+    "critical_points": [-4, 3],
+    "intervals": {
+      "solution": "(-∞;-4) ∪ (3;+∞)",
+      "excluded": "(-4;3)"
+    }
+  }
+}
+
+2.3. Паттерн x_vs_const_over_x
+
+📘 Сравнение переменной и её обратной дроби.
+
+
+Структура variables:
+
+"variables": {
+  "solution_pattern": "x_vs_const_over_x",
+  "coefficients": {
+    "K": 25,
+    "sign": "<=",
+    "as_list": [25]
+  },
+  "domain": {
+    "restrictions": ["x ≠ 0"]
+  },
+  "critical_points": [-5, 0, 5],
+  "intervals": {
+    "solution": "(-∞;-5] ∪ [5;+∞)"
+  }
+}
+
+
+Эталонный пример:
+
+{
+  "id": "20_rational_inequalities_32de91",
+  "task_number": 20,
+  "topic": "inequalities",
+  "subtype": "rational_inequalities",
+  "question_text": "Решите неравенство: x ≤ 25/x.",
+  "answer": "(-∞;-5] ∪ [5;+∞)",
+  "variables": {
+    "solution_pattern": "x_vs_const_over_x",
+    "coefficients": {
+      "K": 25,
+      "sign": "<=",
+      "as_list": [25]
+    },
+    "domain": {
+      "restrictions": ["x ≠ 0"]
+    },
+    "critical_points": [-5, 0, 5],
+    "intervals": {
+      "solution": "(-∞;-5] ∪ [5;+∞)"
+    }
+  }
+}
+
+2.4. Паттерн neg_const_over_shifted_square_minus_const
+
+📘 Знаменатель как разность квадратов, отрицательный числитель.
+
+
+Структура variables:
+
+"variables": {
+  "solution_pattern": "neg_const_over_shifted_square_minus_const",
+  "coefficients": {
+    "a": 2,
+    "C": -11,
+    "d": 3,
+    "sign": ">=",
+    "as_list": [2, -11, 3]
+  },
+  "domain": {
+    "restrictions": ["x ≠ 2−√3", "x ≠ 2+√3"]
+  },
+  "critical_points": [2−1.732, 2+1.732],
+  "intervals": {
+    "solution": "(2−√3;2+√3)"
+  }
+}
+
+
+Эталонный пример:
+
+{
+  "id": "20_rational_inequalities_c5a8d3",
+  "task_number": 20,
+  "topic": "inequalities",
+  "subtype": "rational_inequalities",
+  "question_text": "Решите неравенство: −11/((x−2)²−3) ≥ 0.",
+  "answer": "(2−√3;2+√3)",
+  "variables": {
+    "solution_pattern": "neg_const_over_shifted_square_minus_const",
+    "coefficients": {
+      "a": 2,
+      "C": -11,
+      "d": 3,
+      "sign": ">=",
+      "as_list": [2, -11, 3]
+    },
+    "domain": {
+      "restrictions": ["x ≠ 2−√3", "x ≠ 2+√3"]
+    },
+    "critical_points": [0.268, 3.732],
+    "intervals": {
+      "solution": "(2−√3;2+√3)"
+    }
+  }
+}
+
+3. Общие требования
+
+Все неравенства должны иметь одно логическое сравнение (≥, ≤, >, <).
+
+Все ограничения ОДЗ должны быть перечислены в domain.restrictions.
+
+Формулы записываются в человеко-понятной форме, без **, sqrt() и ^.
+
+Все интервалы решений должны следовать математической нотации ОГЭ ((-∞;a) ∪ (b;+∞) и т.д.).
+
+Числовые параметры и корни — в десятичной или символической форме (√3 допустимо).
+
+Числа в critical_points — в порядке возрастания.
+
+Все корни из critical_points должны присутствовать в domain.restrictions, если это точки разрыва.
+
+4. Контрольные примеры (для тестов)
+№	Паттерн	Пример задания	Ответ
+1	compare_unit_fractions_linear	1/x ≥ 1/(x−5)	(0;5)
+2	const_over_quadratic_nonpos_nonneg	−19/(x²+x−12) ≤ 0	(−∞;−4) ∪ (3;+∞)
+3	x_vs_const_over_x	x ≤ 25/x	(−∞;−5] ∪ [5;+∞)
+4	neg_const_over_shifted_square_minus_const	−11/((x−2)²−3) ≥ 0	(2−√3;2+√3)
