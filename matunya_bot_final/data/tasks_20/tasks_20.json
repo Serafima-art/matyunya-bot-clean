@@ -1,3357 +1,3550 @@
 [
   {
-    "id": "20_polynomial_factorization_0a7e58",
+    "id": "20_rational_inequalities_346676",
     "task_number": 20,
-    "topic": "algebraic_expressions",
-    "subtype": "polynomial_factorization",
-    "question_text": "Реши уравнение:\n3x³ + 12x² - 108x - 432 = 0",
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\nx ≤ 16/x",
     "answer": [
-      "-6",
-      "-4",
-      "6"
+      "(−∞; −4] ∪ (0; 4]"
     ],
     "variables": {
-      "solution_pattern": "grouping",
+      "solution_pattern": "x_vs_const_over_x",
       "coefficients": {
-        "a": 3,
-        "b": 12,
-        "c": -108,
-        "d": -432,
-        "as_list": [
-          -432,
-          -108,
-          12,
-          3
-        ]
+        "K": 16,
+        "m": 4,
+        "sign": "≤"
       },
-      "roots": [
-        -6,
-        -4,
-        6
+      "initial_expression": "x ≤ 16/x",
+      "transformed_expression": "(x^2−16)/x ≤ 0",
+      "numerator_zeros": [
+        "−4",
+        "4"
       ],
-      "grouping": {
-        "group1_multiplier": "x^2",
-        "group2_multiplier": -36,
-        "common_factor": {
-          "coeffs": [
-            12,
-            3
-          ],
-          "text": "3x + 12"
-        }
-      }
-    }
-  },
-  {
-    "id": "20_polynomial_factorization_186c24",
-    "task_number": 20,
-    "topic": "algebraic_expressions",
-    "subtype": "polynomial_factorization",
-    "question_text": "Реши уравнение:\nx³ + 2x² - x - 2 = 0",
-    "answer": [
-      "-2",
-      "-1",
-      "1"
-    ],
-    "variables": {
-      "solution_pattern": "grouping",
-      "coefficients": {
-        "a": 1,
-        "b": 2,
-        "c": -1,
-        "d": -2,
-        "as_list": [
-          -2,
-          -1,
-          2,
-          1
-        ]
-      },
-      "roots": [
-        -2,
-        -1,
-        1
+      "denominator_zeros": [
+        "0"
       ],
-      "grouping": {
-        "group1_multiplier": "x^2",
-        "group2_multiplier": -1,
-        "common_factor": {
-          "coeffs": [
-            2,
-            1
-          ],
-          "text": "x + 2"
-        }
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "−4",
+            "value_num": -4.0,
+            "type": "solid"
+          },
+          {
+            "value_text": "0",
+            "value_num": 0.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "4",
+            "value_num": 4.0,
+            "type": "solid"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "−4",
+              "right_num": -4.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "−4",
+              "left_num": -4.0,
+              "right_text": "0",
+              "right_num": 0.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "0",
+              "left_num": 0.0,
+              "right_text": "4",
+              "right_num": 4.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "4",
+              "left_num": 4.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "+"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "−∞",
+            "left_num": -1000000000.0,
+            "right_text": "−4",
+            "right_num": -4.0,
+            "include_left": false,
+            "include_right": true
+          },
+          {
+            "left_text": "0",
+            "left_num": 0.0,
+            "right_text": "4",
+            "right_num": 4.0,
+            "include_left": false,
+            "include_right": true
+          }
+        ]
       }
     }
   },
   {
-    "id": "20_polynomial_factorization_2052fb",
+    "id": "20_rational_inequalities_22c6e3",
     "task_number": 20,
-    "topic": "algebraic_expressions",
-    "subtype": "polynomial_factorization",
-    "question_text": "Реши уравнение:\n3x³ - 15x² - 12x + 60 = 0",
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n-19/(x² - 2x - 48) ≤ 0",
     "answer": [
-      "-2",
-      "2",
-      "5"
+      "(−∞; -6) ∪ (8; +∞)"
     ],
     "variables": {
-      "solution_pattern": "grouping",
+      "solution_pattern": "const_over_quadratic_nonpos_nonneg",
       "coefficients": {
-        "a": 3,
-        "b": -15,
-        "c": -12,
-        "d": 60,
-        "as_list": [
-          60,
-          -12,
-          -15,
-          3
-        ]
-      },
-      "roots": [
-        -2,
-        2,
-        5
-      ],
-      "grouping": {
-        "group1_multiplier": "x^2",
-        "group2_multiplier": -4,
-        "common_factor": {
-          "coeffs": [
-            -15,
-            3
-          ],
-          "text": "3x - 15"
-        }
-      }
-    }
-  },
-  {
-    "id": "20_polynomial_factorization_5293b0",
-    "task_number": 20,
-    "topic": "algebraic_expressions",
-    "subtype": "polynomial_factorization",
-    "question_text": "Реши уравнение:\n(-3x - 1)(x² - 7x + 6) = 5x² - 35x + 30",
-    "answer": [
-      "-2",
-      "1",
-      "6"
-    ],
-    "variables": {
-      "solution_pattern": "common_poly",
-      "linear_factor": {
-        "a": -3,
-        "b": -1,
-        "text": "-3x - 1",
-        "root": -2
-      },
-      "common_factor": {
-        "coeffs": [
-          6,
-          -7,
-          1
-        ],
-        "text": "x^2 - 7x + 6",
+        "b": -2,
+        "c": -48,
+        "C": -19,
         "roots": [
-          1,
-          6
-        ]
-      },
-      "rhs": {
-        "multiplier": 5,
-        "coeffs": [
-          30,
-          -35,
-          5
-        ],
-        "text": "5x^2 - 35x + 30"
-      }
-    }
-  },
-  {
-    "id": "20_polynomial_factorization_5940ec",
-    "task_number": 20,
-    "topic": "algebraic_expressions",
-    "subtype": "polynomial_factorization",
-    "question_text": "Реши уравнение:\n(2x + 2)(x² + 2x - 15) = 4x² + 8x - 60",
-    "answer": [
-      "-5",
-      "1",
-      "3"
-    ],
-    "variables": {
-      "solution_pattern": "common_poly",
-      "linear_factor": {
-        "a": 2,
-        "b": 2,
-        "text": "2x + 2",
-        "root": 1
-      },
-      "common_factor": {
-        "coeffs": [
-          -15,
-          2,
-          1
-        ],
-        "text": "x^2 + 2x - 15",
-        "roots": [
-          -5,
-          3
-        ]
-      },
-      "rhs": {
-        "multiplier": 4,
-        "coeffs": [
-          -60,
-          8,
-          4
-        ],
-        "text": "4x^2 + 8x - 60"
-      }
-    }
-  },
-  {
-    "id": "20_polynomial_factorization_6aa3d6",
-    "task_number": 20,
-    "topic": "algebraic_expressions",
-    "subtype": "polynomial_factorization",
-    "question_text": "Реши уравнение:\n(4x - 5)(x² - 5x + 4) = 3x² - 15x + 12",
-    "answer": [
-      "1",
-      "2",
-      "4"
-    ],
-    "variables": {
-      "solution_pattern": "common_poly",
-      "linear_factor": {
-        "a": 4,
-        "b": -5,
-        "text": "4x - 5",
-        "root": 2
-      },
-      "common_factor": {
-        "coeffs": [
-          4,
-          -5,
-          1
-        ],
-        "text": "x^2 - 5x + 4",
-        "roots": [
-          1,
-          4
-        ]
-      },
-      "rhs": {
-        "multiplier": 3,
-        "coeffs": [
-          12,
-          -15,
-          3
-        ],
-        "text": "3x^2 - 15x + 12"
-      }
-    }
-  },
-  {
-    "id": "20_polynomial_factorization_6f2cca",
-    "task_number": 20,
-    "topic": "algebraic_expressions",
-    "subtype": "polynomial_factorization",
-    "question_text": "Реши уравнение:\nx³ - 6x² - 9x + 54 = 0",
-    "answer": [
-      "-3",
-      "3",
-      "6"
-    ],
-    "variables": {
-      "solution_pattern": "grouping",
-      "coefficients": {
-        "a": 1,
-        "b": -6,
-        "c": -9,
-        "d": 54,
-        "as_list": [
-          54,
-          -9,
           -6,
-          1
-        ]
+          8
+        ],
+        "sign": "≤"
       },
-      "roots": [
-        -3,
-        3,
-        6
+      "initial_expression": "-19/(x² - 2x - 48) ≤ 0",
+      "transformed_expression": "-19/(x^2 - 2x - 48) ≤ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "-6",
+        "8"
       ],
-      "grouping": {
-        "group1_multiplier": "x^2",
-        "group2_multiplier": -9,
-        "common_factor": {
-          "coeffs": [
-            -6,
-            1
-          ],
-          "text": "x - 6"
-        }
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "-6",
+            "value_num": -6.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "8",
+            "value_num": 8.0,
+            "type": "hollow"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "-6",
+              "right_num": -6.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "-6",
+              "left_num": -6.0,
+              "right_text": "8",
+              "right_num": 8.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "8",
+              "left_num": 8.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "-"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "−∞",
+            "left_num": -1000000000.0,
+            "right_text": "-6",
+            "right_num": -6.0,
+            "include_left": false,
+            "include_right": false
+          },
+          {
+            "left_text": "8",
+            "left_num": 8.0,
+            "right_text": "+∞",
+            "right_num": 1000000000.0,
+            "include_left": false,
+            "include_right": false
+          }
+        ]
       }
     }
   },
   {
-    "id": "20_polynomial_factorization_706b5d",
+    "id": "20_rational_inequalities_c7c2ae",
     "task_number": 20,
-    "topic": "algebraic_expressions",
-    "subtype": "polynomial_factorization",
-    "question_text": "Реши уравнение:\n(x² - 5x - 1)² = (4x - 19)²",
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n1/x ≤ 1/(x−6)",
     "answer": [
-      "-4",
-      "3",
-      "5",
-      "6"
+      "(0; 6)"
     ],
     "variables": {
-      "solution_pattern": "diff_squares",
-      "factored_form": {
-        "poly_minus": {
-          "coeffs": [
-            18,
-            -9,
-            1
-          ],
-          "text": "x^2 - 9x + 18",
-          "roots": [
-            3,
-            6
-          ]
-        },
-        "poly_plus": {
-          "coeffs": [
-            -20,
-            -1,
-            1
-          ],
-          "text": "x^2 - x - 20",
-          "roots": [
-            -4,
-            5
-          ]
-        }
+      "solution_pattern": "compare_unit_fractions_linear",
+      "coefficients": {
+        "a": 6,
+        "sign": "≤"
       },
-      "difference_of_squares": {
-        "A": {
-          "coeffs": [
-            -1,
-            -5,
-            1
-          ],
-          "text": "x^2 - 5x - 1"
-        },
-        "B": {
-          "coeffs": [
-            -19,
-            4
-          ],
-          "text": "4x - 19"
-        }
+      "initial_expression": "1/x ≤ 1/(x−6)",
+      "transformed_expression": "6/(x(x−6)) ≤ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "0",
+        "6"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "0",
+            "value_num": 0.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "6",
+            "value_num": 6.0,
+            "type": "hollow"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "0",
+              "right_num": 0.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "0",
+              "left_num": 0.0,
+              "right_text": "6",
+              "right_num": 6.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "6",
+              "left_num": 6.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "+"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "0",
+            "left_num": 0.0,
+            "right_text": "6",
+            "right_num": 6.0,
+            "include_left": false,
+            "include_right": false
+          }
+        ]
       }
     }
   },
   {
-    "id": "20_polynomial_factorization_770da1",
+    "id": "20_rational_inequalities_bc90f6",
     "task_number": 20,
-    "topic": "algebraic_expressions",
-    "subtype": "polynomial_factorization",
-    "question_text": "Реши уравнение:\n(4x - 3)(x² - 5x - 6) = 5x² - 25x - 30",
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n-19/(x² + 2x - 15) ≤ 0",
     "answer": [
-      "-1",
-      "2",
-      "6"
+      "(−∞; -5) ∪ (3; +∞)"
     ],
     "variables": {
-      "solution_pattern": "common_poly",
-      "linear_factor": {
-        "a": 4,
+      "solution_pattern": "const_over_quadratic_nonpos_nonneg",
+      "coefficients": {
+        "b": 2,
+        "c": -15,
+        "C": -19,
+        "roots": [
+          -5,
+          3
+        ],
+        "sign": "≤"
+      },
+      "initial_expression": "-19/(x² + 2x - 15) ≤ 0",
+      "transformed_expression": "-19/(x^2 + 2x - 15) ≤ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "-5",
+        "3"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "-5",
+            "value_num": -5.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "3",
+            "value_num": 3.0,
+            "type": "hollow"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "-5",
+              "right_num": -5.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "-5",
+              "left_num": -5.0,
+              "right_text": "3",
+              "right_num": 3.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "3",
+              "left_num": 3.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "-"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "−∞",
+            "left_num": -1000000000.0,
+            "right_text": "-5",
+            "right_num": -5.0,
+            "include_left": false,
+            "include_right": false
+          },
+          {
+            "left_text": "3",
+            "left_num": 3.0,
+            "right_text": "+∞",
+            "right_num": 1000000000.0,
+            "include_left": false,
+            "include_right": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "20_rational_inequalities_a4a48a",
+    "task_number": 20,
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n-19/(x² - 3x - 18) ≥ 0",
+    "answer": [
+      "(-3; 6)"
+    ],
+    "variables": {
+      "solution_pattern": "const_over_quadratic_nonpos_nonneg",
+      "coefficients": {
         "b": -3,
-        "text": "4x - 3",
-        "root": 2
-      },
-      "common_factor": {
-        "coeffs": [
-          -6,
-          -5,
-          1
-        ],
-        "text": "x^2 - 5x - 6",
-        "roots": [
-          -1,
-          6
-        ]
-      },
-      "rhs": {
-        "multiplier": 5,
-        "coeffs": [
-          -30,
-          -25,
-          5
-        ],
-        "text": "5x^2 - 25x - 30"
-      }
-    }
-  },
-  {
-    "id": "20_polynomial_factorization_88b0e9",
-    "task_number": 20,
-    "topic": "algebraic_expressions",
-    "subtype": "polynomial_factorization",
-    "question_text": "Реши уравнение:\n(x² - 4x + 4)² = (2x - 4)²",
-    "answer": [
-      "0",
-      "2",
-      "4"
-    ],
-    "variables": {
-      "solution_pattern": "diff_squares",
-      "factored_form": {
-        "poly_minus": {
-          "coeffs": [
-            8,
-            -6,
-            1
-          ],
-          "text": "x^2 - 6x + 8",
-          "roots": [
-            2,
-            4
-          ]
-        },
-        "poly_plus": {
-          "coeffs": [
-            0,
-            -2,
-            1
-          ],
-          "text": "x^2 - 2x",
-          "roots": [
-            0,
-            2
-          ]
-        }
-      },
-      "difference_of_squares": {
-        "A": {
-          "coeffs": [
-            4,
-            -4,
-            1
-          ],
-          "text": "x^2 - 4x + 4"
-        },
-        "B": {
-          "coeffs": [
-            -4,
-            2
-          ],
-          "text": "2x - 4"
-        }
-      }
-    }
-  },
-  {
-    "id": "20_polynomial_factorization_af4342",
-    "task_number": 20,
-    "topic": "algebraic_expressions",
-    "subtype": "polynomial_factorization",
-    "question_text": "Реши уравнение:\n(x² + 3x - 2)² = (2)²",
-    "answer": [
-      "-4",
-      "-3",
-      "0",
-      "1"
-    ],
-    "variables": {
-      "solution_pattern": "diff_squares",
-      "factored_form": {
-        "poly_minus": {
-          "coeffs": [
-            -4,
-            3,
-            1
-          ],
-          "text": "x^2 + 3x - 4",
-          "roots": [
-            -4,
-            1
-          ]
-        },
-        "poly_plus": {
-          "coeffs": [
-            0,
-            3,
-            1
-          ],
-          "text": "x^2 + 3x",
-          "roots": [
-            -3,
-            0
-          ]
-        }
-      },
-      "difference_of_squares": {
-        "A": {
-          "coeffs": [
-            -2,
-            3,
-            1
-          ],
-          "text": "x^2 + 3x - 2"
-        },
-        "B": {
-          "coeffs": [
-            2,
-            0
-          ],
-          "text": "2"
-        }
-      }
-    }
-  },
-  {
-    "id": "20_polynomial_factorization_b19229",
-    "task_number": 20,
-    "topic": "algebraic_expressions",
-    "subtype": "polynomial_factorization",
-    "question_text": "Реши уравнение:\n(4x + 8)(x² - 5x + 4) = 16x² - 80x + 64",
-    "answer": [
-      "1",
-      "2",
-      "4"
-    ],
-    "variables": {
-      "solution_pattern": "common_poly",
-      "linear_factor": {
-        "a": 4,
-        "b": 8,
-        "text": "4x + 8",
-        "root": 2
-      },
-      "common_factor": {
-        "coeffs": [
-          4,
-          -5,
-          1
-        ],
-        "text": "x^2 - 5x + 4",
-        "roots": [
-          1,
-          4
-        ]
-      },
-      "rhs": {
-        "multiplier": 16,
-        "coeffs": [
-          64,
-          -80,
-          16
-        ],
-        "text": "16x^2 - 80x + 64"
-      }
-    }
-  },
-  {
-    "id": "20_polynomial_factorization_b7508a",
-    "task_number": 20,
-    "topic": "algebraic_expressions",
-    "subtype": "polynomial_factorization",
-    "question_text": "Реши уравнение:\nx³ + 4x² - 9x - 36 = 0",
-    "answer": [
-      "-4",
-      "-3",
-      "3"
-    ],
-    "variables": {
-      "solution_pattern": "grouping",
-      "coefficients": {
-        "a": 1,
-        "b": 4,
-        "c": -9,
-        "d": -36,
-        "as_list": [
-          -36,
-          -9,
-          4,
-          1
-        ]
-      },
-      "roots": [
-        -4,
-        -3,
-        3
-      ],
-      "grouping": {
-        "group1_multiplier": "x^2",
-        "group2_multiplier": -9,
-        "common_factor": {
-          "coeffs": [
-            4,
-            1
-          ],
-          "text": "x + 4"
-        }
-      }
-    }
-  },
-  {
-    "id": "20_polynomial_factorization_b882c3",
-    "task_number": 20,
-    "topic": "algebraic_expressions",
-    "subtype": "polynomial_factorization",
-    "question_text": "Реши уравнение:\n(x² - 2x - 4)² = (5x - 14)²",
-    "answer": [
-      "-6",
-      "2",
-      "3",
-      "5"
-    ],
-    "variables": {
-      "solution_pattern": "diff_squares",
-      "factored_form": {
-        "poly_minus": {
-          "coeffs": [
-            10,
-            -7,
-            1
-          ],
-          "text": "x^2 - 7x + 10",
-          "roots": [
-            2,
-            5
-          ]
-        },
-        "poly_plus": {
-          "coeffs": [
-            -18,
-            3,
-            1
-          ],
-          "text": "x^2 + 3x - 18",
-          "roots": [
-            -6,
-            3
-          ]
-        }
-      },
-      "difference_of_squares": {
-        "A": {
-          "coeffs": [
-            -4,
-            -2,
-            1
-          ],
-          "text": "x^2 - 2x - 4"
-        },
-        "B": {
-          "coeffs": [
-            -14,
-            5
-          ],
-          "text": "5x - 14"
-        }
-      }
-    }
-  },
-  {
-    "id": "20_polynomial_factorization_c1ad05",
-    "task_number": 20,
-    "topic": "algebraic_expressions",
-    "subtype": "polynomial_factorization",
-    "question_text": "Реши уравнение:\n(2x - 7)(x² - 4) = -5x² + 20",
-    "answer": [
-      "-2",
-      "1",
-      "2"
-    ],
-    "variables": {
-      "solution_pattern": "common_poly",
-      "linear_factor": {
-        "a": 2,
-        "b": -7,
-        "text": "2x - 7",
-        "root": 1
-      },
-      "common_factor": {
-        "coeffs": [
-          -4,
-          0,
-          1
-        ],
-        "text": "x^2 - 4",
-        "roots": [
-          -2,
-          2
-        ]
-      },
-      "rhs": {
-        "multiplier": -5,
-        "coeffs": [
-          20,
-          0,
-          -5
-        ],
-        "text": "-5x^2 + 20"
-      }
-    }
-  },
-  {
-    "id": "20_polynomial_factorization_ca9bb0",
-    "task_number": 20,
-    "topic": "algebraic_expressions",
-    "subtype": "polynomial_factorization",
-    "question_text": "Реши уравнение:\n(x² - x + 9)² = (6x - 3)²",
-    "answer": [
-      "-3",
-      "-2",
-      "3",
-      "4"
-    ],
-    "variables": {
-      "solution_pattern": "diff_squares",
-      "factored_form": {
-        "poly_minus": {
-          "coeffs": [
-            12,
-            -7,
-            1
-          ],
-          "text": "x^2 - 7x + 12",
-          "roots": [
-            3,
-            4
-          ]
-        },
-        "poly_plus": {
-          "coeffs": [
-            6,
-            5,
-            1
-          ],
-          "text": "x^2 + 5x + 6",
-          "roots": [
-            -3,
-            -2
-          ]
-        }
-      },
-      "difference_of_squares": {
-        "A": {
-          "coeffs": [
-            9,
-            -1,
-            1
-          ],
-          "text": "x^2 - x + 9"
-        },
-        "B": {
-          "coeffs": [
-            -3,
-            6
-          ],
-          "text": "6x - 3"
-        }
-      }
-    }
-  },
-  {
-    "id": "20_polynomial_factorization_dabbdf",
-    "task_number": 20,
-    "topic": "algebraic_expressions",
-    "subtype": "polynomial_factorization",
-    "question_text": "Реши уравнение:\n(-2x)(x² + 4x + 3) = 4x² + 16x + 12",
-    "answer": [
-      "-3",
-      "-2",
-      "-1"
-    ],
-    "variables": {
-      "solution_pattern": "common_poly",
-      "linear_factor": {
-        "a": -2,
-        "b": 0,
-        "text": "-2x",
-        "root": -2
-      },
-      "common_factor": {
-        "coeffs": [
-          3,
-          4,
-          1
-        ],
-        "text": "x^2 + 4x + 3",
+        "c": -18,
+        "C": -19,
         "roots": [
           -3,
-          -1
-        ]
-      },
-      "rhs": {
-        "multiplier": 4,
-        "coeffs": [
-          12,
-          16,
-          4
+          6
         ],
-        "text": "4x^2 + 16x + 12"
+        "sign": "≥"
+      },
+      "initial_expression": "-19/(x² - 3x - 18) ≥ 0",
+      "transformed_expression": "-19/(x^2 - 3x - 18) ≥ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "-3",
+        "6"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "-3",
+            "value_num": -3.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "6",
+            "value_num": 6.0,
+            "type": "hollow"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "-3",
+              "right_num": -3.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "-3",
+              "left_num": -3.0,
+              "right_text": "6",
+              "right_num": 6.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "6",
+              "left_num": 6.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "-"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "-3",
+            "left_num": -3.0,
+            "right_text": "6",
+            "right_num": 6.0,
+            "include_left": false,
+            "include_right": false
+          }
+        ]
       }
     }
   },
   {
-    "id": "20_polynomial_factorization_e3fd0f",
+    "id": "20_rational_inequalities_2acbd1",
     "task_number": 20,
-    "topic": "algebraic_expressions",
-    "subtype": "polynomial_factorization",
-    "question_text": "Реши уравнение:\nx³ - 5x² - 9x + 45 = 0",
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n-19/(x² - 10x + 16) ≤ 0",
     "answer": [
-      "-3",
-      "3",
-      "5"
+      "(−∞; 2) ∪ (8; +∞)"
     ],
     "variables": {
-      "solution_pattern": "grouping",
+      "solution_pattern": "const_over_quadratic_nonpos_nonneg",
       "coefficients": {
-        "a": 1,
+        "b": -10,
+        "c": 16,
+        "C": -19,
+        "roots": [
+          2,
+          8
+        ],
+        "sign": "≤"
+      },
+      "initial_expression": "-19/(x² - 10x + 16) ≤ 0",
+      "transformed_expression": "-19/(x^2 - 10x + 16) ≤ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "2",
+        "8"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "2",
+            "value_num": 2.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "8",
+            "value_num": 8.0,
+            "type": "hollow"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "2",
+              "right_num": 2.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "2",
+              "left_num": 2.0,
+              "right_text": "8",
+              "right_num": 8.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "8",
+              "left_num": 8.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "-"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "−∞",
+            "left_num": -1000000000.0,
+            "right_text": "2",
+            "right_num": 2.0,
+            "include_left": false,
+            "include_right": false
+          },
+          {
+            "left_text": "8",
+            "left_num": 8.0,
+            "right_text": "+∞",
+            "right_num": 1000000000.0,
+            "include_left": false,
+            "include_right": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "20_rational_inequalities_10b72f",
+    "task_number": 20,
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\nx ≥ 9/x",
+    "answer": [
+      "[−3; 0) ∪ [3; +∞)"
+    ],
+    "variables": {
+      "solution_pattern": "x_vs_const_over_x",
+      "coefficients": {
+        "K": 9,
+        "m": 3,
+        "sign": "≥"
+      },
+      "initial_expression": "x ≥ 9/x",
+      "transformed_expression": "(x^2−9)/x ≥ 0",
+      "numerator_zeros": [
+        "−3",
+        "3"
+      ],
+      "denominator_zeros": [
+        "0"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "−3",
+            "value_num": -3.0,
+            "type": "solid"
+          },
+          {
+            "value_text": "0",
+            "value_num": 0.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "3",
+            "value_num": 3.0,
+            "type": "solid"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "−3",
+              "right_num": -3.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "−3",
+              "left_num": -3.0,
+              "right_text": "0",
+              "right_num": 0.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "0",
+              "left_num": 0.0,
+              "right_text": "3",
+              "right_num": 3.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "3",
+              "left_num": 3.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "+"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "−3",
+            "left_num": -3.0,
+            "right_text": "0",
+            "right_num": 0.0,
+            "include_left": true,
+            "include_right": false
+          },
+          {
+            "left_text": "3",
+            "left_num": 3.0,
+            "right_text": "+∞",
+            "right_num": 1000000000.0,
+            "include_left": true,
+            "include_right": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "20_rational_inequalities_ec9007",
+    "task_number": 20,
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\nx ≤ 4/x",
+    "answer": [
+      "(−∞; −2] ∪ (0; 2]"
+    ],
+    "variables": {
+      "solution_pattern": "x_vs_const_over_x",
+      "coefficients": {
+        "K": 4,
+        "m": 2,
+        "sign": "≤"
+      },
+      "initial_expression": "x ≤ 4/x",
+      "transformed_expression": "(x^2−4)/x ≤ 0",
+      "numerator_zeros": [
+        "−2",
+        "2"
+      ],
+      "denominator_zeros": [
+        "0"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "−2",
+            "value_num": -2.0,
+            "type": "solid"
+          },
+          {
+            "value_text": "0",
+            "value_num": 0.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "2",
+            "value_num": 2.0,
+            "type": "solid"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "−2",
+              "right_num": -2.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "−2",
+              "left_num": -2.0,
+              "right_text": "0",
+              "right_num": 0.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "0",
+              "left_num": 0.0,
+              "right_text": "2",
+              "right_num": 2.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "2",
+              "left_num": 2.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "+"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "−∞",
+            "left_num": -1000000000.0,
+            "right_text": "−2",
+            "right_num": -2.0,
+            "include_left": false,
+            "include_right": true
+          },
+          {
+            "left_text": "0",
+            "left_num": 0.0,
+            "right_text": "2",
+            "right_num": 2.0,
+            "include_left": false,
+            "include_right": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "20_rational_inequalities_adc5aa",
+    "task_number": 20,
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n-19/(x² - 5x + 6) ≥ 0",
+    "answer": [
+      "(2; 3)"
+    ],
+    "variables": {
+      "solution_pattern": "const_over_quadratic_nonpos_nonneg",
+      "coefficients": {
         "b": -5,
-        "c": -9,
-        "d": 45,
-        "as_list": [
-          45,
-          -9,
-          -5,
-          1
-        ]
+        "c": 6,
+        "C": -19,
+        "roots": [
+          2,
+          3
+        ],
+        "sign": "≥"
       },
-      "roots": [
-        -3,
-        3,
-        5
+      "initial_expression": "-19/(x² - 5x + 6) ≥ 0",
+      "transformed_expression": "-19/(x^2 - 5x + 6) ≥ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "2",
+        "3"
       ],
-      "grouping": {
-        "group1_multiplier": "x^2",
-        "group2_multiplier": -9,
-        "common_factor": {
-          "coeffs": [
-            -5,
-            1
-          ],
-          "text": "x - 5"
-        }
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "2",
+            "value_num": 2.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "3",
+            "value_num": 3.0,
+            "type": "hollow"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "2",
+              "right_num": 2.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "2",
+              "left_num": 2.0,
+              "right_text": "3",
+              "right_num": 3.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "3",
+              "left_num": 3.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "-"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "2",
+            "left_num": 2.0,
+            "right_text": "3",
+            "right_num": 3.0,
+            "include_left": false,
+            "include_right": false
+          }
+        ]
       }
     }
   },
   {
-    "id": "20_polynomial_factorization_e420cb",
+    "id": "20_rational_inequalities_8ba3c2",
     "task_number": 20,
-    "topic": "algebraic_expressions",
-    "subtype": "polynomial_factorization",
-    "question_text": "Реши уравнение:\n(-4x + 5)(x² - 4x - 12) = -3x² + 12x + 36",
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n1/x ≤ 1/(x−3)",
     "answer": [
-      "-2",
-      "2",
-      "6"
+      "(0; 3)"
     ],
     "variables": {
-      "solution_pattern": "common_poly",
-      "linear_factor": {
-        "a": -4,
+      "solution_pattern": "compare_unit_fractions_linear",
+      "coefficients": {
+        "a": 3,
+        "sign": "≤"
+      },
+      "initial_expression": "1/x ≤ 1/(x−3)",
+      "transformed_expression": "3/(x(x−3)) ≤ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "0",
+        "3"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "0",
+            "value_num": 0.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "3",
+            "value_num": 3.0,
+            "type": "hollow"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "0",
+              "right_num": 0.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "0",
+              "left_num": 0.0,
+              "right_text": "3",
+              "right_num": 3.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "3",
+              "left_num": 3.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "+"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "0",
+            "left_num": 0.0,
+            "right_text": "3",
+            "right_num": 3.0,
+            "include_left": false,
+            "include_right": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "20_rational_inequalities_61d109",
+    "task_number": 20,
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\nx ≥ 64/x",
+    "answer": [
+      "[−8; 0) ∪ [8; +∞)"
+    ],
+    "variables": {
+      "solution_pattern": "x_vs_const_over_x",
+      "coefficients": {
+        "K": 64,
+        "m": 8,
+        "sign": "≥"
+      },
+      "initial_expression": "x ≥ 64/x",
+      "transformed_expression": "(x^2−64)/x ≥ 0",
+      "numerator_zeros": [
+        "−8",
+        "8"
+      ],
+      "denominator_zeros": [
+        "0"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "−8",
+            "value_num": -8.0,
+            "type": "solid"
+          },
+          {
+            "value_text": "0",
+            "value_num": 0.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "8",
+            "value_num": 8.0,
+            "type": "solid"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "−8",
+              "right_num": -8.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "−8",
+              "left_num": -8.0,
+              "right_text": "0",
+              "right_num": 0.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "0",
+              "left_num": 0.0,
+              "right_text": "8",
+              "right_num": 8.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "8",
+              "left_num": 8.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "+"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "−8",
+            "left_num": -8.0,
+            "right_text": "0",
+            "right_num": 0.0,
+            "include_left": true,
+            "include_right": false
+          },
+          {
+            "left_text": "8",
+            "left_num": 8.0,
+            "right_text": "+∞",
+            "right_num": 1000000000.0,
+            "include_left": true,
+            "include_right": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "20_rational_inequalities_f677a3",
+    "task_number": 20,
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n1/x ≥ 1/(x−9)",
+    "answer": [
+      "(−∞; 0) ∪ (9; +∞)"
+    ],
+    "variables": {
+      "solution_pattern": "compare_unit_fractions_linear",
+      "coefficients": {
+        "a": 9,
+        "sign": "≥"
+      },
+      "initial_expression": "1/x ≥ 1/(x−9)",
+      "transformed_expression": "9/(x(x−9)) ≥ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "0",
+        "9"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "0",
+            "value_num": 0.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "9",
+            "value_num": 9.0,
+            "type": "hollow"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "0",
+              "right_num": 0.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "0",
+              "left_num": 0.0,
+              "right_text": "9",
+              "right_num": 9.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "9",
+              "left_num": 9.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "+"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "−∞",
+            "left_num": -1000000000.0,
+            "right_text": "0",
+            "right_num": 0.0,
+            "include_left": false,
+            "include_right": false
+          },
+          {
+            "left_text": "9",
+            "left_num": 9.0,
+            "right_text": "+∞",
+            "right_num": 1000000000.0,
+            "include_left": false,
+            "include_right": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "20_rational_inequalities_5ba3db",
+    "task_number": 20,
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\nx ≥ 4/x",
+    "answer": [
+      "[−2; 0) ∪ [2; +∞)"
+    ],
+    "variables": {
+      "solution_pattern": "x_vs_const_over_x",
+      "coefficients": {
+        "K": 4,
+        "m": 2,
+        "sign": "≥"
+      },
+      "initial_expression": "x ≥ 4/x",
+      "transformed_expression": "(x^2−4)/x ≥ 0",
+      "numerator_zeros": [
+        "−2",
+        "2"
+      ],
+      "denominator_zeros": [
+        "0"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "−2",
+            "value_num": -2.0,
+            "type": "solid"
+          },
+          {
+            "value_text": "0",
+            "value_num": 0.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "2",
+            "value_num": 2.0,
+            "type": "solid"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "−2",
+              "right_num": -2.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "−2",
+              "left_num": -2.0,
+              "right_text": "0",
+              "right_num": 0.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "0",
+              "left_num": 0.0,
+              "right_text": "2",
+              "right_num": 2.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "2",
+              "left_num": 2.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "+"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "−2",
+            "left_num": -2.0,
+            "right_text": "0",
+            "right_num": 0.0,
+            "include_left": true,
+            "include_right": false
+          },
+          {
+            "left_text": "2",
+            "left_num": 2.0,
+            "right_text": "+∞",
+            "right_num": 1000000000.0,
+            "include_left": true,
+            "include_right": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "20_rational_inequalities_22e090",
+    "task_number": 20,
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n-19/(x² + 5x - 6) ≤ 0",
+    "answer": [
+      "(−∞; -6) ∪ (1; +∞)"
+    ],
+    "variables": {
+      "solution_pattern": "const_over_quadratic_nonpos_nonneg",
+      "coefficients": {
         "b": 5,
-        "text": "-4x + 5",
-        "root": 2
-      },
-      "common_factor": {
-        "coeffs": [
-          -12,
-          -4,
-          1
-        ],
-        "text": "x^2 - 4x - 12",
-        "roots": [
-          -2,
-          6
-        ]
-      },
-      "rhs": {
-        "multiplier": -3,
-        "coeffs": [
-          36,
-          12,
-          -3
-        ],
-        "text": "-3x^2 + 12x + 36"
-      }
-    }
-  },
-  {
-    "id": "20_polynomial_factorization_fd1501",
-    "task_number": 20,
-    "topic": "algebraic_expressions",
-    "subtype": "polynomial_factorization",
-    "question_text": "Реши уравнение:\n(x² - 4x - 7)² = (-x + 11)²",
-    "answer": [
-      "-3",
-      "1",
-      "4",
-      "6"
-    ],
-    "variables": {
-      "solution_pattern": "diff_squares",
-      "factored_form": {
-        "poly_minus": {
-          "coeffs": [
-            -18,
-            -3,
-            1
-          ],
-          "text": "x^2 - 3x - 18",
-          "roots": [
-            -3,
-            6
-          ]
-        },
-        "poly_plus": {
-          "coeffs": [
-            4,
-            -5,
-            1
-          ],
-          "text": "x^2 - 5x + 4",
-          "roots": [
-            1,
-            4
-          ]
-        }
-      },
-      "difference_of_squares": {
-        "A": {
-          "coeffs": [
-            -7,
-            -4,
-            1
-          ],
-          "text": "x^2 - 4x - 7"
-        },
-        "B": {
-          "coeffs": [
-            11,
-            -1
-          ],
-          "text": "-x + 11"
-        }
-      }
-    }
-  },
-  {
-    "id": "20_radical_equations_fd4c38",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(x² - 16) + √(2x² + 4x - 16) = 0",
-    "answer": [
-      "-4"
-    ],
-    "variables": {
-      "solution_pattern": "sum_zero",
-      "radicals": {
-        "A": {
-          "text": "x^2 - 16",
-          "roots": [
-            4,
-            -4
-          ]
-        },
-        "B": {
-          "text": "2x^2 + 4x - 16",
-          "roots": [
-            -4.0,
-            2.0
-          ]
-        }
-      }
-    }
-  },
-  {
-    "id": "20_radical_equations_b0dd36",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(x + 0) = √(-1x - 2)",
-    "answer": [
-      "-1.0"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "x + 0"
-        },
-        "B": {
-          "text": "-1x - 2"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_2e3c34",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(-1x + 8) = √(-2x - 3)",
-    "answer": [
-      "-11.0"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "-1x + 8"
-        },
-        "B": {
-          "text": "-2x - 3"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_f87c41",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(x + 7) = √(-2x + 0)",
-    "answer": [
-      "-2.333"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "x + 7"
-        },
-        "B": {
-          "text": "-2x + 0"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_9d9a03",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(x² - 1) + √(x² + 9x + 8) = 0",
-    "answer": [
-      "-1"
-    ],
-    "variables": {
-      "solution_pattern": "sum_zero",
-      "radicals": {
-        "A": {
-          "text": "x^2 - 1",
-          "roots": [
-            1,
-            -1
-          ]
-        },
-        "B": {
-          "text": "x^2 + 9x + 8",
-          "roots": [
-            -8.0,
-            -1.0
-          ]
-        }
-      }
-    }
-  },
-  {
-    "id": "20_radical_equations_ca6bc0",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(x² - 4) + √(2x² + 5x + 2) = 0",
-    "answer": [
-      "-2"
-    ],
-    "variables": {
-      "solution_pattern": "sum_zero",
-      "radicals": {
-        "A": {
-          "text": "x^2 - 4",
-          "roots": [
-            2,
-            -2
-          ]
-        },
-        "B": {
-          "text": "2x^2 + 5x + 2",
-          "roots": [
-            -2.0,
-            -0.5
-          ]
-        }
-      }
-    }
-  },
-  {
-    "id": "20_radical_equations_71614a",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(3x - 2) = √(x + 10)",
-    "answer": [
-      "6.0"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "3x - 2"
-        },
-        "B": {
-          "text": "x + 10"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_7cd22b",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(x² - 16) + √(2x² + 1x - 28) = 0",
-    "answer": [
-      "-4"
-    ],
-    "variables": {
-      "solution_pattern": "sum_zero",
-      "radicals": {
-        "A": {
-          "text": "x^2 - 16",
-          "roots": [
-            4,
-            -4
-          ]
-        },
-        "B": {
-          "text": "2x^2 + 1x - 28",
-          "roots": [
-            -4.0,
-            3.5
-          ]
-        }
-      }
-    }
-  },
-  {
-    "id": "20_radical_equations_a907ca",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(x² - 81) + √(x² - 7x - 144) = 0",
-    "answer": [
-      "-9"
-    ],
-    "variables": {
-      "solution_pattern": "sum_zero",
-      "radicals": {
-        "A": {
-          "text": "x^2 - 81",
-          "roots": [
-            9,
-            -9
-          ]
-        },
-        "B": {
-          "text": "x^2 - 7x - 144",
-          "roots": [
-            -9.0,
-            16.0
-          ]
-        }
-      }
-    }
-  },
-  {
-    "id": "20_radical_equations_f1b1a9",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(x² - 1) + √(x² + 2x - 3) = 0",
-    "answer": [
-      "1"
-    ],
-    "variables": {
-      "solution_pattern": "sum_zero",
-      "radicals": {
-        "A": {
-          "text": "x^2 - 1",
-          "roots": [
-            1,
-            -1
-          ]
-        },
-        "B": {
-          "text": "x^2 + 2x - 3",
-          "roots": [
-            -3.0,
-            1.0
-          ]
-        }
-      }
-    }
-  },
-  {
-    "id": "20_radical_equations_013266",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(x² - 1) + √(2x² + 5x - 7) = 0",
-    "answer": [
-      "1"
-    ],
-    "variables": {
-      "solution_pattern": "sum_zero",
-      "radicals": {
-        "A": {
-          "text": "x^2 - 1",
-          "roots": [
-            1,
-            -1
-          ]
-        },
-        "B": {
-          "text": "2x^2 + 5x - 7",
-          "roots": [
-            -3.5,
-            1.0
-          ]
-        }
-      }
-    }
-  },
-  {
-    "id": "20_radical_equations_041083",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(-3x + 7) = √(-1x - 3)",
-    "answer": [
-      "5.0"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "-3x + 7"
-        },
-        "B": {
-          "text": "-1x - 3"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_457990",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(x² - 1) + √(2x² + 4x + 2) = 0",
-    "answer": [
-      "-1.0"
-    ],
-    "variables": {
-      "solution_pattern": "sum_zero",
-      "radicals": {
-        "A": {
-          "text": "x^2 - 1",
-          "roots": [
-            1,
-            -1
-          ]
-        },
-        "B": {
-          "text": "2x^2 + 4x + 2",
-          "roots": [
-            -1.0,
-            -1.0
-          ]
-        }
-      }
-    }
-  },
-  {
-    "id": "20_radical_equations_9202ee",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(-2x - 8) = √(-3x + 4)",
-    "answer": [
-      "12.0"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "-2x - 8"
-        },
-        "B": {
-          "text": "-3x + 4"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_774dec",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(-2x - 9) = √(x + 0)",
-    "answer": [
-      "-3.0"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "-2x - 9"
-        },
-        "B": {
-          "text": "x + 0"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_b51d99",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(3x + 7) = √(x + 4)",
-    "answer": [
-      "-1.5"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "3x + 7"
-        },
-        "B": {
-          "text": "x + 4"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_45bcef",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(x - 3) = √(-1x + 3)",
-    "answer": [
-      "3.0"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "x - 3"
-        },
-        "B": {
-          "text": "-1x + 3"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_301f01",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(x - 6) = √(-1x + 4)",
-    "answer": [
-      "5.0"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "x - 6"
-        },
-        "B": {
-          "text": "-1x + 4"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_a8867f",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(2x - 1) = √(-1x - 5)",
-    "answer": [
-      "-1.333"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "2x - 1"
-        },
-        "B": {
-          "text": "-1x - 5"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_634686",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(x² - 64) + √(x² + 10x - 144) = 0",
-    "answer": [
-      "8"
-    ],
-    "variables": {
-      "solution_pattern": "sum_zero",
-      "radicals": {
-        "A": {
-          "text": "x^2 - 64",
-          "roots": [
-            8,
-            -8
-          ]
-        },
-        "B": {
-          "text": "x^2 + 10x - 144",
-          "roots": [
-            -18.0,
-            8.0
-          ]
-        }
-      }
-    }
-  },
-  {
-    "id": "20_radical_equations_9471d9",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(x + 8) = √(-3x + 7)",
-    "answer": [
-      "-0.25"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "x + 8"
-        },
-        "B": {
-          "text": "-3x + 7"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_29b793",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(-2x - 7) = √(3x + 2)",
-    "answer": [
-      "-1.8"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "-2x - 7"
-        },
-        "B": {
-          "text": "3x + 2"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_11938b",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(x² - 49) + √(2x² + 1x - 105) = 0",
-    "answer": [
-      "7"
-    ],
-    "variables": {
-      "solution_pattern": "sum_zero",
-      "radicals": {
-        "A": {
-          "text": "x^2 - 49",
-          "roots": [
-            7,
-            -7
-          ]
-        },
-        "B": {
-          "text": "2x^2 + 1x - 105",
-          "roots": [
-            -7.5,
-            7.0
-          ]
-        }
-      }
-    }
-  },
-  {
-    "id": "20_radical_equations_329c62",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(-1x - 3) = √(2x + 9)",
-    "answer": [
-      "-4.0"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "-1x - 3"
-        },
-        "B": {
-          "text": "2x + 9"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_907aaa",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(-1x + 8) = √(-3x - 2)",
-    "answer": [
-      "-5.0"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "-1x + 8"
-        },
-        "B": {
-          "text": "-3x - 2"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_e24190",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(-2x + 2) = √(-3x - 8)",
-    "answer": [
-      "-10.0"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "-2x + 2"
-        },
-        "B": {
-          "text": "-3x - 8"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_2bbbf0",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(3x - 1) = √(-3x + 9)",
-    "answer": [
-      "1.667"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "3x - 1"
-        },
-        "B": {
-          "text": "-3x + 9"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_e09c53",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(2x + 0) = √(x - 10)",
-    "answer": [
-      "-10.0"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "2x + 0"
-        },
-        "B": {
-          "text": "x - 10"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_0026d8",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(x - 5) = √(-2x + 4)",
-    "answer": [
-      "3.0"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "x - 5"
-        },
-        "B": {
-          "text": "-2x + 4"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_95c3af",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(3x + 4) = √(x - 7)",
-    "answer": [
-      "-5.5"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "3x + 4"
-        },
-        "B": {
-          "text": "x - 7"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_cb9ec4",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx²+ 3x + √(3 - x) = √(3 - x) + 0",
-    "answer": [
-      "-3",
-      "0"
-    ],
-    "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "3 - x",
-      "od_inequality": "x <= 3",
-      "resulting_equation": {
-        "text": "x^2+ 3x + 0 = 0",
-        "coeffs": [
-          0,
-          3,
-          1
-        ],
-        "roots": [
-          -3,
-          0
-        ]
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_74fb70",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(-3x - 9) = √(3x + 5)",
-    "answer": [
-      "-2.333"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "-3x - 9"
-        },
-        "B": {
-          "text": "3x + 5"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_846228",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(3x + 9) = √(2x - 1)",
-    "answer": [
-      "-10.0"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "3x + 9"
-        },
-        "B": {
-          "text": "2x - 1"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_630871",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(3x - 5) = √(2x + 7)",
-    "answer": [
-      "12.0"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "3x - 5"
-        },
-        "B": {
-          "text": "2x + 7"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_464cd2",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(3x - 8) = √(2x + 6)",
-    "answer": [
-      "14.0"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "3x - 8"
-        },
-        "B": {
-          "text": "2x + 6"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_fab997",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(x² - 49) + √(2x² - 6x - 56) = 0",
-    "answer": [
-      "7"
-    ],
-    "variables": {
-      "solution_pattern": "sum_zero",
-      "radicals": {
-        "A": {
-          "text": "x^2 - 49",
-          "roots": [
-            7,
-            -7
-          ]
-        },
-        "B": {
-          "text": "2x^2 - 6x - 56",
-          "roots": [
-            -4.0,
-            7.0
-          ]
-        }
-      }
-    }
-  },
-  {
-    "id": "20_radical_equations_506a1d",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(x² - 16) + √(2x² - 8x + 0) = 0",
-    "answer": [
-      "4"
-    ],
-    "variables": {
-      "solution_pattern": "sum_zero",
-      "radicals": {
-        "A": {
-          "text": "x^2 - 16",
-          "roots": [
-            4,
-            -4
-          ]
-        },
-        "B": {
-          "text": "2x^2 - 8x + 0",
-          "roots": [
-            0.0,
-            4.0
-          ]
-        }
-      }
-    }
-  },
-  {
-    "id": "20_radical_equations_75d430",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(2x + 5) = √(-3x + 5)",
-    "answer": [
-      "0.0"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "2x + 5"
-        },
-        "B": {
-          "text": "-3x + 5"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_c9cc7f",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(-2x - 1) = √(-3x - 8)",
-    "answer": [
-      "-7.0"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "-2x - 1"
-        },
-        "B": {
-          "text": "-3x - 8"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_7ce789",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(x² - 16) + √(2x² + 3x - 20) = 0",
-    "answer": [
-      "-4"
-    ],
-    "variables": {
-      "solution_pattern": "sum_zero",
-      "radicals": {
-        "A": {
-          "text": "x^2 - 16",
-          "roots": [
-            4,
-            -4
-          ]
-        },
-        "B": {
-          "text": "2x^2 + 3x - 20",
-          "roots": [
-            -4.0,
-            2.5
-          ]
-        }
-      }
-    }
-  },
-  {
-    "id": "20_radical_equations_978fb1",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx²- 2x + √(5 - x) = √(5 - x) + 24",
-    "answer": [
-      "-4"
-    ],
-    "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "5 - x",
-      "od_inequality": "x <= 5",
-      "resulting_equation": {
-        "text": "x^2- 2x - 24 = 0",
-        "coeffs": [
-          -24,
-          -2,
-          1
-        ],
-        "roots": [
-          -4,
-          6
-        ]
-      },
-      "extraneous_roots": [
-        6
-      ]
-    }
-  },
-  {
-    "id": "20_radical_equations_60a26f",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(-2x + 10) = √(3x + 5)",
-    "answer": [
-      "1.0"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "-2x + 10"
-        },
-        "B": {
-          "text": "3x + 5"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_847d98",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx²- 4x + √(5 - x) = √(5 - x) + 0",
-    "answer": [
-      "0",
-      "4"
-    ],
-    "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "5 - x",
-      "od_inequality": "x <= 5",
-      "resulting_equation": {
-        "text": "x^2- 4x + 0 = 0",
-        "coeffs": [
-          0,
-          -4,
-          1
-        ],
-        "roots": [
-          0,
-          4
-        ]
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_a9baca",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx²- x + √(-5 - x) = √(-5 - x) + 30",
-    "answer": [
-      "-5"
-    ],
-    "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "-5 - x",
-      "od_inequality": "x <= -5",
-      "resulting_equation": {
-        "text": "x^2- x - 30 = 0",
-        "coeffs": [
-          -30,
-          -1,
-          1
-        ],
-        "roots": [
-          -5,
-          6
-        ]
-      },
-      "extraneous_roots": [
-        6
-      ]
-    }
-  },
-  {
-    "id": "20_radical_equations_201642",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(2x - 3) = √(-2x - 7)",
-    "answer": [
-      "-1.0"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "2x - 3"
-        },
-        "B": {
-          "text": "-2x - 7"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_3bf844",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx²+ 9x + √(5 - x) = √(5 - x) + 0",
-    "answer": [
-      "-9",
-      "0"
-    ],
-    "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "5 - x",
-      "od_inequality": "x <= 5",
-      "resulting_equation": {
-        "text": "x^2+ 9x + 0 = 0",
-        "coeffs": [
-          0,
-          9,
-          1
-        ],
-        "roots": [
-          -9,
-          0
-        ]
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_688e13",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx²+ 2x + √(8 - x) = √(8 - x) + 48",
-    "answer": [
-      "-8",
-      "6"
-    ],
-    "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "8 - x",
-      "od_inequality": "x <= 8",
-      "resulting_equation": {
-        "text": "x^2+ 2x - 48 = 0",
-        "coeffs": [
-          -48,
-          2,
-          1
-        ],
-        "roots": [
-          -8,
-          6
-        ]
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_17194c",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx²- 6x + √(8 - x) = √(8 - x) + 7",
-    "answer": [
-      "-1",
-      "7"
-    ],
-    "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "8 - x",
-      "od_inequality": "x <= 8",
-      "resulting_equation": {
-        "text": "x^2- 6x - 7 = 0",
-        "coeffs": [
-          -7,
-          -6,
-          1
-        ],
-        "roots": [
-          -1,
-          7
-        ]
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_6dbad1",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(x² - 4) + √(x² - 2x - 8) = 0",
-    "answer": [
-      "-2"
-    ],
-    "variables": {
-      "solution_pattern": "sum_zero",
-      "radicals": {
-        "A": {
-          "text": "x^2 - 4",
-          "roots": [
-            2,
-            -2
-          ]
-        },
-        "B": {
-          "text": "x^2 - 2x - 8",
-          "roots": [
-            -2.0,
-            4.0
-          ]
-        }
-      }
-    }
-  },
-  {
-    "id": "20_radical_equations_fe0eb6",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx²+ 10x + √(8 - x) = √(8 - x) - 21",
-    "answer": [
-      "-7",
-      "-3"
-    ],
-    "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "8 - x",
-      "od_inequality": "x <= 8",
-      "resulting_equation": {
-        "text": "x^2+ 10x + 21 = 0",
-        "coeffs": [
-          21,
-          10,
-          1
-        ],
-        "roots": [
-          -7,
-          -3
-        ]
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_044aa8",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(-1x - 3) = √(x + 9)",
-    "answer": [
-      "-6.0"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "-1x - 3"
-        },
-        "B": {
-          "text": "x + 9"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_e3cc9e",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(x² - 9) + √(x² - 5x + 6) = 0",
-    "answer": [
-      "3"
-    ],
-    "variables": {
-      "solution_pattern": "sum_zero",
-      "radicals": {
-        "A": {
-          "text": "x^2 - 9",
-          "roots": [
-            3,
-            -3
-          ]
-        },
-        "B": {
-          "text": "x^2 - 5x + 6",
-          "roots": [
-            2.0,
-            3.0
-          ]
-        }
-      }
-    }
-  },
-  {
-    "id": "20_radical_equations_4f209a",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(x² - 4) + √(2x² + 9x - 26) = 0",
-    "answer": [
-      "2"
-    ],
-    "variables": {
-      "solution_pattern": "sum_zero",
-      "radicals": {
-        "A": {
-          "text": "x^2 - 4",
-          "roots": [
-            2,
-            -2
-          ]
-        },
-        "B": {
-          "text": "2x^2 + 9x - 26",
-          "roots": [
-            -6.5,
-            2.0
-          ]
-        }
-      }
-    }
-  },
-  {
-    "id": "20_radical_equations_e0c019",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(x² - 1) + √(2x² + 3x + 1) = 0",
-    "answer": [
-      "-1"
-    ],
-    "variables": {
-      "solution_pattern": "sum_zero",
-      "radicals": {
-        "A": {
-          "text": "x^2 - 1",
-          "roots": [
-            1,
-            -1
-          ]
-        },
-        "B": {
-          "text": "2x^2 + 3x + 1",
-          "roots": [
-            -1.0,
-            -0.5
-          ]
-        }
-      }
-    }
-  },
-  {
-    "id": "20_radical_equations_3ce066",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(x² - 81) + √(2x² + 2x - 144) = 0",
-    "answer": [
-      "-9"
-    ],
-    "variables": {
-      "solution_pattern": "sum_zero",
-      "radicals": {
-        "A": {
-          "text": "x^2 - 81",
-          "roots": [
-            9,
-            -9
-          ]
-        },
-        "B": {
-          "text": "2x^2 + 2x - 144",
-          "roots": [
-            -9.0,
-            8.0
-          ]
-        }
-      }
-    }
-  },
-  {
-    "id": "20_radical_equations_b44d14",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(x² - 49) + √(x² - 10x - 119) = 0",
-    "answer": [
-      "-7"
-    ],
-    "variables": {
-      "solution_pattern": "sum_zero",
-      "radicals": {
-        "A": {
-          "text": "x^2 - 49",
-          "roots": [
-            7,
-            -7
-          ]
-        },
-        "B": {
-          "text": "x^2 - 10x - 119",
-          "roots": [
-            -7.0,
-            17.0
-          ]
-        }
-      }
-    }
-  },
-  {
-    "id": "20_radical_equations_618f58",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx²+ 4x + √(-5 - x) = √(-5 - x) + 12",
-    "answer": [
-      "-6"
-    ],
-    "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "-5 - x",
-      "od_inequality": "x <= -5",
-      "resulting_equation": {
-        "text": "x^2+ 4x - 12 = 0",
-        "coeffs": [
-          -12,
-          4,
-          1
-        ],
+        "c": -6,
+        "C": -19,
         "roots": [
           -6,
-          2
-        ]
-      },
-      "extraneous_roots": [
-        2
-      ]
-    }
-  },
-  {
-    "id": "20_radical_equations_96aecb",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(3x + 5) = √(-2x + 0)",
-    "answer": [
-      "-1.0"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "3x + 5"
-        },
-        "B": {
-          "text": "-2x + 0"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_2be773",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\n√(2x + 1) = √(-1x + 7)",
-    "answer": [
-      "2.0"
-    ],
-    "variables": {
-      "solution_pattern": "same_radical_cancel",
-      "radicals": {
-        "A": {
-          "text": "2x + 1"
-        },
-        "B": {
-          "text": "-1x + 7"
-        }
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_98aa27",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx²- 8x + √(8 - x) = √(8 - x) - 16",
-    "answer": [
-      "4",
-      "4"
-    ],
-    "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "8 - x",
-      "od_inequality": "x <= 8",
-      "resulting_equation": {
-        "text": "x^2- 8x + 16 = 0",
-        "coeffs": [
-          16,
-          -8,
           1
         ],
+        "sign": "≤"
+      },
+      "initial_expression": "-19/(x² + 5x - 6) ≤ 0",
+      "transformed_expression": "-19/(x^2 + 5x - 6) ≤ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "-6",
+        "1"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "-6",
+            "value_num": -6.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "1",
+            "value_num": 1.0,
+            "type": "hollow"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "-6",
+              "right_num": -6.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "-6",
+              "left_num": -6.0,
+              "right_text": "1",
+              "right_num": 1.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "1",
+              "left_num": 1.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "-"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "−∞",
+            "left_num": -1000000000.0,
+            "right_text": "-6",
+            "right_num": -6.0,
+            "include_left": false,
+            "include_right": false
+          },
+          {
+            "left_text": "1",
+            "left_num": 1.0,
+            "right_text": "+∞",
+            "right_num": 1000000000.0,
+            "include_left": false,
+            "include_right": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "20_rational_inequalities_4e8ad7",
+    "task_number": 20,
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\nx ≤ 64/x",
+    "answer": [
+      "(−∞; −8] ∪ (0; 8]"
+    ],
+    "variables": {
+      "solution_pattern": "x_vs_const_over_x",
+      "coefficients": {
+        "K": 64,
+        "m": 8,
+        "sign": "≤"
+      },
+      "initial_expression": "x ≤ 64/x",
+      "transformed_expression": "(x^2−64)/x ≤ 0",
+      "numerator_zeros": [
+        "−8",
+        "8"
+      ],
+      "denominator_zeros": [
+        "0"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "−8",
+            "value_num": -8.0,
+            "type": "solid"
+          },
+          {
+            "value_text": "0",
+            "value_num": 0.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "8",
+            "value_num": 8.0,
+            "type": "solid"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "−8",
+              "right_num": -8.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "−8",
+              "left_num": -8.0,
+              "right_text": "0",
+              "right_num": 0.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "0",
+              "left_num": 0.0,
+              "right_text": "8",
+              "right_num": 8.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "8",
+              "left_num": 8.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "+"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "−∞",
+            "left_num": -1000000000.0,
+            "right_text": "−8",
+            "right_num": -8.0,
+            "include_left": false,
+            "include_right": true
+          },
+          {
+            "left_text": "0",
+            "left_num": 0.0,
+            "right_text": "8",
+            "right_num": 8.0,
+            "include_left": false,
+            "include_right": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "20_rational_inequalities_77de72",
+    "task_number": 20,
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\nx ≥ 36/x",
+    "answer": [
+      "[−6; 0) ∪ [6; +∞)"
+    ],
+    "variables": {
+      "solution_pattern": "x_vs_const_over_x",
+      "coefficients": {
+        "K": 36,
+        "m": 6,
+        "sign": "≥"
+      },
+      "initial_expression": "x ≥ 36/x",
+      "transformed_expression": "(x^2−36)/x ≥ 0",
+      "numerator_zeros": [
+        "−6",
+        "6"
+      ],
+      "denominator_zeros": [
+        "0"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "−6",
+            "value_num": -6.0,
+            "type": "solid"
+          },
+          {
+            "value_text": "0",
+            "value_num": 0.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "6",
+            "value_num": 6.0,
+            "type": "solid"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "−6",
+              "right_num": -6.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "−6",
+              "left_num": -6.0,
+              "right_text": "0",
+              "right_num": 0.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "0",
+              "left_num": 0.0,
+              "right_text": "6",
+              "right_num": 6.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "6",
+              "left_num": 6.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "+"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "−6",
+            "left_num": -6.0,
+            "right_text": "0",
+            "right_num": 0.0,
+            "include_left": true,
+            "include_right": false
+          },
+          {
+            "left_text": "6",
+            "left_num": 6.0,
+            "right_text": "+∞",
+            "right_num": 1000000000.0,
+            "include_left": true,
+            "include_right": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "20_rational_inequalities_62c568",
+    "task_number": 20,
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n-9/((x−5)²−3) ≥ 0",
+    "answer": [
+      "(5−√3; 5+√3)"
+    ],
+    "variables": {
+      "solution_pattern": "neg_const_over_shifted_square_minus_const",
+      "coefficients": {
+        "a": 5,
+        "d": 3,
+        "C": -9,
+        "sign": "≥"
+      },
+      "initial_expression": "-9/((x−5)^2−3) ≥ 0",
+      "transformed_expression": "-9/((x−5)^2−3) ≥ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "5−√3",
+        "5+√3"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "5−√3",
+            "value_num": 3.26795,
+            "type": "hollow"
+          },
+          {
+            "value_text": "5+√3",
+            "value_num": 6.73205,
+            "type": "hollow"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "5−√3",
+              "right_num": 3.26795
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "5−√3",
+              "left_num": 3.26795,
+              "right_text": "5+√3",
+              "right_num": 6.73205
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "5+√3",
+              "left_num": 6.73205,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "-"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "5−√3",
+            "left_num": 3.26795,
+            "right_text": "5+√3",
+            "right_num": 6.73205,
+            "include_left": false,
+            "include_right": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "20_rational_inequalities_8c792d",
+    "task_number": 20,
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n-19/(x² - 11x + 30) ≤ 0",
+    "answer": [
+      "(−∞; 5) ∪ (6; +∞)"
+    ],
+    "variables": {
+      "solution_pattern": "const_over_quadratic_nonpos_nonneg",
+      "coefficients": {
+        "b": -11,
+        "c": 30,
+        "C": -19,
         "roots": [
-          4,
-          4
-        ]
+          5,
+          6
+        ],
+        "sign": "≤"
       },
-      "extraneous_roots": []
+      "initial_expression": "-19/(x² - 11x + 30) ≤ 0",
+      "transformed_expression": "-19/(x^2 - 11x + 30) ≤ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "5",
+        "6"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "5",
+            "value_num": 5.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "6",
+            "value_num": 6.0,
+            "type": "hollow"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "5",
+              "right_num": 5.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "5",
+              "left_num": 5.0,
+              "right_text": "6",
+              "right_num": 6.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "6",
+              "left_num": 6.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "-"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "−∞",
+            "left_num": -1000000000.0,
+            "right_text": "5",
+            "right_num": 5.0,
+            "include_left": false,
+            "include_right": false
+          },
+          {
+            "left_text": "6",
+            "left_num": 6.0,
+            "right_text": "+∞",
+            "right_num": 1000000000.0,
+            "include_left": false,
+            "include_right": false
+          }
+        ]
+      }
     }
   },
   {
-    "id": "20_radical_equations_cancel_identical_radicals_0",
+    "id": "20_rational_inequalities_35750c",
     "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2+ 12x + √(-2 - x) = √(-2 - x) - 27",
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\nx ≤ 9/x",
     "answer": [
-      "-9",
-      "-3"
+      "(−∞; −3] ∪ (0; 3]"
     ],
     "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "-2 - x",
-      "od_inequality": "x <= -2",
-      "resulting_equation": {
-        "text": "x^2+ 12x + 27 = 0",
-        "coeffs": [
-          27,
-          12,
-          1
-        ],
-        "roots": [
-          -9,
-          -3
-        ]
+      "solution_pattern": "x_vs_const_over_x",
+      "coefficients": {
+        "K": 9,
+        "m": 3,
+        "sign": "≤"
       },
-      "extraneous_roots": []
+      "initial_expression": "x ≤ 9/x",
+      "transformed_expression": "(x^2−9)/x ≤ 0",
+      "numerator_zeros": [
+        "−3",
+        "3"
+      ],
+      "denominator_zeros": [
+        "0"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "−3",
+            "value_num": -3.0,
+            "type": "solid"
+          },
+          {
+            "value_text": "0",
+            "value_num": 0.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "3",
+            "value_num": 3.0,
+            "type": "solid"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "−3",
+              "right_num": -3.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "−3",
+              "left_num": -3.0,
+              "right_text": "0",
+              "right_num": 0.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "0",
+              "left_num": 0.0,
+              "right_text": "3",
+              "right_num": 3.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "3",
+              "left_num": 3.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "+"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "−∞",
+            "left_num": -1000000000.0,
+            "right_text": "−3",
+            "right_num": -3.0,
+            "include_left": false,
+            "include_right": true
+          },
+          {
+            "left_text": "0",
+            "left_num": 0.0,
+            "right_text": "3",
+            "right_num": 3.0,
+            "include_left": false,
+            "include_right": true
+          }
+        ]
+      }
     }
   },
   {
-    "id": "20_radical_equations_cancel_identical_radicals_1",
+    "id": "20_rational_inequalities_60fa29",
     "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2+ 9x + √(6 - x) = √(6 - x) - 8",
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n-9/((x−1)²−6) ≤ 0",
     "answer": [
-      "-8",
-      "-1"
+      "(−∞; 1−√6) ∪ (1+√6; +∞)"
     ],
     "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "6 - x",
-      "od_inequality": "x <= 6",
-      "resulting_equation": {
-        "text": "x^2+ 9x + 8 = 0",
-        "coeffs": [
-          8,
-          9,
-          1
-        ],
-        "roots": [
-          -8,
-          -1
-        ]
+      "solution_pattern": "neg_const_over_shifted_square_minus_const",
+      "coefficients": {
+        "a": 1,
+        "d": 6,
+        "C": -9,
+        "sign": "≤"
       },
-      "extraneous_roots": []
+      "initial_expression": "-9/((x−1)^2−6) ≤ 0",
+      "transformed_expression": "-9/((x−1)^2−6) ≤ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "1−√6",
+        "1+√6"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "1−√6",
+            "value_num": -1.44949,
+            "type": "hollow"
+          },
+          {
+            "value_text": "1+√6",
+            "value_num": 3.44949,
+            "type": "hollow"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "1−√6",
+              "right_num": -1.44949
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "1−√6",
+              "left_num": -1.44949,
+              "right_text": "1+√6",
+              "right_num": 3.44949
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "1+√6",
+              "left_num": 3.44949,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "-"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "−∞",
+            "left_num": -1000000000.0,
+            "right_text": "1−√6",
+            "right_num": -1.44949,
+            "include_left": false,
+            "include_right": false
+          },
+          {
+            "left_text": "1+√6",
+            "left_num": 3.44949,
+            "right_text": "+∞",
+            "right_num": 1000000000.0,
+            "include_left": false,
+            "include_right": false
+          }
+        ]
+      }
     }
   },
   {
-    "id": "20_radical_equations_cancel_identical_radicals_2",
+    "id": "20_rational_inequalities_f90ff9",
     "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2+ 8x + √(4 - x) = √(4 - x) - 16",
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n1/x ≤ 1/(x−5)",
     "answer": [
-      "-4",
-      "-4"
+      "(0; 5)"
     ],
     "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "4 - x",
-      "od_inequality": "x <= 4",
-      "resulting_equation": {
-        "text": "x^2+ 8x + 16 = 0",
-        "coeffs": [
-          16,
-          8,
-          1
+      "solution_pattern": "compare_unit_fractions_linear",
+      "coefficients": {
+        "a": 5,
+        "sign": "≤"
+      },
+      "initial_expression": "1/x ≤ 1/(x−5)",
+      "transformed_expression": "5/(x(x−5)) ≤ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "0",
+        "5"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "0",
+            "value_num": 0.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "5",
+            "value_num": 5.0,
+            "type": "hollow"
+          }
         ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "0",
+              "right_num": 0.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "0",
+              "left_num": 0.0,
+              "right_text": "5",
+              "right_num": 5.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "5",
+              "left_num": 5.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "+"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "0",
+            "left_num": 0.0,
+            "right_text": "5",
+            "right_num": 5.0,
+            "include_left": false,
+            "include_right": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "20_rational_inequalities_1128fb",
+    "task_number": 20,
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\nx ≥ 9/x",
+    "answer": [
+      "[−3; 0) ∪ [3; +∞)"
+    ],
+    "variables": {
+      "solution_pattern": "x_vs_const_over_x",
+      "coefficients": {
+        "K": 9,
+        "m": 3,
+        "sign": "≥"
+      },
+      "initial_expression": "x ≥ 9/x",
+      "transformed_expression": "(x^2−9)/x ≥ 0",
+      "numerator_zeros": [
+        "−3",
+        "3"
+      ],
+      "denominator_zeros": [
+        "0"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "−3",
+            "value_num": -3.0,
+            "type": "solid"
+          },
+          {
+            "value_text": "0",
+            "value_num": 0.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "3",
+            "value_num": 3.0,
+            "type": "solid"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "−3",
+              "right_num": -3.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "−3",
+              "left_num": -3.0,
+              "right_text": "0",
+              "right_num": 0.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "0",
+              "left_num": 0.0,
+              "right_text": "3",
+              "right_num": 3.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "3",
+              "left_num": 3.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "+"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "−3",
+            "left_num": -3.0,
+            "right_text": "0",
+            "right_num": 0.0,
+            "include_left": true,
+            "include_right": false
+          },
+          {
+            "left_text": "3",
+            "left_num": 3.0,
+            "right_text": "+∞",
+            "right_num": 1000000000.0,
+            "include_left": true,
+            "include_right": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "20_rational_inequalities_e389a9",
+    "task_number": 20,
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n-19/(x² - 4x - 32) ≤ 0",
+    "answer": [
+      "(−∞; -4) ∪ (8; +∞)"
+    ],
+    "variables": {
+      "solution_pattern": "const_over_quadratic_nonpos_nonneg",
+      "coefficients": {
+        "b": -4,
+        "c": -32,
+        "C": -19,
         "roots": [
           -4,
+          8
+        ],
+        "sign": "≤"
+      },
+      "initial_expression": "-19/(x² - 4x - 32) ≤ 0",
+      "transformed_expression": "-19/(x^2 - 4x - 32) ≤ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "-4",
+        "8"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "-4",
+            "value_num": -4.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "8",
+            "value_num": 8.0,
+            "type": "hollow"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "-4",
+              "right_num": -4.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "-4",
+              "left_num": -4.0,
+              "right_text": "8",
+              "right_num": 8.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "8",
+              "left_num": 8.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "-"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "−∞",
+            "left_num": -1000000000.0,
+            "right_text": "-4",
+            "right_num": -4.0,
+            "include_left": false,
+            "include_right": false
+          },
+          {
+            "left_text": "8",
+            "left_num": 8.0,
+            "right_text": "+∞",
+            "right_num": 1000000000.0,
+            "include_left": false,
+            "include_right": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "20_rational_inequalities_10024d",
+    "task_number": 20,
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n1/x ≥ 1/(x−8)",
+    "answer": [
+      "(−∞; 0) ∪ (8; +∞)"
+    ],
+    "variables": {
+      "solution_pattern": "compare_unit_fractions_linear",
+      "coefficients": {
+        "a": 8,
+        "sign": "≥"
+      },
+      "initial_expression": "1/x ≥ 1/(x−8)",
+      "transformed_expression": "8/(x(x−8)) ≥ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "0",
+        "8"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "0",
+            "value_num": 0.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "8",
+            "value_num": 8.0,
+            "type": "hollow"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "0",
+              "right_num": 0.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "0",
+              "left_num": 0.0,
+              "right_text": "8",
+              "right_num": 8.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "8",
+              "left_num": 8.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "+"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "−∞",
+            "left_num": -1000000000.0,
+            "right_text": "0",
+            "right_num": 0.0,
+            "include_left": false,
+            "include_right": false
+          },
+          {
+            "left_text": "8",
+            "left_num": 8.0,
+            "right_text": "+∞",
+            "right_num": 1000000000.0,
+            "include_left": false,
+            "include_right": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "20_rational_inequalities_a05b91",
+    "task_number": 20,
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n1/x ≤ 1/(x−2)",
+    "answer": [
+      "(0; 2)"
+    ],
+    "variables": {
+      "solution_pattern": "compare_unit_fractions_linear",
+      "coefficients": {
+        "a": 2,
+        "sign": "≤"
+      },
+      "initial_expression": "1/x ≤ 1/(x−2)",
+      "transformed_expression": "2/(x(x−2)) ≤ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "0",
+        "2"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "0",
+            "value_num": 0.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "2",
+            "value_num": 2.0,
+            "type": "hollow"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "0",
+              "right_num": 0.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "0",
+              "left_num": 0.0,
+              "right_text": "2",
+              "right_num": 2.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "2",
+              "left_num": 2.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "+"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "0",
+            "left_num": 0.0,
+            "right_text": "2",
+            "right_num": 2.0,
+            "include_left": false,
+            "include_right": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "20_rational_inequalities_4d113e",
+    "task_number": 20,
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n1/x ≥ 1/(x−6)",
+    "answer": [
+      "(−∞; 0) ∪ (6; +∞)"
+    ],
+    "variables": {
+      "solution_pattern": "compare_unit_fractions_linear",
+      "coefficients": {
+        "a": 6,
+        "sign": "≥"
+      },
+      "initial_expression": "1/x ≥ 1/(x−6)",
+      "transformed_expression": "6/(x(x−6)) ≥ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "0",
+        "6"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "0",
+            "value_num": 0.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "6",
+            "value_num": 6.0,
+            "type": "hollow"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "0",
+              "right_num": 0.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "0",
+              "left_num": 0.0,
+              "right_text": "6",
+              "right_num": 6.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "6",
+              "left_num": 6.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "+"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "−∞",
+            "left_num": -1000000000.0,
+            "right_text": "0",
+            "right_num": 0.0,
+            "include_left": false,
+            "include_right": false
+          },
+          {
+            "left_text": "6",
+            "left_num": 6.0,
+            "right_text": "+∞",
+            "right_num": 1000000000.0,
+            "include_left": false,
+            "include_right": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "20_rational_inequalities_56ee57",
+    "task_number": 20,
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n-19/(x² + 12x + 32) ≥ 0",
+    "answer": [
+      "(-8; -4)"
+    ],
+    "variables": {
+      "solution_pattern": "const_over_quadratic_nonpos_nonneg",
+      "coefficients": {
+        "b": 12,
+        "c": 32,
+        "C": -19,
+        "roots": [
+          -8,
           -4
-        ]
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_cancel_identical_radicals_3",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2+ 5x + √(-2 - x) = √(-2 - x) - 6",
-    "answer": [
-      "-3",
-      "-2"
-    ],
-    "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "-2 - x",
-      "od_inequality": "x <= -2",
-      "resulting_equation": {
-        "text": "x^2+ 5x + 6 = 0",
-        "coeffs": [
-          6,
-          5,
-          1
         ],
-        "roots": [
-          -3,
-          -2
-        ]
+        "sign": "≥"
       },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_cancel_identical_radicals_4",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2- x + √(-3 - x) = √(-3 - x) + 72",
-    "answer": [
-      "-8"
-    ],
-    "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "-3 - x",
-      "od_inequality": "x <= -3",
-      "resulting_equation": {
-        "text": "x^2- x - 72 = 0",
-        "coeffs": [
-          -72,
-          -1,
-          1
+      "initial_expression": "-19/(x² + 12x + 32) ≥ 0",
+      "transformed_expression": "-19/(x^2 + 12x + 32) ≥ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "-8",
+        "-4"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "-8",
+            "value_num": -8.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "-4",
+            "value_num": -4.0,
+            "type": "hollow"
+          }
         ],
-        "roots": [
-          -8,
-          9
-        ]
-      },
-      "extraneous_roots": [
-        9
-      ]
-    }
-  },
-  {
-    "id": "20_radical_equations_cancel_identical_radicals_5",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2 + √(8 - x) = √(8 - x) + 4",
-    "answer": [
-      "-2",
-      "2"
-    ],
-    "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "8 - x",
-      "od_inequality": "x <= 8",
-      "resulting_equation": {
-        "text": "x^2 - 4 = 0",
-        "coeffs": [
-          -4,
-          0,
-          1
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "-8",
+              "right_num": -8.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "-8",
+              "left_num": -8.0,
+              "right_text": "-4",
+              "right_num": -4.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "-4",
+              "left_num": -4.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "-"
+          }
         ],
-        "roots": [
-          -2,
-          2
+        "shading_ranges": [
+          {
+            "left_text": "-8",
+            "left_num": -8.0,
+            "right_text": "-4",
+            "right_num": -4.0,
+            "include_left": false,
+            "include_right": false
+          }
         ]
-      },
-      "extraneous_roots": []
+      }
     }
   },
   {
-    "id": "20_radical_equations_cancel_identical_radicals_6",
+    "id": "20_rational_inequalities_ee8638",
     "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2+ 5x + √(-3 - x) = √(-3 - x) - 6",
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n1/x ≥ 1/(x−4)",
     "answer": [
-      "-3"
+      "(−∞; 0) ∪ (4; +∞)"
     ],
     "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "-3 - x",
-      "od_inequality": "x <= -3",
-      "resulting_equation": {
-        "text": "x^2+ 5x + 6 = 0",
-        "coeffs": [
-          6,
-          5,
-          1
+      "solution_pattern": "compare_unit_fractions_linear",
+      "coefficients": {
+        "a": 4,
+        "sign": "≥"
+      },
+      "initial_expression": "1/x ≥ 1/(x−4)",
+      "transformed_expression": "4/(x(x−4)) ≥ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "0",
+        "4"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "0",
+            "value_num": 0.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "4",
+            "value_num": 4.0,
+            "type": "hollow"
+          }
         ],
-        "roots": [
-          -3,
-          -2
-        ]
-      },
-      "extraneous_roots": [
-        -2
-      ]
-    }
-  },
-  {
-    "id": "20_radical_equations_cancel_identical_radicals_7",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2- 6x + √(7 - x) = √(7 - x) + 0",
-    "answer": [
-      "0",
-      "6"
-    ],
-    "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "7 - x",
-      "od_inequality": "x <= 7",
-      "resulting_equation": {
-        "text": "x^2- 6x + 0 = 0",
-        "coeffs": [
-          0,
-          -6,
-          1
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "0",
+              "right_num": 0.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "0",
+              "left_num": 0.0,
+              "right_text": "4",
+              "right_num": 4.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "4",
+              "left_num": 4.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "+"
+          }
         ],
-        "roots": [
-          0,
-          6
+        "shading_ranges": [
+          {
+            "left_text": "−∞",
+            "left_num": -1000000000.0,
+            "right_text": "0",
+            "right_num": 0.0,
+            "include_left": false,
+            "include_right": false
+          },
+          {
+            "left_text": "4",
+            "left_num": 4.0,
+            "right_text": "+∞",
+            "right_num": 1000000000.0,
+            "include_left": false,
+            "include_right": false
+          }
         ]
-      },
-      "extraneous_roots": []
+      }
     }
   },
   {
-    "id": "20_radical_equations_cancel_identical_radicals_8",
+    "id": "20_rational_inequalities_7058a4",
     "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2+ 10x + √(-1 - x) = √(-1 - x) - 9",
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n1/x ≥ 1/(x−8)",
     "answer": [
-      "-9",
-      "-1"
+      "(−∞; 0) ∪ (8; +∞)"
     ],
     "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "-1 - x",
-      "od_inequality": "x <= -1",
-      "resulting_equation": {
-        "text": "x^2+ 10x + 9 = 0",
-        "coeffs": [
-          9,
-          10,
-          1
+      "solution_pattern": "compare_unit_fractions_linear",
+      "coefficients": {
+        "a": 8,
+        "sign": "≥"
+      },
+      "initial_expression": "1/x ≥ 1/(x−8)",
+      "transformed_expression": "8/(x(x−8)) ≥ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "0",
+        "8"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "0",
+            "value_num": 0.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "8",
+            "value_num": 8.0,
+            "type": "hollow"
+          }
         ],
-        "roots": [
-          -9,
-          -1
-        ]
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_cancel_identical_radicals_9",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2+ 8x + √(-1 - x) = √(-1 - x) - 7",
-    "answer": [
-      "-7",
-      "-1"
-    ],
-    "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "-1 - x",
-      "od_inequality": "x <= -1",
-      "resulting_equation": {
-        "text": "x^2+ 8x + 7 = 0",
-        "coeffs": [
-          7,
-          8,
-          1
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "0",
+              "right_num": 0.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "0",
+              "left_num": 0.0,
+              "right_text": "8",
+              "right_num": 8.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "8",
+              "left_num": 8.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "+"
+          }
         ],
-        "roots": [
-          -7,
-          -1
+        "shading_ranges": [
+          {
+            "left_text": "−∞",
+            "left_num": -1000000000.0,
+            "right_text": "0",
+            "right_num": 0.0,
+            "include_left": false,
+            "include_right": false
+          },
+          {
+            "left_text": "8",
+            "left_num": 8.0,
+            "right_text": "+∞",
+            "right_num": 1000000000.0,
+            "include_left": false,
+            "include_right": false
+          }
         ]
-      },
-      "extraneous_roots": []
+      }
     }
   },
   {
-    "id": "20_radical_equations_cancel_identical_radicals_10",
+    "id": "20_rational_inequalities_b007eb",
     "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2+ 11x + √(-3 - x) = √(-3 - x) - 30",
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n1/x ≤ 1/(x−5)",
     "answer": [
-      "-6",
-      "-5"
+      "(0; 5)"
     ],
     "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "-3 - x",
-      "od_inequality": "x <= -3",
-      "resulting_equation": {
-        "text": "x^2+ 11x + 30 = 0",
-        "coeffs": [
-          30,
-          11,
-          1
+      "solution_pattern": "compare_unit_fractions_linear",
+      "coefficients": {
+        "a": 5,
+        "sign": "≤"
+      },
+      "initial_expression": "1/x ≤ 1/(x−5)",
+      "transformed_expression": "5/(x(x−5)) ≤ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "0",
+        "5"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "0",
+            "value_num": 0.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "5",
+            "value_num": 5.0,
+            "type": "hollow"
+          }
         ],
-        "roots": [
-          -6,
-          -5
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "0",
+              "right_num": 0.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "0",
+              "left_num": 0.0,
+              "right_text": "5",
+              "right_num": 5.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "5",
+              "left_num": 5.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "+"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "0",
+            "left_num": 0.0,
+            "right_text": "5",
+            "right_num": 5.0,
+            "include_left": false,
+            "include_right": false
+          }
         ]
-      },
-      "extraneous_roots": []
+      }
     }
   },
   {
-    "id": "20_radical_equations_cancel_identical_radicals_11",
+    "id": "20_rational_inequalities_c787e6",
     "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2+ 2x + √(7 - x) = √(7 - x) - 1",
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n-19/(x² - 5x + 6) ≤ 0",
     "answer": [
-      "-1",
-      "-1"
+      "(−∞; 2) ∪ (3; +∞)"
     ],
     "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "7 - x",
-      "od_inequality": "x <= 7",
-      "resulting_equation": {
-        "text": "x^2+ 2x + 1 = 0",
-        "coeffs": [
-          1,
+      "solution_pattern": "const_over_quadratic_nonpos_nonneg",
+      "coefficients": {
+        "b": -5,
+        "c": 6,
+        "C": -19,
+        "roots": [
           2,
-          1
-        ],
-        "roots": [
-          -1,
-          -1
-        ]
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_cancel_identical_radicals_12",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2- 9x + √(2 - x) = √(2 - x) - 14",
-    "answer": [
-      "2"
-    ],
-    "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "2 - x",
-      "od_inequality": "x <= 2",
-      "resulting_equation": {
-        "text": "x^2- 9x + 14 = 0",
-        "coeffs": [
-          14,
-          -9,
-          1
-        ],
-        "roots": [
-          2,
-          7
-        ]
-      },
-      "extraneous_roots": [
-        7
-      ]
-    }
-  },
-  {
-    "id": "20_radical_equations_cancel_identical_radicals_13",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2+ 7x + √(4 - x) = √(4 - x) + 18",
-    "answer": [
-      "-9",
-      "2"
-    ],
-    "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "4 - x",
-      "od_inequality": "x <= 4",
-      "resulting_equation": {
-        "text": "x^2+ 7x - 18 = 0",
-        "coeffs": [
-          -18,
-          7,
-          1
-        ],
-        "roots": [
-          -9,
-          2
-        ]
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_cancel_identical_radicals_14",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2- 3x + √(7 - x) = √(7 - x) + 4",
-    "answer": [
-      "-1",
-      "4"
-    ],
-    "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "7 - x",
-      "od_inequality": "x <= 7",
-      "resulting_equation": {
-        "text": "x^2- 3x - 4 = 0",
-        "coeffs": [
-          -4,
-          -3,
-          1
-        ],
-        "roots": [
-          -1,
-          4
-        ]
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_cancel_identical_radicals_15",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2- 5x + √(1 - x) = √(1 - x) + 6",
-    "answer": [
-      "-1"
-    ],
-    "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "1 - x",
-      "od_inequality": "x <= 1",
-      "resulting_equation": {
-        "text": "x^2- 5x - 6 = 0",
-        "coeffs": [
-          -6,
-          -5,
-          1
-        ],
-        "roots": [
-          -1,
-          6
-        ]
-      },
-      "extraneous_roots": [
-        6
-      ]
-    }
-  },
-  {
-    "id": "20_radical_equations_cancel_identical_radicals_16",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2+ x + √(2 - x) = √(2 - x) + 20",
-    "answer": [
-      "-5"
-    ],
-    "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "2 - x",
-      "od_inequality": "x <= 2",
-      "resulting_equation": {
-        "text": "x^2+ x - 20 = 0",
-        "coeffs": [
-          -20,
-          1,
-          1
-        ],
-        "roots": [
-          -5,
-          4
-        ]
-      },
-      "extraneous_roots": [
-        4
-      ]
-    }
-  },
-  {
-    "id": "20_radical_equations_cancel_identical_radicals_17",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2+ 3x + √(-1 - x) = √(-1 - x) - 2",
-    "answer": [
-      "-2",
-      "-1"
-    ],
-    "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "-1 - x",
-      "od_inequality": "x <= -1",
-      "resulting_equation": {
-        "text": "x^2+ 3x + 2 = 0",
-        "coeffs": [
-          2,
-          3,
-          1
-        ],
-        "roots": [
-          -2,
-          -1
-        ]
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_cancel_identical_radicals_18",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2- 2x + √(-4 - x) = √(-4 - x) + 24",
-    "answer": [
-      "-4"
-    ],
-    "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "-4 - x",
-      "od_inequality": "x <= -4",
-      "resulting_equation": {
-        "text": "x^2- 2x - 24 = 0",
-        "coeffs": [
-          -24,
-          -2,
-          1
-        ],
-        "roots": [
-          -4,
-          6
-        ]
-      },
-      "extraneous_roots": [
-        6
-      ]
-    }
-  },
-  {
-    "id": "20_radical_equations_cancel_identical_radicals_19",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2- 8x + √(6 - x) = √(6 - x) + 9",
-    "answer": [
-      "-1"
-    ],
-    "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "6 - x",
-      "od_inequality": "x <= 6",
-      "resulting_equation": {
-        "text": "x^2- 8x - 9 = 0",
-        "coeffs": [
-          -9,
-          -8,
-          1
-        ],
-        "roots": [
-          -1,
-          9
-        ]
-      },
-      "extraneous_roots": [
-        9
-      ]
-    }
-  },
-  {
-    "id": "20_radical_equations_cancel_identical_radicals_20",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2- 10x + √(5 - x) = √(5 - x) - 21",
-    "answer": [
-      "3"
-    ],
-    "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "5 - x",
-      "od_inequality": "x <= 5",
-      "resulting_equation": {
-        "text": "x^2- 10x + 21 = 0",
-        "coeffs": [
-          21,
-          -10,
-          1
-        ],
-        "roots": [
-          3,
-          7
-        ]
-      },
-      "extraneous_roots": [
-        7
-      ]
-    }
-  },
-  {
-    "id": "20_radical_equations_cancel_identical_radicals_21",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2+ 3x + √(3 - x) = √(3 - x) + 0",
-    "answer": [
-      "-3",
-      "0"
-    ],
-    "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "3 - x",
-      "od_inequality": "x <= 3",
-      "resulting_equation": {
-        "text": "x^2+ 3x + 0 = 0",
-        "coeffs": [
-          0,
-          3,
-          1
-        ],
-        "roots": [
-          -3,
-          0
-        ]
-      },
-      "extraneous_roots": []
-    }
-  },
-  {
-    "id": "20_radical_equations_cancel_identical_radicals_22",
-    "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2+ 6x + √(-5 - x) = √(-5 - x) + 27",
-    "answer": [
-      "-9"
-    ],
-    "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "-5 - x",
-      "od_inequality": "x <= -5",
-      "resulting_equation": {
-        "text": "x^2+ 6x - 27 = 0",
-        "coeffs": [
-          -27,
-          6,
-          1
-        ],
-        "roots": [
-          -9,
           3
-        ]
+        ],
+        "sign": "≤"
       },
-      "extraneous_roots": [
-        3
-      ]
+      "initial_expression": "-19/(x² - 5x + 6) ≤ 0",
+      "transformed_expression": "-19/(x^2 - 5x + 6) ≤ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "2",
+        "3"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "2",
+            "value_num": 2.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "3",
+            "value_num": 3.0,
+            "type": "hollow"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "2",
+              "right_num": 2.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "2",
+              "left_num": 2.0,
+              "right_text": "3",
+              "right_num": 3.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "3",
+              "left_num": 3.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "-"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "−∞",
+            "left_num": -1000000000.0,
+            "right_text": "2",
+            "right_num": 2.0,
+            "include_left": false,
+            "include_right": false
+          },
+          {
+            "left_text": "3",
+            "left_num": 3.0,
+            "right_text": "+∞",
+            "right_num": 1000000000.0,
+            "include_left": false,
+            "include_right": false
+          }
+        ]
+      }
     }
   },
   {
-    "id": "20_radical_equations_cancel_identical_radicals_23",
+    "id": "20_rational_inequalities_851481",
     "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2+ 2x + √(5 - x) = √(5 - x) + 15",
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n-19/(x² - 13x + 40) ≤ 0",
     "answer": [
-      "-5",
-      "3"
+      "(−∞; 5) ∪ (8; +∞)"
     ],
     "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "5 - x",
-      "od_inequality": "x <= 5",
-      "resulting_equation": {
-        "text": "x^2+ 2x - 15 = 0",
-        "coeffs": [
-          -15,
-          2,
-          1
-        ],
+      "solution_pattern": "const_over_quadratic_nonpos_nonneg",
+      "coefficients": {
+        "b": -13,
+        "c": 40,
+        "C": -19,
         "roots": [
-          -5,
-          3
-        ]
+          5,
+          8
+        ],
+        "sign": "≤"
       },
-      "extraneous_roots": []
+      "initial_expression": "-19/(x² - 13x + 40) ≤ 0",
+      "transformed_expression": "-19/(x^2 - 13x + 40) ≤ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "5",
+        "8"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "5",
+            "value_num": 5.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "8",
+            "value_num": 8.0,
+            "type": "hollow"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "5",
+              "right_num": 5.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "5",
+              "left_num": 5.0,
+              "right_text": "8",
+              "right_num": 8.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "8",
+              "left_num": 8.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "-"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "−∞",
+            "left_num": -1000000000.0,
+            "right_text": "5",
+            "right_num": 5.0,
+            "include_left": false,
+            "include_right": false
+          },
+          {
+            "left_text": "8",
+            "left_num": 8.0,
+            "right_text": "+∞",
+            "right_num": 1000000000.0,
+            "include_left": false,
+            "include_right": false
+          }
+        ]
+      }
     }
   },
   {
-    "id": "20_radical_equations_cancel_identical_radicals_24",
+    "id": "20_rational_inequalities_904321",
     "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2 + √(1 - x) = √(1 - x) + 1",
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n1/x ≥ 1/(x−7)",
     "answer": [
-      "-1",
-      "1"
+      "(−∞; 0) ∪ (7; +∞)"
     ],
     "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "1 - x",
-      "od_inequality": "x <= 1",
-      "resulting_equation": {
-        "text": "x^2 - 1 = 0",
-        "coeffs": [
-          -1,
-          0,
-          1
-        ],
-        "roots": [
-          -1,
-          1
-        ]
+      "solution_pattern": "compare_unit_fractions_linear",
+      "coefficients": {
+        "a": 7,
+        "sign": "≥"
       },
-      "extraneous_roots": []
+      "initial_expression": "1/x ≥ 1/(x−7)",
+      "transformed_expression": "7/(x(x−7)) ≥ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "0",
+        "7"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "0",
+            "value_num": 0.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "7",
+            "value_num": 7.0,
+            "type": "hollow"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "0",
+              "right_num": 0.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "0",
+              "left_num": 0.0,
+              "right_text": "7",
+              "right_num": 7.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "7",
+              "left_num": 7.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "+"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "−∞",
+            "left_num": -1000000000.0,
+            "right_text": "0",
+            "right_num": 0.0,
+            "include_left": false,
+            "include_right": false
+          },
+          {
+            "left_text": "7",
+            "left_num": 7.0,
+            "right_text": "+∞",
+            "right_num": 1000000000.0,
+            "include_left": false,
+            "include_right": false
+          }
+        ]
+      }
     }
   },
   {
-    "id": "20_radical_equations_cancel_identical_radicals_25",
+    "id": "20_rational_inequalities_b3be19",
     "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2+ 10x + √(-5 - x) = √(-5 - x) - 25",
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n1/x ≤ 1/(x−7)",
     "answer": [
-      "-5",
-      "-5"
+      "(0; 7)"
     ],
     "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "-5 - x",
-      "od_inequality": "x <= -5",
-      "resulting_equation": {
-        "text": "x^2+ 10x + 25 = 0",
-        "coeffs": [
-          25,
-          10,
-          1
-        ],
-        "roots": [
-          -5,
-          -5
-        ]
+      "solution_pattern": "compare_unit_fractions_linear",
+      "coefficients": {
+        "a": 7,
+        "sign": "≤"
       },
-      "extraneous_roots": []
+      "initial_expression": "1/x ≤ 1/(x−7)",
+      "transformed_expression": "7/(x(x−7)) ≤ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "0",
+        "7"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "0",
+            "value_num": 0.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "7",
+            "value_num": 7.0,
+            "type": "hollow"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "0",
+              "right_num": 0.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "0",
+              "left_num": 0.0,
+              "right_text": "7",
+              "right_num": 7.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "7",
+              "left_num": 7.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "+"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "0",
+            "left_num": 0.0,
+            "right_text": "7",
+            "right_num": 7.0,
+            "include_left": false,
+            "include_right": false
+          }
+        ]
+      }
     }
   },
   {
-    "id": "20_radical_equations_cancel_identical_radicals_26",
+    "id": "20_rational_inequalities_2b3763",
     "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2- x + √(0 - x) = √(0 - x) + 0",
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n1/x ≤ 1/(x−3)",
     "answer": [
-      "0"
+      "(0; 3)"
     ],
     "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "0 - x",
-      "od_inequality": "x <= 0",
-      "resulting_equation": {
-        "text": "x^2- x + 0 = 0",
-        "coeffs": [
-          0,
-          -1,
-          1
-        ],
-        "roots": [
-          0,
-          1
-        ]
+      "solution_pattern": "compare_unit_fractions_linear",
+      "coefficients": {
+        "a": 3,
+        "sign": "≤"
       },
-      "extraneous_roots": [
-        1
-      ]
+      "initial_expression": "1/x ≤ 1/(x−3)",
+      "transformed_expression": "3/(x(x−3)) ≤ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "0",
+        "3"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "0",
+            "value_num": 0.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "3",
+            "value_num": 3.0,
+            "type": "hollow"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "0",
+              "right_num": 0.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "0",
+              "left_num": 0.0,
+              "right_text": "3",
+              "right_num": 3.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "3",
+              "left_num": 3.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "+"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "0",
+            "left_num": 0.0,
+            "right_text": "3",
+            "right_num": 3.0,
+            "include_left": false,
+            "include_right": false
+          }
+        ]
+      }
     }
   },
   {
-    "id": "20_radical_equations_cancel_identical_radicals_27",
+    "id": "20_rational_inequalities_a6f99e",
     "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2+ 4x + √(4 - x) = √(4 - x) + 12",
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n-7/((x−4)²−6) ≤ 0",
     "answer": [
-      "-6",
-      "2"
+      "(−∞; 4−√6) ∪ (4+√6; +∞)"
     ],
     "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "4 - x",
-      "od_inequality": "x <= 4",
-      "resulting_equation": {
-        "text": "x^2+ 4x - 12 = 0",
-        "coeffs": [
-          -12,
-          4,
-          1
-        ],
-        "roots": [
-          -6,
-          2
-        ]
+      "solution_pattern": "neg_const_over_shifted_square_minus_const",
+      "coefficients": {
+        "a": 4,
+        "d": 6,
+        "C": -7,
+        "sign": "≤"
       },
-      "extraneous_roots": []
+      "initial_expression": "-7/((x−4)^2−6) ≤ 0",
+      "transformed_expression": "-7/((x−4)^2−6) ≤ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "4−√6",
+        "4+√6"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "4−√6",
+            "value_num": 1.55051,
+            "type": "hollow"
+          },
+          {
+            "value_text": "4+√6",
+            "value_num": 6.44949,
+            "type": "hollow"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "4−√6",
+              "right_num": 1.55051
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "4−√6",
+              "left_num": 1.55051,
+              "right_text": "4+√6",
+              "right_num": 6.44949
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "4+√6",
+              "left_num": 6.44949,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "-"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "−∞",
+            "left_num": -1000000000.0,
+            "right_text": "4−√6",
+            "right_num": 1.55051,
+            "include_left": false,
+            "include_right": false
+          },
+          {
+            "left_text": "4+√6",
+            "left_num": 6.44949,
+            "right_text": "+∞",
+            "right_num": 1000000000.0,
+            "include_left": false,
+            "include_right": false
+          }
+        ]
+      }
     }
   },
   {
-    "id": "20_radical_equations_cancel_identical_radicals_28",
+    "id": "20_rational_inequalities_c4d856",
     "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2+ 2x + √(-5 - x) = √(-5 - x) + 63",
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n1/x ≥ 1/(x−9)",
     "answer": [
-      "-9"
+      "(−∞; 0) ∪ (9; +∞)"
     ],
     "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "-5 - x",
-      "od_inequality": "x <= -5",
-      "resulting_equation": {
-        "text": "x^2+ 2x - 63 = 0",
-        "coeffs": [
-          -63,
-          2,
-          1
-        ],
-        "roots": [
-          -9,
-          7
-        ]
+      "solution_pattern": "compare_unit_fractions_linear",
+      "coefficients": {
+        "a": 9,
+        "sign": "≥"
       },
-      "extraneous_roots": [
-        7
-      ]
+      "initial_expression": "1/x ≥ 1/(x−9)",
+      "transformed_expression": "9/(x(x−9)) ≥ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "0",
+        "9"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "0",
+            "value_num": 0.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "9",
+            "value_num": 9.0,
+            "type": "hollow"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "0",
+              "right_num": 0.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "0",
+              "left_num": 0.0,
+              "right_text": "9",
+              "right_num": 9.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "9",
+              "left_num": 9.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "+"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "−∞",
+            "left_num": -1000000000.0,
+            "right_text": "0",
+            "right_num": 0.0,
+            "include_left": false,
+            "include_right": false
+          },
+          {
+            "left_text": "9",
+            "left_num": 9.0,
+            "right_text": "+∞",
+            "right_num": 1000000000.0,
+            "include_left": false,
+            "include_right": false
+          }
+        ]
+      }
     }
   },
   {
-    "id": "20_radical_equations_cancel_identical_radicals_29",
+    "id": "20_rational_inequalities_434a6e",
     "task_number": 20,
-    "topic": "equations",
-    "subtype": "radical_equations",
-    "question_text": "Реши уравнение:\nx^2- 5x + √(-2 - x) = √(-2 - x) + 36",
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n1/x ≥ 1/(x−7)",
     "answer": [
-      "-4"
+      "(−∞; 0) ∪ (7; +∞)"
     ],
     "variables": {
-      "solution_pattern": "cancel_identical_radicals",
-      "identical_radical": "-2 - x",
-      "od_inequality": "x <= -2",
-      "resulting_equation": {
-        "text": "x^2- 5x - 36 = 0",
-        "coeffs": [
-          -36,
-          -5,
-          1
-        ],
-        "roots": [
-          -4,
-          9
-        ]
+      "solution_pattern": "compare_unit_fractions_linear",
+      "coefficients": {
+        "a": 7,
+        "sign": "≥"
       },
-      "extraneous_roots": [
-        9
-      ]
+      "initial_expression": "1/x ≥ 1/(x−7)",
+      "transformed_expression": "7/(x(x−7)) ≥ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "0",
+        "7"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "0",
+            "value_num": 0.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "7",
+            "value_num": 7.0,
+            "type": "hollow"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "0",
+              "right_num": 0.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "0",
+              "left_num": 0.0,
+              "right_text": "7",
+              "right_num": 7.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "7",
+              "left_num": 7.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "+"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "−∞",
+            "left_num": -1000000000.0,
+            "right_text": "0",
+            "right_num": 0.0,
+            "include_left": false,
+            "include_right": false
+          },
+          {
+            "left_text": "7",
+            "left_num": 7.0,
+            "right_text": "+∞",
+            "right_num": 1000000000.0,
+            "include_left": false,
+            "include_right": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "20_rational_inequalities_d25a24",
+    "task_number": 20,
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\nx ≥ 64/x",
+    "answer": [
+      "[−8; 0) ∪ [8; +∞)"
+    ],
+    "variables": {
+      "solution_pattern": "x_vs_const_over_x",
+      "coefficients": {
+        "K": 64,
+        "m": 8,
+        "sign": "≥"
+      },
+      "initial_expression": "x ≥ 64/x",
+      "transformed_expression": "(x^2−64)/x ≥ 0",
+      "numerator_zeros": [
+        "−8",
+        "8"
+      ],
+      "denominator_zeros": [
+        "0"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "−8",
+            "value_num": -8.0,
+            "type": "solid"
+          },
+          {
+            "value_text": "0",
+            "value_num": 0.0,
+            "type": "hollow"
+          },
+          {
+            "value_text": "8",
+            "value_num": 8.0,
+            "type": "solid"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "−8",
+              "right_num": -8.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "−8",
+              "left_num": -8.0,
+              "right_text": "0",
+              "right_num": 0.0
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "0",
+              "left_num": 0.0,
+              "right_text": "8",
+              "right_num": 8.0
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "8",
+              "left_num": 8.0,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "+"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "−8",
+            "left_num": -8.0,
+            "right_text": "0",
+            "right_num": 0.0,
+            "include_left": true,
+            "include_right": false
+          },
+          {
+            "left_text": "8",
+            "left_num": 8.0,
+            "right_text": "+∞",
+            "right_num": 1000000000.0,
+            "include_left": true,
+            "include_right": false
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "20_rational_inequalities_3681a3",
+    "task_number": 20,
+    "topic": "inequalities",
+    "subtype": "rational_inequalities",
+    "question_text": "Решите неравенство:\n-9/((x−6)²−11) ≥ 0",
+    "answer": [
+      "(6−√11; 6+√11)"
+    ],
+    "variables": {
+      "solution_pattern": "neg_const_over_shifted_square_minus_const",
+      "coefficients": {
+        "a": 6,
+        "d": 11,
+        "C": -9,
+        "sign": "≥"
+      },
+      "initial_expression": "-9/((x−6)^2−11) ≥ 0",
+      "transformed_expression": "-9/((x−6)^2−11) ≥ 0",
+      "numerator_zeros": [],
+      "denominator_zeros": [
+        "6−√11",
+        "6+√11"
+      ],
+      "axis_data": {
+        "points": [
+          {
+            "value_text": "6−√11",
+            "value_num": 2.68338,
+            "type": "hollow"
+          },
+          {
+            "value_text": "6+√11",
+            "value_num": 9.31662,
+            "type": "hollow"
+          }
+        ],
+        "intervals": [
+          {
+            "range": {
+              "left_text": "−∞",
+              "left_num": -1000000000.0,
+              "right_text": "6−√11",
+              "right_num": 2.68338
+            },
+            "sign": "-"
+          },
+          {
+            "range": {
+              "left_text": "6−√11",
+              "left_num": 2.68338,
+              "right_text": "6+√11",
+              "right_num": 9.31662
+            },
+            "sign": "+"
+          },
+          {
+            "range": {
+              "left_text": "6+√11",
+              "left_num": 9.31662,
+              "right_text": "+∞",
+              "right_num": 1000000000.0
+            },
+            "sign": "-"
+          }
+        ],
+        "shading_ranges": [
+          {
+            "left_text": "6−√11",
+            "left_num": 2.68338,
+            "right_text": "6+√11",
+            "right_num": 9.31662,
+            "include_left": false,
+            "include_right": false
+          }
+        ]
+      }
     }
   }
 ]

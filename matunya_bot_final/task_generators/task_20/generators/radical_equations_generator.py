@@ -121,6 +121,7 @@ def _generate_same_radical_cancel_task() -> Tuple[str, List[str], Dict[str, Any]
                 "A": {"text": A_text},
                 "B": {"text": B_text},
             },
+            "found_roots": [x],
             "extraneous_roots": [],
         }
         return equation, answers, variables

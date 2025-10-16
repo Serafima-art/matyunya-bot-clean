@@ -34,6 +34,59 @@ def _format_answer_display(answer: Any) -> str:
     return f"x = {answer}"
 
 
+def _format_number(value: float) -> str:
+    rounded = round(value)
+    if math.isclose(value, rounded, rel_tol=1e-9, abs_tol=1e-9):
+        return str(int(rounded))
+    text = f"{value:.3f}".rstrip("0").rstrip(".")
+    if text == "-0":
+        return "0"
+    return text
+
+
+def _normalize_float(value: Any) -> Optional[float]:
+    if isinstance(value, (int, float)):
+        return float(value)
+    if isinstance(value, str):
+        try:
+            return float(value.replace(",", "."))
+        except ValueError:
+            return None
+    return None
+
+
+def _parse_linear_expression(expr: str) -> Tuple[float, float]:
+    clean = expr.replace(" ", "")
+    if "x" not in clean:
+        raise ValueError(f"Cannot parse linear expression: {expr!r}")
+    coef_part, const_part = clean.split("x", 1)
+    if coef_part in ("", "+"):
+        coef = 1.0
+    elif coef_part == "-":
+        coef = -1.0
+    else:
+        coef = float(coef_part.replace(",", "."))
+    const = 0.0
+    if const_part:
+        const = float(const_part.replace(",", "."))
+    return coef, const
+
+
+def _format_linear_substitution(coef: float, const: float, root_display: str) -> str:
+    if math.isclose(coef, 1.0, rel_tol=1e-9, abs_tol=1e-9):
+        term = root_display
+    elif math.isclose(coef, -1.0, rel_tol=1e-9, abs_tol=1e-9):
+        term = f"-{root_display}"
+    else:
+        term = f"{_format_number(coef)}·{root_display}"
+
+    if math.isclose(const, 0.0, rel_tol=1e-9, abs_tol=1e-9):
+        return term
+
+    sign = "+" if const > 0 else "-"
+    return f"{term} {sign} {_format_number(abs(const))}"
+
+
 async def solve(task_data: Dict[str, Any]) -> Dict[str, Any]:
     """
     Построить solution_core для подтипа radical_equations.
@@ -169,24 +222,23 @@ def _build_sum_zero_steps(variables: Dict[str, Any], equation: str) -> Tuple[Lis
 #  ПАТТЕРН 2: same_radical_cancel
 # =================================
 def _build_same_radical_cancel_steps(variables: Dict[str, Any], equation: str) -> Tuple[List[Dict], str, List[str]]:
-    """
+    '''
     Паттерн: √A = √B.
     Идея: (при A≥0 и B≥0) имеем A = B; далее проверка на посторонние корни обязательна.
     Входные данные (по контракту):
       variables = {
         "solution_pattern": "same_radical_cancel",
         "radicals": {"A": {"text": "..."}, "B": {"text": "..."}},
+        "found_roots": [...],
         "extraneous_roots": [...]
       }
-    """
+    '''
     radicals = variables.get("radicals", {})
     A_text = radicals.get("A", {}).get("text", "A(x)")
     B_text = radicals.get("B", {}).get("text", "B(x)")
     extraneous = variables.get("extraneous_roots", [])
+    found_roots_raw = variables.get("found_roots", [])
 
-    # Решения предоставляются в task_data['answer'] и extraneous_roots
-    # Для шага с «решением A=B» покажем объединённый набор найденных значений
-    # ( корректные + посторонние ), если это имеет смысл методически
     steps: List[Dict[str, Any]] = [
         {
             "step_number": 1,
@@ -201,15 +253,83 @@ def _build_same_radical_cancel_steps(variables: Dict[str, Any], equation: str) -
             "formula_representation": f"{A_text} = {B_text}",
             "calculation_result": "Находим возможные значения x (последующая проверка обязательна).",
         },
-        {
-            "step_number": 3,
-            "description": "Выполняем проверку найденных значений (учёт возможных посторонних корней после возведения в квадрат).",
-            "calculation_result": (
-                "Подставляем найденные значения в исходное уравнение и проверяем неотрицательность подкоренных выражений. "
-                + (f"Посторонние корни: {', '.join(map(str, extraneous))}" if extraneous else "Посторонние корни не обнаружены.")
-            ),
-        },
     ]
+
+    try:
+        coef_a, const_a = _parse_linear_expression(A_text)
+        coef_b, const_b = _parse_linear_expression(B_text)
+    except ValueError:
+        coef_a = const_a = coef_b = const_b = None
+
+    if isinstance(found_roots_raw, list):
+        found_roots_list = found_roots_raw
+    elif found_roots_raw in (None, ""):
+        found_roots_list = []
+    else:
+        found_roots_list = [found_roots_raw]
+
+    extraneous_numeric = [
+        value
+        for value in (_normalize_float(item) for item in extraneous)
+        if value is not None
+    ]
+
+    def root_is_extraneous(candidate: float) -> bool:
+        return any(
+            math.isclose(candidate, ex, rel_tol=1e-9, abs_tol=1e-9)
+            for ex in extraneous_numeric
+        )
+
+    details_added = False
+    next_step_number = 3
+
+    if coef_a is not None and coef_b is not None and found_roots_list:
+        for raw_root in found_roots_list:
+            root_value = _normalize_float(raw_root)
+            if root_value is None:
+                continue
+
+            root_display = _format_number(root_value)
+            substitution_left = _format_linear_substitution(coef_a, const_a, root_display)
+            substitution_right = _format_linear_substitution(coef_b, const_b, root_display)
+
+            left_value = coef_a * root_value + const_a
+            right_value = coef_b * root_value + const_b
+
+            left_display = _format_number(left_value)
+            right_display = _format_number(right_value)
+
+            equal_values = math.isclose(left_value, right_value, rel_tol=1e-9, abs_tol=1e-9)
+            is_extraneous = (not equal_values) or root_is_extraneous(root_value)
+
+            result_text = (
+                "Верное равенство — корень подходит."
+                if not is_extraneous
+                else "Неверное равенство — корень посторонний."
+            )
+
+            steps.append(
+                {
+                    "step_number": next_step_number,
+                    "description": f"Подставляем x = {root_display} и проверяем радикалы.",
+                    "formula_calculation": (
+                        f"√({substitution_left}) = √({substitution_right})\n"
+                        f"√({left_display}) = √({right_display})"
+                    ),
+                    "calculation_result": result_text,
+                }
+            )
+            next_step_number += 1
+            details_added = True
+
+    if not details_added:
+        steps.append(
+            {
+                "step_number": next_step_number,
+                "description": "Подставляем найденные значения в исходное равенство радикалов.",
+                "calculation_result": "Детализированная проверка недоступна — не хватает данных о корнях.",
+            }
+        )
 
     explanation = (
         "Если √A = √B, то при A≥0 и B≥0 получаем A=B. После возведения в квадрат обязательно выполняем проверку, "

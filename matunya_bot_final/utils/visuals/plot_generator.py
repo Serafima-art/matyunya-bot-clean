@@ -6,6 +6,7 @@ import matplotlib.ticker as mticker
 import matplotlib
 matplotlib.use("Agg")  # ✅ чтобы не требовался Tcl/Tk, только рендер в PNG
 from typing import Tuple
+import os
 
 def create_graph(
     func_data: dict,
@@ -138,3 +139,96 @@ def create_graph(
     plt.close()
     print(f"[✓] Феникс-рендер: {func_data.get('label', 'graph')} -> {output_filename}")
     return output_filename  # ✅ ВОЗВРАЩАЕМ путь к PNG
+
+def create_number_axis(axis_data: dict, output_filename: str) -> str:
+    """
+    Рисует числовую ось для решения неравенств (задание 20).
+
+    Вход:
+        axis_data: {
+            "points": [{"value_num": float, "value_text": str, "type": "solid|hollow"}],
+            "intervals": [{"range": [float, float], "sign": "+"|"-"}],
+            "shading_ranges": [[float, float], ...]
+        }
+        output_filename: путь для сохранения PNG
+    """
+
+    import matplotlib.pyplot as plt
+    from matplotlib.patches import FancyArrowPatch, Rectangle
+
+    # --- 1. Настройка холста ---
+    plt.rcParams.update({
+        'axes.linewidth': 1.2,
+        'figure.dpi': 300
+    })
+    fig, ax = plt.subplots(figsize=(7, 2))
+    ax.set_ylim(-1.5, 1.5)
+    ax.get_yaxis().set_visible(False)
+    for spine in ["top", "right", "left"]:
+        ax.spines[spine].set_visible(False)
+
+    # --- 2. Определяем диапазон оси X ---
+    all_values = [p["value_num"] for p in axis_data.get("points", []) if isinstance(p["value_num"], (int, float))]
+    for r in axis_data.get("shading_ranges", []):
+        all_values.extend([r[0], r[1]])
+    if not all_values:
+        all_values = [-5, 5]
+    x_min, x_max = min(all_values) - 1, max(all_values) + 1
+    ax.set_xlim(x_min, x_max)
+
+    # --- 3. Ось X со стрелкой ---
+    ax.axhline(y=0, color="black", linewidth=1.5)
+    ax.add_patch(FancyArrowPatch(
+        (x_max - 0.3, 0), (x_max + 0.2, 0),
+        arrowstyle='->', mutation_scale=12,
+        color='black', linewidth=1.5, zorder=5
+    ))
+    ax.text(x_max + 0.3, 0, 'x', fontsize=14, va='center', ha='left', fontweight='bold')
+
+    # --- 4. Заштриховка решений ---
+    for r in axis_data.get("shading_ranges", []):
+        x0, x1 = r
+        if x0 is None or x1 is None:
+            continue
+        rect = Rectangle(
+            (x0, -0.12), x1 - x0, 0.24,
+            color='gold', alpha=0.4, zorder=1
+        )
+        ax.add_patch(rect)
+
+    # --- 5. Отрисовка точек ---
+    for point in axis_data.get("points", []):
+        x = point.get("value_num", 0)
+        t = point.get("type", "solid")
+        style = dict(facecolor="white", edgecolor="black", linewidth=1.5)
+        if t == "solid":
+            style["facecolor"] = "black"
+        circle = plt.Circle((x, 0), 0.08, **style, zorder=3)
+        ax.add_patch(circle)
+        ax.text(x, -0.35, point.get("value_text", str(x)),
+                fontsize=10, ha='center', va='top')
+
+    # --- 6. Знаки на интервалах ---
+    for interval in axis_data.get("intervals", []):
+        x0, x1 = interval.get("range", [None, None])
+        if x0 is None or x1 is None:
+            continue
+        x_mid = (x0 + x1) / 2
+        sign = interval.get("sign", "")
+        ax.text(x_mid, 0.25, sign,
+                fontsize=12, ha='center', va='bottom', fontweight='bold', color='darkblue')
+
+    # --- 7. Финал ---
+    # создаём базовую папку temp/task_20
+    base_dir = os.path.join("matunya_bot_final", "temp", "task_20")
+    os.makedirs(base_dir, exist_ok=True)
+
+    # сохраняем только имя файла (без поддиректорий)
+    filename = os.path.basename(output_filename)
+    final_path = os.path.join(base_dir, filename)
+
+    plt.tight_layout()
+    plt.savefig(final_path, dpi=300, bbox_inches="tight")
+    plt.close(fig)
+    print(f"[✓] Числовая ось сохранена: {final_path}")
+    return final_path
