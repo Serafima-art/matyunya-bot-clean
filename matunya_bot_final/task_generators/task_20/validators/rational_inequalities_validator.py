@@ -1,4 +1,6 @@
-"""Validator for task 20 rational_inequalities subtype (ФИПИ-строгий).
+"""
+ГОСТ-ВАЛИДАТОР-2025
+Validator for task 20 rational_inequalities subtype (ФИПИ-строгий).
 
 Проверяет:
 1) Корректность преобразования initial_expression → transformed_expression (по паттерну).
@@ -10,21 +12,12 @@
 """
 
 from __future__ import annotations
-
 import math
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Tuple
 
 
 def _sign(x: float) -> int:
     return 1 if x > 0 else (-1 if x < 0 else 0)
-
-
-def _infty_text_to_num(t: str) -> float:
-    if t == "−∞":
-        return -math.inf
-    if t == "+∞":
-        return math.inf
-    return float(t.replace("−", "-"))  # поддержим "−" в строке
 
 
 def _interval_to_text(L: str, R: str, inc_l: bool, inc_r: bool) -> str:
@@ -34,145 +27,162 @@ def _interval_to_text(L: str, R: str, inc_l: bool, inc_r: bool) -> str:
 def _build_answer_from_shading(shading: List[Dict[str, Any]]) -> str:
     chunks = []
     for it in shading:
-        chunks.append(_interval_to_text(it["left_text"], it["right_text"], it["include_left"], it["include_right"]))
+        chunks.append(_interval_to_text(it["left_text"], it["right_text"],
+                                        it["include_left"], it["include_right"]))
     return " ∪ ".join(chunks)
 
 
-def validate_task_20_rational_inequalities(task: Dict[str, Any]) -> bool:
-    """Главная точка валидации."""
-    try:
-        assert task["task_number"] == 20
-        assert task["topic"] == "inequalities"
-        assert task["subtype"] == "rational_inequalities"
+def validate_task_20_rational_inequalities(task: Dict[str, Any]) -> Tuple[bool, List[str]]:
+    """Главная точка валидации (ГОСТ-2025)."""
+    errors: List[str] = []
 
-        vars_ = task["variables"]
-        for k in ("solution_pattern", "initial_expression", "transformed_expression",
-                  "numerator_zeros", "denominator_zeros", "axis_data"):
-            assert k in vars_
+    # 1. Базовая структура
+    if task.get("task_number") != 20:
+        errors.append("Неверный task_number (ожидался 20).")
 
-        pattern = vars_["solution_pattern"]
-        axis = vars_["axis_data"]
-        points = axis["points"]
-        intervals = axis["intervals"]
-        shading = axis["shading_ranges"]
-        coeffs = vars_.get("coefficients", {})
+    if task.get("topic") != "inequalities":
+        errors.append("Неверный topic (ожидался 'inequalities').")
 
-        # ——— 1) Проверка преобразования initial → transformed (по паттерну)
-        init = vars_["initial_expression"]
-        transf = vars_["transformed_expression"]
-        if pattern == "compare_unit_fractions_linear":
-            a = int(coeffs["a"])
-            assert f"{a}/(x(x−{a}))" in transf
-        elif pattern == "const_over_quadratic_nonpos_nonneg":
-            # transformed = −C/(x^2 + b x + c) ⊙ 0
-            b = coeffs["b"]; c = coeffs["c"]
-            assert "(x^2" in transf and f"{'+' if b>=0 else '-'} {abs(b)}x" in transf and f"{'+' if c>=0 else '-'} {abs(c)}" in transf
-        elif pattern == "x_vs_const_over_x":
-            K = coeffs["K"]
-            assert f"(x^2−{K})/x" in transf
-        elif pattern == "neg_const_over_shifted_square_minus_const":
-            a = coeffs["a"]; d = coeffs["d"]
-            assert f"((x−{a})^2−{d})" in transf
+    if task.get("subtype") != "rational_inequalities":
+        errors.append("Неверный subtype (ожидался 'rational_inequalities').")
+
+    vars_ = task.get("variables")
+    if not isinstance(vars_, dict):
+        errors.append("Отсутствует ключ 'variables'.")
+        return False, errors
+
+    required_keys = [
+        "solution_pattern", "initial_expression", "transformed_expression",
+        "numerator_zeros", "denominator_zeros", "axis_data"
+    ]
+    for k in required_keys:
+        if k not in vars_:
+            errors.append(f"Отсутствует ключ '{k}' в variables.")
+
+    if errors:
+        return False, errors
+
+    # 2. Проверка преобразования initial → transformed
+    pattern = vars_["solution_pattern"]
+    coeffs = vars_.get("coefficients", {})
+    init = vars_["initial_expression"]
+    transf = vars_["transformed_expression"]
+
+    if pattern == "compare_unit_fractions_linear":
+        a = int(coeffs.get("a", 0))
+        if f"{a}/(x(x−{a}))" not in transf:
+            errors.append(f"Некорректное преобразование для pattern={pattern}: "
+                          f"ожидалось '...{a}/(x(x−{a}))...'")
+    elif pattern == "const_over_quadratic_nonpos_nonneg":
+        b = coeffs.get("b"); c = coeffs.get("c")
+        if b is None or c is None:
+            errors.append("Нет коэффициентов b или c.")
         else:
-            return False
+            if not all(s in transf for s in ("x^2", "x")):
+                errors.append("В transformed_expression отсутствует форма квадратного выражения.")
+    elif pattern == "x_vs_const_over_x":
+        K = coeffs.get("K")
+        if K is None or f"(x^2−{K})/x" not in transf:
+            errors.append("Неверное преобразование для x_vs_const_over_x.")
+    elif pattern == "neg_const_over_shifted_square_minus_const":
+        a = coeffs.get("a"); d = coeffs.get("d")
+        if a is None or d is None or f"((x−{a})^2−{d})" not in transf:
+            errors.append("Неверное преобразование для neg_const_over_shifted_square_minus_const.")
+    else:
+        errors.append(f"Неизвестный pattern: {pattern}")
 
-        # ——— 2) Проверка нулей
-        # Соберём текстовые нули числителя/знаменателя
-        num_zeros_txt = set(vars_.get("numerator_zeros", []))
-        den_zeros_txt = set(vars_.get("denominator_zeros", []))
-        # Все точки оси должны содержать только эти нули
-        axis_zeros_txt = {p["value_text"] for p in points}
-        assert axis_zeros_txt == (num_zeros_txt | den_zeros_txt)
+    # 3. Проверка нулей
+    num_zeros_txt = set(vars_.get("numerator_zeros", []))
+    den_zeros_txt = set(vars_.get("denominator_zeros", []))
+    axis = vars_["axis_data"]
+    points = axis.get("points", [])
+    axis_zeros_txt = {p["value_text"] for p in points}
+    if axis_zeros_txt != (num_zeros_txt | den_zeros_txt):
+        errors.append("Набор точек на оси не совпадает с нулями числителя и знаменателя.")
 
-        # ——— 3) Типы точек
-        # Деноминатор → всегда hollow
-        for p in points:
-            if p["value_text"] in den_zeros_txt:
-                assert p["type"] == "hollow"
-        # Нумератор → solid только при ≤/≥
-        weak = any(sym in vars_["initial_expression"] for sym in ("≤", "≥"))
-        for p in points:
-            if p["value_text"] in num_zeros_txt:
-                if weak:
-                    assert p["type"] == "solid"
-                else:
-                    assert p["type"] == "hollow"
+    # 4. Типы точек
+    weak = any(sym in init for sym in ("≤", "≥"))
+    for p in points:
+        if p["value_text"] in den_zeros_txt and p["type"] != "hollow":
+            errors.append(f"Точка {p['value_text']} (знаменатель) должна быть hollow.")
+        if p["value_text"] in num_zeros_txt:
+            expected_type = "solid" if weak else "hollow"
+            if p["type"] != expected_type:
+                errors.append(f"Точка {p['value_text']} (числитель) должна быть {expected_type}.")
 
-        # ——— 4) Проверка знаков интервалов через подстановку
-        def _sign_of_fraction(x: float) -> int:
+    # 5. Проверка знаков интервалов через подстановку
+    def _sign_of_fraction(x: float) -> int:
+        try:
             if pattern == "compare_unit_fractions_linear":
                 a = int(coeffs["a"])
                 num = a
                 den = x * (x - a)
             elif pattern == "const_over_quadratic_nonpos_nonneg":
                 b = coeffs["b"]; c = coeffs["c"]; C = coeffs["C"]
-                num = C  # отрицательное
-                den = x*x + b*x + c
+                num = C; den = x*x + b*x + c
             elif pattern == "x_vs_const_over_x":
-                K = coeffs["K"]
-                num = x*x - K
-                den = x
-            else:  # neg_const_over_shifted_square_minus_const
+                K = coeffs["K"]; num = x*x - K; den = x
+            else:
                 a = coeffs["a"]; d = coeffs["d"]; C = coeffs["C"]
-                num = C  # <0
-                den = (x - a)*(x - a) - d
+                num = C; den = (x - a)*(x - a) - d
             if den == 0:
                 return 0
-            s = _sign(num) * _sign(den)
-            return s
+            return _sign(num) * _sign(den)
+        except Exception:
+            return 0
 
-        # Все интервалы должны иметь корректный знак
-        for it in intervals:
-            L_num = it["range"]["left_num"]; R_num = it["range"]["right_num"]
-            # выберем тестовую точку
-            if math.isfinite(L_num) and math.isfinite(R_num):
-                x_test = (L_num + R_num) / 2
-            else:
-                if not math.isfinite(L_num) and math.isfinite(R_num):
-                    x_test = R_num - 1.0
-                elif math.isfinite(L_num) and not math.isfinite(R_num):
-                    x_test = L_num + 1.0
-                else:
-                    x_test = 0.0
-            s = _sign_of_fraction(x_test)
-            expected = "+" if s > 0 else "-" if s < 0 else "0"
-            assert it["sign"] == expected or (expected == "0" and it["sign"] in ("+", "-"))
+    intervals = axis.get("intervals", [])
+    for it in intervals:
+        L = it["range"]["left_num"]; R = it["range"]["right_num"]
+        if math.isfinite(L) and math.isfinite(R):
+            x_test = (L + R) / 2
+        elif not math.isfinite(L):
+            x_test = R - 1.0
+        elif not math.isfinite(R):
+            x_test = L + 1.0
+        else:
+            x_test = 0.0
 
-        # ——— 5) Проверка shading по знакам и типу неравенства
-        want_pos = "≥" in init or ">" in init
-        want_nonneg = "≥" in init or "≤" in init  # слабость для включения нулей числителя
-        # Сопоставим shading с intervals по границам
-        def _inc_side(txt: str, is_left: bool) -> bool:
-            # включаем только если это ноль числителя и знак слабый
-            return (txt in num_zeros_txt) and want_nonneg
+        s = _sign_of_fraction(x_test)
+        expected = "+" if s > 0 else "-" if s < 0 else "0"
+        if it["sign"] != expected and not (expected == "0" and it["sign"] in ("+", "-")):
+            errors.append(f"Неверный знак на интервале {it['range']} (ожидался {expected}).")
 
-        for sh in shading:
-            l_txt, r_txt = sh["left_text"], sh["right_text"]
-            # найдём интервал с такими же границами
-            found = None
-            for it in intervals:
-                if it["range"]["left_text"] == l_txt and it["range"]["right_text"] == r_txt:
-                    found = it
-                    break
-            assert found is not None
-            if want_pos:
-                assert found["sign"] == "+"
-            else:
-                # хотим ≤0  → знак должен быть "−"
-                assert found["sign"] == "-"
+    # 6. Проверка shading
+    shading = axis.get("shading_ranges", [])
+    want_pos = "≥" in init or ">" in init
+    want_nonneg = "≥" in init or "≤" in init
 
-            # Проверка включения границ: только нули числителя и только при слабом знаке
-            assert sh["include_left"] == _inc_side(l_txt, True)
-            assert sh["include_right"] == _inc_side(r_txt, False)
+    def _inc_side(txt: str) -> bool:
+        return (txt in num_zeros_txt) and want_nonneg
 
-        # ——— 6) Ответ = точное склеивание shading_ranges
-        expected_answer = _build_answer_from_shading(shading)
-        assert isinstance(task["answer"], list) and len(task["answer"]) == 1
-        assert task["answer"][0] == expected_answer
+    for sh in shading:
+        l_txt, r_txt = sh["left_text"], sh["right_text"]
+        found = next((it for it in intervals
+                      if it["range"]["left_text"] == l_txt and it["range"]["right_text"] == r_txt), None)
+        if not found:
+            errors.append(f"Не найден интервал для shading {l_txt}–{r_txt}.")
+            continue
+        if want_pos and found["sign"] != "+":
+            errors.append(f"Ожидался знак '+' для shading {l_txt}–{r_txt}.")
+        if not want_pos and found["sign"] != "-":
+            errors.append(f"Ожидался знак '−' для shading {l_txt}–{r_txt}.")
+        if sh["include_left"] != _inc_side(l_txt):
+            errors.append(f"Неверное включение левой границы {l_txt}.")
+        if sh["include_right"] != _inc_side(r_txt):
+            errors.append(f"Неверное включение правой границы {r_txt}.")
 
-        return True
-    except AssertionError:
-        return False
+    # 7. Проверка answer
+    expected_answer = _build_answer_from_shading(shading)
+    answer = task.get("answer")
+    if not (isinstance(answer, list) and len(answer) == 1):
+        errors.append("Поле 'answer' должно быть списком с одним элементом.")
+    elif answer[0] != expected_answer:
+        errors.append(f"Ответ '{answer[0]}' не совпадает с shading '{expected_answer}'.")
+
+    # Финал
+    is_valid = len(errors) == 0
+    return is_valid, errors
 
 
 __all__ = ["validate_task_20_rational_inequalities"]

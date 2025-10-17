@@ -25,7 +25,6 @@ from matunya_bot_final.handlers.callbacks.task_handlers.task_11 import task_11_r
 from matunya_bot_final.handlers.message_handlers.task_11_answer_handler import router as task_11_answer_router
 from matunya_bot_final.handlers.callbacks.task_handlers.task_12_handler import router as task_12_router
 from matunya_bot_final.handlers.callbacks.task_handlers.task_20.task_20_handler import router as task_20_router
-#from matunya_bot_final.help_core.dispatchers.task_20.help_handler_20 import router as task_20_help_router
 
 from matunya_bot_final.handlers._legacy.user_answer_handler import router as legacy_answer_router
 from matunya_bot_final.help_core.dispatchers.help_handler import (
@@ -64,7 +63,6 @@ routers = [
     task_11_answer_router,
     task_12_router,
     task_20_router,
-    #task_20_help_router,
 
     # Legacy fallbacks to be migrated later.
     legacy_answer_router,

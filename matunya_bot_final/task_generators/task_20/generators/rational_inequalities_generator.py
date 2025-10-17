@@ -1,356 +1,464 @@
-"""Solver for Task 20 / subtype: rational_inequalities (ОГЭ-2026).
+"""Generator for task 20 rational_inequalities subtype (ОГЭ-2026).
 
-Поддерживаемые паттерны:
-  1) compare_unit_fractions_linear           : 1/x ⊙ 1/(x−a)
-  2) const_over_quadratic_nonpos_nonneg      : −C/(x²+bx+c) ⊙ 0
-  3) x_vs_const_over_x                        : x ⊙ K/x    → (x²−K)/x ⊙ 0, K=m²
-  4) neg_const_over_shifted_square_minus_const: −C/((x−a)²−d) ⊙ 0
-
-Результат: solution_core по ГОСТ-2026 v2.2
+Генерирует четыре вида рациональных неравенств:
+1) compare_unit_fractions_linear:   1/x ⊙ 1/(x−a)
+2) const_over_quadratic_nonpos_nonneg:  −C/(x²+bx+c) ⊙ 0 (c такой, чтобы корни были целыми)
+3) x_vs_const_over_x:                x ⊙ K/x  → (x²−K)/x ⊙ 0
+4) neg_const_over_shifted_square_minus_const:  −C/((x−a)²−d) ⊙ 0  (границы a±√d)
 """
 
 from __future__ import annotations
-from typing import Any, Dict, List
+
+import random
+import uuid
+import math
+from typing import Any, Dict, List, Tuple
+
+_AXIS_INF = 1e9
+_AXIS_ROUND_DIGITS = 5
 
 
-# =============================== ВСПОМОГАТЕЛЬНЫЕ УТИЛИТЫ ===============================
-
-def _ans(task: Dict[str, Any]) -> str:
-    """Финальный ответ как строка интервалов (из task['answer'])."""
-    a = task.get("answer", [])
-    return a[0] if isinstance(a, list) and a else ""
+def _round_axis_value(value: float) -> float:
+    return round(float(value), _AXIS_ROUND_DIGITS)
 
 
-def _axis(task: Dict[str, Any]) -> Dict[str, Any]:
-    """Готовые данные для оси (передаются генератором)."""
-    return task["variables"].get("axis_data", {})
+# ———————————————————————————————————————————————————————————————————————
+# Общие утилиты оформления
+# ———————————————————————————————————————————————————————————————————————
+
+SUPERSCRIPTS = {"0": "⁰", "1": "¹", "2": "²", "3": "³", "4": "⁴",
+                "5": "⁵", "6": "⁶", "7": "⁷", "8": "⁸", "9": "⁹"}
 
 
-def _is_weak(sign: str) -> bool:
-    """Нестрогое неравенство?"""
-    return sign in ("≤", "≥")
+def _to_superscripts(expr: str) -> str:
+    s = expr
+    for k, v in SUPERSCRIPTS.items():
+        s = s.replace(f"^{k}", v)
+    return s
 
 
-def _choose_intervals_phrase(want_positive: bool) -> str:
-    """Фраза выбора интервалов по знаку."""
-    return f"Выберем интервалы со знаком «{'+' if want_positive else '−'}»."
+def _qt(equation: str) -> str:
+    """Стандартная обёртка для текста задания."""
+    return f"Решите неравенство:\n{_to_superscripts(equation)}"
 
 
-# =============================== ПОСТРОИТЕЛИ ШАГОВ ===============================
+def _fmt_lin(b: int, with_plus: bool = True) -> str:
+    if b == 0:
+        return ""
+    sign = "+ " if b > 0 and with_plus else ("- " if b < 0 else "")
+    return f"{sign}{abs(b)}x" if abs(b) != 1 else f"{sign}x"
 
-def _steps_compare_unit_fractions_linear(task: Dict[str, Any]) -> List[Dict[str, Any]]:
-    """1/x ⊙ 1/(x−a). Генератор уже даёт transformed_expression вида a/(x(x−a)) ⊙' 0."""
-    vars_ = task["variables"]
-    a = int(vars_["coefficients"]["a"])
-    initial_sign = vars_["coefficients"]["sign"]  # исходный знак между 1/x и 1/(x−a), «≥» или «≤»
-    # После приведения: −a/(x(x−a)) initial_sign 0 → умножили на −1 → a/(x(x−a)) flipped_sign 0
-    flipped_sign = "≤" if initial_sign == "≥" else "≥"
 
-    steps: List[Dict[str, Any]] = [
-        {
-            "step_number": 1,
-            "description": "Перенесём всё в левую часть.",
-            "formula_representation": f"1/x − 1/(x−{a}) {initial_sign} 0",
-            "calculation_result": ""
+def _fmt_const(c: int, with_plus: bool = True) -> str:
+    if c == 0:
+        return ""
+    sign = "+ " if c > 0 and with_plus else ("- " if c < 0 else "")
+    return f"{sign}{abs(c)}"
+
+
+def _interval_text(l_text: str, r_text: str, include_l: bool, include_r: bool) -> str:
+    left_br = "[" if include_l else "("
+    right_br = "]" if include_r else ")"
+    return f"{left_br}{l_text}; {r_text}{right_br}"
+
+
+def _join_intervals_text(chunks: List[str]) -> str:
+    return " ∪ ".join(chunks)
+
+
+def _axis_point(value_text: str, value_num: float, ptype: str) -> Dict[str, Any]:
+    return {
+        "value_text": value_text,
+        "value_num": _round_axis_value(value_num),
+        "type": ptype
+    }  # ptype: "hollow"/"solid"
+
+
+def _axis_interval(l_txt: str, l_num: float, r_txt: str, r_num: float, sign_char: str) -> Dict[str, Any]:
+    return {
+        "range": {
+            "left_text": l_txt,
+            "left_num": _round_axis_value(l_num),
+            "right_text": r_txt,
+            "right_num": _round_axis_value(r_num)
         },
-        {
-            "step_number": 2,
-            "description": "Приведём к общему знаменателю x(x−a).",
-            "formula_general": "1/x − 1/(x−a) = ((x−a) − x) / (x(x−a))",
-            "formula_calculation": f"((x−{a}) − x) / (x(x−{a})) {initial_sign} 0",
-            "calculation_result": f"−{a} / (x(x−{a})) {initial_sign} 0"
-        },
-        {
-            "step_number": 3,
-            "description": "Умножим обе части на −1, изменив знак неравенства.",
-            "formula_representation": f"{a} / (x(x−{a})) {flipped_sign} 0",
-            "calculation_result": ""
-        },
-        {
-            "step_number": 4,
-            "description": "Числитель положителен, значит знак дроби определяется только знаменателем.",
-            "formula_representation": f"x(x−{a}) {'< 0' if flipped_sign == '≤' else '> 0'}",
-            "calculation_result": ""
-        },
-        {
-            "step_number": 5,
-            "description": "Найдём критические точки (нули знаменателя):",
-            "formula_representation": "",
-            "calculation_result": f"x = 0,  x = {a}"
-        },
-        {
-            "step_number": 6,
-            "description": "Отметим точки на числовой оси и расставим знаки выражения на интервалах.",
-            "visual_instruction": {"tool": "number_axis", "params": _axis(task)},
-            "calculation_result": ""
-        },
-        {
-            "step_number": 7,
-            "description": _choose_intervals_phrase(want_positive=(flipped_sign == "≥")),
-            "calculation_result": _ans(task)
-        },
+        "sign": sign_char  # "+" or "-"
+    }
+
+
+def _shading_entry(l_txt: str, l_num: float, r_txt: str, r_num: float,
+                   include_l: bool, include_r: bool) -> Dict[str, Any]:
+    return {
+        "left_text": l_txt,
+        "left_num": _round_axis_value(l_num),
+        "right_text": r_txt,
+        "right_num": _round_axis_value(r_num),
+        "include_left": include_l, "include_right": include_r
+    }
+
+
+# ———————————————————————————————————————————————————————————————————————
+# 1) compare_unit_fractions_linear  : 1/x ⊙ 1/(x−a)
+# ———————————————————————————————————————————————————————————————————————
+
+def _gen_compare_unit_fractions_linear() -> Tuple[str, str, Dict[str, Any]]:
+    a = random.randint(2, 9)
+    sign = random.choice(["≥", "≤"])  # строгости тоже возможны, но в ОГЭ чаще нестрогие
+
+    initial = f"1/x {sign} 1/(x−{a})"
+    # Приводим к одной дроби: 1/x − 1/(x−a) ⊙ 0  =>  a / (x(x−a)) ⊙ 0
+    transformed = f"{a}/(x(x−{a})) {sign} 0"
+
+    # Нули: числитель = константа (нет нулей), знаменатель: 0 и a
+    numerator_zeros: List[str] = []
+    denominator_zeros_text = ["0", f"{a}"]
+    denominator_zeros_num = [0.0, float(a)]
+
+    # Точки на оси
+    points = [
+        _axis_point("0", 0.0, "hollow"),
+        _axis_point(f"{a}", float(a), "hollow"),
     ]
-    return steps
+
+    # Интервалы и их знак (a>0 => знак дроби = знак произведения знаменателя)
+    crit = [-_AXIS_INF, 0.0, float(a), _AXIS_INF]
+    crit_txt = ["−∞", "0", f"{a}", "+∞"]
+    intervals = []
+    signs = []
+    for i in range(3):
+        x_mid = (crit[i] + crit[i + 1]) / 2 if math.isfinite(crit[i]) and math.isfinite(crit[i + 1]) else \
+            (-1.0 if i == 0 else (a + 1.0 if i == 2 else a / 2))
+        s = (x_mid) * (x_mid - a)
+        sign_char = "+" if s > 0 else "-"
+        signs.append(sign_char)
+        intervals.append(_axis_interval(crit_txt[i], crit[i], crit_txt[i + 1], crit[i + 1], sign_char))
+
+    # Выбор закрашиваемых интервалов
+    want_positive = sign in ("≥", ">")
+    shading: List[Dict[str, Any]] = []
+    chunks: List[str] = []
+    for i in range(3):
+        ok = (signs[i] == "+") if want_positive else (signs[i] == "-")
+        if not ok:
+            continue
+        l_txt, r_txt = crit_txt[i], crit_txt[i + 1]
+        l_num, r_num = crit[i], crit[i + 1]
+        # включаться границы могут только в числителе (которого нет), поэтому всегда круглые скобки
+        shading.append(_shading_entry(l_txt, l_num, r_txt, r_num, False, False))
+        chunks.append(_interval_text(l_txt, r_txt, False, False))
+
+    answer = _join_intervals_text(chunks)
+
+    variables = {
+        "solution_pattern": "compare_unit_fractions_linear",
+        "coefficients": {"a": a, "sign": sign},
+        "initial_expression": initial,
+        "transformed_expression": transformed,
+        "numerator_zeros": [],
+        "denominator_zeros": denominator_zeros_text,
+        "axis_data": {
+            "points": points,
+            "intervals": intervals,
+            "shading_ranges": shading
+        }
+    }
+    return initial, answer, variables
 
 
-def _steps_x_vs_const_over_x(task: Dict[str, Any]) -> List[Dict[str, Any]]:
-    """x ⊙ K/x, где K = m². После переноса: (x²−K)/x ⊙ 0, затем раскладываем числитель."""
-    vars_ = task["variables"]
-    K = int(vars_["coefficients"]["K"])
-    m = int(vars_["coefficients"]["m"])
-    sign = vars_["coefficients"]["sign"]  # «≤» или «≥»
-    want_positive = (sign == "≥")  # для финального выбора по знакам
+# ———————————————————————————————————————————————————————————————————————
+# 2) const_over_quadratic_nonpos_nonneg : −C/(x²+bx+c) ⊙ 0
+#    выбираем квадратики с ЦЕЛЫМИ корнями r1<r2
+# ———————————————————————————————————————————————————————————————————————
 
-    steps: List[Dict[str, Any]] = [
-        {
-            "step_number": 1,
-            "description": "Перенесём все слагаемые в левую часть.",
-            "formula_representation": f"x − {K}/x {sign} 0",
-            "calculation_result": ""
-        },
-        {
-            "step_number": 2,
-            "description": "Приведём к общему знаменателю x.",
-            "formula_representation": f"(x^2 − {K})/x {sign} 0",
-            "calculation_result": ""
-        },
-        {
-            "step_number": 3,
-            "description": "Разложим числитель на множители по формуле разности квадратов.",
-            "formula_general": "x^2 − K = (x − √K)(x + √K)",
-            "formula_calculation": f"x^2 − {K} = (x − {m})(x + {m})",
-            "calculation_result": f"(x − {m})(x + {m}) / x {sign} 0"
-        },
-        {
-            "step_number": 4,
-            "description": "Найдём критические точки — нули числителя и знаменателя.",
-            "calculation_result": f"x = −{m},  x = 0,  x = {m}"
-        },
-        {
-            "step_number": 5,
-            "description": "Отметим точки на числовой оси и расставим знаки выражения на интервалах.",
-            "visual_instruction": {"tool": "number_axis", "params": _axis(task)},
-            "calculation_result": ""
-        },
-        {
-            "step_number": 6,
-            "description": _choose_intervals_phrase(want_positive=want_positive),
-            "calculation_result": _ans(task)
-        },
+def _gen_const_over_quadratic_nonpos_nonneg() -> Tuple[str, str, Dict[str, Any]]:
+    # Возьмём пару целых корней
+    r1, r2 = sorted(random.sample([-8, -6, -5, -4, -3, 1, 2, 3, 5, 6, 8], 2))
+    b = -(r1 + r2)
+    c = r1 * r2
+    C = 19  # модуль константы
+    # Берём отрицательный числитель как в оригиналах и знак ≤/≥
+    numerator = -C
+    sign = random.choice(["≤", "≥"])
+
+    quad_text = f"x^2 {_fmt_lin(b)} {_fmt_const(c)}".replace("+ -", "- ")
+    initial = f"{numerator}/{_to_superscripts(quad_text).replace('^', '')} {sign} 0"
+    # transformed уже и есть эта же дробь
+    transformed = f"{numerator}/({quad_text}) {sign} 0"
+
+    # Нули
+    numerator_zeros: List[str] = []  # числитель константа
+    denominator_zeros_text = [str(r1), str(r2)]
+    points = [
+        _axis_point(str(r1), float(r1), "hollow"),
+        _axis_point(str(r2), float(r2), "hollow"),
     ]
-    return steps
+
+    # Знаки интервалов зависят от знака знаменателя; числитель <0
+    # Для "≤ 0": нужен знаменатель ≥ 0  (внешние интервалы)
+    # Для "≥ 0": нужен знаменатель ≤ 0  (внутренний интервал)
+    crit = [-_AXIS_INF, float(r1), float(r2), _AXIS_INF]
+    crit_txt = ["−∞", str(r1), str(r2), "+∞"]
+    intervals, signs = [], []
+    for i in range(3):
+        # берём середину интервала
+        if math.isfinite(crit[i]) and math.isfinite(crit[i + 1]):
+            x_mid = (crit[i] + crit[i + 1]) / 2
+        else:
+            x_mid = r1 - 1 if i == 0 else (r2 + 1 if i == 2 else 0.0)
+        denom_val = (x_mid - r1) * (x_mid - r2)
+        frac_sign = "-" if denom_val > 0 else "+"  # потому что числитель отрицателен
+        signs.append(frac_sign)
+        intervals.append(_axis_interval(crit_txt[i], crit[i], crit_txt[i + 1], crit[i + 1], frac_sign))
+
+    want_nonpos = (sign == "≤")
+    shading: List[Dict[str, Any]] = []
+    chunks: List[str] = []
+    for i in range(3):
+        ok = (signs[i] == "-") if want_nonpos else (signs[i] == "+")
+        if not ok:
+            continue
+        l_txt, r_txt = crit_txt[i], crit_txt[i + 1]
+        l_num, r_num = crit[i], crit[i + 1]
+        # границы — точки разрыва, всегда круглые
+        shading.append(_shading_entry(l_txt, l_num, r_txt, r_num, False, False))
+        chunks.append(_interval_text(l_txt, r_txt, False, False))
+
+    answer = _join_intervals_text(chunks)
+
+    variables = {
+        "solution_pattern": "const_over_quadratic_nonpos_nonneg",
+        "coefficients": {"b": b, "c": c, "C": numerator, "roots": [r1, r2], "sign": sign},
+        "initial_expression": f"{numerator}/({ _to_superscripts(quad_text) }) {sign} 0",
+        "transformed_expression": transformed,
+        "numerator_zeros": numerator_zeros,
+        "denominator_zeros": denominator_zeros_text,
+        "axis_data": {
+            "points": points,
+            "intervals": intervals,
+            "shading_ranges": shading
+        }
+    }
+    return initial, answer, variables
 
 
-def _steps_const_over_quadratic(task: Dict[str, Any]) -> List[Dict[str, Any]]:
-    """−C/(x²+bx+c) ⊙ 0. Числитель — отрицательная константа."""
-    vars_ = task["variables"]
-    b = int(vars_["coefficients"]["b"])
-    c = int(vars_["coefficients"]["c"])
-    C = int(vars_["coefficients"]["C"])  # отрицательное
-    sign = vars_["coefficients"]["sign"]  # «≤» или «≥»
+# ———————————————————————————————————————————————————————————————————————
+# 3) x_vs_const_over_x : x ⊙ K/x  →  (x²−K)/x ⊙ 0  ,  K=m²
+# ———————————————————————————————————————————————————————————————————————
 
-    # Идея анализа знака:
-    #  −C < 0. Чтобы дробь была ≥ 0 → знаменатель ≤ 0 (но =0 запрещено ⇒ фактически <0).
-    #  Чтобы дробь была ≤ 0 → знаменатель ≥ 0 (но =0 запрещено ⇒ фактически >0).
-    need = "< 0" if sign == "≥" else "> 0"
+def _gen_x_vs_const_over_x() -> Tuple[str, str, Dict[str, Any]]:
+    m = random.choice([2, 3, 4, 5, 6, 7, 8])
+    K = m * m
+    sign = random.choice(["≤", "≥"])  # оба варианта корректны
 
-    # Корни знаменателя (даны генератором)
-    roots = vars_["coefficients"].get("roots", [])
-    roots_sorted = sorted(roots)
-    r_text = ", ".join(str(x) for x in roots_sorted) if roots_sorted else "—"
+    initial = f"x {sign} {K}/x"
+    transformed = f"(x^2−{K})/x {sign} 0"
 
-    steps: List[Dict[str, Any]] = [
-        {
-            "step_number": 1,
-            "description": "Упростим неравенство: числитель отрицателен, меняем рассуждение на знак знаменателя.",
-            "formula_representation": f"{C}/(x^2 + {b}x + {c}) {sign} 0",
-            "calculation_result": ""
-        },
-        {
-            "step_number": 2,
-            "description": "Так как числитель отрицательен, чтобы дробь удовлетворяла неравенству, требуемый знак знаменателя:",
-            "formula_representation": f"x^2 + {b}x + {c} {need}",
-            "calculation_result": ""
-        },
-        {
-            "step_number": 3,
-            "description": "Найдём нули знаменателя, решив квадратное уравнение x^2 + bx + c = 0.",
-            "formula_general": "Коэффициенты: a = 1,  b = b,  c = c",
-            "formula_calculation": f"Здесь: a = 1, b = {b}, c = {c}",
-            "calculation_result": f"Корни: x = {r_text}"
-        },
-        {
-            "step_number": 4,
-            "description": "Вычислим дискриминант по формуле D = b² − 4ac и поясним подстановку.",
-            "formula_general": "D = b² − 4ac",
-            "formula_calculation": f"D = {b}² − 4·1·({c}) = {b*b} − {4*c} = {b*b - 4*c}",
-            "calculation_result": ""
-        },
-        {
-            "step_number": 5,
-            "description": "Отметим критические точки на числовой оси и расставим знаки выражения.",
-            "visual_instruction": {"tool": "number_axis", "params": _axis(task)},
-            "calculation_result": ""
-        },
-        {
-            "step_number": 6,
-            "description": _choose_intervals_phrase(want_positive=(sign == "≤")),  # при «≤0» хотим «−», но мы формулируем через знак дроби (числитель<0) → хотим «+»? Объясним в подсказках.
-            "calculation_result": _ans(task)
-        },
+    # Нули
+    numerator_zeros_text = [f"−{m}", f"{m}"]
+    numerator_zeros_num = [-float(m), float(m)]
+    denominator_zeros_text = ["0"]
+    denominator_zeros_num = [0.0]
+
+    # Точки
+    points = [
+        _axis_point(f"−{m}", -float(m), "solid" if sign in ("≤", "≥") else "hollow"),
+        _axis_point("0", 0.0, "hollow"),
+        _axis_point(f"{m}", float(m), "solid" if sign in ("≤", "≥") else "hollow"),
     ]
-    # Пояснение к описанию выбора: шаги выше уже свели задачу к условию на знак знаменателя.
-    # Чертёж (axis_data) уже отражает верный выбор интервалов, а calculation_result — финальный ответ из task['answer'].
-    return steps
+
+    # Интервалы по критическим точкам: −∞, −m, 0, m, +∞
+    crit = [-_AXIS_INF, -float(m), 0.0, float(m), _AXIS_INF]
+    crit_txt = ["−∞", f"−{m}", "0", f"{m}", "+∞"]
+    intervals, signs_list = [], []
+    for i in range(4):
+        if math.isfinite(crit[i]) and math.isfinite(crit[i + 1]):
+            x_mid = (crit[i] + crit[i + 1]) / 2
+        else:
+            x_mid = -m - 1 if i == 0 else (m + 1 if i == 3 else (m / 2 if i == 2 else -m / 2))
+        num_val = x_mid * x_mid - K
+        den_val = x_mid
+        sgn = "+" if (num_val > 0 and den_val > 0) or (num_val < 0 and den_val < 0) else "-"
+        signs_list.append(sgn)
+        intervals.append(_axis_interval(crit_txt[i], crit[i], crit_txt[i + 1], crit[i + 1], sgn))
+
+    want_nonpos = (sign == "≤")
+    shading: List[Dict[str, Any]] = []
+    chunks: List[str] = []
+    for i in range(4):
+        ok = (signs_list[i] == "-") if want_nonpos else (signs_list[i] == "+")
+        if not ok:
+            continue
+        l_txt, r_txt = crit_txt[i], crit_txt[i + 1]
+        l_num, r_num = crit[i], crit[i + 1]
+
+        # Включаем границы, если это нули числителя и знак нестрогий
+        include_l = False
+        include_r = False
+        if l_txt in numerator_zeros_text and sign in ("≤", "≥"):
+            include_l = True
+        if r_txt in numerator_zeros_text and sign in ("≤", "≥"):
+            include_r = True
+
+        # Ноль знаменателя никогда не включаем
+        if l_txt == "0":
+            include_l = False
+        if r_txt == "0":
+            include_r = False
+
+        shading.append(_shading_entry(l_txt, l_num, r_txt, r_num, include_l, include_r))
+        chunks.append(_interval_text(l_txt, r_txt, include_l, include_r))
+
+    answer = _join_intervals_text(chunks)
+
+    variables = {
+        "solution_pattern": "x_vs_const_over_x",
+        "coefficients": {"K": K, "m": m, "sign": sign},
+        "initial_expression": initial,
+        "transformed_expression": transformed,
+        "numerator_zeros": numerator_zeros_text,
+        "denominator_zeros": denominator_zeros_text,
+        "axis_data": {
+            "points": points,
+            "intervals": intervals,
+            "shading_ranges": shading
+        }
+    }
+    return initial, answer, variables
 
 
-def _steps_neg_const_over_shifted_square(task: Dict[str, Any]) -> List[Dict[str, Any]]:
-    """−C/((x−a)²−d) ⊙ 0. Числитель < 0, знаменатель вида (x−a)²−d."""
-    vars_ = task["variables"]
-    a = int(vars_["coefficients"]["a"])
-    d = int(vars_["coefficients"]["d"])
-    C = int(vars_["coefficients"]["C"])  # отрицательное
-    sign = vars_["coefficients"]["sign"]  # «≤» или «≥»
+# ———————————————————————————————————————————————————————————————————————
+# 4) neg_const_over_shifted_square_minus_const : −C/((x−a)²−d) ⊙ 0
+# ———————————————————————————————————————————————————————————————————————
 
-    # (отрицательное)/(знаменатель) ⊙ 0:
-    #  ⊙ = ≥  ⇒ знаменатель < 0
-    #  ⊙ = ≤  ⇒ знаменатель > 0
-    need = "< 0" if sign == "≥" else "> 0"
+def _gen_neg_const_over_shifted_square_minus_const() -> Tuple[str, str, Dict[str, Any]]:
+    a = random.randint(1, 6)
+    d = random.choice([2, 3, 5, 6, 7, 8, 11])
+    C = -random.choice([5, 7, 9, 11])  # отрицательный числитель
+    sign = random.choice(["≥", "≤"])
+
+    initial = f"{C}/((x−{a})^2−{d}) {sign} 0"
+    transformed = initial  # форма уже приведённая
 
     left_txt = f"{a}−√{d}"
     right_txt = f"{a}+√{d}"
+    left_num = a - math.sqrt(d)
+    right_num = a + math.sqrt(d)
 
-    steps: List[Dict[str, Any]] = [
-        {
-            "step_number": 1,
-            "description": "Учтём знак числителя: он отрицательный, поэтому знак дроби определяется знаком знаменателя.",
-            "formula_representation": f"{C}/((x−{a})^2−{d}) {sign} 0",
-            "calculation_result": ""
-        },
-        {
-            "step_number": 2,
-            "description": "Переформулируем условие на знак знаменателя.",
-            "formula_representation": f"(x−{a})^2 − {d} {need}",
-            "calculation_result": ""
-        },
-        {
-            "step_number": 3,
-            "description": "Выделим границы по формуле разности квадратов: d = (√d)^2.",
-            "formula_general": "A^2 − B^2 = (A − B)(A + B)",
-            "formula_calculation": f"(x−{a})^2 − {d} = ((x−{a}) − √{d})((x−{a}) + √{d})",
-            "calculation_result": f"Критические точки: x = {left_txt},  x = {right_txt}"
-        },
-        {
-            "step_number": 4,
-            "description": "Отметим точки на числовой оси и расставим знаки выражения на интервалах.",
-            "visual_instruction": {"tool": "number_axis", "params": _axis(task)},
-            "calculation_result": ""
-        },
-        {
-            "step_number": 5,
-            "description": _choose_intervals_phrase(want_positive=(sign == "≤")),  # см. пояснение в комментарии к const_over_quadratic
-            "calculation_result": _ans(task)
-        },
-    ]
-    return steps
+    # Нули
+    numerator_zeros: List[str] = []
+    denominator_zeros_text = [left_txt, right_txt]
 
-
-# =============================== ИДЕИ РЕШЕНИЯ ===============================
-
-def _idea_compare() -> str:
-    return (
-        "Это дробно-рациональное неравенство. Нельзя умножать «крест-накрест», так как знаки x и (x−a) заранее неизвестны. "
-        "Правильный путь: перенести всё в одну часть, привести к общему знаменателю и решить методом интервалов."
-    )
-
-
-def _idea_x_vs_const() -> str:
-    return (
-        "Это дробно-рациональное неравенство. Переносим всё в одну часть, приводим к общему знаменателю x, "
-        "раскладываем числитель по формуле разности квадратов и решаем методом интервалов с учётом нулей числителя и знаменателя."
-    )
-
-
-def _idea_const_over_quadratic() -> str:
-    return (
-        "Это дробно-рациональное неравенство с отрицательной константой в числителе. "
-        "Знак дроби определяется знаком знаменателя: переносим рассуждение на квадратный трёхчлен, "
-        "находим его корни и решаем методом интервалов."
-    )
-
-
-def _idea_neg_const_shifted_square() -> str:
-    return (
-        "Это дробно-рациональное неравенство с отрицательным числителем и знаменателем вида (x−a)²−d. "
-        "Знак дроби определяется знаком знаменателя; выделяем границы a±√d и решаем методом интервалов."
-    )
-
-
-# =============================== ПУБЛИЧНЫЙ ИНТЕРФЕЙС ===============================
-
-async def solve(task_data: Dict[str, Any]) -> Dict[str, Any]:
-    """
-    Главная функция «Решателя» для подтипа rational_inequalities.
-    На вход получает весь объект задачи; на выход — стандартизованный solution_core.
-    """
-    vars_ = task_data.get("variables", {})
-    pattern = vars_.get("solution_pattern", "")
-
-    # Идентификатор
-    if pattern == "compare_unit_fractions_linear":
-        qid = "20_rational_inequalities_compare_unit_fractions_linear"
-    elif pattern == "x_vs_const_over_x":
-        qid = "20_rational_inequalities_x_vs_const_over_x"
-    elif pattern == "const_over_quadratic_nonpos_nonneg":
-        qid = "20_rational_inequalities_const_over_quadratic_nonpos_nonneg"
-    elif pattern == "neg_const_over_shifted_square_minus_const":
-        qid = "20_rational_inequalities_neg_const_over_shifted_square_minus_const"
-    else:
-        qid = f"20_rational_inequalities_{pattern or 'unknown'}"
-
-    # Ветвление по паттерну
-    if pattern == "compare_unit_fractions_linear":
-        explanation_idea = _idea_compare()
-        steps = _steps_compare_unit_fractions_linear(task_data)
-    elif pattern == "x_vs_const_over_x":
-        explanation_idea = _idea_x_vs_const()
-        steps = _steps_x_vs_const_over_x(task_data)
-    elif pattern == "const_over_quadratic_nonpos_nonneg":
-        explanation_idea = _idea_const_over_quadratic()
-        steps = _steps_const_over_quadratic(task_data)
-    elif pattern == "neg_const_over_shifted_square_minus_const":
-        explanation_idea = _idea_neg_const_shifted_square()
-        steps = _steps_neg_const_over_shifted_square(task_data)
-    else:
-        explanation_idea = (
-            "Данный шаблон решения пока в разработке. "
-            "Скоро добавим подробные шаги с числовой осью и методическими комментариями."
-        )
-        steps = [{
-            "step_number": 1,
-            "description": "Шаблон решения для этого паттерна будет добавлен в ближайшем обновлении.",
-            "calculation_result": ""
-        }]
-
-    final_answer = {"value_machine": _ans(task_data), "value_display": _ans(task_data)}
-
-    # Общее — полезные подсказки
-    hints = [
-        "Не умножай «крест-накрест», если неизвестны знаки множителей — это частая ошибка.",
-        "Нули знаменателя всегда выкалываются на оси (в решение не включаются).",
-        "При умножении или делении неравенства на отрицательное число знак меняется на противоположный.",
-        "Метод интервалов: при проходе через простые корни линейных множителей знак меняется.",
+    # Точки
+    points = [
+        _axis_point(left_txt, left_num, "hollow"),
+        _axis_point(right_txt, right_num, "hollow"),
     ]
 
-    solution_core: Dict[str, Any] = {
-        "question_id": qid,
-        "question_group": "RATIONAL_INEQUALITIES",
-        "explanation_idea": explanation_idea,
-        "calculation_steps": steps,
-        "final_answer": final_answer,
-        "hints": hints,
-        "validation_code": None,
+    # Знак дроби: числитель < 0 ⇒ знак противоположен знаку знаменателя.
+    # Знаменатель (x−a)^2−d <= 0 ⇔ x ∈ (a−√d ; a+√d)
+    crit_txt = ["−∞", left_txt, right_txt, "+∞"]
+    crit = [-_AXIS_INF, left_num, right_num, _AXIS_INF]
+    intervals, signs_list = [], []
+    for i in range(3):
+        if math.isfinite(crit[i]) and math.isfinite(crit[i + 1]):
+            x_mid = (crit[i] + crit[i + 1]) / 2
+        else:
+            x_mid = left_num - 1 if i == 0 else (right_num + 1 if i == 2 else a)
+        denom_val = (x_mid - a) ** 2 - d
+        frac_sign = "-" if denom_val > 0 else "+"  # числитель отрицателен
+        signs_list.append(frac_sign)
+        intervals.append(_axis_interval(crit_txt[i], crit[i], crit_txt[i + 1], crit[i + 1], frac_sign))
+
+    want_nonneg = (sign == "≥")
+    shading: List[Dict[str, Any]] = []
+    chunks: List[str] = []
+    for i in range(3):
+        ok = (signs_list[i] == "+") if want_nonneg else (signs_list[i] == "-")
+        if not ok:
+            continue
+        l_txt, r_txt = crit_txt[i], crit_txt[i + 1]
+        l_num, r_num = crit[i], crit[i + 1]
+        shading.append(_shading_entry(l_txt, l_num, r_txt, r_num, False, False))
+        chunks.append(_interval_text(l_txt, r_txt, False, False))
+
+    answer = _join_intervals_text(chunks)
+
+    variables = {
+        "solution_pattern": "neg_const_over_shifted_square_minus_const",
+        "coefficients": {"a": a, "d": d, "C": C, "sign": sign},
+        "initial_expression": initial,
+        "transformed_expression": transformed,
+        "numerator_zeros": numerator_zeros,
+        "denominator_zeros": denominator_zeros_text,
+        "axis_data": {
+            "points": points,
+            "intervals": intervals,
+            "shading_ranges": shading
+        }
     }
-    return solution_core
+    return initial, answer, variables
 
 
-__all__ = ["solve"]
+# ———————————————————————————————————————————————————————————————————————
+# Карта паттернов и главная функция
+# ———————————————————————————————————————————————————————————————————————
+
+PATTERN_GENERATORS = {
+    "compare_unit_fractions_linear": _gen_compare_unit_fractions_linear,
+    "const_over_quadratic_nonpos_nonneg": _gen_const_over_quadratic_nonpos_nonneg,
+    "x_vs_const_over_x": _gen_x_vs_const_over_x,
+    "neg_const_over_shifted_square_minus_const": _gen_neg_const_over_shifted_square_minus_const,
+}
+
+
+def generate_task_20_rational_inequalities(pattern: str | None = None) -> Dict[str, Any]:
+    """
+    Генерирует задачу подтипа rational_inequalities с полным набором данных для оси.
+
+    Аргументы:
+        pattern: (опционально) имя паттерна из PATTERN_GENERATORS.
+                 Если None — выбирается случайный из доступных.
+
+    Возвращает:
+        Полный словарь задачи (совместим с populate и валидатором).
+    """
+    import uuid
+    import random
+
+    # Если pattern не передан — выбираем случайный
+    if pattern is None:
+        pattern_key = random.choice(list(PATTERN_GENERATORS))
+    else:
+        if pattern not in PATTERN_GENERATORS:
+            raise ValueError(
+                f"❌ Неизвестный pattern: {pattern}. "
+                f"Допустимые: {', '.join(PATTERN_GENERATORS.keys())}"
+            )
+        pattern_key = pattern
+
+    gen = PATTERN_GENERATORS[pattern_key]
+    initial, answer, variables = gen()
+    variables.setdefault("solution_pattern", pattern_key)
+
+    # Защита от случайного совпадения с оригиналами
+    banned_examples = {
+        "1/x ≥ 1/(x−3)",
+        "−19/(x^2 + x − 12) ≤ 0",
+        "x ≤ 25/x",
+        "−11/((x−2)^2 − 3) ≥ 0",
+    }
+    if variables.get("initial_expression") in banned_examples:
+        return generate_task_20_rational_inequalities(pattern)
+
+    return {
+        "id": f"20_rational_inequalities_{uuid.uuid4().hex[:6]}",
+        "task_number": 20,
+        "topic": "inequalities",
+        "subtype": "rational_inequalities",
+        "question_text": _qt(variables["initial_expression"]),
+        "answer": [answer],
+        "variables": variables,
+    }
+
+
+__all__ = ["generate_task_20_rational_inequalities"]

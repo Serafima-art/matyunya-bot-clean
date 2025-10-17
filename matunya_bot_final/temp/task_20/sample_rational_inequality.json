@@ -1,0 +1,102 @@
+{
+  "id": "20_rational_inequalities_0ca82e",
+  "task_number": 20,
+  "topic": "inequalities",
+  "subtype": "rational_inequalities",
+  "question_text": "Решите неравенство:\nx ≥ 4/x",
+  "answer": [
+    "[−2; 0) ∪ [2; +∞)"
+  ],
+  "variables": {
+    "solution_pattern": "x_vs_const_over_x",
+    "coefficients": {
+      "K": 4,
+      "m": 2,
+      "sign": "≥"
+    },
+    "initial_expression": "x ≥ 4/x",
+    "transformed_expression": "(x^2−4)/x ≥ 0",
+    "numerator_zeros": [
+      "−2",
+      "2"
+    ],
+    "denominator_zeros": [
+      "0"
+    ],
+    "axis_data": {
+      "points": [
+        {
+          "value_text": "−2",
+          "value_num": -2.0,
+          "type": "solid"
+        },
+        {
+          "value_text": "0",
+          "value_num": 0.0,
+          "type": "hollow"
+        },
+        {
+          "value_text": "2",
+          "value_num": 2.0,
+          "type": "solid"
+        }
+      ],
+      "intervals": [
+        {
+          "range": {
+            "left_text": "−∞",
+            "left_num": -1000000000.0,
+            "right_text": "−2",
+            "right_num": -2.0
+          },
+          "sign": "-"
+        },
+        {
+          "range": {
+            "left_text": "−2",
+            "left_num": -2.0,
+            "right_text": "0",
+            "right_num": 0.0
+          },
+          "sign": "+"
+        },
+        {
+          "range": {
+            "left_text": "0",
+            "left_num": 0.0,
+            "right_text": "2",
+            "right_num": 2.0
+          },
+          "sign": "-"
+        },
+        {
+          "range": {
+            "left_text": "2",
+            "left_num": 2.0,
+            "right_text": "+∞",
+            "right_num": 1000000000.0
+          },
+          "sign": "+"
+        }
+      ],
+      "shading_ranges": [
+        {
+          "left_text": "−2",
+          "left_num": -2.0,
+          "right_text": "0",
+          "right_num": 0.0,
+          "include_left": true,
+          "include_right": false
+        },
+        {
+          "left_text": "2",
+          "left_num": 2.0,
+          "right_text": "+∞",
+          "right_num": 1000000000.0,
+          "include_left": true,
+          "include_right": false
+        }
+      ]
+    }
+  }
+}
