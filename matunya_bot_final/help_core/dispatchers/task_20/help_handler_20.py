@@ -10,7 +10,7 @@ from aiogram.fsm.context import FSMContext
 from matunya_bot_final.keyboards.inline_keyboards.help_core_keyboard import create_solution_keyboard
 from matunya_bot_final.utils.message_manager import send_tracked_message, cleanup_messages_by_category
 from matunya_bot_final.help_core.humanizers.template_humanizers.task_20_humanizer import humanize_solution_20
-from matunya_bot_final.help_core.dispatchers.help_handler import (
+from matunya_bot_final.help_core.dispatchers.common import (
     call_dynamic_solver,
     clean_html_tags,
     format_basic_solution,

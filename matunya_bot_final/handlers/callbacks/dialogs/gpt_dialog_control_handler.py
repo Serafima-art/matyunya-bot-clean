@@ -33,7 +33,7 @@ _DIALOG_CONTEXT_KEYS: Sequence[str] = ("dialog_context", "gpt_dialog_context")
 _HISTORY_KEYS: Sequence[str] = ("dialog_history", "gpt_dialog_history")
 _SYSTEM_PROMPT_KEY = "gpt_system_prompt"
 _PREVIOUS_STATE_KEY = "gpt_previous_state"
-_TASK_PACKAGE_KEY = "task_package"
+_TASK_1_5_DATA_KEY = "task_1_5_data"
 _TASK_1_5_SOLUTION_KEYS: Sequence[str] = ("task_1_5_solution_core", "solution_core")
 _STUDENT_NAME_KEY = "student_name"
 _GENDER_KEY = "gender"
@@ -172,23 +172,23 @@ async def handle_gpt_dialog_message(message: Message, state: FSMContext, bot: Bo
     system_prompt: Optional[str]
 
     if context == "task_1_5":
-        task_package = data.get(_TASK_PACKAGE_KEY)
+        task_1_5_data = data.get(_TASK_1_5_DATA_KEY)
         solution_core = _pick_first(data, _TASK_1_5_SOLUTION_KEYS)
-        if task_package is None or solution_core is None:
-            logger.error("Task 1-5 dialog missing context: task_package=%s, solution_core=%s", bool(task_package), bool(solution_core))
+        if task_1_5_data is None or solution_core is None:
+            logger.error("Task 1-5 dialog missing context: task_1_5_data=%s, solution_core=%s", bool(task_1_5_data), bool(solution_core))
             await message.answer("Не могу найти данные задачи. Попроси помощь ещё раз.")
             return
 
         subtype = (
-            task_package.get("metadata", {}).get("subtype")
-            or task_package.get("subtype")
+            task_1_5_data.get("metadata", {}).get("subtype")
+            or task_1_5_data.get("subtype")
             or data.get("current_subtype")
             or ""
         )
-        task_type = task_package.get("task_type")
+        task_type = task_1_5_data.get("task_type")
         golden_set = await get_golden_set(subtype, task_type=task_type)
         system_prompt = get_help_dialog_prompt(
-            task_package=task_package,
+            task_1_5_data=task_1_5_data,
             solution_core=solution_core,
             dialog_history=history,
             student_name=data.get(_STUDENT_NAME_KEY),
@@ -246,3 +246,4 @@ async def handle_gpt_dialog_message(message: Message, state: FSMContext, bot: Bo
 
 
 __all__ = ["router"]
+

@@ -157,7 +157,15 @@ async def handle_group_1_5_ask_gpt(
 
     question_num = callback_data.question_num or data.get("current_task_index", 0) + 1
     student_name = data.get("student_name") or "друг"
-    gender = data.get("gender")
+    gender = (data.get("gender") or data.get("student_gender") or "neutral")
+
+    if gender == "male":
+        glad_word = "рад"
+    elif gender == "female":
+        glad_word = "рада"
+    else:
+        glad_word = "рад(а)"
+
 
     subtype_for_prompt = (
 
@@ -209,7 +217,7 @@ async def handle_group_1_5_ask_gpt(
     await state.set_state(GPState.in_dialog)
 
     phrase = random.choice(ASK_QUESTION_PHRASES)
-    prompt_text = phrase.format(student_name=student_name)
+    prompt_text = phrase.format(student_name=student_name, glad_word=glad_word)
 
     await send_tracked_message(
         bot=bot,
