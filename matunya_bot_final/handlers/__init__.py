@@ -8,7 +8,6 @@ from matunya_bot_final.handlers.parts_handlers import router as parts_router
 from matunya_bot_final.handlers.chatter_handler import router as chatter_router
 from matunya_bot_final.handlers.callbacks.dialogs.gpt_dialog_control_handler import router as gpt_dialog_control_router
 
-from matunya_bot_final.help_core.dispatchers.task_1_5.help_handler_1_5 import router as help_router_1_5
 #from matunya_bot_final.help_core.dispatchers.theory_dispatcher import theory_router
 
 from matunya_bot_final.handlers.callbacks.task_handlers.group_1_5.task_1_5_router import router as task_1_5_router
@@ -38,7 +37,6 @@ routers = [
     parts_router,
 
     # Help flow for tasks 1-5 (legacy architecture still in use).
-    help_router_1_5,
     help_solution_router,
     #theory_router,
 
