@@ -128,9 +128,9 @@ async def dispatch_overview_screen(callback: types.CallbackQuery, callback_data:
 
     Логика:
     1. Инициализирует state с архитектурой "Именных Бирок"
-    2. Вызывает соответствующий Генератор для получения task_package
+    2. Вызывает соответствующий Генератор для получения task_1_5_data
     3. Регистрирует задачи в базе данных
-    4. Сохраняет task_package и task_ids в state
+    4. Сохраняет task_1_5_data и task_ids в state
     5. Вызывает Специалиста для отправки "Обзорного экрана"
     6. Отправляет "Обзорную клавиатуру" с кнопками-номерами
     """
@@ -174,13 +174,13 @@ async def dispatch_overview_screen(callback: types.CallbackQuery, callback_data:
     )
 
     try:
-        task_package = await _generate_task_package(subtype_key, state, session_maker)
-        if not task_package:
-            raise Exception(f"Не удалось сгенерировать task_package для {subtype_key}")
+        task_1_5_data = await _generate_task_1_5_data(subtype_key, state, session_maker)
+        if not task_1_5_data:
+            raise Exception(f"Не удалось сгенерировать task_1_5_data для {subtype_key}")
 
         task_ids_from_db = []
         async with session_maker() as session:
-            tasks = task_package.get('tasks', [])
+            tasks = task_1_5_data.get('tasks', [])
             for i, task in enumerate(tasks):
                 skill_source_id = task.get('skill_source_id')
                 if not skill_source_id:
@@ -205,11 +205,11 @@ async def dispatch_overview_screen(callback: types.CallbackQuery, callback_data:
             )
             return
 
-        display_scenario = task_package.get('display_scenario', [])
+        display_scenario = task_1_5_data.get('display_scenario', [])
         task_text = ''.join(item['content'] for item in display_scenario if item['type'] == 'text')
         await state.update_data(
-            task_package=task_package,
-            correct_answers=[task["answer"] for task in task_package["tasks"]],
+            task_1_5_data=task_1_5_data,
+            correct_answers=[task["answer"] for task in task_1_5_data["tasks"]],
             current_task_index=0,
             task_text=task_text,
             task_ids=task_ids_from_db
@@ -223,7 +223,7 @@ async def dispatch_overview_screen(callback: types.CallbackQuery, callback_data:
             chat_id=callback.from_user.id,
             state=state,
             subtype_key=subtype_key,
-            task_package=task_package
+            task_1_5_data=task_1_5_data
         )
 
     except Exception as e:
@@ -268,9 +268,9 @@ async def back_to_overview_handler(callback: types.CallbackQuery, state: FSMCont
 
     # 📦 2. Достаём данные из state
     user_data = await state.get_data()
-    task_package = user_data.get("task_package", {})
+    task_1_5_data = user_data.get("task_1_5_data", {})
     subtype_key = user_data.get("task_subtype", "tires")
-    tasks_count = len(task_package.get("tasks", []))
+    tasks_count = len(task_1_5_data.get("tasks", []))
     solved_indices = user_data.get("solved_tasks_indices", [])
 
     # 🎮 3. Формируем клавиатуру
@@ -311,7 +311,7 @@ async def dispatch_focused_screen(callback: types.CallbackQuery, callback_data: 
 
     Логика:
     1. Извлекает номер вопроса из callback_data
-    2. Получает task_package из state
+    2. Получает task_1_5_data из state
     3. Редактирует сообщение с "Обзорной клавиатурой", убирая ее
     4. Условно очищает фокусные панели только при смене задания
     5. Всегда очищает панели помощи и диалогов
@@ -323,10 +323,10 @@ async def dispatch_focused_screen(callback: types.CallbackQuery, callback_data: 
     question_num = int(callback_data.question_num or 1)
     user_data = await state.get_data()
     subtype_key = user_data.get("task_subtype")
-    task_package = user_data.get("task_package")
+    task_1_5_data = user_data.get("task_1_5_data")
 
-    if not task_package:
-        logger.error("❌ ФОКУСНЫЙ ЭКРАН: task_package не найден в state")
+    if not task_1_5_data:
+        logger.error("❌ ФОКУСНЫЙ ЭКРАН: task_1_5_data не найден в state")
         await callback.answer("Ошибка: данные задания не найдены", show_alert=True)
         return
 
@@ -336,7 +336,7 @@ async def dispatch_focused_screen(callback: types.CallbackQuery, callback_data: 
         return
 
     # Проверяем корректность номера вопроса
-    tasks = task_package.get('tasks', [])
+    tasks = task_1_5_data.get('tasks', [])
     if question_num < 1 or question_num > len(tasks):
         await callback.answer(f"Ошибка: задание {question_num} не существует", show_alert=True)
         return
@@ -384,7 +384,7 @@ async def dispatch_focused_screen(callback: types.CallbackQuery, callback_data: 
         # ===============================================
 
         # 2. ОТПРАВЛЯЕМ ФОКУСНЫЙ ЭКРАН через соответствующего Специалиста
-        await _send_focused_screen(bot, callback.from_user.id, state, subtype_key, task_package, question_num)
+        await _send_focused_screen(bot, callback.from_user.id, state, subtype_key, task_1_5_data, question_num)
 
         # 3. Обновляем текущий индекс задания
         await state.update_data(current_task_index=question_num - 1)
@@ -413,20 +413,20 @@ async def dispatch_focused_screen(callback: types.CallbackQuery, callback_data: 
 # ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
 # =================================================================
 
-async def _generate_task_package(subtype_key: str, state: FSMContext, session_maker: async_sessionmaker) -> dict:
+async def _generate_task_1_5_data(subtype_key: str, state: FSMContext, session_maker: async_sessionmaker) -> dict:
     logger.info(f"🚗 ДИСПЕТЧЕР: Вызываем универсальный генератор для подтипа '{subtype_key}'")
     try:
-        task_package = await generate_task(subtype=subtype_key, session_maker=session_maker)
-        return task_package
+        task_1_5_data = await generate_task(subtype=subtype_key, session_maker=session_maker)
+        return task_1_5_data
     except Exception as e:
         logger.error(f"Критическая ошибка в универсальном генераторе для '{subtype_key}': {e}")
         return None
 
-async def _send_overview_screen(bot: Bot, chat_id: int, state: FSMContext, subtype_key: str, task_package: dict):
+async def _send_overview_screen(bot: Bot, chat_id: int, state: FSMContext, subtype_key: str, task_1_5_data: dict):
     """Отправляет обзорный экран через соответствующего Специалиста"""
 
     if subtype_key == "tires":
-        await send_overview_block_tires(bot, state, chat_id, task_package)
+        await send_overview_block_tires(bot, state, chat_id, task_1_5_data)
 
     else:
         logger.warning(f"⚠️ ДИСПЕТЧЕР: Специалист для {subtype_key} не найден")
@@ -441,11 +441,11 @@ async def _send_overview_screen(bot: Bot, chat_id: int, state: FSMContext, subty
             parse_mode="HTML"
         )
 
-async def _send_focused_screen(bot: Bot, chat_id: int, state: FSMContext, subtype_key: str, task_package: dict, question_num: int):
+async def _send_focused_screen(bot: Bot, chat_id: int, state: FSMContext, subtype_key: str, task_1_5_data: dict, question_num: int):
     """Отправляет фокусный экран через соответствующего Специалиста"""
 
     if subtype_key == "tires":
-        await send_focused_task_block_tires(bot, state, chat_id, task_package, question_num)
+        await send_focused_task_block_tires(bot, state, chat_id, task_1_5_data, question_num)
 
     else:
         logger.warning(f"⚠️ ДИСПЕТЧЕР: Специалист для {subtype_key} не найден")
@@ -475,8 +475,8 @@ def _get_loading_text(subtype_key: str) -> str:
 
     return loading_texts.get(subtype_key, "Минутку, генерирую задание... ⏳")
 
-def _create_fallback_task_package(subtype_key: str) -> dict:
-    """Создает заглушку task_package для неготовых подтипов"""
+def _create_fallback_task_1_5_data(subtype_key: str) -> dict:
+    """Создает заглушку task_1_5_data для неготовых подтипов"""
 
     return {
         "main_condition": f"Задание типа {subtype_key} находится в разработке.",

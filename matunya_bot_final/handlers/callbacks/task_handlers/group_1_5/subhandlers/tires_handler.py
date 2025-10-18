@@ -38,7 +38,7 @@ TIRES_META = {
 }
 
 
-async def send_overview_block_tires(bot: Bot, state: FSMContext, chat_id: int, task_package: dict):
+async def send_overview_block_tires(bot: Bot, state: FSMContext, chat_id: int, task_1_5_data: dict):
     """
     📘 Обзорный экран для подтипа «Шины»
     Отправляет тексты, изображения, таблицы и единый пульт выбора задания (1–5).
@@ -46,9 +46,9 @@ async def send_overview_block_tires(bot: Bot, state: FSMContext, chat_id: int, t
     logger.info("📋 ОБЗОРНЫЙ ЭКРАН: Начинаем отправку общей информации про шины")
 
     # --- 1. Получаем сценарий отображения ---
-    display_scenario = task_package.get('display_scenario', [])
+    display_scenario = task_1_5_data.get('display_scenario', [])
     if not display_scenario:
-        logger.error("❌ ОБЗОРНЫЙ ЭКРАН: Отсутствует display_scenario в task_package")
+        logger.error("❌ ОБЗОРНЫЙ ЭКРАН: Отсутствует display_scenario в task_1_5_data")
         return
 
     data = await state.get_data()
@@ -65,7 +65,7 @@ async def send_overview_block_tires(bot: Bot, state: FSMContext, chat_id: int, t
             await _send_overview_text(bot, chat_id, state, element, i)
 
     # --- 3. Таблица размеров шин (VIP-бирка) ---
-    plot_data = task_package.get("plot_data", {})
+    plot_data = task_1_5_data.get("plot_data", {})
     allowed_tire_sizes = plot_data.get("allowed_tire_sizes", {})
     if allowed_tire_sizes:
         tire_table_html = render_tire_sizes_table(allowed_tire_sizes)
@@ -80,8 +80,8 @@ async def send_overview_block_tires(bot: Bot, state: FSMContext, chat_id: int, t
 
     # --- 4. Единый пульт выбора задания ---
     overview_kb = build_overview_keyboard(
-        tasks_count=len(task_package.get("tasks", [])),
-        subtype_key=task_package.get("subtype"),
+        tasks_count=len(task_1_5_data.get("tasks", [])),
+        subtype_key=task_1_5_data.get("subtype"),
         solved_indices=data.get("solved_tasks_indices", [])
     )
 
@@ -156,13 +156,13 @@ async def _send_overview_text(bot: Bot, chat_id: int, state: FSMContext, element
 
 
 
-async def send_focused_task_block_tires(bot: Bot, state: FSMContext, chat_id: int, task_package: dict, question_num: int):
+async def send_focused_task_block_tires(bot: Bot, state: FSMContext, chat_id: int, task_1_5_data: dict, question_num: int):
     """
     Фокусный экран: отправляет только текст задания и клавиатуру.
     """
     logger.info(f"🎯 ФОКУСНЫЙ ЭКРАН: Начинаем отправку Задания {question_num}")
 
-    tasks = task_package.get('tasks', [])
+    tasks = task_1_5_data.get('tasks', [])
     if not (1 <= question_num <= len(tasks)):
         logger.error(f"❌ ФОКУСНЫЙ ЭКРАН: Некорректный номер вопроса {question_num}")
         return
@@ -192,7 +192,7 @@ async def send_focused_task_block_tires(bot: Bot, state: FSMContext, chat_id: in
     )
 
     html_table = None
-    plot_data = task_package.get("plot_data", {})
+    plot_data = task_1_5_data.get("plot_data", {})
 
     # Проверяем, нужна ли таблица для этого конкретного вопроса.
     # Сейчас таблица нужна ТОЛЬКО для задач типа Q6.
@@ -261,9 +261,9 @@ async def handle_tires_back_to_overview(callback: types.CallbackQuery, bot: Bot,
 
     # 2. Восстанавливаем обзорную клавиатуру
     user_data = await state.get_data()
-    task_package = user_data.get("task_package", {})
+    task_1_5_data = user_data.get("task_1_5_data", {})
     subtype_key = user_data.get("task_subtype", "tires")
-    tasks_count = len(task_package.get("tasks", []))
+    tasks_count = len(task_1_5_data.get("tasks", []))
     solved_indices = user_data.get("solved_tasks_indices", [])
 
     overview_keyboard = build_overview_keyboard(tasks_count, subtype_key, solved_indices=solved_indices)

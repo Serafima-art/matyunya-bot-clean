@@ -43,7 +43,7 @@ async def main():
 
     # 2) ПЕРВЫМ ДЕЛОМ: Настройка и инициализация базы данных
     logging.info("Настройка базы данных...")
-    engine, session_maker = setup_database()
+    engine, session_maker = await setup_database()
 
     try:
         await init_db(engine)

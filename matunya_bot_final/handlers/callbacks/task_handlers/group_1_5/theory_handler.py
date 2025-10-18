@@ -17,7 +17,7 @@ router = Router(name="theory_handler_1_5")
 async def handle_show_theory(callback: CallbackQuery, callback_data: TaskCallback, state: FSMContext):
     """
     Отправляет запрос к GPT для получения теории по конкретному вопросу.
-    Работает с новой архитектурой task_package.
+    Работает с новой архитектурой task_1_5_data.
     """
     await callback.answer("📚 Ищу теорию по этому вопросу...")
 
@@ -28,8 +28,8 @@ async def handle_show_theory(callback: CallbackQuery, callback_data: TaskCallbac
             return
 
         user_data = await state.get_data()
-        task_package = user_data.get("task_package", {})
-        tasks = task_package.get("tasks", [])
+        task_1_5_data = user_data.get("task_1_5_data", {})
+        tasks = task_1_5_data.get("tasks", [])
 
         # Извлекаем текст конкретного, нужного нам задания
         if 0 < question_num <= len(tasks):

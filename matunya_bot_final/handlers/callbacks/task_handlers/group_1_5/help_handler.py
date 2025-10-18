@@ -82,10 +82,10 @@ async def handle_group_1_5_help(
         await callback.answer("Задание отсутствует.", show_alert=True)
         return
 
-    task_package = data.get("task_package") or {}
-    tasks = task_package.get("tasks", [])
+    task_1_5_data = data.get("task_1_5_data") or {}
+    tasks = task_1_5_data.get("tasks", [])
     if current_task_index >= len(tasks):
-        logger.error("Group 1-5 help: task_package.tasks shorter than expected")
+        logger.error("Group 1-5 help: task_1_5_data.tasks shorter than expected")
         await callback.answer("Нет данных для подсказки.", show_alert=True)
         return
 
@@ -99,7 +99,7 @@ async def handle_group_1_5_help(
     question_num = callback_data.question_num or (current_task_index + 1)
 
     try:
-        solution_core = solver_function(task_package)
+        solution_core = solver_function(task_1_5_data)
         await state.update_data(
             solution_core=solution_core,
             task_1_5_solution_core=solution_core,
@@ -148,7 +148,7 @@ async def handle_group_1_5_ask_gpt(
     await cleanup_messages_by_category(bot, state, chat_id, _DIALOG_CATEGORY)
 
     data = await state.get_data()
-    task_package = data.get("task_package") or {}
+    task_1_5_data = data.get("task_1_5_data") or {}
     solution_core = data.get("task_1_5_solution_core") or data.get("solution_core")
     if solution_core is None:
         logger.error("Group 1-5 ask_gpt: solution_core missing in state")
@@ -161,9 +161,9 @@ async def handle_group_1_5_ask_gpt(
 
     subtype_for_prompt = (
 
-        task_package.get("metadata", {}).get("subtype")
+        task_1_5_data.get("metadata", {}).get("subtype")
 
-        or task_package.get("subtype")
+        or task_1_5_data.get("subtype")
 
         or data.get("current_subtype")
 
@@ -172,14 +172,14 @@ async def handle_group_1_5_ask_gpt(
     )
 
     task_type_for_prompt = (
-        task_package.get("metadata", {}).get("task_type")
-        or task_package.get("task_type")
+        task_1_5_data.get("metadata", {}).get("task_type")
+        or task_1_5_data.get("task_type")
     )
     golden_set = await get_golden_set(subtype_for_prompt, task_type=task_type_for_prompt)
 
     system_prompt = get_help_dialog_prompt(
 
-        task_package=task_package,
+        task_1_5_data=task_1_5_data,
 
         solution_core=solution_core,
 
