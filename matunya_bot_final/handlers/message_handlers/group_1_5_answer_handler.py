@@ -272,9 +272,10 @@ async def _handle_incorrect_answer(message: Message, state: FSMContext):
     help_keyboard.button(
         text="🆘 Помощь",
         callback_data=TaskCallback(
-            action="1-5_get_help",
+            action="request_help",
             subtype_key=subtype_key,
-            question_num=current_task_index + 1
+            question_num=current_task_index + 1,
+            task_type=current_task_index + 1,
         ).pack()
     )
     # --- КОНЕЦ ИСПРАВЛЕНИЯ ---

@@ -7,7 +7,6 @@ from typing import Any, Dict, Optional
 from aiogram import Bot
 from aiogram.fsm.context import FSMContext
 from aiogram.types import CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton
-from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 from matunya_bot_final.core.callbacks.tasks_callback import TaskCallback
 from matunya_bot_final.help_core.humanizers.solution_humanizer import humanize_solution
@@ -15,6 +14,7 @@ from matunya_bot_final.utils.message_manager import (
     cleanup_messages_by_category,
     send_tracked_message,
 )
+from matunya_bot_final.keyboards.inline_keyboards.help_core_keyboard import create_solution_keyboard
 
 logger = logging.getLogger(__name__)
 
@@ -337,6 +337,14 @@ async def send_solver_not_found_message(callback: CallbackQuery, bot: Bot, task_
         f"• Попробуй решить самостоятельно"
     )
 
+    # ⚠️ Fallback-клавиатура:
+    # Используется только если решатель для задания не найден.
+    # В отличие от основной create_solution_keyboard, эта клавиатура автономна,
+    # чтобы сообщение "Решение пока недоступно" могло работать даже без импорта UI-модулей.
+    # Кнопки:
+    # • 📚 Теория — переход к теоретическому разделу
+    # • ❓ Задать вопрос — запуск диалога с GPT
+    # • ❌ Закрыть — закрытие окна помощи
     fallback_keyboard = InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton(
             text="📚 Теория",
@@ -393,34 +401,6 @@ async def send_solution_error(callback: CallbackQuery, bot: Bot, error_message: 
         logger.error(f"Ошибка отправки сообщения об ошибке: {e}")
 
 
-def create_solution_keyboard(task_subtype: str, task_type: int) -> InlineKeyboardMarkup:
-    """
-    Собирает клавиатуру действий рядом с решением.
-    """
-    builder = InlineKeyboardBuilder()
-
-    builder.row(
-        InlineKeyboardButton(
-            text="❌ Закрыть решение",
-            callback_data=TaskCallback(
-                action="hide_help",
-                subtype_key=task_subtype,
-                question_num=task_type
-            ).pack()
-        ),
-        InlineKeyboardButton(
-            text="❓ Задать вопрос",
-            callback_data=TaskCallback(
-                action="ask_question",
-                subtype_key=task_subtype,
-                question_num=task_type
-            ).pack()
-        )
-    )
-
-    return builder.as_markup()
-
-
 __all__ = [
     "handle_generic_help",
     "call_dynamic_solver",
@@ -430,5 +410,4 @@ __all__ = [
     "send_solution_result",
     "send_solver_not_found_message",
     "send_solution_error",
-    "create_solution_keyboard",
 ]

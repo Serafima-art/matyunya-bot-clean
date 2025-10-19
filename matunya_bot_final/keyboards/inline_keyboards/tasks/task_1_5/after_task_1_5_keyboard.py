@@ -139,9 +139,10 @@ def build_focused_keyboard(current_question: int, total_questions: int, subtype_
     builder.button(
         text="🆘 Помощь",
         callback_data=TaskCallback(
-            action="1-5_get_help",
+            action="request_help",
             subtype_key=specific_subtype_key,
             question_num=current_question,
+            task_type=current_question,
         ).pack(),
     )
     builder.button(
