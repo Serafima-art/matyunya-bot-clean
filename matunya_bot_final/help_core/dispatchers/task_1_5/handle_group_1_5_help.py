@@ -4,7 +4,7 @@
 
 Задача:
   • Обрабатывать нажатие кнопки 🆘 Помощь для заданий 1–5.
-  • Найти нужный решатель (solver) через SOLVER_DISPATCHER или динамически.
+  • Найти нужный решатель (solver) через call_dynamic_solver.
   • Передать решение в GPT-гуманизатор (solution_humanizer.py).
   • Отправить ученику красивое решение с универсальной клавиатурой.
 
@@ -31,8 +31,6 @@ from matunya_bot_final.help_core.dispatchers.common import (
     send_solver_not_found_message,
     send_solution_error,
 )
-from matunya_bot_final.help_core.dispatchers.task_1_5.help_handler_1_5 import SOLVER_DISPATCHER
-
 logger = logging.getLogger(__name__)
 
 
@@ -64,13 +62,8 @@ async def handle_group_1_5_help(callback: CallbackQuery, callback_data: TaskCall
         try:
             solution_core = await call_dynamic_solver("1_5", task_subtype, task_payload)
             if not solution_core:
-                question_num = task_payload.get("question_num")
-                if question_num in SOLVER_DISPATCHER:
-                    logger.info(f"Повторно используем SOLVER_DISPATCHER для вопроса {question_num}")
-                    solution_core = SOLVER_DISPATCHER[question_num](task_payload)
-                else:
-                    await send_solver_not_found_message(callback, bot, 1, task_subtype)
-                    return
+                await send_solver_not_found_message(callback, bot, task_type, task_subtype)
+                return
         except Exception as solver_exc:
             logger.error(f"[Help 1-5] Ошибка решателя: {solver_exc}")
             await send_solution_error(callback, bot, f"Ошибка при вызове решателя: {solver_exc}")
@@ -87,6 +80,8 @@ async def handle_group_1_5_help(callback: CallbackQuery, callback_data: TaskCall
         except Exception as hum_exc:
             logger.error(f"[Help 1-5] Ошибка гуманизации: {hum_exc}")
             humanized_solution = "😔 Не удалось преобразовать решение в понятный вид."
+
+        await state.update_data(task_1_5_solution_core=solution_core)
 
         # Удаляем "генерирую решение"
         if processing_message:

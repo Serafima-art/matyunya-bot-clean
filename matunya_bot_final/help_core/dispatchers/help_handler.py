@@ -22,9 +22,10 @@ solution_router = Router(name="help_dispatcher")
 # Ключ — номер задания, значение — полный путь к функции handle_task_X_help
 # ==============================================================
 
+GROUP_1_5_HANDLER_PATH = "matunya_bot_final.help_core.dispatchers.task_1_5.handle_group_1_5_help.handle_group_1_5_help"
+
 HELP_ROUTERS = {
     # --- Готовые обработчики ---
-    1-5: "matunya_bot_final.help_core.dispatchers.task_1_5.handle_group_1_5_help.handle_group_1_5_help",
     11: "matunya_bot_final.help_core.dispatchers.task_11.help_handler_11.handle_task_11_help",
     20: "matunya_bot_final.help_core.dispatchers.task_20.help_handler_20.handle_task_20_help",
 
@@ -38,6 +39,10 @@ HELP_ROUTERS = {
     # ...
     # Просто раскомментируй нужную строку, когда появится соответствующий файл.
 }
+
+# Группа 1-5 обслуживается единым официантом
+for task_number in range(1, 6):
+    HELP_ROUTERS[task_number] = GROUP_1_5_HANDLER_PATH
 
 
 # ==============================================================

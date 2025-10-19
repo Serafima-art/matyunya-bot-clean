@@ -1,15 +1,9 @@
-"""
-Обработчик помощи для задания №20.
-Изолированная реализация на основе оригинальной логики.
-"""
-
 import logging
+
 from aiogram import Bot
-from aiogram.types import CallbackQuery
 from aiogram.fsm.context import FSMContext
-from matunya_bot_final.keyboards.inline_keyboards.help_core_keyboard import create_solution_keyboard
-from matunya_bot_final.utils.message_manager import send_tracked_message, cleanup_messages_by_category
-from matunya_bot_final.help_core.humanizers.template_humanizers.task_20_humanizer import humanize_solution_20
+from aiogram.types import CallbackQuery
+
 from matunya_bot_final.help_core.dispatchers.common import (
     call_dynamic_solver,
     clean_html_tags,
@@ -19,15 +13,24 @@ from matunya_bot_final.help_core.dispatchers.common import (
     send_solver_not_found_message,
     send_solution_error,
 )
+from matunya_bot_final.help_core.humanizers.template_humanizers.task_20_humanizer import (
+    humanize_solution_20,
+)
+from matunya_bot_final.utils.message_manager import cleanup_messages_by_category
+
+
 logger = logging.getLogger(__name__)
 
 
-async def handle_task_20_help(callback: CallbackQuery, callback_data, bot: Bot, state: FSMContext):
-    """
-    Полная логика помощи для задания №20.
-    """
+async def handle_task_20_help(
+    callback: CallbackQuery,
+    callback_data,
+    bot: Bot,
+    state: FSMContext,
+) -> None:
+    """Обрабатывает запрос помощи по задачам №20."""
     try:
-        await callback.answer("🔄 Генерирую решение...")
+        await callback.answer("Готовлю решение...")
 
         task_type = 20
         task_subtype = callback_data.subtype_key
@@ -38,43 +41,40 @@ async def handle_task_20_help(callback: CallbackQuery, callback_data, bot: Bot, 
             await send_solver_not_found_message(callback, bot, task_type, task_subtype)
             return
 
-        # 🟡 Сообщение "генерирую решение"
-        processing_message = await send_processing_message(callback, bot, state, task_type, task_subtype)
+        processing_message = await send_processing_message(
+            callback, bot, state, task_type, task_subtype
+        )
 
-        # 🧩 Вызываем динамический решатель
         solution_core = await call_dynamic_solver(str(task_type), task_subtype, task_payload)
         if not solution_core:
             await send_solver_not_found_message(callback, bot, task_type, task_subtype)
             return
 
-        # 💬 Гуманизация решения
         try:
             humanized_solution = humanize_solution_20(solution_core)
             humanized_solution = clean_html_tags(humanized_solution)
-        except Exception as e:
-            logger.error(f"[Help20] Ошибка гуманизации: {e}")
+        except Exception as exc:  # pragma: no cover
+            logger.error("[Help20] Ошибка гуманизации: %s", exc)
             humanized_solution = format_basic_solution(solution_core)
 
-        # 🧹 Убираем сообщение "генерирую решение"
+        await state.update_data(task_20_solution_core=solution_core)
+
         if processing_message:
-            await cleanup_messages_by_category(bot, state, callback.message.chat.id, "solution_processing")
+            await cleanup_messages_by_category(
+                bot, state, callback.message.chat.id, "solution_processing"
+            )
 
-        # 🪄 Создаём клавиатуру окна помощи
-        reply_markup = create_solution_keyboard(task_subtype, task_type)
-
-        # 📬 Отправляем готовое решение с клавиатурой
-        await send_tracked_message(
-            bot=bot,
-            chat_id=callback.message.chat.id,
-            state=state,
-            text=humanized_solution,
-            reply_markup=reply_markup,
-            category="solution_result",
-            message_tag=f"solution_{task_subtype}"
+        await send_solution_result(
+            callback,
+            bot,
+            state,
+            humanized_solution,
+            task_type,
+            task_subtype,
         )
 
-        logger.info(f"✅ Помощь успешно сгенерирована для task_20/{task_subtype}")
+        logger.info("[Help20] Решение сформировано для подтипа %s", task_subtype)
 
-    except Exception as e:
-        logger.error(f"[Help20] Критическая ошибка: {e}")
-        await send_solution_error(callback, bot, f"Ошибка при обработке помощи: {e}")
+    except Exception as exc:  # pragma: no cover
+        logger.error("[Help20] Критическая ошибка: %s", exc)
+        await send_solution_error(callback, bot, f"Не удалось собрать подсказку: {exc}")

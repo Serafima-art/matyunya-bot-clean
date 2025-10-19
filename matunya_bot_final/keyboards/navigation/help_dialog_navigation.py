@@ -28,7 +28,7 @@ def get_help_panel_keyboard(
     builder = InlineKeyboardBuilder()
 
     builder.button(
-        text="❌ Скрыть помощь",
+        text="❌ Закрыть помощь",
         callback_data=TaskCallback(
             action="dismiss_help_panel",
             question_num=question_num if question_num is not None else (int(identifier) if identifier.isdigit() else None),
