@@ -15,6 +15,7 @@ from matunya_bot_final.utils.message_manager import (
     send_tracked_message,
 )
 from matunya_bot_final.keyboards.inline_keyboards.help_core_keyboard import create_solution_keyboard
+from matunya_bot_final.utils.text_formatters import sanitize_gpt_response
 
 logger = logging.getLogger(__name__)
 
@@ -102,6 +103,7 @@ async def handle_generic_help(callback: CallbackQuery, callback_data: TaskCallba
             student_name = state_data.get("student_name", "ученик")
             humanized_solution = await humanize_solution(solution_core, state, student_name)
             humanized_solution = clean_html_tags(humanized_solution)
+            humanized_solution = sanitize_gpt_response(humanized_solution)
         except Exception as humanizer_exc:
             logger.error(
                 "Ошибка генерации человекочитаемого решения для %s/%s: %s",
