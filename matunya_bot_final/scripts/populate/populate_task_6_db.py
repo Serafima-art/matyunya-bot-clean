@@ -1,62 +1,82 @@
-# scripts/populate_task_6_db.py
+"""
+populate_task_6_db.py — единый скрипт для генерации и записи всех подтипов задания №6.
 
-import sys
-from pathlib import Path
+Темы:
+  1. common_fractions        → actions with common fractions
+  2. decimal_fractions       → actions with decimal fractions
+  3. mixed_fractions         → actions with mixed (common + decimal) fractions
+  4. powers                  → powers with fractions and powers of ten
 
-# Добавляем корневую папку проекта в пути для поиска модулей
-# Это нужно, чтобы Python мог найти папку py_generators
-project_root = Path(__file__).parent.parent
-sys.path.append(str(project_root))
+Выходной файл:
+  matunya_bot_final/data/tasks_6/tasks_6.json
+"""
+
 import json
-from pathlib import Path
-from typing import Dict, Any, List
+import os
+from datetime import datetime
 
-# Импортируем "карту генераторов" и "сборщик" из нашей "фабрики"
-from matunya_bot_final.py_generators.task_6_generator import GENERATOR_MAP, create_task_object
+from matunya_bot_final.task_generators.task_6.generators.common_fractions_generator import (
+    generate_common_fractions_tasks,
+)
+from matunya_bot_final.task_generators.task_6.generators.decimal_fractions_generator import (
+    generate_decimal_fractions_tasks,
+)
+from matunya_bot_final.task_generators.task_6.generators.mixed_fractions_generator import (
+    generate_mixed_fractions_tasks,
+)
+from matunya_bot_final.task_generators.task_6.generators.powers_generator import (
+    generate_powers_tasks,
+)
 
-# --- НАСТРОЙКИ ---
-OUTPUT_FILE = Path(__file__).parent.parent / "data" / "tasks_6.json"
-TASKS_PER_SUBTYPE = 7 # Давай сгенерируем по 7 заданий каждого из 14 типов = 98 заданий!
+# --- Путь к БД ---
+OUTPUT_PATH = os.path.join(
+    "matunya_bot_final", "data", "tasks_6", "tasks_6.json"
+)
 
-# ================================================================
-# ГЛАВНАЯ ФУНКЦИЯ
-# ================================================================
-def generate_all_tasks():
-    """
-    Главная функция, которая запускает все 14 генераторов из карты
-    и сохраняет результат, полностью перезаписывая файл.
-    """
-    all_tasks: List[Dict[str, Any]] = []
-    subtype_counters: Dict[str, int] = {}
+# --- Основная функция ---
+def main() -> None:
+    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
 
-    print(f"▶️  Начинаю генерацию заданий №6 для {len(GENERATOR_MAP)} подтипов...")
+    print("=== 🧮 Генерация заданий №6 ===")
+    all_tasks = []
 
-    # Умный цикл, который проходит по всем генераторам
-    for subtype_key, generator_func in GENERATOR_MAP.items():
-        print(f"  -> Генерирую задания для подтипа: {subtype_key}...")
-        for _ in range(TASKS_PER_SUBTYPE):
-            # Вызываем генератор
-            _, text, answer = generator_func()
-            
-            # Считаем, сколько заданий этого типа мы уже создали
-            subtype_counters[subtype_key] = subtype_counters.get(subtype_key, 0) + 1
-            counter = subtype_counters[subtype_key]
-            
-            # Создаем УНИФИЦИРОВАННЫЙ ID
-            task_id = f"6_{subtype_key}_{counter:03d}"
-            
-            # Собираем и добавляем объект задания
-            all_tasks.append(create_task_object(task_id, subtype_key, text, answer))
+    # 1. Обыкновенные дроби
+    cf_tasks = generate_common_fractions_tasks(30)
+    print(f"✅ common_fractions: {len(cf_tasks)} задач")
+    all_tasks.extend(cf_tasks)
 
-    # --- СОХРАНЕНИЕ В ФАЙЛ ---
-    try:
-        OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
-        with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-            json.dump(all_tasks, f, ensure_ascii=False, indent=2)
-        print(f"\n✅ Успешно сгенерировано и сохранено {len(all_tasks)} заданий в файл:")
-        print(f"   -> {OUTPUT_FILE}")
-    except Exception as e:
-        print(f"\n❌ Ошибка при сохранении файла: {e}")
+    # 2. Десятичные дроби
+    df_tasks = generate_decimal_fractions_tasks(30)
+    print(f"✅ decimal_fractions: {len(df_tasks)} задач")
+    all_tasks.extend(df_tasks)
 
+    # 3. Смешанные типы
+    mf_tasks = generate_mixed_fractions_tasks(20)
+    print(f"✅ mixed_fractions: {len(mf_tasks)} задач")
+    all_tasks.extend(mf_tasks)
+
+    # 4. Степени
+    pw_tasks = generate_powers_tasks(20)
+    print(f"✅ powers: {len(pw_tasks)} задач")
+    all_tasks.extend(pw_tasks)
+
+    print(f"\nВсего сгенерировано: {len(all_tasks)} заданий")
+
+    # --- Бэкап старой версии ---
+    if os.path.exists(OUTPUT_PATH):
+        backup_path = OUTPUT_PATH.replace(
+            ".json", f"_backup_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        )
+        os.rename(OUTPUT_PATH, backup_path)
+        print(f"💾 Старый файл сохранён как {backup_path}")
+
+    # --- Сохраняем в JSON ---
+    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
+        json.dump(all_tasks, f, ensure_ascii=False, indent=2)
+
+    print(f"🎉 Файл успешно записан: {OUTPUT_PATH}\n")
+
+
+# --- Точка входа ---
 if __name__ == "__main__":
-    generate_all_tasks()
+    main()
