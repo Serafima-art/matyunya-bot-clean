@@ -106,6 +106,11 @@ def sanitize_gpt_response(text: str) -> str:
     processed_text = processed_text.replace("cdot", "·").replace("div", "÷")
     processed_text = re.sub(r"text\{([^}]+)\}", r"\1", processed_text)
     processed_text = escape_for_telegram(processed_text)
+
+    # --- 🔸 Заменяем десятичные точки на запятые ---
+    # 12.5 → 12,5 но 12/5 остаётся
+    processed_text = re.sub(r"(?<=\d)\.(?=\d)", ",", processed_text)
+
     return processed_text.replace("&nbsp;", " ")
 
 
@@ -157,6 +162,31 @@ def format_solution(steps: List[Dict[str, str]]) -> List[str]:
     return messages
 
 
+_DECIMAL_POINT_RE = re.compile(r'(?<=\d)\.(?=\d)')                   # 2.5 -> 2,5
+_TRAILING_ZERO_RE = re.compile(r'(?<=\d),(?:0{1,2})(?!\d)')          # 4,0 / 12,00 -> 4 / 12
+_PLUS_MINUS_RE = re.compile(r'\+\s*-\s*')                            # + -x -> − x
+_MINUS_MINUS_RE = re.compile(r'(?:−|-)\s*-\s*')                      # − -x / - -x -> + x
+_PAREN_SINGLE_NUMBER_RE = re.compile(r'\(\s*(-?\d+(?:,\d+)?)\s*\)')  # (1,2) -> 1,2; (-3) -> -3
+_MUL_TIGHT_RE = re.compile(r'\s*·\s*')                               # пробелы вокруг ·
+
+def cleanup_math_for_display(text: str) -> str:
+    """
+    Деликатная нормализация математических выражений для показа:
+    - десятичная точка -> запятая;
+    - убираем хвост ',0' / ',00' у целых;
+    - '+ -x' -> '− x', '− -x'/'- -x' -> '+ x';
+    - снимаем лишние скобки вокруг одиночных чисел: (1,2) -> 1,2; (-3) -> -3;
+    - приводим умножение к «·» без пробелов.
+    """
+    s = _DECIMAL_POINT_RE.sub(',', text)
+    s = _PLUS_MINUS_RE.sub('− ', s)
+    s = _MINUS_MINUS_RE.sub('+ ', s)
+    s = _PAREN_SINGLE_NUMBER_RE.sub(r'\1', s)
+    s = _TRAILING_ZERO_RE.sub('', s)
+    s = _MUL_TIGHT_RE.sub('·', s)
+    return s
+
+
 __all__ = [
     "escape_for_telegram",
     "bold_numbers_safe",
@@ -170,4 +200,5 @@ __all__ = [
     "sanitize_gpt_response",
     "normalize_formula",
     "format_solution",
+    "cleanup_math_for_display",
 ]

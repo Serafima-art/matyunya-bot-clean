@@ -15,7 +15,7 @@ from matunya_bot_final.handlers.callbacks.task_handlers.group_1_5.help_handler i
 from matunya_bot_final.handlers.message_handlers.group_1_5_answer_handler import router as universal_answer_handler
 from matunya_bot_final.handlers.callbacks.task_handlers.group_1_5.theory_handler import router as theory_handler_1_5
 
-from matunya_bot_final.handlers.callbacks.task_handlers.task_6_handler import router as task_6_router
+from matunya_bot_final.handlers.callbacks.task_handlers.task_6.task_6_handler import router as task_6_router
 from matunya_bot_final.handlers.callbacks.task_handlers.task_7_handler import router as task_7_router
 from matunya_bot_final.handlers.callbacks.task_handlers.task_8_handler import router as task_8_router
 from matunya_bot_final.handlers.callbacks.task_handlers.task_9_handler import router as task_9_router
