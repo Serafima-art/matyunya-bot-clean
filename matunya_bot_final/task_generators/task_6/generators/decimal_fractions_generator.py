@@ -1,15 +1,17 @@
 ﻿import random
 import uuid
 from typing import Dict, Any, List
-import re
+
+from matunya_bot_final.task_generators.task_6.generators.task6_text_formatter import _fmt, _fmt_answer
 
 
 def generate_decimal_fractions_tasks(count: int = 10) -> List[Dict[str, Any]]:
     """
-    Генератор заданий №6 (Тема 2: действия с десятичными дробями).
-    Паттерны: 2.1 – сумма/разность десятичных дробей,
-              2.2 – линейные выражения,
-              2.3 – структура вида A / (B ± C) или A / (B·C).
+    Генератор заданий №6 — Тема 2: действия с десятичными дробями.
+    Паттерны:
+      2.1 — df_addition_subtraction
+      2.2 — linear_operations
+      2.3 — fraction_structure
     """
     tasks: List[Dict[str, Any]] = []
     patterns = ["2.1", "2.2", "2.3"]
@@ -17,95 +19,77 @@ def generate_decimal_fractions_tasks(count: int = 10) -> List[Dict[str, Any]]:
     for _ in range(count):
         pattern_id = random.choice(patterns)
         if pattern_id == "2.1":
-            task = _generate_df_addition_subtraction(pattern_id)
+            tasks.append(_generate_df_addition_subtraction(pattern_id))
         elif pattern_id == "2.2":
-            task = _generate_linear_operations(pattern_id)
+            tasks.append(_generate_linear_operations(pattern_id))
         else:
-            task = _generate_fraction_structure(pattern_id)
-        tasks.append(task)
-
+            tasks.append(_generate_fraction_structure(pattern_id))
     return tasks
 
 
-def _ensure_answer_field(question_text: str) -> str:
-    text = question_text.strip()
-    if "Ответ" not in text:
-        text += "\n\nОтвет: ____________"
-    return text
-
-
-# ======================
-# === ПАТТЕРН 2.1 ======
-# ======================
+# ===============================
+# === ПАТТЕРН 2.1 ===============
+# ===============================
 def _generate_df_addition_subtraction(pattern_id: str) -> Dict[str, Any]:
-    a = round(random.uniform(1, 20), 1)
-    b = round(random.uniform(1, 20), 1)
+    a = _nice_decimal(1, 20)
+    b = _nice_decimal(1, 20)
     op = random.choice(["add", "sub"])
     result = a + b if op == "add" else a - b
-
-    attempts = 0
-    while not _is_pretty_decimal(result) and attempts < 100:
-        a = round(random.uniform(1, 20), 1)
-        b = round(random.uniform(1, 20), 1)
-        op = random.choice(["add", "sub"])
-        result = a + b if op == "add" else a - b
-        attempts += 1
-
     symbol = "+" if op == "add" else "−"
-    question_text = _ensure_answer_field(
-        f"Посчитай значение:\n{a} {symbol} {b}"
-    )
-    expr_str = question_text
-    if re.search(r'(^|[^0-9])0[.,]?\d*', expr_str) or '/0' in expr_str:
-        return generate_decimal_fractions_tasks(1)[0]
+
+    question_text = f"Посчитай значение:\n{_fmt(a)} {symbol} {_fmt(b)}\n\nОтвет: ____________"
 
     return {
-        "id": f"6_df_addition_subtraction_{uuid.uuid4().hex[:6]}",
-        "task_number": 6,
-        "topic": "decimal_fractions",
-        "subtype": "df_addition_subtraction",
-        "question_text": question_text,
-        "answer": str(round(result, 3)),
-        "answer_type": "decimal",
-        "variables": {
-            "expression_tree": {
-                "operation": op,
-                "operands": [
-                    {"type": "decimal", "value": a, "text": str(a)},
-                    {"type": "decimal", "value": b, "text": str(b)},
-                ],
-            }
-        },
-        "meta": {"difficulty": "easy", "pattern_id": pattern_id},
-    }
+    "id": f"6_df_addition_subtraction_{uuid.uuid4().hex[:6]}",
+    "task_number": 6,
+    "topic": "decimal_fractions",
+    "subtype": "df_addition_subtraction",
+    "question_text": question_text,
+    "answer": _fmt_answer(result, use_comma=True).replace(",", "."),   # для валидатора (точка)
+    "display_answer": _fmt_answer(result, use_comma=True),             # для бота (запятая)
+    "answer_type": "decimal",
+    "variables": {
+        "expression_tree": {
+            "type": "operation",
+            "value": None,
+            "text": f"{_fmt(a)} {symbol} {_fmt(b)}",
+            "operation": op,
+            "operands": [
+                {"type": "decimal", "value": a, "text": _fmt(a)},
+                {"type": "decimal", "value": b, "text": _fmt(b)},
+            ],
+        }
+    },
+    "meta": {"difficulty": "easy", "pattern_id": pattern_id},
+}
 
 
-# ======================
-# === ПАТТЕРН 2.2 ======
-# ======================
+# ===============================
+# === ПАТТЕРН 2.2 ===============
+# ===============================
 def _generate_linear_operations(pattern_id: str) -> Dict[str, Any]:
     a = random.randint(-6, 6)
-    b = round(random.uniform(-10, 10), 1)
-    c = round(random.uniform(-10, 10), 1)
+    while a == 0:
+        a = random.randint(-6, 6)
+    b = _nice_decimal(-10, 10)
+    c = _nice_decimal(-10, 10)
     op = random.choice(["add", "sub"])
 
     result = a * b + c if op == "add" else a * b - c
-
-    attempts = 0
-    while not _is_pretty_decimal(result) and attempts < 100:
-        a = random.randint(-6, 6)
-        b = round(random.uniform(-10, 10), 1)
-        c = round(random.uniform(-10, 10), 1)
-        result = a * b + c if op == "add" else a * b - c
-        attempts += 1
-
     symbol = "+" if op == "add" else "−"
-    question_text = _ensure_answer_field(
-        f"Вычисли выражение:\n{a}·({b}) {symbol} {c}"
-    )
-    expr_str = question_text
-    if re.search(r'(^|[^0-9])0[.,]?\d*', expr_str) or '/0' in expr_str:
-        return generate_decimal_fractions_tasks(1)[0]
+
+    # --- форматируем красиво ---
+    def _wrap(x: float) -> str:
+        """Возвращает число с запятой, обёрнутое в скобки только если отрицательное."""
+        fx = _fmt(x)
+        return f"({fx})" if x < 0 else fx
+
+    a_fmt = _wrap(a)
+    b_fmt = _wrap(b)
+    c_fmt = _wrap(c)
+
+    expr = f"{a_fmt}·{b_fmt} {symbol} {c_fmt}"
+    question_text = f"Вычисли выражение:\n{expr}\n\nОтвет: ____________"
 
     return {
         "id": f"6_linear_operations_{uuid.uuid4().hex[:6]}",
@@ -113,20 +97,24 @@ def _generate_linear_operations(pattern_id: str) -> Dict[str, Any]:
         "topic": "decimal_fractions",
         "subtype": "linear_operations",
         "question_text": question_text,
-        "answer": str(round(result, 3)),
+        "answer": _fmt_answer(result, use_comma=True).replace(",", "."),
+        "display_answer": _fmt_answer(result, use_comma=True),
         "answer_type": "decimal",
         "variables": {
             "expression_tree": {
                 "operation": op,
                 "operands": [
                     {
+                        "type": "operation",
+                        "value": None,
+                        "text": f"{a_fmt}·{b_fmt}",
                         "operation": "mul",
                         "operands": [
-                            {"type": "integer", "value": a, "text": str(a)},
-                            {"type": "decimal", "value": b, "text": str(b)},
+                            {"type": "integer", "value": a, "text": a_fmt},
+                            {"type": "decimal", "value": b, "text": b_fmt},
                         ],
                     },
-                    {"type": "decimal", "value": c, "text": str(c)},
+                    {"type": "decimal", "value": c, "text": c_fmt},
                 ],
             }
         },
@@ -134,91 +122,87 @@ def _generate_linear_operations(pattern_id: str) -> Dict[str, Any]:
     }
 
 
-# ======================
-# === ПАТТЕРН 2.3 ======
-# ======================
+# ===============================
+# === ПАТТЕРН 2.3 ===============
+# ===============================
 def _generate_fraction_structure(pattern_id: str) -> Dict[str, Any]:
-    a = round(random.uniform(2, 20), 1)
-    b = round(random.uniform(1, 10), 1)
-    c = round(random.uniform(1, 10), 1)
+    a = _nice_decimal(2, 20)
+    b = _nice_decimal(1, 15)
+    c = _nice_decimal(1, 15)
     mode = random.choice(["add_sub", "mul"])
 
     if mode == "add_sub":
         inner_op = random.choice(["add", "sub"])
-        inner_val = b + c if inner_op == "add" else b - c
-        if inner_val == 0:
-            inner_val += 1
-        result = a / inner_val
+        inner_symbol = "+" if inner_op == "add" else "−"
+        denominator = b + c if inner_op == "add" else b - c
+        if abs(denominator) < 1e-6:
+            denominator = _nice_decimal(1, 5)
+        result = a / denominator
+        inner_expr = {
+            "operation": inner_op,
+            "operands": [
+                {"type": "decimal", "value": b, "text": _fmt(b)},
+                {"type": "decimal", "value": c, "text": _fmt(c)},
+            ],
+        }
+        inner_text = f"{_fmt(b)} {inner_symbol} {_fmt(c)}"
     else:
-        inner_val = b * c
-        result = a / inner_val
+        denominator = b * c
+        if abs(denominator) < 1e-6:
+            denominator = _nice_decimal(1, 5)
+        result = a / denominator
+        inner_expr = {
+            "operation": "mul",
+            "operands": [
+                {"type": "decimal", "value": b, "text": _fmt(b)},
+                {"type": "decimal", "value": c, "text": _fmt(c)},
+            ],
+        }
+        inner_text = f"{_fmt(b)} · {_fmt(c)}"
 
-    attempts = 0
-    while not _is_pretty_decimal(result) and attempts < 100:
-        a = round(random.uniform(2, 20), 1)
-        b = round(random.uniform(1, 10), 1)
-        c = round(random.uniform(1, 10), 1)
-        if mode == "add_sub":
-            inner_op = random.choice(["add", "sub"])
-            inner_val = b + c if inner_op == "add" else b - c
-            if inner_val == 0:
-                inner_val += 1
-            result = a / inner_val
-        else:
-            inner_val = b * c
-            result = a / inner_val
-        attempts += 1
-
-    if mode == "add_sub":
-        op_symbol = "+" if inner_op == "add" else "−"
-        inner_text = f"{b} {op_symbol} {c}"
-        inner_expr = {"operation": inner_op, "operands": [
-            {"type": "decimal", "value": b, "text": str(b)},
-            {"type": "decimal", "value": c, "text": str(c)}
-        ]}
-    else:
-        op_symbol = "·"
-        inner_text = f"{b} {op_symbol} {c}"
-        inner_expr = {"operation": "mul", "operands": [
-            {"type": "decimal", "value": b, "text": str(b)},
-            {"type": "decimal", "value": c, "text": str(c)}
-        ]}
-
-    question_text = _ensure_answer_field(
-        f"Посчитай значение дроби:\n{a} / ({inner_text})"
-    )
-    expr_str = question_text
-    if re.search(r'(^|[^0-9])0[.,]?\d*', expr_str) or '/0' in expr_str:
-        return generate_decimal_fractions_tasks(1)[0]
+    question_text = f"Посчитай значение дроби:\n{_fmt(a)} / ({inner_text})\n\nОтвет: ____________"
 
     return {
-        "id": f"6_fraction_structure_{uuid.uuid4().hex[:6]}",
-        "task_number": 6,
-        "topic": "decimal_fractions",
-        "subtype": "fraction_structure",
-        "question_text": question_text,
-        "answer": str(round(result, 3)),
-        "answer_type": "decimal",
-        "variables": {
-            "expression_tree": {
-                "operation": "div",
-                "operands": [
-                    {"type": "decimal", "value": a, "text": str(a)},
-                    inner_expr,
-                ],
-            }
-        },
-        "meta": {"difficulty": "hard", "pattern_id": pattern_id},
-    }
+    "id": f"6_fraction_structure_{uuid.uuid4().hex[:6]}",
+    "task_number": 6,
+    "topic": "decimal_fractions",
+    "subtype": "fraction_structure",
+    "question_text": question_text,
+    "answer": _fmt_answer(result, use_comma=True).replace(",", "."),   # для валидатора (точка)
+    "display_answer": _fmt_answer(result, use_comma=True),             # для бота (запятая)
+    "answer_type": "decimal",
+    "variables": {
+        "expression_tree": {
+            "operation": "div",
+            "operands": [
+                {"type": "decimal", "value": a, "text": _fmt(a)},
+                {
+                    "type": "operation",
+                    "value": None,
+                    "text": (
+                        f"{_fmt(b)} {'+' if mode == 'add_sub' and inner_op == 'add' else '−' if mode == 'add_sub' and inner_op == 'sub' else '·'} {_fmt(c)}"
+                    ),
+                    "operation": (
+                        inner_op if mode == "add_sub" else "mul"
+                    ),
+                    "operands": [
+                        {"type": "decimal", "value": b, "text": _fmt(b)},
+                        {"type": "decimal", "value": c, "text": _fmt(c)},
+                    ],
+                },
+            ],
+        }
+    },
+    "meta": {"difficulty": "hard", "pattern_id": pattern_id},
+}
 
+# ===============================
+# === ВСПОМОГАТЕЛЬНЫЕ ===========
+# ===============================
 
-def _is_pretty_decimal(value: float) -> bool:
-    try:
-        s = f"{abs(value):.6f}".rstrip("0").rstrip(".")
-        if "." in s:
-            decimals = len(s.split(".")[1])
-            if decimals > 3:
-                return False
-        return abs(value) <= 1_000
-    except Exception:
-        return False
+def _nice_decimal(min_val: float, max_val: float) -> float:
+    """Генерирует «красивые» конечные десятичные дроби с максимум 2 знаками."""
+    # 0.1–0.9 шагом 0.1, чтобы всегда было конечное представление
+    val = random.randint(int(min_val * 10), int(max_val * 10)) / 10
+    # избегаем периодических, всегда 1 знак после запятой
+    return round(val, 1)

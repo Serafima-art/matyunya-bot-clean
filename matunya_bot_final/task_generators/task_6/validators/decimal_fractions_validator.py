@@ -44,7 +44,8 @@ def validate_decimal_fractions_task(task: Dict[str, Any]) -> Tuple[bool, List[st
 
     answer = task.get("answer")
     try:
-        float(answer)
+        # поддерживаем и '0,25', и '0.25'
+        float(str(answer).replace(",", "."))
     except Exception:
         errors.append("Ответ не преобразуется в число при answer_type='decimal'.")
 

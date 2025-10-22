@@ -4,6 +4,7 @@ from fractions import Fraction
 from typing import Dict, Any, List
 import re
 
+from matunya_bot_final.task_generators.task_6.generators.task6_text_formatter import prepare_expression, _fmt, _fmt_answer
 
 def generate_mixed_fractions_tasks(count: int = 10) -> List[Dict[str, Any]]:
     """
@@ -21,117 +22,119 @@ def _ensure_answer_field(question_text: str) -> str:
 
 
 def _generate_mixed_types_operations(pattern_id: str) -> Dict[str, Any]:
-    for attempt in range(100):
-        whole, num, den = _rand_mixed()
-        frac_val = Fraction(whole * den + num, den)
-        dec1 = round(random.uniform(1.0, 8.0), 1)
-        dec2 = round(random.uniform(1.0, 8.0), 1)
+    for __retry in range(80):
+        for attempt in range(100):
+            whole, num, den = _rand_mixed()
+            frac_val = Fraction(whole * den + num, den)
+            dec1 = round(random.uniform(1.0, 8.0), 1)
+            dec2 = round(random.uniform(1.0, 8.0), 1)
 
-        form = random.choice(["form1", "form2", "form3", "form4"])
-        if form == "form1":
-            result = (frac_val - dec1) * frac_val
-            question_text = f"Вычисли выражение:\n({whole} {num}/{den} − {dec1}) · {whole} {num}/{den}"
-            expr_str = question_text
-            if re.search(r"(^|[^0-9])0[.,]?\d*", expr_str) or "/0" in expr_str:
-                return generate_mixed_fractions_tasks(1)[0]
-            expr_tree = {
-                "operation": "mul",
-                "operands": [
-                    {
-                        "operation": "sub",
-                        "operands": [
-                            {"type": "mixed", "value": [whole, num, den], "text": f"{whole} {num}/{den}"},
-                            {"type": "decimal", "value": dec1, "text": str(dec1)},
-                        ],
-                    },
-                    {"type": "mixed", "value": [whole, num, den], "text": f"{whole} {num}/{den}"},
-                ],
-            }
-        elif form == "form2":
-            result = dec1 / frac_val - dec2
-            question_text = f"Выполни вычисления:\n{dec1} : {whole} {num}/{den} − {dec2}"
-            expr_str = question_text
-            if re.search(r"(^|[^0-9])0[.,]?\d*", expr_str) or "/0" in expr_str:
-                return generate_mixed_fractions_tasks(1)[0]
-            expr_tree = {
-                "operation": "sub",
-                "operands": [
-                    {
-                        "operation": "div",
-                        "operands": [
-                            {"type": "decimal", "value": dec1, "text": str(dec1)},
-                            {"type": "mixed", "value": [whole, num, den], "text": f"{whole} {num}/{den}"},
-                        ],
-                    },
-                    {"type": "decimal", "value": dec2, "text": str(dec2)},
-                ],
-            }
-        elif form == "form3":
-            result = dec1 - dec2 / frac_val
-            question_text = f"Найди результат вычислений:\n{dec1} − {dec2} : {whole} {num}/{den}"
-            expr_str = question_text
-            if re.search(r"(^|[^0-9])0[.,]?\d*", expr_str) or "/0" in expr_str:
-                return generate_mixed_fractions_tasks(1)[0]
-            expr_tree = {
-                "operation": "sub",
-                "operands": [
-                    {"type": "decimal", "value": dec1, "text": str(dec1)},
-                    {
-                        "operation": "div",
-                        "operands": [
-                            {"type": "decimal", "value": dec2, "text": str(dec2)},
-                            {"type": "mixed", "value": [whole, num, den], "text": f"{whole} {num}/{den}"},
-                        ],
-                    },
-                ],
-            }
-        else:
-            result = dec1 / frac_val - dec2
-            question_text = f"Посчитай значение выражения:\n{dec1} : {whole} {num}/{den} − {dec2}"
-            expr_str = question_text
-            if re.search(r"(^|[^0-9])0[.,]?\d*", expr_str) or "/0" in expr_str:
-                return generate_mixed_fractions_tasks(1)[0]
-            expr_tree = {
-                "operation": "sub",
-                "operands": [
-                    {
-                        "operation": "div",
-                        "operands": [
-                            {"type": "decimal", "value": dec1, "text": str(dec1)},
-                            {"type": "mixed", "value": [whole, num, den], "text": f"{whole} {num}/{den}"},
-                        ],
-                    },
-                    {"type": "decimal", "value": dec2, "text": str(dec2)},
-                ],
-            }
+            form = random.choice(["form1", "form2", "form3", "form4"])
+            if form == "form1":
+                result = (frac_val - dec1) * frac_val
+                expression = f"({whole} {num}/{den} − {dec1}) · {whole} {num}/{den}"
+                prompt = "Вычисли выражение"
+                formatted_expr = prepare_expression(expression)
+                if formatted_expr is None:
+                    continue
+                if re.search(r"(^|[^0-9])0[.,]?\d*", formatted_expr) or "/0" in formatted_expr:
+                    continue
+                expr_tree = {
+                    "operation": "mul",
+                    "operands": [
+                        {
+                            "operation": "sub",
+                            "operands": [
+                                {"type": "mixed", "value": [whole, num, den], "text": f"{whole} {num}/{den}"},
+                                {"type": "decimal", "value": dec1, "text": str(dec1)},
+                            ],
+                        },
+                        {"type": "mixed", "value": [whole, num, den], "text": f"{whole} {num}/{den}"},
+                    ],
+                }
+            elif form == "form2":
+                result = dec1 / frac_val - dec2
+                expression = f"{dec1} : {whole} {num}/{den} − {dec2}"
+                prompt = "Выполни вычисления"
+                formatted_expr = prepare_expression(expression)
+                if formatted_expr is None:
+                    continue
+                if re.search(r"(^|[^0-9])0[.,]?\d*", formatted_expr) or "/0" in formatted_expr:
+                    continue
+                expr_tree = {
+                    "operation": "sub",
+                    "operands": [
+                        {
+                            "operation": "div",
+                            "operands": [
+                                {"type": "decimal", "value": dec1, "text": str(dec1)},
+                                {"type": "mixed", "value": [whole, num, den], "text": f"{whole} {num}/{den}"},
+                            ],
+                        },
+                        {"type": "decimal", "value": dec2, "text": str(dec2)},
+                    ],
+                }
+            elif form == "form3":
+                result = dec1 - dec2 / frac_val
+                expression = f"{dec1} − {dec2} : {whole} {num}/{den}"
+                prompt = "Найди результат вычислений"
+                formatted_expr = prepare_expression(expression)
+                if formatted_expr is None:
+                    continue
+                if re.search(r"(^|[^0-9])0[.,]?\d*", formatted_expr) or "/0" in formatted_expr:
+                    continue
+                expr_tree = {
+                    "operation": "sub",
+                    "operands": [
+                        {"type": "decimal", "value": dec1, "text": str(dec1)},
+                        {
+                            "operation": "div",
+                            "operands": [
+                                {"type": "decimal", "value": dec2, "text": str(dec2)},
+                                {"type": "mixed", "value": [whole, num, den], "text": f"{whole} {num}/{den}"},
+                            ],
+                        },
+                    ],
+                }
+            else:
+                result = dec1 / frac_val - dec2
+                expression = f"{dec1} : {whole} {num}/{den} − {dec2}"
+                prompt = "Посчитай значение выражения"
+                formatted_expr = prepare_expression(expression)
+                if formatted_expr is None:
+                    continue
+                if re.search(r"(^|[^0-9])0[.,]?\d*", formatted_expr) or "/0" in formatted_expr:
+                    continue
+                expr_tree = {
+                    "operation": "sub",
+                    "operands": [
+                        {
+                            "operation": "div",
+                            "operands": [
+                                {"type": "decimal", "value": dec1, "text": str(dec1)},
+                                {"type": "mixed", "value": [whole, num, den], "text": f"{whole} {num}/{den}"},
+                            ],
+                        },
+                        {"type": "decimal", "value": dec2, "text": str(dec2)},
+                    ],
+                }
 
-        if _is_pretty_decimal(float(result)):
-            question_text = _ensure_answer_field(question_text)
-            return {
-                "id": f"6_mixed_types_operations_{uuid.uuid4().hex[:6]}",
-                "task_number": 6,
-                "topic": "mixed_fractions",
-                "subtype": "mixed_types_operations",
-                "question_text": question_text,
-                "answer": str(round(float(result), 3)),
-                "answer_type": "decimal",
-                "variables": {"expression_tree": expr_tree},
-                "meta": {"difficulty": "hard", "pattern_id": pattern_id},
-            }
+            if _is_pretty_decimal(float(result)):
+                question_text = _ensure_answer_field(f"{prompt}:\n{formatted_expr}")
+                return {
+                    "id": f"6_mixed_types_operations_{uuid.uuid4().hex[:6]}",
+                    "task_number": 6,
+                    "topic": "mixed_fractions",
+                    "subtype": "mixed_types_operations",
+                    "question_text": question_text,
+                    "answer": _fmt_answer(float(result)),
+                    "answer_type": "decimal",
+                    "variables": {"expression_tree": expr_tree},
+                    "meta": {"difficulty": "hard", "pattern_id": pattern_id},
+                }
 
-    # Fallback: возвращаем последнее с добавлением поля ответа
-    question_text = _ensure_answer_field(question_text)
-    return {
-        "id": f"6_mixed_types_operations_{uuid.uuid4().hex[:6]}",
-        "task_number": 6,
-        "topic": "mixed_fractions",
-        "subtype": "mixed_types_operations",
-        "question_text": question_text,
-        "answer": str(round(float(result), 3)),
-        "answer_type": "decimal",
-        "variables": {"expression_tree": expr_tree},
-        "meta": {"difficulty": "hard", "pattern_id": pattern_id},
-    }
+    return __safe_fallback_for_this_subtype(pattern_id)
+
 
 
 def _rand_mixed() -> tuple[int, int, int]:
@@ -149,3 +152,33 @@ def _is_pretty_decimal(value: float) -> bool:
         return False
     s = f"{abs(value):.6f}".rstrip("0").rstrip(".")
     return len(s.split(".")[-1]) <= 3
+
+
+def __safe_fallback_for_this_subtype(pattern_id: str) -> Dict[str, Any]:
+    question_text = _ensure_answer_field("Вычисли выражение:\n(1 1/2 − 1,0) · 1 1/2")
+    result = 0.75
+    return {
+        "id": "6_mixed_types_operations_fallback",
+        "task_number": 6,
+        "topic": "mixed_fractions",
+        "subtype": "mixed_types_operations",
+        "question_text": question_text,
+        "answer": _fmt_answer(result),
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "mul",
+                "operands": [
+                    {
+                        "operation": "sub",
+                        "operands": [
+                            {"type": "mixed", "value": [1, 1, 2], "text": "1 1/2"},
+                            {"type": "decimal", "value": 1.0, "text": "1,0"},
+                        ],
+                    },
+                    {"type": "mixed", "value": [1, 1, 2], "text": "1 1/2"},
+                ],
+            }
+        },
+        "meta": {"difficulty": "hard", "pattern_id": pattern_id},
+    }
