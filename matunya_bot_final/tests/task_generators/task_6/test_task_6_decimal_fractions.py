@@ -39,15 +39,16 @@ def _normalise_variants(text: str) -> list[str]:
 
 def _assert_common_structure(task: dict) -> None:
     required_keys = {
-        "id",
-        "task_number",
-        "topic",
-        "subtype",
-        "question_text",
-        "answer",
-        "variables",
-        "answer_type",
-        "meta",
+    "id",
+    "task_number",
+    "topic",
+    "subtype",
+    "question_text",
+    "answer",
+    "display_answer",
+    "variables",
+    "answer_type",
+    "meta",
     }
     assert set(task.keys()) == required_keys
     assert task["task_number"] == 6
@@ -61,7 +62,7 @@ def _assert_common_structure(task: dict) -> None:
         for prefix in _ALLOWED_PREFIXES
     ), f"Unexpected question_text: {task['question_text']}"
 
-    float(task["answer"])
+    float(str(task["answer"]).replace(",", "."))
 
 
 def test_task_6_decimal_fractions_pipeline() -> None:
