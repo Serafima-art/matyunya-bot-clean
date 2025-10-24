@@ -28,9 +28,9 @@ HELP_ROUTERS = {
     # --- Готовые обработчики ---
     11: "matunya_bot_final.help_core.dispatchers.task_11.help_handler_11.handle_task_11_help",
     20: "matunya_bot_final.help_core.dispatchers.task_20.help_handler_20.handle_task_20_help",
+    6:  "matunya_bot_final.help_core.dispatchers.task_6.help_handler_6.handle_task_6_help",
 
     # --- Будущие задания ---
-    # 6:  "matunya_bot_final.help_core.dispatchers.task_6.help_handler_6.handle_task_6_help",
     # 7:  "matunya_bot_final.help_core.dispatchers.task_7.help_handler_7.handle_task_7_help",
     # 8:  "matunya_bot_final.help_core.dispatchers.task_8.help_handler_8.handle_task_8_help",
     # 9:  "matunya_bot_final.help_core.dispatchers.task_9.help_handler_9.handle_task_9_help",

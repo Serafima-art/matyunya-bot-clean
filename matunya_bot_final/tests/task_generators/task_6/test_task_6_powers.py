@@ -37,20 +37,24 @@ def _normalise_variants(text: str) -> list[str]:
 
 
 def _assert_common_structure(task: dict) -> None:
-    required_keys = {
+    expected_keys = {
         "id",
         "task_number",
-        "topic",
         "subtype",
+        "pattern",
         "question_text",
         "answer",
-        "variables",
         "answer_type",
+        "variables",
         "meta",
     }
-    assert set(task.keys()) == required_keys
+    assert set(task.keys()) == expected_keys
     assert task["task_number"] == 6
-    assert task["topic"] == "powers"
+    assert task["subtype"] == "powers"
+
+    allowed_patterns = {"p_powers_with_fractions", "p_powers_of_ten"}
+    assert task["pattern"] in allowed_patterns, f"Unexpected pattern: {task['pattern']}"
+
     assert isinstance(task["question_text"], str)
 
     variants = _normalise_variants(task["question_text"])
@@ -60,15 +64,16 @@ def _assert_common_structure(task: dict) -> None:
         for prefix in _ALLOWED_PREFIXES
     ), f"Unexpected question_text: {task['question_text']}"
 
-    float(task["answer"])
+    float(str(task["answer"]).replace(",", "."))
 
 
+# ★★★ УБРАН ДЕКОРАТОР @pytest.mark.slow ★★★
 def test_task_6_powers_pipeline() -> None:
-    """Ensure generator and validator work together for both patterns."""  # noqa: D401
     pattern_counts: Counter[str] = Counter()
     failures = []
 
     total_samples = 100
+    max_attempts = 300
 
     def _process_sample(index: int) -> None:
         try:
@@ -81,21 +86,33 @@ def test_task_6_powers_pipeline() -> None:
             _assert_common_structure(task)
             is_valid, errors = validate_powers_task(task)
             if not is_valid:
-                raise AssertionError("; \n".join(errors))
+                raise AssertionError("; ".join(errors))
         except Exception as exc:
             failures.append((index, task.get("id"), str(exc)))
             return
 
-        pattern_counts[task["meta"]["pattern_id"]] += 1
+        pattern_counts[task["pattern"]] += 1
 
-    for i in range(total_samples):
-        _process_sample(i)
+
+    attempts = 0
+    while len(pattern_counts) < 2 and attempts < max_attempts:
+        _process_sample(attempts)
+        attempts += 1
+
+    if attempts < total_samples:
+        for i in range(attempts, total_samples):
+            _process_sample(i)
 
     if failures:
-        sample = "; \n".join(
+        sample = "; ".join(
             f"#{idx} ({task_id}): {error}" for idx, task_id, error in failures[:5]
         )
         raise AssertionError(f"Failed {len(failures)} tasks. Examples: {sample}")
 
-    for pattern in {"4.1", "4.2"}:
+    expected_patterns = {"p_powers_with_fractions", "p_powers_of_ten"}
+    missing_patterns = expected_patterns - set(pattern_counts)
+    assert not missing_patterns, (
+        f"Patterns not generated after {attempts} attempts: {missing_patterns}"
+    )
+    for pattern in expected_patterns:
         assert pattern_counts[pattern] > 0, f"No tasks generated for pattern '{pattern}'"

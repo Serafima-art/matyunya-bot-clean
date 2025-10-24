@@ -1,6 +1,11 @@
-﻿"""Integration test for decimal fractions generator and validator."""
+﻿# matunya_bot_final/tests/task_generators/task_6/test_task_6_decimal_fractions.py
+
+"""Integration test for decimal fractions generator and validator."""
+
+from __future__ import annotations
 
 from collections import Counter
+import pytest
 
 from matunya_bot_final.task_generators.task_6.generators.decimal_fractions_generator import (
     generate_decimal_fractions_tasks,
@@ -8,6 +13,9 @@ from matunya_bot_final.task_generators.task_6.generators.decimal_fractions_gener
 from matunya_bot_final.task_generators.task_6.validators.decimal_fractions_validator import (
     validate_decimal_fractions_task,
 )
+
+# Вспомогательные функции, которые нужны тесту, но не меняются
+# =================================================================
 
 _ALLOWED_PREFIXES = [
     "Посчитай значение",
@@ -37,22 +45,33 @@ def _normalise_variants(text: str) -> list[str]:
     return list(variants)
 
 
+# Основная логика теста
+# =================================================================
+
 def _assert_common_structure(task: dict) -> None:
-    required_keys = {
-    "id",
-    "task_number",
-    "topic",
-    "subtype",
-    "question_text",
-    "answer",
-    "display_answer",
-    "variables",
-    "answer_type",
-    "meta",
+    """
+    Asserts the common structure of a task, now updated for the new JSON standard.
+    """
+    expected_keys = {
+        "id",
+        "task_number",
+        "subtype",
+        "pattern",
+        "question_text",
+        "answer",
+        "display_answer",
+        "answer_type",
+        "variables",
+        "meta",
     }
-    assert set(task.keys()) == required_keys
+    assert set(task.keys()) == expected_keys
     assert task["task_number"] == 6
-    assert task["topic"] == "decimal_fractions"
+    assert task["subtype"] == "decimal_fractions"
+
+    # Проверяем, что pattern - один из разрешенных
+    allowed_patterns = {"df_addition_subtraction", "linear_operations", "fraction_structure"}
+    assert task["pattern"] in allowed_patterns, f"Unexpected pattern: {task['pattern']}"
+
     assert isinstance(task["question_text"], str)
 
     variants = _normalise_variants(task["question_text"])
@@ -65,6 +84,7 @@ def _assert_common_structure(task: dict) -> None:
     float(str(task["answer"]).replace(",", "."))
 
 
+@pytest.mark.slow
 def test_task_6_decimal_fractions_pipeline() -> None:
     """Ensure generator and validator work together for all patterns."""
     pattern_counts: Counter[str] = Counter()
@@ -89,16 +109,20 @@ def test_task_6_decimal_fractions_pipeline() -> None:
             failures.append((index, task.get("id"), str(exc)))
             return
 
-        pattern_counts[task["meta"]["pattern_id"]] += 1
+        pattern_counts[task["pattern"]] += 1
+
 
     attempts = 0
-    while attempts < total_samples:
-        _process_sample(attempts)
-        attempts += 1
-
+    # Генерируем, пока не встретим все 3 паттерна
     while len(pattern_counts) < 3 and attempts < max_attempts:
         _process_sample(attempts)
         attempts += 1
+
+    # Добиваем до нужного количества
+    if attempts < total_samples:
+        for i in range(attempts, total_samples):
+            _process_sample(i)
+
 
     if failures:
         sample = "; ".join(
@@ -106,9 +130,11 @@ def test_task_6_decimal_fractions_pipeline() -> None:
         )
         raise AssertionError(f"Failed {len(failures)} tasks. Examples: {sample}")
 
-    missing_patterns = {"2.1", "2.2", "2.3"} - set(pattern_counts)
+    # Проверяем правильные имена паттернов
+    expected_patterns = {"df_addition_subtraction", "linear_operations", "fraction_structure"}
+    missing_patterns = expected_patterns - set(pattern_counts)
     assert not missing_patterns, (
         f"Patterns not generated after {attempts} attempts: {missing_patterns}"
     )
-    for pattern in {"2.1", "2.2", "2.3"}:
+    for pattern in expected_patterns:
         assert pattern_counts[pattern] > 0, f"No tasks generated for pattern '{pattern}'"

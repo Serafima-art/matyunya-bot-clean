@@ -1,8 +1,11 @@
-﻿"""Integration tests for common fractions generator and validator (Task 6)."""
+﻿# matunya_bot_final/tests/task_generators/task_6/test_task_6_common_fractions.py
+
+"""Integration tests for common fractions generator and validator (Task 6)."""
 
 from __future__ import annotations
 
 from collections import Counter
+import pytest
 
 from matunya_bot_final.task_generators.task_6.generators.common_fractions_generator import (
     generate_common_fractions_tasks,
@@ -10,6 +13,9 @@ from matunya_bot_final.task_generators.task_6.generators.common_fractions_genera
 from matunya_bot_final.task_generators.task_6.validators.common_fractions_validator import (
     validate_common_fractions_task,
 )
+
+# Вспомогательные функции, которые нужны тесту, но не меняются
+# =================================================================
 
 _ALLOWED_PREFIXES = [
     "Вычисли результат",
@@ -39,22 +45,22 @@ def _normalise_variants(text: str) -> list[str]:
         pass
     return list(variants)
 
+# Основная логика теста
+# =================================================================
 
 def _assert_common_structure(task: dict) -> None:
+    """
+    Asserts the common structure of a task, now updated for the new JSON standard.
+    """
+    # ★★★ Вот наши ключевые изменения ★★★
     expected_keys = {
-        "id",
-        "task_number",
-        "topic",
-        "subtype",
-        "question_text",
-        "answer",
-        "answer_type",
-        "variables",
-        "meta",
+        "id", "task_number", "subtype", "pattern", "question_text",
+        "answer", "answer_type", "variables", "meta",
     }
     assert set(task.keys()) == expected_keys
     assert task["task_number"] == 6
-    assert task["topic"] == "common_fractions"
+    assert task["subtype"] == "common_fractions"
+
     assert isinstance(task["question_text"], str)
 
     variants = _normalise_variants(task["question_text"])
@@ -69,41 +75,49 @@ def _assert_common_structure(task: dict) -> None:
     assert isinstance(task["meta"], dict)
 
 
+@pytest.mark.slow  # Помечаем тест как "медленный"
 def test_task_6_common_fractions_pipeline() -> None:
     """Ensure generator and validator work together for all four patterns."""
     pattern_counts: Counter[str] = Counter()
     failures = []
 
     total_samples = 100
-    max_attempts = 300
+    max_attempts = 300 # Увеличим попытки, чтобы гарантированно сгенерировать все паттерны
 
     def _process_sample(index: int) -> None:
         try:
             task = generate_common_fractions_tasks(1)[0]
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             failures.append((index, "generation_failed", str(exc)))
             return
 
         try:
+            # Сначала вызываем нашу обновленную проверку структуры
             _assert_common_structure(task)
+
+            # Затем вызываем наш обновленный валидатор
             is_valid, errors = validate_common_fractions_task(task)
             if not is_valid:
                 raise AssertionError("; ".join(errors))
-        except Exception as exc:  # noqa: BLE001
+        except Exception as exc:
             failures.append((index, task.get("id"), str(exc)))
             return
 
-        pattern = task["meta"]["pattern_id"]
+        # Собираем статистику по новому полю 'pattern'
+        pattern = task["pattern"]
         pattern_counts[pattern] += 1
 
-    attempts = 0
-    while attempts < total_samples:
-        _process_sample(attempts)
-        attempts += 1
 
+    attempts = 0
+    # Сначала генерируем задачи, пока не встретим все 4 паттерна
     while len(pattern_counts) < 4 and attempts < max_attempts:
         _process_sample(attempts)
         attempts += 1
+
+    # Затем добиваем до нужного количества total_samples
+    if attempts < total_samples:
+        for i in range(attempts, total_samples):
+            _process_sample(i)
 
     if failures:
         sample = "; ".join(
@@ -111,9 +125,9 @@ def test_task_6_common_fractions_pipeline() -> None:
         )
         raise AssertionError(f"Failed {len(failures)} tasks. Examples: {sample}")
 
-    missing_patterns = {"1.1", "1.2", "1.3", "1.4"} - set(pattern_counts)
-    assert not missing_patterns, (
-        f"Patterns not generated after {attempts} attempts: {missing_patterns}"
-    )
-    for pattern in {"1.1", "1.2", "1.3", "1.4"}:
+    # Проверяем, что все 4 паттерна были сгенерированы
+    expected_patterns = {"cf_addition_subtraction", "multiplication_division", "parentheses_operations", "complex_fraction"}
+    missing_patterns = expected_patterns - set(pattern_counts)
+    assert not missing_patterns, f"Patterns not generated: {missing_patterns}"
+    for pattern in expected_patterns:
         assert pattern_counts[pattern] > 0, f"No tasks generated for pattern '{pattern}'"

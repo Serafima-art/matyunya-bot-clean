@@ -40,28 +40,25 @@ def _generate_df_addition_subtraction(pattern_id: str) -> Dict[str, Any]:
     question_text = f"Посчитай значение:\n{_fmt(a)} {symbol} {_fmt(b)}\n\nОтвет: ____________"
 
     return {
-    "id": f"6_df_addition_subtraction_{uuid.uuid4().hex[:6]}",
-    "task_number": 6,
-    "topic": "decimal_fractions",
-    "subtype": "df_addition_subtraction",
-    "question_text": question_text,
-    "answer": _fmt_answer(result, use_comma=True).replace(",", "."),   # для валидатора (точка)
-    "display_answer": _fmt_answer(result, use_comma=True),             # для бота (запятая)
-    "answer_type": "decimal",
-    "variables": {
-        "expression_tree": {
-            "type": "operation",
-            "value": None,
-            "text": f"{_fmt(a)} {symbol} {_fmt(b)}",
-            "operation": op,
-            "operands": [
-                {"type": "decimal", "value": a, "text": _fmt(a)},
-                {"type": "decimal", "value": b, "text": _fmt(b)},
-            ],
-        }
-    },
-    "meta": {"difficulty": "easy", "pattern_id": pattern_id},
-}
+        "id": f"6_df_addition_subtraction_{uuid.uuid4().hex[:6]}",
+        "task_number": 6,
+        "subtype": "decimal_fractions",
+        "pattern": "df_addition_subtraction",
+        "question_text": question_text,
+        "answer": _fmt_answer(result, use_comma=True).replace(",", "."),
+        "display_answer": _fmt_answer(result, use_comma=True),
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "add" if op == "add" else "subtract",
+                "operands": [
+                    {"type": "decimal", "value": float(a)},
+                    {"type": "decimal", "value": float(b)},
+                ],
+            }
+        },
+        "meta": {"difficulty": "easy", "pattern_id": pattern_id},
+    }
 
 
 # ===============================
@@ -94,27 +91,24 @@ def _generate_linear_operations(pattern_id: str) -> Dict[str, Any]:
     return {
         "id": f"6_linear_operations_{uuid.uuid4().hex[:6]}",
         "task_number": 6,
-        "topic": "decimal_fractions",
-        "subtype": "linear_operations",
+        "subtype": "decimal_fractions",
+        "pattern": "linear_operations",
         "question_text": question_text,
         "answer": _fmt_answer(result, use_comma=True).replace(",", "."),
         "display_answer": _fmt_answer(result, use_comma=True),
         "answer_type": "decimal",
         "variables": {
             "expression_tree": {
-                "operation": op,
+                "operation": "add" if op == "add" else "subtract",
                 "operands": [
                     {
-                        "type": "operation",
-                        "value": None,
-                        "text": f"{a_fmt}·{b_fmt}",
-                        "operation": "mul",
+                        "operation": "multiply",
                         "operands": [
-                            {"type": "integer", "value": a, "text": a_fmt},
-                            {"type": "decimal", "value": b, "text": b_fmt},
+                            {"type": "decimal", "value": float(a)},
+                            {"type": "decimal", "value": float(b)},
                         ],
                     },
-                    {"type": "decimal", "value": c, "text": c_fmt},
+                    {"type": "decimal", "value": float(c)},
                 ],
             }
         },
@@ -163,38 +157,31 @@ def _generate_fraction_structure(pattern_id: str) -> Dict[str, Any]:
     question_text = f"Посчитай значение дроби:\n{_fmt(a)} / ({inner_text})\n\nОтвет: ____________"
 
     return {
-    "id": f"6_fraction_structure_{uuid.uuid4().hex[:6]}",
-    "task_number": 6,
-    "topic": "decimal_fractions",
-    "subtype": "fraction_structure",
-    "question_text": question_text,
-    "answer": _fmt_answer(result, use_comma=True).replace(",", "."),   # для валидатора (точка)
-    "display_answer": _fmt_answer(result, use_comma=True),             # для бота (запятая)
-    "answer_type": "decimal",
-    "variables": {
-        "expression_tree": {
-            "operation": "div",
-            "operands": [
-                {"type": "decimal", "value": a, "text": _fmt(a)},
-                {
-                    "type": "operation",
-                    "value": None,
-                    "text": (
-                        f"{_fmt(b)} {'+' if mode == 'add_sub' and inner_op == 'add' else '−' if mode == 'add_sub' and inner_op == 'sub' else '·'} {_fmt(c)}"
-                    ),
-                    "operation": (
-                        inner_op if mode == "add_sub" else "mul"
-                    ),
-                    "operands": [
-                        {"type": "decimal", "value": b, "text": _fmt(b)},
-                        {"type": "decimal", "value": c, "text": _fmt(c)},
-                    ],
-                },
-            ],
-        }
-    },
-    "meta": {"difficulty": "hard", "pattern_id": pattern_id},
-}
+        "id": f"6_fraction_structure_{uuid.uuid4().hex[:6]}",
+        "task_number": 6,
+        "subtype": "decimal_fractions",
+        "pattern": "fraction_structure",
+        "question_text": question_text,
+        "answer": _fmt_answer(result, use_comma=True).replace(",", "."),
+        "display_answer": _fmt_answer(result, use_comma=True),
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "divide",
+                "operands": [
+                    {"type": "decimal", "value": float(a)},
+                    {
+                        "operation": ("add" if mode == "add_sub" and inner_op == "add" else "subtract" if mode == "add_sub" and inner_op == "sub" else "multiply"),
+                        "operands": [
+                            {"type": "decimal", "value": float(b)},
+                            {"type": "decimal", "value": float(c)},
+                        ],
+                    },
+                ],
+            }
+        },
+        "meta": {"difficulty": "hard", "pattern_id": pattern_id},
+    }
 
 # ===============================
 # === ВСПОМОГАТЕЛЬНЫЕ ===========

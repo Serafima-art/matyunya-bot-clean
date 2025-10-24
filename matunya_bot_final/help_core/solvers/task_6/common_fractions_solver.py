@@ -1,37 +1,45 @@
+# matunya_bot_final/help_core/solvers/task_6/common_fractions_solver.py
+
 """
-Решатель для задач с обыкновенными дробями (TASK6_COMMON).
-Модуль следует стандарту ГОСТ-2026 для формирования пошагового решения.
+Решатель для подтипа 'common_fractions' (Задание 6).
+Содержит "внутренний роутер" для разных паттернов.
+Модуль следует стандарту ГОСТ-2026.
 """
 
 from fractions import Fraction
 from typing import Dict, List, Any
 import math
 
+# =============================================================================
+# ★★★ ГЛАВНАЯ ФУНКЦИЯ-ДИСПЕТЧЕР (ВНУТРЕННИЙ РОУТЕР) ★★★
+# =============================================================================
 
-def solve(expression_tree: Dict[str, Any]) -> Dict[str, Any]:
+def solve(task_data: Dict[str, Any]) -> Dict[str, Any]:
     """
-    Главная функция решателя для обыкновенных дробей.
-
-    Args:
-        expression_tree: Древовидная структура математического выражения
-
-    Returns:
-        Словарь с пошаговым решением по стандарту ГОСТ-2026
+    Главная функция-роутер для подтипа 'common_fractions'.
+    Вызывает универсальный рекурсивный решатель.
     """
+    expression_tree = task_data.get("variables", {}).get("expression_tree")
+    if not expression_tree:
+        raise ValueError("Отсутствует 'expression_tree' в task_data")
+
+    # Для 'common_fractions' все паттерны решаются одним и тем же универсальным методом.
+    # Поэтому "роутер" здесь очень простой - он всегда вызывает одну и ту же логику.
+
     steps = []
-    step_counter = [1]  # Используем список для mutable счетчика
+    step_counter = [1]
 
-    # Рекурсивно вычисляем выражение и собираем шаги
+    # Вызываем универсальный рекурсивный движок
     final_fraction = _evaluate_tree(expression_tree, steps, step_counter)
 
-    # Добавляем финальный шаг с преобразованием в десятичное число
+    # Добавляем финальный шаг
     _add_decimal_conversion_step(final_fraction, steps, step_counter)
 
-    # Формируем итоговый результат
     decimal_value = float(final_fraction)
 
-    result = {
-        "question_id": "placeholder_id",
+    # Собираем финальный solution_core по ГОСТ-2026
+    return {
+        "question_id": task_data.get("id", "placeholder_id"),
         "question_group": "TASK6_COMMON",
         "explanation_idea": _generate_explanation_idea(),
         "calculation_steps": steps,
@@ -42,55 +50,29 @@ def solve(expression_tree: Dict[str, Any]) -> Dict[str, Any]:
         "hints": _generate_hints()
     }
 
-    return result
-
+# =============================================================================
+# ★★★ УНИВЕРСАЛЬНЫЙ РЕКУРСИВНЫЙ ДВИЖОК (ВСЯ МАТЕМАТИКА) ★★★
+# (Этот код остается практически без изменений, он идеален)
+# =============================================================================
 
 def _evaluate_tree(node: Dict[str, Any], steps: List[Dict], step_counter: List[int]) -> Fraction:
-    """
-    Рекурсивно вычисляет выражение из дерева, добавляя шаги в список.
-
-    Args:
-        node: Узел дерева (операция или значение)
-        steps: Список для накопления шагов решения
-        step_counter: Счетчик шагов (mutable)
-
-    Returns:
-        Результат вычисления в виде Fraction
-    """
-    # Базовый случай: это дробь
+    """Рекурсивно вычисляет выражение из дерева, добавляя шаги в список."""
     if node.get("type") == "common":
         numerator, denominator = node["value"]
         return Fraction(numerator, denominator)
 
-    # Рекурсивный случай: это операция
     operation = node["operation"]
     operands = node["operands"]
 
-    # Вычисляем операнды рекурсивно
     left = _evaluate_tree(operands[0], steps, step_counter)
     right = _evaluate_tree(operands[1], steps, step_counter)
 
-    # Выполняем операцию и добавляем шаг
-    result = _perform_operation(operation, left, right, steps, step_counter)
-
-    return result
+    return _perform_operation(operation, left, right, steps, step_counter)
 
 
 def _perform_operation(operation: str, left: Fraction, right: Fraction,
                        steps: List[Dict], step_counter: List[int]) -> Fraction:
-    """
-    Выполняет математическую операцию и добавляет описание шага.
-
-    Args:
-        operation: Тип операции ('add', 'subtract', 'multiply', 'divide')
-        left: Левый операнд
-        right: Правый операнд
-        steps: Список шагов
-        step_counter: Счетчик шагов
-
-    Returns:
-        Результат операции
-    """
+    """Выполняет математическую операцию и добавляет описание шага."""
     if operation == "add":
         return _perform_addition(left, right, steps, step_counter)
     elif operation == "subtract":

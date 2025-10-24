@@ -41,15 +41,8 @@ def validate_common_fractions_task(task: Dict[str, Any]) -> Tuple[bool, List[str
         return False, ["Задача должна быть словарём."]
 
     required_fields = {
-        "id",
-        "task_number",
-        "topic",
-        "subtype",
-        "question_text",
-        "answer",
-        "answer_type",
-        "variables",
-        "meta",
+        "id", "task_number", "subtype", "pattern", "question_text",
+        "answer", "answer_type", "variables", "meta",
     }
     missing = required_fields - set(task)
     if missing:
@@ -58,8 +51,11 @@ def validate_common_fractions_task(task: Dict[str, Any]) -> Tuple[bool, List[str
     if task.get("task_number") != 6:
         errors.append("Некорректный номер задания (ожидалось 6).")
 
-    if task.get("topic") != "common_fractions":
-        errors.append("Некорректная тема (ожидалось 'common_fractions').")
+    if task.get("subtype") != "common_fractions":
+        errors.append("Некорректный subtype (ожидалось 'common_fractions').")
+    allowed_patterns = {"cf_addition_subtraction", "multiplication_division", "parentheses_operations", "complex_fraction"}
+    if task.get("pattern") not in allowed_patterns:
+        errors.append(f"Недопустимое значение для 'pattern': {task.get('pattern')}")
 
     variants = _normalise_variants(task.get("question_text", ""))
     if not any(
@@ -85,7 +81,28 @@ def validate_common_fractions_task(task: Dict[str, Any]) -> Tuple[bool, List[str
     if "pattern_id" not in meta:
         errors.append("Отсутствует meta.pattern_id")
 
+    expression_tree = task.get("variables", {}).get("expression_tree")
+    if expression_tree:
+        _validate_expression_tree(expression_tree, errors)
+    else:
+        errors.append("Отсутствует variables.expression_tree")
+
     return len(errors) == 0, errors
+def _validate_expression_tree(node: Any, errors: List[str]) -> None:
+    if not isinstance(node, dict):
+        errors.append("expression_tree: узел не является словарём")
+        return
+    if "type" in node:
+        if node["type"] == "mixed":
+            errors.append("expression_tree: тип 'mixed' недопустим")
+    if "operation" in node:
+        if node["operation"] not in ["add", "subtract", "multiply", "divide"]:
+            errors.append(f"expression_tree: недопустимая операция '{node['operation']}'")
+    if "operands" in node:
+        operands = node["operands"]
+        if isinstance(operands, list):
+            for child in operands:
+                _validate_expression_tree(child, errors)
 
 
 def _is_pretty_decimal(value: float) -> bool:

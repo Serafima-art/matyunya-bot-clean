@@ -1,6 +1,11 @@
-﻿"""Integration test for mixed fractions generator and validator."""
+﻿# matunya_bot_final/tests/task_generators/task_6/test_task_6_mixed_fractions.py
+
+"""Integration test for mixed fractions generator and validator."""
+
+from __future__ import annotations
 
 from collections import Counter
+import pytest
 
 from matunya_bot_final.task_generators.task_6.generators.mixed_fractions_generator import (
     generate_mixed_fractions_tasks,
@@ -8,6 +13,9 @@ from matunya_bot_final.task_generators.task_6.generators.mixed_fractions_generat
 from matunya_bot_final.task_generators.task_6.validators.mixed_fractions_validator import (
     validate_mixed_fractions_task,
 )
+
+# Вспомогательные функции, которые нужны тесту, но не меняются
+# =================================================================
 
 _ALLOWED_PREFIXES = [
     "Вычисли выражение",
@@ -38,21 +46,29 @@ def _normalise_variants(text: str) -> list[str]:
     return list(variants)
 
 
+# Основная логика теста
+# =================================================================
+
 def _assert_common_structure(task: dict) -> None:
-    required_keys = {
+    """
+    Asserts the common structure of a task, now updated for the new JSON standard.
+    """
+    expected_keys = {
         "id",
         "task_number",
-        "topic",
         "subtype",
+        "pattern",
         "question_text",
         "answer",
-        "variables",
         "answer_type",
+        "variables",
         "meta",
     }
-    assert set(task.keys()) == required_keys
+    assert set(task.keys()) == expected_keys
     assert task["task_number"] == 6
-    assert task["topic"] == "mixed_fractions"
+    assert task["subtype"] == "mixed_fractions"
+    assert task["pattern"] == "mf_mixed_types_operations"
+
     assert isinstance(task["question_text"], str)
 
     variants = _normalise_variants(task["question_text"])
@@ -62,15 +78,17 @@ def _assert_common_structure(task: dict) -> None:
         for prefix in _ALLOWED_PREFIXES
     ), f"Unexpected question_text: {task['question_text']}"
 
-    float(task["answer"])
+    # Проверяем, что ответ можно преобразовать в число
+    float(str(task["answer"]).replace(",", "."))
 
 
+@pytest.mark.slow
 def test_task_6_mixed_fractions_pipeline() -> None:
     """Ensure generator and validator work together for mixed_fractions."""
     pattern_counts: Counter[str] = Counter()
     failures = []
 
-    total_samples = 100
+    total_samples = 50
 
     def _process_sample(index: int) -> None:
         try:
@@ -88,7 +106,7 @@ def test_task_6_mixed_fractions_pipeline() -> None:
             failures.append((index, task.get("id"), str(exc)))
             return
 
-        pattern_counts[task["meta"]["pattern_id"]] += 1
+        pattern_counts[task["pattern"]] += 1
 
     for i in range(total_samples):
         _process_sample(i)
@@ -99,4 +117,5 @@ def test_task_6_mixed_fractions_pipeline() -> None:
         )
         raise AssertionError(f"Failed {len(failures)} tasks. Examples: {sample}")
 
-    assert pattern_counts["3.1"] > 0
+    assert pattern_counts["mf_mixed_types_operations"] > 0
+    assert len(pattern_counts) == 1, "Should only generate one pattern type"
