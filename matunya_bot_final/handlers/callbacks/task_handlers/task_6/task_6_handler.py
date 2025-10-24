@@ -53,26 +53,29 @@ THEME_TO_SUBTYPES: Dict[str, list[str]] = {
 
 
 def _pick_task_for_theme(tasks: Iterable[dict], theme_key: str) -> dict | None:
-    """Return a random task for the given theme or None if nothing fits."""
-    tasks = list(tasks)
-    if not tasks:
+    """
+    Возвращает случайную задачу из выбранной темы для задания №6.
+    Основана на связке subtype (основная тема) и pattern (внутренний подтип).
+    """
+    items = list(tasks)
+    if not items:
         return None
 
-    allowed_subtypes = set(THEME_TO_SUBTYPES.get(theme_key, []))
-    pool = [task for task in tasks if task.get("subtype") in allowed_subtypes] or tasks
+    # --- 1. Фильтрация по subtype (основная тема) ---
+    pool = [t for t in items if t.get("subtype") == theme_key]
+
+    # --- 2. Если таких нет — фильтрация по связанным паттернам темы ---
     if not pool:
-        return None
+        allowed_patterns = set(THEME_TO_SUBTYPES.get(theme_key, []))
+        if allowed_patterns:
+            pool = [t for t in items if t.get("pattern") in allowed_patterns]
+
+    # --- 3. Если всё ещё пусто — лог и fallback ---
+    if not pool:
+        logger.warning(f"[Task6] Нет задач с subtype='{theme_key}' и подходящими паттернами. Беру случайную.")
+        pool = items
+
     return random.choice(pool)
-
-
-def _task_text(task_data: dict) -> str:
-    """Extract human readable text from task storage record."""
-    return (
-        task_data.get("question_text")
-        or task_data.get("text")
-        or task_data.get("question")
-        or ""
-    )
 
 
 # === ENTRYPOINT ===
@@ -194,6 +197,15 @@ async def back_to_carousel_6(
         parse_mode="HTML",
     )
     await state.update_data(current_theme=current_key)
+
+def _task_text(task_data: dict) -> str:
+    """Извлекает читаемый текст задания из структуры task_data."""
+    return (
+        task_data.get("question_text")
+        or task_data.get("text")
+        or task_data.get("question")
+        or ""
+    )
 
 
 # === SEND TASK ===

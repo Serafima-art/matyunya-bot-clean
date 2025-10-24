@@ -67,14 +67,14 @@ def _generate_cf_addition_subtraction(pattern_id: str) -> Dict[str, Any]:
         return {
             "id": f"6_cf_addition_subtraction_{uuid.uuid4().hex[:6]}",
             "task_number": 6,
-            "topic": "common_fractions",
-            "subtype": "cf_addition_subtraction",
+            "subtype": "common_fractions",
+            "pattern": "cf_addition_subtraction",
             "question_text": question_text,
             "answer": _fmt_answer(float(result)),
             "answer_type": "decimal",
             "variables": {
                 "expression_tree": {
-                    "operation": op,
+                    "operation": op.replace("sub", "subtract"),
                     "operands": [
                         {"type": "common", "value": [a[0], a[1]], "text": f"{a[0]}/{a[1]}"},
                         {"type": "common", "value": [b[0], b[1]], "text": f"{b[0]}/{b[1]}"},
@@ -116,19 +116,21 @@ def _generate_multiplication_division(pattern_id: str) -> Dict[str, Any]:
             f"Выполни действия:\n{formatted_expr}"
         )
 
+        improper_num = a[0] * a[2] + a[1]
+        improper_den = a[2]
         return {
             "id": f"6_multiplication_division_{uuid.uuid4().hex[:6]}",
             "task_number": 6,
-            "topic": "common_fractions",
-            "subtype": "multiplication_division",
+            "subtype": "common_fractions",
+            "pattern": "multiplication_division",
             "question_text": question_text,
             "answer": _fmt_answer(float(result)),
             "answer_type": "decimal",
             "variables": {
                 "expression_tree": {
-                    "operation": op,
+                    "operation": op.replace("mul", "multiply").replace("div", "divide"),
                     "operands": [
-                        {"type": "mixed", "value": [a[0], a[1], a[2]], "text": text_a},
+                        {"type": "common", "value": [improper_num, improper_den], "text": text_a},
                         {"type": "common", "value": [b[0], b[1]], "text": text_b},
                     ],
                 }
@@ -142,27 +144,28 @@ def _generate_multiplication_division(pattern_id: str) -> Dict[str, Any]:
 def _generate_parentheses_operations(pattern_id: str) -> Dict[str, Any]:
     for __retry in range(80):
         a, b, c = _rand_frac(), _rand_frac(), _rand_frac()
-        inner_op = random.choice(["add", "sub"])
-        outer_op = random.choice(["mul", "div"])
+
+        # 🚫 защита от одинаковых дробей (иначе будет 0)
+        if a == b:
+            continue
+
+        inner_op = random.choice(["add", "subtract"])
+        outer_op = random.choice(["multiply", "divide"])
 
         inner_val = Fraction(a[0], a[1]) + Fraction(b[0], b[1]) if inner_op == "add" else Fraction(a[0], a[1]) - Fraction(b[0], b[1])
-        result = inner_val * Fraction(c[0], c[1]) if outer_op == "mul" else inner_val / Fraction(c[0], c[1])
+        result = inner_val * Fraction(c[0], c[1]) if outer_op == "multiply" else inner_val / Fraction(c[0], c[1])
 
-        attempts = 0
-        while not _is_pretty_decimal(result) and attempts < 100:
-            a, b, c = _rand_frac(), _rand_frac(), _rand_frac()
-            inner_op = random.choice(["add", "sub"])
-            outer_op = random.choice(["mul", "div"])
-            inner_val = Fraction(a[0], a[1]) + Fraction(b[0], b[1]) if inner_op == "add" else Fraction(a[0], a[1]) - Fraction(b[0], b[1])
-            result = inner_val * Fraction(c[0], c[1]) if outer_op == "mul" else inner_val / Fraction(c[0], c[1])
-            attempts += 1
+        # 🚫 исключаем случаи, когда выражение стало нулём
+        if result == 0:
+            continue
 
-        op_symbols = {"add": "+", "sub": "−", "mul": "·", "div": ":"}
+        if not _is_pretty_decimal(result):
+            continue
+
+        op_symbols = {"add": "+", "subtract": "−", "multiply": "·", "divide": ":"}
         expr_line = f"({a[0]}/{a[1]} {op_symbols[inner_op]} {b[0]}/{b[1]}) {op_symbols[outer_op]} {c[0]}/{c[1]}"
         formatted_expr = prepare_expression(expr_line)
-        if formatted_expr is None:
-            continue
-        if re.search(r'(^|[^0-9])0[.,]?\d*', formatted_expr) or "/0" in formatted_expr:
+        if formatted_expr is None or "/0" in formatted_expr:
             continue
 
         question_text = _ensure_answer_field(
@@ -172,8 +175,8 @@ def _generate_parentheses_operations(pattern_id: str) -> Dict[str, Any]:
         return {
             "id": f"6_parentheses_operations_{uuid.uuid4().hex[:6]}",
             "task_number": 6,
-            "topic": "common_fractions",
-            "subtype": "parentheses_operations",
+            "subtype": "common_fractions",
+            "pattern": "parentheses_operations",
             "question_text": question_text,
             "answer": _fmt_answer(float(result)),
             "answer_type": "decimal",
@@ -201,19 +204,19 @@ def _generate_parentheses_operations(pattern_id: str) -> Dict[str, Any]:
 def _generate_complex_fraction(pattern_id: str) -> Dict[str, Any]:
     for __retry in range(80):
         a, b, c = _rand_frac(), _rand_frac(), _rand_frac()
-        inner_op = random.choice(["add", "sub"])
+        inner_op = random.choice(["add", "subtract"])
         inner_val = Fraction(a[0], a[1]) + Fraction(b[0], b[1]) if inner_op == "add" else Fraction(a[0], a[1]) - Fraction(b[0], b[1])
         result = inner_val / Fraction(c[0], c[1])
 
         attempts = 0
         while not _is_pretty_decimal(result) and attempts < 100:
             a, b, c = _rand_frac(), _rand_frac(), _rand_frac()
-            inner_op = random.choice(["add", "sub"])
+            inner_op = random.choice(["add", "subtract"])
             inner_val = Fraction(a[0], a[1]) + Fraction(b[0], b[1]) if inner_op == "add" else Fraction(a[0], a[1]) - Fraction(b[0], b[1])
             result = inner_val / Fraction(c[0], c[1])
             attempts += 1
 
-        op_symbols = {"add": "+", "sub": "−"}
+        op_symbols = {"add": "+", "subtract": "−"}
         expr_line = f"({a[0]}/{a[1]} {op_symbols[inner_op]} {b[0]}/{b[1]}) / ({c[0]}/{c[1]})"
         formatted_expr = prepare_expression(expr_line)
         if formatted_expr is None:
@@ -228,14 +231,14 @@ def _generate_complex_fraction(pattern_id: str) -> Dict[str, Any]:
         return {
             "id": f"6_complex_fraction_{uuid.uuid4().hex[:6]}",
             "task_number": 6,
-            "topic": "common_fractions",
-            "subtype": "complex_fraction",
+            "subtype": "common_fractions",
+            "pattern": "complex_fraction",
             "question_text": question_text,
             "answer": _fmt_answer(float(result)),
             "answer_type": "decimal",
             "variables": {
                 "expression_tree": {
-                    "operation": "div",
+                    "operation": "divide",
                     "operands": [
                         {
                             "operation": inner_op,
@@ -306,8 +309,8 @@ def __safe_fallback_for_this_subtype(pattern_id: str) -> Dict[str, Any]:
         return {
             "id": "6_cf_addition_subtraction_fallback",
             "task_number": 6,
-            "topic": "common_fractions",
-            "subtype": "cf_addition_subtraction",
+            "subtype": "common_fractions",
+            "pattern": "cf_addition_subtraction",
             "question_text": question_text,
             "answer": _fmt_answer(result),
             "answer_type": "decimal",
@@ -326,19 +329,21 @@ def __safe_fallback_for_this_subtype(pattern_id: str) -> Dict[str, Any]:
         expression = "1 1/2 · 2/5"
         question_text = _ensure_answer_field(f"Выполни действия:\n{expression}")
         result = 0.6
+        improper_num = 1 * 2 + 1
+        improper_den = 2
         return {
             "id": "6_multiplication_division_fallback",
             "task_number": 6,
-            "topic": "common_fractions",
-            "subtype": "multiplication_division",
+            "subtype": "common_fractions",
+            "pattern": "multiplication_division",
             "question_text": question_text,
             "answer": _fmt_answer(result),
             "answer_type": "decimal",
             "variables": {
                 "expression_tree": {
-                    "operation": "mul",
+                    "operation": "multiply",
                     "operands": [
-                        {"type": "mixed", "value": [1, 1, 2], "text": "1 1/2"},
+                        {"type": "common", "value": [improper_num, improper_den], "text": "1 1/2"},
                         {"type": "common", "value": [2, 5], "text": "2/5"},
                     ],
                 }
@@ -352,14 +357,14 @@ def __safe_fallback_for_this_subtype(pattern_id: str) -> Dict[str, Any]:
         return {
             "id": "6_parentheses_operations_fallback",
             "task_number": 6,
-            "topic": "common_fractions",
-            "subtype": "parentheses_operations",
+            "subtype": "common_fractions",
+            "pattern": "parentheses_operations",
             "question_text": question_text,
             "answer": _fmt_answer(result),
             "answer_type": "decimal",
             "variables": {
                 "expression_tree": {
-                    "operation": "mul",
+                    "operation": "multiply",
                     "operands": [
                         {
                             "operation": "add",
@@ -380,14 +385,14 @@ def __safe_fallback_for_this_subtype(pattern_id: str) -> Dict[str, Any]:
     return {
         "id": "6_complex_fraction_fallback",
         "task_number": 6,
-        "topic": "common_fractions",
-        "subtype": "complex_fraction",
+        "subtype": "common_fractions",
+        "pattern": "complex_fraction",
         "question_text": question_text,
         "answer": _fmt_answer(result),
         "answer_type": "decimal",
         "variables": {
             "expression_tree": {
-                "operation": "div",
+                "operation": "divide",
                 "operands": [
                     {
                         "operation": "add",

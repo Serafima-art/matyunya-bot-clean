@@ -1,38 +1,44 @@
+# matunya_bot_final/help_core/solvers/task_6/mixed_fractions_solver.py
+
 """
-Решатель для задач со смешанными дробями (TASK6_MIXED).
-Модуль следует стандарту ГОСТ-2026 для формирования пошагового решения.
-Преобразует все числа в обыкновенные дроби для единообразия вычислений.
+Решатель для подтипа 'mixed_fractions' (Задание 6).
+Содержит "внутренний роутер" и преобразует все числа в обыкновенные дроби.
+Модуль следует стандарту ГОСТ-2026.
 """
 
 from fractions import Fraction
 from typing import Dict, List, Any
 import math
 
+# =============================================================================
+# ★★★ ГЛАВНАЯ ФУНКЦИЯ-ДИСПЕТЧЕР (ВНУТРЕННИЙ РОУТЕР) ★★★
+# =============================================================================
 
-def solve(expression_tree: Dict[str, Any]) -> Dict[str, Any]:
+def solve(task_data: Dict[str, Any]) -> Dict[str, Any]:
     """
-    Главная функция решателя для смешанных дробей.
-
-    Args:
-        expression_tree: Древовидная структура математического выражения
-
-    Returns:
-        Словарь с пошаговым решением по стандарту ГОСТ-2026
+    Главная функция-роутер для подтипа 'mixed_fractions'.
+    Вызывает универсальный рекурсивный решатель.
     """
+    expression_tree = task_data.get("variables", {}).get("expression_tree")
+    if not expression_tree:
+        raise ValueError("Отсутствует 'expression_tree' в task_data")
+
+    # Для 'mixed_fractions' все паттерны решаются одним универсальным методом.
+
     steps = []
-    step_counter = [1]  # Используем список для mutable счетчика
+    step_counter = [1]
 
-    # Рекурсивно вычисляем выражение и собираем шаги
+    # Вызываем универсальный рекурсивный движок
     final_fraction = _evaluate_tree(expression_tree, steps, step_counter)
 
-    # Добавляем финальный шаг с преобразованием в десятичное число
+    # Добавляем финальный шаг
     _add_decimal_conversion_step(final_fraction, steps, step_counter)
 
-    # Формируем итоговый результат
     decimal_value = float(final_fraction)
 
-    result = {
-        "question_id": "placeholder_id",
+    # Собираем финальный solution_core по ГОСТ-2026
+    return {
+        "question_id": task_data.get("id", "placeholder_id"),
         "question_group": "TASK6_MIXED",
         "explanation_idea": _generate_explanation_idea(),
         "calculation_steps": steps,
@@ -43,49 +49,31 @@ def solve(expression_tree: Dict[str, Any]) -> Dict[str, Any]:
         "hints": _generate_hints()
     }
 
-    return result
-
+# =============================================================================
+# ★★★ УНИВЕРСАЛЬНЫЙ РЕКУРСИВНЫЙ ДВИЖОК (ВСЯ МАТЕМАТИКА) ★★★
+# (Этот код остается практически без изменений)
+# =============================================================================
 
 def _evaluate_tree(node: Dict[str, Any], steps: List[Dict], step_counter: List[int]) -> Fraction:
     """
-    Рекурсивно вычисляет выражение из дерева, добавляя шаги в список.
-    Преобразует все числа в Fraction для единообразия.
-
-    Args:
-        node: Узел дерева (операция или значение)
-        steps: Список для накопления шагов решения
-        step_counter: Счетчик шагов (mutable)
-
-    Returns:
-        Результат вычисления в виде Fraction
+    Рекурсивно вычисляет выражение, преобразуя все числа в Fraction.
     """
-    # Базовый случай: это обыкновенная дробь
     if node.get("type") == "common":
-        numerator, denominator = node["value"]
-        return Fraction(numerator, denominator)
+        return Fraction(node["value"][0], node["value"][1])
 
-    # Базовый случай: это десятичная дробь - преобразуем в Fraction
     if node.get("type") == "decimal":
         decimal_value = node["value"]
         fraction = Fraction(str(decimal_value))
-
-        # Добавляем шаг преобразования
         _add_conversion_step(decimal_value, fraction, steps, step_counter)
-
         return fraction
 
-    # Рекурсивный случай: это операция
     operation = node["operation"]
     operands = node["operands"]
 
-    # Вычисляем операнды рекурсивно
     left = _evaluate_tree(operands[0], steps, step_counter)
     right = _evaluate_tree(operands[1], steps, step_counter)
 
-    # Выполняем операцию и добавляем шаг
-    result = _perform_operation(operation, left, right, steps, step_counter)
-
-    return result
+    return _perform_operation(operation, left, right, steps, step_counter)
 
 
 def _add_conversion_step(decimal_value: float, fraction: Fraction,

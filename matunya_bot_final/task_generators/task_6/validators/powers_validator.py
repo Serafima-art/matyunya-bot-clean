@@ -1,4 +1,6 @@
-﻿from __future__ import annotations
+﻿# matunya_bot_final/task_generators/task_6/validators/powers_validator.py
+
+from __future__ import annotations
 
 from typing import Any, Dict, List, Tuple
 
@@ -35,14 +37,18 @@ def validate_powers_task(task: Dict[str, Any]) -> Tuple[bool, List[str]]:
     if task.get("task_number") != 6:
         errors.append("Некорректный номер задания (ожидается 6).")
 
-    if task.get("topic") != "powers":
-        errors.append("Некорректная тема (ожидается 'powers').")
+    # ★★★ ИСПРАВЛЕНО ЗДЕСЬ ★★★
+    if task.get("subtype") != "powers":
+        errors.append("Некорректный subtype (ожидалось 'powers').")
+
+    if "pattern" not in task:
+        errors.append("Отсутствует обязательное поле 'pattern'.")
 
     if task.get("answer_type") != "decimal":
         errors.append("answer_type должен быть 'decimal'.")
 
     try:
-        float(task.get("answer"))
+        float(str(task.get("answer")).replace(",", "."))
     except Exception:
         errors.append("Ответ не преобразуется в число.")
 
@@ -55,7 +61,40 @@ def validate_powers_task(task: Dict[str, Any]) -> Tuple[bool, List[str]]:
     ):
         errors.append(f"Unexpected question_text: {q_text}")
 
-    if "variables" not in task or "expression_tree" not in task["variables"]:
-        errors.append("Отсутствует описание expression_tree.")
+    # ★★★ ИСПРАВЛЕНО ЗДЕСЬ ★★★
+    expression_tree = task.get("variables", {}).get("expression_tree")
+    if expression_tree:
+        _validate_expression_tree(expression_tree, errors)
+    else:
+        errors.append("Отсутствует variables.expression_tree")
 
     return len(errors) == 0, errors
+
+
+def _validate_expression_tree(node: Any, errors: List[str]) -> None:
+    """
+    Рекурсивно проверяет expression_tree для задач со степенями.
+    """
+    if not isinstance(node, dict):
+        errors.append("expression_tree: узел не является словарём")
+        return
+
+    if "operation" in node:
+        # Проверяем операции, теперь включая 'power'
+        if node["operation"] not in ["add", "subtract", "multiply", "divide", "power"]:
+            errors.append(f"expression_tree: недопустимая операция '{node['operation']}'")
+
+        # Рекурсивно проверяем операнды
+        operands = node.get("operands")
+        if isinstance(operands, list):
+            for child in operands:
+                _validate_expression_tree(child, errors)
+        else:
+            errors.append("expression_tree: 'operands' должен быть списком")
+
+    elif "type" in node:
+        # Проверяем типы: могут быть 'common' или 'decimal'
+        if node["type"] not in ["common", "decimal"]:
+            errors.append(f"expression_tree: недопустимый тип '{node['type']}' (ожидался 'common' или 'decimal')")
+    else:
+        errors.append("expression_tree: узел не содержит ни 'operation', ни 'type'")

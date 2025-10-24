@@ -1,94 +1,73 @@
+# matunya_bot_final/help_core/solvers/task_6/decimal_fractions_solver.py
+
 """
-Решатель для задач с десятичными дробями (TASK6_DECIMAL).
-Модуль следует стандарту ГОСТ-2026 для формирования пошагового решения.
+Решатель для подтипа 'decimal_fractions' (Задание 6).
+Содержит "внутренний роутер" для разных паттернов.
+Модуль следует стандарту ГОСТ-2026.
 """
 
 from decimal import Decimal, getcontext
 from typing import Dict, List, Any
 
+# =============================================================================
+# ★★★ ГЛАВНАЯ ФУНКЦИЯ-ДИСПЕТЧЕР (ВНУТРЕННИЙ РОУТЕР) ★★★
+# =============================================================================
 
-def solve(expression_tree: Dict[str, Any]) -> Dict[str, Any]:
+def solve(task_data: Dict[str, Any]) -> Dict[str, Any]:
     """
-    Главная функция решателя для десятичных дробей.
-
-    Args:
-        expression_tree: Древовидная структура математического выражения
-
-    Returns:
-        Словарь с пошаговым решением по стандарту ГОСТ-2026
+    Главная функция-роутер для подтипа 'decimal_fractions'.
+    Вызывает универсальный рекурсивный решатель.
     """
-    # Устанавливаем точность вычислений
-    getcontext().prec = 10
+    expression_tree = task_data.get("variables", {}).get("expression_tree")
+    if not expression_tree:
+        raise ValueError("Отсутствует 'expression_tree' в task_data")
 
+    # Для 'decimal_fractions' все паттерны также решаются одним универсальным методом.
+
+    getcontext().prec = 10 # Устанавливаем точность вычислений
     steps = []
-    step_counter = [1]  # Используем список для mutable счетчика
+    step_counter = [1]
 
-    # Рекурсивно вычисляем выражение и собираем шаги
+    # Вызываем универсальный рекурсивный движок
     final_result = _evaluate_tree(expression_tree, steps, step_counter)
 
-    # Формируем итоговый результат
     result_value = float(final_result)
 
-    result = {
-        "question_id": "placeholder_id",
+    # Собираем финальный solution_core по ГОСТ-2026
+    return {
+        "question_id": task_data.get("id", "placeholder_id"),
         "question_group": "TASK6_DECIMAL",
         "explanation_idea": _generate_explanation_idea(),
         "calculation_steps": steps,
         "final_answer": {
             "value_machine": result_value,
-            "value_display": str(result_value)
+            "value_display": _format_decimal(final_result) # Используем наш форматтер для красоты
         },
         "hints": _generate_hints()
     }
 
-    return result
-
+# =============================================================================
+# ★★★ УНИВЕРСАЛЬНЫЙ РЕКУРСИВНЫЙ ДВИЖОК (ВСЯ МАТЕМАТИКА) ★★★
+# (Этот код остается практически без изменений)
+# =============================================================================
 
 def _evaluate_tree(node: Dict[str, Any], steps: List[Dict], step_counter: List[int]) -> Decimal:
-    """
-    Рекурсивно вычисляет выражение из дерева, добавляя шаги в список.
-
-    Args:
-        node: Узел дерева (операция или значение)
-        steps: Список для накопления шагов решения
-        step_counter: Счетчик шагов (mutable)
-
-    Returns:
-        Результат вычисления в виде Decimal
-    """
-    # Базовый случай: это десятичное число
+    """Рекурсивно вычисляет выражение из дерева, добавляя шаги в список."""
     if node.get("type") == "decimal":
         return Decimal(str(node["value"]))
 
-    # Рекурсивный случай: это операция
     operation = node["operation"]
     operands = node["operands"]
 
-    # Вычисляем операнды рекурсивно
     left = _evaluate_tree(operands[0], steps, step_counter)
     right = _evaluate_tree(operands[1], steps, step_counter)
 
-    # Выполняем операцию и добавляем шаг
-    result = _perform_operation(operation, left, right, steps, step_counter)
-
-    return result
+    return _perform_operation(operation, left, right, steps, step_counter)
 
 
 def _perform_operation(operation: str, left: Decimal, right: Decimal,
                        steps: List[Dict], step_counter: List[int]) -> Decimal:
-    """
-    Выполняет математическую операцию и добавляет описание шага.
-
-    Args:
-        operation: Тип операции ('add', 'subtract', 'multiply', 'divide')
-        left: Левый операнд
-        right: Правый операнд
-        steps: Список шагов
-        step_counter: Счетчик шагов
-
-    Returns:
-        Результат операции
-    """
+    """Выполняет математическую операцию и добавляет описание шага."""
     if operation == "add":
         return _perform_addition(left, right, steps, step_counter)
     elif operation == "subtract":
@@ -99,7 +78,6 @@ def _perform_operation(operation: str, left: Decimal, right: Decimal,
         return _perform_division(left, right, steps, step_counter)
     else:
         raise ValueError(f"Неизвестная операция: {operation}")
-
 
 def _perform_addition(left: Decimal, right: Decimal,
                      steps: List[Dict], step_counter: List[int]) -> Decimal:

@@ -113,7 +113,8 @@ def _filter_valid(tasks, validator, label: str):
 def main() -> None:
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
 
-    print("=== 🧮 Генерация заданий №6 ===")
+    print("=== 🧮 Генерация заданий №6 (ГОСТ-JSON-6) ===")
+    print("Все задачи будут сохранены в новом стандарте ГОСТ-JSON-6.")
     all_tasks = []
 
     # 1. Обыкновенные дроби
@@ -161,3 +162,7 @@ def main() -> None:
 # --- Точка входа ---
 if __name__ == "__main__":
     main()
+
+# Для запуска скрипта используйте команду:
+#
+#   python -m matunya_bot_final.scripts.populate.populate_task_6_db

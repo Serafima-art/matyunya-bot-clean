@@ -65,6 +65,38 @@ def validate_expression(expr: str) -> bool:
         return False
     return True
 
+def prepare_expression(expr: str) -> str:
+    """
+    Форматирует выражение для красивого отображения:
+    - заменяет ^n и ^-n на надстрочные символы (², ³, ⁻² и т.д.)
+    - заменяет * на ·
+    - убирает двойные пробелы.
+    """
+    # --- таблица надстрочных символов ---
+    superscripts = {
+        "0": "⁰",
+        "1": "¹",
+        "2": "²",
+        "3": "³",
+        "4": "⁴",
+        "5": "⁵",
+        "6": "⁶",
+        "7": "⁷",
+        "8": "⁸",
+        "9": "⁹",
+        "-": "⁻",
+    }
+
+    # заменяем ^n (например ^2 или ^-3) на надстрочные символы
+    def replace_power(match):
+        power = match.group(1)  # например "-3"
+        return "".join(superscripts.get(ch, ch) for ch in power)
+
+    expr = re.sub(r"\^(-?\d+)", replace_power, expr)
+    expr = expr.replace("*", "·")
+    expr = expr.replace("  ", " ").strip()
+    return expr
+
 
 def prepare_expression(expr: str) -> str | None:
     """

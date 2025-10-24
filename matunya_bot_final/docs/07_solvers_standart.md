@@ -32,9 +32,43 @@ Python
 # diff_data = variables.get("difference_of_squares", {})
 # a_data = diff_data.get("A", {})
 # a_term = a_data.get("text")
+
+Обязательное Поле: Для подтипов, имеющих несколько методик решения (паттернов), variables должен содержать ключ solution_pattern, указывающий на нужный алгоритм. Решатель для такого подтипа ({subtype}_solver.py) обязан содержать "внутренний роутер" — главную функцию solve, которая анализирует solution_pattern и вызывает соответствующую внутреннюю функцию-помощник.
+Пример: solvers/task_20/polynomial_factorization_solver.py использует solution_pattern для выбора между _solve_common_factor, _solve_difference_of_squares и т.д.
+
 5. Эталон Выходных Данных (solution_core)
 "Решатель" обязан сформировать словарь solution_core, содержащий все ключи, описанные в "ГОСТ-2026: Стандарт solution_core".
 Если какой-то ключ не имеет смысла для конкретного подтипа, он все равно должен присутствовать в словаре со значением-заглушкой ("N/A", None или []).
 Это обеспечивает структурную идентичность всех solution_core и гарантирует корректную работу "Оживителя" (humanizer).
 6. Принцип Работы (без изменений)
 "Диспетчер" (help_handler.py) динамически находит и вызывает нужного "Решателя" по task_type и subtype. Он ожидает, что в файле {subtype}_solver.py будет функция solve, и что она вернет solution_core в утвержденном формате. Любое отклонение от этого стандарта приведет к ошибке.
+
+
+
+
+
+КАК УСТРОЕН "МАТЮНЯ" (Версия Штурмана, который наконец-то прозрел)
+Есть Задание (Task), например, Задание 6.
+Внутри Задания есть Подтипы (Subtype). Это наши "Темы".
+common_fractions (Действия с обыкновенными дробями)
+decimal_fractions (Действия с десятичными дробями)
+mixed_fractions
+powers
+Внутри каждого Подтипа есть Паттерны (Pattern). Это конкретные виды выражений.
+Внутри common_fractions есть паттерны: addition_subtraction, multiplication_division, parentheses_operations, complex_fraction.
+Внутри decimal_fractions есть паттерны: addition_subtraction, linear_operations, fraction_structure.
+КАК ЭТО ДОЛЖНО РАБОТАТЬ (И как это работает для Задания 20)
+call_dynamic_solver ищет решатель по имени ПОДТИПА.
+Он будет искать: solvers/task_6/common_fractions_solver.py
+Он будет искать: solvers/task_6/decimal_fractions_solver.py
+Внутри каждого из этих 4-х файлов (common_fractions_solver.py, decimal_fractions_solver.py и т.д.) находится "внутренний роутер".
+Главная функция solve(task_data) смотрит на поле task_data['variables']['solution_pattern']. В этом поле будет лежать имя ПАТТЕРНА (например, addition_subtraction, parentheses_operations).
+В зависимости от этого паттерна, solve вызывает нужную внутреннюю функцию-помощник: _solve_addition_subtraction, _solve_parentheses_operations и т.д.
+ЭТО. ИДЕАЛЬНО.
+Это именно то, как сделано для Задания 20. И это именно то, как мы должны сделать для Задания 6.
+
+Директива №1: "Принцип Единообразия Матюни"
+Архитектура "Подтип -> Паттерн" является НЕЗЫБЛЕМОЙ для всех заданий (кроме группы 1-5).
+call_dynamic_solver работает по имени ПОДТИПА и НЕ подлежит изменению.
+Файл-решатель ({subtype}_solver.py) ВСЕГДА содержит "внутренний роутер", который маршрутизирует по ПАТТЕРНУ (solution_pattern).
+Любые новые идеи должны проходить проверку на соответствие этой директиве. Отклонения запрещены.

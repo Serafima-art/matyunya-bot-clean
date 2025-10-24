@@ -1,4 +1,6 @@
-﻿from __future__ import annotations
+﻿# matunya_bot_final/task_generators/task_6/validators/decimal_fractions_validator.py
+
+from __future__ import annotations
 
 from typing import Any, Dict, List, Tuple
 
@@ -36,8 +38,11 @@ def validate_decimal_fractions_task(task: Dict[str, Any]) -> Tuple[bool, List[st
     if task.get("task_number") != 6:
         errors.append("Некорректный номер задания (ожидается 6).")
 
-    if task.get("topic") != "decimal_fractions":
-        errors.append("Некорректная тема (ожидается 'decimal_fractions').")
+    if task.get("subtype") != "decimal_fractions":
+        errors.append("Некорректный subtype (ожидалось 'decimal_fractions').")
+
+    if "pattern" not in task:
+        errors.append("Отсутствует обязательное поле 'pattern'.")
 
     if task.get("answer_type") != "decimal":
         errors.append("answer_type должен быть 'decimal'.")
@@ -58,8 +63,37 @@ def validate_decimal_fractions_task(task: Dict[str, Any]) -> Tuple[bool, List[st
     ):
         errors.append(f"Unexpected question_text: {q_text}")
 
-    if "variables" not in task or "expression_tree" not in task["variables"]:
-        errors.append("Отсутствует описание expression_tree.")
+    expression_tree = task.get("variables", {}).get("expression_tree")
+    if expression_tree:
+        _validate_expression_tree(expression_tree, errors)
+    else:
+        errors.append("Отсутствует variables.expression_tree")
 
+    # ★★★ ВОТ ПРАВИЛЬНОЕ МЕСТО ДЛЯ RETURN ★★★
     is_valid = len(errors) == 0
     return is_valid, errors
+
+
+def _validate_expression_tree(node: Any, errors: List[str]) -> None:
+    if not isinstance(node, dict):
+        errors.append("expression_tree: узел не является словарём")
+        return # Просто выходим, не возвращая ничего
+
+    if "operation" in node:
+        if node["operation"] not in ["add", "subtract", "multiply", "divide"]:
+            errors.append(f"expression_tree: недопустимая операция '{node['operation']}'")
+
+        operands = node.get("operands")
+        if isinstance(operands, list):
+            for child in operands:
+                _validate_expression_tree(child, errors)
+        else:
+            errors.append("expression_tree: 'operands' должен быть списком")
+
+    elif "type" in node:
+        if node["type"] != "decimal":
+            errors.append(f"expression_tree: недопустимый тип '{node['type']}' (ожидался 'decimal')")
+    else:
+        errors.append("expression_tree: узел не содержит ни 'operation', ни 'type'")
+
+    # ★★★ А ОТСЮДА RETURN УБРАН ★★★
