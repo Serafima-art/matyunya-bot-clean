@@ -2,6 +2,7 @@
 import uuid
 from fractions import Fraction
 from typing import Dict, Any, List
+import math
 import re
 
 from matunya_bot_final.task_generators.task_6.generators.task6_text_formatter import prepare_expression, _fmt_answer  # TASK6_FORMATTER_IMPORT
@@ -12,15 +13,20 @@ def generate_common_fractions_tasks(count: int = 10) -> List[Dict[str, Any]]:
     Поддерживает паттерны 1.1–1.4.
     """
     tasks: List[Dict[str, Any]] = []
-    patterns = ["1.1", "1.2", "1.3", "1.4"]
+    patterns = [
+        "cf_addition_subtraction",
+        "multiplication_division",
+        "parentheses_operations",
+        "complex_fraction",
+    ]
 
     for _ in range(count):
         pattern_id = random.choice(patterns)
-        if pattern_id == "1.1":
+        if pattern_id == "cf_addition_subtraction":
             task = _generate_cf_addition_subtraction(pattern_id)
-        elif pattern_id == "1.2":
+        elif pattern_id == "multiplication_division":
             task = _generate_multiplication_division(pattern_id)
-        elif pattern_id == "1.3":
+        elif pattern_id == "parentheses_operations":
             task = _generate_parentheses_operations(pattern_id)
         else:
             task = _generate_complex_fraction(pattern_id)
@@ -258,21 +264,25 @@ def _generate_complex_fraction(pattern_id: str) -> Dict[str, Any]:
 
 
 def _rand_frac() -> tuple[int, int]:
-    pretty_denominators = [2, 4, 5, 8, 10, 16, 20, 25]
-    numerator = random.randint(1, 20)
-    denominator = random.choice(pretty_denominators)
-    while numerator == denominator:
-        numerator = random.randint(1, 20)
+    denominators = [
+        6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 25,
+        26, 28, 30, 32, 33, 34, 35, 36, 38, 39, 40, 42, 44, 45, 48, 49, 50, 52,
+        54, 55, 56, 60, 63, 64, 66, 68, 70, 72, 75, 78, 80, 84, 88, 90, 96, 98, 99
+    ]
+
+    denominator = random.choice(denominators)
+    numerator = random.randint(1, denominator - 1)
+
+    # Ensure the fraction is proper and irreducible.
+    while math.gcd(numerator, denominator) != 1:
+        numerator = random.randint(1, denominator - 1)
+
     return numerator, denominator
 
 
 def _rand_mixed() -> tuple[int, int, int]:
-    pretty_denominators = [2, 4, 5, 8, 10, 16, 20, 25]
-    whole = random.randint(1, 5)
-    numerator = random.randint(1, 9)
-    denominator = random.choice(pretty_denominators)
-    while numerator == denominator:
-        numerator = random.randint(1, 9)
+    whole = random.randint(1, 4)
+    numerator, denominator = _rand_frac()
     return whole, numerator, denominator
 
 
@@ -302,8 +312,12 @@ def _is_pretty_decimal(value: float) -> bool:
 
 
 def __safe_fallback_for_this_subtype(pattern_id: str) -> Dict[str, Any]:
-    if pattern_id == "1.1":  # cf_addition_subtraction
-        expression = "1 / 2 + 1 / 4"
+    """
+    Возвращает гарантированно валидную задачу для указанного паттерна.
+    Используется, если основной генератор не смог создать задачу.
+    """
+    if pattern_id == "cf_addition_subtraction":
+        expression = "1/2 + 1/4"
         question_text = _ensure_answer_field(f"Вычисли результат:\n{expression}")
         result = 0.75
         return {
@@ -323,14 +337,13 @@ def __safe_fallback_for_this_subtype(pattern_id: str) -> Dict[str, Any]:
                     ],
                 }
             },
-            "meta": {"difficulty": "easy", "pattern_id": pattern_id},
+            "meta": {"difficulty": "easy", "pattern_id": "1.1"},
         }
-    if pattern_id == "1.2":  # multiplication_division
+
+    if pattern_id == "multiplication_division":
         expression = "1 1/2 · 2/5"
         question_text = _ensure_answer_field(f"Выполни действия:\n{expression}")
         result = 0.6
-        improper_num = 1 * 2 + 1
-        improper_den = 2
         return {
             "id": "6_multiplication_division_fallback",
             "task_number": 6,
@@ -343,14 +356,15 @@ def __safe_fallback_for_this_subtype(pattern_id: str) -> Dict[str, Any]:
                 "expression_tree": {
                     "operation": "multiply",
                     "operands": [
-                        {"type": "common", "value": [improper_num, improper_den], "text": "1 1/2"},
+                        {"type": "common", "value": [3, 2], "text": "1 1/2"},
                         {"type": "common", "value": [2, 5], "text": "2/5"},
                     ],
                 }
             },
-            "meta": {"difficulty": "medium", "pattern_id": pattern_id},
+            "meta": {"difficulty": "medium", "pattern_id": "1.2"},
         }
-    if pattern_id == "1.3":  # parentheses_operations
+
+    if pattern_id == "parentheses_operations":
         expression = "(1/2 + 1/4) · 2/5"
         question_text = _ensure_answer_field(f"Раскрой скобки и выполни вычисления:\n{expression}")
         result = 0.3
@@ -377,8 +391,10 @@ def __safe_fallback_for_this_subtype(pattern_id: str) -> Dict[str, Any]:
                     ],
                 }
             },
-            "meta": {"difficulty": "medium", "pattern_id": pattern_id},
+            "meta": {"difficulty": "medium", "pattern_id": "1.3"},
         }
+
+    # По умолчанию возвращаем complex_fraction
     expression = "(1/2 + 1/4) / (3/5)"
     question_text = _ensure_answer_field(f"Вычисли значение дроби:\n{expression}")
     result = 1.25
@@ -405,5 +421,5 @@ def __safe_fallback_for_this_subtype(pattern_id: str) -> Dict[str, Any]:
                 ],
             }
         },
-        "meta": {"difficulty": "hard", "pattern_id": pattern_id},
+        "meta": {"difficulty": "hard", "pattern_id": "1.4"},
     }

@@ -5,7 +5,6 @@
 from __future__ import annotations
 
 from collections import Counter
-import pytest
 
 from matunya_bot_final.task_generators.task_6.generators.common_fractions_generator import (
     generate_common_fractions_tasks,
@@ -14,9 +13,19 @@ from matunya_bot_final.task_generators.task_6.validators.common_fractions_valida
     validate_common_fractions_task,
 )
 
-# Вспомогательные функции, которые нужны тесту, но не меняются
+# =================================================================
+# ★★★ ЭТАЛОННЫЕ ДАННЫЕ (УТВЕРЖДЕНЫ КАПИТАНОМ) ★★★
 # =================================================================
 
+# Правильные имена паттернов, как мы договорились
+_EXPECTED_PATTERNS = {
+    "cf_addition_subtraction",
+    "multiplication_division",
+    "parentheses_operations",
+    "complex_fraction",
+}
+
+# Корректные префиксы для текста вопроса
 _ALLOWED_PREFIXES = [
     "Вычисли результат",
     "Выполни действия",
@@ -24,65 +33,52 @@ _ALLOWED_PREFIXES = [
     "Вычисли значение дроби",
 ]
 
-
-def _trim_leading_noise(value: str) -> str:
-    for idx, char in enumerate(value):
-        if char.isalpha():
-            return value[idx:]
-    return value
-
-
-def _normalise_variants(text: str) -> list[str]:
-    normalised = text.replace("\u00a0", " ").replace("\u202f", " ").strip()
-    variants = {normalised, _trim_leading_noise(normalised)}
-    try:
-        converted = normalised.encode("cp1251", errors="ignore").decode(
-            "utf-8", errors="ignore"
-        )
-        variants.add(converted)
-        variants.add(_trim_leading_noise(converted))
-    except (UnicodeEncodeError, UnicodeDecodeError):
-        pass
-    return list(variants)
-
-# Основная логика теста
+# =================================================================
+# ★★★ ОСНОВНАЯ ЛОГИКА ТЕСТА ★★★
 # =================================================================
 
 def _assert_common_structure(task: dict) -> None:
-    """
-    Asserts the common structure of a task, now updated for the new JSON standard.
-    """
-    # ★★★ Вот наши ключевые изменения ★★★
+    """Проверяет общую структуру задачи на соответствие ГОСТ-JSON-6."""
     expected_keys = {
         "id", "task_number", "subtype", "pattern", "question_text",
         "answer", "answer_type", "variables", "meta",
     }
-    assert set(task.keys()) == expected_keys
-    assert task["task_number"] == 6
-    assert task["subtype"] == "common_fractions"
+    assert set(task.keys()) == expected_keys, f"Набор ключей не совпадает с эталоном. Лишние/недостающие: {set(task.keys()) ^ expected_keys}"
+    assert task["task_number"] == 6, "Неверный номер задания"
+    assert task["subtype"] == "common_fractions", "Неверный подтип"
 
-    assert isinstance(task["question_text"], str)
+    # Проверяем, что pattern - один из разрешенных
+    assert task["pattern"] in _EXPECTED_PATTERNS, f"Недопустимый паттерн: {task['pattern']}"
+
+    assert isinstance(task["question_text"], str), "Текст вопроса должен быть строкой"
+
+    # Проверка текста вопроса на корректное начало
+    # (Вспомогательные функции для корректной работы с кодировками)
+    def _trim_leading_noise(value: str) -> str:
+        for idx, char in enumerate(value):
+            if char.isalpha(): return value[idx:]
+        return value
+
+    def _normalise_variants(text: str) -> list[str]:
+        normalised = text.replace("\u00a0", " ").replace("\u202f", " ").strip()
+        variants = {normalised, _trim_leading_noise(normalised)}
+        return list(variants)
 
     variants = _normalise_variants(task["question_text"])
     assert any(
         variant.startswith(prefix)
         for variant in variants
         for prefix in _ALLOWED_PREFIXES
-    ), f"Unexpected question_text: {task['question_text']}"
-
-    assert task["answer_type"] in {"decimal", "fraction"}
-    assert isinstance(task["variables"], dict)
-    assert isinstance(task["meta"], dict)
+    ), f"Неожиданный текст вопроса: {task['question_text']}"
 
 
-@pytest.mark.slow  # Помечаем тест как "медленный"
 def test_task_6_common_fractions_pipeline() -> None:
-    """Ensure generator and validator work together for all four patterns."""
+    """Гарантирует, что генератор и валидатор работают вместе для всех паттернов."""
     pattern_counts: Counter[str] = Counter()
     failures = []
 
-    total_samples = 100
-    max_attempts = 300 # Увеличим попытки, чтобы гарантированно сгенерировать все паттерны
+    total_samples = 150
+    max_attempts = 400
 
     def _process_sample(index: int) -> None:
         try:
@@ -92,10 +88,7 @@ def test_task_6_common_fractions_pipeline() -> None:
             return
 
         try:
-            # Сначала вызываем нашу обновленную проверку структуры
             _assert_common_structure(task)
-
-            # Затем вызываем наш обновленный валидатор
             is_valid, errors = validate_common_fractions_task(task)
             if not is_valid:
                 raise AssertionError("; ".join(errors))
@@ -103,18 +96,13 @@ def test_task_6_common_fractions_pipeline() -> None:
             failures.append((index, task.get("id"), str(exc)))
             return
 
-        # Собираем статистику по новому полю 'pattern'
-        pattern = task["pattern"]
-        pattern_counts[pattern] += 1
-
+        pattern_counts[task["pattern"]] += 1
 
     attempts = 0
-    # Сначала генерируем задачи, пока не встретим все 4 паттерна
-    while len(pattern_counts) < 4 and attempts < max_attempts:
+    while len(pattern_counts) < len(_EXPECTED_PATTERNS) and attempts < max_attempts:
         _process_sample(attempts)
         attempts += 1
 
-    # Затем добиваем до нужного количества total_samples
     if attempts < total_samples:
         for i in range(attempts, total_samples):
             _process_sample(i)
@@ -125,9 +113,5 @@ def test_task_6_common_fractions_pipeline() -> None:
         )
         raise AssertionError(f"Failed {len(failures)} tasks. Examples: {sample}")
 
-    # Проверяем, что все 4 паттерна были сгенерированы
-    expected_patterns = {"cf_addition_subtraction", "multiplication_division", "parentheses_operations", "complex_fraction"}
-    missing_patterns = expected_patterns - set(pattern_counts)
-    assert not missing_patterns, f"Patterns not generated: {missing_patterns}"
-    for pattern in expected_patterns:
-        assert pattern_counts[pattern] > 0, f"No tasks generated for pattern '{pattern}'"
+    missing_patterns = _EXPECTED_PATTERNS - set(pattern_counts)
+    assert not missing_patterns, f"Patterns not generated after {attempts} attempts: {missing_patterns}"

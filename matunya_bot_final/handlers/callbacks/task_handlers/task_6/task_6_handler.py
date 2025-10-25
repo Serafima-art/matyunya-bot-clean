@@ -45,7 +45,7 @@ THEMES: tuple[str, ...] = (
 )
 
 THEME_TO_SUBTYPES: Dict[str, list[str]] = {
-    "common_fractions": ["cf_addition_subtraction", "multiplication_division", "parentheses_operations", "complex_fraction"],
+    "common_fractions": ["cf_addition_subtraction", "cf_multiplication_division", "cf_parentheses_operations", "cf_complex_fraction"],
     "decimal_fractions": ["df_addition_subtraction", "linear_operations", "fraction_structure"],
     "mixed_fractions": ["mixed_types_operations"],
     "powers": ["powers_with_fractions", "powers_of_ten"],
