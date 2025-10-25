@@ -53,7 +53,12 @@ def validate_common_fractions_task(task: Dict[str, Any]) -> Tuple[bool, List[str
 
     if task.get("subtype") != "common_fractions":
         errors.append("Некорректный subtype (ожидалось 'common_fractions').")
-    allowed_patterns = {"cf_addition_subtraction", "multiplication_division", "parentheses_operations", "complex_fraction"}
+    allowed_patterns = {
+        "cf_addition_subtraction",
+        "multiplication_division",
+        "parentheses_operations",
+        "complex_fraction",
+    }
     if task.get("pattern") not in allowed_patterns:
         errors.append(f"Недопустимое значение для 'pattern': {task.get('pattern')}")
 
