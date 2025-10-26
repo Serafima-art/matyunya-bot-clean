@@ -69,3 +69,4 @@ gspread
 pandas
 google-auth-oauthlib
 pytest-asyncio==1.2.0
+rich>=14.2.0

@@ -31,6 +31,8 @@ _ALLOWED_PREFIXES = [
     "Выполни действия",
     "Раскрой скобки и выполни вычисления",
     "Вычисли значение дроби",
+    "Найди значение выражения",
+    "Получи результат",
 ]
 
 # =================================================================
@@ -72,6 +74,13 @@ def _assert_common_structure(task: dict) -> None:
     ), f"Неожиданный текст вопроса: {task['question_text']}"
 
 
+
+def _looks_ok(task: dict) -> None:
+    ok, errs = validate_common_fractions_task(task)
+    assert ok, f"validator errors: {errs}"
+    qt = task["question_text"]
+    assert len(qt.splitlines()) >= 2 and any("/" in ln for ln in qt.splitlines()[1:]), "No fraction in body"
+
 def test_task_6_common_fractions_pipeline() -> None:
     """Гарантирует, что генератор и валидатор работают вместе для всех паттернов."""
     pattern_counts: Counter[str] = Counter()
@@ -89,9 +98,7 @@ def test_task_6_common_fractions_pipeline() -> None:
 
         try:
             _assert_common_structure(task)
-            is_valid, errors = validate_common_fractions_task(task)
-            if not is_valid:
-                raise AssertionError("; ".join(errors))
+            _looks_ok(task)
         except Exception as exc:
             failures.append((index, task.get("id"), str(exc)))
             return

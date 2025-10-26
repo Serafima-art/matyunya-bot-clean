@@ -10,6 +10,8 @@ _ALLOWED_PREFIXES = [
     "Выполни действия",
     "Раскрой скобки и выполни вычисления",
     "Вычисли значение дроби",
+    "Найди значение выражения",
+    "Получи результат",
 ]
 
 
@@ -64,11 +66,23 @@ def validate_common_fractions_task(task: Dict[str, Any]) -> Tuple[bool, List[str
 
     variants = _normalise_variants(task.get("question_text", ""))
     if not any(
-        variant.startswith(prefix)
+        variant.strip().startswith(prefix)
         for variant in variants
         for prefix in _ALLOWED_PREFIXES
     ):
         errors.append(f"Unexpected question_text: {task.get('question_text')}")
+    # --- Блок, запрещающий пустые задания ---
+    qt = task.get("question_text", "")
+    tail_lines = qt.splitlines()[1:]  # всё после первой строки с заголовком
+    tail = " ".join(tail_lines).strip()
+
+    # Должна быть хотя бы одна цифра и хотя бы один оператор/разделитель
+    if not tail or not any(ch.isdigit() for ch in tail) or not any(sym in tail for sym in "/:·+−-()"):
+        errors.append("В question_text отсутствует математическое выражение.")
+    # Простая эвристика: хотя бы одна дробь вида a/b
+    if not any("/" in tok for tok in tail.split()):
+        errors.append("В question_text не обнаружена ни одна дробь вида a/b.")
+
 
     answer_type = task.get("answer_type")
     if answer_type not in {"decimal", "fraction"}:

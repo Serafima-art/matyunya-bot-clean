@@ -243,6 +243,9 @@ async def send_task_6(query: CallbackQuery, bot: Bot, state: FSMContext, task_da
         task_subtype=task_subtype,
     )
 
+    # --- исправляем отображение знака умножения ---
+    final_text = final_text.replace("·", "<code>·</code>")
+
     await send_tracked_message(
         bot=bot,
         chat_id=chat_id,

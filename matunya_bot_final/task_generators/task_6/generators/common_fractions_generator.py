@@ -5,7 +5,11 @@ from typing import Dict, Any, List
 import math
 import re
 
-from matunya_bot_final.task_generators.task_6.generators.task6_text_formatter import prepare_expression, _fmt_answer  # TASK6_FORMATTER_IMPORT
+from matunya_bot_final.task_generators.task_6.generators.task6_text_formatter import (
+    normalize_expression,
+    prepare_expression,
+    _fmt_answer,
+)
 
 def generate_common_fractions_tasks(count: int = 10) -> List[Dict[str, Any]]:
     """
@@ -28,11 +32,16 @@ def generate_common_fractions_tasks(count: int = 10) -> List[Dict[str, Any]]:
             task = _generate_multiplication_division(pattern_id)
         elif pattern_id == "parentheses_operations":
             task = _generate_parentheses_operations(pattern_id)
-        else:
+        elif pattern_id == "complex_fraction":
             task = _generate_complex_fraction(pattern_id)
-        tasks.append(task)
+        else:
+            # На случай будущих расширений или опечаток — пробуем заново
+            task = _generate_cf_addition_subtraction("cf_addition_subtraction")
 
-    return tasks
+        if task is not None:
+            tasks.append(task)
+
+    return [t for t in tasks if t is not None]
 
 
 def _ensure_answer_field(question_text: str) -> str:
@@ -46,10 +55,19 @@ def _ensure_answer_field(question_text: str) -> str:
 # === ПАТТЕРН 1.1 ======
 # ======================
 def _generate_cf_addition_subtraction(pattern_id: str) -> Dict[str, Any]:
-    for __retry in range(80):
+    for __retry in range(500):
         a, b = _rand_frac(), _rand_frac()
         op = random.choice(["add", "sub"])
-        result = Fraction(a[0], a[1]) + Fraction(b[0], b[1]) if op == "add" else Fraction(a[0], a[1]) - Fraction(b[0], b[1])
+        f1, f2 = Fraction(a[0], a[1]), Fraction(b[0], b[1])
+        result = f1 + f2 if op == "add" else f1 - f2
+
+        # 🚫 исключаем нулевые, отрицательные и "единичные" случаи (5/8 + 5/8, 7/9 − 8/9 и т.п.)
+        if result <= 0 or a[0] == a[1] or b[0] == b[1]:
+            continue
+
+        # 🔹 вычисляем несократимую дробь
+        simplified = result.limit_denominator()
+        num, den = simplified.numerator, simplified.denominator
 
         attempts = 0
         while not _is_pretty_decimal(result) and attempts < 100:
@@ -61,23 +79,37 @@ def _generate_cf_addition_subtraction(pattern_id: str) -> Dict[str, Any]:
         text_op = "+" if op == "add" else "−"
         expr_line = f"{a[0]}/{a[1]} {text_op} {b[0]}/{b[1]}"
         formatted_expr = prepare_expression(expr_line)
-        if formatted_expr is None:
+        if formatted_expr is None or re.search(r'(?<!\d)/0(?!\d)', formatted_expr):
+            print("[⚠️ skip: деление на ноль]", expr_line)
             continue
+        formatted_expr = normalize_expression(formatted_expr)
+        # ⛔ отбрасываем пустые и бессодержательные выражения
+        if (not formatted_expr
+            or not re.search(r"\d", formatted_expr)
+            or not re.search(r"[/:·+\-−()]", formatted_expr)):
+            print("[⚠️ skip: пустое выражение]", expr_line)
+            continue
+
         if re.search(r'(^|[^0-9])0[.,]?\d*', formatted_expr) or "/0" in formatted_expr:
             continue
 
         question_text = _ensure_answer_field(
-            f"Вычисли результат:\n{formatted_expr}"
+        f"Найди значение выражения:\n{formatted_expr}\n\n"
+        f"Получи результат в виде обыкновенной дроби, которую нельзя сократить, "
+        f"в ответ запиши только числитель."
         )
 
+        assert ":\n" in question_text and len(question_text.splitlines()) >= 2, (
+            "Пустой question_text — отсутствует выражение."
+        )
         return {
             "id": f"6_cf_addition_subtraction_{uuid.uuid4().hex[:6]}",
             "task_number": 6,
             "subtype": "common_fractions",
             "pattern": "cf_addition_subtraction",
             "question_text": question_text,
-            "answer": _fmt_answer(float(result)),
-            "answer_type": "decimal",
+            "answer": str(num),  # только числитель
+            "answer_type": "integer",
             "variables": {
                 "expression_tree": {
                     "operation": op.replace("sub", "subtract"),
@@ -90,16 +122,23 @@ def _generate_cf_addition_subtraction(pattern_id: str) -> Dict[str, Any]:
             "meta": {"difficulty": "easy", "pattern_id": pattern_id},
         }
 
-    return __safe_fallback_for_this_subtype(pattern_id)
+    # Если после всех попыток не удалось создать валидную задачу — пропускаем
+    return None
 
+# ======================
+# === ПАТТЕРН 1.2 ======
+# ======================
 
 def _generate_multiplication_division(pattern_id: str) -> Dict[str, Any]:
-    for __retry in range(80):
+    for __retry in range(500):
         a, b = _rand_mixed(), _rand_frac()
         op = random.choice(["mul", "div"])
         a_val = Fraction(a[0] * a[2] + a[1], a[2])
         result = a_val * Fraction(b[0], b[1]) if op == "mul" else a_val / Fraction(b[0], b[1])
 
+        # 🚫 исключаем нулевые результаты (например, 0 · 3/5 или 1 1/2 : ∞)
+        if result == 0:
+            continue
         attempts = 0
         while not _is_pretty_decimal(result) and attempts < 100:
             a, b = _rand_mixed(), _rand_frac()
@@ -113,8 +152,17 @@ def _generate_multiplication_division(pattern_id: str) -> Dict[str, Any]:
         text_b = f"{b[0]}/{b[1]}"
         expr_line = f"{text_a} {text_op} {text_b}"
         formatted_expr = prepare_expression(expr_line)
-        if formatted_expr is None:
+        if formatted_expr is None or re.search(r'(?<!\d)/0(?!\d)', formatted_expr):
+            print("[⚠️ skip: деление на ноль]", expr_line)
             continue
+        formatted_expr = normalize_expression(formatted_expr)
+        # ⛔ отбрасываем пустые и бессодержательные выражения
+        if (not formatted_expr
+            or not re.search(r"\d", formatted_expr)
+            or not re.search(r"[/:·+\-−()]", formatted_expr)):
+            print("[⚠️ skip: пустое выражение]", expr_line)
+            continue
+
         if re.search(r'(^|[^0-9])0[.,]?\d*', formatted_expr) or "/0" in formatted_expr:
             continue
 
@@ -124,6 +172,9 @@ def _generate_multiplication_division(pattern_id: str) -> Dict[str, Any]:
 
         improper_num = a[0] * a[2] + a[1]
         improper_den = a[2]
+        assert ":\n" in question_text and len(question_text.splitlines()) >= 2, (
+            "Пустой question_text — отсутствует выражение."
+        )
         return {
             "id": f"6_multiplication_division_{uuid.uuid4().hex[:6]}",
             "task_number": 6,
@@ -144,11 +195,15 @@ def _generate_multiplication_division(pattern_id: str) -> Dict[str, Any]:
             "meta": {"difficulty": "medium", "pattern_id": pattern_id},
         }
 
-    return __safe_fallback_for_this_subtype(pattern_id)
+    # Если после всех попыток не удалось создать валидную задачу — пропускаем
+    return None
 
+# ======================
+# === ПАТТЕРН 1.3 ======
+# ======================
 
 def _generate_parentheses_operations(pattern_id: str) -> Dict[str, Any]:
-    for __retry in range(80):
+    for __retry in range(500):
         a, b, c = _rand_frac(), _rand_frac(), _rand_frac()
 
         # 🚫 защита от одинаковых дробей (иначе будет 0)
@@ -159,6 +214,9 @@ def _generate_parentheses_operations(pattern_id: str) -> Dict[str, Any]:
         outer_op = random.choice(["multiply", "divide"])
 
         inner_val = Fraction(a[0], a[1]) + Fraction(b[0], b[1]) if inner_op == "add" else Fraction(a[0], a[1]) - Fraction(b[0], b[1])
+        if inner_val == 0:
+            continue  # 🚫 исключаем нулевой внутренний результат
+
         result = inner_val * Fraction(c[0], c[1]) if outer_op == "multiply" else inner_val / Fraction(c[0], c[1])
 
         # 🚫 исключаем случаи, когда выражение стало нулём
@@ -171,13 +229,25 @@ def _generate_parentheses_operations(pattern_id: str) -> Dict[str, Any]:
         op_symbols = {"add": "+", "subtract": "−", "multiply": "·", "divide": ":"}
         expr_line = f"({a[0]}/{a[1]} {op_symbols[inner_op]} {b[0]}/{b[1]}) {op_symbols[outer_op]} {c[0]}/{c[1]}"
         formatted_expr = prepare_expression(expr_line)
-        if formatted_expr is None or "/0" in formatted_expr:
+        if formatted_expr is None or re.search(r'(?<!\d)/0(?!\d)', formatted_expr):
+            print("[⚠️ skip: деление на ноль]", expr_line)
             continue
+        formatted_expr = normalize_expression(formatted_expr)
+        # ⛔ отбрасываем пустые и бессодержательные выражения
+        if (not formatted_expr
+            or not re.search(r"\d", formatted_expr)
+            or not re.search(r"[/:·+\-−()]", formatted_expr)):
+            print("[⚠️ skip: пустое выражение]", expr_line)
+            continue
+
 
         question_text = _ensure_answer_field(
             f"Раскрой скобки и выполни вычисления:\n{formatted_expr}"
         )
 
+        assert ":\n" in question_text and len(question_text.splitlines()) >= 2, (
+            "Пустой question_text — отсутствует выражение."
+        )
         return {
             "id": f"6_parentheses_operations_{uuid.uuid4().hex[:6]}",
             "task_number": 6,
@@ -204,13 +274,28 @@ def _generate_parentheses_operations(pattern_id: str) -> Dict[str, Any]:
             "meta": {"difficulty": "medium", "pattern_id": pattern_id},
         }
 
-    return __safe_fallback_for_this_subtype(pattern_id)
+    # Если после всех попыток не удалось создать валидную задачу — пропускаем
+    return None
 
+# ======================
+# === ПАТТЕРН 1.4 ======
+# ======================
 
 def _generate_complex_fraction(pattern_id: str) -> Dict[str, Any]:
-    for __retry in range(80):
+    for __retry in range(500):
+        # --- защита от повторов (анти-дубликатор) ---
+        if not hasattr(_generate_complex_fraction, "_used_combos"):
+            _generate_complex_fraction._used_combos = set()
+        used = _generate_complex_fraction._used_combos
+
         a, b, c = _rand_frac(), _rand_frac(), _rand_frac()
         inner_op = random.choice(["add", "subtract"])
+
+        combo = (a, b, c, inner_op)
+        if combo in used:
+            continue
+        used.add(combo)
+
         inner_val = Fraction(a[0], a[1]) + Fraction(b[0], b[1]) if inner_op == "add" else Fraction(a[0], a[1]) - Fraction(b[0], b[1])
         result = inner_val / Fraction(c[0], c[1])
 
@@ -221,12 +306,25 @@ def _generate_complex_fraction(pattern_id: str) -> Dict[str, Any]:
             inner_val = Fraction(a[0], a[1]) + Fraction(b[0], b[1]) if inner_op == "add" else Fraction(a[0], a[1]) - Fraction(b[0], b[1])
             result = inner_val / Fraction(c[0], c[1])
             attempts += 1
+            combo = (a, b, c, inner_op)
+            if combo in used:
+                continue
+            used.add(combo)
 
         op_symbols = {"add": "+", "subtract": "−"}
         expr_line = f"({a[0]}/{a[1]} {op_symbols[inner_op]} {b[0]}/{b[1]}) / ({c[0]}/{c[1]})"
         formatted_expr = prepare_expression(expr_line)
-        if formatted_expr is None:
+        if formatted_expr is None or re.search(r'(?<!\d)/0(?!\d)', formatted_expr):
+            print("[⚠️ skip: деление на ноль]", expr_line)
             continue
+        formatted_expr = normalize_expression(formatted_expr)
+        # ⛔ отбрасываем пустые и бессодержательные выражения
+        if (not formatted_expr
+            or not re.search(r"\d", formatted_expr)
+            or not re.search(r"[/:·+\-−()]", formatted_expr)):
+            print("[⚠️ skip: пустое выражение]", expr_line)
+            continue
+
         if re.search(r'(^|[^0-9])0[.,]?\d*', formatted_expr) or "/0" in formatted_expr:
             continue
 
@@ -234,6 +332,9 @@ def _generate_complex_fraction(pattern_id: str) -> Dict[str, Any]:
             f"Вычисли значение дроби:\n{formatted_expr}"
         )
 
+        assert ":\n" in question_text and len(question_text.splitlines()) >= 2, (
+            "Пустой question_text — отсутствует выражение."
+        )
         return {
             "id": f"6_complex_fraction_{uuid.uuid4().hex[:6]}",
             "task_number": 6,
@@ -260,20 +361,22 @@ def _generate_complex_fraction(pattern_id: str) -> Dict[str, Any]:
             "meta": {"difficulty": "hard", "pattern_id": pattern_id},
         }
 
-    return __safe_fallback_for_this_subtype(pattern_id)
+    # Если после всех попыток не удалось создать валидную задачу — пропускаем
+    return None
 
 
 def _rand_frac() -> tuple[int, int]:
-    denominators = [
-        6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 25,
-        26, 28, 30, 32, 33, 34, 35, 36, 38, 39, 40, 42, 44, 45, 48, 49, 50, 52,
-        54, 55, 56, 60, 63, 64, 66, 68, 70, 72, 75, 78, 80, 84, 88, 90, 96, 98, 99
-    ]
-
+    """
+    Генерирует случайную обыкновенную дробь a/b.
+    - знаменатель: от 6 до 60 (исключая слишком «круглые» значения);
+    - числитель: от 1 до (b−1);
+    - дробь всегда правильная и несократимая.
+    """
+    denominators = [n for n in range(6, 61) if n not in (10, 20, 25, 30, 40, 50, 60)]
     denominator = random.choice(denominators)
     numerator = random.randint(1, denominator - 1)
 
-    # Ensure the fraction is proper and irreducible.
+    # Гарантируем несократимость
     while math.gcd(numerator, denominator) != 1:
         numerator = random.randint(1, denominator - 1)
 
@@ -309,117 +412,3 @@ def _is_pretty_decimal(value: float) -> bool:
         return True
     except Exception:
         return False
-
-
-def __safe_fallback_for_this_subtype(pattern_id: str) -> Dict[str, Any]:
-    """
-    Возвращает гарантированно валидную задачу для указанного паттерна.
-    Используется, если основной генератор не смог создать задачу.
-    """
-    if pattern_id == "cf_addition_subtraction":
-        expression = "1/2 + 1/4"
-        question_text = _ensure_answer_field(f"Вычисли результат:\n{expression}")
-        result = 0.75
-        return {
-            "id": "6_cf_addition_subtraction_fallback",
-            "task_number": 6,
-            "subtype": "common_fractions",
-            "pattern": "cf_addition_subtraction",
-            "question_text": question_text,
-            "answer": _fmt_answer(result),
-            "answer_type": "decimal",
-            "variables": {
-                "expression_tree": {
-                    "operation": "add",
-                    "operands": [
-                        {"type": "common", "value": [1, 2], "text": "1/2"},
-                        {"type": "common", "value": [1, 4], "text": "1/4"},
-                    ],
-                }
-            },
-            "meta": {"difficulty": "easy", "pattern_id": "1.1"},
-        }
-
-    if pattern_id == "multiplication_division":
-        expression = "1 1/2 · 2/5"
-        question_text = _ensure_answer_field(f"Выполни действия:\n{expression}")
-        result = 0.6
-        return {
-            "id": "6_multiplication_division_fallback",
-            "task_number": 6,
-            "subtype": "common_fractions",
-            "pattern": "multiplication_division",
-            "question_text": question_text,
-            "answer": _fmt_answer(result),
-            "answer_type": "decimal",
-            "variables": {
-                "expression_tree": {
-                    "operation": "multiply",
-                    "operands": [
-                        {"type": "common", "value": [3, 2], "text": "1 1/2"},
-                        {"type": "common", "value": [2, 5], "text": "2/5"},
-                    ],
-                }
-            },
-            "meta": {"difficulty": "medium", "pattern_id": "1.2"},
-        }
-
-    if pattern_id == "parentheses_operations":
-        expression = "(1/2 + 1/4) · 2/5"
-        question_text = _ensure_answer_field(f"Раскрой скобки и выполни вычисления:\n{expression}")
-        result = 0.3
-        return {
-            "id": "6_parentheses_operations_fallback",
-            "task_number": 6,
-            "subtype": "common_fractions",
-            "pattern": "parentheses_operations",
-            "question_text": question_text,
-            "answer": _fmt_answer(result),
-            "answer_type": "decimal",
-            "variables": {
-                "expression_tree": {
-                    "operation": "multiply",
-                    "operands": [
-                        {
-                            "operation": "add",
-                            "operands": [
-                                {"type": "common", "value": [1, 2], "text": "1/2"},
-                                {"type": "common", "value": [1, 4], "text": "1/4"},
-                            ],
-                        },
-                        {"type": "common", "value": [2, 5], "text": "2/5"},
-                    ],
-                }
-            },
-            "meta": {"difficulty": "medium", "pattern_id": "1.3"},
-        }
-
-    # По умолчанию возвращаем complex_fraction
-    expression = "(1/2 + 1/4) / (3/5)"
-    question_text = _ensure_answer_field(f"Вычисли значение дроби:\n{expression}")
-    result = 1.25
-    return {
-        "id": "6_complex_fraction_fallback",
-        "task_number": 6,
-        "subtype": "common_fractions",
-        "pattern": "complex_fraction",
-        "question_text": question_text,
-        "answer": _fmt_answer(result),
-        "answer_type": "decimal",
-        "variables": {
-            "expression_tree": {
-                "operation": "divide",
-                "operands": [
-                    {
-                        "operation": "add",
-                        "operands": [
-                            {"type": "common", "value": [1, 2], "text": "1/2"},
-                            {"type": "common", "value": [1, 4], "text": "1/4"},
-                        ],
-                    },
-                    {"type": "common", "value": [3, 5], "text": "3/5"},
-                ],
-            }
-        },
-        "meta": {"difficulty": "hard", "pattern_id": "1.4"},
-    }
