@@ -20,6 +20,8 @@ _NEG_AFTER_OP_RE = re.compile(r'([·*/])\s*(−|-)\s*(\d+(?:[.,]\d+)?)')
 _BAD_TRAILING_OP_RE = re.compile(r'[\+\-\*/:]$')
 _NON_BREAK_SPACE_RE = re.compile(r'[\u00A0\u202F]')
 
+_ALLOWED = "0123456789 +-−·:/()"
+
 # --- 🔍 Нормализация выражения ---
 def normalize_expression(expr: str) -> str:
     """
@@ -51,14 +53,16 @@ def normalize_expression(expr: str) -> str:
         s = s.replace(op, f' {op} ')
 
     # 4. Возвращаем красивые символы умножения и деления
-    s = s.replace('*', '·')
-    s = s.replace('/', ':') # Сначала все деления становятся ':',
+    s = re.sub(r'\*', ' · ', s)
+    s = re.sub(r'/', ' : ', s) # Сначала все деления становятся ':',
 
     # А теперь исправляем только те, что внутри дробей
     s = re.sub(r'(\d+)\s*:\s*(\d+)', r'\1/\2', s) # Находим "цифра : цифра" и меняем на "цифра/цифра"
 
     # 5. Убираем лишние пробелы
     s = re.sub(r'\s+', ' ', s).strip()
+
+    s = s.replace(" · ", " ⋅ ")
 
     return s
 
@@ -117,19 +121,31 @@ def prepare_expression(expr: str) -> str:
     return expr
 
 
-def prepare_expression(expr: str) -> str | None:
-    """
-    Универсальный фильтр для задания №6:
-    нормализует, исправляет и проверяет выражение.
-    Возвращает «чистую» строку или None, если выражение нужно перегенерировать.
-    """
-    if not expr or not isinstance(expr, str):
+def prepare_expression(src: str) -> str | None:
+    """??????? ???????? ?????????. ?????????? None, ???? ? ?????????? ??? ??????????."""
+    if src is None:
         return None
 
-    s = normalize_expression(expr)
-    s = fix_negative_after_operators(s)
+    s = (src.replace("\u00a0", " ")
+             .replace("\u202f", " ")
+             .strip())
 
-    if not validate_expression(s):
+    # ????????? ?????? ?????????? ???????
+    s = "".join(ch for ch in s if ch in _ALLOWED)
+
+    # ????????????
+    s = s.replace("--", "+")
+    s = re.sub(r"\s+", " ", s).strip()
+    s = s.replace("-", "−")  # ?????? ?????
+
+    # ???? ????? ?????? ??? ?? ?????, ?? ?????????? ? ??????? ????????? ??????????
+    if not s or not re.search(r"[0-9]", s):
+        return None
+    if not re.search(r"[/:·+\-−()]", s):
+        return None
+
+    # ??????? ?????? ?? ?????? ??????
+    if re.search(r"\(\s*\)", s):
         return None
 
     return s

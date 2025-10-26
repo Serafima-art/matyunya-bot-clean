@@ -3,8 +3,9 @@ import uuid
 from fractions import Fraction
 from typing import Dict, Any, List
 import re
+import math
 
-from matunya_bot_final.task_generators.task_6.generators.task6_text_formatter import prepare_expression, _fmt_answer  # TASK6_FORMATTER_IMPORT
+from matunya_bot_final.task_generators.task_6.generators.task6_text_formatter import prepare_expression, _fmt_answer, normalize_expression  # TASK6_FORMATTER_IMPORT
 
 def generate_powers_tasks(count: int = 10) -> List[Dict[str, Any]]:
     """
@@ -49,14 +50,26 @@ def _ensure_answer_field(question_text: str) -> str:
 # ======================
 def _generate_powers_with_fractions(pattern_id: str) -> Dict[str, Any]:
     # Пример вида: 21·(2/7)² + 2/7
-    for __retry in range(80):
-        n, a, b = random.randint(3, 30), random.randint(1, 5), random.choice([2, 4, 5, 7, 8, 10])
+    for _ in range(80):
+        n = random.randint(3, 30)
+        b = random.choice([2, 4, 5, 7, 8, 10])
+
+        # генерим ПРАВИЛЬНУЮ и НЕСОКРАТИМУЮ дробь a/b
+        while True:
+            a = random.randint(1, b - 1)     # a < b  → правильная
+            if math.gcd(a, b) == 1:          # несократимая
+                break
+
         k = random.randint(1, 25)
         op = random.choice(["add", "subtract"])
 
         frac = Fraction(a, b)
         power_val = frac ** 2
         result = n * power_val + k * frac if op == "add" else n * power_val - k * frac
+
+        # 🚫 отбрасываем нулевой результат (например, 10·(1/2)^2 − 10·1/2)
+        if result == 0:
+            continue
 
         attempts = 0
         while not _is_pretty_decimal(result) and attempts < 100:
@@ -70,7 +83,15 @@ def _generate_powers_with_fractions(pattern_id: str) -> Dict[str, Any]:
 
         text_op = "+" if op == "add" else "−"
         expression = f"{n}·({a}/{b})² {text_op} {k}·{a}/{b}"
-        question_text = _ensure_answer_field(f"Вычисли значение выражения:\n{expression}")
+        # ✅ не вызываем prepare_expression, чтобы сохранить символ "²"
+        formatted_expr = normalize_expression(expression)
+
+        # 🩹 проверка на потерю степени
+        if not formatted_expr or "²" not in formatted_expr:
+            print("[⚠️ skip: пропала степень ²]", expression)
+            continue
+
+        question_text = _ensure_answer_field(f"Вычисли значение выражения:\n{formatted_expr}")
 
         return {
             "id": f"6_{pattern_id}_{uuid.uuid4().hex[:6]}",
@@ -117,7 +138,7 @@ def _generate_powers_with_fractions(pattern_id: str) -> Dict[str, Any]:
 # === ПАТТЕРН 4.2 ======
 # ======================
 def _generate_powers_of_ten(pattern_id: str) -> Dict[str, Any]:
-    for __retry in range(80):
+    for _ in range(80):
         # Пример: (5·10^2)^3·(9·10^-4)
         base1 = random.randint(2, 9)
         exp1 = abs(_rand_exp_for_scientific())
@@ -127,10 +148,13 @@ def _generate_powers_of_ten(pattern_id: str) -> Dict[str, Any]:
         if exp2 > 0:
             exp2 = -exp2
 
-        # Вычисления для ответа
         val1 = (base1 * (10 ** exp1)) ** outer_pow
         val2 = base2 * (10 ** exp2)
         result = val1 * val2
+
+        # 🧱 ограничение на размер ответа: не больше 6 знаков в целой части
+        if abs(result) >= 1 and len(str(int(abs(result)))) > 5:
+            continue
 
         # 🧩 анти-дубликат — проверяем, чтобы не повторялись одинаковые комбинации
         if hasattr(_generate_powers_of_ten, "_used_combos"):
@@ -148,7 +172,7 @@ def _generate_powers_of_ten(pattern_id: str) -> Dict[str, Any]:
         attempts = 0
         while not _is_pretty_decimal(result) and attempts < 100:
             base1 = random.randint(2, 9)
-            exp1 = abs(_rand_exp_for_scientific())
+            exp1 = random.choice([2, 3])
             outer_pow = random.randint(2, 3)
             base2 = random.randint(2, 9)
             exp2 = _rand_exp_for_scientific()
@@ -158,6 +182,9 @@ def _generate_powers_of_ten(pattern_id: str) -> Dict[str, Any]:
             val2 = base2 * (10 ** exp2)
             result = val1 * val2
             attempts += 1
+
+            if abs(result) >= 1 and len(str(int(abs(result)))) > 6:
+                continue
 
         # --- Формируем красивое выражение со степенями ---
         def _to_superscript(n: int) -> str:
@@ -178,8 +205,13 @@ def _generate_powers_of_ten(pattern_id: str) -> Dict[str, Any]:
         if not expression:
             expression = "(10²)·(10⁻³)"
 
-        # форматирование (если prepare_expression вернет None — берём сырую строку)
-        formatted_expr = prepare_expression(expression) or expression
+        # ✅ теперь без prepare_expression, чтобы сохранить надстрочные символы
+        formatted_expr = normalize_expression(expression)
+
+        # 🩹 доп. защита от пустых или сломанных выражений
+        if not formatted_expr or "10" not in formatted_expr:
+            print("[⚠️ skip: не удалось отформатировать степень]", expression)
+            continue
 
         question_text = _ensure_answer_field(f"Вычисли выражение:\n{formatted_expr}")
 
