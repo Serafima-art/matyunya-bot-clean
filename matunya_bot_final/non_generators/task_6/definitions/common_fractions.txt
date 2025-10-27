@@ -1,0 +1,47 @@
+# Паттерн: cf_addition_subtraction
+cf_addition_subtraction | 7/15 + 5/12
+cf_addition_subtraction | 9/20 - 3/8
+cf_addition_subtraction | 5/14 + 8/21
+cf_addition_subtraction | 11/18 - 4/27
+cf_addition_subtraction | 13/24 - 5/16
+cf_addition_subtraction | 4/25 + 7/10
+cf_addition_subtraction | 19/30 - 5/12
+cf_addition_subtraction | 8/9 - 5/12
+cf_addition_subtraction | 7/16 + 9/20
+cf_addition_subtraction | 20/21 - 3/14
+
+# Паттерн: multiplication_division
+multiplication_division | 2 1/7 · 2 1/3
+multiplication_division | 2 2/5 : 1 1/5
+multiplication_division | 3 1/8 · 2 2/5
+multiplication_division | 4 1/6 : 1 2/3
+multiplication_division | 2 5/8 : 1 3/4
+multiplication_division | 1 7/9 · 2 1/4
+multiplication_division | 3 3/11 · 1 5/6
+multiplication_division | 2 1/10 : 3 1/2
+multiplication_division | 1 11/14 · 2 4/5
+multiplication_division | 3 3/5 : 1 4/5
+
+# Паттерн: parentheses_operations
+parentheses_operations | (8/15 + 9/25) · 75
+parentheses_operations | (11/12 - 13/18) : (7/36)
+parentheses_operations | 2 1/4 : (1 1/2 - 3/5)
+parentheses_operations | (1 1/6 + 2 1/4) · 12
+parentheses_operations | (4/5 - 1/2) : 3/20
+parentheses_operations | 1 4/11 · (3/4 + 5/8)
+parentheses_operations | (3 1/2 - 2 3/4) : 3
+parentheses_operations | (2 1/3 - 1 1/2) · 6
+parentheses_operations | (1 1/4 - 2/5) · 10
+parentheses_operations | 42 · (5/14 - 4/21)
+
+# Паттерн: complex_fraction
+complex_fraction | (1/12 + 1/16) / (7/24)
+complex_fraction | (1/10 - 1/25) / (3/50)
+complex_fraction | (1/20 + 1/15) / (7/60)
+complex_fraction | (1/9 - 1/15) / (2/45)
+complex_fraction | (1/14 + 1/21) / (5/42)
+complex_fraction | (1/8 - 1/14) / (3/28)
+complex_fraction | (1/18 + 1/27) / (5/54)
+complex_fraction | (1/30 - 1/45) / (1/90)
+complex_fraction | (1/24 + 1/16) / (5/48)
+complex_fraction | (1/15 - 1/20) / (1/12)

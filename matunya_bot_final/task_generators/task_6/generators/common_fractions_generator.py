@@ -55,48 +55,43 @@ def _ensure_answer_field(question_text: str) -> str:
 # === ПАТТЕРН 1.1 ======
 # ======================
 def _generate_cf_addition_subtraction(pattern_id: str) -> Dict[str, Any]:
-    for __retry in range(500):
-        a, b = _rand_frac(), _rand_frac()
-        op = random.choice(["add", "sub"])
-        f1, f2 = Fraction(a[0], a[1]), Fraction(b[0], b[1])
-        result = f1 + f2 if op == "add" else f1 - f2
+    while True:
+        a = _rand_frac_for_numerator_task()
+        b = _rand_frac_for_numerator_task()
+        operation = random.choice(["add", "subtract"])
 
-        # 🚫 исключаем нулевые, отрицательные и "единичные" случаи (5/8 + 5/8, 7/9 − 8/9 и т.п.)
-        if result <= 0 or a[0] == a[1] or b[0] == b[1]:
+        first = Fraction(a[0], a[1])
+        second = Fraction(b[0], b[1])
+        result = first + second if operation == "add" else first - second
+
+        if result <= 0:
+            continue
+        if _is_pretty_decimal(result):
             continue
 
-        # 🔹 вычисляем несократимую дробь
         simplified = result.limit_denominator()
-        num, den = simplified.numerator, simplified.denominator
+        numerator = simplified.numerator
 
-        attempts = 0
-        while not _is_pretty_decimal(result) and attempts < 100:
-            a, b = _rand_frac(), _rand_frac()
-            op = random.choice(["add", "sub"])
-            result = Fraction(a[0], a[1]) + Fraction(b[0], b[1]) if op == "add" else Fraction(a[0], a[1]) - Fraction(b[0], b[1])
-            attempts += 1
+        if not (10 <= numerator <= 99):
+            continue
 
-        text_op = "+" if op == "add" else "−"
+        text_op = "+" if operation == "add" else "−"
         expr_line = f"{a[0]}/{a[1]} {text_op} {b[0]}/{b[1]}"
         formatted_expr = prepare_expression(expr_line)
         if formatted_expr is None or re.search(r'(?<!\d)/0(?!\d)', formatted_expr):
-            print("[⚠️ skip: деление на ноль]", expr_line)
             continue
         formatted_expr = normalize_expression(formatted_expr)
-        # ⛔ отбрасываем пустые и бессодержательные выражения
         if (not formatted_expr
             or not re.search(r"\d", formatted_expr)
             or not re.search(r"[/:·+\-−()]", formatted_expr)):
-            print("[⚠️ skip: пустое выражение]", expr_line)
             continue
-
         if re.search(r'(^|[^0-9])0[.,]?\d*', formatted_expr) or "/0" in formatted_expr:
             continue
 
         question_text = _ensure_answer_field(
-        f"Найди значение выражения:\n{formatted_expr}\n\n"
-        f"Получи результат в виде обыкновенной дроби, которую нельзя сократить, "
-        f"в ответ запиши только числитель."
+            f"Найди значение выражения:\n{formatted_expr}\n\n"
+            "Представьте полученный результат в виде несократимой обыкновенной дроби. "
+            "В ответ запишите числитель этой дроби."
         )
 
         assert ":\n" in question_text and len(question_text.splitlines()) >= 2, (
@@ -108,11 +103,11 @@ def _generate_cf_addition_subtraction(pattern_id: str) -> Dict[str, Any]:
             "subtype": "common_fractions",
             "pattern": "cf_addition_subtraction",
             "question_text": question_text,
-            "answer": str(num),  # только числитель
+            "answer": str(numerator),
             "answer_type": "integer",
             "variables": {
                 "expression_tree": {
-                    "operation": op.replace("sub", "subtract"),
+                    "operation": operation,
                     "operands": [
                         {"type": "common", "value": [a[0], a[1]], "text": f"{a[0]}/{a[1]}"},
                         {"type": "common", "value": [b[0], b[1]], "text": f"{b[0]}/{b[1]}"},
@@ -121,9 +116,6 @@ def _generate_cf_addition_subtraction(pattern_id: str) -> Dict[str, Any]:
             },
             "meta": {"difficulty": "easy", "pattern_id": pattern_id},
         }
-
-    # Если после всех попыток не удалось создать валидную задачу — пропускаем
-    return None
 
 # ======================
 # === ПАТТЕРН 1.2 ======
@@ -363,6 +355,19 @@ def _generate_complex_fraction(pattern_id: str) -> Dict[str, Any]:
 
     # Если после всех попыток не удалось создать валидную задачу — пропускаем
     return None
+
+
+def _rand_frac_for_numerator_task() -> tuple[int, int]:
+    """
+    Генерирует правильную несократимую дробь со знаменателем 10-50.
+    """
+    denominator = random.randint(10, 50)
+    numerator = random.randint(1, denominator - 1)
+
+    while math.gcd(numerator, denominator) != 1:
+        numerator = random.randint(1, denominator - 1)
+
+    return numerator, denominator
 
 
 def _rand_frac() -> tuple[int, int]:

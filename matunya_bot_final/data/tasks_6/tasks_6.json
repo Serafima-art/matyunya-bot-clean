@@ -1,4467 +1,1753 @@
-[
-  {
-    "id": "6_complex_fraction_76e6c6",
-    "task_number": 6,
-    "subtype": "common_fractions",
-    "pattern": "complex_fraction",
-    "question_text": "Вычисли значение дроби:\n(3/8 - 13/16) : (1/8)\n\nОтвет: ____________",
-    "answer": "-3.5",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "operation": "subtract",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  3,
-                  8
-                ],
-                "text": "3/8"
-              },
-              {
-                "type": "common",
-                "value": [
-                  13,
-                  16
-                ],
-                "text": "13/16"
-              }
-            ]
-          },
-          {
-            "type": "common",
-            "value": [
-              1,
-              8
-            ],
-            "text": "1/8"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "complex_fraction"
-    }
-  },
-  {
-    "id": "6_parentheses_operations_3289f9",
-    "task_number": 6,
-    "subtype": "common_fractions",
-    "pattern": "parentheses_operations",
-    "question_text": "Раскрой скобки и выполни вычисления:\n(1/6 - 32/57) : 15/19\n\nОтвет: ____________",
-    "answer": "-0.5",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "operation": "subtract",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  1,
-                  6
-                ],
-                "text": "1/6"
-              },
-              {
-                "type": "common",
-                "value": [
-                  32,
-                  57
-                ],
-                "text": "32/57"
-              }
-            ]
-          },
-          {
-            "type": "common",
-            "value": [
-              15,
-              19
-            ],
-            "text": "15/19"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "medium",
-      "pattern_id": "parentheses_operations"
-    }
-  },
-  {
-    "id": "6_complex_fraction_91a417",
-    "task_number": 6,
-    "subtype": "common_fractions",
-    "pattern": "complex_fraction",
-    "question_text": "Вычисли значение дроби:\n(31/36 - 1/9) : (5/57)\n\nОтвет: ____________",
-    "answer": "8.55",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "operation": "subtract",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  31,
-                  36
-                ],
-                "text": "31/36"
-              },
-              {
-                "type": "common",
-                "value": [
-                  1,
-                  9
-                ],
-                "text": "1/9"
-              }
-            ]
-          },
-          {
-            "type": "common",
-            "value": [
-              5,
-              57
-            ],
-            "text": "5/57"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "complex_fraction"
-    }
-  },
-  {
-    "id": "6_multiplication_division_c673ae",
-    "task_number": 6,
-    "subtype": "common_fractions",
-    "pattern": "multiplication_division",
-    "question_text": "Выполни действия:\n3 13/48 : 1/24\n\nОтвет: ____________",
-    "answer": "78.5",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "type": "common",
-            "value": [
-              157,
-              48
-            ],
-            "text": "3 13/48"
-          },
-          {
-            "type": "common",
-            "value": [
-              1,
-              24
-            ],
-            "text": "1/24"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "medium",
-      "pattern_id": "multiplication_division"
-    }
-  },
-  {
-    "id": "6_parentheses_operations_e6398e",
-    "task_number": 6,
-    "subtype": "common_fractions",
-    "pattern": "parentheses_operations",
-    "question_text": "Раскрой скобки и выполни вычисления:\n(52/55 + 5/11) : 7/15\n\nОтвет: ____________",
-    "answer": "3",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "operation": "add",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  52,
-                  55
-                ],
-                "text": "52/55"
-              },
-              {
-                "type": "common",
-                "value": [
-                  5,
-                  11
-                ],
-                "text": "5/11"
-              }
-            ]
-          },
-          {
-            "type": "common",
-            "value": [
-              7,
-              15
-            ],
-            "text": "7/15"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "medium",
-      "pattern_id": "parentheses_operations"
-    }
-  },
-  {
-    "id": "6_complex_fraction_205bb9",
-    "task_number": 6,
-    "subtype": "common_fractions",
-    "pattern": "complex_fraction",
-    "question_text": "Вычисли значение дроби:\n(2/7 - 1/24) : (41/51)\n\nОтвет: ____________",
-    "answer": "0.3",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "operation": "subtract",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  2,
-                  7
-                ],
-                "text": "2/7"
-              },
-              {
-                "type": "common",
-                "value": [
-                  1,
-                  24
-                ],
-                "text": "1/24"
-              }
-            ]
-          },
-          {
-            "type": "common",
-            "value": [
-              41,
-              51
-            ],
-            "text": "41/51"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "complex_fraction"
-    }
-  },
-  {
-    "id": "6_multiplication_division_8ae1f6",
-    "task_number": 6,
-    "subtype": "common_fractions",
-    "pattern": "multiplication_division",
-    "question_text": "Выполни действия:\n1 7/17 : 5/51\n\nОтвет: ____________",
-    "answer": "14.4",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "type": "common",
-            "value": [
-              24,
-              17
-            ],
-            "text": "1 7/17"
-          },
-          {
-            "type": "common",
-            "value": [
-              5,
-              51
-            ],
-            "text": "5/51"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "medium",
-      "pattern_id": "multiplication_division"
-    }
-  },
-  {
-    "id": "6_parentheses_operations_5e6417",
-    "task_number": 6,
-    "subtype": "common_fractions",
-    "pattern": "parentheses_operations",
-    "question_text": "Раскрой скобки и выполни вычисления:\n(7/26 + 11/13) : 1/26\n\nОтвет: ____________",
-    "answer": "29",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "operation": "add",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  7,
-                  26
-                ],
-                "text": "7/26"
-              },
-              {
-                "type": "common",
-                "value": [
-                  11,
-                  13
-                ],
-                "text": "11/13"
-              }
-            ]
-          },
-          {
-            "type": "common",
-            "value": [
-              1,
-              26
-            ],
-            "text": "1/26"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "medium",
-      "pattern_id": "parentheses_operations"
-    }
-  },
-  {
-    "id": "6_parentheses_operations_301371",
-    "task_number": 6,
-    "subtype": "common_fractions",
-    "pattern": "parentheses_operations",
-    "question_text": "Раскрой скобки и выполни вычисления:\n(25/34 - 3/17) : 38/51\n\nОтвет: ____________",
-    "answer": "0.75",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "operation": "subtract",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  25,
-                  34
-                ],
-                "text": "25/34"
-              },
-              {
-                "type": "common",
-                "value": [
-                  3,
-                  17
-                ],
-                "text": "3/17"
-              }
-            ]
-          },
-          {
-            "type": "common",
-            "value": [
-              38,
-              51
-            ],
-            "text": "38/51"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "medium",
-      "pattern_id": "parentheses_operations"
-    }
-  },
-  {
-    "id": "6_multiplication_division_e023a6",
-    "task_number": 6,
-    "subtype": "common_fractions",
-    "pattern": "multiplication_division",
-    "question_text": "Выполни действия:\n1 7/8 : 1/14\n\nОтвет: ____________",
-    "answer": "26.25",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "type": "common",
-            "value": [
-              15,
-              8
-            ],
-            "text": "1 7/8"
-          },
-          {
-            "type": "common",
-            "value": [
-              1,
-              14
-            ],
-            "text": "1/14"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "medium",
-      "pattern_id": "multiplication_division"
-    }
-  },
-  {
-    "id": "6_multiplication_division_f98deb",
-    "task_number": 6,
-    "subtype": "common_fractions",
-    "pattern": "multiplication_division",
-    "question_text": "Выполни действия:\n4 1/12 ⋅ 3/7\n\nОтвет: ____________",
-    "answer": "1.75",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "multiply",
-        "operands": [
-          {
-            "type": "common",
-            "value": [
-              49,
-              12
-            ],
-            "text": "4 1/12"
-          },
-          {
-            "type": "common",
-            "value": [
-              3,
-              7
-            ],
-            "text": "3/7"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "medium",
-      "pattern_id": "multiplication_division"
-    }
-  },
-  {
-    "id": "6_multiplication_division_0908fe",
-    "task_number": 6,
-    "subtype": "common_fractions",
-    "pattern": "multiplication_division",
-    "question_text": "Выполни действия:\n2 5/6 : 5/12\n\nОтвет: ____________",
-    "answer": "6.8",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "type": "common",
-            "value": [
-              17,
-              6
-            ],
-            "text": "2 5/6"
-          },
-          {
-            "type": "common",
-            "value": [
-              5,
-              12
-            ],
-            "text": "5/12"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "medium",
-      "pattern_id": "multiplication_division"
-    }
-  },
-  {
-    "id": "6_parentheses_operations_0246ed",
-    "task_number": 6,
-    "subtype": "common_fractions",
-    "pattern": "parentheses_operations",
-    "question_text": "Раскрой скобки и выполни вычисления:\n(25/36 + 1/6) : 1/36\n\nОтвет: ____________",
-    "answer": "31",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "operation": "add",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  25,
-                  36
-                ],
-                "text": "25/36"
-              },
-              {
-                "type": "common",
-                "value": [
-                  1,
-                  6
-                ],
-                "text": "1/6"
-              }
-            ]
-          },
-          {
-            "type": "common",
-            "value": [
-              1,
-              36
-            ],
-            "text": "1/36"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "medium",
-      "pattern_id": "parentheses_operations"
-    }
-  },
-  {
-    "id": "6_complex_fraction_b6878a",
-    "task_number": 6,
-    "subtype": "common_fractions",
-    "pattern": "complex_fraction",
-    "question_text": "Вычисли значение дроби:\n(9/22 - 5/8) : (4/21)\n\nОтвет: ____________",
-    "answer": "-1.13",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "operation": "subtract",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  9,
-                  22
-                ],
-                "text": "9/22"
-              },
-              {
-                "type": "common",
-                "value": [
-                  5,
-                  8
-                ],
-                "text": "5/8"
-              }
-            ]
-          },
-          {
-            "type": "common",
-            "value": [
-              4,
-              21
-            ],
-            "text": "4/21"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "complex_fraction"
-    }
-  },
-  {
-    "id": "6_complex_fraction_918c75",
-    "task_number": 6,
-    "subtype": "common_fractions",
-    "pattern": "complex_fraction",
-    "question_text": "Вычисли значение дроби:\n(17/18 + 1/45) : (1/48)\n\nОтвет: ____________",
-    "answer": "46.4",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "operation": "add",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  17,
-                  18
-                ],
-                "text": "17/18"
-              },
-              {
-                "type": "common",
-                "value": [
-                  1,
-                  45
-                ],
-                "text": "1/45"
-              }
-            ]
-          },
-          {
-            "type": "common",
-            "value": [
-              1,
-              48
-            ],
-            "text": "1/48"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "complex_fraction"
-    }
-  },
-  {
-    "id": "6_complex_fraction_7040b8",
-    "task_number": 6,
-    "subtype": "common_fractions",
-    "pattern": "complex_fraction",
-    "question_text": "Вычисли значение дроби:\n(17/24 + 11/12) : (25/26)\n\nОтвет: ____________",
-    "answer": "1.69",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "operation": "add",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  17,
-                  24
-                ],
-                "text": "17/24"
-              },
-              {
-                "type": "common",
-                "value": [
-                  11,
-                  12
-                ],
-                "text": "11/12"
-              }
-            ]
-          },
-          {
-            "type": "common",
-            "value": [
-              25,
-              26
-            ],
-            "text": "25/26"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "complex_fraction"
-    }
-  },
-  {
-    "id": "6_complex_fraction_0a6f0f",
-    "task_number": 6,
-    "subtype": "common_fractions",
-    "pattern": "complex_fraction",
-    "question_text": "Вычисли значение дроби:\n(11/28 + 1/12) : (4/21)\n\nОтвет: ____________",
-    "answer": "2.5",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "operation": "add",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  11,
-                  28
-                ],
-                "text": "11/28"
-              },
-              {
-                "type": "common",
-                "value": [
-                  1,
-                  12
-                ],
-                "text": "1/12"
-              }
-            ]
-          },
-          {
-            "type": "common",
-            "value": [
-              4,
-              21
-            ],
-            "text": "4/21"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "complex_fraction"
-    }
-  },
-  {
-    "id": "6_complex_fraction_2c87f8",
-    "task_number": 6,
-    "subtype": "common_fractions",
-    "pattern": "complex_fraction",
-    "question_text": "Вычисли значение дроби:\n(4/21 - 4/21) : (17/36)\n\nОтвет: ____________",
-    "answer": "0",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "operation": "subtract",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  4,
-                  21
-                ],
-                "text": "4/21"
-              },
-              {
-                "type": "common",
-                "value": [
-                  4,
-                  21
-                ],
-                "text": "4/21"
-              }
-            ]
-          },
-          {
-            "type": "common",
-            "value": [
-              17,
-              36
-            ],
-            "text": "17/36"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "complex_fraction"
-    }
-  },
-  {
-    "id": "6_parentheses_operations_a09866",
-    "task_number": 6,
-    "subtype": "common_fractions",
-    "pattern": "parentheses_operations",
-    "question_text": "Раскрой скобки и выполни вычисления:\n(14/33 + 10/11) ⋅ 15/16\n\nОтвет: ____________",
-    "answer": "1.25",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "multiply",
-        "operands": [
-          {
-            "operation": "add",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  14,
-                  33
-                ],
-                "text": "14/33"
-              },
-              {
-                "type": "common",
-                "value": [
-                  10,
-                  11
-                ],
-                "text": "10/11"
-              }
-            ]
-          },
-          {
-            "type": "common",
-            "value": [
-              15,
-              16
-            ],
-            "text": "15/16"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "medium",
-      "pattern_id": "parentheses_operations"
-    }
-  },
-  {
-    "id": "6_complex_fraction_e50bff",
-    "task_number": 6,
-    "subtype": "common_fractions",
-    "pattern": "complex_fraction",
-    "question_text": "Вычисли значение дроби:\n(8/9 - 4/45) : (2/33)\n\nОтвет: ____________",
-    "answer": "13.2",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "operation": "subtract",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  8,
-                  9
-                ],
-                "text": "8/9"
-              },
-              {
-                "type": "common",
-                "value": [
-                  4,
-                  45
-                ],
-                "text": "4/45"
-              }
-            ]
-          },
-          {
-            "type": "common",
-            "value": [
-              2,
-              33
-            ],
-            "text": "2/33"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "complex_fraction"
-    }
-  },
-  {
-    "id": "6_complex_fraction_b7a132",
-    "task_number": 6,
-    "subtype": "common_fractions",
-    "pattern": "complex_fraction",
-    "question_text": "Вычисли значение дроби:\n(25/48 - 13/16) : (1/18)\n\nОтвет: ____________",
-    "answer": "-5.25",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "operation": "subtract",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  25,
-                  48
-                ],
-                "text": "25/48"
-              },
-              {
-                "type": "common",
-                "value": [
-                  13,
-                  16
-                ],
-                "text": "13/16"
-              }
-            ]
-          },
-          {
-            "type": "common",
-            "value": [
-              1,
-              18
-            ],
-            "text": "1/18"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "complex_fraction"
-    }
-  },
-  {
-    "id": "6_linear_operations_92d855",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "linear_operations",
-    "question_text": "Вычисли выражение:\n((-1))·0,8 − ((-3,3))\n\nОтвет: ____________",
-    "answer": "2.5",
-    "display_answer": "2,5",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "subtract",
-        "operands": [
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": -1.0
-              },
-              {
-                "type": "decimal",
-                "value": 0.8
-              }
-            ]
-          },
-          {
-            "type": "decimal",
-            "value": -3.3
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "medium",
-      "pattern_id": "2.2"
-    }
-  },
-  {
-    "id": "6_df_addition_subtraction_888fb1",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "df_addition_subtraction",
-    "question_text": "Посчитай значение:\n16,1 + 14,5\n\nОтвет: ____________",
-    "answer": "30.6",
-    "display_answer": "30,6",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "add",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 16.1
-          },
-          {
-            "type": "decimal",
-            "value": 14.5
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "easy",
-      "pattern_id": "2.1"
-    }
-  },
-  {
-    "id": "6_fraction_structure_34bfb2",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "fraction_structure",
-    "question_text": "Посчитай значение дроби:\n5,6 / (1,2 · 4)\n\nОтвет: ____________",
-    "answer": "1.17",
-    "display_answer": "1,17",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 5.6
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 1.2
-              },
-              {
-                "type": "decimal",
-                "value": 4.0
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "2.3"
-    }
-  },
-  {
-    "id": "6_fraction_structure_972634",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "fraction_structure",
-    "question_text": "Посчитай значение дроби:\n19 / (13,1 · 8,2)\n\nОтвет: ____________",
-    "answer": "0.18",
-    "display_answer": "0,18",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 19.0
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 13.1
-              },
-              {
-                "type": "decimal",
-                "value": 8.2
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "2.3"
-    }
-  },
-  {
-    "id": "6_df_addition_subtraction_73fd20",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "df_addition_subtraction",
-    "question_text": "Посчитай значение:\n1,7 + 18,5\n\nОтвет: ____________",
-    "answer": "20.2",
-    "display_answer": "20,2",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "add",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 1.7
-          },
-          {
-            "type": "decimal",
-            "value": 18.5
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "easy",
-      "pattern_id": "2.1"
-    }
-  },
-  {
-    "id": "6_fraction_structure_de88cb",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "fraction_structure",
-    "question_text": "Посчитай значение дроби:\n10,6 / (2,8 − 14,7)\n\nОтвет: ____________",
-    "answer": "-0.89",
-    "display_answer": "-0,89",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 10.6
-          },
-          {
-            "operation": "subtract",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 2.8
-              },
-              {
-                "type": "decimal",
-                "value": 14.7
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "2.3"
-    }
-  },
-  {
-    "id": "6_fraction_structure_e50f30",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "fraction_structure",
-    "question_text": "Посчитай значение дроби:\n17,2 / (4,8 · 2,8)\n\nОтвет: ____________",
-    "answer": "1.28",
-    "display_answer": "1,28",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 17.2
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 4.8
-              },
-              {
-                "type": "decimal",
-                "value": 2.8
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "2.3"
-    }
-  },
-  {
-    "id": "6_fraction_structure_78ae49",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "fraction_structure",
-    "question_text": "Посчитай значение дроби:\n4,2 / (13,3 + 4,8)\n\nОтвет: ____________",
-    "answer": "0.23",
-    "display_answer": "0,23",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 4.2
-          },
-          {
-            "operation": "add",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 13.3
-              },
-              {
-                "type": "decimal",
-                "value": 4.8
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "2.3"
-    }
-  },
-  {
-    "id": "6_df_addition_subtraction_4b433d",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "df_addition_subtraction",
-    "question_text": "Посчитай значение:\n6,7 + 15,8\n\nОтвет: ____________",
-    "answer": "22.5",
-    "display_answer": "22,5",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "add",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 6.7
-          },
-          {
-            "type": "decimal",
-            "value": 15.8
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "easy",
-      "pattern_id": "2.1"
-    }
-  },
-  {
-    "id": "6_fraction_structure_fc3d34",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "fraction_structure",
-    "question_text": "Посчитай значение дроби:\n18,6 / (1,6 · 12,6)\n\nОтвет: ____________",
-    "answer": "0.92",
-    "display_answer": "0,92",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 18.6
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 1.6
-              },
-              {
-                "type": "decimal",
-                "value": 12.6
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "2.3"
-    }
-  },
-  {
-    "id": "6_df_addition_subtraction_7cf90c",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "df_addition_subtraction",
-    "question_text": "Посчитай значение:\n18,9 + 19,7\n\nОтвет: ____________",
-    "answer": "38.6",
-    "display_answer": "38,6",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "add",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 18.9
-          },
-          {
-            "type": "decimal",
-            "value": 19.7
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "easy",
-      "pattern_id": "2.1"
-    }
-  },
-  {
-    "id": "6_linear_operations_5da039",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "linear_operations",
-    "question_text": "Вычисли выражение:\n((-2))·0,4 + ((-0,4))\n\nОтвет: ____________",
-    "answer": "-1.2",
-    "display_answer": "-1,2",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "add",
-        "operands": [
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": -2.0
-              },
-              {
-                "type": "decimal",
-                "value": 0.4
-              }
-            ]
-          },
-          {
-            "type": "decimal",
-            "value": -0.4
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "medium",
-      "pattern_id": "2.2"
-    }
-  },
-  {
-    "id": "6_df_addition_subtraction_7a9143",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "df_addition_subtraction",
-    "question_text": "Посчитай значение:\n13,3 + 6,9\n\nОтвет: ____________",
-    "answer": "20.2",
-    "display_answer": "20,2",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "add",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 13.3
-          },
-          {
-            "type": "decimal",
-            "value": 6.9
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "easy",
-      "pattern_id": "2.1"
-    }
-  },
-  {
-    "id": "6_fraction_structure_c8814d",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "fraction_structure",
-    "question_text": "Посчитай значение дроби:\n18,3 / (7,8 · 7,6)\n\nОтвет: ____________",
-    "answer": "0.31",
-    "display_answer": "0,31",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 18.3
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 7.8
-              },
-              {
-                "type": "decimal",
-                "value": 7.6
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "2.3"
-    }
-  },
-  {
-    "id": "6_linear_operations_047dd5",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "linear_operations",
-    "question_text": "Вычисли выражение:\n((-2))·1,3 + ((-7))\n\nОтвет: ____________",
-    "answer": "-9.6",
-    "display_answer": "-9,6",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "add",
-        "operands": [
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": -2.0
-              },
-              {
-                "type": "decimal",
-                "value": 1.3
-              }
-            ]
-          },
-          {
-            "type": "decimal",
-            "value": -7.0
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "medium",
-      "pattern_id": "2.2"
-    }
-  },
-  {
-    "id": "6_fraction_structure_dc55d1",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "fraction_structure",
-    "question_text": "Посчитай значение дроби:\n13,3 / (13,4 − 13,1)\n\nОтвет: ____________",
-    "answer": "44.33",
-    "display_answer": "44,33",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 13.3
-          },
-          {
-            "operation": "subtract",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 13.4
-              },
-              {
-                "type": "decimal",
-                "value": 13.1
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "2.3"
-    }
-  },
-  {
-    "id": "6_fraction_structure_a2a8f2",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "fraction_structure",
-    "question_text": "Посчитай значение дроби:\n3,3 / (14,1 − 12,5)\n\nОтвет: ____________",
-    "answer": "2.06",
-    "display_answer": "2,06",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 3.3
-          },
-          {
-            "operation": "subtract",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 14.1
-              },
-              {
-                "type": "decimal",
-                "value": 12.5
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "2.3"
-    }
-  },
-  {
-    "id": "6_fraction_structure_a099ee",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "fraction_structure",
-    "question_text": "Посчитай значение дроби:\n14,9 / (9,5 · 12,8)\n\nОтвет: ____________",
-    "answer": "0.12",
-    "display_answer": "0,12",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 14.9
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 9.5
-              },
-              {
-                "type": "decimal",
-                "value": 12.8
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "2.3"
-    }
-  },
-  {
-    "id": "6_fraction_structure_a407d5",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "fraction_structure",
-    "question_text": "Посчитай значение дроби:\n14,2 / (4,8 · 13,1)\n\nОтвет: ____________",
-    "answer": "0.23",
-    "display_answer": "0,23",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 14.2
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 4.8
-              },
-              {
-                "type": "decimal",
-                "value": 13.1
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "2.3"
-    }
-  },
-  {
-    "id": "6_df_addition_subtraction_a21ad1",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "df_addition_subtraction",
-    "question_text": "Посчитай значение:\n12,8 + 18,3\n\nОтвет: ____________",
-    "answer": "31.1",
-    "display_answer": "31,1",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "add",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 12.8
-          },
-          {
-            "type": "decimal",
-            "value": 18.3
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "easy",
-      "pattern_id": "2.1"
-    }
-  },
-  {
-    "id": "6_df_addition_subtraction_dc85b0",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "df_addition_subtraction",
-    "question_text": "Посчитай значение:\n13,1 + 14,4\n\nОтвет: ____________",
-    "answer": "27.5",
-    "display_answer": "27,5",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "add",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 13.1
-          },
-          {
-            "type": "decimal",
-            "value": 14.4
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "easy",
-      "pattern_id": "2.1"
-    }
-  },
-  {
-    "id": "6_df_addition_subtraction_d39213",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "df_addition_subtraction",
-    "question_text": "Посчитай значение:\n11,2 − 2,4\n\nОтвет: ____________",
-    "answer": "8.8",
-    "display_answer": "8,8",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "subtract",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 11.2
-          },
-          {
-            "type": "decimal",
-            "value": 2.4
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "easy",
-      "pattern_id": "2.1"
-    }
-  },
-  {
-    "id": "6_fraction_structure_6a60ed",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "fraction_structure",
-    "question_text": "Посчитай значение дроби:\n13,5 / (7,5 − 1)\n\nОтвет: ____________",
-    "answer": "2.08",
-    "display_answer": "2,08",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 13.5
-          },
-          {
-            "operation": "subtract",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 7.5
-              },
-              {
-                "type": "decimal",
-                "value": 1.0
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "2.3"
-    }
-  },
-  {
-    "id": "6_linear_operations_9b3d23",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "linear_operations",
-    "question_text": "Вычисли выражение:\n3·((-5,5)) − 7,2\n\nОтвет: ____________",
-    "answer": "-23.7",
-    "display_answer": "-23,7",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "subtract",
-        "operands": [
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 3.0
-              },
-              {
-                "type": "decimal",
-                "value": -5.5
-              }
-            ]
-          },
-          {
-            "type": "decimal",
-            "value": 7.2
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "medium",
-      "pattern_id": "2.2"
-    }
-  },
-  {
-    "id": "6_df_addition_subtraction_e997fa",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "df_addition_subtraction",
-    "question_text": "Посчитай значение:\n13,8 − 8,8\n\nОтвет: ____________",
-    "answer": "5.0",
-    "display_answer": "5,0",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "subtract",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 13.8
-          },
-          {
-            "type": "decimal",
-            "value": 8.8
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "easy",
-      "pattern_id": "2.1"
-    }
-  },
-  {
-    "id": "6_linear_operations_2c41b5",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "linear_operations",
-    "question_text": "Вычисли выражение:\n5·((-8,1)) + ((-8,4))\n\nОтвет: ____________",
-    "answer": "-48.9",
-    "display_answer": "-48,9",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "add",
-        "operands": [
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 5.0
-              },
-              {
-                "type": "decimal",
-                "value": -8.1
-              }
-            ]
-          },
-          {
-            "type": "decimal",
-            "value": -8.4
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "medium",
-      "pattern_id": "2.2"
-    }
-  },
-  {
-    "id": "6_fraction_structure_1a995c",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "fraction_structure",
-    "question_text": "Посчитай значение дроби:\n2,7 / (14,2 · 6,3)\n\nОтвет: ____________",
-    "answer": "0.03",
-    "display_answer": "0,03",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 2.7
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 14.2
-              },
-              {
-                "type": "decimal",
-                "value": 6.3
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "2.3"
-    }
-  },
-  {
-    "id": "6_linear_operations_1f5542",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "linear_operations",
-    "question_text": "Вычисли выражение:\n((-5))·((-5,8)) − ((-5,6))\n\nОтвет: ____________",
-    "answer": "34.6",
-    "display_answer": "34,6",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "subtract",
-        "operands": [
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": -5.0
-              },
-              {
-                "type": "decimal",
-                "value": -5.8
-              }
-            ]
-          },
-          {
-            "type": "decimal",
-            "value": -5.6
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "medium",
-      "pattern_id": "2.2"
-    }
-  },
-  {
-    "id": "6_fraction_structure_d9021e",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "fraction_structure",
-    "question_text": "Посчитай значение дроби:\n9,3 / (2,1 · 14,1)\n\nОтвет: ____________",
-    "answer": "0.31",
-    "display_answer": "0,31",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 9.3
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 2.1
-              },
-              {
-                "type": "decimal",
-                "value": 14.1
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "2.3"
-    }
-  },
-  {
-    "id": "6_fraction_structure_512214",
-    "task_number": 6,
-    "subtype": "decimal_fractions",
-    "pattern": "fraction_structure",
-    "question_text": "Посчитай значение дроби:\n15,9 / (11,5 + 5,9)\n\nОтвет: ____________",
-    "answer": "0.91",
-    "display_answer": "0,91",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "divide",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 15.9
-          },
-          {
-            "operation": "add",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 11.5
-              },
-              {
-                "type": "decimal",
-                "value": 5.9
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "2.3"
-    }
-  },
-  {
-    "id": "6_mf_mixed_types_operations_fd862e",
-    "task_number": 6,
-    "subtype": "mixed_fractions",
-    "pattern": "mf_mixed_types_operations",
-    "question_text": "Найди результат вычислений:\n7.3 − 7.2 : 2 1/2\n\nОтвет: ____________",
-    "answer": "4.42",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "subtract",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 7.3,
-            "text": "7.3"
-          },
-          {
-            "operation": "divide",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 7.2,
-                "text": "7.2"
-              },
-              {
-                "type": "common",
-                "value": [
-                  5,
-                  2
-                ],
-                "text": "2 1/2"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "3.1"
-    }
-  },
-  {
-    "id": "6_mf_mixed_types_operations_713584",
-    "task_number": 6,
-    "subtype": "mixed_fractions",
-    "pattern": "mf_mixed_types_operations",
-    "question_text": "Найди результат вычислений:\n5.4 − 2.7 : 1 2/10\n\nОтвет: ____________",
-    "answer": "3.15",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "subtract",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 5.4,
-            "text": "5.4"
-          },
-          {
-            "operation": "divide",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 2.7,
-                "text": "2.7"
-              },
-              {
-                "type": "common",
-                "value": [
-                  12,
-                  10
-                ],
-                "text": "1 2/10"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "3.1"
-    }
-  },
-  {
-    "id": "6_mf_mixed_types_operations_3a48f5",
-    "task_number": 6,
-    "subtype": "mixed_fractions",
-    "pattern": "mf_mixed_types_operations",
-    "question_text": "Найди результат вычислений:\n4.0 − 1.8 : 4 1/2\n\nОтвет: ____________",
-    "answer": "3.6",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "subtract",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 4.0,
-            "text": "4.0"
-          },
-          {
-            "operation": "divide",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 1.8,
-                "text": "1.8"
-              },
-              {
-                "type": "common",
-                "value": [
-                  9,
-                  2
-                ],
-                "text": "4 1/2"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "3.1"
-    }
-  },
-  {
-    "id": "6_mf_mixed_types_operations_a0273e",
-    "task_number": 6,
-    "subtype": "mixed_fractions",
-    "pattern": "mf_mixed_types_operations",
-    "question_text": "Вычисли выражение:\n(1 2/20 − 3.6) · 1 2/20\n\nОтвет: ____________",
-    "answer": "-2.75",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "multiply",
-        "operands": [
-          {
-            "operation": "subtract",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  22,
-                  20
-                ],
-                "text": "1 2/20"
-              },
-              {
-                "type": "decimal",
-                "value": 3.6,
-                "text": "3.6"
-              }
-            ]
-          },
-          {
-            "type": "common",
-            "value": [
-              22,
-              20
-            ],
-            "text": "1 2/20"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "3.1"
-    }
-  },
-  {
-    "id": "6_mf_mixed_types_operations_36d6f4",
-    "task_number": 6,
-    "subtype": "mixed_fractions",
-    "pattern": "mf_mixed_types_operations",
-    "question_text": "Вычисли выражение:\n(4 1/5 − 2.7) · 4 1/5\n\nОтвет: ____________",
-    "answer": "6.3",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "multiply",
-        "operands": [
-          {
-            "operation": "subtract",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  21,
-                  5
-                ],
-                "text": "4 1/5"
-              },
-              {
-                "type": "decimal",
-                "value": 2.7,
-                "text": "2.7"
-              }
-            ]
-          },
-          {
-            "type": "common",
-            "value": [
-              21,
-              5
-            ],
-            "text": "4 1/5"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "3.1"
-    }
-  },
-  {
-    "id": "6_mf_mixed_types_operations_fc5eb4",
-    "task_number": 6,
-    "subtype": "mixed_fractions",
-    "pattern": "mf_mixed_types_operations",
-    "question_text": "Вычисли выражение:\n(4 9/10 − 6.9) · 4 9/10\n\nОтвет: ____________",
-    "answer": "-9.8",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "multiply",
-        "operands": [
-          {
-            "operation": "subtract",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  49,
-                  10
-                ],
-                "text": "4 9/10"
-              },
-              {
-                "type": "decimal",
-                "value": 6.9,
-                "text": "6.9"
-              }
-            ]
-          },
-          {
-            "type": "common",
-            "value": [
-              49,
-              10
-            ],
-            "text": "4 9/10"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "3.1"
-    }
-  },
-  {
-    "id": "6_mf_mixed_types_operations_473b0c",
-    "task_number": 6,
-    "subtype": "mixed_fractions",
-    "pattern": "mf_mixed_types_operations",
-    "question_text": "Выполни вычисления:\n5.1 : 3 2/5 − 6.7\n\nОтвет: ____________",
-    "answer": "-5.2",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "subtract",
-        "operands": [
-          {
-            "operation": "divide",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 5.1,
-                "text": "5.1"
-              },
-              {
-                "type": "common",
-                "value": [
-                  17,
-                  5
-                ],
-                "text": "3 2/5"
-              }
-            ]
-          },
-          {
-            "type": "decimal",
-            "value": 6.7,
-            "text": "6.7"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "3.1"
-    }
-  },
-  {
-    "id": "6_mf_mixed_types_operations_9dc750",
-    "task_number": 6,
-    "subtype": "mixed_fractions",
-    "pattern": "mf_mixed_types_operations",
-    "question_text": "Найди результат вычислений:\n2.7 − 7.7 : 2 3/4\n\nОтвет: ____________",
-    "answer": "-0.1",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "subtract",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 2.7,
-            "text": "2.7"
-          },
-          {
-            "operation": "divide",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 7.7,
-                "text": "7.7"
-              },
-              {
-                "type": "common",
-                "value": [
-                  11,
-                  4
-                ],
-                "text": "2 3/4"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "3.1"
-    }
-  },
-  {
-    "id": "6_mf_mixed_types_operations_d729f5",
-    "task_number": 6,
-    "subtype": "mixed_fractions",
-    "pattern": "mf_mixed_types_operations",
-    "question_text": "Найди результат вычислений:\n3.4 − 1.8 : 2 2/5\n\nОтвет: ____________",
-    "answer": "2.65",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "subtract",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 3.4,
-            "text": "3.4"
-          },
-          {
-            "operation": "divide",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 1.8,
-                "text": "1.8"
-              },
-              {
-                "type": "common",
-                "value": [
-                  12,
-                  5
-                ],
-                "text": "2 2/5"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "3.1"
-    }
-  },
-  {
-    "id": "6_mf_mixed_types_operations_740708",
-    "task_number": 6,
-    "subtype": "mixed_fractions",
-    "pattern": "mf_mixed_types_operations",
-    "question_text": "Вычисли выражение:\n(1 2/5 − 4.8) · 1 2/5\n\nОтвет: ____________",
-    "answer": "-4.76",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "multiply",
-        "operands": [
-          {
-            "operation": "subtract",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  7,
-                  5
-                ],
-                "text": "1 2/5"
-              },
-              {
-                "type": "decimal",
-                "value": 4.8,
-                "text": "4.8"
-              }
-            ]
-          },
-          {
-            "type": "common",
-            "value": [
-              7,
-              5
-            ],
-            "text": "1 2/5"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "3.1"
-    }
-  },
-  {
-    "id": "6_mf_mixed_types_operations_ec9b16",
-    "task_number": 6,
-    "subtype": "mixed_fractions",
-    "pattern": "mf_mixed_types_operations",
-    "question_text": "Найди результат вычислений:\n2.4 − 2.8 : 3 2/10\n\nОтвет: ____________",
-    "answer": "1.52",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "subtract",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 2.4,
-            "text": "2.4"
-          },
-          {
-            "operation": "divide",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 2.8,
-                "text": "2.8"
-              },
-              {
-                "type": "common",
-                "value": [
-                  32,
-                  10
-                ],
-                "text": "3 2/10"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "3.1"
-    }
-  },
-  {
-    "id": "6_mf_mixed_types_operations_fd766e",
-    "task_number": 6,
-    "subtype": "mixed_fractions",
-    "pattern": "mf_mixed_types_operations",
-    "question_text": "Выполни вычисления:\n3.8 : 1 9/10 − 6.8\n\nОтвет: ____________",
-    "answer": "-4.8",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "subtract",
-        "operands": [
-          {
-            "operation": "divide",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 3.8,
-                "text": "3.8"
-              },
-              {
-                "type": "common",
-                "value": [
-                  19,
-                  10
-                ],
-                "text": "1 9/10"
-              }
-            ]
-          },
-          {
-            "type": "decimal",
-            "value": 6.8,
-            "text": "6.8"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "3.1"
-    }
-  },
-  {
-    "id": "6_mf_mixed_types_operations_f4c951",
-    "task_number": 6,
-    "subtype": "mixed_fractions",
-    "pattern": "mf_mixed_types_operations",
-    "question_text": "Вычисли выражение:\n(2 4/10 − 5.9) · 2 4/10\n\nОтвет: ____________",
-    "answer": "-8.4",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "multiply",
-        "operands": [
-          {
-            "operation": "subtract",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  24,
-                  10
-                ],
-                "text": "2 4/10"
-              },
-              {
-                "type": "decimal",
-                "value": 5.9,
-                "text": "5.9"
-              }
-            ]
-          },
-          {
-            "type": "common",
-            "value": [
-              24,
-              10
-            ],
-            "text": "2 4/10"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "3.1"
-    }
-  },
-  {
-    "id": "6_mf_mixed_types_operations_05578e",
-    "task_number": 6,
-    "subtype": "mixed_fractions",
-    "pattern": "mf_mixed_types_operations",
-    "question_text": "Вычисли выражение:\n(4 7/10 − 7.9) · 4 7/10\n\nОтвет: ____________",
-    "answer": "-15.04",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "multiply",
-        "operands": [
-          {
-            "operation": "subtract",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  47,
-                  10
-                ],
-                "text": "4 7/10"
-              },
-              {
-                "type": "decimal",
-                "value": 7.9,
-                "text": "7.9"
-              }
-            ]
-          },
-          {
-            "type": "common",
-            "value": [
-              47,
-              10
-            ],
-            "text": "4 7/10"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "3.1"
-    }
-  },
-  {
-    "id": "6_mf_mixed_types_operations_329eb3",
-    "task_number": 6,
-    "subtype": "mixed_fractions",
-    "pattern": "mf_mixed_types_operations",
-    "question_text": "Найди результат вычислений:\n2.1 − 7.2 : 3 1/8\n\nОтвет: ____________",
-    "answer": "-0.2",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "subtract",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 2.1,
-            "text": "2.1"
-          },
-          {
-            "operation": "divide",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 7.2,
-                "text": "7.2"
-              },
-              {
-                "type": "common",
-                "value": [
-                  25,
-                  8
-                ],
-                "text": "3 1/8"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "3.1"
-    }
-  },
-  {
-    "id": "6_mf_mixed_types_operations_ee153d",
-    "task_number": 6,
-    "subtype": "mixed_fractions",
-    "pattern": "mf_mixed_types_operations",
-    "question_text": "Найди результат вычислений:\n6.7 − 1.1 : 2 1/2\n\nОтвет: ____________",
-    "answer": "6.26",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "subtract",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 6.7,
-            "text": "6.7"
-          },
-          {
-            "operation": "divide",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 1.1,
-                "text": "1.1"
-              },
-              {
-                "type": "common",
-                "value": [
-                  5,
-                  2
-                ],
-                "text": "2 1/2"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "3.1"
-    }
-  },
-  {
-    "id": "6_mf_mixed_types_operations_b541ca",
-    "task_number": 6,
-    "subtype": "mixed_fractions",
-    "pattern": "mf_mixed_types_operations",
-    "question_text": "Вычисли выражение:\n(1 5/25 − 1.3) · 1 5/25\n\nОтвет: ____________",
-    "answer": "-0.12",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "multiply",
-        "operands": [
-          {
-            "operation": "subtract",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  30,
-                  25
-                ],
-                "text": "1 5/25"
-              },
-              {
-                "type": "decimal",
-                "value": 1.3,
-                "text": "1.3"
-              }
-            ]
-          },
-          {
-            "type": "common",
-            "value": [
-              30,
-              25
-            ],
-            "text": "1 5/25"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "3.1"
-    }
-  },
-  {
-    "id": "6_mf_mixed_types_operations_b47b76",
-    "task_number": 6,
-    "subtype": "mixed_fractions",
-    "pattern": "mf_mixed_types_operations",
-    "question_text": "Вычисли выражение:\n(2 1/2 − 5.3) · 2 1/2\n\nОтвет: ____________",
-    "answer": "-7",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "multiply",
-        "operands": [
-          {
-            "operation": "subtract",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  5,
-                  2
-                ],
-                "text": "2 1/2"
-              },
-              {
-                "type": "decimal",
-                "value": 5.3,
-                "text": "5.3"
-              }
-            ]
-          },
-          {
-            "type": "common",
-            "value": [
-              5,
-              2
-            ],
-            "text": "2 1/2"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "3.1"
-    }
-  },
-  {
-    "id": "6_mf_mixed_types_operations_6a5723",
-    "task_number": 6,
-    "subtype": "mixed_fractions",
-    "pattern": "mf_mixed_types_operations",
-    "question_text": "Вычисли выражение:\n(3 2/4 − 7.9) · 3 2/4\n\nОтвет: ____________",
-    "answer": "-15.4",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "multiply",
-        "operands": [
-          {
-            "operation": "subtract",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  14,
-                  4
-                ],
-                "text": "3 2/4"
-              },
-              {
-                "type": "decimal",
-                "value": 7.9,
-                "text": "7.9"
-              }
-            ]
-          },
-          {
-            "type": "common",
-            "value": [
-              14,
-              4
-            ],
-            "text": "3 2/4"
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "3.1"
-    }
-  },
-  {
-    "id": "6_mf_mixed_types_operations_b3bfc8",
-    "task_number": 6,
-    "subtype": "mixed_fractions",
-    "pattern": "mf_mixed_types_operations",
-    "question_text": "Найди результат вычислений:\n2.4 − 6.6 : 1 7/8\n\nОтвет: ____________",
-    "answer": "-1.12",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "subtract",
-        "operands": [
-          {
-            "type": "decimal",
-            "value": 2.4,
-            "text": "2.4"
-          },
-          {
-            "operation": "divide",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 6.6,
-                "text": "6.6"
-              },
-              {
-                "type": "common",
-                "value": [
-                  15,
-                  8
-                ],
-                "text": "1 7/8"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "3.1"
-    }
-  },
-  {
-    "id": "6_p_powers_of_ten_d6c7b8",
-    "task_number": 6,
-    "subtype": "powers",
-    "pattern": "p_powers_of_ten",
-    "question_text": "Вычисли выражение:\n(9 ⋅ 10)³ ⋅ (2 ⋅ 10⁻²)\n\nОтвет: ____________",
-    "answer": "14580",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "multiply",
-        "operands": [
-          {
-            "operation": "power",
-            "operands": [
-              {
-                "operation": "multiply",
-                "operands": [
-                  {
-                    "type": "decimal",
-                    "value": 9.0,
-                    "text": "9"
-                  },
-                  {
-                    "operation": "power",
+{
+    "tasks": [
+        {
+            "id": "6_cf_addition_subtraction_puzb2n",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "cf_addition_subtraction",
+            "question_text": "Выполни вычисления:\n7/15 + 5/12\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
+            "answer": "60",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "add",
                     "operands": [
-                      {
-                        "type": "decimal",
-                        "value": 10.0,
-                        "text": "10"
-                      },
-                      {
-                        "type": "decimal",
-                        "value": 1.0,
-                        "text": "1"
-                      }
+                        {
+                            "type": "common",
+                            "value": [
+                                7,
+                                15
+                            ],
+                            "text": "7/15"
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                5,
+                                12
+                            ],
+                            "text": "5/12"
+                        }
                     ]
-                  }
-                ]
-              },
-              {
-                "type": "decimal",
-                "value": 3.0,
-                "text": "3"
-              }
-            ]
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 2.0,
-                "text": "2"
-              },
-              {
-                "operation": "power",
-                "operands": [
-                  {
-                    "type": "decimal",
-                    "value": 10.0,
-                    "text": "10"
-                  },
-                  {
-                    "type": "decimal",
-                    "value": -2.0,
-                    "text": "-2"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "4.2"
-    }
-  },
-  {
-    "id": "6_p_powers_of_ten_6b4ac1",
-    "task_number": 6,
-    "subtype": "powers",
-    "pattern": "p_powers_of_ten",
-    "question_text": "Вычисли выражение:\n(2 ⋅ 10²)² ⋅ (8 ⋅ 10⁻¹)\n\nОтвет: ____________",
-    "answer": "32000",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "multiply",
-        "operands": [
-          {
-            "operation": "power",
-            "operands": [
-              {
-                "operation": "multiply",
-                "operands": [
-                  {
-                    "type": "decimal",
-                    "value": 2.0,
-                    "text": "2"
-                  },
-                  {
-                    "operation": "power",
+                }
+            },
+            "meta": {
+                "difficulty": "medium",
+                "pattern_id": "cf_addition_subtraction"
+            }
+        },
+        {
+            "id": "6_cf_addition_subtraction_evuw26",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "cf_addition_subtraction",
+            "question_text": "Выполни вычисления:\n9/20 - 3/8\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
+            "answer": "40",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "subtract",
                     "operands": [
-                      {
-                        "type": "decimal",
-                        "value": 10.0,
-                        "text": "10"
-                      },
-                      {
-                        "type": "decimal",
-                        "value": 2.0,
-                        "text": "2"
-                      }
+                        {
+                            "type": "common",
+                            "value": [
+                                9,
+                                20
+                            ],
+                            "text": "9/20"
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                3,
+                                8
+                            ],
+                            "text": "3/8"
+                        }
                     ]
-                  }
-                ]
-              },
-              {
-                "type": "decimal",
-                "value": 2.0,
-                "text": "2"
-              }
-            ]
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 8.0,
-                "text": "8"
-              },
-              {
-                "operation": "power",
-                "operands": [
-                  {
-                    "type": "decimal",
-                    "value": 10.0,
-                    "text": "10"
-                  },
-                  {
-                    "type": "decimal",
-                    "value": -1.0,
-                    "text": "-1"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "4.2"
-    }
-  },
-  {
-    "id": "6_p_powers_with_fractions_fef783",
-    "task_number": 6,
-    "subtype": "powers",
-    "pattern": "p_powers_with_fractions",
-    "question_text": "Вычисли значение выражения:\n3 ⋅ (7/10)² + 11 ⋅ 7/10\n\nОтвет: ____________",
-    "answer": "9.17",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "add",
-        "operands": [
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  3,
-                  1
-                ],
-                "text": "3"
-              },
-              {
-                "operation": "power",
-                "operands": [
-                  {
-                    "type": "common",
-                    "value": [
-                      7,
-                      10
-                    ],
-                    "text": "7/10"
-                  },
-                  {
-                    "type": "common",
-                    "value": [
-                      2,
-                      1
-                    ],
-                    "text": "2"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  11,
-                  1
-                ],
-                "text": "11"
-              },
-              {
-                "type": "common",
-                "value": [
-                  7,
-                  10
-                ],
-                "text": "7/10"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "medium",
-      "pattern_id": "4.1"
-    }
-  },
-  {
-    "id": "6_p_powers_with_fractions_be1a8c",
-    "task_number": 6,
-    "subtype": "powers",
-    "pattern": "p_powers_with_fractions",
-    "question_text": "Вычисли значение выражения:\n20 ⋅ (3/10)² + 1 ⋅ 3/10\n\nОтвет: ____________",
-    "answer": "2.1",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "add",
-        "operands": [
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  20,
-                  1
-                ],
-                "text": "20"
-              },
-              {
-                "operation": "power",
-                "operands": [
-                  {
-                    "type": "common",
-                    "value": [
-                      3,
-                      10
-                    ],
-                    "text": "3/10"
-                  },
-                  {
-                    "type": "common",
-                    "value": [
-                      2,
-                      1
-                    ],
-                    "text": "2"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  1,
-                  1
-                ],
-                "text": "1"
-              },
-              {
-                "type": "common",
-                "value": [
-                  3,
-                  10
-                ],
-                "text": "3/10"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "medium",
-      "pattern_id": "4.1"
-    }
-  },
-  {
-    "id": "6_p_powers_of_ten_c5fc00",
-    "task_number": 6,
-    "subtype": "powers",
-    "pattern": "p_powers_of_ten",
-    "question_text": "Вычисли выражение:\n(5 ⋅ 10³)² ⋅ (4 ⋅ 10⁻⁶)\n\nОтвет: ____________",
-    "answer": "100",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "multiply",
-        "operands": [
-          {
-            "operation": "power",
-            "operands": [
-              {
-                "operation": "multiply",
-                "operands": [
-                  {
-                    "type": "decimal",
-                    "value": 5.0,
-                    "text": "5"
-                  },
-                  {
-                    "operation": "power",
+                }
+            },
+            "meta": {
+                "difficulty": "medium",
+                "pattern_id": "cf_addition_subtraction"
+            }
+        },
+        {
+            "id": "6_cf_addition_subtraction_yo55dn",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "cf_addition_subtraction",
+            "question_text": "Выполни вычисления:\n5/14 + 8/21\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
+            "answer": "42",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "add",
                     "operands": [
-                      {
-                        "type": "decimal",
-                        "value": 10.0,
-                        "text": "10"
-                      },
-                      {
-                        "type": "decimal",
-                        "value": 3.0,
-                        "text": "3"
-                      }
+                        {
+                            "type": "common",
+                            "value": [
+                                5,
+                                14
+                            ],
+                            "text": "5/14"
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                8,
+                                21
+                            ],
+                            "text": "8/21"
+                        }
                     ]
-                  }
-                ]
-              },
-              {
-                "type": "decimal",
-                "value": 2.0,
-                "text": "2"
-              }
-            ]
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 4.0,
-                "text": "4"
-              },
-              {
-                "operation": "power",
-                "operands": [
-                  {
-                    "type": "decimal",
-                    "value": 10.0,
-                    "text": "10"
-                  },
-                  {
-                    "type": "decimal",
-                    "value": -6.0,
-                    "text": "-6"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "4.2"
-    }
-  },
-  {
-    "id": "6_p_powers_with_fractions_c16413",
-    "task_number": 6,
-    "subtype": "powers",
-    "pattern": "p_powers_with_fractions",
-    "question_text": "Вычисли значение выражения:\n20 ⋅ (1/4)² - 3 ⋅ 1/4\n\nОтвет: ____________",
-    "answer": "0.5",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "subtract",
-        "operands": [
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  20,
-                  1
-                ],
-                "text": "20"
-              },
-              {
-                "operation": "power",
-                "operands": [
-                  {
-                    "type": "common",
-                    "value": [
-                      1,
-                      4
-                    ],
-                    "text": "1/4"
-                  },
-                  {
-                    "type": "common",
-                    "value": [
-                      2,
-                      1
-                    ],
-                    "text": "2"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  3,
-                  1
-                ],
-                "text": "3"
-              },
-              {
-                "type": "common",
-                "value": [
-                  1,
-                  4
-                ],
-                "text": "1/4"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "medium",
-      "pattern_id": "4.1"
-    }
-  },
-  {
-    "id": "6_p_powers_with_fractions_1e531d",
-    "task_number": 6,
-    "subtype": "powers",
-    "pattern": "p_powers_with_fractions",
-    "question_text": "Вычисли значение выражения:\n25 ⋅ (5/10)² + 17 ⋅ 5/10\n\nОтвет: ____________",
-    "answer": "14.75",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "add",
-        "operands": [
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  25,
-                  1
-                ],
-                "text": "25"
-              },
-              {
-                "operation": "power",
-                "operands": [
-                  {
-                    "type": "common",
-                    "value": [
-                      5,
-                      10
-                    ],
-                    "text": "5/10"
-                  },
-                  {
-                    "type": "common",
-                    "value": [
-                      2,
-                      1
-                    ],
-                    "text": "2"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  17,
-                  1
-                ],
-                "text": "17"
-              },
-              {
-                "type": "common",
-                "value": [
-                  5,
-                  10
-                ],
-                "text": "5/10"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "medium",
-      "pattern_id": "4.1"
-    }
-  },
-  {
-    "id": "6_p_powers_of_ten_99b91c",
-    "task_number": 6,
-    "subtype": "powers",
-    "pattern": "p_powers_of_ten",
-    "question_text": "Вычисли выражение:\n(3 ⋅ 10³)³ ⋅ (2 ⋅ 10⁻⁶)\n\nОтвет: ____________",
-    "answer": "54000",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "multiply",
-        "operands": [
-          {
-            "operation": "power",
-            "operands": [
-              {
-                "operation": "multiply",
-                "operands": [
-                  {
-                    "type": "decimal",
-                    "value": 3.0,
-                    "text": "3"
-                  },
-                  {
-                    "operation": "power",
+                }
+            },
+            "meta": {
+                "difficulty": "medium",
+                "pattern_id": "cf_addition_subtraction"
+            }
+        },
+        {
+            "id": "6_cf_addition_subtraction_bxi5a2",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "cf_addition_subtraction",
+            "question_text": "Выполни вычисления:\n11/18 - 4/27\n\nПолучи несократимую дробь и в ответ запиши только числитель этой дроби.",
+            "answer": "25",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "subtract",
                     "operands": [
-                      {
-                        "type": "decimal",
-                        "value": 10.0,
-                        "text": "10"
-                      },
-                      {
-                        "type": "decimal",
-                        "value": 3.0,
-                        "text": "3"
-                      }
+                        {
+                            "type": "common",
+                            "value": [
+                                11,
+                                18
+                            ],
+                            "text": "11/18"
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                4,
+                                27
+                            ],
+                            "text": "4/27"
+                        }
                     ]
-                  }
-                ]
-              },
-              {
-                "type": "decimal",
-                "value": 3.0,
-                "text": "3"
-              }
-            ]
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 2.0,
-                "text": "2"
-              },
-              {
-                "operation": "power",
-                "operands": [
-                  {
-                    "type": "decimal",
-                    "value": 10.0,
-                    "text": "10"
-                  },
-                  {
-                    "type": "decimal",
-                    "value": -6.0,
-                    "text": "-6"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "4.2"
-    }
-  },
-  {
-    "id": "6_p_powers_with_fractions_21c9b4",
-    "task_number": 6,
-    "subtype": "powers",
-    "pattern": "p_powers_with_fractions",
-    "question_text": "Вычисли значение выражения:\n4 ⋅ (1/5)² - 21 ⋅ 1/5\n\nОтвет: ____________",
-    "answer": "-4.04",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "subtract",
-        "operands": [
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  4,
-                  1
-                ],
-                "text": "4"
-              },
-              {
-                "operation": "power",
-                "operands": [
-                  {
-                    "type": "common",
-                    "value": [
-                      1,
-                      5
-                    ],
-                    "text": "1/5"
-                  },
-                  {
-                    "type": "common",
-                    "value": [
-                      2,
-                      1
-                    ],
-                    "text": "2"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  21,
-                  1
-                ],
-                "text": "21"
-              },
-              {
-                "type": "common",
-                "value": [
-                  1,
-                  5
-                ],
-                "text": "1/5"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "medium",
-      "pattern_id": "4.1"
-    }
-  },
-  {
-    "id": "6_p_powers_of_ten_2d8988",
-    "task_number": 6,
-    "subtype": "powers",
-    "pattern": "p_powers_of_ten",
-    "question_text": "Вычисли выражение:\n(2 ⋅ 10)² ⋅ (4 ⋅ 10⁻⁴)\n\nОтвет: ____________",
-    "answer": "0.16",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "multiply",
-        "operands": [
-          {
-            "operation": "power",
-            "operands": [
-              {
-                "operation": "multiply",
-                "operands": [
-                  {
-                    "type": "decimal",
-                    "value": 2.0,
-                    "text": "2"
-                  },
-                  {
-                    "operation": "power",
+                }
+            },
+            "meta": {
+                "difficulty": "medium",
+                "pattern_id": "cf_addition_subtraction"
+            }
+        },
+        {
+            "id": "6_cf_addition_subtraction_tctzcv",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "cf_addition_subtraction",
+            "question_text": "Выполни вычисления:\n13/24 - 5/16\n\nПолучи несократимую дробь и в ответ запиши только числитель этой дроби.",
+            "answer": "11",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "subtract",
                     "operands": [
-                      {
-                        "type": "decimal",
-                        "value": 10.0,
-                        "text": "10"
-                      },
-                      {
-                        "type": "decimal",
-                        "value": 1.0,
-                        "text": "1"
-                      }
+                        {
+                            "type": "common",
+                            "value": [
+                                13,
+                                24
+                            ],
+                            "text": "13/24"
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                5,
+                                16
+                            ],
+                            "text": "5/16"
+                        }
                     ]
-                  }
-                ]
-              },
-              {
-                "type": "decimal",
-                "value": 2.0,
-                "text": "2"
-              }
-            ]
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 4.0,
-                "text": "4"
-              },
-              {
-                "operation": "power",
-                "operands": [
-                  {
-                    "type": "decimal",
-                    "value": 10.0,
-                    "text": "10"
-                  },
-                  {
-                    "type": "decimal",
-                    "value": -4.0,
-                    "text": "-4"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "4.2"
-    }
-  },
-  {
-    "id": "6_p_powers_with_fractions_fc6f91",
-    "task_number": 6,
-    "subtype": "powers",
-    "pattern": "p_powers_with_fractions",
-    "question_text": "Вычисли значение выражения:\n12 ⋅ (1/2)² - 14 ⋅ 1/2\n\nОтвет: ____________",
-    "answer": "-4",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "subtract",
-        "operands": [
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  12,
-                  1
-                ],
-                "text": "12"
-              },
-              {
-                "operation": "power",
-                "operands": [
-                  {
-                    "type": "common",
-                    "value": [
-                      1,
-                      2
-                    ],
-                    "text": "1/2"
-                  },
-                  {
-                    "type": "common",
-                    "value": [
-                      2,
-                      1
-                    ],
-                    "text": "2"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  14,
-                  1
-                ],
-                "text": "14"
-              },
-              {
-                "type": "common",
-                "value": [
-                  1,
-                  2
-                ],
-                "text": "1/2"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "medium",
-      "pattern_id": "4.1"
-    }
-  },
-  {
-    "id": "6_p_powers_with_fractions_2331ce",
-    "task_number": 6,
-    "subtype": "powers",
-    "pattern": "p_powers_with_fractions",
-    "question_text": "Вычисли значение выражения:\n5 ⋅ (1/10)² - 9 ⋅ 1/10\n\nОтвет: ____________",
-    "answer": "-0.85",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "subtract",
-        "operands": [
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  5,
-                  1
-                ],
-                "text": "5"
-              },
-              {
-                "operation": "power",
-                "operands": [
-                  {
-                    "type": "common",
-                    "value": [
-                      1,
-                      10
-                    ],
-                    "text": "1/10"
-                  },
-                  {
-                    "type": "common",
-                    "value": [
-                      2,
-                      1
-                    ],
-                    "text": "2"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  9,
-                  1
-                ],
-                "text": "9"
-              },
-              {
-                "type": "common",
-                "value": [
-                  1,
-                  10
-                ],
-                "text": "1/10"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "medium",
-      "pattern_id": "4.1"
-    }
-  },
-  {
-    "id": "6_p_powers_of_ten_d6d601",
-    "task_number": 6,
-    "subtype": "powers",
-    "pattern": "p_powers_of_ten",
-    "question_text": "Вычисли выражение:\n(6 ⋅ 10²)³ ⋅ (7 ⋅ 10⁻⁶)\n\nОтвет: ____________",
-    "answer": "1512",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "multiply",
-        "operands": [
-          {
-            "operation": "power",
-            "operands": [
-              {
-                "operation": "multiply",
-                "operands": [
-                  {
-                    "type": "decimal",
-                    "value": 6.0,
-                    "text": "6"
-                  },
-                  {
-                    "operation": "power",
+                }
+            },
+            "meta": {
+                "difficulty": "medium",
+                "pattern_id": "cf_addition_subtraction"
+            }
+        },
+        {
+            "id": "6_cf_addition_subtraction_m150gv",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "cf_addition_subtraction",
+            "question_text": "Выполни вычисления:\n4/25 + 7/10\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
+            "answer": "50",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "add",
                     "operands": [
-                      {
-                        "type": "decimal",
-                        "value": 10.0,
-                        "text": "10"
-                      },
-                      {
-                        "type": "decimal",
-                        "value": 2.0,
-                        "text": "2"
-                      }
+                        {
+                            "type": "common",
+                            "value": [
+                                4,
+                                25
+                            ],
+                            "text": "4/25"
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                7,
+                                10
+                            ],
+                            "text": "7/10"
+                        }
                     ]
-                  }
-                ]
-              },
-              {
-                "type": "decimal",
-                "value": 3.0,
-                "text": "3"
-              }
-            ]
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 7.0,
-                "text": "7"
-              },
-              {
-                "operation": "power",
-                "operands": [
-                  {
-                    "type": "decimal",
-                    "value": 10.0,
-                    "text": "10"
-                  },
-                  {
-                    "type": "decimal",
-                    "value": -6.0,
-                    "text": "-6"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "4.2"
-    }
-  },
-  {
-    "id": "6_p_powers_of_ten_c135a5",
-    "task_number": 6,
-    "subtype": "powers",
-    "pattern": "p_powers_of_ten",
-    "question_text": "Вычисли выражение:\n(5 ⋅ 10³)² ⋅ (5 ⋅ 10⁻⁶)\n\nОтвет: ____________",
-    "answer": "125",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "multiply",
-        "operands": [
-          {
-            "operation": "power",
-            "operands": [
-              {
-                "operation": "multiply",
-                "operands": [
-                  {
-                    "type": "decimal",
-                    "value": 5.0,
-                    "text": "5"
-                  },
-                  {
-                    "operation": "power",
+                }
+            },
+            "meta": {
+                "difficulty": "medium",
+                "pattern_id": "cf_addition_subtraction"
+            }
+        },
+        {
+            "id": "6_cf_addition_subtraction_icmoms",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "cf_addition_subtraction",
+            "question_text": "Выполни вычисления:\n19/30 - 5/12\n\nПолучи несократимую дробь и в ответ запиши только числитель этой дроби.",
+            "answer": "13",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "subtract",
                     "operands": [
-                      {
-                        "type": "decimal",
-                        "value": 10.0,
-                        "text": "10"
-                      },
-                      {
-                        "type": "decimal",
-                        "value": 3.0,
-                        "text": "3"
-                      }
+                        {
+                            "type": "common",
+                            "value": [
+                                19,
+                                30
+                            ],
+                            "text": "19/30"
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                5,
+                                12
+                            ],
+                            "text": "5/12"
+                        }
                     ]
-                  }
-                ]
-              },
-              {
-                "type": "decimal",
-                "value": 2.0,
-                "text": "2"
-              }
-            ]
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 5.0,
-                "text": "5"
-              },
-              {
-                "operation": "power",
-                "operands": [
-                  {
-                    "type": "decimal",
-                    "value": 10.0,
-                    "text": "10"
-                  },
-                  {
-                    "type": "decimal",
-                    "value": -6.0,
-                    "text": "-6"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "4.2"
-    }
-  },
-  {
-    "id": "6_p_powers_of_ten_c4b81a",
-    "task_number": 6,
-    "subtype": "powers",
-    "pattern": "p_powers_of_ten",
-    "question_text": "Вычисли выражение:\n(9 ⋅ 10)³ ⋅ (9 ⋅ 10⁻²)\n\nОтвет: ____________",
-    "answer": "65610",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "multiply",
-        "operands": [
-          {
-            "operation": "power",
-            "operands": [
-              {
-                "operation": "multiply",
-                "operands": [
-                  {
-                    "type": "decimal",
-                    "value": 9.0,
-                    "text": "9"
-                  },
-                  {
-                    "operation": "power",
+                }
+            },
+            "meta": {
+                "difficulty": "medium",
+                "pattern_id": "cf_addition_subtraction"
+            }
+        },
+        {
+            "id": "6_cf_addition_subtraction_7skdb1",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "cf_addition_subtraction",
+            "question_text": "Выполни вычисления:\n8/9 - 5/12\n\nПолучи несократимую дробь и в ответ запиши только числитель этой дроби.",
+            "answer": "17",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "subtract",
                     "operands": [
-                      {
-                        "type": "decimal",
-                        "value": 10.0,
-                        "text": "10"
-                      },
-                      {
-                        "type": "decimal",
-                        "value": 1.0,
-                        "text": "1"
-                      }
+                        {
+                            "type": "common",
+                            "value": [
+                                8,
+                                9
+                            ],
+                            "text": "8/9"
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                5,
+                                12
+                            ],
+                            "text": "5/12"
+                        }
                     ]
-                  }
-                ]
-              },
-              {
-                "type": "decimal",
-                "value": 3.0,
-                "text": "3"
-              }
-            ]
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 9.0,
-                "text": "9"
-              },
-              {
-                "operation": "power",
-                "operands": [
-                  {
-                    "type": "decimal",
-                    "value": 10.0,
-                    "text": "10"
-                  },
-                  {
-                    "type": "decimal",
-                    "value": -2.0,
-                    "text": "-2"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "4.2"
-    }
-  },
-  {
-    "id": "6_p_powers_of_ten_82280b",
-    "task_number": 6,
-    "subtype": "powers",
-    "pattern": "p_powers_of_ten",
-    "question_text": "Вычисли выражение:\n(7 ⋅ 10)² ⋅ (4 ⋅ 10⁻²)\n\nОтвет: ____________",
-    "answer": "196",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "multiply",
-        "operands": [
-          {
-            "operation": "power",
-            "operands": [
-              {
-                "operation": "multiply",
-                "operands": [
-                  {
-                    "type": "decimal",
-                    "value": 7.0,
-                    "text": "7"
-                  },
-                  {
-                    "operation": "power",
+                }
+            },
+            "meta": {
+                "difficulty": "medium",
+                "pattern_id": "cf_addition_subtraction"
+            }
+        },
+        {
+            "id": "6_cf_addition_subtraction_ql0dj3",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "cf_addition_subtraction",
+            "question_text": "Выполни вычисления:\n7/16 + 9/20\n\nПолучи несократимую дробь и в ответ запиши только числитель этой дроби.",
+            "answer": "71",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "add",
                     "operands": [
-                      {
-                        "type": "decimal",
-                        "value": 10.0,
-                        "text": "10"
-                      },
-                      {
-                        "type": "decimal",
-                        "value": 1.0,
-                        "text": "1"
-                      }
+                        {
+                            "type": "common",
+                            "value": [
+                                7,
+                                16
+                            ],
+                            "text": "7/16"
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                9,
+                                20
+                            ],
+                            "text": "9/20"
+                        }
                     ]
-                  }
-                ]
-              },
-              {
-                "type": "decimal",
-                "value": 2.0,
-                "text": "2"
-              }
-            ]
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 4.0,
-                "text": "4"
-              },
-              {
-                "operation": "power",
-                "operands": [
-                  {
-                    "type": "decimal",
-                    "value": 10.0,
-                    "text": "10"
-                  },
-                  {
-                    "type": "decimal",
-                    "value": -2.0,
-                    "text": "-2"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "4.2"
-    }
-  },
-  {
-    "id": "6_p_powers_of_ten_71e568",
-    "task_number": 6,
-    "subtype": "powers",
-    "pattern": "p_powers_of_ten",
-    "question_text": "Вычисли выражение:\n(8 ⋅ 10²)³ ⋅ (7 ⋅ 10⁻⁶)\n\nОтвет: ____________",
-    "answer": "3584",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "multiply",
-        "operands": [
-          {
-            "operation": "power",
-            "operands": [
-              {
-                "operation": "multiply",
-                "operands": [
-                  {
-                    "type": "decimal",
-                    "value": 8.0,
-                    "text": "8"
-                  },
-                  {
-                    "operation": "power",
+                }
+            },
+            "meta": {
+                "difficulty": "medium",
+                "pattern_id": "cf_addition_subtraction"
+            }
+        },
+        {
+            "id": "6_cf_addition_subtraction_law4mm",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "cf_addition_subtraction",
+            "question_text": "Выполни вычисления:\n20/21 - 3/14\n\nПолучи несократимую дробь и в ответ запиши только числитель этой дроби.",
+            "answer": "31",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "subtract",
                     "operands": [
-                      {
-                        "type": "decimal",
-                        "value": 10.0,
-                        "text": "10"
-                      },
-                      {
-                        "type": "decimal",
-                        "value": 2.0,
-                        "text": "2"
-                      }
+                        {
+                            "type": "common",
+                            "value": [
+                                20,
+                                21
+                            ],
+                            "text": "20/21"
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                3,
+                                14
+                            ],
+                            "text": "3/14"
+                        }
                     ]
-                  }
-                ]
-              },
-              {
-                "type": "decimal",
-                "value": 3.0,
-                "text": "3"
-              }
-            ]
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 7.0,
-                "text": "7"
-              },
-              {
-                "operation": "power",
-                "operands": [
-                  {
-                    "type": "decimal",
-                    "value": 10.0,
-                    "text": "10"
-                  },
-                  {
-                    "type": "decimal",
-                    "value": -6.0,
-                    "text": "-6"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "4.2"
-    }
-  },
-  {
-    "id": "6_p_powers_of_ten_f47fc5",
-    "task_number": 6,
-    "subtype": "powers",
-    "pattern": "p_powers_of_ten",
-    "question_text": "Вычисли выражение:\n(6 ⋅ 10²)² ⋅ (7 ⋅ 10⁻⁵)\n\nОтвет: ____________",
-    "answer": "25.2",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "multiply",
-        "operands": [
-          {
-            "operation": "power",
-            "operands": [
-              {
-                "operation": "multiply",
-                "operands": [
-                  {
-                    "type": "decimal",
-                    "value": 6.0,
-                    "text": "6"
-                  },
-                  {
-                    "operation": "power",
+                }
+            },
+            "meta": {
+                "difficulty": "medium",
+                "pattern_id": "cf_addition_subtraction"
+            }
+        },
+        {
+            "id": "6_multiplication_division_ioq1uw",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "multiplication_division",
+            "question_text": "Выполни вычисления и запиши ответ:\n2 1/7 · 2 1/3\n\nОтвет: ____________",
+            "answer": "5",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "multiply",
                     "operands": [
-                      {
-                        "type": "decimal",
-                        "value": 10.0,
-                        "text": "10"
-                      },
-                      {
-                        "type": "decimal",
-                        "value": 2.0,
-                        "text": "2"
-                      }
+                        {
+                            "type": "common",
+                            "value": [
+                                15,
+                                7
+                            ],
+                            "text": "2 1/7"
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                7,
+                                3
+                            ],
+                            "text": "2 1/3"
+                        }
                     ]
-                  }
-                ]
-              },
-              {
-                "type": "decimal",
-                "value": 2.0,
-                "text": "2"
-              }
-            ]
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "decimal",
-                "value": 7.0,
-                "text": "7"
-              },
-              {
-                "operation": "power",
-                "operands": [
-                  {
-                    "type": "decimal",
-                    "value": 10.0,
-                    "text": "10"
-                  },
-                  {
-                    "type": "decimal",
-                    "value": -5.0,
-                    "text": "-5"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "hard",
-      "pattern_id": "4.2"
-    }
-  },
-  {
-    "id": "6_p_powers_with_fractions_54cdba",
-    "task_number": 6,
-    "subtype": "powers",
-    "pattern": "p_powers_with_fractions",
-    "question_text": "Вычисли значение выражения:\n13 ⋅ (1/10)² + 15 ⋅ 1/10\n\nОтвет: ____________",
-    "answer": "1.63",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "add",
-        "operands": [
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  13,
-                  1
-                ],
-                "text": "13"
-              },
-              {
-                "operation": "power",
-                "operands": [
-                  {
-                    "type": "common",
-                    "value": [
-                      1,
-                      10
-                    ],
-                    "text": "1/10"
-                  },
-                  {
-                    "type": "common",
-                    "value": [
-                      2,
-                      1
-                    ],
-                    "text": "2"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  15,
-                  1
-                ],
-                "text": "15"
-              },
-              {
-                "type": "common",
-                "value": [
-                  1,
-                  10
-                ],
-                "text": "1/10"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "medium",
-      "pattern_id": "4.1"
-    }
-  },
-  {
-    "id": "6_p_powers_with_fractions_84ab00",
-    "task_number": 6,
-    "subtype": "powers",
-    "pattern": "p_powers_with_fractions",
-    "question_text": "Вычисли значение выражения:\n12 ⋅ (2/4)² - 11 ⋅ 2/4\n\nОтвет: ____________",
-    "answer": "-2.5",
-    "answer_type": "decimal",
-    "variables": {
-      "expression_tree": {
-        "operation": "subtract",
-        "operands": [
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  12,
-                  1
-                ],
-                "text": "12"
-              },
-              {
-                "operation": "power",
-                "operands": [
-                  {
-                    "type": "common",
-                    "value": [
-                      2,
-                      4
-                    ],
-                    "text": "2/4"
-                  },
-                  {
-                    "type": "common",
-                    "value": [
-                      2,
-                      1
-                    ],
-                    "text": "2"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "operation": "multiply",
-            "operands": [
-              {
-                "type": "common",
-                "value": [
-                  11,
-                  1
-                ],
-                "text": "11"
-              },
-              {
-                "type": "common",
-                "value": [
-                  2,
-                  4
-                ],
-                "text": "2/4"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    "meta": {
-      "difficulty": "medium",
-      "pattern_id": "4.1"
-    }
-  }
-]
+                }
+            },
+            "meta": {
+                "difficulty": "medium",
+                "pattern_id": "multiplication_division"
+            }
+        },
+        {
+            "id": "6_multiplication_division_txowdt",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "multiplication_division",
+            "question_text": "Выполни вычисления и запиши ответ:\n2 2/5 : 1 1/5\n\nОтвет: ____________",
+            "answer": "2",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "divide",
+                    "operands": [
+                        {
+                            "type": "common",
+                            "value": [
+                                12,
+                                5
+                            ],
+                            "text": "2 2/5"
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                6,
+                                5
+                            ],
+                            "text": "1 1/5"
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "medium",
+                "pattern_id": "multiplication_division"
+            }
+        },
+        {
+            "id": "6_multiplication_division_vwfccp",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "multiplication_division",
+            "question_text": "Выполни вычисления и запиши ответ:\n3 1/8 · 2 2/5\n\nОтвет: ____________",
+            "answer": "7.5",
+            "answer_type": "decimal",
+            "variables": {
+                "expression_tree": {
+                    "operation": "multiply",
+                    "operands": [
+                        {
+                            "type": "common",
+                            "value": [
+                                25,
+                                8
+                            ],
+                            "text": "3 1/8"
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                12,
+                                5
+                            ],
+                            "text": "2 2/5"
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "medium",
+                "pattern_id": "multiplication_division"
+            }
+        },
+        {
+            "id": "6_multiplication_division_tgi3tm",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "multiplication_division",
+            "question_text": "Выполни вычисления и запиши ответ:\n4 1/6 : 1 2/3\n\nОтвет: ____________",
+            "answer": "2.5",
+            "answer_type": "decimal",
+            "variables": {
+                "expression_tree": {
+                    "operation": "divide",
+                    "operands": [
+                        {
+                            "type": "common",
+                            "value": [
+                                25,
+                                6
+                            ],
+                            "text": "4 1/6"
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                5,
+                                3
+                            ],
+                            "text": "1 2/3"
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "medium",
+                "pattern_id": "multiplication_division"
+            }
+        },
+        {
+            "id": "6_multiplication_division_2z9ip5",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "multiplication_division",
+            "question_text": "Выполни вычисления и запиши ответ:\n2 5/8 : 1 3/4\n\nОтвет: ____________",
+            "answer": "1.5",
+            "answer_type": "decimal",
+            "variables": {
+                "expression_tree": {
+                    "operation": "divide",
+                    "operands": [
+                        {
+                            "type": "common",
+                            "value": [
+                                21,
+                                8
+                            ],
+                            "text": "2 5/8"
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                7,
+                                4
+                            ],
+                            "text": "1 3/4"
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "medium",
+                "pattern_id": "multiplication_division"
+            }
+        },
+        {
+            "id": "6_multiplication_division_uti1tu",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "multiplication_division",
+            "question_text": "Выполни вычисления и запиши ответ:\n1 7/9 · 2 1/4\n\nОтвет: ____________",
+            "answer": "4",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "multiply",
+                    "operands": [
+                        {
+                            "type": "common",
+                            "value": [
+                                16,
+                                9
+                            ],
+                            "text": "1 7/9"
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                9,
+                                4
+                            ],
+                            "text": "2 1/4"
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "medium",
+                "pattern_id": "multiplication_division"
+            }
+        },
+        {
+            "id": "6_multiplication_division_1lmyxg",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "multiplication_division",
+            "question_text": "Выполни вычисления и запиши ответ:\n3 3/11 · 1 5/6\n\nОтвет: ____________",
+            "answer": "6",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "multiply",
+                    "operands": [
+                        {
+                            "type": "common",
+                            "value": [
+                                36,
+                                11
+                            ],
+                            "text": "3 3/11"
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                11,
+                                6
+                            ],
+                            "text": "1 5/6"
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "medium",
+                "pattern_id": "multiplication_division"
+            }
+        },
+        {
+            "id": "6_multiplication_division_c1nc2k",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "multiplication_division",
+            "question_text": "Выполни вычисления и запиши ответ:\n2 1/10 : 3 1/2\n\nОтвет: ____________",
+            "answer": "0.6",
+            "answer_type": "decimal",
+            "variables": {
+                "expression_tree": {
+                    "operation": "divide",
+                    "operands": [
+                        {
+                            "type": "common",
+                            "value": [
+                                21,
+                                10
+                            ],
+                            "text": "2 1/10"
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                7,
+                                2
+                            ],
+                            "text": "3 1/2"
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "medium",
+                "pattern_id": "multiplication_division"
+            }
+        },
+        {
+            "id": "6_multiplication_division_44avf6",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "multiplication_division",
+            "question_text": "Выполни вычисления и запиши ответ:\n1 11/14 · 2 4/5\n\nОтвет: ____________",
+            "answer": "5",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "multiply",
+                    "operands": [
+                        {
+                            "type": "common",
+                            "value": [
+                                25,
+                                14
+                            ],
+                            "text": "1 11/14"
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                14,
+                                5
+                            ],
+                            "text": "2 4/5"
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "medium",
+                "pattern_id": "multiplication_division"
+            }
+        },
+        {
+            "id": "6_multiplication_division_eynwz5",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "multiplication_division",
+            "question_text": "Выполни вычисления и запиши ответ:\n3 3/5 : 1 4/5\n\nОтвет: ____________",
+            "answer": "2",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "divide",
+                    "operands": [
+                        {
+                            "type": "common",
+                            "value": [
+                                18,
+                                5
+                            ],
+                            "text": "3 3/5"
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                9,
+                                5
+                            ],
+                            "text": "1 4/5"
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "medium",
+                "pattern_id": "multiplication_division"
+            }
+        },
+        {
+            "id": "6_parentheses_operations_pvq2ff",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "parentheses_operations",
+            "question_text": "Выполни вычисления и запиши ответ:\n(8/15 + 9/25) · 75\n\nОтвет: ____________",
+            "answer": "67",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "multiply",
+                    "operands": [
+                        {
+                            "operation": "add",
+                            "operands": [
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        8,
+                                        15
+                                    ],
+                                    "text": "8/15"
+                                },
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        9,
+                                        25
+                                    ],
+                                    "text": "9/25"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "integer",
+                            "value": 75,
+                            "text": "75"
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "hard",
+                "pattern_id": "parentheses_operations"
+            }
+        },
+        {
+            "id": "6_parentheses_operations_zj6351",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "parentheses_operations",
+            "question_text": "Выполни вычисления и запиши ответ:\n(11/12 - 13/18) : (7/36)\n\nОтвет: ____________",
+            "answer": "1",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "divide",
+                    "operands": [
+                        {
+                            "operation": "subtract",
+                            "operands": [
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        11,
+                                        12
+                                    ],
+                                    "text": "11/12"
+                                },
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        13,
+                                        18
+                                    ],
+                                    "text": "13/18"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                7,
+                                36
+                            ],
+                            "text": "7/36"
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "hard",
+                "pattern_id": "parentheses_operations"
+            }
+        },
+        {
+            "id": "6_parentheses_operations_h3tgfp",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "parentheses_operations",
+            "question_text": "Выполни вычисления и запиши ответ:\n2 1/4 : (1 1/2 - 3/5)\n\nОтвет: ____________",
+            "answer": "2.5",
+            "answer_type": "decimal",
+            "variables": {
+                "expression_tree": {
+                    "operation": "divide",
+                    "operands": [
+                        {
+                            "type": "common",
+                            "value": [
+                                9,
+                                4
+                            ],
+                            "text": "2 1/4"
+                        },
+                        {
+                            "operation": "subtract",
+                            "operands": [
+                                {
+                                    "operation": "add",
+                                    "operands": [
+                                        {
+                                            "type": "integer",
+                                            "value": 1,
+                                            "text": "1"
+                                        },
+                                        {
+                                            "type": "common",
+                                            "value": [
+                                                1,
+                                                2
+                                            ],
+                                            "text": "1/2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        3,
+                                        5
+                                    ],
+                                    "text": "3/5"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "hard",
+                "pattern_id": "parentheses_operations"
+            }
+        },
+        {
+            "id": "6_parentheses_operations_16jtg0",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "parentheses_operations",
+            "question_text": "Выполни вычисления и запиши ответ:\n(1 1/6 + 2 1/4) · 12\n\nОтвет: ____________",
+            "answer": "41",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "multiply",
+                    "operands": [
+                        {
+                            "operation": "add",
+                            "operands": [
+                                {
+                                    "operation": "add",
+                                    "operands": [
+                                        {
+                                            "operation": "add",
+                                            "operands": [
+                                                {
+                                                    "type": "integer",
+                                                    "value": 1,
+                                                    "text": "1"
+                                                },
+                                                {
+                                                    "type": "common",
+                                                    "value": [
+                                                        1,
+                                                        6
+                                                    ],
+                                                    "text": "1/6"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "integer",
+                                            "value": 2,
+                                            "text": "2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        1,
+                                        4
+                                    ],
+                                    "text": "1/4"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "integer",
+                            "value": 12,
+                            "text": "12"
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "hard",
+                "pattern_id": "parentheses_operations"
+            }
+        },
+        {
+            "id": "6_parentheses_operations_u2hiwf",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "parentheses_operations",
+            "question_text": "Выполни вычисления и запиши ответ:\n(4/5 - 1/2) : 3/20\n\nОтвет: ____________",
+            "answer": "0.005",
+            "answer_type": "decimal",
+            "variables": {
+                "expression_tree": {
+                    "operation": "divide",
+                    "operands": [
+                        {
+                            "operation": "subtract",
+                            "operands": [
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        4,
+                                        5
+                                    ],
+                                    "text": "4/5"
+                                },
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        1,
+                                        2
+                                    ],
+                                    "text": "1/2"
+                                }
+                            ]
+                        },
+                        {
+                            "operation": "multiply",
+                            "operands": [
+                                {
+                                    "type": "integer",
+                                    "value": 3,
+                                    "text": "3"
+                                },
+                                {
+                                    "type": "integer",
+                                    "value": 20,
+                                    "text": "20"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "hard",
+                "pattern_id": "parentheses_operations"
+            }
+        },
+        {
+            "id": "6_parentheses_operations_cocwh0",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "parentheses_operations",
+            "question_text": "Выполни вычисления и запиши ответ:\n1 4/11 · (3/4 + 5/8)\n\nОтвет: ____________",
+            "answer": "1.875",
+            "answer_type": "decimal",
+            "variables": {
+                "expression_tree": {
+                    "operation": "multiply",
+                    "operands": [
+                        {
+                            "type": "common",
+                            "value": [
+                                15,
+                                11
+                            ],
+                            "text": "1 4/11"
+                        },
+                        {
+                            "operation": "add",
+                            "operands": [
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        3,
+                                        4
+                                    ],
+                                    "text": "3/4"
+                                },
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        5,
+                                        8
+                                    ],
+                                    "text": "5/8"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "hard",
+                "pattern_id": "parentheses_operations"
+            }
+        },
+        {
+            "id": "6_parentheses_operations_6v9ju4",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "parentheses_operations",
+            "question_text": "Выполни вычисления и запиши ответ:\n(3 1/2 - 2 3/4) : 3\n\nОтвет: ____________",
+            "answer": "0.25",
+            "answer_type": "decimal",
+            "variables": {
+                "expression_tree": {
+                    "operation": "divide",
+                    "operands": [
+                        {
+                            "operation": "subtract",
+                            "operands": [
+                                {
+                                    "operation": "add",
+                                    "operands": [
+                                        {
+                                            "type": "integer",
+                                            "value": 3,
+                                            "text": "3"
+                                        },
+                                        {
+                                            "type": "common",
+                                            "value": [
+                                                1,
+                                                2
+                                            ],
+                                            "text": "1/2"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        11,
+                                        4
+                                    ],
+                                    "text": "2 3/4"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "integer",
+                            "value": 3,
+                            "text": "3"
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "hard",
+                "pattern_id": "parentheses_operations"
+            }
+        },
+        {
+            "id": "6_parentheses_operations_3599fq",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "parentheses_operations",
+            "question_text": "Выполни вычисления и запиши ответ:\n(2 1/3 - 1 1/2) · 6\n\nОтвет: ____________",
+            "answer": "5",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "multiply",
+                    "operands": [
+                        {
+                            "operation": "subtract",
+                            "operands": [
+                                {
+                                    "operation": "add",
+                                    "operands": [
+                                        {
+                                            "type": "integer",
+                                            "value": 2,
+                                            "text": "2"
+                                        },
+                                        {
+                                            "type": "common",
+                                            "value": [
+                                                1,
+                                                3
+                                            ],
+                                            "text": "1/3"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        3,
+                                        2
+                                    ],
+                                    "text": "1 1/2"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "integer",
+                            "value": 6,
+                            "text": "6"
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "hard",
+                "pattern_id": "parentheses_operations"
+            }
+        },
+        {
+            "id": "6_parentheses_operations_3ytyn7",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "parentheses_operations",
+            "question_text": "Выполни вычисления и запиши ответ:\n(1 1/4 - 2/5) · 10\n\nОтвет: ____________",
+            "answer": "8.5",
+            "answer_type": "decimal",
+            "variables": {
+                "expression_tree": {
+                    "operation": "multiply",
+                    "operands": [
+                        {
+                            "operation": "subtract",
+                            "operands": [
+                                {
+                                    "operation": "add",
+                                    "operands": [
+                                        {
+                                            "type": "integer",
+                                            "value": 1,
+                                            "text": "1"
+                                        },
+                                        {
+                                            "type": "common",
+                                            "value": [
+                                                1,
+                                                4
+                                            ],
+                                            "text": "1/4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        2,
+                                        5
+                                    ],
+                                    "text": "2/5"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "integer",
+                            "value": 10,
+                            "text": "10"
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "hard",
+                "pattern_id": "parentheses_operations"
+            }
+        },
+        {
+            "id": "6_parentheses_operations_t0nstd",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "parentheses_operations",
+            "question_text": "Выполни вычисления и запиши ответ:\n42 · (5/14 - 4/21)\n\nОтвет: ____________",
+            "answer": "7",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "multiply",
+                    "operands": [
+                        {
+                            "type": "integer",
+                            "value": 42,
+                            "text": "42"
+                        },
+                        {
+                            "operation": "subtract",
+                            "operands": [
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        5,
+                                        14
+                                    ],
+                                    "text": "5/14"
+                                },
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        4,
+                                        21
+                                    ],
+                                    "text": "4/21"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "hard",
+                "pattern_id": "parentheses_operations"
+            }
+        },
+        {
+            "id": "6_complex_fraction_5o0yub",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "complex_fraction",
+            "question_text": "Вычисли значение дроби:\n(1/12 + 1/16) / (7/24)\n\nОтвет: ____________",
+            "answer": "0.5",
+            "answer_type": "decimal",
+            "variables": {
+                "expression_tree": {
+                    "operation": "divide",
+                    "operands": [
+                        {
+                            "operation": "add",
+                            "operands": [
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        1,
+                                        12
+                                    ],
+                                    "text": "1/12"
+                                },
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        1,
+                                        16
+                                    ],
+                                    "text": "1/16"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                7,
+                                24
+                            ],
+                            "text": "7/24"
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "hard",
+                "pattern_id": "complex_fraction"
+            }
+        },
+        {
+            "id": "6_complex_fraction_9pjx93",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "complex_fraction",
+            "question_text": "Вычисли значение дроби:\n(1/10 - 1/25) / (3/50)\n\nОтвет: ____________",
+            "answer": "1",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "divide",
+                    "operands": [
+                        {
+                            "operation": "subtract",
+                            "operands": [
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        1,
+                                        10
+                                    ],
+                                    "text": "1/10"
+                                },
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        1,
+                                        25
+                                    ],
+                                    "text": "1/25"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                3,
+                                50
+                            ],
+                            "text": "3/50"
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "hard",
+                "pattern_id": "complex_fraction"
+            }
+        },
+        {
+            "id": "6_complex_fraction_bymo1c",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "complex_fraction",
+            "question_text": "Вычисли значение дроби:\n(1/20 + 1/15) / (7/60)\n\nОтвет: ____________",
+            "answer": "1",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "divide",
+                    "operands": [
+                        {
+                            "operation": "add",
+                            "operands": [
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        1,
+                                        20
+                                    ],
+                                    "text": "1/20"
+                                },
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        1,
+                                        15
+                                    ],
+                                    "text": "1/15"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                7,
+                                60
+                            ],
+                            "text": "7/60"
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "hard",
+                "pattern_id": "complex_fraction"
+            }
+        },
+        {
+            "id": "6_complex_fraction_c0saje",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "complex_fraction",
+            "question_text": "Вычисли значение дроби:\n(1/9 - 1/15) / (2/45)\n\nОтвет: ____________",
+            "answer": "1",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "divide",
+                    "operands": [
+                        {
+                            "operation": "subtract",
+                            "operands": [
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        1,
+                                        9
+                                    ],
+                                    "text": "1/9"
+                                },
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        1,
+                                        15
+                                    ],
+                                    "text": "1/15"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                2,
+                                45
+                            ],
+                            "text": "2/45"
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "hard",
+                "pattern_id": "complex_fraction"
+            }
+        },
+        {
+            "id": "6_complex_fraction_0pgx3a",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "complex_fraction",
+            "question_text": "Вычисли значение дроби:\n(1/14 + 1/21) / (5/42)\n\nОтвет: ____________",
+            "answer": "1",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "divide",
+                    "operands": [
+                        {
+                            "operation": "add",
+                            "operands": [
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        1,
+                                        14
+                                    ],
+                                    "text": "1/14"
+                                },
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        1,
+                                        21
+                                    ],
+                                    "text": "1/21"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                5,
+                                42
+                            ],
+                            "text": "5/42"
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "hard",
+                "pattern_id": "complex_fraction"
+            }
+        },
+        {
+            "id": "6_complex_fraction_n949fp",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "complex_fraction",
+            "question_text": "Вычисли значение дроби:\n(1/8 - 1/14) / (3/28)\n\nОтвет: ____________",
+            "answer": "0.5",
+            "answer_type": "decimal",
+            "variables": {
+                "expression_tree": {
+                    "operation": "divide",
+                    "operands": [
+                        {
+                            "operation": "subtract",
+                            "operands": [
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        1,
+                                        8
+                                    ],
+                                    "text": "1/8"
+                                },
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        1,
+                                        14
+                                    ],
+                                    "text": "1/14"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                3,
+                                28
+                            ],
+                            "text": "3/28"
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "hard",
+                "pattern_id": "complex_fraction"
+            }
+        },
+        {
+            "id": "6_complex_fraction_yrkl2h",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "complex_fraction",
+            "question_text": "Вычисли значение дроби:\n(1/18 + 1/27) / (5/54)\n\nОтвет: ____________",
+            "answer": "1",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "divide",
+                    "operands": [
+                        {
+                            "operation": "add",
+                            "operands": [
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        1,
+                                        18
+                                    ],
+                                    "text": "1/18"
+                                },
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        1,
+                                        27
+                                    ],
+                                    "text": "1/27"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                5,
+                                54
+                            ],
+                            "text": "5/54"
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "hard",
+                "pattern_id": "complex_fraction"
+            }
+        },
+        {
+            "id": "6_complex_fraction_py5r3p",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "complex_fraction",
+            "question_text": "Вычисли значение дроби:\n(1/30 - 1/45) / (1/90)\n\nОтвет: ____________",
+            "answer": "1",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "divide",
+                    "operands": [
+                        {
+                            "operation": "subtract",
+                            "operands": [
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        1,
+                                        30
+                                    ],
+                                    "text": "1/30"
+                                },
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        1,
+                                        45
+                                    ],
+                                    "text": "1/45"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                1,
+                                90
+                            ],
+                            "text": "1/90"
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "hard",
+                "pattern_id": "complex_fraction"
+            }
+        },
+        {
+            "id": "6_complex_fraction_p5148j",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "complex_fraction",
+            "question_text": "Вычисли значение дроби:\n(1/24 + 1/16) / (5/48)\n\nОтвет: ____________",
+            "answer": "1",
+            "answer_type": "integer",
+            "variables": {
+                "expression_tree": {
+                    "operation": "divide",
+                    "operands": [
+                        {
+                            "operation": "add",
+                            "operands": [
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        1,
+                                        24
+                                    ],
+                                    "text": "1/24"
+                                },
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        1,
+                                        16
+                                    ],
+                                    "text": "1/16"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                5,
+                                48
+                            ],
+                            "text": "5/48"
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "hard",
+                "pattern_id": "complex_fraction"
+            }
+        },
+        {
+            "id": "6_complex_fraction_o314z1",
+            "task_number": 6,
+            "subtype": "common_fractions",
+            "pattern": "complex_fraction",
+            "question_text": "Вычисли значение дроби:\n(1/15 - 1/20) / (1/12)\n\nОтвет: ____________",
+            "answer": "0.2",
+            "answer_type": "decimal",
+            "variables": {
+                "expression_tree": {
+                    "operation": "divide",
+                    "operands": [
+                        {
+                            "operation": "subtract",
+                            "operands": [
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        1,
+                                        15
+                                    ],
+                                    "text": "1/15"
+                                },
+                                {
+                                    "type": "common",
+                                    "value": [
+                                        1,
+                                        20
+                                    ],
+                                    "text": "1/20"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "common",
+                            "value": [
+                                1,
+                                12
+                            ],
+                            "text": "1/12"
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "difficulty": "hard",
+                "pattern_id": "complex_fraction"
+            }
+        }
+    ]
+}
