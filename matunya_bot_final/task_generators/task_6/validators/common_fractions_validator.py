@@ -84,17 +84,27 @@ def validate_common_fractions_task(task: Dict[str, Any]) -> Tuple[bool, List[str
         errors.append("В question_text не обнаружена ни одна дробь вида a/b.")
 
 
+    expects_numerator = "В ответ запишите числитель" in qt
     answer_type = task.get("answer_type")
-    if answer_type not in {"decimal", "fraction"}:
-        errors.append("answer_type должен быть 'decimal' или 'fraction'.")
+    answer_value = task.get("answer")
 
-    if answer_type == "decimal":
+    if expects_numerator:
+        if answer_type not in {"integer", "string"}:
+            errors.append("answer_type для задач с числителем должен быть 'integer' или 'string'.")
         try:
-            value = float(task.get("answer", ""))
-            if not _is_pretty_decimal(value):
-                errors.append("Ответ не является 'красивым' (конечная десятичная дробь или целое).")
+            int(answer_value)
         except (TypeError, ValueError):
-            errors.append("Ответ не преобразуется в число при answer_type='decimal'.")
+            errors.append("Ответ должен преобразовываться в целое число для задач с числителем.")
+    else:
+        if answer_type != "decimal":
+            errors.append("answer_type должен быть 'decimal' для задач с десятичным ответом.")
+        else:
+            try:
+                value = float(answer_value)
+                if not _is_pretty_decimal(value):
+                    errors.append("Ответ не является 'красивым' (конечная десятичная дробь или целое).")
+            except (TypeError, ValueError):
+                errors.append("Ответ не преобразуется в число при answer_type='decimal'.")
 
     meta = task.get("meta", {})
     if "pattern_id" not in meta:
