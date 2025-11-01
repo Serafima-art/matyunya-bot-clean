@@ -11,13 +11,14 @@ from typing import Any, Dict, Iterable, List, Optional
 
 STEP_TEMPLATES: Dict[str, str] = {
     "INITIAL_EXPRESSION": "{ctx}Рассматриваем исходное выражение.",
-    "FIND_LCM": "{ctx}Находим НОК знаменателей {den1} и {den2}: {lcm}.",
+    "FIND_LCM": "{ctx}Находим наименьший общий знаменатель {den1} и {den2}: {lcm}.",
     "SCALE_TO_COMMON_DENOM": (
         "{ctx}Приводим дроби к общему знаменателю {lcm}: "
         "левая дробь становится {left_scaled_num}/{lcm}, правая — {right_scaled_num}/{lcm}."
     ),
-    "ADD_NUMERATORS": "{ctx}Складываем числители: {left_num} + {right_num} = {result_num}.",
-    "SUBTRACT_NUMERATORS": "{ctx}Вычитаем числители: {left_num} − {right_num} = {result_num}.",
+    "ADD_OR_SUB_NUMERATORS": (
+    "{ctx}{operation_name_cap} числители: {left_num} {sign} {right_num} = {result_num}."
+    ),
     "REDUCE_FRACTION": (
         "{ctx}Сокращаем дробь {num}/{den} на {gcd}: получаем {result_num}/{result_den}."
     ),
@@ -43,8 +44,9 @@ STEP_TEMPLATES: Dict[str, str] = {
         "{den1}, {den2} в знаменателе."
     ),
     "FINAL_MULTIPLICATION": (
-        "{ctx}Перемножаем числители и знаменатели: {num1}·{num2} = {result_num}, "
-        "{den1}·{den2} = {result_den}."
+    "{ctx}Перемножаем числители и знаменатели: "
+    "{num1}·{num2} = {result_num}, {den1}·{den2} = {result_den}. "
+    "Получаем произведение дробей."
     ),
     "DIVIDE_SAME_VALUE": "{ctx}Делим число само на себя и сразу получаем 1.",
     "DIVISION_TO_MULTIPLICATION": (
@@ -61,6 +63,7 @@ STEP_TEMPLATES: Dict[str, str] = {
         "{ctx}Итоговое значение деления записываем как {result}."
     ),
     "COMPLEX_NUMERATOR_RESULT": "{ctx}Значение числителя равно {value}.",
+    "COMPLEX_NUMERATOR_FINAL": "{ctx}Дробь уже несократима, поэтому значение числителя равно {value}.",
     "COMPLEX_DIVISION_SETUP": (
         "{ctx}Теперь делим числитель {numerator} на знаменатель {denominator}."
     ),
@@ -82,7 +85,7 @@ STEP_TEMPLATES: Dict[str, str] = {
 
 IDEA_TEMPLATES: Dict[str, str] = {
     "ADD_SUB_FRACTIONS_IDEA": (
-        "Приводим дроби к общему знаменателю, складываем или вычитаем числители и приводим результат к несократимому виду."
+    "Приводим дроби к общему знаменателю, {operation_name} числители и приводим результат к несократимому виду."
     ),
     "MULTIPLY_DIVIDE_FRACTIONS_IDEA": (
         "Если встречаются смешанные числа, преобразуем их в неправильные дроби, после чего используем правила умножения и деления дробей."
@@ -130,7 +133,7 @@ HINT_TEMPLATES: Dict[str, str] = {
 # Публичные функции
 # ---------------------------------------------------------------------------
 
-def humanize_solution_core(solution_core: Dict[str, Any]) -> str:
+def humanize(solution_core: Dict[str, Any]) -> str:
     """Возвращает HTML-представление solution_core."""
 
     parts: List[str] = []
@@ -141,8 +144,8 @@ def humanize_solution_core(solution_core: Dict[str, Any]) -> str:
     steps = solution_core.get("calculation_steps") or []
     rendered_steps = [_render_step(step) for step in steps]
     if rendered_steps:
-        steps_block = "<br><br>".join(rendered_steps)
-        parts.append(f"<b>Подробные шаги:</b><br>{steps_block}")
+        steps_block = "\n\n".join(rendered_steps)
+        parts.append(f"<b>Подробные шаги:</b>\n{steps_block}")
 
     final_answer_block = _render_final_answer(solution_core.get("final_answer") or {})
     parts.append(final_answer_block)
@@ -214,10 +217,10 @@ def _render_step(step: Dict[str, Any]) -> str:
 
     formulas_html = ""
     if formula_lines:
-        formulas_html = "<br>".join(f"<code>{line}</code>" for line in formula_lines)
+        formulas_html = "\n".join(f"<code>{line}</code>" for line in formula_lines)
 
     if formulas_html:
-        return f"<b>Шаг {number}.</b> {description}<br>{formulas_html}"
+        return f"<b>Шаг {number}.</b> {description}\n{formulas_html}"
     return f"<b>Шаг {number}.</b> {description}"
 
 
@@ -225,7 +228,7 @@ def _format_step_description(step: Dict[str, Any]) -> str:
     key = step.get("description_key", "")
     params = dict(step.get("description_params") or {})
 
-    ctx = _prepare_context(params.pop("context", None))
+    ctx = _prepare_context(params.pop("context", None), step)
     params["ctx"] = ctx
 
     if "cancellations" in params:
@@ -250,15 +253,9 @@ def _format_step_description(step: Dict[str, Any]) -> str:
 
 
 def _render_final_answer(final_answer: Dict[str, Any]) -> str:
-    part = final_answer.get("final_answer_part") or final_answer.get("requested_part")
-    label = "Ответ"
-    if part == "numerator":
-        label = "Числитель ответа"
-    elif part == "denominator":
-        label = "Знаменатель ответа"
-
+    """Формирует блок финального ответа с лаконичным оформлением."""
     value = str(final_answer.get("value_display", "")).strip()
-    return f"<b>{label}:</b> <code>{value}</code>"
+    return f"<b>Ответ:</b> <code>{value}</code>"
 
 
 def _render_hints(solution_core: Dict[str, Any]) -> Optional[str]:
@@ -277,14 +274,23 @@ def _render_hints(solution_core: Dict[str, Any]) -> Optional[str]:
     if not hints:
         return None
 
-    items = "<br>".join(f"• {text}" for text in hints)
-    return f"<tg-spoiler><b>Полезно помнить:</b><br>{items}</tg-spoiler>"
+    items = "\n".join(f"• {text}" for text in hints)
+    return f"<tg-spoiler><b>Полезно помнить:</b>\n{items}</tg-spoiler>"
 
 
-def _prepare_context(raw: Optional[str]) -> str:
+def _prepare_context(raw: Optional[str], step: Optional[Dict[str, Any]] = None) -> str:
+    """Готовит текст контекста (например, 'В числителе.') для шага."""
     if not raw:
         return ""
     text = raw.strip()
+
+    # Если это контекст вида 'В числителе' — превращаем в осмысленную фразу
+    if text.lower().startswith("в числителе") and step:
+        expr = step.get("formula_representation") or ""
+        expr_clean = expr.strip()
+        if expr_clean:
+            return f"Находим значение числителя {expr_clean}. "
+
     if text and text[-1] not in ".!?:":
         text += "."
     return f"{text} "
@@ -313,5 +319,4 @@ def _format_decimal(value: Any) -> str:
 
 
 def _escape_newlines(text: str) -> str:
-    return text.replace("\n", "<br>")
-
+    return text
