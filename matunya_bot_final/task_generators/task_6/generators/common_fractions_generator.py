@@ -5,7 +5,7 @@ from typing import Dict, Any, List
 import math
 import re
 
-from matunya_bot_final.task_generators.task_6.generators.task6_text_formatter import (
+from matunya_bot_final.help_core.solvers.task_6.task6_text_formatter import (
     normalize_expression,
     prepare_expression,
     _fmt_answer,

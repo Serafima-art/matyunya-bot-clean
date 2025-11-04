@@ -30,6 +30,7 @@ def test_cf_addition_subtraction_solver_fipi_etalon():
             "в ответ запиши только числитель."
         ),
         "answer": 32,
+        "answer_type": "integer",  
         "variables": {
             "expression_tree": {
                 "operation": "add",
@@ -40,6 +41,7 @@ def test_cf_addition_subtraction_solver_fipi_etalon():
             }
         },
     }
+
 
     solution_core = solve(task_data)
 

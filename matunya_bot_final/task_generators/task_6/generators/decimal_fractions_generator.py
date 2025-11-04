@@ -2,7 +2,7 @@
 import uuid
 from typing import Dict, Any, List
 
-from matunya_bot_final.task_generators.task_6.generators.task6_text_formatter import _fmt, _fmt_answer
+from matunya_bot_final.help_core.solvers.task_6.task6_text_formatter import _fmt, _fmt_answer
 
 
 def generate_decimal_fractions_tasks(count: int = 10) -> List[Dict[str, Any]]:
