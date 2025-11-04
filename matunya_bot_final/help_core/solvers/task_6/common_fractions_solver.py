@@ -185,15 +185,17 @@ def solve(task_data: Dict[str, Any]) -> Dict[str, Any]:
     requested_part = _detect_requested_part(task_data)
     _add_final_step(task_data, builder, result_fraction, requested_part, pattern)
 
-    # Формирование финального ответа
-    answer_type = task_data.get("answer_type", "decimal")
-    if answer_type == "decimal":
-        display_value = str(float(result_fraction))
-    else:  # integer
-        if requested_part == "denominator":
-            display_value = str(result_fraction.denominator)
-        else:
-            display_value = str(result_fraction.numerator)
+    # --- Формирование финального ответа ---
+    answer_type = task_data.get("answer_type", "integer")
+    requested_part = requested_part or "numerator"
+
+    # В этом подтипе допускаются только два формата: числитель или знаменатель
+    if requested_part == "denominator":
+        value_machine = result_fraction.denominator
+        value_display = str(result_fraction.denominator)
+    else:
+        value_machine = result_fraction.numerator
+        value_display = str(result_fraction.numerator)
 
     return {
         "question_id": task_data.get("id", "task_6_common"),
@@ -203,15 +205,14 @@ def solve(task_data: Dict[str, Any]) -> Dict[str, Any]:
         "explanation_idea_params": idea_params,
         "calculation_steps": builder.steps,
         "final_answer": {
-            "value_machine": float(result_fraction),
-            "value_display": display_value,
+            "value_machine": value_machine,
+            "value_display": value_display,
             "requested_part": requested_part,
-            "final_answer_part": requested_part or "value",
+            "final_answer_part": requested_part,
         },
         "hints": [],
         "hints_keys": hints_keys,
     }
-
 
 # ---------------------------------------------------------------------------
 # Решатели для отдельных паттернов

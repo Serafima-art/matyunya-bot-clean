@@ -75,11 +75,11 @@ def main():
         print(f"[+] Успешно принято: {tasks_in_file} заданий.")
 
     # Финальная структура JSON без лишних полей
-    final_json_structure = { "tasks": all_valid_tasks }
+    # Мы записываем в файл напрямую список задач, а не словарь.
     output_dir.mkdir(parents=True, exist_ok=True)
 
     with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump(final_json_structure, f, indent=4, ensure_ascii=False)
+        json.dump(all_valid_tasks, f, indent=4, ensure_ascii=False)
 
     print(f"\n[*] Итоговый файл сохранен: {output_file}")
     print(f"[✓] Всего собрано: {len(all_valid_tasks)} заданий.")

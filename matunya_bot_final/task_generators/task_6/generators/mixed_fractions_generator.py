@@ -6,7 +6,7 @@ from fractions import Fraction
 from typing import Dict, Any, List
 import re
 
-from matunya_bot_final.task_generators.task_6.generators.task6_text_formatter import prepare_expression, _fmt, _fmt_answer
+from matunya_bot_final.help_core.solvers.task_6.task6_text_formatter import prepare_expression, _fmt, _fmt_answer
 
 def generate_mixed_fractions_tasks(count: int = 10) -> List[Dict[str, Any]]:
     """

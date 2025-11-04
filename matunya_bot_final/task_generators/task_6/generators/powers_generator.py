@@ -5,7 +5,7 @@ from typing import Dict, Any, List
 import re
 import math
 
-from matunya_bot_final.task_generators.task_6.generators.task6_text_formatter import prepare_expression, _fmt_answer, normalize_expression  # TASK6_FORMATTER_IMPORT
+from matunya_bot_final.help_core.solvers.task_6.task6_text_formatter import prepare_expression, _fmt_answer, normalize_expression  # TASK6_FORMATTER_IMPORT
 
 def generate_powers_tasks(count: int = 10) -> List[Dict[str, Any]]:
     """

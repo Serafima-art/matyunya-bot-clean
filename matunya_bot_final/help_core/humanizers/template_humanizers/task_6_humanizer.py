@@ -76,6 +76,41 @@ STEP_TEMPLATES: Dict[str, str] = {
     "EXTRACT_DENOMINATOR": (
         "{ctx}Берём знаменатель из дроби {num}/{den}: это {den}."
     ),
+    "INITIAL_EXPRESSION_DECIMAL": "{ctx}Рассмотрим исходное выражение.",
+    "CALCULATE_ADDITION_SIMPLE": "{ctx}Сложим числа {left} и {right}.",
+    "CALCULATE_SUBTRACTION_SIMPLE": "{ctx}Вычтем {right} из {left}.",
+    "CALCULATE_SUBTRACTION_IN_DENOMINATOR": (
+        "{ctx}Выполним вычитание в знаменателе: {left} - {right}. Результат будет отрицательным."
+    ),
+    "CALCULATE_MULTIPLICATION_NEG_NEG": (
+        "{ctx}Умножим {left} на {right}. Произведение двух отрицательных чисел положительно."
+    ),
+    "CALCULATE_MULTIPLICATION_MIXED_SIGN": (
+        "{ctx}Умножим {left} на {right}. Результат будет отрицательным."
+    ),
+    "CALCULATE_MULTIPLICATION_DEFAULT": "{ctx}Выполним умножение: {left} · {right}.",
+    "CALCULATE_DIVISION_FINAL": (
+        "{ctx}Теперь разделим числитель {left} на полученный знаменатель {right}."
+    ),
+    "CALCULATE_DIVISION_DEFAULT": "{ctx}Выполним деление: {left} : {right}.",
+
+    # --- Decimal fractions (task 6) ---
+    "DECIMAL_ADD_BOTH_POSITIVE": "{ctx}Складываем положительные десятичные дроби {left} и {right}. Результат: {result}.",
+    "DECIMAL_ADD_BOTH_NEGATIVE": "{ctx}Складываем отрицательные десятичные дроби {left} и {right}. Результат: {result}.",
+    "DECIMAL_ADD_MIXED_SIGNS": "{ctx}Складываем числа {left} и {right}, имеющие разные знаки. Результат: {result}.",
+
+    "DECIMAL_SUBTRACT_POSITIVE": "{ctx}Вычитаем положительное число {right} из {left}. Результат: {result}.",
+    "DECIMAL_SUBTRACT_NEGATIVE": "{ctx}Вычитаем отрицательное число {right}, то есть прибавляем {converted_addend}. Результат: {result}.",
+
+    "DECIMAL_MULTIPLY_BOTH_POSITIVE": "{ctx}Умножаем положительные числа {left} и {right}. Результат: {result}.",
+    "DECIMAL_MULTIPLY_BOTH_NEGATIVE": "{ctx}Умножаем два отрицательных числа {left} и {right}. Произведение положительное: {result}.",
+    "DECIMAL_MULTIPLY_MIXED_SIGNS": "{ctx}Умножаем числа {left} и {right} с разными знаками. Результат отрицательный: {result}.",
+
+    "DECIMAL_DIVIDE_BOTH_POSITIVE": "{ctx}Выполним деление десятичных дробей {left} и {right}. Так как оба числа положительные, результат положительный: {result}.",
+    "DECIMAL_DIVIDE_BOTH_NEGATIVE": "{ctx}Делим два отрицательных числа {left} и {right}. Результат положительный: {result}.",
+    "DECIMAL_DIVIDE_MIXED_SIGNS": "{ctx}Делим числа {left} и {right} с разными знаками. Результат отрицательный: {result}.",
+
+    "DECIMAL_SHOW_CONVERTED_EXPRESSION": "{ctx}После вычисления знаменателя работаем с выражением {expression}.",
 }
 
 
@@ -95,6 +130,21 @@ IDEA_TEMPLATES: Dict[str, str] = {
     ),
     "COMPLEX_FRACTION_IDEA": (
         "Отдельно вычисляем числитель сложной дроби, затем делим его на знаменатель по правилу деления дробей."
+    ),
+    "DF_ADD_SUB_IDEA": (
+    "Это простое действие с десятичными дробями. "
+    "Главное — записывать числа так, чтобы запятая стояла под запятой. "
+    "Складываем или вычитаем аккуратно — и получаем ответ без ошибок."
+    ),
+    "DF_LINEAR_OP_IDEA": (
+    "В этом выражении важно соблюдать порядок действий: "
+    "сначала выполняем умножение или деление, а потом сложение или вычитание. "
+    "Следим за знаками — от этого зависит, будет ли результат положительным или отрицательным."
+    ),
+    "DF_FRACTION_STRUCT_IDEA": (
+    "Сначала находим значение в скобках — это знаменатель дроби. "
+    "Затем делим числитель на полученный результат, аккуратно соблюдая порядок действий. "
+    "Так шаг за шагом выражение становится простым и понятным."
     ),
     "GENERIC_IDEA": (
         "Разберём выражение по шагам, чтобы чётко проследить каждое преобразование."
@@ -125,6 +175,9 @@ HINT_TEMPLATES: Dict[str, str] = {
     ),
     "HINT_PROCESS_NUMERATOR": (
         "В сложной дроби сначала упростите выражение в числителе, затем переходите к делению на знаменатель."
+    ),
+    "HINT_DECIMAL_ALIGNMENT": (
+        "При сложении или вычитании десятичных дробей в столбик, записывайте числа так, чтобы запятая находилась строго под запятой."
     ),
 }
 
