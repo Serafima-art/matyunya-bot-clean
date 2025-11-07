@@ -174,6 +174,7 @@ def validate_decimal_fraction(line: str):
     """
     try:
         pattern, expression_str = [part.strip() for part in line.split('|', 1)]
+        print(f"[DEBUG] Проверяем: {expression_str}")
         processed = _preprocess_expression(expression_str)
 
         # 1) Строим дерево БЕЗ вычисления
@@ -203,7 +204,7 @@ def validate_decimal_fraction(line: str):
             answer_type = "decimal"
 
         # Централизованное форматирование выражения
-        expr_display = normalize_for_display(expression_str)
+        expr_display = normalize_for_display(expression_str, subtype="decimal_fractions")
         question_text = f"Выполни вычисления и запиши ответ:\n{expr_display}\n\nОтвет: ____________"
 
         return {
@@ -215,5 +216,6 @@ def validate_decimal_fraction(line: str):
             "source_expression": expression_str,
         }
 
-    except (SympifyError, IndexError, TypeError, Exception):
+    except Exception as e:
+        print(f"[ERROR] {expression_str} -> {type(e).__name__}: {e}")  # type: ignore
         return None

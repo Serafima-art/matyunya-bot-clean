@@ -1,11 +1,11 @@
 [
     {
-        "id": "6_cf_addition_subtraction_ildfy8",
+        "id": "6_cf_addition_subtraction_5e1nlj",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
-        "question_text": "Выполни вычисления:\n7/15 + 5/12\n\nПолучи несократимую дробь и в ответ запиши только числитель этой дроби.",
-        "answer": "53",
+        "question_text": "Выполни вычисления:\n7/15 + 5/12\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
+        "answer": "60",
         "answer_type": "integer",
         "variables": {
             "expression_tree": {
@@ -36,11 +36,11 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_rk2vw4",
+        "id": "6_cf_addition_subtraction_h87ajw",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
-        "question_text": "Выполни вычисления:\n9/20 - 3/8\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
+        "question_text": "Выполни вычисления:\n9/20 − 3/8\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
         "answer": "40",
         "answer_type": "integer",
         "variables": {
@@ -72,12 +72,12 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_v4anvd",
+        "id": "6_cf_addition_subtraction_rdiara",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
-        "question_text": "Выполни вычисления:\n5/14 + 8/21\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
-        "answer": "42",
+        "question_text": "Выполни вычисления:\n5/14 + 8/21\n\nПолучи несократимую дробь и в ответ запиши только числитель этой дроби.",
+        "answer": "31",
         "answer_type": "integer",
         "variables": {
             "expression_tree": {
@@ -108,11 +108,11 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_47bh8x",
+        "id": "6_cf_addition_subtraction_2jtrta",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
-        "question_text": "Выполни вычисления:\n11/18 - 4/27\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
+        "question_text": "Выполни вычисления:\n11/18 − 4/27\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
         "answer": "54",
         "answer_type": "integer",
         "variables": {
@@ -144,12 +144,12 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_6heour",
+        "id": "6_cf_addition_subtraction_jj3v5x",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
-        "question_text": "Выполни вычисления:\n13/24 - 5/16\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
-        "answer": "48",
+        "question_text": "Выполни вычисления:\n13/24 − 5/16\n\nПолучи несократимую дробь и в ответ запиши только числитель этой дроби.",
+        "answer": "11",
         "answer_type": "integer",
         "variables": {
             "expression_tree": {
@@ -180,7 +180,7 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_cu4ji5",
+        "id": "6_cf_addition_subtraction_v1tjkh",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
@@ -216,11 +216,11 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_k0t72d",
+        "id": "6_cf_addition_subtraction_egvthq",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
-        "question_text": "Выполни вычисления:\n19/30 - 5/12\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
+        "question_text": "Выполни вычисления:\n19/30 − 5/12\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
         "answer": "60",
         "answer_type": "integer",
         "variables": {
@@ -252,12 +252,12 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_b3qz2y",
+        "id": "6_cf_addition_subtraction_wh70oe",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
-        "question_text": "Выполни вычисления:\n8/9 - 5/12\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
-        "answer": "36",
+        "question_text": "Выполни вычисления:\n8/9 − 5/12\n\nПолучи несократимую дробь и в ответ запиши только числитель этой дроби.",
+        "answer": "17",
         "answer_type": "integer",
         "variables": {
             "expression_tree": {
@@ -288,7 +288,7 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_mif66j",
+        "id": "6_cf_addition_subtraction_2aw4y7",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
@@ -324,11 +324,11 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_8d5ikj",
+        "id": "6_cf_addition_subtraction_rw6px7",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
-        "question_text": "Выполни вычисления:\n20/21 - 3/14\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
+        "question_text": "Выполни вычисления:\n20/21 − 3/14\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
         "answer": "42",
         "answer_type": "integer",
         "variables": {
@@ -360,11 +360,11 @@
         }
     },
     {
-        "id": "6_multiplication_division_q1fmeb",
+        "id": "6_multiplication_division_hgqebv",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
-        "question_text": "Выполни вычисления и запиши ответ:\n2 1/7 · 2 1/3\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n2 1/7 ⋅ 2 1/3\n\nОтвет: ____________",
         "answer": "5",
         "answer_type": "integer",
         "variables": {
@@ -396,7 +396,7 @@
         }
     },
     {
-        "id": "6_multiplication_division_gbdc5d",
+        "id": "6_multiplication_division_eft0ip",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
@@ -432,11 +432,11 @@
         }
     },
     {
-        "id": "6_multiplication_division_wqzcjp",
+        "id": "6_multiplication_division_brbwvo",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
-        "question_text": "Выполни вычисления и запиши ответ:\n3 1/8 · 2 2/5\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n3 1/8 ⋅ 2 2/5\n\nОтвет: ____________",
         "answer": "7.5",
         "answer_type": "decimal",
         "variables": {
@@ -468,7 +468,7 @@
         }
     },
     {
-        "id": "6_multiplication_division_ff77i9",
+        "id": "6_multiplication_division_n6xjnv",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
@@ -504,7 +504,7 @@
         }
     },
     {
-        "id": "6_multiplication_division_ulalek",
+        "id": "6_multiplication_division_66i9ic",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
@@ -540,11 +540,11 @@
         }
     },
     {
-        "id": "6_multiplication_division_mvpbd5",
+        "id": "6_multiplication_division_squse3",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
-        "question_text": "Выполни вычисления и запиши ответ:\n1 7/9 · 2 1/4\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n1 7/9 ⋅ 2 1/4\n\nОтвет: ____________",
         "answer": "4",
         "answer_type": "integer",
         "variables": {
@@ -576,11 +576,11 @@
         }
     },
     {
-        "id": "6_multiplication_division_b1oyqr",
+        "id": "6_multiplication_division_iqy2gv",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
-        "question_text": "Выполни вычисления и запиши ответ:\n3 3/11 · 1 5/6\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n3 3/11 ⋅ 1 5/6\n\nОтвет: ____________",
         "answer": "6",
         "answer_type": "integer",
         "variables": {
@@ -612,7 +612,7 @@
         }
     },
     {
-        "id": "6_multiplication_division_43dyob",
+        "id": "6_multiplication_division_yexp1y",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
@@ -648,11 +648,11 @@
         }
     },
     {
-        "id": "6_multiplication_division_0g3jdq",
+        "id": "6_multiplication_division_39zigb",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
-        "question_text": "Выполни вычисления и запиши ответ:\n1 11/14 · 2 4/5\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n1 11/14 ⋅ 2 4/5\n\nОтвет: ____________",
         "answer": "5",
         "answer_type": "integer",
         "variables": {
@@ -684,7 +684,7 @@
         }
     },
     {
-        "id": "6_multiplication_division_ry05qs",
+        "id": "6_multiplication_division_n1yrcj",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
@@ -720,11 +720,11 @@
         }
     },
     {
-        "id": "6_parentheses_operations_bn0l59",
+        "id": "6_parentheses_operations_ltz8n9",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
-        "question_text": "Выполни вычисления и запиши ответ:\n(8/15 + 9/25) · 75\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n(8/15 + 9/25) ⋅ 75\n\nОтвет: ____________",
         "answer": "67",
         "answer_type": "integer",
         "variables": {
@@ -766,11 +766,11 @@
         }
     },
     {
-        "id": "6_parentheses_operations_zpy4yf",
+        "id": "6_parentheses_operations_d14etn",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
-        "question_text": "Выполни вычисления и запиши ответ:\n(11/12 - 13/18) : (7/36)\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n(11/12 − 13/18) : (7/36)\n\nОтвет: ____________",
         "answer": "1",
         "answer_type": "integer",
         "variables": {
@@ -815,11 +815,11 @@
         }
     },
     {
-        "id": "6_parentheses_operations_uxzrs6",
+        "id": "6_parentheses_operations_ftefxa",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
-        "question_text": "Выполни вычисления и запиши ответ:\n2 1/4 : (1 1/2 - 3/5)\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n2 1/4 : (1 1/2 − 3/5)\n\nОтвет: ____________",
         "answer": "2.5",
         "answer_type": "decimal",
         "variables": {
@@ -874,11 +874,11 @@
         }
     },
     {
-        "id": "6_parentheses_operations_pgekbs",
+        "id": "6_parentheses_operations_xk1b4y",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
-        "question_text": "Выполни вычисления и запиши ответ:\n(1 1/6 + 2 1/4) · 12\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n(1 1/6 + 2 1/4) ⋅ 12\n\nОтвет: ____________",
         "answer": "41",
         "answer_type": "integer",
         "variables": {
@@ -940,11 +940,11 @@
         }
     },
     {
-        "id": "6_parentheses_operations_ttiqql",
+        "id": "6_parentheses_operations_c8f2c4",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
-        "question_text": "Выполни вычисления и запиши ответ:\n(4/5 - 1/2) : 3/20\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n(4/5 − 1/2) : 3/20\n\nОтвет: ____________",
         "answer": "0.005",
         "answer_type": "decimal",
         "variables": {
@@ -996,11 +996,11 @@
         }
     },
     {
-        "id": "6_parentheses_operations_ohsqur",
+        "id": "6_parentheses_operations_ij29dq",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
-        "question_text": "Выполни вычисления и запиши ответ:\n1 4/11 · (3/4 + 5/8)\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n1 4/11 ⋅ (3/4 + 5/8)\n\nОтвет: ____________",
         "answer": "1.875",
         "answer_type": "decimal",
         "variables": {
@@ -1045,11 +1045,11 @@
         }
     },
     {
-        "id": "6_parentheses_operations_ojoo8i",
+        "id": "6_parentheses_operations_88k55n",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
-        "question_text": "Выполни вычисления и запиши ответ:\n(3 1/2 - 2 3/4) : 3\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n(3 1/2 − 2 3/4) : 3\n\nОтвет: ____________",
         "answer": "0.25",
         "answer_type": "decimal",
         "variables": {
@@ -1101,11 +1101,11 @@
         }
     },
     {
-        "id": "6_parentheses_operations_huaji6",
+        "id": "6_parentheses_operations_ukofxw",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
-        "question_text": "Выполни вычисления и запиши ответ:\n(2 1/3 - 1 1/2) · 6\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n(2 1/3 − 1 1/2) ⋅ 6\n\nОтвет: ____________",
         "answer": "5",
         "answer_type": "integer",
         "variables": {
@@ -1157,11 +1157,11 @@
         }
     },
     {
-        "id": "6_parentheses_operations_y99rgn",
+        "id": "6_parentheses_operations_nksute",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
-        "question_text": "Выполни вычисления и запиши ответ:\n(1 1/4 - 2/5) · 10\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n(1 1/4 − 2/5) ⋅ 10\n\nОтвет: ____________",
         "answer": "8.5",
         "answer_type": "decimal",
         "variables": {
@@ -1213,11 +1213,11 @@
         }
     },
     {
-        "id": "6_parentheses_operations_p7f0z2",
+        "id": "6_parentheses_operations_lhiydn",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
-        "question_text": "Выполни вычисления и запиши ответ:\n42 · (5/14 - 4/21)\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n42 ⋅ (5/14 − 4/21)\n\nОтвет: ____________",
         "answer": "7",
         "answer_type": "integer",
         "variables": {
@@ -1259,7 +1259,7 @@
         }
     },
     {
-        "id": "6_complex_fraction_dxag1q",
+        "id": "6_complex_fraction_8t4pjj",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
@@ -1308,11 +1308,11 @@
         }
     },
     {
-        "id": "6_complex_fraction_a1yg7f",
+        "id": "6_complex_fraction_776ruh",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
-        "question_text": "Вычисли значение дроби:\n(1/10 - 1/25) / (3/50)\n\nОтвет: ____________",
+        "question_text": "Вычисли значение дроби:\n(1/10 − 1/25) / (3/50)\n\nОтвет: ____________",
         "answer": "1",
         "answer_type": "integer",
         "variables": {
@@ -1357,7 +1357,7 @@
         }
     },
     {
-        "id": "6_complex_fraction_x0frk9",
+        "id": "6_complex_fraction_kxen74",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
@@ -1406,11 +1406,11 @@
         }
     },
     {
-        "id": "6_complex_fraction_tmf2vy",
+        "id": "6_complex_fraction_4j5lqz",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
-        "question_text": "Вычисли значение дроби:\n(1/9 - 1/15) / (2/45)\n\nОтвет: ____________",
+        "question_text": "Вычисли значение дроби:\n(1/9 − 1/15) / (2/45)\n\nОтвет: ____________",
         "answer": "1",
         "answer_type": "integer",
         "variables": {
@@ -1455,7 +1455,7 @@
         }
     },
     {
-        "id": "6_complex_fraction_k49xet",
+        "id": "6_complex_fraction_2sizi7",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
@@ -1504,11 +1504,11 @@
         }
     },
     {
-        "id": "6_complex_fraction_2rz20r",
+        "id": "6_complex_fraction_fwjh8c",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
-        "question_text": "Вычисли значение дроби:\n(1/8 - 1/14) / (3/28)\n\nОтвет: ____________",
+        "question_text": "Вычисли значение дроби:\n(1/8 − 1/14) / (3/28)\n\nОтвет: ____________",
         "answer": "0.5",
         "answer_type": "decimal",
         "variables": {
@@ -1553,7 +1553,7 @@
         }
     },
     {
-        "id": "6_complex_fraction_m9qxxq",
+        "id": "6_complex_fraction_54y8fp",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
@@ -1602,11 +1602,11 @@
         }
     },
     {
-        "id": "6_complex_fraction_s7v0ct",
+        "id": "6_complex_fraction_0jumlu",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
-        "question_text": "Вычисли значение дроби:\n(1/30 - 1/45) / (1/90)\n\nОтвет: ____________",
+        "question_text": "Вычисли значение дроби:\n(1/30 − 1/45) / (1/90)\n\nОтвет: ____________",
         "answer": "1",
         "answer_type": "integer",
         "variables": {
@@ -1651,7 +1651,7 @@
         }
     },
     {
-        "id": "6_complex_fraction_m50mic",
+        "id": "6_complex_fraction_uytvk8",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
@@ -1700,11 +1700,11 @@
         }
     },
     {
-        "id": "6_complex_fraction_v0lorp",
+        "id": "6_complex_fraction_p3rxcz",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
-        "question_text": "Вычисли значение дроби:\n(1/15 - 1/20) / (1/12)\n\nОтвет: ____________",
+        "question_text": "Вычисли значение дроби:\n(1/15 − 1/20) / (1/12)\n\nОтвет: ____________",
         "answer": "0.2",
         "answer_type": "decimal",
         "variables": {
@@ -1749,7 +1749,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_jl210s",
+        "id": "6_df_addition_subtraction_ogjzoc",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -1779,7 +1779,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_74q9vx",
+        "id": "6_df_addition_subtraction_qcjq4r",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -1809,7 +1809,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_frn51p",
+        "id": "6_df_addition_subtraction_s1h3jr",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -1839,11 +1839,11 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_t7n1qa",
+        "id": "6_df_addition_subtraction_8hbqhf",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
-        "question_text": "Выполни вычисления и запиши ответ:\n− 5,8 + 2,3\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n−5,8 + 2,3\n\nОтвет: ____________",
         "answer": "-3.5",
         "answer_type": "decimal",
         "variables": {
@@ -1869,11 +1869,11 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_4mgcrc",
+        "id": "6_df_addition_subtraction_b5coqj",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
-        "question_text": "Выполни вычисления и запиши ответ:\n− 3,9 − 4,2\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n−3,9 − 4,2\n\nОтвет: ____________",
         "answer": "-8.1",
         "answer_type": "decimal",
         "variables": {
@@ -1899,7 +1899,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_hf5wa2",
+        "id": "6_df_addition_subtraction_rle736",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -1929,7 +1929,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_rqolm8",
+        "id": "6_df_addition_subtraction_ylmzn2",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -1959,11 +1959,11 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_kz52nd",
+        "id": "6_df_addition_subtraction_xfg0kh",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
-        "question_text": "Выполни вычисления и запиши ответ:\n− 1,5 + 8,3\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n−1,5 + 8,3\n\nОтвет: ____________",
         "answer": "6.8",
         "answer_type": "decimal",
         "variables": {
@@ -1989,7 +1989,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_q8fj1l",
+        "id": "6_df_addition_subtraction_0myfg5",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2019,11 +2019,11 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_kjs03s",
+        "id": "6_df_addition_subtraction_722rd4",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
-        "question_text": "Выполни вычисления и запиши ответ:\n− 9,6 − 1,4\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n−9,6 − 1,4\n\nОтвет: ____________",
         "answer": "-11",
         "answer_type": "integer",
         "variables": {
@@ -2049,7 +2049,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_lzgz8d",
+        "id": "6_df_addition_subtraction_nb8b4b",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2079,7 +2079,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_jv1zlm",
+        "id": "6_df_addition_subtraction_ljpf6d",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2109,11 +2109,11 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_uqtxix",
+        "id": "6_df_addition_subtraction_d9808t",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
-        "question_text": "Выполни вычисления и запиши ответ:\n− 3,11 + 1,01\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n−3,11 + 1,01\n\nОтвет: ____________",
         "answer": "-2.1",
         "answer_type": "decimal",
         "variables": {
@@ -2139,7 +2139,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_5f8wk5",
+        "id": "6_df_addition_subtraction_lihz7l",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2169,11 +2169,11 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_dreumc",
+        "id": "6_df_addition_subtraction_btn6q5",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
-        "question_text": "Выполни вычисления и запиши ответ:\n− 0,8 + 5,1\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n−0,8 + 5,1\n\nОтвет: ____________",
         "answer": "4.3",
         "answer_type": "decimal",
         "variables": {
@@ -2199,7 +2199,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_9sqey8",
+        "id": "6_df_addition_subtraction_tqspmh",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2229,7 +2229,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_18x8r1",
+        "id": "6_df_addition_subtraction_fcpxst",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2259,11 +2259,11 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_u0ngbt",
+        "id": "6_df_addition_subtraction_33mm3l",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
-        "question_text": "Выполни вычисления и запиши ответ:\n− 6,4 − 2,8\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n−6,4 − 2,8\n\nОтвет: ____________",
         "answer": "-9.2",
         "answer_type": "decimal",
         "variables": {
@@ -2289,7 +2289,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_610g9z",
+        "id": "6_df_addition_subtraction_tutvr7",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2319,11 +2319,11 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_k3em7k",
+        "id": "6_df_addition_subtraction_6ywkqx",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
-        "question_text": "Выполни вычисления и запиши ответ:\n− 2,7 + 2,7\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n−2,7 + 2,7\n\nОтвет: ____________",
         "answer": "0",
         "answer_type": "integer",
         "variables": {
@@ -2349,7 +2349,7 @@
         }
     },
     {
-        "id": "6_linear_operations_7lmi4q",
+        "id": "6_linear_operations_rih37g",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2389,11 +2389,11 @@
         }
     },
     {
-        "id": "6_linear_operations_t6u13s",
+        "id": "6_linear_operations_tb8oba",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
-        "question_text": "Выполни вычисления и запиши ответ:\n− 2,5 ⋅ 4 − 8,5\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n−2,5 ⋅ 4 − 8,5\n\nОтвет: ____________",
         "answer": "-18.5",
         "answer_type": "decimal",
         "variables": {
@@ -2429,7 +2429,7 @@
         }
     },
     {
-        "id": "6_linear_operations_efwjca",
+        "id": "6_linear_operations_92mfrp",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2469,11 +2469,11 @@
         }
     },
     {
-        "id": "6_linear_operations_bvfey1",
+        "id": "6_linear_operations_tjfywa",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
-        "question_text": "Выполни вычисления и запиши ответ:\n− 3 ⋅ ( − 2,2) + 1,4\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n−3 ⋅ (−2,2) + 1,4\n\nОтвет: ____________",
         "answer": "8",
         "answer_type": "integer",
         "variables": {
@@ -2509,11 +2509,11 @@
         }
     },
     {
-        "id": "6_linear_operations_2isdil",
+        "id": "6_linear_operations_ngtlc8",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
-        "question_text": "Выполни вычисления и запиши ответ:\n10,5/5 − 2,0\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n10,5 : 5 − 2,0\n\nОтвет: ____________",
         "answer": "0.1",
         "answer_type": "decimal",
         "variables": {
@@ -2549,11 +2549,11 @@
         }
     },
     {
-        "id": "6_linear_operations_dhm49g",
+        "id": "6_linear_operations_6hn8g4",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
-        "question_text": "Выполни вычисления и запиши ответ:\n4,8 + 6,4/4\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n4,8 + 6,4 : 4\n\nОтвет: ____________",
         "answer": "6.4",
         "answer_type": "decimal",
         "variables": {
@@ -2589,7 +2589,7 @@
         }
     },
     {
-        "id": "6_linear_operations_qepq1p",
+        "id": "6_linear_operations_qg6tr1",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2629,11 +2629,11 @@
         }
     },
     {
-        "id": "6_linear_operations_ini3nz",
+        "id": "6_linear_operations_zbmnp8",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
-        "question_text": "Выполни вычисления и запиши ответ:\n− 1,8 ⋅ 10 + 25\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n−1,8 ⋅ 10 + 25\n\nОтвет: ____________",
         "answer": "7",
         "answer_type": "integer",
         "variables": {
@@ -2669,11 +2669,11 @@
         }
     },
     {
-        "id": "6_linear_operations_rgtpdk",
+        "id": "6_linear_operations_dk583h",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
-        "question_text": "Выполни вычисления и запиши ответ:\n9,6 : ( − 3) − 1,8\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n9,6 : (−3) − 1,8\n\nОтвет: ____________",
         "answer": "-5",
         "answer_type": "integer",
         "variables": {
@@ -2709,11 +2709,11 @@
         }
     },
     {
-        "id": "6_linear_operations_dmhgx8",
+        "id": "6_linear_operations_r1byj0",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
-        "question_text": "Выполни вычисления и запиши ответ:\n20 + ( − 7,5) ⋅ 2\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n20 + (−7,5) ⋅ 2\n\nОтвет: ____________",
         "answer": "5",
         "answer_type": "integer",
         "variables": {
@@ -2749,7 +2749,7 @@
         }
     },
     {
-        "id": "6_linear_operations_le3weu",
+        "id": "6_linear_operations_0fif90",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2789,11 +2789,11 @@
         }
     },
     {
-        "id": "6_linear_operations_oukvvd",
+        "id": "6_linear_operations_lfbpsw",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
-        "question_text": "Выполни вычисления и запиши ответ:\n− 8,4/4 + 10\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n−8,4 : 4 + 10\n\nОтвет: ____________",
         "answer": "7.9",
         "answer_type": "decimal",
         "variables": {
@@ -2829,7 +2829,7 @@
         }
     },
     {
-        "id": "6_linear_operations_2sqnn6",
+        "id": "6_linear_operations_ql9mp5",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2869,11 +2869,11 @@
         }
     },
     {
-        "id": "6_linear_operations_ja4x6y",
+        "id": "6_linear_operations_5uw2j8",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
-        "question_text": "Выполни вычисления и запиши ответ:\n− 5 ⋅ 1,3 − 3,5\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n−5 ⋅ 1,3 − 3,5\n\nОтвет: ____________",
         "answer": "-10",
         "answer_type": "integer",
         "variables": {
@@ -2909,11 +2909,11 @@
         }
     },
     {
-        "id": "6_linear_operations_etkhot",
+        "id": "6_linear_operations_sr5vvv",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
-        "question_text": "Выполни вычисления и запиши ответ:\n4,2 − 9,9/3\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n4,2 − 9,9 : 3\n\nОтвет: ____________",
         "answer": "0.9",
         "answer_type": "decimal",
         "variables": {
@@ -2949,11 +2949,11 @@
         }
     },
     {
-        "id": "6_linear_operations_hss2yo",
+        "id": "6_linear_operations_zzallw",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
-        "question_text": "Выполни вычисления и запиши ответ:\n0,2 ⋅ ( − 50) + 12\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n0,2 ⋅ (−50) + 12\n\nОтвет: ____________",
         "answer": "2",
         "answer_type": "integer",
         "variables": {
@@ -2989,11 +2989,11 @@
         }
     },
     {
-        "id": "6_linear_operations_cyq621",
+        "id": "6_linear_operations_eakdaa",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
-        "question_text": "Выполни вычисления и запиши ответ:\n7,7 + 3 ⋅ ( − 2,1)\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n7,7 + 3 ⋅ (−2,1)\n\nОтвет: ____________",
         "answer": "1.4",
         "answer_type": "decimal",
         "variables": {
@@ -3029,11 +3029,11 @@
         }
     },
     {
-        "id": "6_linear_operations_e9emxq",
+        "id": "6_linear_operations_9yma94",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
-        "question_text": "Выполни вычисления и запиши ответ:\n18,6/6 − 3,1\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n18,6 : 6 − 3,1\n\nОтвет: ____________",
         "answer": "0",
         "answer_type": "integer",
         "variables": {
@@ -3069,11 +3069,11 @@
         }
     },
     {
-        "id": "6_linear_operations_dos6g4",
+        "id": "6_linear_operations_ravljl",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
-        "question_text": "Выполни вычисления и запиши ответ:\n− 0,1 ⋅ 100 + 10\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n−0,1 ⋅ 100 + 10\n\nОтвет: ____________",
         "answer": "0",
         "answer_type": "integer",
         "variables": {
@@ -3109,11 +3109,1298 @@
         }
     },
     {
-        "id": "6_fraction_structure_i9ezrt",
+        "id": "6_mixed_types_operations_h88as1",
         "task_number": 6,
-        "subtype": "decimal_fractions",
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n1,25 ⋅ 2 1/5 + 1,5\n\nОтвет: ____________",
+        "answer": "4,25",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "add",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "decimal",
+                                "value": "1,25",
+                                "text": "1,25"
+                            },
+                            {
+                                "type": "mixed",
+                                "whole": 2,
+                                "num": 1,
+                                "den": 5,
+                                "text": "2 1/5"
+                            }
+                        ],
+                        "text": "1,25 ⋅ 2 1/5"
+                    },
+                    {
+                        "type": "decimal",
+                        "value": "1,5",
+                        "text": "1,5"
+                    }
+                ],
+                "text": "1,25 ⋅ 2 1/5 + 1,5"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_gikgvt",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n6,5 − 1 1/2 ⋅ 3,4\n\nОтвет: ____________",
+        "answer": "1,4",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "subtract",
+                "operands": [
+                    {
+                        "type": "decimal",
+                        "value": "6,5",
+                        "text": "6,5"
+                    },
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "mixed",
+                                "whole": 1,
+                                "num": 1,
+                                "den": 2,
+                                "text": "1 1/2"
+                            },
+                            {
+                                "type": "decimal",
+                                "value": "3,4",
+                                "text": "3,4"
+                            }
+                        ],
+                        "text": "1 1/2 ⋅ 3,4"
+                    }
+                ],
+                "text": "6,5 - 1 1/2 ⋅ 3,4"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_fwlma3",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n3,6 : 1 1/5 − 2,1\n\nОтвет: ____________",
+        "answer": "0,9",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "subtract",
+                "operands": [
+                    {
+                        "operation": "divide",
+                        "operands": [
+                            {
+                                "type": "decimal",
+                                "value": "3,6",
+                                "text": "3,6"
+                            },
+                            {
+                                "type": "mixed",
+                                "whole": 1,
+                                "num": 1,
+                                "den": 5,
+                                "text": "1 1/5"
+                            }
+                        ],
+                        "text": "3,6 : 1 1/5"
+                    },
+                    {
+                        "type": "decimal",
+                        "value": "2,1",
+                        "text": "2,1"
+                    }
+                ],
+                "text": "3,6 : 1 1/5 - 2,1"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_su08iw",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n(2 1/4 − 1,5) ⋅ 0,8\n\nОтвет: ____________",
+        "answer": "0,6",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "multiply",
+                "operands": [
+                    {
+                        "operation": "subtract",
+                        "operands": [
+                            {
+                                "type": "mixed",
+                                "whole": 2,
+                                "num": 1,
+                                "den": 4,
+                                "text": "2 1/4"
+                            },
+                            {
+                                "type": "decimal",
+                                "value": "1,5",
+                                "text": "1,5"
+                            }
+                        ],
+                        "text": "2 1/4 - 1,5"
+                    },
+                    {
+                        "type": "decimal",
+                        "value": "0,8",
+                        "text": "0,8"
+                    }
+                ],
+                "text": "2 1/4 - 1,5 ⋅ 0,8"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_gp7tfv",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n8,4 : (1 1/5 + 0,2)\n\nОтвет: ____________",
+        "answer": "6",
+        "answer_type": "integer",
+        "variables": {
+            "expression_tree": {
+                "operation": "divide",
+                "operands": [
+                    {
+                        "type": "decimal",
+                        "value": "8,4",
+                        "text": "8,4"
+                    },
+                    {
+                        "operation": "add",
+                        "operands": [
+                            {
+                                "type": "mixed",
+                                "whole": 1,
+                                "num": 1,
+                                "den": 5,
+                                "text": "1 1/5"
+                            },
+                            {
+                                "type": "decimal",
+                                "value": "0,2",
+                                "text": "0,2"
+                            }
+                        ],
+                        "text": "1 1/5 + 0,2"
+                    }
+                ],
+                "text": "8,4 : (1 1/5 + 0,2)"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_pogmh6",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n3,5 + 1 1/4 : 0,5\n\nОтвет: ____________",
+        "answer": "6",
+        "answer_type": "integer",
+        "variables": {
+            "expression_tree": {
+                "operation": "add",
+                "operands": [
+                    {
+                        "type": "decimal",
+                        "value": "3,5",
+                        "text": "3,5"
+                    },
+                    {
+                        "operation": "divide",
+                        "operands": [
+                            {
+                                "type": "mixed",
+                                "whole": 1,
+                                "num": 1,
+                                "den": 4,
+                                "text": "1 1/4"
+                            },
+                            {
+                                "type": "decimal",
+                                "value": "0,5",
+                                "text": "0,5"
+                            }
+                        ],
+                        "text": "1 1/4 : 0,5"
+                    }
+                ],
+                "text": "3,5 + 1 1/4 : 0,5"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_gn54jy",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n2 3/5 − 0,4 ⋅ 1,5\n\nОтвет: ____________",
+        "answer": "2",
+        "answer_type": "integer",
+        "variables": {
+            "expression_tree": {
+                "operation": "subtract",
+                "operands": [
+                    {
+                        "type": "mixed",
+                        "whole": 2,
+                        "num": 3,
+                        "den": 5,
+                        "text": "2 3/5"
+                    },
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "decimal",
+                                "value": "0,4",
+                                "text": "0,4"
+                            },
+                            {
+                                "type": "decimal",
+                                "value": "1,5",
+                                "text": "1,5"
+                            }
+                        ],
+                        "text": "0,4 ⋅ 1,5"
+                    }
+                ],
+                "text": "2 3/5 - 0,4 ⋅ 1,5"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_etvog6",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n7,2 ⋅ (2 1/2 − 1,75)\n\nОтвет: ____________",
+        "answer": "5,4",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "multiply",
+                "operands": [
+                    {
+                        "type": "decimal",
+                        "value": "7,2",
+                        "text": "7,2"
+                    },
+                    {
+                        "operation": "subtract",
+                        "operands": [
+                            {
+                                "type": "mixed",
+                                "whole": 2,
+                                "num": 1,
+                                "den": 2,
+                                "text": "2 1/2"
+                            },
+                            {
+                                "type": "decimal",
+                                "value": "1,75",
+                                "text": "1,75"
+                            }
+                        ],
+                        "text": "2 1/2 - 1,75"
+                    }
+                ],
+                "text": "7,2 ⋅ 2 1/2 - 1,75"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_i37sme",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n4,8 : 1 1/7 + 0,6\n\nОтвет: ____________",
+        "answer": "4,8",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "add",
+                "operands": [
+                    {
+                        "operation": "divide",
+                        "operands": [
+                            {
+                                "type": "decimal",
+                                "value": "4,8",
+                                "text": "4,8"
+                            },
+                            {
+                                "type": "mixed",
+                                "whole": 1,
+                                "num": 1,
+                                "den": 7,
+                                "text": "1 1/7"
+                            }
+                        ],
+                        "text": "4,8 : 1 1/7"
+                    },
+                    {
+                        "type": "decimal",
+                        "value": "0,6",
+                        "text": "0,6"
+                    }
+                ],
+                "text": "4,8 : 1 1/7 + 0,6"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_4cek3l",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n9,1 − 2,8 : 1 2/5\n\nОтвет: ____________",
+        "answer": "7,1",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "subtract",
+                "operands": [
+                    {
+                        "type": "decimal",
+                        "value": "9,1",
+                        "text": "9,1"
+                    },
+                    {
+                        "operation": "divide",
+                        "operands": [
+                            {
+                                "type": "decimal",
+                                "value": "2,8",
+                                "text": "2,8"
+                            },
+                            {
+                                "type": "mixed",
+                                "whole": 1,
+                                "num": 2,
+                                "den": 5,
+                                "text": "1 2/5"
+                            }
+                        ],
+                        "text": "2,8 : 1 2/5"
+                    }
+                ],
+                "text": "9,1 - 2,8 : 1 2/5"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_b67i6h",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n(4,2 + 1 4/5) ⋅ 0,5\n\nОтвет: ____________",
+        "answer": "3",
+        "answer_type": "integer",
+        "variables": {
+            "expression_tree": {
+                "operation": "multiply",
+                "operands": [
+                    {
+                        "operation": "add",
+                        "operands": [
+                            {
+                                "type": "decimal",
+                                "value": "4,2",
+                                "text": "4,2"
+                            },
+                            {
+                                "type": "mixed",
+                                "whole": 1,
+                                "num": 4,
+                                "den": 5,
+                                "text": "1 4/5"
+                            }
+                        ],
+                        "text": "4,2 + 1 4/5"
+                    },
+                    {
+                        "type": "decimal",
+                        "value": "0,5",
+                        "text": "0,5"
+                    }
+                ],
+                "text": "4,2 + 1 4/5 ⋅ 0,5"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_70v6v3",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n1 1/8 ⋅ 2,4 − 1,7\n\nОтвет: ____________",
+        "answer": "1",
+        "answer_type": "integer",
+        "variables": {
+            "expression_tree": {
+                "operation": "subtract",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "mixed",
+                                "whole": 1,
+                                "num": 1,
+                                "den": 8,
+                                "text": "1 1/8"
+                            },
+                            {
+                                "type": "decimal",
+                                "value": "2,4",
+                                "text": "2,4"
+                            }
+                        ],
+                        "text": "1 1/8 ⋅ 2,4"
+                    },
+                    {
+                        "type": "decimal",
+                        "value": "1,7",
+                        "text": "1,7"
+                    }
+                ],
+                "text": "1 1/8 ⋅ 2,4 - 1,7"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_nonpyy",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n3,75 : 1 1/4 + 2,5\n\nОтвет: ____________",
+        "answer": "5,5",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "add",
+                "operands": [
+                    {
+                        "operation": "divide",
+                        "operands": [
+                            {
+                                "type": "decimal",
+                                "value": "3,75",
+                                "text": "3,75"
+                            },
+                            {
+                                "type": "mixed",
+                                "whole": 1,
+                                "num": 1,
+                                "den": 4,
+                                "text": "1 1/4"
+                            }
+                        ],
+                        "text": "3,75 : 1 1/4"
+                    },
+                    {
+                        "type": "decimal",
+                        "value": "2,5",
+                        "text": "2,5"
+                    }
+                ],
+                "text": "3,75 : 1 1/4 + 2,5"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_o114sk",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n5,5 − 2 1/5 ⋅ 1,5\n\nОтвет: ____________",
+        "answer": "2,2",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "subtract",
+                "operands": [
+                    {
+                        "type": "decimal",
+                        "value": "5,5",
+                        "text": "5,5"
+                    },
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "mixed",
+                                "whole": 2,
+                                "num": 1,
+                                "den": 5,
+                                "text": "2 1/5"
+                            },
+                            {
+                                "type": "decimal",
+                                "value": "1,5",
+                                "text": "1,5"
+                            }
+                        ],
+                        "text": "2 1/5 ⋅ 1,5"
+                    }
+                ],
+                "text": "5,5 - 2 1/5 ⋅ 1,5"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_uxuxv1",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n(3 1/2 − 2,25) ⋅ 4\n\nОтвет: ____________",
+        "answer": "5",
+        "answer_type": "integer",
+        "variables": {
+            "expression_tree": {
+                "operation": "multiply",
+                "operands": [
+                    {
+                        "operation": "subtract",
+                        "operands": [
+                            {
+                                "type": "mixed",
+                                "whole": 3,
+                                "num": 1,
+                                "den": 2,
+                                "text": "3 1/2"
+                            },
+                            {
+                                "type": "decimal",
+                                "value": "2,25",
+                                "text": "2,25"
+                            }
+                        ],
+                        "text": "3 1/2 - 2,25"
+                    },
+                    {
+                        "type": "integer",
+                        "value": 4,
+                        "text": "4"
+                    }
+                ],
+                "text": "3 1/2 - 2,25 ⋅ 4"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_ruajf0",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n1,9 + 4,2 : 2 1/3\n\nОтвет: ____________",
+        "answer": "3,7",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "add",
+                "operands": [
+                    {
+                        "type": "decimal",
+                        "value": "1,9",
+                        "text": "1,9"
+                    },
+                    {
+                        "operation": "divide",
+                        "operands": [
+                            {
+                                "type": "decimal",
+                                "value": "4,2",
+                                "text": "4,2"
+                            },
+                            {
+                                "type": "mixed",
+                                "whole": 2,
+                                "num": 1,
+                                "den": 3,
+                                "text": "2 1/3"
+                            }
+                        ],
+                        "text": "4,2 : 2 1/3"
+                    }
+                ],
+                "text": "1,9 + 4,2 : 2 1/3"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_oxde7u",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n3 1/4 − 1,2 : 0,8\n\nОтвет: ____________",
+        "answer": "1,75",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "subtract",
+                "operands": [
+                    {
+                        "type": "mixed",
+                        "whole": 3,
+                        "num": 1,
+                        "den": 4,
+                        "text": "3 1/4"
+                    },
+                    {
+                        "operation": "divide",
+                        "operands": [
+                            {
+                                "type": "decimal",
+                                "value": "1,2",
+                                "text": "1,2"
+                            },
+                            {
+                                "type": "decimal",
+                                "value": "0,8",
+                                "text": "0,8"
+                            }
+                        ],
+                        "text": "1,2 : 0,8"
+                    }
+                ],
+                "text": "3 1/4 - 1,2 : 0,8"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_iwj89t",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n0,75 ⋅ (1 1/3 + 2/3)\n\nОтвет: ____________",
+        "answer": "1,5",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "multiply",
+                "operands": [
+                    {
+                        "type": "decimal",
+                        "value": "0,75",
+                        "text": "0,75"
+                    },
+                    {
+                        "operation": "add",
+                        "operands": [
+                            {
+                                "type": "mixed",
+                                "whole": 1,
+                                "num": 1,
+                                "den": 3,
+                                "text": "1 1/3"
+                            },
+                            {
+                                "operation": "divide",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 2,
+                                        "text": "2"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 3,
+                                        "text": "3"
+                                    }
+                                ],
+                                "text": "2 : 3"
+                            }
+                        ],
+                        "text": "1 1/3 + 2 : 3"
+                    }
+                ],
+                "text": "0,75 ⋅ 1 1/3 + 2 : 3"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_mz1y79",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n8,8 : 2 3/4 + 1,8\n\nОтвет: ____________",
+        "answer": "5",
+        "answer_type": "integer",
+        "variables": {
+            "expression_tree": {
+                "operation": "add",
+                "operands": [
+                    {
+                        "operation": "divide",
+                        "operands": [
+                            {
+                                "type": "decimal",
+                                "value": "8,8",
+                                "text": "8,8"
+                            },
+                            {
+                                "type": "mixed",
+                                "whole": 2,
+                                "num": 3,
+                                "den": 4,
+                                "text": "2 3/4"
+                            }
+                        ],
+                        "text": "8,8 : 2 3/4"
+                    },
+                    {
+                        "type": "decimal",
+                        "value": "1,8",
+                        "text": "1,8"
+                    }
+                ],
+                "text": "8,8 : 2 3/4 + 1,8"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_ydgf16",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n10,5 − 1,25 ⋅ 3 1/5\n\nОтвет: ____________",
+        "answer": "6,5",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "subtract",
+                "operands": [
+                    {
+                        "type": "decimal",
+                        "value": "10,5",
+                        "text": "10,5"
+                    },
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "decimal",
+                                "value": "1,25",
+                                "text": "1,25"
+                            },
+                            {
+                                "type": "mixed",
+                                "whole": 3,
+                                "num": 1,
+                                "den": 5,
+                                "text": "3 1/5"
+                            }
+                        ],
+                        "text": "1,25 ⋅ 3 1/5"
+                    }
+                ],
+                "text": "10,5 - 1,25 ⋅ 3 1/5"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_fpuumk",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n(5,6 − 3 1/2) ⋅ 2\n\nОтвет: ____________",
+        "answer": "4,2",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "multiply",
+                "operands": [
+                    {
+                        "operation": "subtract",
+                        "operands": [
+                            {
+                                "type": "decimal",
+                                "value": "5,6",
+                                "text": "5,6"
+                            },
+                            {
+                                "type": "mixed",
+                                "whole": 3,
+                                "num": 1,
+                                "den": 2,
+                                "text": "3 1/2"
+                            }
+                        ],
+                        "text": "5,6 - 3 1/2"
+                    },
+                    {
+                        "type": "integer",
+                        "value": 2,
+                        "text": "2"
+                    }
+                ],
+                "text": "5,6 - 3 1/2 ⋅ 2"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_59is3w",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n1,3 ⋅ (2 1/2 + 1,5)\n\nОтвет: ____________",
+        "answer": "5,2",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "multiply",
+                "operands": [
+                    {
+                        "type": "decimal",
+                        "value": "1,3",
+                        "text": "1,3"
+                    },
+                    {
+                        "operation": "add",
+                        "operands": [
+                            {
+                                "type": "mixed",
+                                "whole": 2,
+                                "num": 1,
+                                "den": 2,
+                                "text": "2 1/2"
+                            },
+                            {
+                                "type": "decimal",
+                                "value": "1,5",
+                                "text": "1,5"
+                            }
+                        ],
+                        "text": "2 1/2 + 1,5"
+                    }
+                ],
+                "text": "1,3 ⋅ 2 1/2 + 1,5"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_9owi56",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n2,1 + 1 1/2 ⋅ 1,4\n\nОтвет: ____________",
+        "answer": "4,2",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "add",
+                "operands": [
+                    {
+                        "type": "decimal",
+                        "value": "2,1",
+                        "text": "2,1"
+                    },
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "mixed",
+                                "whole": 1,
+                                "num": 1,
+                                "den": 2,
+                                "text": "1 1/2"
+                            },
+                            {
+                                "type": "decimal",
+                                "value": "1,4",
+                                "text": "1,4"
+                            }
+                        ],
+                        "text": "1 1/2 ⋅ 1,4"
+                    }
+                ],
+                "text": "2,1 + 1 1/2 ⋅ 1,4"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_a6sb68",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n4 1/5 − 2,4 : 1,2\n\nОтвет: ____________",
+        "answer": "2,2",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "subtract",
+                "operands": [
+                    {
+                        "type": "mixed",
+                        "whole": 4,
+                        "num": 1,
+                        "den": 5,
+                        "text": "4 1/5"
+                    },
+                    {
+                        "operation": "divide",
+                        "operands": [
+                            {
+                                "type": "decimal",
+                                "value": "2,4",
+                                "text": "2,4"
+                            },
+                            {
+                                "type": "decimal",
+                                "value": "1,2",
+                                "text": "1,2"
+                            }
+                        ],
+                        "text": "2,4 : 1,2"
+                    }
+                ],
+                "text": "4 1/5 - 2,4 : 1,2"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_gm1zqx",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n1,6 ⋅ (3 1/4 − 1,5)\n\nОтвет: ____________",
+        "answer": "2,8",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "multiply",
+                "operands": [
+                    {
+                        "type": "decimal",
+                        "value": "1,6",
+                        "text": "1,6"
+                    },
+                    {
+                        "operation": "subtract",
+                        "operands": [
+                            {
+                                "type": "mixed",
+                                "whole": 3,
+                                "num": 1,
+                                "den": 4,
+                                "text": "3 1/4"
+                            },
+                            {
+                                "type": "decimal",
+                                "value": "1,5",
+                                "text": "1,5"
+                            }
+                        ],
+                        "text": "3 1/4 - 1,5"
+                    }
+                ],
+                "text": "1,6 ⋅ 3 1/4 - 1,5"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_kju18r",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n9,6 : 1 3/5 + 2,25\n\nОтвет: ____________",
+        "answer": "8,25",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "add",
+                "operands": [
+                    {
+                        "operation": "divide",
+                        "operands": [
+                            {
+                                "type": "decimal",
+                                "value": "9,6",
+                                "text": "9,6"
+                            },
+                            {
+                                "type": "mixed",
+                                "whole": 1,
+                                "num": 3,
+                                "den": 5,
+                                "text": "1 3/5"
+                            }
+                        ],
+                        "text": "9,6 : 1 3/5"
+                    },
+                    {
+                        "type": "decimal",
+                        "value": "2,25",
+                        "text": "2,25"
+                    }
+                ],
+                "text": "9,6 : 1 3/5 + 2,25"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_3rckd3",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n7,5 − 3,5 : 1 3/4\n\nОтвет: ____________",
+        "answer": "5,5",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "subtract",
+                "operands": [
+                    {
+                        "type": "decimal",
+                        "value": "7,5",
+                        "text": "7,5"
+                    },
+                    {
+                        "operation": "divide",
+                        "operands": [
+                            {
+                                "type": "decimal",
+                                "value": "3,5",
+                                "text": "3,5"
+                            },
+                            {
+                                "type": "mixed",
+                                "whole": 1,
+                                "num": 3,
+                                "den": 4,
+                                "text": "1 3/4"
+                            }
+                        ],
+                        "text": "3,5 : 1 3/4"
+                    }
+                ],
+                "text": "7,5 - 3,5 : 1 3/4"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_dq8014",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n(1,75 + 1 1/4) ⋅ 3\n\nОтвет: ____________",
+        "answer": "9",
+        "answer_type": "integer",
+        "variables": {
+            "expression_tree": {
+                "operation": "multiply",
+                "operands": [
+                    {
+                        "operation": "add",
+                        "operands": [
+                            {
+                                "type": "decimal",
+                                "value": "1,75",
+                                "text": "1,75"
+                            },
+                            {
+                                "type": "mixed",
+                                "whole": 1,
+                                "num": 1,
+                                "den": 4,
+                                "text": "1 1/4"
+                            }
+                        ],
+                        "text": "1,75 + 1 1/4"
+                    },
+                    {
+                        "type": "integer",
+                        "value": 3,
+                        "text": "3"
+                    }
+                ],
+                "text": "1,75 + 1 1/4 ⋅ 3"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_mixed_types_operations_8f2q0l",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
+        "pattern": "mixed_types_operations",
+        "question_text": "Выполни вычисления и запиши ответ:\n11,2 : (2 1/5 + 1,8)\n\nОтвет: ____________",
+        "answer": "2,8",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "divide",
+                "operands": [
+                    {
+                        "type": "decimal",
+                        "value": "11,2",
+                        "text": "11,2"
+                    },
+                    {
+                        "operation": "add",
+                        "operands": [
+                            {
+                                "type": "mixed",
+                                "whole": 2,
+                                "num": 1,
+                                "den": 5,
+                                "text": "2 1/5"
+                            },
+                            {
+                                "type": "decimal",
+                                "value": "1,8",
+                                "text": "1,8"
+                            }
+                        ],
+                        "text": "2 1/5 + 1,8"
+                    }
+                ],
+                "text": "11,2 : (2 1/5 + 1,8)"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "mixed_types_operations"
+        }
+    },
+    {
+        "id": "6_fraction_structure_rpg1vv",
+        "task_number": 6,
+        "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
-        "question_text": "Выполни вычисления и запиши ответ:\n5,4 : (2,5 − 0,7)\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n5,4 / (2,5 − 0,7)\n\nОтвет: ____________",
         "answer": "3",
         "answer_type": "integer",
         "variables": {
@@ -3122,7 +4409,7 @@
                 "operands": [
                     {
                         "type": "decimal",
-                        "value": 5.4,
+                        "value": "5,4",
                         "text": "5,4"
                     },
                     {
@@ -3130,17 +4417,19 @@
                         "operands": [
                             {
                                 "type": "decimal",
-                                "value": 2.5,
+                                "value": "2,5",
                                 "text": "2,5"
                             },
                             {
                                 "type": "decimal",
-                                "value": 0.7,
+                                "value": "0,7",
                                 "text": "0,7"
                             }
-                        ]
+                        ],
+                        "text": "2,5 - 0,7"
                     }
-                ]
+                ],
+                "text": "5,4 : (2,5 - 0,7)"
             }
         },
         "meta": {
@@ -3149,11 +4438,11 @@
         }
     },
     {
-        "id": "6_fraction_structure_9k388x",
+        "id": "6_fraction_structure_1hcqjf",
         "task_number": 6,
-        "subtype": "decimal_fractions",
+        "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
-        "question_text": "Выполни вычисления и запиши ответ:\n− 8,2 : (1,8 + 2,3)\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n−8,2 / (1,8 + 2,3)\n\nОтвет: ____________",
         "answer": "-2",
         "answer_type": "integer",
         "variables": {
@@ -3162,7 +4451,7 @@
                 "operands": [
                     {
                         "type": "decimal",
-                        "value": -8.2,
+                        "value": "-8,2",
                         "text": "-8,2"
                     },
                     {
@@ -3170,17 +4459,19 @@
                         "operands": [
                             {
                                 "type": "decimal",
-                                "value": 1.8,
+                                "value": "1,8",
                                 "text": "1,8"
                             },
                             {
                                 "type": "decimal",
-                                "value": 2.3,
+                                "value": "2,3",
                                 "text": "2,3"
                             }
-                        ]
+                        ],
+                        "text": "1,8 + 2,3"
                     }
-                ]
+                ],
+                "text": "-8,2 : (1,8 + 2,3)"
             }
         },
         "meta": {
@@ -3189,11 +4480,11 @@
         }
     },
     {
-        "id": "6_fraction_structure_n18xv8",
+        "id": "6_fraction_structure_24qky5",
         "task_number": 6,
-        "subtype": "decimal_fractions",
+        "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
-        "question_text": "Выполни вычисления и запиши ответ:\n10 : (2,5 ⋅ 2)\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n10 / (2,5 ⋅ 2)\n\nОтвет: ____________",
         "answer": "2",
         "answer_type": "integer",
         "variables": {
@@ -3201,8 +4492,8 @@
                 "operation": "divide",
                 "operands": [
                     {
-                        "type": "decimal",
-                        "value": 10.0,
+                        "type": "integer",
+                        "value": 10,
                         "text": "10"
                     },
                     {
@@ -3210,17 +4501,19 @@
                         "operands": [
                             {
                                 "type": "decimal",
-                                "value": 2.5,
+                                "value": "2,5",
                                 "text": "2,5"
                             },
                             {
-                                "type": "decimal",
-                                "value": 2.0,
+                                "type": "integer",
+                                "value": 2,
                                 "text": "2"
                             }
-                        ]
+                        ],
+                        "text": "2,5 ⋅ 2"
                     }
-                ]
+                ],
+                "text": "10 : 2,5 ⋅ 2"
             }
         },
         "meta": {
@@ -3229,11 +4522,11 @@
         }
     },
     {
-        "id": "6_fraction_structure_1f0nfa",
+        "id": "6_fraction_structure_jzgdl2",
         "task_number": 6,
-        "subtype": "decimal_fractions",
+        "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
-        "question_text": "Выполни вычисления и запиши ответ:\n6,3 : (4,2 − 5,1)\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n6,3 / (4,2 − 5,1)\n\nОтвет: ____________",
         "answer": "-7",
         "answer_type": "integer",
         "variables": {
@@ -3242,7 +4535,7 @@
                 "operands": [
                     {
                         "type": "decimal",
-                        "value": 6.3,
+                        "value": "6,3",
                         "text": "6,3"
                     },
                     {
@@ -3250,17 +4543,19 @@
                         "operands": [
                             {
                                 "type": "decimal",
-                                "value": 4.2,
+                                "value": "4,2",
                                 "text": "4,2"
                             },
                             {
                                 "type": "decimal",
-                                "value": 5.1,
+                                "value": "5,1",
                                 "text": "5,1"
                             }
-                        ]
+                        ],
+                        "text": "4,2 - 5,1"
                     }
-                ]
+                ],
+                "text": "6,3 : (4,2 - 5,1)"
             }
         },
         "meta": {
@@ -3269,11 +4564,11 @@
         }
     },
     {
-        "id": "6_fraction_structure_pp1f0r",
+        "id": "6_fraction_structure_5sinjo",
         "task_number": 6,
-        "subtype": "decimal_fractions",
+        "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
-        "question_text": "Выполни вычисления и запиши ответ:\n(3,1 + 2,4) : 1,1\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n(3,1 + 2,4) / 1,1\n\nОтвет: ____________",
         "answer": "5",
         "answer_type": "integer",
         "variables": {
@@ -3285,22 +4580,24 @@
                         "operands": [
                             {
                                 "type": "decimal",
-                                "value": 3.1,
+                                "value": "3,1",
                                 "text": "3,1"
                             },
                             {
                                 "type": "decimal",
-                                "value": 2.4,
+                                "value": "2,4",
                                 "text": "2,4"
                             }
-                        ]
+                        ],
+                        "text": "3,1 + 2,4"
                     },
                     {
                         "type": "decimal",
-                        "value": 1.1,
+                        "value": "1,1",
                         "text": "1,1"
                     }
-                ]
+                ],
+                "text": "3,1 + 2,4 : 1,1"
             }
         },
         "meta": {
@@ -3309,11 +4606,11 @@
         }
     },
     {
-        "id": "6_fraction_structure_05xvhn",
+        "id": "6_fraction_structure_o0o7s0",
         "task_number": 6,
-        "subtype": "decimal_fractions",
+        "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
-        "question_text": "Выполни вычисления и запиши ответ:\n9,9 : ( − 1,5 − 1,8)\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n9,9 / (−1,5 − 1,8)\n\nОтвет: ____________",
         "answer": "-3",
         "answer_type": "integer",
         "variables": {
@@ -3322,7 +4619,7 @@
                 "operands": [
                     {
                         "type": "decimal",
-                        "value": 9.9,
+                        "value": "9,9",
                         "text": "9,9"
                     },
                     {
@@ -3330,17 +4627,19 @@
                         "operands": [
                             {
                                 "type": "decimal",
-                                "value": -1.5,
+                                "value": "-1,5",
                                 "text": "-1,5"
                             },
                             {
                                 "type": "decimal",
-                                "value": 1.8,
+                                "value": "1,8",
                                 "text": "1,8"
                             }
-                        ]
+                        ],
+                        "text": "-1,5 - 1,8"
                     }
-                ]
+                ],
+                "text": "9,9 : (-1,5 - 1,8)"
             }
         },
         "meta": {
@@ -3349,12 +4648,12 @@
         }
     },
     {
-        "id": "6_fraction_structure_9jyvw7",
+        "id": "6_fraction_structure_6tzste",
         "task_number": 6,
-        "subtype": "decimal_fractions",
+        "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
-        "question_text": "Выполни вычисления и запиши ответ:\n(8,5 − 1,5) : 2\n\nОтвет: ____________",
-        "answer": "3.5",
+        "question_text": "Выполни вычисления и запиши ответ:\n(8,5 − 1,5) / 2\n\nОтвет: ____________",
+        "answer": "3,5",
         "answer_type": "decimal",
         "variables": {
             "expression_tree": {
@@ -3365,22 +4664,24 @@
                         "operands": [
                             {
                                 "type": "decimal",
-                                "value": 8.5,
+                                "value": "8,5",
                                 "text": "8,5"
                             },
                             {
                                 "type": "decimal",
-                                "value": 1.5,
+                                "value": "1,5",
                                 "text": "1,5"
                             }
-                        ]
+                        ],
+                        "text": "8,5 - 1,5"
                     },
                     {
-                        "type": "decimal",
-                        "value": 2.0,
+                        "type": "integer",
+                        "value": 2,
                         "text": "2"
                     }
-                ]
+                ],
+                "text": "8,5 - 1,5 : 2"
             }
         },
         "meta": {
@@ -3389,11 +4690,11 @@
         }
     },
     {
-        "id": "6_fraction_structure_ec7dpj",
+        "id": "6_fraction_structure_3m78eh",
         "task_number": 6,
-        "subtype": "decimal_fractions",
+        "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
-        "question_text": "Выполни вычисления и запиши ответ:\n− 4,5 : (0,5 ⋅ 3)\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n−4,5 / (0,5 ⋅ 3)\n\nОтвет: ____________",
         "answer": "-3",
         "answer_type": "integer",
         "variables": {
@@ -3402,7 +4703,7 @@
                 "operands": [
                     {
                         "type": "decimal",
-                        "value": -4.5,
+                        "value": "-4,5",
                         "text": "-4,5"
                     },
                     {
@@ -3410,17 +4711,19 @@
                         "operands": [
                             {
                                 "type": "decimal",
-                                "value": 0.5,
+                                "value": "0,5",
                                 "text": "0,5"
                             },
                             {
-                                "type": "decimal",
-                                "value": 3.0,
+                                "type": "integer",
+                                "value": 3,
                                 "text": "3"
                             }
-                        ]
+                        ],
+                        "text": "0,5 ⋅ 3"
                     }
-                ]
+                ],
+                "text": "-4,5 : 0,5 ⋅ 3"
             }
         },
         "meta": {
@@ -3429,11 +4732,11 @@
         }
     },
     {
-        "id": "6_fraction_structure_erffcy",
+        "id": "6_fraction_structure_l8pa1b",
         "task_number": 6,
-        "subtype": "decimal_fractions",
+        "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
-        "question_text": "Выполни вычисления и запиши ответ:\n14 : (8,5 + ( − 1,5))\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n14 / (8,5 + (−1,5))\n\nОтвет: ____________",
         "answer": "2",
         "answer_type": "integer",
         "variables": {
@@ -3441,26 +4744,28 @@
                 "operation": "divide",
                 "operands": [
                     {
-                        "type": "decimal",
-                        "value": 14.0,
+                        "type": "integer",
+                        "value": 14,
                         "text": "14"
                     },
                     {
-                        "operation": "add",
+                        "operation": "subtract",
                         "operands": [
                             {
                                 "type": "decimal",
-                                "value": 8.5,
+                                "value": "8,5",
                                 "text": "8,5"
                             },
                             {
                                 "type": "decimal",
-                                "value": -1.5,
-                                "text": "-1,5"
+                                "value": "1,5",
+                                "text": "1,5"
                             }
-                        ]
+                        ],
+                        "text": "8,5 - 1,5"
                     }
-                ]
+                ],
+                "text": "14 : (8,5 - 1,5)"
             }
         },
         "meta": {
@@ -3469,11 +4774,11 @@
         }
     },
     {
-        "id": "6_fraction_structure_p9zwkr",
+        "id": "6_fraction_structure_duw9ni",
         "task_number": 6,
-        "subtype": "decimal_fractions",
+        "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
-        "question_text": "Выполни вычисления и запиши ответ:\n(1,2 + 3,3) : − 0,9\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n(1,2 + 3,3) /(−0,9)\n\nОтвет: ____________",
         "answer": "-5",
         "answer_type": "integer",
         "variables": {
@@ -3485,22 +4790,24 @@
                         "operands": [
                             {
                                 "type": "decimal",
-                                "value": 1.2,
+                                "value": "1,2",
                                 "text": "1,2"
                             },
                             {
                                 "type": "decimal",
-                                "value": 3.3,
+                                "value": "3,3",
                                 "text": "3,3"
                             }
-                        ]
+                        ],
+                        "text": "1,2 + 3,3"
                     },
                     {
                         "type": "decimal",
-                        "value": -0.9,
+                        "value": "-0,9",
                         "text": "-0,9"
                     }
-                ]
+                ],
+                "text": "1,2 + 3,3 : -0,9"
             }
         },
         "meta": {
@@ -3509,11 +4816,11 @@
         }
     },
     {
-        "id": "6_fraction_structure_v7jsc6",
+        "id": "6_fraction_structure_rdbhhg",
         "task_number": 6,
-        "subtype": "decimal_fractions",
+        "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
-        "question_text": "Выполни вычисления и запиши ответ:\n2,6 : (1,1 − 2,4)\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n2,6 / (1,1 − 2,4)\n\nОтвет: ____________",
         "answer": "-2",
         "answer_type": "integer",
         "variables": {
@@ -3522,7 +4829,7 @@
                 "operands": [
                     {
                         "type": "decimal",
-                        "value": 2.6,
+                        "value": "2,6",
                         "text": "2,6"
                     },
                     {
@@ -3530,17 +4837,19 @@
                         "operands": [
                             {
                                 "type": "decimal",
-                                "value": 1.1,
+                                "value": "1,1",
                                 "text": "1,1"
                             },
                             {
                                 "type": "decimal",
-                                "value": 2.4,
+                                "value": "2,4",
                                 "text": "2,4"
                             }
-                        ]
+                        ],
+                        "text": "1,1 - 2,4"
                     }
-                ]
+                ],
+                "text": "2,6 : (1,1 - 2,4)"
             }
         },
         "meta": {
@@ -3549,11 +4858,11 @@
         }
     },
     {
-        "id": "6_fraction_structure_idf5h3",
+        "id": "6_fraction_structure_gegaqb",
         "task_number": 6,
-        "subtype": "decimal_fractions",
+        "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
-        "question_text": "Выполни вычисления и запиши ответ:\n− 20 : (2,5 ⋅ ( − 4))\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n−20 / (2,5 ⋅ (−4))\n\nОтвет: ____________",
         "answer": "2",
         "answer_type": "integer",
         "variables": {
@@ -3561,8 +4870,8 @@
                 "operation": "divide",
                 "operands": [
                     {
-                        "type": "decimal",
-                        "value": -20.0,
+                        "type": "integer",
+                        "value": -20,
                         "text": "-20"
                     },
                     {
@@ -3570,17 +4879,19 @@
                         "operands": [
                             {
                                 "type": "decimal",
-                                "value": 2.5,
+                                "value": "2,5",
                                 "text": "2,5"
                             },
                             {
-                                "type": "decimal",
-                                "value": -4.0,
+                                "type": "integer",
+                                "value": -4,
                                 "text": "-4"
                             }
-                        ]
+                        ],
+                        "text": "2,5 ⋅ -4"
                     }
-                ]
+                ],
+                "text": "-20 : 2,5 ⋅ -4"
             }
         },
         "meta": {
@@ -3589,11 +4900,11 @@
         }
     },
     {
-        "id": "6_fraction_structure_9jry9j",
+        "id": "6_fraction_structure_iqc62w",
         "task_number": 6,
-        "subtype": "decimal_fractions",
+        "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
-        "question_text": "Выполни вычисления и запиши ответ:\n1,8 : (5,6 − 5,0)\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n1,8 / (5,6 − 5,0)\n\nОтвет: ____________",
         "answer": "3",
         "answer_type": "integer",
         "variables": {
@@ -3602,7 +4913,7 @@
                 "operands": [
                     {
                         "type": "decimal",
-                        "value": 1.8,
+                        "value": "1,8",
                         "text": "1,8"
                     },
                     {
@@ -3610,17 +4921,19 @@
                         "operands": [
                             {
                                 "type": "decimal",
-                                "value": 5.6,
+                                "value": "5,6",
                                 "text": "5,6"
                             },
                             {
                                 "type": "decimal",
-                                "value": 5.0,
+                                "value": "5",
                                 "text": "5"
                             }
-                        ]
+                        ],
+                        "text": "5,6 - 5"
                     }
-                ]
+                ],
+                "text": "1,8 : (5,6 - 5)"
             }
         },
         "meta": {
@@ -3629,11 +4942,11 @@
         }
     },
     {
-        "id": "6_fraction_structure_avitj6",
+        "id": "6_fraction_structure_24imno",
         "task_number": 6,
-        "subtype": "decimal_fractions",
+        "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
-        "question_text": "Выполни вычисления и запиши ответ:\n(9,3 − 3,3) : 1,5\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n(9,3 − 3,3) / 1,5\n\nОтвет: ____________",
         "answer": "4",
         "answer_type": "integer",
         "variables": {
@@ -3645,22 +4958,24 @@
                         "operands": [
                             {
                                 "type": "decimal",
-                                "value": 9.3,
+                                "value": "9,3",
                                 "text": "9,3"
                             },
                             {
                                 "type": "decimal",
-                                "value": 3.3,
+                                "value": "3,3",
                                 "text": "3,3"
                             }
-                        ]
+                        ],
+                        "text": "9,3 - 3,3"
                     },
                     {
                         "type": "decimal",
-                        "value": 1.5,
+                        "value": "1,5",
                         "text": "1,5"
                     }
-                ]
+                ],
+                "text": "9,3 - 3,3 : 1,5"
             }
         },
         "meta": {
@@ -3669,11 +4984,11 @@
         }
     },
     {
-        "id": "6_fraction_structure_gd789d",
+        "id": "6_fraction_structure_tmcbt3",
         "task_number": 6,
-        "subtype": "decimal_fractions",
+        "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
-        "question_text": "Выполни вычисления и запиши ответ:\n7,5 : ( − 0,5 ⋅ 5)\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n7,5 / (−0,5 ⋅ 5)\n\nОтвет: ____________",
         "answer": "-3",
         "answer_type": "integer",
         "variables": {
@@ -3682,7 +4997,7 @@
                 "operands": [
                     {
                         "type": "decimal",
-                        "value": 7.5,
+                        "value": "7,5",
                         "text": "7,5"
                     },
                     {
@@ -3690,17 +5005,19 @@
                         "operands": [
                             {
                                 "type": "decimal",
-                                "value": -0.5,
+                                "value": "-0,5",
                                 "text": "-0,5"
                             },
                             {
-                                "type": "decimal",
-                                "value": 5.0,
+                                "type": "integer",
+                                "value": 5,
                                 "text": "5"
                             }
-                        ]
+                        ],
+                        "text": "-0,5 ⋅ 5"
                     }
-                ]
+                ],
+                "text": "7,5 : -0,5 ⋅ 5"
             }
         },
         "meta": {
@@ -3709,11 +5026,11 @@
         }
     },
     {
-        "id": "6_fraction_structure_iu60ao",
+        "id": "6_fraction_structure_ueegp1",
         "task_number": 6,
-        "subtype": "decimal_fractions",
+        "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
-        "question_text": "Выполни вычисления и запиши ответ:\n10,8 : (1,2 ⋅ 3)\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n10,8 / (1,2 ⋅ 3)\n\nОтвет: ____________",
         "answer": "3",
         "answer_type": "integer",
         "variables": {
@@ -3722,7 +5039,7 @@
                 "operands": [
                     {
                         "type": "decimal",
-                        "value": 10.8,
+                        "value": "10,8",
                         "text": "10,8"
                     },
                     {
@@ -3730,17 +5047,19 @@
                         "operands": [
                             {
                                 "type": "decimal",
-                                "value": 1.2,
+                                "value": "1,2",
                                 "text": "1,2"
                             },
                             {
-                                "type": "decimal",
-                                "value": 3.0,
+                                "type": "integer",
+                                "value": 3,
                                 "text": "3"
                             }
-                        ]
+                        ],
+                        "text": "1,2 ⋅ 3"
                     }
-                ]
+                ],
+                "text": "10,8 : 1,2 ⋅ 3"
             }
         },
         "meta": {
@@ -3749,11 +5068,11 @@
         }
     },
     {
-        "id": "6_fraction_structure_7ud7zi",
+        "id": "6_fraction_structure_586ih4",
         "task_number": 6,
-        "subtype": "decimal_fractions",
+        "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
-        "question_text": "Выполни вычисления и запиши ответ:\n− 1,1 : (4,4 − 3,3)\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n−1,1 / (4,4 − 3,3)\n\nОтвет: ____________",
         "answer": "-1",
         "answer_type": "integer",
         "variables": {
@@ -3762,7 +5081,7 @@
                 "operands": [
                     {
                         "type": "decimal",
-                        "value": -1.1,
+                        "value": "-1,1",
                         "text": "-1,1"
                     },
                     {
@@ -3770,17 +5089,19 @@
                         "operands": [
                             {
                                 "type": "decimal",
-                                "value": 4.4,
+                                "value": "4,4",
                                 "text": "4,4"
                             },
                             {
                                 "type": "decimal",
-                                "value": 3.3,
+                                "value": "3,3",
                                 "text": "3,3"
                             }
-                        ]
+                        ],
+                        "text": "4,4 - 3,3"
                     }
-                ]
+                ],
+                "text": "-1,1 : (4,4 - 3,3)"
             }
         },
         "meta": {
@@ -3789,11 +5110,11 @@
         }
     },
     {
-        "id": "6_fraction_structure_jlpj8o",
+        "id": "6_fraction_structure_96uq7u",
         "task_number": 6,
-        "subtype": "decimal_fractions",
+        "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
-        "question_text": "Выполни вычисления и запиши ответ:\n12,1 : (6,8 − 5,7)\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n12,1 / (6,8 − 5,7)\n\nОтвет: ____________",
         "answer": "11",
         "answer_type": "integer",
         "variables": {
@@ -3802,7 +5123,7 @@
                 "operands": [
                     {
                         "type": "decimal",
-                        "value": 12.1,
+                        "value": "12,1",
                         "text": "12,1"
                     },
                     {
@@ -3810,17 +5131,19 @@
                         "operands": [
                             {
                                 "type": "decimal",
-                                "value": 6.8,
+                                "value": "6,8",
                                 "text": "6,8"
                             },
                             {
                                 "type": "decimal",
-                                "value": 5.7,
+                                "value": "5,7",
                                 "text": "5,7"
                             }
-                        ]
+                        ],
+                        "text": "6,8 - 5,7"
                     }
-                ]
+                ],
+                "text": "12,1 : (6,8 - 5,7)"
             }
         },
         "meta": {
@@ -3829,11 +5152,11 @@
         }
     },
     {
-        "id": "6_fraction_structure_3zojxg",
+        "id": "6_fraction_structure_pfjlrd",
         "task_number": 6,
-        "subtype": "decimal_fractions",
+        "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
-        "question_text": "Выполни вычисления и запиши ответ:\n(10 − 2,5) : 2,5\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n(10 − 2,5) / 2,5\n\nОтвет: ____________",
         "answer": "3",
         "answer_type": "integer",
         "variables": {
@@ -3844,23 +5167,25 @@
                         "operation": "subtract",
                         "operands": [
                             {
-                                "type": "decimal",
-                                "value": 10.0,
+                                "type": "integer",
+                                "value": 10,
                                 "text": "10"
                             },
                             {
                                 "type": "decimal",
-                                "value": 2.5,
+                                "value": "2,5",
                                 "text": "2,5"
                             }
-                        ]
+                        ],
+                        "text": "10 - 2,5"
                     },
                     {
                         "type": "decimal",
-                        "value": 2.5,
+                        "value": "2,5",
                         "text": "2,5"
                     }
-                ]
+                ],
+                "text": "10 - 2,5 : 2,5"
             }
         },
         "meta": {
@@ -3869,11 +5194,11 @@
         }
     },
     {
-        "id": "6_fraction_structure_oh0cgf",
+        "id": "6_fraction_structure_3sxt38",
         "task_number": 6,
-        "subtype": "decimal_fractions",
+        "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
-        "question_text": "Выполни вычисления и запиши ответ:\n100 : (2,5 ⋅ 8)\n\nОтвет: ____________",
+        "question_text": "Выполни вычисления и запиши ответ:\n100 / (2,5 ⋅ 8)\n\nОтвет: ____________",
         "answer": "5",
         "answer_type": "integer",
         "variables": {
@@ -3881,8 +5206,8 @@
                 "operation": "divide",
                 "operands": [
                     {
-                        "type": "decimal",
-                        "value": 100.0,
+                        "type": "integer",
+                        "value": 100,
                         "text": "100"
                     },
                     {
@@ -3890,17 +5215,19 @@
                         "operands": [
                             {
                                 "type": "decimal",
-                                "value": 2.5,
+                                "value": "2,5",
                                 "text": "2,5"
                             },
                             {
-                                "type": "decimal",
-                                "value": 8.0,
+                                "type": "integer",
+                                "value": 8,
                                 "text": "8"
                             }
-                        ]
+                        ],
+                        "text": "2,5 ⋅ 8"
                     }
-                ]
+                ],
+                "text": "100 : 2,5 ⋅ 8"
             }
         },
         "meta": {

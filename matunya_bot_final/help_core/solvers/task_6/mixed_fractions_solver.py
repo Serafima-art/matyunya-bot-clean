@@ -1,74 +1,125 @@
-# matunya_bot_final/help_core/solvers/task_6/mixed_fractions_solver.py
+﻿# matunya_bot_final/help_core/solvers/task_6/mixed_fractions_solver.py
 
 """
-Решатель для подтипа 'mixed_fractions' (Задание 6).
-Содержит "внутренний роутер" и преобразует все числа в обыкновенные дроби.
-Модуль следует стандарту ГОСТ-2026.
+Решатель для подтипа 'mixed_fractions' (Задание 6, тема 3 ФИПИ).
+Формат решения строго соответствует методическим рекомендациям ФИПИ/Ященко:
+— Сначала идея решения;
+— Затем перевод всех чисел в обыкновенные дроби;
+— Далее выполнение действий в порядке;
+— Финальное преобразование в десятичную дробь.
 """
 
 from fractions import Fraction
 from typing import Dict, List, Any
+from decimal import Decimal, getcontext
 import math
+import re
 
-# =============================================================================
-# ★★★ ГЛАВНАЯ ФУНКЦИЯ-ДИСПЕТЧЕР (ВНУТРЕННИЙ РОУТЕР) ★★★
-# =============================================================================
+
+# ================================================================
+# 🔹 Вспомогательные функции форматирования
+# ================================================================
+
+def _beautify_ops(s: str) -> str:
+    """Заменяет служебные символы на «красивые»: *→⋅, -→−."""
+    return s.replace('*', '⋅').replace('-', '−')
+
+
+def _decimal_from_fraction(frac: Fraction) -> Decimal:
+    """Точный перевод Fraction в Decimal без артефактов float."""
+    getcontext().prec = 28
+    return Decimal(frac.numerator) / Decimal(frac.denominator)
+
+
+def _decimal_display(frac: Fraction) -> str:
+    """Красивое отображение десятичного результата."""
+    d = _decimal_from_fraction(frac).normalize()
+    s = format(d, 'f').rstrip('0').rstrip('.')
+    if s == '-0':
+        s = '0'
+    return s.replace('.', ',')
+
+
+def _format_fraction(frac: Fraction) -> str:
+    """Форматирует дробь в виде a/b или целое число."""
+    if frac.denominator == 1:
+        return str(frac.numerator)
+    return f"{frac.numerator}/{frac.denominator}"
+
+
+# ================================================================
+# 🔹 Основная функция solve()
+# ================================================================
 
 def solve(task_data: Dict[str, Any]) -> Dict[str, Any]:
     """
-    Главная функция-роутер для подтипа 'mixed_fractions'.
-    Вызывает универсальный рекурсивный решатель.
+    Главный решатель для 'mixed_fractions'.
+    Пошагово объясняет перевод смешанных и десятичных дробей и порядок действий.
     """
     expression_tree = task_data.get("variables", {}).get("expression_tree")
     if not expression_tree:
         raise ValueError("Отсутствует 'expression_tree' в task_data")
 
-    # Для 'mixed_fractions' все паттерны решаются одним универсальным методом.
-
-    steps = []
+    steps: List[Dict[str, Any]] = []
     step_counter = [1]
 
-    # Вызываем универсальный рекурсивный движок
+    # === Шаг 0. Идея решения ===
+    idea_solution = (
+        "Чтобы избежать ошибок, приведём все числа к одному виду — обыкновенным дробям. "
+        "Порядок действий: сначала умножение и деление, затем сложение и вычитание."
+    )
+
+    # === Шаг 1. Перевод всех чисел ===
+    conversion_lines = _collect_conversions(expression_tree)
+    steps.append({
+        "step_number": step_counter[0],
+        "description": "Преобразуем все числа в обыкновенные дроби.",
+        "formula_representation": "\n".join(conversion_lines),
+        "formula_calculation": "",
+        "calculation_result": ""
+    })
+    step_counter[0] += 1
+
+    # === Шаг 2. Рекурсивный расчёт выражения ===
     final_fraction = _evaluate_tree(expression_tree, steps, step_counter)
 
-    # Добавляем финальный шаг
+    # === Шаг 3. Преобразуем результат в десятичную дробь ===
     _add_decimal_conversion_step(final_fraction, steps, step_counter)
 
-    decimal_value = float(final_fraction)
+    # === Финальные значения ===
+    value_machine = float(_decimal_from_fraction(final_fraction))
+    value_display = _decimal_display(final_fraction)
 
-    # Собираем финальный solution_core по ГОСТ-2026
     return {
         "question_id": task_data.get("id", "placeholder_id"),
         "question_group": "TASK6_MIXED",
-        "explanation_idea": _generate_explanation_idea(),
+        "idea_solution": idea_solution,
+        "explanation_idea": "Переводим числа в обыкновенные дроби и выполняем действия по порядку.",
         "calculation_steps": steps,
         "final_answer": {
-            "value_machine": decimal_value,
-            "value_display": str(decimal_value)
+            "value_machine": value_machine,
+            "value_display": value_display
         },
         "hints": _generate_hints()
     }
 
-# =============================================================================
-# ★★★ УНИВЕРСАЛЬНЫЙ РЕКУРСИВНЫЙ ДВИЖОК (ВСЯ МАТЕМАТИКА) ★★★
-# (Этот код остается практически без изменений)
-# =============================================================================
+
+# ================================================================
+# 🔹 Универсальный рекурсивный движок вычислений
+# ================================================================
 
 def _evaluate_tree(node: Dict[str, Any], steps: List[Dict], step_counter: List[int]) -> Fraction:
-    """
-    Рекурсивно вычисляет выражение, преобразуя все числа в Fraction.
-    """
+    """Рекурсивно вычисляет выражение, преобразуя все числа в Fraction."""
     if node.get("type") == "common":
         return Fraction(node["value"][0], node["value"][1])
 
     if node.get("type") == "decimal":
         decimal_value = node["value"]
         fraction = Fraction(str(decimal_value))
-        _add_conversion_step(decimal_value, fraction, steps, step_counter)
         return fraction
 
-    operation = node["operation"]
-    operands = node["operands"]
+    operation = node.get("operation")
+    operands = node.get("operands")
 
     left = _evaluate_tree(operands[0], steps, step_counter)
     right = _evaluate_tree(operands[1], steps, step_counter)
@@ -76,72 +127,156 @@ def _evaluate_tree(node: Dict[str, Any], steps: List[Dict], step_counter: List[i
     return _perform_operation(operation, left, right, steps, step_counter)
 
 
-def _add_conversion_step(decimal_value: float, fraction: Fraction,
-                        steps: List[Dict], step_counter: List[int]) -> None:
+# ================================================================
+# 🔹 Преобразования и операции
+# ================================================================
+
+def _as_fraction_from_decimal(val: float) -> Fraction:
+    # точное преобразование без двоичных артефактов
+    return Fraction(str(val))
+
+def _decimal_chain(val: float) -> str:
     """
-    Добавляет шаг преобразования десятичной дроби в обыкновенную.
-
-    Args:
-        decimal_value: Исходное десятичное число
-        fraction: Результат преобразования в Fraction
-        steps: Список шагов
-        step_counter: Счетчик шагов
+    Строит цепочку вроде:
+    8,4 = 8 4/10 = 84/10 = 42/5
+    0,2 = 2/10 = 1/5
     """
-    # Показываем промежуточное преобразование через знаменатель 10, 100, и т.д.
-    decimal_str = str(decimal_value)
+    dec_str = str(val).replace('.', ',')
+    frac = _as_fraction_from_decimal(val)  # уже несократимая дробь
+    num, den = frac.numerator, frac.denominator
 
-    # Определяем количество знаков после запятой
-    if '.' in decimal_str:
-        decimal_places = len(decimal_str.split('.')[1])
-        denominator = 10 ** decimal_places
-        numerator = int(decimal_value * denominator)
-
-        intermediate_fraction = Fraction(numerator, denominator)
-
-        description = f"Преобразуем десятичную дробь {decimal_value} в обыкновенную."
-
-        formula_repr = str(decimal_value)
-
-        # Если дробь сократилась, показываем промежуточный шаг
-        if intermediate_fraction != fraction:
-            gcd = math.gcd(numerator, denominator)
-            formula_calc = f"{decimal_value} = {numerator}/{denominator} = {_format_fraction(fraction)}"
-            if gcd > 1:
-                description += f" Сокращаем на {gcd}."
-        else:
-            formula_calc = f"{decimal_value} = {_format_fraction(fraction)}"
+    # базовая 10-я форма до сокращения
+    # для 8,4 → 84/10, для 0,2 → 2/10
+    s = str(val)
+    if '.' in s:
+        digits = len(s.split('.')[1])
+        base_den = 10 ** digits
+        base_num = int(round(float(s) * base_den))
     else:
-        # Целое число
-        description = f"Преобразуем число {decimal_value} в обыкновенную дробь."
-        formula_repr = str(decimal_value)
-        formula_calc = f"{decimal_value} = {_format_fraction(fraction)}"
+        base_den = 1
+        base_num = int(val)
 
-    steps.append({
-        "step_number": step_counter[0],
-        "description": description,
-        "formula_representation": formula_repr,
-        "formula_calculation": formula_calc,
-        "calculation_result": _format_fraction(fraction)
-    })
+    # если число >= 1, показываем смешанную форму a b/den
+    chain = []
+    if den != 1:
+        if base_den != den:
+            # возможна цепочка: 8,4 = 8 4/10 = 84/10 = 42/5
+            if base_den != 1:
+                if base_num >= base_den:
+                    a, b = divmod(base_num, base_den)
+                    if a > 0 and b > 0:
+                        chain = [f"{dec_str} = {a} {b}/{base_den}", f"{base_num}/{base_den}", f"{num}/{den}"]
+                    else:
+                        chain = [f"{dec_str} = {base_num}/{base_den}", f"{num}/{den}"]
+                else:
+                    # например 0,2
+                    chain = [f"{dec_str} = {base_num}/{base_den}", f"{num}/{den}"]
+            else:
+                # на всякий случай
+                chain = [f"{dec_str} = {num}/{den}"]
+        else:
+            # уже в несократимом виде
+            chain = [f"{dec_str} = {num}/{den}"]
+    else:
+        # целое 8,0 → просто 8
+        chain = [f"{dec_str} = {num}/1 = {num}"]
 
-    step_counter[0] += 1
+    # склейка с " = "
+    return " = ".join(chain)
+
+def _match_mixed_number(node) -> tuple | None:
+    """
+    Узнаём структуру смешанного:  a + (1) * (1/b)  → вернём (a, 1, b)
+    В твоих деревьях '1' часто как decimal с value == 1.0.
+    """
+    if not isinstance(node, dict):
+        return None
+    if node.get("operation") != "add":
+        return None
+
+    left, right = node.get("operands", [None, None])
+    # левый — целое a
+    if not (isinstance(left, dict) and left.get("type") == "decimal"):
+        return None
+    a_val = left.get("value")
+    if float(a_val) != 1.0 and float(a_val) != int(a_val):
+        # допускаем только целые (обычно как decimal с .0)
+        pass
+    a = int(round(float(a_val)))
+
+    # правый — multiply( decimal(1), divide( decimal(1) , decimal(b) ) )
+    if not (isinstance(right, dict) and right.get("operation") == "multiply"):
+        return None
+    r_ops = right.get("operands", [])
+    if len(r_ops) != 2:
+        return None
+
+    one_node, div_node = r_ops
+    if not (isinstance(one_node, dict) and one_node.get("type") == "decimal" and float(one_node.get("value")) == 1.0):
+        return None
+    if not (isinstance(div_node, dict) and div_node.get("operation") == "divide"):
+        return None
+    d_ops = div_node.get("operands", [])
+    if len(d_ops) != 2:
+        return None
+    num_node, den_node = d_ops
+    if not (isinstance(num_node, dict) and num_node.get("type") == "decimal" and float(num_node.get("value")) == 1.0):
+        return None
+    if not (isinstance(den_node, dict) and den_node.get("type") == "decimal"):
+        return None
+
+    b = int(round(float(den_node.get("value"))))
+    return (a, 1, b)
+
+def _collect_conversions(node: Dict[str, Any]) -> List[str]:
+    """
+    Собираем только осмысленные конверсии «из исходных чисел»:
+    - десятичные числа → цепочка десятичная→десятая дробь→несократимая;
+    - смешанное число по паттерну → (a·b+c)/b → неправильная дробь;
+    - готовые common (если есть) → как есть.
+    Не тащим из внутренних узлов случайные 5 и 7.
+    """
+    seen: List[str] = []
+    lines: List[str] = []
+
+    def add_once(s: str):
+        if s not in seen:
+            seen.append(s)
+            lines.append(s)
+
+    def walk(n):
+        if not isinstance(n, dict):
+            return
+        t = n.get("type")
+        if t == "decimal":
+            val = float(n["value"])
+            add_once(_decimal_chain(val))
+            return
+        if t == "common":
+            num, den = n["value"]
+            add_once(f"{num}/{den}")
+            return
+
+        # пробуем распознать смешанное
+        mixed = _match_mixed_number(n)
+        if mixed is not None:
+            a, c, b = mixed  # (a,1,b)
+            improper = a * b + c
+            add_once(f"{a} {c}/{b} = ({a}·{b}+{c})/{b} = {improper}/{b}")
+            # дочерние не разворачиваем, чтобы не плодить «5/1», «7/1»
+            return
+
+        # рекурсивно дальше
+        for child in n.get("operands", []):
+            walk(child)
+
+    walk(node)
+    return lines if lines else ["(нет чисел)"]
 
 
 def _perform_operation(operation: str, left: Fraction, right: Fraction,
                        steps: List[Dict], step_counter: List[int]) -> Fraction:
-    """
-    Выполняет математическую операцию и добавляет описание шага.
-
-    Args:
-        operation: Тип операции ('add', 'subtract', 'multiply', 'divide')
-        left: Левый операнд
-        right: Правый операнд
-        steps: Список шагов
-        step_counter: Счетчик шагов
-
-    Returns:
-        Результат операции
-    """
+    """Выполняет математическую операцию с пояснениями."""
     if operation == "add":
         return _perform_addition(left, right, steps, step_counter)
     elif operation == "subtract":
@@ -156,199 +291,99 @@ def _perform_operation(operation: str, left: Fraction, right: Fraction,
 
 def _perform_addition(left: Fraction, right: Fraction,
                      steps: List[Dict], step_counter: List[int]) -> Fraction:
-    """Выполняет сложение дробей."""
+    """Сложение дробей по ФИПИ."""
     lcm = _lcm(left.denominator, right.denominator)
-
-    # Приводим к общему знаменателю
-    left_mult = lcm // left.denominator
-    right_mult = lcm // right.denominator
-
-    left_new_num = left.numerator * left_mult
-    right_new_num = right.numerator * right_mult
-
-    result_num = left_new_num + right_new_num
+    left_new = left.numerator * (lcm // left.denominator)
+    right_new = right.numerator * (lcm // right.denominator)
+    result_num = left_new + right_new
     result = Fraction(result_num, lcm)
 
-    description = f"Складываем дроби. Общий знаменатель: {lcm}."
-
-    if result.numerator != result_num or result.denominator != lcm:
+    description = "Выполним сложение. Приведём к общему знаменателю."
+    formula_calc = f"{left_new}/{lcm} + {right_new}/{lcm} = {result_num}/{lcm}"
+    if result != Fraction(result_num, lcm):
         gcd = math.gcd(result_num, lcm)
-        if gcd > 1:
-            description += f" Сокращаем на {gcd}."
+        formula_calc += f" = {_format_fraction(result)} (сокращаем на {gcd})"
 
-    formula_repr = f"{_format_fraction(left)} + {_format_fraction(right)}"
-
-    if lcm != left.denominator or lcm != right.denominator:
-        formula_calc = f"{left_new_num}/{lcm} + {right_new_num}/{lcm} = {result_num}/{lcm}"
-        if result.numerator != result_num or result.denominator != lcm:
-            formula_calc += f" = {_format_fraction(result)}"
-    else:
-        formula_calc = f"{result_num}/{lcm}"
-        if result.numerator != result_num or result.denominator != lcm:
-            formula_calc += f" = {_format_fraction(result)}"
-
-    steps.append({
-        "step_number": step_counter[0],
-        "description": description,
-        "formula_representation": formula_repr,
-        "formula_calculation": formula_calc,
-        "calculation_result": _format_fraction(result)
-    })
-
-    step_counter[0] += 1
+    _append_step(steps, step_counter, description, f"{_format_fraction(left)} + {_format_fraction(right)}",
+                 formula_calc, _format_fraction(result))
     return result
 
 
 def _perform_subtraction(left: Fraction, right: Fraction,
                         steps: List[Dict], step_counter: List[int]) -> Fraction:
-    """Выполняет вычитание дробей."""
+    """Вычитание дробей по ФИПИ."""
     lcm = _lcm(left.denominator, right.denominator)
-
-    left_mult = lcm // left.denominator
-    right_mult = lcm // right.denominator
-
-    left_new_num = left.numerator * left_mult
-    right_new_num = right.numerator * right_mult
-
-    result_num = left_new_num - right_new_num
+    left_new = left.numerator * (lcm // left.denominator)
+    right_new = right.numerator * (lcm // right.denominator)
+    result_num = left_new - right_new
     result = Fraction(result_num, lcm)
 
-    description = f"Вычитаем дроби. Общий знаменатель: {lcm}."
-
-    if result.numerator != result_num or result.denominator != lcm:
+    description = "Выполним вычитание. Приведём к общему знаменателю."
+    formula_calc = f"{left_new}/{lcm} − {right_new}/{lcm} = {result_num}/{lcm}"
+    if result != Fraction(result_num, lcm):
         gcd = math.gcd(abs(result_num), lcm)
-        if gcd > 1:
-            description += f" Сокращаем на {gcd}."
+        formula_calc += f" = {_format_fraction(result)} (сокращаем на {gcd})"
 
-    formula_repr = f"{_format_fraction(left)} - {_format_fraction(right)}"
-
-    if lcm != left.denominator or lcm != right.denominator:
-        formula_calc = f"{left_new_num}/{lcm} - {right_new_num}/{lcm} = {result_num}/{lcm}"
-        if result.numerator != result_num or result.denominator != lcm:
-            formula_calc += f" = {_format_fraction(result)}"
-    else:
-        formula_calc = f"{result_num}/{lcm}"
-        if result.numerator != result_num or result.denominator != lcm:
-            formula_calc += f" = {_format_fraction(result)}"
-
-    steps.append({
-        "step_number": step_counter[0],
-        "description": description,
-        "formula_representation": formula_repr,
-        "formula_calculation": formula_calc,
-        "calculation_result": _format_fraction(result)
-    })
-
-    step_counter[0] += 1
+    _append_step(steps, step_counter, description, f"{_format_fraction(left)} − {_format_fraction(right)}",
+                 formula_calc, _format_fraction(result))
     return result
 
 
 def _perform_multiplication(left: Fraction, right: Fraction,
                            steps: List[Dict], step_counter: List[int]) -> Fraction:
-    """Выполняет умножение дробей."""
-    result_num = left.numerator * right.numerator
-    result_den = left.denominator * right.denominator
-    result = Fraction(result_num, result_den)
-
-    description = "Умножаем дроби. Перемножаем числители и знаменатели."
-
-    if result.numerator != result_num or result.denominator != result_den:
-        gcd = math.gcd(result_num, result_den)
-        if gcd > 1:
-            description += f" Сокращаем на {gcd}."
-
-    formula_repr = f"{_format_fraction(left)} * {_format_fraction(right)}"
-    formula_calc = f"{result_num}/{result_den}"
-
-    if result.numerator != result_num or result.denominator != result_den:
-        formula_calc += f" = {_format_fraction(result)}"
-
-    steps.append({
-        "step_number": step_counter[0],
-        "description": description,
-        "formula_representation": formula_repr,
-        "formula_calculation": formula_calc,
-        "calculation_result": _format_fraction(result)
-    })
-
-    step_counter[0] += 1
+    """Умножение дробей по ФИПИ."""
+    result = left * right
+    description = "Выполним умножение дробей. Перемножаем числители и знаменатели."
+    formula_calc = f"{_format_fraction(left)} ⋅ {_format_fraction(right)} = {_format_fraction(result)}"
+    _append_step(steps, step_counter, description, f"{_format_fraction(left)} ⋅ {_format_fraction(right)}",
+                 formula_calc, _format_fraction(result))
     return result
 
 
 def _perform_division(left: Fraction, right: Fraction,
                      steps: List[Dict], step_counter: List[int]) -> Fraction:
-    """Выполняет деление дробей."""
-    # Деление = умножение на перевернутую дробь
-    result_num = left.numerator * right.denominator
-    result_den = left.denominator * right.numerator
-    result = Fraction(result_num, result_den)
-
-    description = f"Делим дроби. Умножаем на перевернутую дробь {right.denominator}/{right.numerator}."
-
-    if result.numerator != result_num or result.denominator != result_den:
-        gcd = math.gcd(abs(result_num), abs(result_den))
-        if gcd > 1:
-            description += f" Сокращаем на {gcd}."
-
-    formula_repr = f"{_format_fraction(left)} : {_format_fraction(right)}"
-    formula_calc = f"{_format_fraction(left)} * {right.denominator}/{right.numerator} = {result_num}/{result_den}"
-
-    if result.numerator != result_num or result.denominator != result_den:
-        formula_calc += f" = {_format_fraction(result)}"
-
-    steps.append({
-        "step_number": step_counter[0],
-        "description": description,
-        "formula_representation": formula_repr,
-        "formula_calculation": formula_calc,
-        "calculation_result": _format_fraction(result)
-    })
-
-    step_counter[0] += 1
+    """Деление дробей по ФИПИ."""
+    result = left / right
+    description = f"Выполним деление. Деление дробей заменяем умножением на перевёрнутую дробь {right.denominator}/{right.numerator}."
+    formula_calc = f"{_format_fraction(left)} : {_format_fraction(right)} = {_format_fraction(left)} ⋅ {right.denominator}/{right.numerator} = {_format_fraction(result)}"
+    _append_step(steps, step_counter, description, f"{_format_fraction(left)} : {_format_fraction(right)}",
+                 formula_calc, _format_fraction(result))
     return result
 
 
-def _add_decimal_conversion_step(fraction: Fraction, steps: List[Dict],
-                                 step_counter: List[int]) -> None:
-    """Добавляет финальный шаг с преобразованием в десятичное число."""
-    decimal_value = float(fraction)
-
+def _add_decimal_conversion_step(fraction: Fraction, steps: List[Dict], step_counter: List[int]) -> None:
+    """Финальный шаг: преобразование результата в десятичное число."""
+    display = _decimal_display(fraction)
     description = "Преобразуем результат в десятичное число."
+    formula_calc = f"{_format_fraction(fraction)} = {display}"
+    _append_step(steps, step_counter, description, _format_fraction(fraction), formula_calc, display)
 
-    formula_repr = _format_fraction(fraction)
-    formula_calc = f"{_format_fraction(fraction)} = {decimal_value}"
 
+# ================================================================
+# 🔹 Утилиты
+# ================================================================
+
+def _append_step(steps, step_counter, desc, repr_str, calc, result):
     steps.append({
         "step_number": step_counter[0],
-        "description": description,
-        "formula_representation": formula_repr,
-        "formula_calculation": formula_calc,
-        "calculation_result": str(decimal_value)
+        "description": desc,
+        "formula_representation": _beautify_ops(repr_str),
+        "formula_calculation": _beautify_ops(calc),
+        "calculation_result": result
     })
-
-
-def _format_fraction(frac: Fraction) -> str:
-    """Форматирует дробь для отображения."""
-    if frac.denominator == 1:
-        return str(frac.numerator)
-    return f"{frac.numerator}/{frac.denominator}"
+    step_counter[0] += 1
 
 
 def _lcm(a: int, b: int) -> int:
-    """Вычисляет наименьшее общее кратное."""
+    """Наименьшее общее кратное."""
     return abs(a * b) // math.gcd(a, b)
 
 
-def _generate_explanation_idea() -> str:
-    """Возвращает статическое объяснение для всех задач со смешанными дробями."""
-    return "Для решения этого выражения необходимо привести все числа к одному виду (обыкновенным дробям) и выполнить действия по порядку."
-
-
 def _generate_hints() -> List[str]:
-    """Возвращает статический список подсказок для смешанных дробей."""
+    """Подсказки в стиле ФИПИ."""
     return [
-        "Самый надежный способ решать такие примеры - переводить все десятичные дроби в обыкновенные.",
-        "Соблюдайте порядок действий: сначала умножение и деление, затем сложение и вычитание.",
-        "Внимательно следите за знаками.",
-        "После каждого действия проверяйте, можно ли сократить результат."
+        "Сначала переведи все числа в обыкновенные дроби.",
+        "При делении дробей — умножай на перевёрнутую.",
+        "Сначала умножение и деление, затем сложение и вычитание.",
+        "Проверяй, можно ли сократить дробь после каждого действия."
     ]
