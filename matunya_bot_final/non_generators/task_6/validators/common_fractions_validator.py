@@ -1,5 +1,6 @@
 import re
 import random
+from matunya_bot_final.help_core.solvers.task_6.task6_text_formatter import normalize_for_display
 from sympy.parsing.sympy_parser import parse_expr
 from sympy import sympify, SympifyError, Rational, Add, Mul, Pow, Integer
 
@@ -151,18 +152,26 @@ def validate_common_fraction(line: str):
         if pattern == 'cf_addition_subtraction':
             result_fraction = Rational(final_sympy_result)
             choice = random.choice(["numerator", "denominator"])
+            expr_display = normalize_for_display(expression_str, subtype="common_fractions")
             if choice == "numerator":
-                question_text = f"Выполни вычисления:\n{expression_str}\n\nПолучи несократимую дробь и в ответ запиши только числитель этой дроби."
+                question_text = (
+                    f"Выполни вычисления:\n{expr_display}\n\n"
+                    "Получи несократимую дробь и в ответ запиши только числитель этой дроби."
+                )
                 final_answer = result_fraction.p
             else:
-                question_text = f"Выполни вычисления:\n{expression_str}\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби."
+                question_text = (
+                    f"Выполни вычисления:\n{expr_display}\n\n"
+                    "Получи несократимую дробь и в ответ запиши только знаменатель этой дроби."
+                )
                 final_answer = result_fraction.q
             answer_type = "integer"
         else:
+            expr_display = normalize_for_display(expression_str, subtype="common_fractions")
             if pattern == 'complex_fraction':
-                question_text = f"Вычисли значение дроби:\n{expression_str}\n\nОтвет: ____________"
+                question_text = f"Вычисли значение дроби:\n{expr_display}\n\nОтвет: ____________"
             else:
-                question_text = f"Выполни вычисления и запиши ответ:\n{expression_str}\n\nОтвет: ____________"
+                question_text = f"Выполни вычисления и запиши ответ:\n{expr_display}\n\nОтвет: ____________"
 
             if final_sympy_result.is_Integer:
                 final_answer = int(final_sympy_result)
