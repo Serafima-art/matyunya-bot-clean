@@ -1,11 +1,11 @@
 [
     {
-        "id": "6_cf_addition_subtraction_5e1nlj",
+        "id": "6_cf_addition_subtraction_k5nfpo",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
-        "question_text": "Выполни вычисления:\n7/15 + 5/12\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
-        "answer": "60",
+        "question_text": "Выполни вычисления:\n7/15 + 5/12\n\nПолучи несократимую дробь и в ответ запиши только числитель этой дроби.",
+        "answer": "53",
         "answer_type": "integer",
         "variables": {
             "expression_tree": {
@@ -36,7 +36,7 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_h87ajw",
+        "id": "6_cf_addition_subtraction_jwo3eo",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
@@ -72,7 +72,7 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_rdiara",
+        "id": "6_cf_addition_subtraction_kpdqeg",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
@@ -108,7 +108,7 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_2jtrta",
+        "id": "6_cf_addition_subtraction_b7faug",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
@@ -144,12 +144,12 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_jj3v5x",
+        "id": "6_cf_addition_subtraction_bjig7s",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
-        "question_text": "Выполни вычисления:\n13/24 − 5/16\n\nПолучи несократимую дробь и в ответ запиши только числитель этой дроби.",
-        "answer": "11",
+        "question_text": "Выполни вычисления:\n13/24 − 5/16\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
+        "answer": "48",
         "answer_type": "integer",
         "variables": {
             "expression_tree": {
@@ -180,12 +180,12 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_v1tjkh",
+        "id": "6_cf_addition_subtraction_9y88wg",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
-        "question_text": "Выполни вычисления:\n4/25 + 7/10\n\nПолучи несократимую дробь и в ответ запиши только числитель этой дроби.",
-        "answer": "43",
+        "question_text": "Выполни вычисления:\n4/25 + 7/10\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
+        "answer": "50",
         "answer_type": "integer",
         "variables": {
             "expression_tree": {
@@ -216,12 +216,12 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_egvthq",
+        "id": "6_cf_addition_subtraction_nhhykq",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
-        "question_text": "Выполни вычисления:\n19/30 − 5/12\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
-        "answer": "60",
+        "question_text": "Выполни вычисления:\n19/30 − 5/12\n\nПолучи несократимую дробь и в ответ запиши только числитель этой дроби.",
+        "answer": "13",
         "answer_type": "integer",
         "variables": {
             "expression_tree": {
@@ -252,12 +252,12 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_wh70oe",
+        "id": "6_cf_addition_subtraction_pgl28j",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
-        "question_text": "Выполни вычисления:\n8/9 − 5/12\n\nПолучи несократимую дробь и в ответ запиши только числитель этой дроби.",
-        "answer": "17",
+        "question_text": "Выполни вычисления:\n8/9 − 5/12\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
+        "answer": "36",
         "answer_type": "integer",
         "variables": {
             "expression_tree": {
@@ -288,12 +288,12 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_2aw4y7",
+        "id": "6_cf_addition_subtraction_u66oaq",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
-        "question_text": "Выполни вычисления:\n7/16 + 9/20\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
-        "answer": "80",
+        "question_text": "Выполни вычисления:\n7/16 + 9/20\n\nПолучи несократимую дробь и в ответ запиши только числитель этой дроби.",
+        "answer": "71",
         "answer_type": "integer",
         "variables": {
             "expression_tree": {
@@ -324,7 +324,7 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_rw6px7",
+        "id": "6_cf_addition_subtraction_qj3qfx",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
@@ -360,7 +360,7 @@
         }
     },
     {
-        "id": "6_multiplication_division_hgqebv",
+        "id": "6_multiplication_division_383det",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
@@ -396,7 +396,7 @@
         }
     },
     {
-        "id": "6_multiplication_division_eft0ip",
+        "id": "6_multiplication_division_9fhkpu",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
@@ -432,7 +432,7 @@
         }
     },
     {
-        "id": "6_multiplication_division_brbwvo",
+        "id": "6_multiplication_division_3wwu62",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
@@ -468,7 +468,7 @@
         }
     },
     {
-        "id": "6_multiplication_division_n6xjnv",
+        "id": "6_multiplication_division_pjsutd",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
@@ -504,7 +504,7 @@
         }
     },
     {
-        "id": "6_multiplication_division_66i9ic",
+        "id": "6_multiplication_division_vf7zww",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
@@ -540,7 +540,7 @@
         }
     },
     {
-        "id": "6_multiplication_division_squse3",
+        "id": "6_multiplication_division_76ts9r",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
@@ -576,7 +576,7 @@
         }
     },
     {
-        "id": "6_multiplication_division_iqy2gv",
+        "id": "6_multiplication_division_o6qegj",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
@@ -612,7 +612,7 @@
         }
     },
     {
-        "id": "6_multiplication_division_yexp1y",
+        "id": "6_multiplication_division_yne1ny",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
@@ -648,7 +648,7 @@
         }
     },
     {
-        "id": "6_multiplication_division_39zigb",
+        "id": "6_multiplication_division_x2mmev",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
@@ -684,7 +684,7 @@
         }
     },
     {
-        "id": "6_multiplication_division_n1yrcj",
+        "id": "6_multiplication_division_2mq43e",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
@@ -720,7 +720,7 @@
         }
     },
     {
-        "id": "6_parentheses_operations_ltz8n9",
+        "id": "6_parentheses_operations_szdbee",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
@@ -766,7 +766,7 @@
         }
     },
     {
-        "id": "6_parentheses_operations_d14etn",
+        "id": "6_parentheses_operations_aoq9q2",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
@@ -815,7 +815,7 @@
         }
     },
     {
-        "id": "6_parentheses_operations_ftefxa",
+        "id": "6_parentheses_operations_p76567",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
@@ -874,7 +874,7 @@
         }
     },
     {
-        "id": "6_parentheses_operations_xk1b4y",
+        "id": "6_parentheses_operations_zua11p",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
@@ -940,7 +940,7 @@
         }
     },
     {
-        "id": "6_parentheses_operations_c8f2c4",
+        "id": "6_parentheses_operations_aah9lc",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
@@ -996,7 +996,7 @@
         }
     },
     {
-        "id": "6_parentheses_operations_ij29dq",
+        "id": "6_parentheses_operations_gyco8j",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
@@ -1045,7 +1045,7 @@
         }
     },
     {
-        "id": "6_parentheses_operations_88k55n",
+        "id": "6_parentheses_operations_erzems",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
@@ -1101,7 +1101,7 @@
         }
     },
     {
-        "id": "6_parentheses_operations_ukofxw",
+        "id": "6_parentheses_operations_jk6t32",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
@@ -1157,7 +1157,7 @@
         }
     },
     {
-        "id": "6_parentheses_operations_nksute",
+        "id": "6_parentheses_operations_febyez",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
@@ -1213,7 +1213,7 @@
         }
     },
     {
-        "id": "6_parentheses_operations_lhiydn",
+        "id": "6_parentheses_operations_7n4s4h",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
@@ -1259,7 +1259,7 @@
         }
     },
     {
-        "id": "6_complex_fraction_8t4pjj",
+        "id": "6_complex_fraction_p7qzpx",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
@@ -1308,7 +1308,7 @@
         }
     },
     {
-        "id": "6_complex_fraction_776ruh",
+        "id": "6_complex_fraction_jxkavl",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
@@ -1357,7 +1357,7 @@
         }
     },
     {
-        "id": "6_complex_fraction_kxen74",
+        "id": "6_complex_fraction_1guja0",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
@@ -1406,7 +1406,7 @@
         }
     },
     {
-        "id": "6_complex_fraction_4j5lqz",
+        "id": "6_complex_fraction_gsouzi",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
@@ -1455,7 +1455,7 @@
         }
     },
     {
-        "id": "6_complex_fraction_2sizi7",
+        "id": "6_complex_fraction_hejxih",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
@@ -1504,7 +1504,7 @@
         }
     },
     {
-        "id": "6_complex_fraction_fwjh8c",
+        "id": "6_complex_fraction_4mjjmq",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
@@ -1553,7 +1553,7 @@
         }
     },
     {
-        "id": "6_complex_fraction_54y8fp",
+        "id": "6_complex_fraction_267024",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
@@ -1602,7 +1602,7 @@
         }
     },
     {
-        "id": "6_complex_fraction_0jumlu",
+        "id": "6_complex_fraction_q4svhm",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
@@ -1651,7 +1651,7 @@
         }
     },
     {
-        "id": "6_complex_fraction_uytvk8",
+        "id": "6_complex_fraction_6knvs2",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
@@ -1700,7 +1700,7 @@
         }
     },
     {
-        "id": "6_complex_fraction_p3rxcz",
+        "id": "6_complex_fraction_5o6su5",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
@@ -1749,7 +1749,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_ogjzoc",
+        "id": "6_df_addition_subtraction_258uyv",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -1779,7 +1779,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_qcjq4r",
+        "id": "6_df_addition_subtraction_083svr",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -1809,7 +1809,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_s1h3jr",
+        "id": "6_df_addition_subtraction_jtn0fg",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -1839,7 +1839,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_8hbqhf",
+        "id": "6_df_addition_subtraction_anxxzy",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -1869,7 +1869,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_b5coqj",
+        "id": "6_df_addition_subtraction_qkw1z6",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -1899,7 +1899,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_rle736",
+        "id": "6_df_addition_subtraction_sbwq8t",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -1929,7 +1929,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_ylmzn2",
+        "id": "6_df_addition_subtraction_gm4w5b",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -1959,7 +1959,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_xfg0kh",
+        "id": "6_df_addition_subtraction_aurh7z",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -1989,7 +1989,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_0myfg5",
+        "id": "6_df_addition_subtraction_n72k57",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2019,7 +2019,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_722rd4",
+        "id": "6_df_addition_subtraction_xzf7lu",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2049,7 +2049,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_nb8b4b",
+        "id": "6_df_addition_subtraction_sugp91",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2079,7 +2079,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_ljpf6d",
+        "id": "6_df_addition_subtraction_b2333l",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2109,7 +2109,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_d9808t",
+        "id": "6_df_addition_subtraction_j2apzv",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2139,7 +2139,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_lihz7l",
+        "id": "6_df_addition_subtraction_r8ay5v",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2169,7 +2169,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_btn6q5",
+        "id": "6_df_addition_subtraction_mzkehx",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2199,7 +2199,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_tqspmh",
+        "id": "6_df_addition_subtraction_c7dahd",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2229,7 +2229,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_fcpxst",
+        "id": "6_df_addition_subtraction_bpp6s9",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2259,7 +2259,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_33mm3l",
+        "id": "6_df_addition_subtraction_3mmzg6",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2289,7 +2289,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_tutvr7",
+        "id": "6_df_addition_subtraction_oobmgi",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2319,7 +2319,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_6ywkqx",
+        "id": "6_df_addition_subtraction_ofzgs2",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2349,7 +2349,7 @@
         }
     },
     {
-        "id": "6_linear_operations_rih37g",
+        "id": "6_linear_operations_9gcx7p",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2389,7 +2389,7 @@
         }
     },
     {
-        "id": "6_linear_operations_tb8oba",
+        "id": "6_linear_operations_8gktc9",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2429,7 +2429,7 @@
         }
     },
     {
-        "id": "6_linear_operations_92mfrp",
+        "id": "6_linear_operations_3ambgq",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2469,7 +2469,7 @@
         }
     },
     {
-        "id": "6_linear_operations_tjfywa",
+        "id": "6_linear_operations_ed0pc2",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2509,7 +2509,7 @@
         }
     },
     {
-        "id": "6_linear_operations_ngtlc8",
+        "id": "6_linear_operations_2zkx7v",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2549,7 +2549,7 @@
         }
     },
     {
-        "id": "6_linear_operations_6hn8g4",
+        "id": "6_linear_operations_ot17ur",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2589,7 +2589,7 @@
         }
     },
     {
-        "id": "6_linear_operations_qg6tr1",
+        "id": "6_linear_operations_ov8k2p",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2629,7 +2629,7 @@
         }
     },
     {
-        "id": "6_linear_operations_zbmnp8",
+        "id": "6_linear_operations_q8sj1o",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2669,7 +2669,7 @@
         }
     },
     {
-        "id": "6_linear_operations_dk583h",
+        "id": "6_linear_operations_ktxkv7",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2709,7 +2709,7 @@
         }
     },
     {
-        "id": "6_linear_operations_r1byj0",
+        "id": "6_linear_operations_71ccrf",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2749,7 +2749,7 @@
         }
     },
     {
-        "id": "6_linear_operations_0fif90",
+        "id": "6_linear_operations_sao4m6",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2789,7 +2789,7 @@
         }
     },
     {
-        "id": "6_linear_operations_lfbpsw",
+        "id": "6_linear_operations_cvfcou",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2829,7 +2829,7 @@
         }
     },
     {
-        "id": "6_linear_operations_ql9mp5",
+        "id": "6_linear_operations_va93cc",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2869,7 +2869,7 @@
         }
     },
     {
-        "id": "6_linear_operations_5uw2j8",
+        "id": "6_linear_operations_8m4els",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2909,7 +2909,7 @@
         }
     },
     {
-        "id": "6_linear_operations_sr5vvv",
+        "id": "6_linear_operations_hxjchz",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2949,7 +2949,7 @@
         }
     },
     {
-        "id": "6_linear_operations_zzallw",
+        "id": "6_linear_operations_7us270",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2989,7 +2989,7 @@
         }
     },
     {
-        "id": "6_linear_operations_eakdaa",
+        "id": "6_linear_operations_w4a6ni",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -3029,7 +3029,7 @@
         }
     },
     {
-        "id": "6_linear_operations_9yma94",
+        "id": "6_linear_operations_abrw6o",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -3069,7 +3069,7 @@
         }
     },
     {
-        "id": "6_linear_operations_ravljl",
+        "id": "6_linear_operations_3c1rfl",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -3109,7 +3109,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_h88as1",
+        "id": "6_mixed_types_operations_y0imj1",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3153,7 +3153,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_gikgvt",
+        "id": "6_mixed_types_operations_or6lmf",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3197,7 +3197,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_fwlma3",
+        "id": "6_mixed_types_operations_l3tqcd",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3241,7 +3241,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_su08iw",
+        "id": "6_mixed_types_operations_wjhop3",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3285,7 +3285,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_gp7tfv",
+        "id": "6_mixed_types_operations_slgzui",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3329,7 +3329,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_pogmh6",
+        "id": "6_mixed_types_operations_j7tgge",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3373,7 +3373,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_gn54jy",
+        "id": "6_mixed_types_operations_x43408",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3417,7 +3417,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_etvog6",
+        "id": "6_mixed_types_operations_y24hz8",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3461,7 +3461,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_i37sme",
+        "id": "6_mixed_types_operations_rciyzt",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3505,7 +3505,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_4cek3l",
+        "id": "6_mixed_types_operations_w7ozbj",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3549,7 +3549,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_b67i6h",
+        "id": "6_mixed_types_operations_9ycnxn",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3593,7 +3593,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_70v6v3",
+        "id": "6_mixed_types_operations_bpy24s",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3637,7 +3637,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_nonpyy",
+        "id": "6_mixed_types_operations_mqnq54",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3681,7 +3681,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_o114sk",
+        "id": "6_mixed_types_operations_x36nbg",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3725,7 +3725,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_uxuxv1",
+        "id": "6_mixed_types_operations_38sg0l",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3769,7 +3769,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_ruajf0",
+        "id": "6_mixed_types_operations_ttht61",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3813,7 +3813,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_oxde7u",
+        "id": "6_mixed_types_operations_cejtsm",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3857,7 +3857,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_iwj89t",
+        "id": "6_mixed_types_operations_gqer8d",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3912,7 +3912,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_mz1y79",
+        "id": "6_mixed_types_operations_2y12p1",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3956,7 +3956,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_ydgf16",
+        "id": "6_mixed_types_operations_df8fqo",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -4000,7 +4000,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_fpuumk",
+        "id": "6_mixed_types_operations_2trq85",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -4044,7 +4044,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_59is3w",
+        "id": "6_mixed_types_operations_8ulzwr",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -4088,7 +4088,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_9owi56",
+        "id": "6_mixed_types_operations_dr6q1t",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -4132,7 +4132,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_a6sb68",
+        "id": "6_mixed_types_operations_u6dtib",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -4176,7 +4176,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_gm1zqx",
+        "id": "6_mixed_types_operations_2733mm",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -4220,7 +4220,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_kju18r",
+        "id": "6_mixed_types_operations_6gd2zw",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -4264,7 +4264,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_3rckd3",
+        "id": "6_mixed_types_operations_9jmqin",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -4308,7 +4308,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_dq8014",
+        "id": "6_mixed_types_operations_hr7wyp",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -4352,7 +4352,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_8f2q0l",
+        "id": "6_mixed_types_operations_qs8s4f",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -4396,7 +4396,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_rpg1vv",
+        "id": "6_fraction_structure_gnpadi",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4438,7 +4438,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_1hcqjf",
+        "id": "6_fraction_structure_e3t88t",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4480,7 +4480,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_24qky5",
+        "id": "6_fraction_structure_c03opn",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4522,7 +4522,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_jzgdl2",
+        "id": "6_fraction_structure_7x9ky4",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4564,7 +4564,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_5sinjo",
+        "id": "6_fraction_structure_ejjlwv",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4606,7 +4606,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_o0o7s0",
+        "id": "6_fraction_structure_egr2wi",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4648,7 +4648,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_6tzste",
+        "id": "6_fraction_structure_0dddmw",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4690,7 +4690,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_3m78eh",
+        "id": "6_fraction_structure_hyuilt",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4732,7 +4732,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_l8pa1b",
+        "id": "6_fraction_structure_7cakcg",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4774,7 +4774,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_duw9ni",
+        "id": "6_fraction_structure_2r7y2l",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4816,7 +4816,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_rdbhhg",
+        "id": "6_fraction_structure_bkx5se",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4858,7 +4858,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_gegaqb",
+        "id": "6_fraction_structure_737m7o",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4900,7 +4900,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_iqc62w",
+        "id": "6_fraction_structure_bdbg2i",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4942,7 +4942,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_24imno",
+        "id": "6_fraction_structure_1n1pi8",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4984,7 +4984,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_tmcbt3",
+        "id": "6_fraction_structure_7auxk6",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -5026,7 +5026,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_ueegp1",
+        "id": "6_fraction_structure_9uahln",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -5068,7 +5068,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_586ih4",
+        "id": "6_fraction_structure_gytab7",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -5110,7 +5110,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_96uq7u",
+        "id": "6_fraction_structure_kt3zji",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -5152,7 +5152,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_pfjlrd",
+        "id": "6_fraction_structure_meils3",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -5194,7 +5194,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_3sxt38",
+        "id": "6_fraction_structure_6o4ses",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -5233,6 +5233,2247 @@
         "meta": {
             "difficulty": "medium",
             "pattern_id": "fraction_structure"
+        }
+    },
+    {
+        "id": "6_powers_with_fractions_h4nglk",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_with_fractions",
+        "question_text": "Вычисли выражение:\n12 · (1/2)² + 7 · (1/2)\n\nОтвет: ____________",
+        "answer": "6,5",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "add",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 12,
+                                "text": "12"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "operation": "divide",
+                                        "operands": [
+                                            {
+                                                "type": "integer",
+                                                "value": 1,
+                                                "text": "1"
+                                            },
+                                            {
+                                                "type": "integer",
+                                                "value": 2,
+                                                "text": "2"
+                                            }
+                                        ],
+                                        "text": "1 / 2"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 2,
+                                        "text": "2"
+                                    }
+                                ],
+                                "text": "1 / 2^2"
+                            }
+                        ],
+                        "text": "12 * 1 / 2^2"
+                    },
+                    {
+                        "operation": "divide",
+                        "operands": [
+                            {
+                                "operation": "multiply",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 7,
+                                        "text": "7"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 1,
+                                        "text": "1"
+                                    }
+                                ],
+                                "text": "7 * 1"
+                            },
+                            {
+                                "type": "integer",
+                                "value": 2,
+                                "text": "2"
+                            }
+                        ],
+                        "text": "7 * 1 / 2"
+                    }
+                ],
+                "text": "12 * 1 / 2^2 + 7 * 1 / 2"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_with_fractions"
+        }
+    },
+    {
+        "id": "6_powers_with_fractions_irrmc1",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_with_fractions",
+        "question_text": "Вычисли выражение:\n20 · (1/5)² - 12 · (1/5)\n\nОтвет: ____________",
+        "answer": "-1,6",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "subtract",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 20,
+                                "text": "20"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "operation": "divide",
+                                        "operands": [
+                                            {
+                                                "type": "integer",
+                                                "value": 1,
+                                                "text": "1"
+                                            },
+                                            {
+                                                "type": "integer",
+                                                "value": 5,
+                                                "text": "5"
+                                            }
+                                        ],
+                                        "text": "1 / 5"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 2,
+                                        "text": "2"
+                                    }
+                                ],
+                                "text": "1 / 5^2"
+                            }
+                        ],
+                        "text": "20 * 1 / 5^2"
+                    },
+                    {
+                        "operation": "divide",
+                        "operands": [
+                            {
+                                "operation": "multiply",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 12,
+                                        "text": "12"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 1,
+                                        "text": "1"
+                                    }
+                                ],
+                                "text": "12 * 1"
+                            },
+                            {
+                                "type": "integer",
+                                "value": 5,
+                                "text": "5"
+                            }
+                        ],
+                        "text": "12 * 1 / 5"
+                    }
+                ],
+                "text": "20 * 1 / 5^2 - 12 * 1 / 5"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_with_fractions"
+        }
+    },
+    {
+        "id": "6_powers_with_fractions_ce1po8",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_with_fractions",
+        "question_text": "Вычисли выражение:\n45 · (2/3)² + 8\n\nОтвет: ____________",
+        "answer": "28",
+        "answer_type": "common",
+        "variables": {
+            "expression_tree": {
+                "operation": "add",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 45,
+                                "text": "45"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "operation": "divide",
+                                        "operands": [
+                                            {
+                                                "type": "integer",
+                                                "value": 2,
+                                                "text": "2"
+                                            },
+                                            {
+                                                "type": "integer",
+                                                "value": 3,
+                                                "text": "3"
+                                            }
+                                        ],
+                                        "text": "2 / 3"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 2,
+                                        "text": "2"
+                                    }
+                                ],
+                                "text": "2 / 3^2"
+                            }
+                        ],
+                        "text": "45 * 2 / 3^2"
+                    },
+                    {
+                        "type": "integer",
+                        "value": 8,
+                        "text": "8"
+                    }
+                ],
+                "text": "45 * 2 / 3^2 + 8"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_with_fractions"
+        }
+    },
+    {
+        "id": "6_powers_with_fractions_djj06r",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_with_fractions",
+        "question_text": "Вычисли выражение:\n24 · (3/4)² - 30 · (3/4)\n\nОтвет: ____________",
+        "answer": "-9",
+        "answer_type": "common",
+        "variables": {
+            "expression_tree": {
+                "operation": "subtract",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 24,
+                                "text": "24"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "operation": "divide",
+                                        "operands": [
+                                            {
+                                                "type": "integer",
+                                                "value": 3,
+                                                "text": "3"
+                                            },
+                                            {
+                                                "type": "integer",
+                                                "value": 4,
+                                                "text": "4"
+                                            }
+                                        ],
+                                        "text": "3 / 4"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 2,
+                                        "text": "2"
+                                    }
+                                ],
+                                "text": "3 / 4^2"
+                            }
+                        ],
+                        "text": "24 * 3 / 4^2"
+                    },
+                    {
+                        "operation": "divide",
+                        "operands": [
+                            {
+                                "operation": "multiply",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 30,
+                                        "text": "30"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 3,
+                                        "text": "3"
+                                    }
+                                ],
+                                "text": "30 * 3"
+                            },
+                            {
+                                "type": "integer",
+                                "value": 4,
+                                "text": "4"
+                            }
+                        ],
+                        "text": "30 * 3 / 4"
+                    }
+                ],
+                "text": "24 * 3 / 4^2 - 30 * 3 / 4"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_with_fractions"
+        }
+    },
+    {
+        "id": "6_powers_with_fractions_dr170i",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_with_fractions",
+        "question_text": "Вычисли выражение:\n7 · (4/7)² + 3 · (4/7)\n\nОтвет: ____________",
+        "answer": "4",
+        "answer_type": "common",
+        "variables": {
+            "expression_tree": {
+                "operation": "add",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 7,
+                                "text": "7"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "operation": "divide",
+                                        "operands": [
+                                            {
+                                                "type": "integer",
+                                                "value": 4,
+                                                "text": "4"
+                                            },
+                                            {
+                                                "type": "integer",
+                                                "value": 7,
+                                                "text": "7"
+                                            }
+                                        ],
+                                        "text": "4 / 7"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 2,
+                                        "text": "2"
+                                    }
+                                ],
+                                "text": "4 / 7^2"
+                            }
+                        ],
+                        "text": "7 * 4 / 7^2"
+                    },
+                    {
+                        "operation": "divide",
+                        "operands": [
+                            {
+                                "operation": "multiply",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 3,
+                                        "text": "3"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 4,
+                                        "text": "4"
+                                    }
+                                ],
+                                "text": "3 * 4"
+                            },
+                            {
+                                "type": "integer",
+                                "value": 7,
+                                "text": "7"
+                            }
+                        ],
+                        "text": "3 * 4 / 7"
+                    }
+                ],
+                "text": "7 * 4 / 7^2 + 3 * 4 / 7"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_with_fractions"
+        }
+    },
+    {
+        "id": "6_powers_with_fractions_qvcnm7",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_with_fractions",
+        "question_text": "Вычисли выражение:\n32 · (1/8)² - 1/8\n\nОтвет: ____________",
+        "answer": "0,375",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "subtract",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 32,
+                                "text": "32"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "operation": "divide",
+                                        "operands": [
+                                            {
+                                                "type": "integer",
+                                                "value": 1,
+                                                "text": "1"
+                                            },
+                                            {
+                                                "type": "integer",
+                                                "value": 8,
+                                                "text": "8"
+                                            }
+                                        ],
+                                        "text": "1 / 8"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 2,
+                                        "text": "2"
+                                    }
+                                ],
+                                "text": "1 / 8^2"
+                            }
+                        ],
+                        "text": "32 * 1 / 8^2"
+                    },
+                    {
+                        "operation": "divide",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 1,
+                                "text": "1"
+                            },
+                            {
+                                "type": "integer",
+                                "value": 8,
+                                "text": "8"
+                            }
+                        ],
+                        "text": "1 / 8"
+                    }
+                ],
+                "text": "32 * 1 / 8^2 - 1 / 8"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_with_fractions"
+        }
+    },
+    {
+        "id": "6_powers_with_fractions_2joln9",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_with_fractions",
+        "question_text": "Вычисли выражение:\n15 · (2/5)² + 2 · (2/5)\n\nОтвет: ____________",
+        "answer": "3,2",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "add",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 15,
+                                "text": "15"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "operation": "divide",
+                                        "operands": [
+                                            {
+                                                "type": "integer",
+                                                "value": 2,
+                                                "text": "2"
+                                            },
+                                            {
+                                                "type": "integer",
+                                                "value": 5,
+                                                "text": "5"
+                                            }
+                                        ],
+                                        "text": "2 / 5"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 2,
+                                        "text": "2"
+                                    }
+                                ],
+                                "text": "2 / 5^2"
+                            }
+                        ],
+                        "text": "15 * 2 / 5^2"
+                    },
+                    {
+                        "operation": "divide",
+                        "operands": [
+                            {
+                                "operation": "multiply",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 2,
+                                        "text": "2"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 2,
+                                        "text": "2"
+                                    }
+                                ],
+                                "text": "2 * 2"
+                            },
+                            {
+                                "type": "integer",
+                                "value": 5,
+                                "text": "5"
+                            }
+                        ],
+                        "text": "2 * 2 / 5"
+                    }
+                ],
+                "text": "15 * 2 / 5^2 + 2 * 2 / 5"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_with_fractions"
+        }
+    },
+    {
+        "id": "6_powers_with_fractions_fta5l3",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_with_fractions",
+        "question_text": "Вычисли выражение:\n48 · (1/4)² - 5\n\nОтвет: ____________",
+        "answer": "-2",
+        "answer_type": "common",
+        "variables": {
+            "expression_tree": {
+                "operation": "subtract",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 48,
+                                "text": "48"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "operation": "divide",
+                                        "operands": [
+                                            {
+                                                "type": "integer",
+                                                "value": 1,
+                                                "text": "1"
+                                            },
+                                            {
+                                                "type": "integer",
+                                                "value": 4,
+                                                "text": "4"
+                                            }
+                                        ],
+                                        "text": "1 / 4"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 2,
+                                        "text": "2"
+                                    }
+                                ],
+                                "text": "1 / 4^2"
+                            }
+                        ],
+                        "text": "48 * 1 / 4^2"
+                    },
+                    {
+                        "type": "integer",
+                        "value": 5,
+                        "text": "5"
+                    }
+                ],
+                "text": "48 * 1 / 4^2 - 5"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_with_fractions"
+        }
+    },
+    {
+        "id": "6_powers_with_fractions_qzr8aq",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_with_fractions",
+        "question_text": "Вычисли выражение:\n50 · (3/10)² - 16 · (3/10)\n\nОтвет: ____________",
+        "answer": "-0,3",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "subtract",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 50,
+                                "text": "50"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "operation": "divide",
+                                        "operands": [
+                                            {
+                                                "type": "integer",
+                                                "value": 3,
+                                                "text": "3"
+                                            },
+                                            {
+                                                "type": "integer",
+                                                "value": 10,
+                                                "text": "10"
+                                            }
+                                        ],
+                                        "text": "3 / 10"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 2,
+                                        "text": "2"
+                                    }
+                                ],
+                                "text": "3 / 10^2"
+                            }
+                        ],
+                        "text": "50 * 3 / 10^2"
+                    },
+                    {
+                        "operation": "divide",
+                        "operands": [
+                            {
+                                "operation": "multiply",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 16,
+                                        "text": "16"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 3,
+                                        "text": "3"
+                                    }
+                                ],
+                                "text": "16 * 3"
+                            },
+                            {
+                                "type": "integer",
+                                "value": 10,
+                                "text": "10"
+                            }
+                        ],
+                        "text": "16 * 3 / 10"
+                    }
+                ],
+                "text": "50 * 3 / 10^2 - 16 * 3 / 10"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_with_fractions"
+        }
+    },
+    {
+        "id": "6_powers_with_fractions_rkvzo1",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_with_fractions",
+        "question_text": "Вычисли выражение:\n63 · (1/3)² + 2/3\n\nОтвет: ____________",
+        "answer": "23/3",
+        "answer_type": "common",
+        "variables": {
+            "expression_tree": {
+                "operation": "add",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 63,
+                                "text": "63"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "operation": "divide",
+                                        "operands": [
+                                            {
+                                                "type": "integer",
+                                                "value": 1,
+                                                "text": "1"
+                                            },
+                                            {
+                                                "type": "integer",
+                                                "value": 3,
+                                                "text": "3"
+                                            }
+                                        ],
+                                        "text": "1 / 3"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 2,
+                                        "text": "2"
+                                    }
+                                ],
+                                "text": "1 / 3^2"
+                            }
+                        ],
+                        "text": "63 * 1 / 3^2"
+                    },
+                    {
+                        "operation": "divide",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 2,
+                                "text": "2"
+                            },
+                            {
+                                "type": "integer",
+                                "value": 3,
+                                "text": "3"
+                            }
+                        ],
+                        "text": "2 / 3"
+                    }
+                ],
+                "text": "63 * 1 / 3^2 + 2 / 3"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_with_fractions"
+        }
+    },
+    {
+        "id": "6_powers_with_fractions_0s66ro",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_with_fractions",
+        "question_text": "Вычисли выражение:\n75 · (2/5)² - 20\n\nОтвет: ____________",
+        "answer": "-8",
+        "answer_type": "common",
+        "variables": {
+            "expression_tree": {
+                "operation": "subtract",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 75,
+                                "text": "75"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "operation": "divide",
+                                        "operands": [
+                                            {
+                                                "type": "integer",
+                                                "value": 2,
+                                                "text": "2"
+                                            },
+                                            {
+                                                "type": "integer",
+                                                "value": 5,
+                                                "text": "5"
+                                            }
+                                        ],
+                                        "text": "2 / 5"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 2,
+                                        "text": "2"
+                                    }
+                                ],
+                                "text": "2 / 5^2"
+                            }
+                        ],
+                        "text": "75 * 2 / 5^2"
+                    },
+                    {
+                        "type": "integer",
+                        "value": 20,
+                        "text": "20"
+                    }
+                ],
+                "text": "75 * 2 / 5^2 - 20"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_with_fractions"
+        }
+    },
+    {
+        "id": "6_powers_with_fractions_s43zgx",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_with_fractions",
+        "question_text": "Вычисли выражение:\n16 · (3/2)² + 1\n\nОтвет: ____________",
+        "answer": "37",
+        "answer_type": "common",
+        "variables": {
+            "expression_tree": {
+                "operation": "add",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 16,
+                                "text": "16"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "operation": "divide",
+                                        "operands": [
+                                            {
+                                                "type": "integer",
+                                                "value": 3,
+                                                "text": "3"
+                                            },
+                                            {
+                                                "type": "integer",
+                                                "value": 2,
+                                                "text": "2"
+                                            }
+                                        ],
+                                        "text": "3 / 2"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 2,
+                                        "text": "2"
+                                    }
+                                ],
+                                "text": "3 / 2^2"
+                            }
+                        ],
+                        "text": "16 * 3 / 2^2"
+                    },
+                    {
+                        "type": "integer",
+                        "value": 1,
+                        "text": "1"
+                    }
+                ],
+                "text": "16 * 3 / 2^2 + 1"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_with_fractions"
+        }
+    },
+    {
+        "id": "6_powers_with_fractions_fga4vf",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_with_fractions",
+        "question_text": "Вычисли выражение:\n99 · (1/9)² - 2 · (1/9)\n\nОтвет: ____________",
+        "answer": "1",
+        "answer_type": "common",
+        "variables": {
+            "expression_tree": {
+                "operation": "subtract",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 99,
+                                "text": "99"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "operation": "divide",
+                                        "operands": [
+                                            {
+                                                "type": "integer",
+                                                "value": 1,
+                                                "text": "1"
+                                            },
+                                            {
+                                                "type": "integer",
+                                                "value": 9,
+                                                "text": "9"
+                                            }
+                                        ],
+                                        "text": "1 / 9"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 2,
+                                        "text": "2"
+                                    }
+                                ],
+                                "text": "1 / 9^2"
+                            }
+                        ],
+                        "text": "99 * 1 / 9^2"
+                    },
+                    {
+                        "operation": "divide",
+                        "operands": [
+                            {
+                                "operation": "multiply",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 2,
+                                        "text": "2"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 1,
+                                        "text": "1"
+                                    }
+                                ],
+                                "text": "2 * 1"
+                            },
+                            {
+                                "type": "integer",
+                                "value": 9,
+                                "text": "9"
+                            }
+                        ],
+                        "text": "2 * 1 / 9"
+                    }
+                ],
+                "text": "99 * 1 / 9^2 - 2 * 1 / 9"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_with_fractions"
+        }
+    },
+    {
+        "id": "6_powers_with_fractions_uv4qvp",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_with_fractions",
+        "question_text": "Вычисли выражение:\n40 · (1/2)³ + 3\n\nОтвет: ____________",
+        "answer": "8",
+        "answer_type": "common",
+        "variables": {
+            "expression_tree": {
+                "operation": "add",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 40,
+                                "text": "40"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "operation": "divide",
+                                        "operands": [
+                                            {
+                                                "type": "integer",
+                                                "value": 1,
+                                                "text": "1"
+                                            },
+                                            {
+                                                "type": "integer",
+                                                "value": 2,
+                                                "text": "2"
+                                            }
+                                        ],
+                                        "text": "1 / 2"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 3,
+                                        "text": "3"
+                                    }
+                                ],
+                                "text": "1 / 2^3"
+                            }
+                        ],
+                        "text": "40 * 1 / 2^3"
+                    },
+                    {
+                        "type": "integer",
+                        "value": 3,
+                        "text": "3"
+                    }
+                ],
+                "text": "40 * 1 / 2^3 + 3"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_with_fractions"
+        }
+    },
+    {
+        "id": "6_powers_with_fractions_ute6ov",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_with_fractions",
+        "question_text": "Вычисли выражение:\n81 · (2/9)² + 4 · (2/9)\n\nОтвет: ____________",
+        "answer": "44/9",
+        "answer_type": "common",
+        "variables": {
+            "expression_tree": {
+                "operation": "add",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 81,
+                                "text": "81"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "operation": "divide",
+                                        "operands": [
+                                            {
+                                                "type": "integer",
+                                                "value": 2,
+                                                "text": "2"
+                                            },
+                                            {
+                                                "type": "integer",
+                                                "value": 9,
+                                                "text": "9"
+                                            }
+                                        ],
+                                        "text": "2 / 9"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 2,
+                                        "text": "2"
+                                    }
+                                ],
+                                "text": "2 / 9^2"
+                            }
+                        ],
+                        "text": "81 * 2 / 9^2"
+                    },
+                    {
+                        "operation": "divide",
+                        "operands": [
+                            {
+                                "operation": "multiply",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 4,
+                                        "text": "4"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 2,
+                                        "text": "2"
+                                    }
+                                ],
+                                "text": "4 * 2"
+                            },
+                            {
+                                "type": "integer",
+                                "value": 9,
+                                "text": "9"
+                            }
+                        ],
+                        "text": "4 * 2 / 9"
+                    }
+                ],
+                "text": "81 * 2 / 9^2 + 4 * 2 / 9"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_with_fractions"
+        }
+    },
+    {
+        "id": "6_powers_of_ten_hbbthb",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_of_ten",
+        "question_text": "Вычисли выражение:\n(2 · 10³) · (1.5 · 10⁻¹)\n\nОтвет: ____________",
+        "answer": "300",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "divide",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 2,
+                                "text": "2"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 10,
+                                        "text": "10"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 3,
+                                        "text": "3"
+                                    }
+                                ],
+                                "text": "10^3"
+                            },
+                            {
+                                "type": "decimal",
+                                "value": "1,5",
+                                "text": "1,5"
+                            }
+                        ],
+                        "text": "2 * 10^3 * 1,5"
+                    },
+                    {
+                        "type": "integer",
+                        "value": 10,
+                        "text": "10"
+                    }
+                ],
+                "text": "2 * 10^3 * 1,5 / 10"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_of_ten"
+        }
+    },
+    {
+        "id": "6_powers_of_ten_xs5a3p",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_of_ten",
+        "question_text": "Вычисли выражение:\n(4 · 10²)² · (5 · 10⁻⁵)\n\nОтвет: ____________",
+        "answer": "8",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "divide",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "operation": "multiply",
+                                        "operands": [
+                                            {
+                                                "type": "integer",
+                                                "value": 4,
+                                                "text": "4"
+                                            },
+                                            {
+                                                "operation": "power",
+                                                "operands": [
+                                                    {
+                                                        "type": "integer",
+                                                        "value": 10,
+                                                        "text": "10"
+                                                    },
+                                                    {
+                                                        "type": "integer",
+                                                        "value": 2,
+                                                        "text": "2"
+                                                    }
+                                                ],
+                                                "text": "10^2"
+                                            }
+                                        ],
+                                        "text": "4 * 10^2"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 2,
+                                        "text": "2"
+                                    }
+                                ],
+                                "text": "4 * 10^2^2"
+                            },
+                            {
+                                "type": "integer",
+                                "value": 5,
+                                "text": "5"
+                            }
+                        ],
+                        "text": "4 * 10^2^2 * 5"
+                    },
+                    {
+                        "operation": "power",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 10,
+                                "text": "10"
+                            },
+                            {
+                                "type": "integer",
+                                "value": 5,
+                                "text": "5"
+                            }
+                        ],
+                        "text": "10^5"
+                    }
+                ],
+                "text": "4 * 10^2^2 * 5 / 10^5"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_of_ten"
+        }
+    },
+    {
+        "id": "6_powers_of_ten_ehru5q",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_of_ten",
+        "question_text": "Вычисли выражение:\n(6 · 10⁻⁴) · (0.5 · 10⁶)\n\nОтвет: ____________",
+        "answer": "300",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "divide",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 6,
+                                "text": "6"
+                            },
+                            {
+                                "type": "decimal",
+                                "value": "0,5",
+                                "text": "0,5"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 10,
+                                        "text": "10"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 6,
+                                        "text": "6"
+                                    }
+                                ],
+                                "text": "10^6"
+                            }
+                        ],
+                        "text": "6 * 0,5 * 10^6"
+                    },
+                    {
+                        "operation": "power",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 10,
+                                "text": "10"
+                            },
+                            {
+                                "type": "integer",
+                                "value": 4,
+                                "text": "4"
+                            }
+                        ],
+                        "text": "10^4"
+                    }
+                ],
+                "text": "6 * 0,5 * 10^6 / 10^4"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_of_ten"
+        }
+    },
+    {
+        "id": "6_powers_of_ten_sy7rby",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_of_ten",
+        "question_text": "Вычисли выражение:\n(8 · 10³) : (2 · 10)\n\nОтвет: ____________",
+        "answer": "400",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "divide",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 8,
+                                "text": "8"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 10,
+                                        "text": "10"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 3,
+                                        "text": "3"
+                                    }
+                                ],
+                                "text": "10^3"
+                            }
+                        ],
+                        "text": "8 * 10^3"
+                    },
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 2,
+                                "text": "2"
+                            },
+                            {
+                                "type": "integer",
+                                "value": 10,
+                                "text": "10"
+                            }
+                        ],
+                        "text": "2 * 10"
+                    }
+                ],
+                "text": "8 * 10^3 / 2 * 10"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_of_ten"
+        }
+    },
+    {
+        "id": "6_powers_of_ten_zfat6t",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_of_ten",
+        "question_text": "Вычисли выражение:\n(9 · 10⁻²) : (3 · 10⁻³)\n\nОтвет: ____________",
+        "answer": "30",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "divide",
+                "operands": [
+                    {
+                        "type": "integer",
+                        "value": 9,
+                        "text": "9"
+                    },
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 10,
+                                        "text": "10"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 2,
+                                        "text": "2"
+                                    }
+                                ],
+                                "text": "10^2"
+                            },
+                            {
+                                "operation": "divide",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 3,
+                                        "text": "3"
+                                    },
+                                    {
+                                        "operation": "power",
+                                        "operands": [
+                                            {
+                                                "type": "integer",
+                                                "value": 10,
+                                                "text": "10"
+                                            },
+                                            {
+                                                "type": "integer",
+                                                "value": 3,
+                                                "text": "3"
+                                            }
+                                        ],
+                                        "text": "10^3"
+                                    }
+                                ],
+                                "text": "3 / 10^3"
+                            }
+                        ],
+                        "text": "10^2 * 3 / 10^3"
+                    }
+                ],
+                "text": "9 / 10^2 * 3 / 10^3"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_of_ten"
+        }
+    },
+    {
+        "id": "6_powers_of_ten_ckqu8s",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_of_ten",
+        "question_text": "Вычисли выражение:\n(1.2 · 10⁴) · (5 · 10⁻²)\n\nОтвет: ____________",
+        "answer": "600",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "divide",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "decimal",
+                                "value": "1,2",
+                                "text": "1,2"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 10,
+                                        "text": "10"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 4,
+                                        "text": "4"
+                                    }
+                                ],
+                                "text": "10^4"
+                            },
+                            {
+                                "type": "integer",
+                                "value": 5,
+                                "text": "5"
+                            }
+                        ],
+                        "text": "1,2 * 10^4 * 5"
+                    },
+                    {
+                        "operation": "power",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 10,
+                                "text": "10"
+                            },
+                            {
+                                "type": "integer",
+                                "value": 2,
+                                "text": "2"
+                            }
+                        ],
+                        "text": "10^2"
+                    }
+                ],
+                "text": "1,2 * 10^4 * 5 / 10^2"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_of_ten"
+        }
+    },
+    {
+        "id": "6_powers_of_ten_5lh8fr",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_of_ten",
+        "question_text": "Вычисли выражение:\n(2.5 · 10⁵) : (0.5 · 10³)\n\nОтвет: ____________",
+        "answer": "500",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "divide",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "decimal",
+                                "value": "2,5",
+                                "text": "2,5"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 10,
+                                        "text": "10"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 5,
+                                        "text": "5"
+                                    }
+                                ],
+                                "text": "10^5"
+                            }
+                        ],
+                        "text": "2,5 * 10^5"
+                    },
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "decimal",
+                                "value": "0,5",
+                                "text": "0,5"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 10,
+                                        "text": "10"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 3,
+                                        "text": "3"
+                                    }
+                                ],
+                                "text": "10^3"
+                            }
+                        ],
+                        "text": "0,5 * 10^3"
+                    }
+                ],
+                "text": "2,5 * 10^5 / 0,5 * 10^3"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_of_ten"
+        }
+    },
+    {
+        "id": "6_powers_of_ten_z4wj6l",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_of_ten",
+        "question_text": "Вычисли выражение:\n(3 · 10⁻¹)³ · (2 · 10⁴)\n\nОтвет: ____________",
+        "answer": "540",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "multiply",
+                "operands": [
+                    {
+                        "operation": "power",
+                        "operands": [
+                            {
+                                "operation": "divide",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 3,
+                                        "text": "3"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 10,
+                                        "text": "10"
+                                    }
+                                ],
+                                "text": "3 / 10"
+                            },
+                            {
+                                "type": "integer",
+                                "value": 3,
+                                "text": "3"
+                            }
+                        ],
+                        "text": "3 / 10^3"
+                    },
+                    {
+                        "type": "integer",
+                        "value": 2,
+                        "text": "2"
+                    },
+                    {
+                        "operation": "power",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 10,
+                                "text": "10"
+                            },
+                            {
+                                "type": "integer",
+                                "value": 4,
+                                "text": "4"
+                            }
+                        ],
+                        "text": "10^4"
+                    }
+                ],
+                "text": "3 / 10^3 * 2 * 10^4"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_of_ten"
+        }
+    },
+    {
+        "id": "6_powers_of_ten_wro1xe",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_of_ten",
+        "question_text": "Вычисли выражение:\n(7 · 10²) · (4 · 10⁻⁴)\n\nОтвет: ____________",
+        "answer": "0,28",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "divide",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 7,
+                                "text": "7"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 10,
+                                        "text": "10"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 2,
+                                        "text": "2"
+                                    }
+                                ],
+                                "text": "10^2"
+                            },
+                            {
+                                "type": "integer",
+                                "value": 4,
+                                "text": "4"
+                            }
+                        ],
+                        "text": "7 * 10^2 * 4"
+                    },
+                    {
+                        "operation": "power",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 10,
+                                "text": "10"
+                            },
+                            {
+                                "type": "integer",
+                                "value": 4,
+                                "text": "4"
+                            }
+                        ],
+                        "text": "10^4"
+                    }
+                ],
+                "text": "7 * 10^2 * 4 / 10^4"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_of_ten"
+        }
+    },
+    {
+        "id": "6_powers_of_ten_amh1zn",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_of_ten",
+        "question_text": "Вычисли выражение:\n(1.5 · 10⁶) : (3 · 10⁴)\n\nОтвет: ____________",
+        "answer": "50",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "divide",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "decimal",
+                                "value": "1,5",
+                                "text": "1,5"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 10,
+                                        "text": "10"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 6,
+                                        "text": "6"
+                                    }
+                                ],
+                                "text": "10^6"
+                            }
+                        ],
+                        "text": "1,5 * 10^6"
+                    },
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 3,
+                                "text": "3"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 10,
+                                        "text": "10"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 4,
+                                        "text": "4"
+                                    }
+                                ],
+                                "text": "10^4"
+                            }
+                        ],
+                        "text": "3 * 10^4"
+                    }
+                ],
+                "text": "1,5 * 10^6 / 3 * 10^4"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_of_ten"
+        }
+    },
+    {
+        "id": "6_powers_of_ten_7i2aix",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_of_ten",
+        "question_text": "Вычисли выражение:\n(5 · 10)³ · (2 · 10⁻³)\n\nОтвет: ____________",
+        "answer": "250",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "divide",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "operation": "multiply",
+                                        "operands": [
+                                            {
+                                                "type": "integer",
+                                                "value": 5,
+                                                "text": "5"
+                                            },
+                                            {
+                                                "type": "integer",
+                                                "value": 10,
+                                                "text": "10"
+                                            }
+                                        ],
+                                        "text": "5 * 10"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 3,
+                                        "text": "3"
+                                    }
+                                ],
+                                "text": "5 * 10^3"
+                            },
+                            {
+                                "type": "integer",
+                                "value": 2,
+                                "text": "2"
+                            }
+                        ],
+                        "text": "5 * 10^3 * 2"
+                    },
+                    {
+                        "operation": "power",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 10,
+                                "text": "10"
+                            },
+                            {
+                                "type": "integer",
+                                "value": 3,
+                                "text": "3"
+                            }
+                        ],
+                        "text": "10^3"
+                    }
+                ],
+                "text": "5 * 10^3 * 2 / 10^3"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_of_ten"
+        }
+    },
+    {
+        "id": "6_powers_of_ten_kqtbvy",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_of_ten",
+        "question_text": "Вычисли выражение:\n(2 · 10⁻²) · (8.1 · 10²)\n\nОтвет: ____________",
+        "answer": "16,2",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "divide",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 2,
+                                "text": "2"
+                            },
+                            {
+                                "type": "decimal",
+                                "value": "8,1",
+                                "text": "8,1"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 10,
+                                        "text": "10"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 2,
+                                        "text": "2"
+                                    }
+                                ],
+                                "text": "10^2"
+                            }
+                        ],
+                        "text": "2 * 8,1 * 10^2"
+                    },
+                    {
+                        "operation": "power",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 10,
+                                "text": "10"
+                            },
+                            {
+                                "type": "integer",
+                                "value": 2,
+                                "text": "2"
+                            }
+                        ],
+                        "text": "10^2"
+                    }
+                ],
+                "text": "2 * 8,1 * 10^2 / 10^2"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_of_ten"
+        }
+    },
+    {
+        "id": "6_powers_of_ten_iamisy",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_of_ten",
+        "question_text": "Вычисли выражение:\n(3.6 · 10⁵) : (9 · 10²)\n\nОтвет: ____________",
+        "answer": "400",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "divide",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "decimal",
+                                "value": "3,6",
+                                "text": "3,6"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 10,
+                                        "text": "10"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 5,
+                                        "text": "5"
+                                    }
+                                ],
+                                "text": "10^5"
+                            }
+                        ],
+                        "text": "3,6 * 10^5"
+                    },
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 9,
+                                "text": "9"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 10,
+                                        "text": "10"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 2,
+                                        "text": "2"
+                                    }
+                                ],
+                                "text": "10^2"
+                            }
+                        ],
+                        "text": "9 * 10^2"
+                    }
+                ],
+                "text": "3,6 * 10^5 / 9 * 10^2"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_of_ten"
+        }
+    },
+    {
+        "id": "6_powers_of_ten_9c286w",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_of_ten",
+        "question_text": "Вычисли выражение:\n(4 · 10⁴)³ : (8 · 10¹²)\n\nОтвет: ____________",
+        "answer": "8",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "divide",
+                "operands": [
+                    {
+                        "operation": "power",
+                        "operands": [
+                            {
+                                "operation": "multiply",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 4,
+                                        "text": "4"
+                                    },
+                                    {
+                                        "operation": "power",
+                                        "operands": [
+                                            {
+                                                "type": "integer",
+                                                "value": 10,
+                                                "text": "10"
+                                            },
+                                            {
+                                                "type": "integer",
+                                                "value": 4,
+                                                "text": "4"
+                                            }
+                                        ],
+                                        "text": "10^4"
+                                    }
+                                ],
+                                "text": "4 * 10^4"
+                            },
+                            {
+                                "type": "integer",
+                                "value": 3,
+                                "text": "3"
+                            }
+                        ],
+                        "text": "4 * 10^4^3"
+                    },
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 8,
+                                "text": "8"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 10,
+                                        "text": "10"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 12,
+                                        "text": "12"
+                                    }
+                                ],
+                                "text": "10^12"
+                            }
+                        ],
+                        "text": "8 * 10^12"
+                    }
+                ],
+                "text": "4 * 10^4^3 / 8 * 10^12"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_of_ten"
+        }
+    },
+    {
+        "id": "6_powers_of_ten_hrooqz",
+        "task_number": 6,
+        "subtype": "powers",
+        "pattern": "powers_of_ten",
+        "question_text": "Вычисли выражение:\n(1.4 · 10⁻³) · (5 · 10⁴)\n\nОтвет: ____________",
+        "answer": "70",
+        "answer_type": "decimal",
+        "variables": {
+            "expression_tree": {
+                "operation": "divide",
+                "operands": [
+                    {
+                        "operation": "multiply",
+                        "operands": [
+                            {
+                                "type": "decimal",
+                                "value": "1,4",
+                                "text": "1,4"
+                            },
+                            {
+                                "type": "integer",
+                                "value": 5,
+                                "text": "5"
+                            },
+                            {
+                                "operation": "power",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 10,
+                                        "text": "10"
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 4,
+                                        "text": "4"
+                                    }
+                                ],
+                                "text": "10^4"
+                            }
+                        ],
+                        "text": "1,4 * 5 * 10^4"
+                    },
+                    {
+                        "operation": "power",
+                        "operands": [
+                            {
+                                "type": "integer",
+                                "value": 10,
+                                "text": "10"
+                            },
+                            {
+                                "type": "integer",
+                                "value": 3,
+                                "text": "3"
+                            }
+                        ],
+                        "text": "10^3"
+                    }
+                ],
+                "text": "1,4 * 5 * 10^4 / 10^3"
+            }
+        },
+        "meta": {
+            "difficulty": "medium",
+            "pattern_id": "powers_of_ten"
         }
     }
 ]

@@ -32,8 +32,13 @@ def main():
         subtype_from_filename = def_path.stem
         print(f"\n--- Обработка: {subtype_from_filename} ---")
 
-        validator_module_name = f".validators.{subtype_from_filename}_validator"
-        validator_func_name = f"validate_{subtype_from_filename.replace('_fractions', '_fraction')}"
+        # Поддержка всех стандартных подтипов + powers
+        if subtype_from_filename == "powers":
+            validator_module_name = ".validators.powers_validator"
+            validator_func_name = "validate_powers"
+        else:
+            validator_module_name = f".validators.{subtype_from_filename}_validator"
+            validator_func_name = f"validate_{subtype_from_filename.replace('_fractions', '_fraction')}"
 
         try:
             validator_module = importlib.import_module(validator_module_name, package=__package__)
