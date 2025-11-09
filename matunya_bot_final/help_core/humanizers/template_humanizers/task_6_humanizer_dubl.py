@@ -1,4 +1,4 @@
-"""Формирование человеко-понятного объяснения для решения дробей (задание 6)."""
+﻿"""Формирование человеко-понятного объяснения для решения дробей (задание 6)."""
 
 from __future__ import annotations
 
@@ -12,7 +12,8 @@ from typing import Any, Dict, Iterable, List, Optional
 STEP_TEMPLATES: Dict[str, str] = {
     "SEE_ORIGINAL_EXPRESSION": "{ctx}📘 Рассмотрим выражение: {expression}",
     "CONVERT_ALL_NUMBERS_TO_FRACTIONS": (
-        "{ctx}🔄 Переведём числа в дроби:\n"
+        "{ctx}🔄 Переведём числа в дроби:\
+"
         "{conversion_list}"
     ),
     "CALCULATE_POWER": "{ctx}⚡ Возводим степень. {extra_explanation}",
@@ -22,7 +23,7 @@ STEP_TEMPLATES: Dict[str, str] = {
     "DIVIDE_AS_MULTIPLY": "{ctx}➗ Деление заменяем умножением на обратную дробь. {extra_explanation}",
     "FIND_FINAL_ANSWER": "{ctx}🎯 Ответ: {value}",
     "PERFORM_MULTIPLICATION": "{ctx}✖️ Выполним {operation_name}. {extra_explanation}",
-    "INITIAL_EXPRESSION": "{ctx}📘 Рассмотрим выражение: {expression}",
+    "INITIAL_EXPRESSION": "{ctx}Рассматриваем исходное выражение.",
     "FIND_LCM": "{ctx}Находим наименьший общий знаменатель {den1} и {den2}: {lcm}.",
     "SCALE_TO_COMMON_DENOM": (
         "{ctx}Приводим дроби к общему знаменателю {lcm}: "
@@ -138,77 +139,7 @@ STEP_TEMPLATES: Dict[str, str] = {
         "Не забываем, что при делении первую дробь умножаем на перевёрнутую вторую."
     ),
 
-    # --- Powers (task 6) ---
-    "POWERS_FRACTION_POWER": (
-        "{ctx}Возводим дробь {num}/{den} в степень {exponent}. "
-        "Для этого возводим в степень и числитель, и знаменатель: "
-        "{num}^{exponent} = {result_num}, {den}^{exponent} = {result_den}."
-    ),
-    "POWERS_MULTIPLY": (
-        "{ctx}Перемножаем дроби {left_num}/{left_den} и {right_num}/{right_den}. "
-        "Получаем {result_num}/{result_den}."
-    ),
-    "POWERS_MULTIPLY_WITH_CANCEL": (
-        "{ctx}Перемножаем дроби с предварительным сокращением: {cancellations_text}. "
-        "Получаем {result_num}/{result_den}."
-    ),
-    "POWERS_ADD_SAME_DENOM": (
-        "{ctx}Складываем дроби с одинаковым знаменателем: "
-        "{left_num}/{den} + {right_num}/{den} = {result_num}/{den}."
-    ),
-    "POWERS_ADD_DIFFERENT_DENOM": (
-        "{ctx}Приводим дроби к общему знаменателю {lcm} и складываем числители: "
-        "{left_scaled}/{lcm} + {right_scaled}/{lcm} = {result_num}/{lcm}."
-    ),
-    "POWERS_SUBTRACT_SAME_DENOM": (
-        "{ctx}Вычитаем дроби с одинаковым знаменателем: "
-        "{left_num}/{den} − {right_num}/{den} = {result_num}/{den}."
-    ),
-    "POWERS_SUBTRACT_DIFFERENT_DENOM": (
-        "{ctx}Приводим дроби к общему знаменателю {lcm} и вычитаем числители: "
-        "{left_scaled}/{lcm} − {right_scaled}/{lcm} = {result_num}/{lcm}."
-    ),
-    "POWERS_REPRESENT_AS_PRODUCT": (
-        "{ctx}Представим степень ({num}/{den})^{exponent} как произведение: "
-        "{num}/{den} · {num}/{den}" + " · {num}/{den}" * max(0, "{exponent}" and int("{exponent}") - 2 if "{exponent}".isdigit() else 0) + "."
-    ),
-    "POWERS_FACTOR_OUT": (
-        "{ctx}Вынесем общий множитель {num}/{den} за скобки. "
-        "Получаем: {num}/{den} · ({expression})."
-    ),
-    "POWERS_ADD_IN_BRACKETS": (
-        "{ctx}Складываем выражения в скобках: {left} + {right} = {result}."
-    ),
-    "POWERS_SUBTRACT_IN_BRACKETS": (
-        "{ctx}Вычитаем в скобках: {left} − {right} = {result}."
-    ),
-    "POWERS_MULTIPLY_IN_BRACKETS": (
-        "{ctx}Выполняем умножение в скобках: {value} · {frac_num}/{frac_den} = {result}."
-    ),
-    "POWERS_FINAL_MULTIPLY": (
-        "{ctx}Умножаем вынесенный множитель {num}/{den} на результат в скобках {value}: "
-        "получаем финальный ответ."
-    ),
-    "POWERS_TEN_EXPAND_POWER": (
-        "{ctx}Раскрываем скобки в {location}. "
-        "Используем свойство (a · b)ⁿ = aⁿ · bⁿ и (aⁿ)ᵐ = a⁽ⁿ ⋅ ᵐ⁾: "
-        "({coef} · 10^{inner_exp})^{outer_exp} = {coef}^{outer_exp} · 10^{result_exp}."
-    ),
-    "POWERS_TEN_GROUP": (
-        "{ctx}Группируем числа и степени основания десяти отдельно: "
-        "({num_coef} : {den_coef}) · (10^{num_exp} : 10^{den_exp})."
-    ),
-    "POWERS_TEN_GROUP_MULTIPLY": (
-        "{ctx}Группируем результат: {coef} · 10^{exp}."
-    ),
-    "POWERS_TEN_CALCULATE": (
-        "{ctx}Вычисляем коэффициенты: {num_coef} : {den_coef} = {coef_result}. "
-        "При делении степеней с одинаковым основанием показатели вычитаются: "
-        "10^{num_exp} : 10^{den_exp} = 10^{exp_result}."
-    ),
-    "POWERS_TEN_FINAL": (
-        "{ctx}Выполняем финальное умножение: {coef} · 10^{exp} = {result}."
-    ),
+
 }
 
 
@@ -258,24 +189,6 @@ IDEA_TEMPLATES: Dict[str, str] = {
         "а потом аккуратно сложим или вычтем полученные дроби. "
         "Главное — следить за знаком и не торопиться: шаг за шагом всё получится!"
     ),
-    "POWERS_FRACTIONS_STANDARD_IDEA": (
-        "Соблюдаем порядок действий: сначала возводим дробь в степень, "
-        "затем выполняем умножение, и в конце — сложение или вычитание."
-    ),
-    "POWERS_FRACTIONS_RATIONAL_IDEA": (
-        "В этом выражении можно заметить общий множитель — дробь, которая встречается несколько раз. "
-        "Если вынести её за скобки, вычисления станут гораздо проще и быстрее!"
-    ),
-    "POWERS_FRACTIONS_TWO_WAYS_IDEA": (
-        "Эту задачу можно решить двумя способами: стандартным (по порядку действий) "
-        "и более рациональным (через вынесение общего множителя за скобки). "
-        "Второй способ часто оказывается быстрее и удобнее!"
-    ),
-    "POWERS_OF_TEN_IDEA": (
-    "Для решения этого выражения воспользуемся свойствами степеней: "
-    "(a · b)ⁿ = aⁿ · bⁿ и aⁿ · aᵐ = a⁽ⁿ ⁺ ᵐ⁾. "
-    "Сначала раскроем скобки, затем отдельно умножим числа и степени с основанием 10."
-),
 }
 
 HINT_TEMPLATES: Dict[str, str] = {
@@ -311,21 +224,6 @@ HINT_TEMPLATES: Dict[str, str] = {
         "Так будет легче понять, какие действия нужно выполнить первыми. "
         "Помни: сначала делим или умножаем, а уже потом складываем и вычитаем."
     ),
-    "HINT_POWER_OF_FRACTION": (
-        "Чтобы возвести дробь в степень, возведи в эту степень и числитель, и знаменатель: (a/b)ⁿ = aⁿ / bⁿ."
-    ),
-    "HINT_COMMON_FACTOR": (
-        "Если в выражении одна и та же дробь встречается несколько раз, попробуй вынести её за скобки — это упростит вычисления."
-    ),
-    "HINT_POWER_PROPERTIES": (
-        "Используй свойства степеней: (a · b)ⁿ = aⁿ · bⁿ, (aⁿ)ᵐ = a⁽ⁿ ⋅ ᵐ⁾, aⁿ · aᵐ = a⁽ⁿ ⁺ ᵐ⁾."
-    ),
-    "HINT_GROUP_FACTORS": (
-        "При работе со степенями десяти удобно отдельно группировать числовые коэффициенты и степени с основанием 10."
-    ),
-    "HINT_ADD_EXPONENTS": (
-        "При умножении степеней с одинаковым основанием их показатели складываются: aⁿ · aᵐ = a⁽ⁿ ⁺ ᵐ⁾."
-    ),
 }
 
 
@@ -341,26 +239,14 @@ def humanize(solution_core: Dict[str, Any]) -> str:
     idea_text = _resolve_idea(solution_core)
     parts.append(f"<b>Идея решения:</b> {idea_text}")
 
-    # ⭐ НОВАЯ ЛОГИКА: проверяем наличие calculation_paths
-    if "calculation_paths" in solution_core:
-        paths_block = _render_paths(solution_core["calculation_paths"])
-        parts.append(paths_block)
-    elif "calculation_steps" in solution_core:
-        steps = solution_core.get("calculation_steps") or []
-        rendered_steps = [_render_step(step) for step in steps]
-        if rendered_steps:
-            steps_block = "\n\n".join(rendered_steps)
-            parts.append(f"<b>Подробные шаги:</b>\n{steps_block}")
+    steps = solution_core.get("calculation_steps") or []
+    rendered_steps = [_render_step(step) for step in steps]
+    if rendered_steps:
+        steps_block = "\n\n".join(rendered_steps)
+        parts.append(f"<b>Подробные шаги:</b>\n{steps_block}")
 
     # Добавляем финальный ответ только если нет шага FIND_FINAL_ANSWER
-    step_keys = []
-    if "calculation_steps" in solution_core:
-        step_keys = [s.get("description_key") for s in solution_core.get("calculation_steps", [])]
-    elif "calculation_paths" in solution_core:
-        # Собираем ключи из всех путей
-        for path in solution_core.get("calculation_paths", []):
-            step_keys.extend([s.get("description_key") for s in path.get("steps", [])])
-
+    step_keys = [s.get("description_key") for s in solution_core.get("calculation_steps", [])]
     if "FIND_FINAL_ANSWER" not in step_keys:
         final_answer_block = _render_final_answer(solution_core.get("final_answer") or {})
         parts.append(final_answer_block)
@@ -375,41 +261,19 @@ def humanize(solution_core: Dict[str, Any]) -> str:
 def validate_solution_core(solution_core: Dict[str, Any]) -> bool:
     """Быстрая проверка структуры solution_core."""
 
-    required_fields = ["question_id", "question_group", "final_answer"]
+    required_fields = ["question_id", "question_group", "calculation_steps", "final_answer"]
     if not all(field in solution_core for field in required_fields):
         return False
 
-    # Проверяем наличие либо calculation_steps, либо calculation_paths
-    has_steps = "calculation_steps" in solution_core
-    has_paths = "calculation_paths" in solution_core
-
-    if not (has_steps or has_paths):
+    steps = solution_core.get("calculation_steps")
+    if not isinstance(steps, list):
         return False
 
-    if has_steps:
-        steps = solution_core.get("calculation_steps")
-        if not isinstance(steps, list):
+    for step in steps:
+        if not isinstance(step, dict):
             return False
-        for step in steps:
-            if not isinstance(step, dict):
-                return False
-            if "step_number" not in step or "description_key" not in step:
-                return False
-
-    if has_paths:
-        paths = solution_core.get("calculation_paths")
-        if not isinstance(paths, list):
+        if "step_number" not in step or "description_key" not in step:
             return False
-        for path in paths:
-            if not isinstance(path, dict):
-                return False
-            if "steps" not in path:
-                return False
-            for step in path["steps"]:
-                if not isinstance(step, dict):
-                    return False
-                if "step_number" not in step or "description_key" not in step:
-                    return False
 
     final_answer = solution_core.get("final_answer")
     if not isinstance(final_answer, dict):
@@ -440,41 +304,6 @@ def _resolve_idea(solution_core: Dict[str, Any]) -> str:
         return fallback.strip()
 
     return IDEA_TEMPLATES["GENERIC_IDEA"]
-
-
-def _render_paths(paths: List[Dict[str, Any]]) -> str:
-    """Отрисовывает несколько способов решения (calculation_paths).
-
-    Args:
-        paths: Список путей решения, каждый содержит path_title, steps и опционально is_recommended
-
-    Returns:
-        Отформатированный HTML-блок со всеми способами решения
-    """
-    rendered_paths: List[str] = []
-
-    for path in paths:
-        path_title = path.get("path_title", "Решение")
-        is_recommended = path.get("is_recommended", False)
-        steps = path.get("steps", [])
-
-        # Формируем заголовок пути
-        if is_recommended:
-            header = f"<b>⭐️ {path_title}</b>"
-        else:
-            header = f"<b>{path_title}</b>"
-
-        # Рендерим шаги этого пути
-        rendered_steps = [_render_step(step) for step in steps]
-        steps_block = "\n\n".join(rendered_steps)
-
-        # Объединяем заголовок и шаги
-        path_content = f"{header}\n\n{steps_block}"
-        rendered_paths.append(path_content)
-
-    # Разделяем способы горизонтальной линией
-    separator = "\n\n" + "─" * 40 + "\n\n"
-    return separator.join(rendered_paths)
 
 
 def _render_step(step: Dict[str, Any]) -> str:
@@ -608,3 +437,4 @@ def _format_decimal(value: Any) -> str:
 
 def _escape_newlines(text: str) -> str:
     return text
+

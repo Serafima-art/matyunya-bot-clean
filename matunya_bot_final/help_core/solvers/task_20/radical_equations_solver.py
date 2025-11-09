@@ -311,7 +311,7 @@ def _build_same_radical_cancel_steps(variables: Dict[str, Any], equation: str) -
             steps.append(
                 {
                     "step_number": next_step_number,
-                    "description": f"Подставляем x = {root_display} и проверяем радикалы.",
+                    "description": f"Подставляем x = {root_display} и проверяем корни.",
                     "formula_calculation": (
                         f"√({substitution_left}) = √({substitution_right})\n"
                         f"√({left_display}) = √({right_display})"
@@ -391,7 +391,7 @@ def _build_cancel_identical_radicals_steps(variables: Dict[str, Any], equation: 
     steps: List[Dict[str, Any]] = [
         {
             "step_number": 1,
-            "description": "Перенесём одинаковые радикалы в одну часть и сократим их, сделав равносильный переход к смешанной системе.",
+            "description": "Перенесём одинаковые корни в одну часть и сократим их, сделав равносильный переход к смешанной системе.",
             "formula_representation": equation,
             "formula_calculation": (
             "----------\n"
@@ -430,7 +430,7 @@ def _build_cancel_identical_radicals_steps(variables: Dict[str, Any], equation: 
     ]
 
     explanation = (
-        "Так как одинаковые радикалы присутствуют в обеих частях уравнения, после переноса можно их сократить. "
+        "Так как одинаковые корни присутствуют в обеих частях уравнения, после переноса можно их сократить. "
         "Равносильно переходим к смешанной системе из уравнения без радикала и неравенства (ОДЗ). "
         "Далее решаем квадратное уравнение и отбираем корни по ОДЗ (область допустимых значений)."
     )
