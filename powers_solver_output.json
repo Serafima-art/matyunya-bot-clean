@@ -1,0 +1,120 @@
+{
+  "explanation_idea": "",
+  "calculation_paths": [
+    {
+      "path_title": "Способ 1: Стандартный (по порядку действий)",
+      "steps": [
+        {
+          "step_number": 1,
+          "description_key": "INITIAL_EXPRESSION",
+          "description_params": {
+            "expression": "28 · (2/7)² - 8 · (2/7)"
+          },
+          "formula_representation": "28 · (2/7)² - 8 · (2/7)"
+        },
+        {
+          "step_number": 2,
+          "description_key": "POWER_OF_FRACTION",
+          "description_params": {
+            "base_num": 2,
+            "base_den": 7,
+            "power": 2,
+            "result_num": 4,
+            "result_den": 49
+          },
+          "formula_general": "(a/b)^n = a^n / b^n",
+          "formula_calculation": "(2/7)^2 = 4/49"
+        },
+        {
+          "step_number": 3,
+          "description_key": "MULTIPLY_FRACTION",
+          "description_params": {
+            "integer": 28,
+            "frac_num": 4,
+            "frac_den": 49,
+            "result_num": 16,
+            "result_den": 7
+          },
+          "formula_calculation": "28 * 4/49 = 16/7"
+        },
+        {
+          "step_number": 4,
+          "description_key": "MULTIPLY_FRACTION",
+          "description_params": {
+            "integer": 8,
+            "frac_num": 2,
+            "frac_den": 7,
+            "result_num": 16,
+            "result_den": 7
+          }
+        },
+        {
+          "step_number": 5,
+          "description_key": "FINAL_CALCULATION",
+          "description_params": {
+            "operation": "вычитание"
+          }
+        }
+      ]
+    },
+    {
+      "path_title": "Способ 2: Рациональный (вынесение общего множителя)",
+      "is_recommended": true,
+      "steps": [
+        {
+          "step_number": 1,
+          "description_key": "INITIAL_EXPRESSION",
+          "description_params": {
+            "expression": "28 · (2/7)² - 8 · (2/7)"
+          },
+          "formula_representation": "28 · (2/7)² - 8 · (2/7)"
+        },
+        {
+          "step_number": 2,
+          "description_key": "RATIONAL_PATH_IDEA",
+          "description_params": {
+            "common_fraction": "2/7"
+          }
+        },
+        {
+          "step_number": 3,
+          "description_key": "POWER_AS_PRODUCT",
+          "description_params": {
+            "base_num": 2,
+            "base_den": 7,
+            "power": 2
+          }
+        },
+        {
+          "step_number": 4,
+          "description_key": "FACTORING_OUT",
+          "description_params": {
+            "common_fraction": "2/7"
+          }
+        },
+        {
+          "step_number": 5,
+          "description_key": "CALCULATE_IN_PARENTHESES",
+          "description_params": {}
+        },
+        {
+          "step_number": 6,
+          "description_key": "FINAL_MULTIPLICATION_RATIONAL",
+          "description_params": {}
+        }
+      ]
+    }
+  ],
+  "final_answer": {
+    "value_machine": 0,
+    "value_display": "0",
+    "requested_part": "numerator",
+    "final_answer_part": "numerator"
+  },
+  "hints": [],
+  "question_id": "6_powers_with_fractions_test",
+  "question_group": "TASK6_POWERS",
+  "explanation_idea_key": "POWERS_FRACTIONS_IDEA",
+  "explanation_idea_params": {},
+  "hints_keys": []
+}
