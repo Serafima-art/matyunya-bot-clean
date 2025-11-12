@@ -1,271 +1,18 @@
-# matunya_bot_final/non_generators/task_6/validators/powers_validator.py
-"""Validator for non-generator Task 6 subtype 'powers'."""
-
+"""
+ФИНАЛЬНАЯ ВЕРСИЯ: Простой, надежный валидатор для 'powers'.
+Строит "педагогический" JSON по образцу Задания 20.
+"""
 from __future__ import annotations
-
 import re
-from decimal import Decimal, ROUND_HALF_UP
-from fractions import Fraction
+from decimal import Decimal
 from typing import Any, Dict, Optional
 
-from sympy import sympify, Rational
-from sympy.parsing.sympy_parser import parse_expr, convert_xor, rationalize
-
-from matunya_bot_final.utils.task6.powers_helpers import is_ten_power_node
-
+# Используем SymPy ТОЛЬКО для вычислений и парсинга, но не для анализа структуры
+from sympy import sympify
+from sympy.parsing.sympy_parser import parse_expr, rationalize, convert_xor
 
 # ---------------------------------------------------------------------------
-# Normalisation helpers
-# ---------------------------------------------------------------------------
-
-
-SUPERSCRIPT_TRANSLATION = str.maketrans("⁰¹²³⁴⁵⁶⁷⁸⁹⁻", "0123456789-")
-
-
-def _preprocess_expression(expr: str) -> str:
-    if not expr:
-        return ""
-
-    expr = expr.strip()
-
-    for space in ("\u00A0", "\u202F", "\u2009", "\u200B", "\u2060"):
-        expr = expr.replace(space, "")
-
-    expr = expr.replace(":", "/")
-
-    for dot in ("·", "⋅", "∙", "×"):
-        expr = expr.replace(dot, "*")
-
-    expr = expr.replace("−", "-")
-
-    expr = re.sub(r"(?<=\d),(?=\d)", ".", expr)
-
-    def _replace_superscripts(match: re.Match) -> str:
-        base = match.group("base")
-        exponent = match.group("sup").translate(SUPERSCRIPT_TRANSLATION)
-        return f"{base}^{exponent}"
-
-    expr = re.sub(
-        r"(?P<base>(?:\d+(?:\.\d+)?|\)))(?P<sup>[⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+)",
-        _replace_superscripts,
-        expr,
-    )
-
-    expr = expr.replace("²", "^2").replace("³", "^3")
-
-    expr = expr.translate(SUPERSCRIPT_TRANSLATION)
-
-    return expr
-
-
-def _normalize_decimal(value: float | Decimal | str, places: int = 3) -> str:
-    """Round value to <places> decimals, trim zero tail, use comma separator."""
-    decimal_value = Decimal(str(value))
-    quant = Decimal("1." + "0" * places)
-    rounded = decimal_value.quantize(quant, rounding=ROUND_HALF_UP)
-    text = format(rounded, "f").rstrip("0").rstrip(".")
-    if text in {"", "-"}:
-        text = "0"
-    elif text == "-0":
-        text = "0"
-    return text.replace(".", ",")
-
-
-
-
-# ---------------------------------------------------------------------------
-# JSON helpers
-# ---------------------------------------------------------------------------
-
-def _make_integer_node(value: int) -> Dict[str, Any]:
-    return {"type": "integer", "value": int(value), "text": str(value)}
-
-
-def _make_common_node(num: int, den: int) -> Dict[str, Any]:
-    return {"type": "common", "value": [int(num), int(den)], "text": f"{num}/{den}"}
-
-
-def _make_operation_node(op: str, operands: list[Dict[str, Any]]) -> Dict[str, Any]:
-    texts = [opd.get("text", "") for opd in operands]
-    if op == "add":
-        text = " + ".join(texts)
-    elif op == "subtract":
-        text = f"{texts[0]} - {texts[1]}"
-    elif op == "divide":
-        text = f"{texts[0]} / {texts[1]}"
-    elif op == "multiply":
-        text = " * ".join(texts)
-    elif op == "power":
-        text = f"{texts[0]}^{texts[1]}"
-    else:
-        text = " ".join(texts)
-    return {"operation": op, "operands": operands, "text": text}
-
-
-def _sympy_to_json(expr) -> Dict[str, Any]:
-    from sympy import Integer, Rational as SymRational, Float
-
-    if isinstance(expr, Integer):
-        return _make_integer_node(int(expr))
-
-    if isinstance(expr, SymRational):
-        if expr.q == 1:
-            return _make_integer_node(int(expr.p))
-        return _make_common_node(expr.p, expr.q)
-
-    if isinstance(expr, Float):
-        normalized = _normalize_decimal(str(expr))
-        return {"type": "decimal", "value": normalized, "text": normalized}
-
-    if expr.is_Add:
-        terms = list(expr.args)
-        if len(terms) == 2 and terms[1].is_negative:
-            left = _sympy_to_json(terms[0])
-            right = _sympy_to_json(-terms[1])
-            return _make_operation_node("subtract", [left, right])
-        return _make_operation_node("add", [_sympy_to_json(arg) for arg in terms])
-
-    if expr.is_Mul:
-        numerators: list[Dict[str, Any]] = []
-        denominators: list[Dict[str, Any]] = []
-        for arg in expr.args:
-            if arg.is_Pow and arg.exp.is_Integer and arg.exp < 0:
-                from sympy import Pow
-
-                positive_exp = -int(arg.exp)
-                if positive_exp == 1:
-                    denominators.append(_sympy_to_json(arg.base))
-                else:
-                    positive_pow = Pow(arg.base, positive_exp, evaluate=False)
-                    denominators.append(_sympy_to_json(positive_pow))
-            else:
-                numerators.append(_sympy_to_json(arg))
-        if denominators:
-            numerator_node = _collapse_multiply(numerators)
-            denominator_node = _collapse_multiply(denominators)
-            return _make_operation_node("divide", [numerator_node, denominator_node])
-        return _make_operation_node("multiply", numerators)
-
-    if expr.is_Pow:
-        base = _sympy_to_json(expr.base)
-        exp = _sympy_to_json(expr.exp)
-        return _make_operation_node("power", [base, exp])
-
-    return {"type": "unknown", "text": str(expr)}
-
-
-def _collapse_multiply(nodes: list[Dict[str, Any]]) -> Dict[str, Any]:
-    if not nodes:
-        return _make_integer_node(1)
-    if len(nodes) == 1:
-        return nodes[0]
-    return _make_operation_node("multiply", nodes)
-
-
-def _rational_to_decimal_str(value: Fraction) -> str:
-    from decimal import Decimal
-
-    tmp = abs(value.denominator)
-    for prime in (2, 5):
-        while tmp % prime == 0:
-            tmp //= prime
-    if tmp != 1:
-        return f"{value.numerator}/{value.denominator}"
-
-    result = str(Decimal(value.numerator) / Decimal(value.denominator))
-    if "." in result:
-        result = result.rstrip("0").rstrip(".")
-    return result.replace(".", ",")
-
-
-# ---------------------------------------------------------------------------
-# Pattern-specific validators
-# ---------------------------------------------------------------------------
-
-def _validate_powers_with_fractions(expr_str: str) -> Optional[Dict[str, Any]]:
-    try:
-        processed = _preprocess_expression(expr_str)
-        parsed = parse_expr(
-            processed,
-            evaluate=False,
-            transformations=(rationalize, convert_xor),
-        )
-        tree = _sympy_to_json(parsed)
-
-        result = sympify(processed)
-        if not result.is_Rational:
-            return None
-
-        answer_fraction = Fraction(result.p, result.q)
-        answer_str = _rational_to_decimal_str(answer_fraction)
-
-        question_text = (
-            "Вычисли выражение:\n"
-            f"{expr_str}\n\nОтвет: ____________"
-        )
-
-        return {
-            "pattern": "powers_with_fractions",
-            "question_text": question_text,
-            "answer": answer_str,
-            "answer_type": "decimal" if "," in answer_str else "common",
-            "expression_tree": tree,
-            "source_expression": expr_str,
-        }
-    except Exception as exc:
-        print(f"[ERROR:powers_with_fractions] {exc}")
-        return None
-
-
-def _validate_powers_of_ten(expr_str: str) -> Optional[Dict[str, Any]]:
-    try:
-        processed = _preprocess_expression(expr_str)
-        parsed = parse_expr(
-            processed,
-            evaluate=False,
-            transformations=(rationalize, convert_xor),
-        )
-        tree = _sympy_to_json(parsed)
-
-        ten_found = False
-
-        def _walk(node: Dict[str, Any]):
-            nonlocal ten_found
-            if not isinstance(node, dict):
-                return
-            ok, _ = is_ten_power_node(node)
-            if ok:
-                ten_found = True
-            for child in node.get("operands", []):
-                _walk(child)
-
-        _walk(tree)
-        if not ten_found:
-            raise ValueError("В выражении отсутствует множитель 10^n.")
-
-        result = sympify(processed)
-        answer_value = _normalize_decimal(result.evalf())
-
-        question_text = (
-            "Вычисли выражение:\n"
-            f"{expr_str}\n\nОтвет: ____________"
-        )
-
-        return {
-            "pattern": "powers_of_ten",
-            "question_text": question_text,
-            "answer": answer_value,
-            "answer_type": "decimal",
-            "expression_tree": tree,
-            "source_expression": expr_str,
-        }
-    except Exception as exc:
-        print(f"[ERROR:powers_of_ten] {exc}")
-        return None
-
-
-# ---------------------------------------------------------------------------
-# Public entry point
+# Главная функция-диспетчер
 # ---------------------------------------------------------------------------
 
 def validate_powers(line: str) -> Optional[Dict[str, Any]]:
@@ -279,5 +26,147 @@ def validate_powers(line: str) -> Optional[Dict[str, Any]]:
     if pattern == "powers_of_ten":
         return _validate_powers_of_ten(expr_str)
 
-    print(f"[WARN:powers_validator] Unknown pattern: {pattern}")
     return None
+
+# ---------------------------------------------------------------------------
+# Парсеры и Валидаторы для каждого паттерна
+# ---------------------------------------------------------------------------
+
+def _validate_powers_with_fractions(expr_str: str) -> Optional[Dict[str, Any]]:
+    """Анализирует строку и строит 'педагогический' JSON для powers_with_fractions."""
+    try:
+        from sympy.parsing.sympy_parser import parse_expr, rationalize, convert_xor
+        from sympy import Add
+
+        processed = _preprocess_expression(expr_str)
+        sympy_tree = parse_expr(processed, evaluate=False, transformations=(rationalize, convert_xor))
+        expression_tree = _sympy_to_clean_json(sympy_tree)
+
+        fractions = _collect_fractions_from_tree(expression_tree)
+        common_fraction_node = next((frac for frac in set(fractions) if fractions.count(frac) >= 2), None)
+
+        operation = "add" if isinstance(sympy_tree, Add) else "subtract"
+
+        result_raw = sympify(processed)
+        # Сразу округляем до ~10 знаков, чтобы убить "грязь" float еще на входе
+        result = Decimal(str(result_raw.evalf(10)))
+
+        # Проверка на "красивость" по стандарту ОГЭ
+        if (result * 100).quantize(Decimal('1e-9')) != (result * 100).to_integral_value().quantize(Decimal('1e-9')):
+            return None
+
+        answer_str = f"{result.normalize():g}".replace(".", ",")
+        answer_type = "integer" if result == result.to_integral_value() else "decimal"
+
+        variables = {
+            "has_common_factor": bool(common_fraction_node),
+            "solution_paths": ["standard", "rational"] if common_fraction_node else ["standard"],
+            "operation": operation,
+        }
+
+        return {
+            "pattern": "powers_with_fractions",
+            "question_text": f"Вычисли выражение:\n{expr_str}\n\nОтвет: ____________",
+            "answer": answer_str,
+            "answer_type": answer_type,
+            "expression_tree": expression_tree,
+            "source_expression": expr_str,
+            "variables": variables,
+        }
+    except Exception:
+        return None
+
+def _validate_powers_of_ten(expr_str: str) -> Optional[Dict[str, Any]]:
+    """Анализирует строку и строит 'педагогический' JSON для powers_of_ten."""
+    try:
+        from sympy.parsing.sympy_parser import parse_expr, rationalize, convert_xor
+
+        processed = _preprocess_expression(expr_str)
+        sympy_tree = parse_expr(processed, evaluate=False, transformations=(rationalize, convert_xor))
+        expression_tree = _sympy_to_clean_json(sympy_tree)
+
+        # --- НОВЫЙ, НАДЕЖНЫЙ БЛОК ВЫЧИСЛЕНИЯ ОТВЕТА ---
+        result_raw = sympify(processed)
+        # Сразу округляем до ~10 знаков, чтобы убить "грязь" float еще на входе
+        result = Decimal(str(result_raw.evalf(10)))
+
+        # Проверка на "красивость" по стандарту ОГЭ
+        if (result * 100).quantize(Decimal('1e-9')) != (result * 100).to_integral_value().quantize(Decimal('1e-9')):
+            return None
+
+        # Форматируем ответ без научной нотации
+        answer_str = format(result.normalize(), 'f').replace(".", ",")
+        if "," in answer_str:
+            answer_str = answer_str.rstrip('0').rstrip(',')
+
+        answer_type = "integer" if result == result.to_integral_value() else "decimal"
+        # --- КОНЕЦ НОВОГО БЛОКА ---
+
+        return {
+            "pattern": "powers_of_ten",
+            "question_text": f"Вычисли выражение:\n{expr_str}\n\nОтвет: ____________",
+            "answer": answer_str,
+            "answer_type": answer_type,
+            "expression_tree": expression_tree,
+            "source_expression": expr_str,
+            "variables": {},
+        }
+    except Exception:
+        return None
+
+# ---------------------------------------------------------------------------
+# Утилиты: Предобработка и Построение Чистого Дерева
+# ---------------------------------------------------------------------------
+
+def _preprocess_expression(expr: str) -> str:
+    # Эта функция из старого валидатора идеальна, оставляем ее
+    expr = expr.strip().replace(":", "/").replace("−", "-")
+    for dot in ("·", "⋅", "∙", "×"): expr = expr.replace(dot, "*")
+    expr = re.sub(r"(?<=\d),(?=\d)", ".", expr)
+    expr = expr.replace("²", "**2").replace("³", "**3")
+    # Добавляем обработку отрицательных степеней
+    sup_map = str.maketrans("⁰¹²³⁴⁵⁶⁷⁸⁹⁻", "0123456789-")
+    expr = re.sub(r"10([⁰¹²³⁴⁵⁶⁷⁸⁹⁻]+)", lambda m: f"10**({m.group(1).translate(sup_map)})", expr)
+    return expr
+
+def _sympy_to_clean_json(expr) -> Dict[str, Any]:
+    """Строит чистое дерево, используя надежную логику."""
+    from sympy import Integer, Float, Rational, Add, Mul, Pow
+
+    # 1. Базовый случай: Числа
+    if isinstance(expr, (Integer, Float, Rational)):
+        clean_decimal = Decimal(str(expr.evalf(15)))
+        if clean_decimal == clean_decimal.to_integral_value():
+            return {"type": "integer", "value": int(clean_decimal), "text": str(int(clean_decimal))}
+        else:
+            clean_decimal = clean_decimal.normalize()
+            return {"type": "decimal", "value": float(clean_decimal), "text": f"{clean_decimal:g}".replace(".", ",")}
+
+    # 2. Операции
+    op_map = {Add: "add", Mul: "multiply", Pow: "power"}
+
+    # Вычитание
+    if expr.is_Add and len(expr.args) == 2 and expr.args[1].could_extract_minus_sign():
+        return {"operation": "subtract", "operands": [_sympy_to_clean_json(expr.args[0]), _sympy_to_clean_json(-expr.args[1])]}
+
+    # Деление
+    if expr.is_Mul and any(isinstance(arg, Pow) and arg.exp == -1 for arg in expr.args):
+        num = Mul(*[arg for arg in expr.args if not (isinstance(arg, Pow) and arg.exp == -1)])
+        den = Mul(*[arg.base for arg in expr.args if isinstance(arg, Pow) and arg.exp == -1])
+        return {"operation": "divide", "operands": [_sympy_to_clean_json(num), _sympy_to_clean_json(den)]}
+
+    # Другие операции
+    if expr.func in op_map:
+        return {"operation": op_map[expr.func], "operands": [_sympy_to_clean_json(arg) for arg in expr.args]}
+
+    return {"type": "unknown", "text": str(expr)}
+
+def _collect_fractions_from_tree(node: Dict[str, Any]) -> list:
+    """Рекурсивно собирает все узлы дробей из дерева."""
+    fractions = []
+    if node.get("type") == "common":
+        fractions.append(tuple(node["value"]))
+    if "operands" in node:
+        for operand in node["operands"]:
+            fractions.extend(_collect_fractions_from_tree(operand))
+    return fractions
