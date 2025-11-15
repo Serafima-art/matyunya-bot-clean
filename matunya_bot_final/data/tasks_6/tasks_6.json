@@ -1,6 +1,6 @@
 [
     {
-        "id": "6_cf_addition_subtraction_vgo3xv",
+        "id": "6_cf_addition_subtraction_mcrew7",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
@@ -36,7 +36,7 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_sr714u",
+        "id": "6_cf_addition_subtraction_brqrj1",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
@@ -72,7 +72,7 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_09q1xq",
+        "id": "6_cf_addition_subtraction_fm6q9n",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
@@ -108,12 +108,12 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_1w0pwo",
+        "id": "6_cf_addition_subtraction_bkdcmq",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
-        "question_text": "Выполни вычисления:\n11/18 − 4/27\n\nПолучи несократимую дробь и в ответ запиши только числитель этой дроби.",
-        "answer": "25",
+        "question_text": "Выполни вычисления:\n11/18 − 4/27\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
+        "answer": "54",
         "answer_type": "integer",
         "variables": {
             "expression_tree": {
@@ -144,12 +144,12 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_jfiu3u",
+        "id": "6_cf_addition_subtraction_ym6jym",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
-        "question_text": "Выполни вычисления:\n13/24 − 5/16\n\nПолучи несократимую дробь и в ответ запиши только числитель этой дроби.",
-        "answer": "11",
+        "question_text": "Выполни вычисления:\n13/24 − 5/16\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
+        "answer": "48",
         "answer_type": "integer",
         "variables": {
             "expression_tree": {
@@ -180,7 +180,7 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_fhc2o9",
+        "id": "6_cf_addition_subtraction_ejathz",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
@@ -216,12 +216,12 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_npv6jy",
+        "id": "6_cf_addition_subtraction_hgfe0j",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
-        "question_text": "Выполни вычисления:\n19/30 − 5/12\n\nПолучи несократимую дробь и в ответ запиши только числитель этой дроби.",
-        "answer": "13",
+        "question_text": "Выполни вычисления:\n19/30 − 5/12\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
+        "answer": "60",
         "answer_type": "integer",
         "variables": {
             "expression_tree": {
@@ -252,12 +252,12 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_p4tztn",
+        "id": "6_cf_addition_subtraction_c23isu",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
-        "question_text": "Выполни вычисления:\n8/9 − 5/12\n\nПолучи несократимую дробь и в ответ запиши только числитель этой дроби.",
-        "answer": "17",
+        "question_text": "Выполни вычисления:\n8/9 − 5/12\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
+        "answer": "36",
         "answer_type": "integer",
         "variables": {
             "expression_tree": {
@@ -288,12 +288,12 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_w87pze",
+        "id": "6_cf_addition_subtraction_3wi6gk",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
-        "question_text": "Выполни вычисления:\n7/16 + 9/20\n\nПолучи несократимую дробь и в ответ запиши только числитель этой дроби.",
-        "answer": "71",
+        "question_text": "Выполни вычисления:\n7/16 + 9/20\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
+        "answer": "80",
         "answer_type": "integer",
         "variables": {
             "expression_tree": {
@@ -324,12 +324,12 @@
         }
     },
     {
-        "id": "6_cf_addition_subtraction_utvzfo",
+        "id": "6_cf_addition_subtraction_zvh30i",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "cf_addition_subtraction",
-        "question_text": "Выполни вычисления:\n20/21 − 3/14\n\nПолучи несократимую дробь и в ответ запиши только знаменатель этой дроби.",
-        "answer": "42",
+        "question_text": "Выполни вычисления:\n20/21 − 3/14\n\nПолучи несократимую дробь и в ответ запиши только числитель этой дроби.",
+        "answer": "31",
         "answer_type": "integer",
         "variables": {
             "expression_tree": {
@@ -360,7 +360,7 @@
         }
     },
     {
-        "id": "6_multiplication_division_6k3mji",
+        "id": "6_multiplication_division_hskc9k",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
@@ -396,7 +396,7 @@
         }
     },
     {
-        "id": "6_multiplication_division_450ygq",
+        "id": "6_multiplication_division_m67tm8",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
@@ -432,7 +432,7 @@
         }
     },
     {
-        "id": "6_multiplication_division_hjfi0u",
+        "id": "6_multiplication_division_ca29nz",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
@@ -468,7 +468,7 @@
         }
     },
     {
-        "id": "6_multiplication_division_qyakho",
+        "id": "6_multiplication_division_p3p0ko",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
@@ -504,7 +504,7 @@
         }
     },
     {
-        "id": "6_multiplication_division_pm3udr",
+        "id": "6_multiplication_division_4jhpus",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
@@ -540,7 +540,7 @@
         }
     },
     {
-        "id": "6_multiplication_division_sh0hot",
+        "id": "6_multiplication_division_v9yhbt",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
@@ -576,7 +576,7 @@
         }
     },
     {
-        "id": "6_multiplication_division_q35env",
+        "id": "6_multiplication_division_irinsz",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
@@ -612,7 +612,7 @@
         }
     },
     {
-        "id": "6_multiplication_division_sett43",
+        "id": "6_multiplication_division_s35egt",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
@@ -648,7 +648,7 @@
         }
     },
     {
-        "id": "6_multiplication_division_fsy7wn",
+        "id": "6_multiplication_division_e5zig3",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
@@ -684,7 +684,7 @@
         }
     },
     {
-        "id": "6_multiplication_division_qhr12t",
+        "id": "6_multiplication_division_ba4nkl",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "multiplication_division",
@@ -720,7 +720,7 @@
         }
     },
     {
-        "id": "6_parentheses_operations_6kgs1s",
+        "id": "6_parentheses_operations_w5it64",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
@@ -766,7 +766,7 @@
         }
     },
     {
-        "id": "6_parentheses_operations_eiewvl",
+        "id": "6_parentheses_operations_da47ch",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
@@ -815,7 +815,7 @@
         }
     },
     {
-        "id": "6_parentheses_operations_2ihcnk",
+        "id": "6_parentheses_operations_ah24tc",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
@@ -874,7 +874,7 @@
         }
     },
     {
-        "id": "6_parentheses_operations_vfkhes",
+        "id": "6_parentheses_operations_p4a2sj",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
@@ -940,7 +940,7 @@
         }
     },
     {
-        "id": "6_parentheses_operations_7jfoxi",
+        "id": "6_parentheses_operations_xmb8ws",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
@@ -996,7 +996,7 @@
         }
     },
     {
-        "id": "6_parentheses_operations_vwgr4s",
+        "id": "6_parentheses_operations_hhwlv6",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
@@ -1045,7 +1045,7 @@
         }
     },
     {
-        "id": "6_parentheses_operations_njno4q",
+        "id": "6_parentheses_operations_ifj24t",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
@@ -1101,7 +1101,7 @@
         }
     },
     {
-        "id": "6_parentheses_operations_5sm1gv",
+        "id": "6_parentheses_operations_i26010",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
@@ -1157,7 +1157,7 @@
         }
     },
     {
-        "id": "6_parentheses_operations_6acdug",
+        "id": "6_parentheses_operations_jl45dz",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
@@ -1213,7 +1213,7 @@
         }
     },
     {
-        "id": "6_parentheses_operations_9dhb8p",
+        "id": "6_parentheses_operations_b7brgl",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "parentheses_operations",
@@ -1259,7 +1259,7 @@
         }
     },
     {
-        "id": "6_complex_fraction_hs5f63",
+        "id": "6_complex_fraction_4bnjqz",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
@@ -1308,7 +1308,7 @@
         }
     },
     {
-        "id": "6_complex_fraction_aroji1",
+        "id": "6_complex_fraction_ezvhlf",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
@@ -1357,7 +1357,7 @@
         }
     },
     {
-        "id": "6_complex_fraction_trxrjy",
+        "id": "6_complex_fraction_o4h5cf",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
@@ -1406,7 +1406,7 @@
         }
     },
     {
-        "id": "6_complex_fraction_eurvu8",
+        "id": "6_complex_fraction_ngsois",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
@@ -1455,7 +1455,7 @@
         }
     },
     {
-        "id": "6_complex_fraction_vecgyd",
+        "id": "6_complex_fraction_07x44z",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
@@ -1504,7 +1504,7 @@
         }
     },
     {
-        "id": "6_complex_fraction_mtpdob",
+        "id": "6_complex_fraction_wh4r6k",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
@@ -1553,7 +1553,7 @@
         }
     },
     {
-        "id": "6_complex_fraction_4ojl2v",
+        "id": "6_complex_fraction_qfl8ib",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
@@ -1602,7 +1602,7 @@
         }
     },
     {
-        "id": "6_complex_fraction_uvauju",
+        "id": "6_complex_fraction_3oklvf",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
@@ -1651,7 +1651,7 @@
         }
     },
     {
-        "id": "6_complex_fraction_sh174q",
+        "id": "6_complex_fraction_isjw4t",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
@@ -1700,7 +1700,7 @@
         }
     },
     {
-        "id": "6_complex_fraction_6tcngx",
+        "id": "6_complex_fraction_5rr5ji",
         "task_number": 6,
         "subtype": "common_fractions",
         "pattern": "complex_fraction",
@@ -1749,7 +1749,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_xvkesy",
+        "id": "6_df_addition_subtraction_7k1a9o",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -1779,7 +1779,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_6zx6q9",
+        "id": "6_df_addition_subtraction_zf4vgp",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -1809,7 +1809,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_ebj91r",
+        "id": "6_df_addition_subtraction_bvphme",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -1839,7 +1839,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_nhzraa",
+        "id": "6_df_addition_subtraction_17xsr5",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -1869,7 +1869,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_5fglm2",
+        "id": "6_df_addition_subtraction_66bszh",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -1899,7 +1899,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_urdd2t",
+        "id": "6_df_addition_subtraction_xlde5l",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -1929,7 +1929,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_j632ac",
+        "id": "6_df_addition_subtraction_bnz9vi",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -1959,7 +1959,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_kz8pui",
+        "id": "6_df_addition_subtraction_h735gy",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -1989,7 +1989,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_42q17p",
+        "id": "6_df_addition_subtraction_d6r4qn",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2019,7 +2019,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_t73o06",
+        "id": "6_df_addition_subtraction_3knndy",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2049,7 +2049,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_s2dyrh",
+        "id": "6_df_addition_subtraction_pu52vv",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2079,7 +2079,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_tio107",
+        "id": "6_df_addition_subtraction_71qtre",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2109,7 +2109,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_hrbknc",
+        "id": "6_df_addition_subtraction_mdiklq",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2139,7 +2139,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_temhft",
+        "id": "6_df_addition_subtraction_mxc62o",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2169,7 +2169,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_yk6nb9",
+        "id": "6_df_addition_subtraction_qb7waz",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2199,7 +2199,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_9o48xz",
+        "id": "6_df_addition_subtraction_ldhwyf",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2229,7 +2229,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_424ef8",
+        "id": "6_df_addition_subtraction_bgwgcn",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2259,7 +2259,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_p1r6qp",
+        "id": "6_df_addition_subtraction_6g3zc9",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2289,7 +2289,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_qgq64j",
+        "id": "6_df_addition_subtraction_k8597c",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2319,7 +2319,7 @@
         }
     },
     {
-        "id": "6_df_addition_subtraction_53uixx",
+        "id": "6_df_addition_subtraction_ss5g5y",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "df_addition_subtraction",
@@ -2349,7 +2349,7 @@
         }
     },
     {
-        "id": "6_linear_operations_u4zjoy",
+        "id": "6_linear_operations_882sul",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2389,7 +2389,7 @@
         }
     },
     {
-        "id": "6_linear_operations_yn5lxg",
+        "id": "6_linear_operations_nb9yke",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2429,7 +2429,7 @@
         }
     },
     {
-        "id": "6_linear_operations_ki4btx",
+        "id": "6_linear_operations_a8slir",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2469,7 +2469,7 @@
         }
     },
     {
-        "id": "6_linear_operations_ew55z6",
+        "id": "6_linear_operations_959end",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2509,7 +2509,7 @@
         }
     },
     {
-        "id": "6_linear_operations_7ohblg",
+        "id": "6_linear_operations_qsv5gt",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2549,7 +2549,7 @@
         }
     },
     {
-        "id": "6_linear_operations_dcxyfk",
+        "id": "6_linear_operations_nx9dvk",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2589,7 +2589,7 @@
         }
     },
     {
-        "id": "6_linear_operations_glaa8d",
+        "id": "6_linear_operations_ct5cbh",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2629,7 +2629,7 @@
         }
     },
     {
-        "id": "6_linear_operations_zu9yqz",
+        "id": "6_linear_operations_frdyyd",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2669,7 +2669,7 @@
         }
     },
     {
-        "id": "6_linear_operations_19p1ki",
+        "id": "6_linear_operations_92wnfb",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2709,7 +2709,7 @@
         }
     },
     {
-        "id": "6_linear_operations_qbyhp0",
+        "id": "6_linear_operations_p06fic",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2749,7 +2749,7 @@
         }
     },
     {
-        "id": "6_linear_operations_yauzh8",
+        "id": "6_linear_operations_c6gu5d",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2789,7 +2789,7 @@
         }
     },
     {
-        "id": "6_linear_operations_979mnx",
+        "id": "6_linear_operations_2fmhwu",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2829,7 +2829,7 @@
         }
     },
     {
-        "id": "6_linear_operations_iihg7j",
+        "id": "6_linear_operations_5v3gih",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2869,7 +2869,7 @@
         }
     },
     {
-        "id": "6_linear_operations_y8uuoa",
+        "id": "6_linear_operations_kq46uh",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2909,7 +2909,7 @@
         }
     },
     {
-        "id": "6_linear_operations_xcx34h",
+        "id": "6_linear_operations_iypu0n",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2949,7 +2949,7 @@
         }
     },
     {
-        "id": "6_linear_operations_9v0ugt",
+        "id": "6_linear_operations_tq80v4",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -2989,7 +2989,7 @@
         }
     },
     {
-        "id": "6_linear_operations_rpshkg",
+        "id": "6_linear_operations_ll42cr",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -3029,7 +3029,7 @@
         }
     },
     {
-        "id": "6_linear_operations_b8v81x",
+        "id": "6_linear_operations_uvh9mp",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -3069,7 +3069,7 @@
         }
     },
     {
-        "id": "6_linear_operations_snc7kc",
+        "id": "6_linear_operations_20aupo",
         "task_number": 6,
         "subtype": "decimal_fractions",
         "pattern": "linear_operations",
@@ -3109,7 +3109,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_qrelcb",
+        "id": "6_mixed_types_operations_keczxy",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3153,7 +3153,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_jyvfwg",
+        "id": "6_mixed_types_operations_2ww0kl",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3197,7 +3197,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_nrj9et",
+        "id": "6_mixed_types_operations_qjgvsz",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3241,7 +3241,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_py3zxp",
+        "id": "6_mixed_types_operations_xptdvh",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3285,7 +3285,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_mbka9r",
+        "id": "6_mixed_types_operations_miaavp",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3329,7 +3329,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_ms0bal",
+        "id": "6_mixed_types_operations_sysys9",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3373,7 +3373,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_ph96s9",
+        "id": "6_mixed_types_operations_o0nsk9",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3417,7 +3417,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_k8ecx4",
+        "id": "6_mixed_types_operations_9gc66l",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3461,7 +3461,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_r99yn7",
+        "id": "6_mixed_types_operations_uh88cf",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3505,7 +3505,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_pvfjpk",
+        "id": "6_mixed_types_operations_crczuw",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3549,7 +3549,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_q9ncc2",
+        "id": "6_mixed_types_operations_dkqdmt",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3593,7 +3593,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_wb0iyw",
+        "id": "6_mixed_types_operations_cypsml",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3637,7 +3637,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_bnq3b0",
+        "id": "6_mixed_types_operations_izw9ne",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3681,7 +3681,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_9ww1ju",
+        "id": "6_mixed_types_operations_ld8w46",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3725,7 +3725,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_efvonq",
+        "id": "6_mixed_types_operations_wzowih",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3769,7 +3769,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_ot7xow",
+        "id": "6_mixed_types_operations_5brr40",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3813,7 +3813,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_q1cpwq",
+        "id": "6_mixed_types_operations_kv5zrx",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3857,7 +3857,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_iingy0",
+        "id": "6_mixed_types_operations_u99zy6",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3912,7 +3912,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_z34266",
+        "id": "6_mixed_types_operations_m60ql5",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -3956,7 +3956,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_05i7v7",
+        "id": "6_mixed_types_operations_8w55qq",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -4000,7 +4000,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_1wxehr",
+        "id": "6_mixed_types_operations_dutauw",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -4044,7 +4044,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_t2w93h",
+        "id": "6_mixed_types_operations_027yxf",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -4088,7 +4088,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_iwu05s",
+        "id": "6_mixed_types_operations_ov6br3",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -4132,7 +4132,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_n35i2i",
+        "id": "6_mixed_types_operations_xtwtjw",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -4176,7 +4176,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_go693s",
+        "id": "6_mixed_types_operations_vkm5pl",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -4220,7 +4220,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_l2ongn",
+        "id": "6_mixed_types_operations_8zzulb",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -4264,7 +4264,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_rru93f",
+        "id": "6_mixed_types_operations_8xwkwd",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -4308,7 +4308,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_4xcuwh",
+        "id": "6_mixed_types_operations_5nyc5c",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -4352,7 +4352,7 @@
         }
     },
     {
-        "id": "6_mixed_types_operations_7kr250",
+        "id": "6_mixed_types_operations_10bpq8",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "mixed_types_operations",
@@ -4396,7 +4396,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_ms9bwi",
+        "id": "6_fraction_structure_l5kzfk",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4438,7 +4438,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_ubd9r9",
+        "id": "6_fraction_structure_awlwa4",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4480,7 +4480,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_9vfhku",
+        "id": "6_fraction_structure_udz7bo",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4522,7 +4522,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_1s6jm5",
+        "id": "6_fraction_structure_anj197",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4564,7 +4564,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_kibz93",
+        "id": "6_fraction_structure_yra1jv",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4606,7 +4606,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_fogyjn",
+        "id": "6_fraction_structure_nj87ad",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4648,7 +4648,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_d86niu",
+        "id": "6_fraction_structure_v9d647",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4690,7 +4690,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_dfg4j3",
+        "id": "6_fraction_structure_9iblr0",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4732,7 +4732,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_lrp66c",
+        "id": "6_fraction_structure_a0g8oe",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4774,7 +4774,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_06ls3p",
+        "id": "6_fraction_structure_rrxhi5",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4816,7 +4816,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_pvekls",
+        "id": "6_fraction_structure_gi2uvj",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4858,7 +4858,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_bynaxz",
+        "id": "6_fraction_structure_45sgoy",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4900,7 +4900,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_w11s6v",
+        "id": "6_fraction_structure_80eb53",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4942,7 +4942,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_ia3rfx",
+        "id": "6_fraction_structure_fv61ne",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -4984,7 +4984,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_znz6yy",
+        "id": "6_fraction_structure_wr88zf",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -5026,7 +5026,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_qjd0bz",
+        "id": "6_fraction_structure_s6o11a",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -5068,7 +5068,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_1xhn8s",
+        "id": "6_fraction_structure_xldgrx",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -5110,7 +5110,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_t4u0ly",
+        "id": "6_fraction_structure_3i87wj",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -5152,7 +5152,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_17aisj",
+        "id": "6_fraction_structure_928fdx",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -5194,7 +5194,7 @@
         }
     },
     {
-        "id": "6_fraction_structure_pu9tco",
+        "id": "6_fraction_structure_lfpmxy",
         "task_number": 6,
         "subtype": "mixed_fractions",
         "pattern": "fraction_structure",
@@ -5236,7 +5236,7 @@
         }
     },
     {
-        "id": "6_powers_with_fractions_ibhd7r",
+        "id": "6_powers_with_fractions_uagk7i",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_with_fractions",
@@ -5252,8 +5252,7 @@
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 28,
-                                "text": "28"
+                                "value": 28
                             },
                             {
                                 "operation": "power",
@@ -5263,37 +5262,41 @@
                                         "operands": [
                                             {
                                                 "type": "integer",
-                                                "value": 2,
-                                                "text": "2"
+                                                "value": 2
                                             },
                                             {
                                                 "type": "integer",
-                                                "value": 7,
-                                                "text": "7"
+                                                "value": 7
                                             }
                                         ]
                                     },
                                     {
                                         "type": "integer",
-                                        "value": 2,
-                                        "text": "2"
+                                        "value": 2
                                     }
                                 ]
                             }
                         ]
                     },
                     {
-                        "operation": "divide",
+                        "operation": "multiply",
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 16,
-                                "text": "16"
+                                "value": 8
                             },
                             {
-                                "type": "integer",
-                                "value": 7,
-                                "text": "7"
+                                "operation": "divide",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 2
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 7
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -5306,7 +5309,7 @@
         }
     },
     {
-        "id": "6_powers_with_fractions_ojb326",
+        "id": "6_powers_with_fractions_4uh29c",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_with_fractions",
@@ -5322,8 +5325,7 @@
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 50,
-                                "text": "50"
+                                "value": 50
                             },
                             {
                                 "operation": "power",
@@ -5333,37 +5335,41 @@
                                         "operands": [
                                             {
                                                 "type": "integer",
-                                                "value": 1,
-                                                "text": "1"
+                                                "value": 1
                                             },
                                             {
                                                 "type": "integer",
-                                                "value": 10,
-                                                "text": "10"
+                                                "value": 10
                                             }
                                         ]
                                     },
                                     {
                                         "type": "integer",
-                                        "value": 2,
-                                        "text": "2"
+                                        "value": 2
                                     }
                                 ]
                             }
                         ]
                     },
                     {
-                        "operation": "divide",
+                        "operation": "multiply",
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 5,
-                                "text": "5"
+                                "value": 5
                             },
                             {
-                                "type": "integer",
-                                "value": 10,
-                                "text": "10"
+                                "operation": "divide",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 1
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 10
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -5376,7 +5382,7 @@
         }
     },
     {
-        "id": "6_powers_with_fractions_cadn1y",
+        "id": "6_powers_with_fractions_vxwovu",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_with_fractions",
@@ -5392,8 +5398,7 @@
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 48,
-                                "text": "48"
+                                "value": 48
                             },
                             {
                                 "operation": "power",
@@ -5403,37 +5408,41 @@
                                         "operands": [
                                             {
                                                 "type": "integer",
-                                                "value": 2,
-                                                "text": "2"
+                                                "value": 2
                                             },
                                             {
                                                 "type": "integer",
-                                                "value": 12,
-                                                "text": "12"
+                                                "value": 12
                                             }
                                         ]
                                     },
                                     {
                                         "type": "integer",
-                                        "value": 2,
-                                        "text": "2"
+                                        "value": 2
                                     }
                                 ]
                             }
                         ]
                     },
                     {
-                        "operation": "divide",
+                        "operation": "multiply",
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 8,
-                                "text": "8"
+                                "value": 4
                             },
                             {
-                                "type": "integer",
-                                "value": 12,
-                                "text": "12"
+                                "operation": "divide",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 2
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 12
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -5446,7 +5455,7 @@
         }
     },
     {
-        "id": "6_powers_with_fractions_i1tvnx",
+        "id": "6_powers_with_fractions_6ht6eq",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_with_fractions",
@@ -5462,8 +5471,7 @@
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 72,
-                                "text": "72"
+                                "value": 72
                             },
                             {
                                 "operation": "power",
@@ -5473,37 +5481,41 @@
                                         "operands": [
                                             {
                                                 "type": "integer",
-                                                "value": 1,
-                                                "text": "1"
+                                                "value": 1
                                             },
                                             {
                                                 "type": "integer",
-                                                "value": 12,
-                                                "text": "12"
+                                                "value": 12
                                             }
                                         ]
                                     },
                                     {
                                         "type": "integer",
-                                        "value": 2,
-                                        "text": "2"
+                                        "value": 2
                                     }
                                 ]
                             }
                         ]
                     },
                     {
-                        "operation": "divide",
+                        "operation": "multiply",
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 6,
-                                "text": "6"
+                                "value": 6
                             },
                             {
-                                "type": "integer",
-                                "value": 12,
-                                "text": "12"
+                                "operation": "divide",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 1
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 12
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -5516,7 +5528,7 @@
         }
     },
     {
-        "id": "6_powers_with_fractions_fl5uhw",
+        "id": "6_powers_with_fractions_wy8myc",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_with_fractions",
@@ -5532,8 +5544,7 @@
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 45,
-                                "text": "45"
+                                "value": 45
                             },
                             {
                                 "operation": "power",
@@ -5543,37 +5554,41 @@
                                         "operands": [
                                             {
                                                 "type": "integer",
-                                                "value": 1,
-                                                "text": "1"
+                                                "value": 1
                                             },
                                             {
                                                 "type": "integer",
-                                                "value": 5,
-                                                "text": "5"
+                                                "value": 5
                                             }
                                         ]
                                     },
                                     {
                                         "type": "integer",
-                                        "value": 2,
-                                        "text": "2"
+                                        "value": 2
                                     }
                                 ]
                             }
                         ]
                     },
                     {
-                        "operation": "divide",
+                        "operation": "multiply",
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 9,
-                                "text": "9"
+                                "value": 9
                             },
                             {
-                                "type": "integer",
-                                "value": 5,
-                                "text": "5"
+                                "operation": "divide",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 1
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 5
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -5586,7 +5601,7 @@
         }
     },
     {
-        "id": "6_powers_with_fractions_p8tl5p",
+        "id": "6_powers_with_fractions_n6aayz",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_with_fractions",
@@ -5602,8 +5617,7 @@
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 225,
-                                "text": "225"
+                                "value": 225
                             },
                             {
                                 "operation": "power",
@@ -5613,37 +5627,41 @@
                                         "operands": [
                                             {
                                                 "type": "integer",
-                                                "value": 1,
-                                                "text": "1"
+                                                "value": 1
                                             },
                                             {
                                                 "type": "integer",
-                                                "value": 15,
-                                                "text": "15"
+                                                "value": 15
                                             }
                                         ]
                                     },
                                     {
                                         "type": "integer",
-                                        "value": 2,
-                                        "text": "2"
+                                        "value": 2
                                     }
                                 ]
                             }
                         ]
                     },
                     {
-                        "operation": "divide",
+                        "operation": "multiply",
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 30,
-                                "text": "30"
+                                "value": 30
                             },
                             {
-                                "type": "integer",
-                                "value": 15,
-                                "text": "15"
+                                "operation": "divide",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 1
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 15
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -5656,7 +5674,7 @@
         }
     },
     {
-        "id": "6_powers_with_fractions_etal3u",
+        "id": "6_powers_with_fractions_frx6qh",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_with_fractions",
@@ -5672,8 +5690,7 @@
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 150,
-                                "text": "150"
+                                "value": 150
                             },
                             {
                                 "operation": "power",
@@ -5683,37 +5700,41 @@
                                         "operands": [
                                             {
                                                 "type": "integer",
-                                                "value": 2,
-                                                "text": "2"
+                                                "value": 2
                                             },
                                             {
                                                 "type": "integer",
-                                                "value": 10,
-                                                "text": "10"
+                                                "value": 10
                                             }
                                         ]
                                     },
                                     {
                                         "type": "integer",
-                                        "value": 2,
-                                        "text": "2"
+                                        "value": 2
                                     }
                                 ]
                             }
                         ]
                     },
                     {
-                        "operation": "divide",
+                        "operation": "multiply",
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 30,
-                                "text": "30"
+                                "value": 15
                             },
                             {
-                                "type": "integer",
-                                "value": 10,
-                                "text": "10"
+                                "operation": "divide",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 2
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 10
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -5726,7 +5747,7 @@
         }
     },
     {
-        "id": "6_powers_with_fractions_cusof4",
+        "id": "6_powers_with_fractions_du5txr",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_with_fractions",
@@ -5742,8 +5763,7 @@
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 96,
-                                "text": "96"
+                                "value": 96
                             },
                             {
                                 "operation": "power",
@@ -5753,37 +5773,41 @@
                                         "operands": [
                                             {
                                                 "type": "integer",
-                                                "value": 1,
-                                                "text": "1"
+                                                "value": 1
                                             },
                                             {
                                                 "type": "integer",
-                                                "value": 12,
-                                                "text": "12"
+                                                "value": 12
                                             }
                                         ]
                                     },
                                     {
                                         "type": "integer",
-                                        "value": 2,
-                                        "text": "2"
+                                        "value": 2
                                     }
                                 ]
                             }
                         ]
                     },
                     {
-                        "operation": "divide",
+                        "operation": "multiply",
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 8,
-                                "text": "8"
+                                "value": 8
                             },
                             {
-                                "type": "integer",
-                                "value": 12,
-                                "text": "12"
+                                "operation": "divide",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 1
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 12
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -5796,12 +5820,12 @@
         }
     },
     {
-        "id": "6_powers_with_fractions_2wk3gq",
+        "id": "6_powers_with_fractions_v6chj9",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_with_fractions",
         "question_text": "Вычисли выражение:\n121 · (2/11)² + 33 · (2/11)\n\nОтвет: ____________",
-        "answer": "1e+1",
+        "answer": "10",
         "answer_type": "integer",
         "variables": {
             "expression_tree": {
@@ -5812,8 +5836,7 @@
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 121,
-                                "text": "121"
+                                "value": 121
                             },
                             {
                                 "operation": "power",
@@ -5823,37 +5846,41 @@
                                         "operands": [
                                             {
                                                 "type": "integer",
-                                                "value": 2,
-                                                "text": "2"
+                                                "value": 2
                                             },
                                             {
                                                 "type": "integer",
-                                                "value": 11,
-                                                "text": "11"
+                                                "value": 11
                                             }
                                         ]
                                     },
                                     {
                                         "type": "integer",
-                                        "value": 2,
-                                        "text": "2"
+                                        "value": 2
                                     }
                                 ]
                             }
                         ]
                     },
                     {
-                        "operation": "divide",
+                        "operation": "multiply",
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 66,
-                                "text": "66"
+                                "value": 33
                             },
                             {
-                                "type": "integer",
-                                "value": 11,
-                                "text": "11"
+                                "operation": "divide",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 2
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 11
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -5866,7 +5893,7 @@
         }
     },
     {
-        "id": "6_powers_with_fractions_gp8yki",
+        "id": "6_powers_with_fractions_xgvp5r",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_with_fractions",
@@ -5882,8 +5909,7 @@
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 54,
-                                "text": "54"
+                                "value": 54
                             },
                             {
                                 "operation": "power",
@@ -5893,37 +5919,41 @@
                                         "operands": [
                                             {
                                                 "type": "integer",
-                                                "value": 1,
-                                                "text": "1"
+                                                "value": 1
                                             },
                                             {
                                                 "type": "integer",
-                                                "value": 9,
-                                                "text": "9"
+                                                "value": 9
                                             }
                                         ]
                                     },
                                     {
                                         "type": "integer",
-                                        "value": 2,
-                                        "text": "2"
+                                        "value": 2
                                     }
                                 ]
                             }
                         ]
                     },
                     {
-                        "operation": "divide",
+                        "operation": "multiply",
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 6,
-                                "text": "6"
+                                "value": 6
                             },
                             {
-                                "type": "integer",
-                                "value": 9,
-                                "text": "9"
+                                "operation": "divide",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 1
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 9
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -5936,7 +5966,7 @@
         }
     },
     {
-        "id": "6_powers_with_fractions_l6w33t",
+        "id": "6_powers_with_fractions_bdjukz",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_with_fractions",
@@ -5952,8 +5982,7 @@
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 200,
-                                "text": "200"
+                                "value": 200
                             },
                             {
                                 "operation": "power",
@@ -5963,37 +5992,41 @@
                                         "operands": [
                                             {
                                                 "type": "integer",
-                                                "value": 2,
-                                                "text": "2"
+                                                "value": 2
                                             },
                                             {
                                                 "type": "integer",
-                                                "value": 20,
-                                                "text": "20"
+                                                "value": 20
                                             }
                                         ]
                                     },
                                     {
                                         "type": "integer",
-                                        "value": 2,
-                                        "text": "2"
+                                        "value": 2
                                     }
                                 ]
                             }
                         ]
                     },
                     {
-                        "operation": "divide",
+                        "operation": "multiply",
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 40,
-                                "text": "40"
+                                "value": 20
                             },
                             {
-                                "type": "integer",
-                                "value": 20,
-                                "text": "20"
+                                "operation": "divide",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 2
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 20
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -6006,7 +6039,7 @@
         }
     },
     {
-        "id": "6_powers_with_fractions_5jju60",
+        "id": "6_powers_with_fractions_0rtnxj",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_with_fractions",
@@ -6022,8 +6055,7 @@
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 300,
-                                "text": "300"
+                                "value": 300
                             },
                             {
                                 "operation": "power",
@@ -6033,37 +6065,41 @@
                                         "operands": [
                                             {
                                                 "type": "integer",
-                                                "value": 1,
-                                                "text": "1"
+                                                "value": 1
                                             },
                                             {
                                                 "type": "integer",
-                                                "value": 25,
-                                                "text": "25"
+                                                "value": 25
                                             }
                                         ]
                                     },
                                     {
                                         "type": "integer",
-                                        "value": 2,
-                                        "text": "2"
+                                        "value": 2
                                     }
                                 ]
                             }
                         ]
                     },
                     {
-                        "operation": "divide",
+                        "operation": "multiply",
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 12,
-                                "text": "12"
+                                "value": 12
                             },
                             {
-                                "type": "integer",
-                                "value": 25,
-                                "text": "25"
+                                "operation": "divide",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 1
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 25
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -6076,7 +6112,7 @@
         }
     },
     {
-        "id": "6_powers_with_fractions_a9djaa",
+        "id": "6_powers_with_fractions_6ivvai",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_with_fractions",
@@ -6092,8 +6128,7 @@
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 900,
-                                "text": "900"
+                                "value": 900
                             },
                             {
                                 "operation": "power",
@@ -6103,37 +6138,41 @@
                                         "operands": [
                                             {
                                                 "type": "integer",
-                                                "value": 2,
-                                                "text": "2"
+                                                "value": 2
                                             },
                                             {
                                                 "type": "integer",
-                                                "value": 15,
-                                                "text": "15"
+                                                "value": 15
                                             }
                                         ]
                                     },
                                     {
                                         "type": "integer",
-                                        "value": 2,
-                                        "text": "2"
+                                        "value": 2
                                     }
                                 ]
                             }
                         ]
                     },
                     {
-                        "operation": "divide",
+                        "operation": "multiply",
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 240,
-                                "text": "240"
+                                "value": 120
                             },
                             {
-                                "type": "integer",
-                                "value": 15,
-                                "text": "15"
+                                "operation": "divide",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 2
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 15
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -6146,7 +6185,7 @@
         }
     },
     {
-        "id": "6_powers_with_fractions_gbejsu",
+        "id": "6_powers_with_fractions_ak6ka3",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_with_fractions",
@@ -6162,8 +6201,7 @@
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 75,
-                                "text": "75"
+                                "value": 75
                             },
                             {
                                 "operation": "power",
@@ -6173,37 +6211,41 @@
                                         "operands": [
                                             {
                                                 "type": "integer",
-                                                "value": 1,
-                                                "text": "1"
+                                                "value": 1
                                             },
                                             {
                                                 "type": "integer",
-                                                "value": 5,
-                                                "text": "5"
+                                                "value": 5
                                             }
                                         ]
                                     },
                                     {
                                         "type": "integer",
-                                        "value": 2,
-                                        "text": "2"
+                                        "value": 2
                                     }
                                 ]
                             }
                         ]
                     },
                     {
-                        "operation": "divide",
+                        "operation": "multiply",
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 15,
-                                "text": "15"
+                                "value": 15
                             },
                             {
-                                "type": "integer",
-                                "value": 5,
-                                "text": "5"
+                                "operation": "divide",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 1
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 5
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -6216,7 +6258,7 @@
         }
     },
     {
-        "id": "6_powers_with_fractions_kp10nm",
+        "id": "6_powers_with_fractions_k746ie",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_with_fractions",
@@ -6232,8 +6274,7 @@
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 196,
-                                "text": "196"
+                                "value": 196
                             },
                             {
                                 "operation": "power",
@@ -6243,37 +6284,41 @@
                                         "operands": [
                                             {
                                                 "type": "integer",
-                                                "value": 2,
-                                                "text": "2"
+                                                "value": 2
                                             },
                                             {
                                                 "type": "integer",
-                                                "value": 14,
-                                                "text": "14"
+                                                "value": 14
                                             }
                                         ]
                                     },
                                     {
                                         "type": "integer",
-                                        "value": 2,
-                                        "text": "2"
+                                        "value": 2
                                     }
                                 ]
                             }
                         ]
                     },
                     {
-                        "operation": "divide",
+                        "operation": "multiply",
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 28,
-                                "text": "28"
+                                "value": 14
                             },
                             {
-                                "type": "integer",
-                                "value": 14,
-                                "text": "14"
+                                "operation": "divide",
+                                "operands": [
+                                    {
+                                        "type": "integer",
+                                        "value": 2
+                                    },
+                                    {
+                                        "type": "integer",
+                                        "value": 14
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -6286,7 +6331,7 @@
         }
     },
     {
-        "id": "6_powers_with_fractions_mza45c",
+        "id": "6_powers_with_fractions_t0vcja",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_with_fractions",
@@ -6302,8 +6347,7 @@
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 36,
-                                "text": "36"
+                                "value": 36
                             },
                             {
                                 "operation": "power",
@@ -6313,20 +6357,17 @@
                                         "operands": [
                                             {
                                                 "type": "integer",
-                                                "value": 5,
-                                                "text": "5"
+                                                "value": 5
                                             },
                                             {
                                                 "type": "integer",
-                                                "value": 6,
-                                                "text": "6"
+                                                "value": 6
                                             }
                                         ]
                                     },
                                     {
                                         "type": "integer",
-                                        "value": 2,
-                                        "text": "2"
+                                        "value": 2
                                     }
                                 ]
                             }
@@ -6334,8 +6375,7 @@
                     },
                     {
                         "type": "integer",
-                        "value": 20,
-                        "text": "20"
+                        "value": 20
                     }
                 ]
             }
@@ -6346,7 +6386,7 @@
         }
     },
     {
-        "id": "6_powers_with_fractions_gc3yhq",
+        "id": "6_powers_with_fractions_fi1r2o",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_with_fractions",
@@ -6362,8 +6402,7 @@
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 16,
-                                "text": "16"
+                                "value": 16
                             },
                             {
                                 "operation": "power",
@@ -6373,20 +6412,17 @@
                                         "operands": [
                                             {
                                                 "type": "integer",
-                                                "value": 3,
-                                                "text": "3"
+                                                "value": 3
                                             },
                                             {
                                                 "type": "integer",
-                                                "value": 4,
-                                                "text": "4"
+                                                "value": 4
                                             }
                                         ]
                                     },
                                     {
                                         "type": "integer",
-                                        "value": 2,
-                                        "text": "2"
+                                        "value": 2
                                     }
                                 ]
                             }
@@ -6394,8 +6430,7 @@
                     },
                     {
                         "type": "integer",
-                        "value": 6,
-                        "text": "6"
+                        "value": 6
                     }
                 ]
             }
@@ -6406,7 +6441,7 @@
         }
     },
     {
-        "id": "6_powers_with_fractions_iy18tk",
+        "id": "6_powers_with_fractions_951vpg",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_with_fractions",
@@ -6422,8 +6457,7 @@
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 50,
-                                "text": "50"
+                                "value": 50
                             },
                             {
                                 "operation": "power",
@@ -6433,20 +6467,17 @@
                                         "operands": [
                                             {
                                                 "type": "integer",
-                                                "value": 3,
-                                                "text": "3"
+                                                "value": 3
                                             },
                                             {
                                                 "type": "integer",
-                                                "value": 5,
-                                                "text": "5"
+                                                "value": 5
                                             }
                                         ]
                                     },
                                     {
                                         "type": "integer",
-                                        "value": 2,
-                                        "text": "2"
+                                        "value": 2
                                     }
                                 ]
                             }
@@ -6454,8 +6485,7 @@
                     },
                     {
                         "type": "integer",
-                        "value": 10,
-                        "text": "10"
+                        "value": 10
                     }
                 ]
             }
@@ -6466,12 +6496,12 @@
         }
     },
     {
-        "id": "6_powers_with_fractions_pj7otd",
+        "id": "6_powers_with_fractions_sw8tvp",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_with_fractions",
         "question_text": "Вычисли выражение:\n27 · (2/3)³ + 2\n\nОтвет: ____________",
-        "answer": "1e+1",
+        "answer": "10",
         "answer_type": "integer",
         "variables": {
             "expression_tree": {
@@ -6482,8 +6512,7 @@
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 27,
-                                "text": "27"
+                                "value": 27
                             },
                             {
                                 "operation": "power",
@@ -6493,20 +6522,17 @@
                                         "operands": [
                                             {
                                                 "type": "integer",
-                                                "value": 2,
-                                                "text": "2"
+                                                "value": 2
                                             },
                                             {
                                                 "type": "integer",
-                                                "value": 3,
-                                                "text": "3"
+                                                "value": 3
                                             }
                                         ]
                                     },
                                     {
                                         "type": "integer",
-                                        "value": 3,
-                                        "text": "3"
+                                        "value": 3
                                     }
                                 ]
                             }
@@ -6514,8 +6540,7 @@
                     },
                     {
                         "type": "integer",
-                        "value": 2,
-                        "text": "2"
+                        "value": 2
                     }
                 ]
             }
@@ -6526,7 +6551,7 @@
         }
     },
     {
-        "id": "6_powers_with_fractions_lslyfp",
+        "id": "6_powers_with_fractions_zulg4m",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_with_fractions",
@@ -6542,8 +6567,7 @@
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 8,
-                                "text": "8"
+                                "value": 8
                             },
                             {
                                 "operation": "power",
@@ -6553,20 +6577,17 @@
                                         "operands": [
                                             {
                                                 "type": "integer",
-                                                "value": 5,
-                                                "text": "5"
+                                                "value": 5
                                             },
                                             {
                                                 "type": "integer",
-                                                "value": 2,
-                                                "text": "2"
+                                                "value": 2
                                             }
                                         ]
                                     },
                                     {
                                         "type": "integer",
-                                        "value": 2,
-                                        "text": "2"
+                                        "value": 2
                                     }
                                 ]
                             }
@@ -6574,8 +6595,7 @@
                     },
                     {
                         "type": "integer",
-                        "value": 45,
-                        "text": "45"
+                        "value": 45
                     }
                 ]
             }
@@ -6586,7 +6606,7 @@
         }
     },
     {
-        "id": "6_powers_of_ten_r5dcja",
+        "id": "6_powers_of_ten_zctwtz",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_of_ten",
@@ -6599,13 +6619,11 @@
                 "operands": [
                     {
                         "type": "integer",
-                        "value": 3000,
-                        "text": "3000"
+                        "value": 3000
                     },
                     {
                         "type": "integer",
-                        "value": 10,
-                        "text": "10"
+                        "value": 10
                     }
                 ]
             }
@@ -6616,7 +6634,7 @@
         }
     },
     {
-        "id": "6_powers_of_ten_2g63y7",
+        "id": "6_powers_of_ten_tm5ni9",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_of_ten",
@@ -6635,21 +6653,18 @@
                                 "operands": [
                                     {
                                         "type": "integer",
-                                        "value": 4,
-                                        "text": "4"
+                                        "value": 4
                                     },
                                     {
                                         "operation": "power",
                                         "operands": [
                                             {
                                                 "type": "integer",
-                                                "value": 10,
-                                                "text": "10"
+                                                "value": 10
                                             },
                                             {
                                                 "type": "integer",
-                                                "value": 2,
-                                                "text": "2"
+                                                "value": 2
                                             }
                                         ]
                                     }
@@ -6657,28 +6672,24 @@
                             },
                             {
                                 "type": "integer",
-                                "value": 2,
-                                "text": "2"
+                                "value": 2
                             }
                         ]
                     },
                     {
                         "type": "integer",
-                        "value": 5,
-                        "text": "5"
+                        "value": 5
                     },
                     {
                         "operation": "power",
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 10,
-                                "text": "10"
+                                "value": 10
                             },
                             {
                                 "type": "integer",
-                                "value": -5,
-                                "text": "-5"
+                                "value": -5
                             }
                         ]
                     }
@@ -6691,7 +6702,7 @@
         }
     },
     {
-        "id": "6_powers_of_ten_8k3zd7",
+        "id": "6_powers_of_ten_gd2c3l",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_of_ten",
@@ -6704,41 +6715,35 @@
                 "operands": [
                     {
                         "type": "integer",
-                        "value": 6,
-                        "text": "6"
+                        "value": 6
                     },
                     {
                         "operation": "power",
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 10,
-                                "text": "10"
+                                "value": 10
                             },
                             {
                                 "type": "integer",
-                                "value": -4,
-                                "text": "-4"
+                                "value": -4
                             }
                         ]
                     },
                     {
                         "type": "decimal",
-                        "value": 0.5,
-                        "text": "0,5"
+                        "value": 0.5
                     },
                     {
                         "operation": "power",
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 10,
-                                "text": "10"
+                                "value": 10
                             },
                             {
                                 "type": "integer",
-                                "value": 6,
-                                "text": "6"
+                                "value": 6
                             }
                         ]
                     }
@@ -6751,7 +6756,7 @@
         }
     },
     {
-        "id": "6_powers_of_ten_4d5ngd",
+        "id": "6_powers_of_ten_5rcns2",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_of_ten",
@@ -6764,21 +6769,18 @@
                 "operands": [
                     {
                         "type": "integer",
-                        "value": 8000,
-                        "text": "8000"
+                        "value": 8000
                     },
                     {
                         "operation": "multiply",
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 2,
-                                "text": "2"
+                                "value": 2
                             },
                             {
                                 "type": "integer",
-                                "value": 10,
-                                "text": "10"
+                                "value": 10
                             }
                         ]
                     }
@@ -6791,7 +6793,7 @@
         }
     },
     {
-        "id": "6_powers_of_ten_jd1orz",
+        "id": "6_powers_of_ten_q8j7mp",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_of_ten",
@@ -6804,29 +6806,25 @@
                 "operands": [
                     {
                         "type": "integer",
-                        "value": 250000,
-                        "text": "250000"
+                        "value": 250000
                     },
                     {
                         "operation": "multiply",
                         "operands": [
                             {
                                 "type": "decimal",
-                                "value": 0.5,
-                                "text": "0,5"
+                                "value": 0.5
                             },
                             {
                                 "operation": "power",
                                 "operands": [
                                     {
                                         "type": "integer",
-                                        "value": 10,
-                                        "text": "10"
+                                        "value": 10
                                     },
                                     {
                                         "type": "integer",
-                                        "value": 3,
-                                        "text": "3"
+                                        "value": 3
                                     }
                                 ]
                             }
@@ -6841,7 +6839,7 @@
         }
     },
     {
-        "id": "6_powers_of_ten_5ifma0",
+        "id": "6_powers_of_ten_r3wfxa",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_of_ten",
@@ -6860,40 +6858,34 @@
                                 "operands": [
                                     {
                                         "type": "integer",
-                                        "value": 3,
-                                        "text": "3"
+                                        "value": 3
                                     },
                                     {
                                         "type": "integer",
-                                        "value": 10,
-                                        "text": "10"
+                                        "value": 10
                                     }
                                 ]
                             },
                             {
                                 "type": "integer",
-                                "value": 3,
-                                "text": "3"
+                                "value": 3
                             }
                         ]
                     },
                     {
                         "type": "integer",
-                        "value": 2,
-                        "text": "2"
+                        "value": 2
                     },
                     {
                         "operation": "power",
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 10,
-                                "text": "10"
+                                "value": 10
                             },
                             {
                                 "type": "integer",
-                                "value": 4,
-                                "text": "4"
+                                "value": 4
                             }
                         ]
                     }
@@ -6906,7 +6898,7 @@
         }
     },
     {
-        "id": "6_powers_of_ten_flo7af",
+        "id": "6_powers_of_ten_43kg3n",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_of_ten",
@@ -6919,41 +6911,35 @@
                 "operands": [
                     {
                         "type": "integer",
-                        "value": 7,
-                        "text": "7"
+                        "value": 7
                     },
                     {
                         "operation": "power",
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 10,
-                                "text": "10"
+                                "value": 10
                             },
                             {
                                 "type": "integer",
-                                "value": 2,
-                                "text": "2"
+                                "value": 2
                             }
                         ]
                     },
                     {
                         "type": "integer",
-                        "value": 4,
-                        "text": "4"
+                        "value": 4
                     },
                     {
                         "operation": "power",
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 10,
-                                "text": "10"
+                                "value": 10
                             },
                             {
                                 "type": "integer",
-                                "value": -4,
-                                "text": "-4"
+                                "value": -4
                             }
                         ]
                     }
@@ -6966,7 +6952,7 @@
         }
     },
     {
-        "id": "6_powers_of_ten_vuk3ph",
+        "id": "6_powers_of_ten_jl7z1a",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_of_ten",
@@ -6979,29 +6965,25 @@
                 "operands": [
                     {
                         "type": "integer",
-                        "value": 1500000,
-                        "text": "1500000"
+                        "value": 1500000
                     },
                     {
                         "operation": "multiply",
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 3,
-                                "text": "3"
+                                "value": 3
                             },
                             {
                                 "operation": "power",
                                 "operands": [
                                     {
                                         "type": "integer",
-                                        "value": 10,
-                                        "text": "10"
+                                        "value": 10
                                     },
                                     {
                                         "type": "integer",
-                                        "value": 4,
-                                        "text": "4"
+                                        "value": 4
                                     }
                                 ]
                             }
@@ -7016,7 +6998,7 @@
         }
     },
     {
-        "id": "6_powers_of_ten_80ig83",
+        "id": "6_powers_of_ten_6mwoac",
         "task_number": 6,
         "subtype": "powers",
         "pattern": "powers_of_ten",
@@ -7029,119 +7011,25 @@
                 "operands": [
                     {
                         "type": "integer",
-                        "value": 360000,
-                        "text": "360000"
+                        "value": 360000
                     },
                     {
                         "operation": "multiply",
                         "operands": [
                             {
                                 "type": "integer",
-                                "value": 9,
-                                "text": "9"
+                                "value": 9
                             },
                             {
                                 "operation": "power",
                                 "operands": [
                                     {
                                         "type": "integer",
-                                        "value": 10,
-                                        "text": "10"
+                                        "value": 10
                                     },
                                     {
                                         "type": "integer",
-                                        "value": 2,
-                                        "text": "2"
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            }
-        },
-        "meta": {
-            "difficulty": "medium",
-            "pattern_id": "powers_of_ten"
-        }
-    },
-    {
-        "id": "6_powers_of_ten_422rlb",
-        "task_number": 6,
-        "subtype": "powers",
-        "pattern": "powers_of_ten",
-        "question_text": "Вычисли выражение:\n(4 · 10⁴)³ : (8 · 10¹²)\n\nОтвет: ____________",
-        "answer": "800000000000",
-        "answer_type": "integer",
-        "variables": {
-            "expression_tree": {
-                "operation": "divide",
-                "operands": [
-                    {
-                        "operation": "power",
-                        "operands": [
-                            {
-                                "operation": "multiply",
-                                "operands": [
-                                    {
-                                        "type": "integer",
-                                        "value": 4,
-                                        "text": "4"
-                                    },
-                                    {
-                                        "operation": "power",
-                                        "operands": [
-                                            {
-                                                "type": "integer",
-                                                "value": 10,
-                                                "text": "10"
-                                            },
-                                            {
-                                                "type": "integer",
-                                                "value": 4,
-                                                "text": "4"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "type": "integer",
-                                "value": 3,
-                                "text": "3"
-                            }
-                        ]
-                    },
-                    {
-                        "operation": "multiply",
-                        "operands": [
-                            {
-                                "type": "integer",
-                                "value": 8,
-                                "text": "8"
-                            },
-                            {
-                                "operation": "power",
-                                "operands": [
-                                    {
-                                        "type": "integer",
-                                        "value": 10,
-                                        "text": "10"
-                                    },
-                                    {
-                                        "operation": "power",
-                                        "operands": [
-                                            {
-                                                "type": "integer",
-                                                "value": 1,
-                                                "text": "1"
-                                            },
-                                            {
-                                                "type": "integer",
-                                                "value": 2,
-                                                "text": "2"
-                                            }
-                                        ]
+                                        "value": 2
                                     }
                                 ]
                             }

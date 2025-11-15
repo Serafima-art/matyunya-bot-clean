@@ -1,920 +1,239 @@
-"""Пошаговый решатель для подтипа common_fractions (Задание 6).
-
-АРХИТЕКТУРНЫЙ ПРИНЦИП:
-Решатель генерирует ТОЛЬКО структурированные данные (solution_core).
-Вся текстовая логика вынесена в humanizer через систему ключей-шаблонов.
-
-Решение формируется по педагогическим рекомендациям ФИПИ:
-- отдельные ветки для каждого паттерна;
-- подробные пояснения на каждом шаге (через ключи);
-- соблюдение порядка действий и явное отображение всех преобразований.
 """
-
+ФИНАЛЬНАЯ, СИНХРОНИЗИРОВАННАЯ ВЕРСИЯ. Решатель для common_fractions.
+Архитектура: "Умный Рекурсивный Диспетчер", говорящий на языке существующего Humanizer'а.
+"""
 from __future__ import annotations
-
 from dataclasses import dataclass, field
 from fractions import Fraction
 from typing import Any, Dict, List, Optional, Tuple
 import math
 import re
 
-
 # ---------------------------------------------------------------------------
-# Константы для идей и подсказок
+# Конструктор Шагов (ГОСТ-2025)
 # ---------------------------------------------------------------------------
-
-IDEA_KEY_MAP: Dict[str, Tuple[str, Dict[str, Any]]] = {
-    "cf_addition_subtraction": ("ADD_SUB_FRACTIONS_IDEA", {}),
-    "multiplication_division": ("MULTIPLY_DIVIDE_FRACTIONS_IDEA", {}),
-    "parentheses_operations": ("PARENTHESES_OPERATIONS_IDEA", {}),
-    "complex_fraction": ("COMPLEX_FRACTION_IDEA", {}),
-}
-
-HINTS_KEY_MAP: Dict[str, List[str]] = {
-    "cf_addition_subtraction": [
-        "HINT_ORDER_OF_OPERATIONS",
-        "HINT_FIND_LCM",
-        "HINT_CHECK_REDUCTION",
-    ],
-    "multiplication_division": [
-        "HINT_CONVERT_MIXED",
-        "HINT_DIVIDE_AS_MULTIPLY",
-        "HINT_CROSS_CANCEL",
-    ],
-    "parentheses_operations": [
-        "HINT_ORDER_OF_OPERATIONS",
-        "HINT_FIND_LCM",
-        "HINT_MULTIPLY_AFTER_PARENTHESES",
-    ],
-    "complex_fraction": [
-        "HINT_PROCESS_NUMERATOR",
-        "HINT_DIVIDE_AS_MULTIPLY",
-        "HINT_CROSS_CANCEL",
-    ],
-}
-
-# ---------------------------------------------------------------------------
-# Вспомогательные структуры
-# ---------------------------------------------------------------------------
-
-
 @dataclass
 class StepBuilder:
-    """Построитель шагов решения с поддержкой системы ключей-шаблонов."""
-
     steps: List[Dict[str, Any]] = field(default_factory=list)
     counter: int = 1
 
-    def add(
-        self,
-        description_key: str,
-        description_params: Optional[Dict[str, Any]] = None,
-        formula_representation: Optional[str] = None,
-        formula_general: Optional[str] = None,
-        formula_calculation: Optional[str] = None,
-        calculation_result: Optional[str] = None,
-    ) -> None:
-        """Добавляет шаг в соответствии с ГОСТ-2025.
-
-        Args:
-            description_key: Ключ для шаблона текста
-            description_params: Параметры для подстановки в шаблон
-            formula_representation: Визуальное состояние выражения
-            formula_general: Общая формула (теория)
-            formula_calculation: Формула с числами (практика)
-            calculation_result: Результат вычисления
-        """
+    def add(self, description_key: str, description_params: Optional[Dict[str, Any]] = None, formula_calculation: Optional[str] = None) -> None:
         step = {
             "step_number": self.counter,
             "description_key": description_key,
             "description_params": description_params or {},
         }
-
-        if formula_representation is not None:
-            step["formula_representation"] = formula_representation
-        if formula_general is not None:
-            step["formula_general"] = formula_general
-        if formula_calculation is not None:
-            step["formula_calculation"] = formula_calculation
-        if calculation_result is not None:
-            step["calculation_result"] = calculation_result
-
+        if formula_calculation:
+            step["formula_calculation"] = f"<b>{str(formula_calculation).strip()}</b>"
         self.steps.append(step)
         self.counter += 1
 
-    def add_add_or_sub_step(
-        self,
-        operation: str,
-        left_num: int,
-        right_num: int,
-        result_num: int,
-        context: Optional[str] = None,
-    ) -> None:
-        """Добавляет шаг сложения/вычитания числителей с авто-выбором глагола и знака."""
-        verb_map = {
-            "add": ("Складываем", "+"),
-            "subtract": ("Вычитаем", "−"),
-        }
-        verb, sign = verb_map.get(operation, ("Складываем", "+"))
-        self.add(
-            description_key="ADD_OR_SUB_NUMERATORS",
-            description_params={
-                "operation_name_cap": verb,
-                "left_num": left_num,
-                "right_num": right_num,
-                "result_num": result_num,
-                "sign": sign,
-                "context": context,
-            },
-            formula_calculation=f"{left_num} {sign} {right_num} = {result_num}",
-            calculation_result=str(result_num),
-        )
-
-
 # ---------------------------------------------------------------------------
-# Публичный интерфейс
+# Главная точка входа ("Дирижер")
 # ---------------------------------------------------------------------------
-
 def solve(task_data: Dict[str, Any]) -> Dict[str, Any]:
-    """Главная функция решателя. Возвращает solution_core по ГОСТ-2025.
-
-    Args:
-        task_data: Данные задачи из tasks_6.json
-
-    Returns:
-        Словарь solution_core, полностью соответствующий ГОСТ-2025
-    """
-    pattern = task_data.get("pattern")
-    expression_tree = task_data.get("variables", {}).get("expression_tree")
-    if not pattern or not expression_tree:
-        raise ValueError("Некорректные данные задачи: отсутствует pattern или expression_tree.")
-
     builder = StepBuilder()
-    expression_preview = _extract_expression_from_question(task_data) or _render_expression(expression_tree)
-    # Шаг 0: Предварительный обзор выражения
-    builder.add(
-        description_key="INITIAL_EXPRESSION",
-        description_params={"expression": expression_preview},
-        formula_representation=expression_preview,
-    )
+    expression_tree = task_data["variables"]["expression_tree"]
 
-    # Выбор стратегии решения в зависимости от паттерна
-    idea_key, idea_params = IDEA_KEY_MAP.get(pattern, ("GENERIC_IDEA", {}))
-    hints_keys = HINTS_KEY_MAP.get(pattern, [])
+    # Шаг 1: Исходное выражение
+    expression_preview = _render_expression(expression_tree, task_data)
+    builder.add("INITIAL_EXPRESSION", {"expression": expression_preview})
 
-    if pattern == "cf_addition_subtraction":
-        result_fraction = _solve_addition_subtraction(expression_tree, builder)
-    elif pattern == "multiplication_division":
-        result_fraction = _solve_multiplication_division(expression_tree, builder)
-    elif pattern == "parentheses_operations":
-        result_fraction = _solve_parentheses_operations(expression_tree, builder)
-    elif pattern == "complex_fraction":
-        result_fraction = _solve_complex_fraction(expression_tree, builder)
-    else:
-        raise ValueError(f"Неизвестный паттерн: {pattern}")
+    # === ПРОХОД №1: ПОДГОТОВКА И КОНВЕРТАЦИЯ ===
+    conversions = []
+    cleaned_tree = _collect_conversions_and_clean_tree(expression_tree, conversions)
 
-    # Автоматическое уточнение типа операции для идеи решения
-    if pattern == "cf_addition_subtraction":
-        op_type = expression_tree.get("operation")
-        if op_type == "add":
-            idea_params["operation_name"] = "складываем"
-        elif op_type == "subtract":
-            idea_params["operation_name"] = "вычитаем"
+    for i, info in enumerate(conversions):
+        key = "CONVERT_MIXED_FIRST" if i == 0 else "CONVERT_MIXED_NEXT"
+        builder.add(key, {
+            "mixed_text": info["mixed_text"], "whole": info["whole"], "num": info["num"], "den": info["den"],
+            "result_num": info["result_num"], "result_den": info["result_den"], "ctx": ""
+        }, f"{info['mixed_text']} = ({info['whole']}·{info['den']} + {info['num']})/{info['den']} = {info['result_num']}/{info['result_den']}")
 
-    # Финальный шаг (преобразование к требуемому формату ответа)
-    requested_part = _detect_requested_part(task_data)
-    _add_final_step(task_data, builder, result_fraction, requested_part, pattern)
+    if conversions:
+        cleaned_expr_str = _render_expression(cleaned_tree, {})
+        builder.add("SHOW_CONVERTED_EXPRESSION", {"expression": cleaned_expr_str, "ctx": ""})
 
-    # --- Формирование финального ответа ---
-    answer_type = task_data.get("answer_type", "integer")
-    requested_part = requested_part or "numerator"
+    # === ПРОХОД №2: РЕШЕНИЕ ОЧИЩЕННОГО ВЫРАЖЕНИЯ ===
+    final_fraction = _evaluate_node(cleaned_tree, builder, "")
 
-    # В этом подтипе допускаются только два формата: числитель или знаменатель
-    if requested_part == "denominator":
-        value_machine = result_fraction.denominator
-        value_display = str(result_fraction.denominator)
-    else:
-        value_machine = result_fraction.numerator
-        value_display = str(result_fraction.numerator)
+    # Финальный ответ
+    answer_type = task_data.get("answer_type", "decimal")
+    value_display = f"{float(final_fraction):g}".replace(".", ",") if answer_type == "decimal" else _format_fraction(final_fraction)
+    #builder.add("FIND_FINAL_ANSWER", {"value": value_display})
 
     return {
-        "question_id": task_data.get("id", "task_6_common"),
-        "question_group": "TASK6_COMMON",
-        "explanation_idea": "",
-        "explanation_idea_key": idea_key,
-        "explanation_idea_params": idea_params,
+        "question_id": task_data.get("id"), "question_group": "TASK6_COMMON",
+        "explanation_idea_key": _get_idea_key(expression_tree),
         "calculation_steps": builder.steps,
-        "final_answer": {
-            "value_machine": value_machine,
-            "value_display": value_display,
-            "requested_part": requested_part,
-            "final_answer_part": requested_part,
-        },
-        "hints": [],
-        "hints_keys": hints_keys,
+        "final_answer": {"value_machine": float(final_fraction), "value_display": value_display},
+        "hints_keys": _get_hints_keys(expression_tree, task_data)
     }
 
 # ---------------------------------------------------------------------------
-# Решатели для отдельных паттернов
+# Сердце Решателя: Рекурсивный Диспетчер
 # ---------------------------------------------------------------------------
+def _evaluate_node(node: Dict[str, Any], builder: StepBuilder, context: str) -> Fraction:
+    if node.get("type") in ("common", "integer"):
+        return _extract_fraction(node)
 
-def _solve_addition_subtraction(node: Dict[str, Any], builder: StepBuilder) -> Fraction:
-    """Решает задачи типа: a/b + c/d или a/b - c/d"""
-    left_node, right_node = node["operands"]
     operation = node["operation"]
+    operands = node["operands"]
 
-    left_frac = _extract_fraction(left_node)
-    right_frac = _extract_fraction(right_node)
+    child_context = context
+    if not context:
+        if _is_complex_fraction(node): child_context = "в числителе"
+        elif _has_parentheses(node): child_context = "в скобках"
 
-    return _explain_fraction_combination(
-        left_frac,
-        right_frac,
-        builder,
-        operation,
-        context=None,
-    )
+    left_val = _evaluate_node(operands[0], builder, child_context)
+    right_val = _evaluate_node(operands[1], builder, child_context)
 
-
-def _solve_multiplication_division(node: Dict[str, Any], builder: StepBuilder) -> Fraction:
-    """Пошаговое решение для умножения или деления дробей."""
-
-    left_node, right_node = node["operands"]
-    operation = node["operation"]
-
-    left_frac, left_conversion = _convert_possible_mixed(left_node)
-    right_frac, right_conversion = _convert_possible_mixed(right_node)
-
-    conversions: List[Dict[str, Any]] = []
-    if left_conversion:
-        conversions.append(left_conversion)
-    if right_conversion:
-        conversions.append(right_conversion)
-
-    for idx, info in enumerate(conversions):
-        key = "CONVERT_MIXED_FIRST" if idx == 0 else "CONVERT_MIXED_NEXT"
-        builder.add(
-            description_key=key,
-            description_params={
-                "mixed_text": info["mixed_text"],
-                "whole": info["whole"],
-                "num": info["num"],
-                "den": info["den"],
-                "result_num": info["result_num"],
-                "result_den": info["result_den"],
-            },
-            formula_general="(a b/c) = (a·c + b) / c",
-            formula_calculation=(
-                f"{info['mixed_text']} = ({info['whole']}·{info['den']} + {info['num']})/{info['den']} "
-                f"= {info['result_num']}/{info['result_den']}"
-            ),
-            calculation_result=f"{info['result_num']}/{info['result_den']}",
-        )
-
-    if conversions:
-        op_symbol = "·" if operation == "multiply" else ":"
-        converted_expression = f"{_format_fraction(left_frac)} {op_symbol} {_format_fraction(right_frac)}"
-        builder.add(
-            description_key="SHOW_CONVERTED_EXPRESSION",
-            description_params={"expression": converted_expression},
-            formula_representation=converted_expression,
-            calculation_result=converted_expression,
-        )
-
+    if operation in ("add", "subtract"):
+        return _explain_add_subtract_chained(left_val, right_val, operation, builder, context)
+    if operation == "multiply":
+        return _explain_multiply_chained(left_val, right_val, builder, context)
     if operation == "divide":
-        result = _divide_fractions(
-            builder,
-            left_frac,
-            right_frac,
-            setup_context="Заменяем деление на умножение обратной дробью.",
-            combined_context="Перемножаем дроби и выполняем возможные сокращения.",
-            final_context="Получаем результат деления двух дробей.",
-        )
-    else:
-        result = _explain_multiplication(
-            builder,
-            left_frac,
-            right_frac,
-            context="Выполняем умножение дробей.",
-        )
+        # Используем наш старый, но теперь уместный одношаговый исполнитель
+        return _explain_divide(left_val, right_val, builder, context)
 
-    return result
-
-
-
-def _solve_parentheses_operations(node: Dict[str, Any], builder: StepBuilder) -> Fraction:
-    """Решает задачи типа: (a/b ± c/d) * e/f или (a/b ± c/d) / e/f"""
-    left_node, right_node = node["operands"]
-    outer_operation = node["operation"]
-
-    # 1) Слева: если это смешанное — показываем преобразование (как в 1.2)
-    left_frac, left_conv = _convert_possible_mixed(left_node)
-    if left_conv:
-        builder.add(
-            description_key="CONVERT_MIXED_FIRST",
-            description_params={
-                "mixed_text": left_conv["mixed_text"],
-                "whole": left_conv["whole"],
-                "num": left_conv["num"],
-                "den": left_conv["den"],
-                "result_num": left_conv["result_num"],
-                "result_den": left_conv["result_den"],
-                "context": None,
-            },
-            formula_general="(a b/c) = (a·c + b) / c",
-            formula_calculation=(
-                f"{left_conv['mixed_text']} = ({left_conv['whole']}·{left_conv['den']} + {left_conv['num']})/{left_conv['den']} "
-                f"= {left_conv['result_num']}/{left_conv['result_den']}"
-            ),
-            calculation_result=f"{left_conv['result_num']}/{left_conv['result_den']}",
-        )
-    else:
-        # если не смешанное — просто извлекаем
-        left_frac = _extract_fraction(left_node)
-
-    # 2) Справа: если это скобки с +/− — сначала объясняем их по алгоритму 1.1, иначе извлекаем
-    if right_node.get("operation") in {"add", "subtract"}:
-        right_frac = _explain_fraction_combination(
-            _extract_fraction(right_node["operands"][0]),
-            _extract_fraction(right_node["operands"][1]),
-            builder,
-            right_node["operation"],
-            context="В скобках",
-        )
-    else:
-        right_frac = _extract_fraction(right_node)
-
-    # 3) Показываем нормализованное выражение после преобразований (очень важно для понятности)
-    op_symbol = "·" if outer_operation == "multiply" else ":"
-    builder.add(
-        description_key="SHOW_CONVERTED_EXPRESSION",
-        description_params={"expression": f"{_format_fraction(left_frac)} {op_symbol} {_format_fraction(right_frac)}", "context": None},
-        formula_representation=f"{_format_fraction(left_frac)} {op_symbol} {_format_fraction(right_frac)}",
-        calculation_result=f"{_format_fraction(left_frac)} {op_symbol} {_format_fraction(right_frac)}",
-    )
-
-    # 4) Выполняем внешнюю операцию
-    if outer_operation == "multiply":
-        result = _explain_multiplication(
-            builder,
-            left_frac,
-            right_frac,
-            context="После вычисления выражения в скобках выполняем умножение",
-        )
-    else:  # divide
-        result = _divide_fractions(
-            builder,
-            left_frac,
-            right_frac,
-            setup_context="Заменяем деление на умножение обратной дробью.",
-            combined_context="Перемножаем дроби и выполняем сокращение, если это возможно.",
-            final_context="Получаем значение после деления.",
-        )
-
-
-    return result
-
-
-def _solve_complex_fraction(node: Dict[str, Any], builder: StepBuilder) -> Fraction:
-    """Решает сложную дробь с упрощённой логикой."""
-
-    numerator_node, denominator_node = node["operands"]
-
-    if numerator_node.get("operation") in {"add", "subtract"}:
-        numerator = _explain_fraction_combination(
-            _extract_fraction(numerator_node["operands"][0]),
-            _extract_fraction(numerator_node["operands"][1]),
-            builder,
-            numerator_node["operation"],
-            context="В числителе",
-        )
-    else:
-        numerator = _extract_fraction(numerator_node)
-
-    # 🔧 Объединяем шаг "дробь уже несократима" и "значение числителя"
-    if builder.steps and builder.steps[-1]["description_key"] in {"REDUCE_FRACTION", "FRACTION_ALREADY_REDUCED"}:
-        builder.steps[-1]["description_key"] = "COMPLEX_NUMERATOR_FINAL"
-        builder.steps[-1]["description_params"]["context"] = "В числителе"
-        builder.steps[-1]["description_params"]["value"] = _format_fraction(numerator)
-    else:
-        builder.add(
-            description_key="COMPLEX_NUMERATOR_RESULT",
-            description_params={"context": "В числителе", "value": _format_fraction(numerator)},
-            formula_representation=_format_fraction(numerator),
-            calculation_result=_format_fraction(numerator),
-        )
-
-    denominator = _extract_fraction(denominator_node)
-
-    builder.add(
-        description_key="COMPLEX_DIVISION_SETUP",
-        description_params={
-            "numerator": _format_fraction(numerator),
-            "denominator": _format_fraction(denominator),
-        },
-    )
-
-    result = _divide_fractions(
-        builder,
-        numerator,
-        denominator,
-        setup_context="Заменяем деление на умножение обратной дробью.",
-        combined_context="Перемножаем полученные дроби и выполняем сокращение, если это возможно.",
-        final_context="Фиксируем итоговое значение сложной дроби.",
-    )
-
-    return result
-
-
+    raise ValueError(f"Неизвестная операция: {operation}")
 
 # ---------------------------------------------------------------------------
-# Объяснение базовых операций
+# Новые "Цепочечные" Исполнители (по твоему эталону)
 # ---------------------------------------------------------------------------
+def _explain_add_subtract_chained(left: Fraction, right: Fraction, op: str, builder: StepBuilder, context: str) -> Fraction:
+    op_symbol = "+" if op == "add" else "−"
+    result = left + right if op == "add" else left - right
 
-def _explain_fraction_combination(
-    left: Fraction,
-    right: Fraction,
-    builder: StepBuilder,
-    operation: str,
-    context: Optional[str],
-) -> Fraction:
-    """Выполняет сложение или вычитание дробей с полным объяснением.
+    common_den = _lcm(left.denominator, right.denominator)
+    left_mult = common_den // left.denominator
+    right_mult = common_den // right.denominator
+    left_scaled_num = left.numerator * left_mult
+    right_scaled_num = right.numerator * right_mult
 
-    Args:
-        left: Левая дробь
-        right: Правая дробь
-        builder: Построитель шагов
-        operation: "add" или "subtract"
-        context: Контекст операции (например, "В скобках")
-    """
-    op_symbol = "+" if operation == "add" else "−"
-
-    # Шаг 1: Находим наименьший общий знаменатель
-    lcm_value = _lcm(left.denominator, right.denominator)
-    builder.add(
-        description_key="FIND_LCM",
-        description_params={
-            "den1": left.denominator,
-            "den2": right.denominator,
-            "lcm": lcm_value,
-            "operation": operation,
-            "context": context,
-        },
-        formula_representation=f"{_format_fraction(left)} {op_symbol} {_format_fraction(right)}",
-        formula_general=f"наименьший общий знаменатель(a, b)",
-        formula_calculation=f"наименьший общий знаменатель({left.denominator}, {right.denominator}) = {lcm_value}",
-        calculation_result=str(lcm_value),
+    formula = (
+        f"{_format_fraction(left)} {op_symbol} {_format_fraction(right)} = "
+        f"({left.numerator}·{left_mult})/({left.denominator}·{left_mult}) {op_symbol} ({right.numerator}·{right_mult})/({right.denominator}·{right_mult}) = "
+        f"{left_scaled_num}/{common_den} {op_symbol} {right_scaled_num}/{common_den} = "
+        f"{_format_fraction(result)}"
     )
 
-    # Шаг 2: Приводим к общему знаменателю
-    left_multiplier = lcm_value // left.denominator
-    right_multiplier = lcm_value // right.denominator
-    left_scaled_num = left.numerator * left_multiplier
-    right_scaled_num = right.numerator * right_multiplier
-
-    builder.add(
-        description_key="SCALE_TO_COMMON_DENOM",
-        description_params={
-            "left_num": left.numerator,
-            "left_den": left.denominator,
-            "left_mult": left_multiplier,
-            "right_num": right.numerator,
-            "right_den": right.denominator,
-            "right_mult": right_multiplier,
-            "lcm": lcm_value,
-            "left_scaled_num": left_scaled_num,
-            "right_scaled_num": right_scaled_num,
-            "context": context,
-        },
-        formula_representation=f"{_format_fraction(left)} {op_symbol} {_format_fraction(right)}",
-        formula_calculation=(
-            f"{left.numerator}·{left_multiplier}/{left.denominator}·{left_multiplier} = {left_scaled_num}/{lcm_value}, "
-            f"{right.numerator}·{right_multiplier}/{right.denominator}·{right_multiplier} = {right_scaled_num}/{lcm_value}"
-        ),
-        calculation_result=f"{left_scaled_num}/{lcm_value} {op_symbol} {right_scaled_num}/{lcm_value}",
-    )
-
-    # Шаг 3: Складываем/вычитаем числители (автоматический шаблон)
-    raw_numerator = left_scaled_num + (right_scaled_num if operation == "add" else -right_scaled_num)
-
-    builder.add_add_or_sub_step(
-        operation=operation,
-        left_num=left_scaled_num,
-        right_num=right_scaled_num,
-        result_num=raw_numerator,
-        context=context,
-    )
-
-    # Шаг 4: Сокращаем результат
-    result_fraction = Fraction(raw_numerator, lcm_value)
-    gcd_value = math.gcd(abs(result_fraction.numerator), result_fraction.denominator)
-
-    if gcd_value > 1:
-        builder.add(
-            description_key="REDUCE_FRACTION",
-            description_params={
-                "num": raw_numerator,
-                "den": lcm_value,
-                "gcd": gcd_value,
-                "result_num": result_fraction.numerator,
-                "result_den": result_fraction.denominator,
-                "context": context,
-            },
-            formula_representation=f"{raw_numerator}/{lcm_value}",
-            formula_calculation=f"{raw_numerator}:{gcd_value} = {result_fraction.numerator}, {lcm_value}:{gcd_value} = {result_fraction.denominator}",
-            calculation_result=_format_fraction(result_fraction),
-        )
-    else:
-        builder.add(
-            description_key="FRACTION_ALREADY_REDUCED",
-            description_params={
-                "num": raw_numerator,
-                "den": lcm_value,
-                "context": context,
-            },
-            formula_representation=f"{raw_numerator}/{lcm_value}",
-            calculation_result=_format_fraction(result_fraction),
-        )
-
-    return result_fraction
-
-
-def _explain_multiplication(
-    builder: StepBuilder,
-    left: Fraction,
-    right: Fraction,
-    context: Optional[str] = None,
-) -> Fraction:
-    """Выполняет умножение дробей с перекрестным сокращением."""
-
-    # Шаг 1: Представляем произведение
-    builder.add(
-        description_key="MULTIPLY_FRACTIONS_SETUP",
-        description_params={
-            "left_num": left.numerator,
-            "left_den": left.denominator,
-            "right_num": right.numerator,
-            "right_den": right.denominator,
-            "context": context,
-        },
-        formula_representation=f"{_format_fraction(left)} · {_format_fraction(right)}",
-        formula_general="(a/b) · (c/d) = (a·c)/(b·d)",
-        formula_calculation=f"({left.numerator}·{right.numerator})/({left.denominator}·{right.denominator})",
-        calculation_result=f"({left.numerator}·{right.numerator})/({left.denominator}·{right.denominator})",
-    )
-
-    # Шаг 2: Перекрестное сокращение
-    num_factors = [left.numerator, right.numerator]
-    den_factors = [left.denominator, right.denominator]
-    cancellations: List[Dict[str, int]] = []
-
-    for i in range(len(num_factors)):
-        for j in range(len(den_factors)):
-            g = math.gcd(num_factors[i], den_factors[j])
-            if g > 1:
-                original_num = num_factors[i]
-                original_den = den_factors[j]
-                num_factors[i] //= g
-                den_factors[j] //= g
-                cancellations.append({
-                    "num": original_num,
-                    "den": original_den,
-                    "gcd": g,
-                    "num_result": num_factors[i],
-                    "den_result": den_factors[j],
-                })
-
-    if cancellations:
-        builder.add(
-            description_key="CROSS_CANCEL",
-            description_params={
-                "cancellations": cancellations,
-                "num1": num_factors[0],
-                "num2": num_factors[1],
-                "den1": den_factors[0],
-                "den2": den_factors[1],
-                "context": context,
-            },
-            formula_representation=f"{_format_fraction(left)} · {_format_fraction(right)}",
-            formula_calculation=f"({left.numerator}·{right.numerator})/({left.denominator}·{right.denominator}) = ({num_factors[0]}·{num_factors[1]})/({den_factors[0]}·{den_factors[1]})",
-            calculation_result=f"({num_factors[0]}·{num_factors[1]})/({den_factors[0]}·{den_factors[1]})",
-        )
-    else:
-        builder.add(
-            description_key="NO_CROSS_CANCEL",
-            description_params={
-                "num1": num_factors[0],
-                "num2": num_factors[1],
-                "den1": den_factors[0],
-                "den2": den_factors[1],
-                "context": context,
-            },
-            formula_representation=f"{_format_fraction(left)} · {_format_fraction(right)}",
-        )
-
-    # Шаг 3: Финальное умножение
-    raw_num = num_factors[0] * num_factors[1]
-    raw_den = den_factors[0] * den_factors[1]
-    result = Fraction(raw_num, raw_den)
-
-    builder.add(
-        description_key="FINAL_MULTIPLICATION",
-        description_params={
-            "num1": num_factors[0],
-            "num2": num_factors[1],
-            "den1": den_factors[0],
-            "den2": den_factors[1],
-            "result_num": raw_num,
-            "result_den": raw_den,
-            "context": context,
-        },
-        formula_calculation=f"({num_factors[0]}·{num_factors[1]})/({den_factors[0]}·{den_factors[1]}) = {raw_num}/{raw_den}",
-        calculation_result=_format_fraction(result),
-    )
-
+    builder.add("CF_FIND_LCM",
+                {"den1": left.denominator, "den2": right.denominator, "lcm": common_den, "ctx": (context + ": ") if context else ""},
+                formula)
     return result
 
+def _explain_multiply_chained(left: Fraction, right: Fraction, builder: StepBuilder, context: str) -> Fraction:
+    result = left * right
+    formula = f"{_format_fraction(left)} · {_format_fraction(right)} = {_format_fraction(result)}"
+    builder.add("CALCULATE_MULTIPLICATION_DEFAULT",
+                {"left": _format_fraction(left), "right": _format_fraction(right), "ctx": ""},
+                formula)
+    return result
 
-def _divide_fractions(
-    builder: StepBuilder,
-    left: Fraction,
-    right: Fraction,
-    setup_context: str,
-    combined_context: str,
-    final_context: str,
-) -> Fraction:
-
-    if left == right and left != 0:
-        builder.add(
-            description_key="DIVIDE_SAME_VALUE",
-            description_params={},
-            formula_calculation=f"{_format_fraction(left)} : {_format_fraction(right)} = 1",
-            calculation_result="1",
-        )
-        return Fraction(1, 1)
-
+def _explain_divide(left: Fraction, right: Fraction, builder: StepBuilder, context: str) -> Fraction:
     flipped = Fraction(right.denominator, right.numerator)
+    result = left / right
+    after_cancel = Fraction((left.numerator*flipped.numerator)//math.gcd(left.numerator*flipped.numerator, left.denominator*flipped.denominator), (left.denominator*flipped.denominator)//math.gcd(left.numerator*flipped.numerator, left.denominator*flipped.denominator))
 
-    builder.add(
-        description_key="DIVISION_TO_MULTIPLICATION",
-        description_params={
-            "right_num": right.numerator,
-            "right_den": right.denominator,
-            "flipped_num": flipped.numerator,
-            "flipped_den": flipped.denominator,
-            "context": setup_context,
-        },
-        formula_general="a/b : c/d = a/b · d/c",
-        formula_calculation=f"{_format_fraction(left)} : {_format_fraction(right)} = {_format_fraction(left)} · {_format_fraction(flipped)}",
-        formula_representation=f"{_format_fraction(left)} : {_format_fraction(right)}",
-    )
+    formula_parts = [f"{_format_fraction(left)} : {_format_fraction(right)}", f"{_format_fraction(left)} · {_format_fraction(flipped)}"]
+    if after_cancel != result and after_cancel.denominator != 1: formula_parts.append(_format_fraction(after_cancel))
+    formula_parts.append(_format_fraction(result))
 
-    num_factors = [left.numerator, flipped.numerator]
-    den_factors = [left.denominator, flipped.denominator]
-    cancellations: List[Dict[str, int]] = []
-    for i in range(len(num_factors)):
-        for j in range(len(den_factors)):
-            g = math.gcd(num_factors[i], den_factors[j])
-            if g > 1:
-                original_num = num_factors[i]
-                original_den = den_factors[j]
-                num_factors[i] //= g
-                den_factors[j] //= g
-                cancellations.append({
-                    "num": original_num,
-                    "den": original_den,
-                    "gcd": g,
-                    "num_result": num_factors[i],
-                    "den_result": den_factors[j],
-                })
-
-    simplified_expr = f"({num_factors[0]}·{num_factors[1]})/({den_factors[0]}·{den_factors[1]})"
-    description_key = "DIVISION_COMBINED_CANCEL" if cancellations else "DIVISION_COMBINED_NO_CANCEL"
-    description_params: Dict[str, Any] = {"context": combined_context}
-    if cancellations:
-        description_params["cancellations"] = cancellations
-
-    builder.add(
-        description_key=description_key,
-        description_params=description_params,
-        formula_general="(a/b) · (c/d) = (a·c)/(b·d)",
-        formula_calculation=f"({left.numerator}·{flipped.numerator})/({left.denominator}·{flipped.denominator}) = {simplified_expr}",
-        calculation_result=simplified_expr,
-    )
-
-    raw_num = num_factors[0] * num_factors[1]
-    raw_den = den_factors[0] * den_factors[1]
-    result = Fraction(raw_num, raw_den)
-
-    builder.add(
-        description_key="DIVISION_FINAL_RESULT",
-        description_params={"context": final_context},
-        formula_calculation=f"{simplified_expr} = {raw_num}/{raw_den}",
-        calculation_result=_format_fraction(result),
-    )
-
+    builder.add("MIXED_DIVIDE",
+        {"left": _format_fraction(left), "right": _format_fraction(right), "flipped": _format_fraction(flipped),
+         "left_num": left.numerator, "left_den": left.denominator, "right_num": right.numerator, "right_den": right.denominator,
+         "result": _format_fraction(result), "context": (context + " ") if context else ""},
+        " = ".join(formula_parts))
     return result
 
+# ---------------------------------------------------------------------------
+# Проход №1: Пре-процессор
+# ---------------------------------------------------------------------------
+def _collect_conversions_and_clean_tree(node: Dict, conversions: List) -> Dict:
+    # Рекурсивно обходит дерево, собирает информацию о смешанных числах и возвращает новое, чистое дерево.
+    is_mixed, info = _check_if_mixed(node)
+    if is_mixed:
+        conversions.append(info)
+        return {"type": "common", "value": [info["result_num"], info["result_den"]]}
 
-def _add_final_step(
-    task_data: Dict[str, Any],
-    builder: StepBuilder,
-    fraction: Fraction,
-    requested_part: Optional[str],
-    pattern: Optional[str],
-) -> None:
-    """Добавляет финальный шаг преобразования к требуемому формату ответа."""
+    if "operands" in node:
+        cleaned_operands = [_collect_conversions_and_clean_tree(op, conversions) for op in node["operands"]]
+        return {**node, "operands": cleaned_operands}
 
-    answer_type = task_data.get("answer_type", "decimal")
+    return node # Возвращаем узел без изменений, если это простое число
 
-    if pattern == "multiplication_division" and answer_type == "integer" and not requested_part:
-        return
+# ---------------------------------------------------------------------------
+# Утилиты
+# ---------------------------------------------------------------------------
+def _add_final_conversion_step(task_data: Dict, builder: StepBuilder, fraction: Fraction):
+    if task_data.get("answer_type") == "decimal" and fraction.denominator != 1:
+        decimal_str = f"{float(fraction):g}".replace(".", ",")
+        builder.add("CONVERT_TO_DECIMAL", {"num": fraction.numerator, "den": fraction.denominator, "decimal": decimal_str},
+                    f"{_format_fraction(fraction)} = {decimal_str}")
 
-    if answer_type == "integer":
-        if requested_part == "denominator":
-            builder.add(
-                description_key="EXTRACT_DENOMINATOR",
-                description_params={
-                    "num": fraction.numerator,
-                    "den": fraction.denominator,
-                },
-                formula_representation=_format_fraction(fraction),
-                calculation_result=str(fraction.denominator),
-            )
-        else:
-            builder.add(
-                description_key="EXTRACT_NUMERATOR",
-                description_params={
-                    "num": fraction.numerator,
-                    "den": fraction.denominator,
-                },
-                formula_representation=_format_fraction(fraction),
-                calculation_result=str(fraction.numerator),
-            )
-    else:  # decimal
-        decimal_value = float(fraction)
-        builder.add(
-            description_key="CONVERT_TO_DECIMAL",
-            description_params={
-                "num": fraction.numerator,
-                "den": fraction.denominator,
-                "decimal": decimal_value,
-            },
-            formula_representation=_format_fraction(fraction),
-            formula_calculation=f"{_format_fraction(fraction)} = {decimal_value}",
-            calculation_result=str(decimal_value),
-        )
-
-
-def _extract_fraction(node: Dict[str, Any]) -> Fraction:
-    """Извлекает Fraction из узла expression_tree."""
-
-    node_type = node.get("type")
-    if node_type == "common":
-        numerator, denominator = node["value"]
-        return Fraction(numerator, denominator)
-    if node_type == "integer":
-        value = node.get("value") or node.get("text")
-        if isinstance(value, str):
-            value = int(value)
-        return Fraction(int(value), 1)
-    if "operation" in node:
-        # Рекурсивное вычисление для вложенных операций
-        operation = node["operation"]
-        operands = node.get("operands", [])
-        if operation == "add":
-            return _extract_fraction(operands[0]) + _extract_fraction(operands[1])
-        if operation == "subtract":
-            return _extract_fraction(operands[0]) - _extract_fraction(operands[1])
-        if operation == "multiply":
-            return _extract_fraction(operands[0]) * _extract_fraction(operands[1])
-        if operation == "divide":
-            return _extract_fraction(operands[0]) / _extract_fraction(operands[1])
-
-    raise ValueError(f"Не удалось преобразовать узел в Fraction: {node}")
-
-
-def _convert_possible_mixed(node: Dict[str, Any]) -> Tuple[Fraction, Optional[Dict[str, Any]]]:
-    """Преобразует смешанное число в неправильную дробь (если требуется)."""
-
-    fraction = _extract_fraction(node)
-    conversion_info: Optional[Dict[str, Any]] = None
+def _check_if_mixed(node: Dict) -> Tuple[bool, Dict]:
     text = node.get("text", "")
-    if isinstance(text, str) and (" " in text or "\u202f" in text or "\xa0" in text):
-        parts = text.split()
-        if len(parts) == 2 and "/" in parts[1]:
-            whole = int(parts[0])
-            num, den = map(int, parts[1].split("/"))
-            converted = Fraction(whole * den + num, den)
+    if text and " " in text and "/" in text:
+        try:
+            whole_str, frac_str = text.split(" ", 1)
+            num_str, den_str = frac_str.split("/", 1)
+            whole, num, den = int(whole_str), int(num_str), int(den_str)
+            result_num = whole * den + num
+            return True, {"mixed_text": text, "whole": whole, "num": num, "den": den, "result_num": result_num, "result_den": den}
+        except (ValueError, TypeError): pass
+    return False, {}
 
-            conversion_info = {
-                "mixed_text": text,
-                "whole": whole,
-                "num": num,
-                "den": den,
-                "result_num": converted.numerator,
-                "result_den": converted.denominator,
-            }
-            fraction = converted
+def _lcm(a: int, b: int) -> int: return abs(a * b) // math.gcd(a, b) if a != 0 and b != 0 else 0
 
-    return fraction, conversion_info
+def _extract_fraction(node: Dict) -> Fraction:
+    if node.get("type") == "common": return Fraction(*node["value"])
+    if node.get("type") == "integer": return Fraction(node["value"])
+    raise ValueError(f"Не удалось извлечь дробь из: {node}")
 
+def _format_fraction(frac: Fraction) -> str: return str(frac.numerator) if frac.denominator == 1 else f"{frac.numerator}/{frac.denominator}"
 
-def _format_fraction(frac: Fraction) -> str:
-    """Форматирует дробь для отображения."""
-    return str(frac.numerator) if frac.denominator == 1 else f"{frac.numerator}/{frac.denominator}"
+def _is_complex_fraction(node: Dict) -> bool: return node.get("operation") == "divide" and "operation" in node.get("operands", [{}])[0]
 
+def _has_parentheses(node: Dict) -> bool:
+    op = node.get("operation")
+    if op in ("multiply", "divide"): return any("operation" in operand for operand in node.get("operands", []))
+    return False
 
-def _lcm(a: int, b: int) -> int:
-    """Вычисляет наименьшее общее кратное."""
-    return abs(a * b) // math.gcd(a, b)
+def _get_idea_key(tree: Dict) -> str:
+    """
+    Определяет основную идею решения, выставляя правильный приоритет:
+    1. Сначала проверяем на наличие скобок.
+    2. Только потом - на сложную дробь.
+    """
+    # ПРИОРИТЕТ №1: Если есть явные скобки, это всегда "parentheses_operations"
+    if _has_parentheses(tree):
+        return "PARENTHESES_OPERATIONS_IDEA"
 
+    # ПРИОРИТЕТ №2: Если скобок нет, но это деление со сложным числителем - это "complex_fraction"
+    if _is_complex_fraction(tree):
+        return "COMPLEX_FRACTION_IDEA"
 
-def _extract_expression_from_question(task_data: Dict[str, Any]) -> Optional[str]:
-    """Пытается достать исходное выражение из question_text, сохраняя формат (например, 1 1/4).
-    Логика:
-    1) пропускаем служебные/заголовочные строки (Выполни..., Вычисли..., Найди..., Запиши..., Реши..., Ответ...);
-    2) требуем наличие хотя бы одной цифры И хотя бы одного математического символа (/ : · + − - ( ))."""
-    import re
+    # Стандартные случаи, если нет ни скобок, ни сложной структуры
+    op = tree.get("operation")
+    if op in ("add", "subtract"):
+        return "ADD_SUB_FRACTIONS_IDEA"
 
-    txt = task_data.get("question_text") or ""
-    lines = [ln.strip() for ln in txt.splitlines() if ln.strip()]
-    if not lines:
-        return None
+    return "MULTIPLY_DIVIDE_FRACTIONS_IDEA"
 
-    # Список «служебных» начал строк (в любом регистре)
-    header_prefixes = (
-        "выполни", "вычисли", "найди", "запиши", "реши", "получи", "ответ"
-    )
+def _get_hints_keys(tree: Dict, task_data: Dict) -> List[str]:
+    hints = set()
+    if " " in task_data.get("question_text", ""): hints.add("HINT_CONVERT_MIXED")
+    if tree.get("operation") == "divide": hints.add("HINT_DIVIDE_AS_MULTIPLY")
+    if tree.get("operation") == "multiply": hints.add("HINT_CROSS_CANCEL")
+    if tree.get("operation") in ("add", "subtract"): hints.add("HINT_FIND_LCM")
+    if not hints: hints.add("HINT_ORDER_OF_OPERATIONS")
+    return list(hints)
 
-    for ln in lines:
-        low = ln.lower()
-
-        # 1) пропускаем явные заголовки и служебные строки
-        if any(low.startswith(prefix) for prefix in header_prefixes):
-            continue
-        # часто заголовки заканчиваются двоеточием — тоже пропустим такую строку
-        if low.endswith(":"):
-            continue
-
-        # 2) требуем, чтобы в строке была хотя бы одна цифра
-        if not re.search(r"\d", ln):
-            continue
-
-        # 3) и хотя бы один «математический» символ
-        if not re.search(r"[/:·+\-−()]", ln):
-            continue
-
-        # если дошли до сюда — это, с высокой вероятностью, само выражение
-        return ln
-
-    return None
-
-def _render_expression(node: Dict[str, Any]) -> str:
-    """Рендерит expression_tree в читаемую строку, предпочитая исходный text (смешанные числа и т.п.)."""
-
-    def helper(cur: Dict[str, Any]) -> Tuple[str, int]:
-        # ✅ Если в узле есть исходный текст (в т.ч. смешанное число "2 1/10") — показываем его как есть
-        text = cur.get("text")
-        if isinstance(text, str) and text.strip():
-            return text.strip(), 3
-
-        node_type = cur.get("type")
-        if node_type == "common":
-            n, d = cur["value"]
-            return f"{n}/{d}", 3
-        if node_type == "integer":
-            value = cur.get("value", cur.get("text", "0"))
-            return str(value), 3
-
-        operation = cur.get("operation")
-        operands = cur.get("operands", [])
-        if not operation or len(operands) != 2:
-            return "", 3
-
-        op_precedence = {"add": 1, "subtract": 1, "multiply": 2, "divide": 2}
-        symbols = {"add": " + ", "subtract": " − ", "multiply": " · ", "divide": " : "}
-        prec = op_precedence.get(operation, 3)
-        symbol = symbols.get(operation, " ? ")
-
-        left_str, left_prec = helper(operands[0])
-        right_str, right_prec = helper(operands[1])
-
-        if left_prec < prec:
-            left_str = f"({left_str})"
-        if right_prec < prec or (operation == "subtract" and right_prec == prec):
-            right_str = f"({right_str})"
-
-        return f"{left_str}{symbol}{right_str}", prec
-
-    expression, _ = helper(node)
-    return expression or ""
-
-
-def _detect_requested_part(task_data: Dict[str, Any]) -> Optional[str]:
-    """Определяет, какую часть дроби нужно записать в ответе."""
-    text = (task_data.get("question_text") or "").lower()
-    if "знаменател" in text:
-        return "denominator"
-    if "числител" in text:
-        return "numerator"
-    return None
+def _render_expression(node: Dict, task_data: Dict) -> str:
+    text = task_data.get("question_text", "")
+    for line in text.splitlines():
+        line = line.strip()
+        if re.search(r'\d', line) and re.search(r'[:·/()−]', line) and not line.lower().startswith(("ответ", "вычисли", "найди")):
+            return line
+    return "Выражение не найдено"

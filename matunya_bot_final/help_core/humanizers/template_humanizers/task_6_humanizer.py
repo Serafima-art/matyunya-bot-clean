@@ -44,7 +44,7 @@ STEP_TEMPLATES: Dict[str, str] = {
         "{ctx}Теперь делим числитель {numerator} на знаменатель {denominator}."
     ),
     "CONVERT_TO_DECIMAL": (
-        "{ctx}Переводим дробь {num}/{den} в десятичное число: {decimal}."
+        "{ctx}Преобразуем полученную дробь {num}/{den} в десятичную для записи ответа, как требует формат ОГЭ."
     ),
     "EXTRACT_NUMERATOR": (
         "{ctx}Берём числитель из дроби {num}/{den}: это {num}."
@@ -69,6 +69,11 @@ STEP_TEMPLATES: Dict[str, str] = {
         "{ctx}Теперь разделим числитель {left} на полученный знаменатель {right}."
     ),
     "CALCULATE_DIVISION_DEFAULT": "{ctx}Выполним деление: {left} : {right}.",
+    # === НОВЫЕ КЛЮЧI ДЛЯ COMMON_FRACTIONS ===
+    "CF_FIND_LCM": "{ctx}Приводим дроби к общему знаменателю. Наименьший общий знаменатель для <b>{den1}</b> и <b>{den2}</b> — это <b>{lcm}</b>.",
+    "CF_SCALE_FRACTIONS": "{ctx}Домножим числители на дополнительные множители: для первой дроби это <b>{l_mult}</b>, для второй — <b>{r_mult}</b>.",
+    "CF_COMBINE_NUMERATORS": "{ctx}Теперь {operation_name} числители.",
+    "CF_REDUCE_FINAL": "{ctx}Сокращаем полученную дробь <b>{num}/{den}</b> на <b>{gcd}</b>.",
 
     # --- Decimal fractions (task 6) ---
     "DECIMAL_ADD_BOTH_POSITIVE": "{ctx}Складываем положительные десятичные дроби {left} и {right}. Результат: {result}.",
@@ -89,6 +94,9 @@ STEP_TEMPLATES: Dict[str, str] = {
     "DECIMAL_SHOW_CONVERTED_EXPRESSION": "{ctx}После вычисления знаменателя работаем с выражением {expression}.",
 
     # --- Mixed fractions (task 6) ---
+    "DECIMAL_OPERATION_IN_PART": (
+        "Вычисляем {part}."
+    ),
     "MIXED_CONVERT_DECIMALS": (
         "{ctx}Переведём все десятичные и смешанные дроби в обыкновенные. "
         "Например, {decimal_examples}."
@@ -106,33 +114,32 @@ STEP_TEMPLATES: Dict[str, str] = {
         "{formulas}"
     ),
     "MIXED_MULTIPLY": (
-        "{ctx}Теперь перемножим <b>{left}</b> и <b>{right}</b>.\n"
+        "{ctx}Выполняем умножение дробей <b>{left}</b> и <b>{right}</b>.\n"
         "➡️ <b>{left} · {right} = {result}</b>"
     ),
     "MIXED_DIVIDE": (
-        "{ctx}Теперь разделим <b>{left}</b> на <b>{right}</b>. "
+        "{ctx}Выполняем деление дробей <b>{left}</b> и <b>{right}</b>. "
         "Деление заменяем умножением на обратную дробь.\n"
         "➡️ <b>{left} : {right} = {left} · {flipped} = "
         "({left_num} · {right_den}) / ({left_den} · {right_num}) = {result}</b>"
     ),
     "MIXED_ADD": (
-        "{ctx}Теперь сложим <b>{left}</b> и <b>{right}</b>.\n"
+        "{ctx}Выполняем сложение дробей <b>{left}</b> и <b>{right}</b>.\n"
         "➡️ <b>{left} + {right} = {result}</b>"
     ),
 
     "MIXED_SUBTRACT": (
-        "{ctx}Теперь вычтем <b>{right}</b> из <b>{left}</b>.\n"
+        "{ctx}Выполняем вычитание дробей: из <b>{left}</b> вычитаем <b>{right}</b>.\n"
         "➡️ <b>{left} − {right} = {left_common} − {right_common} = {result}</b>"
     ),
     "DECIMAL_IN_DENOMINATOR": (
-        "{ctx}Вычисляем знаменатель. Выполним действие: "
-        "<b>{left}</b> {op_symbol} <b>{right}</b>.\n"
-        "➡️ <b>{left} {op_symbol} {right} = {result}</b>"
+        "Вычисляем знаменатель.\n"
+        "➡️ <b>{left} {op_symbol} {right} = {result}<b>"
     ),
 
     "DECIMAL_FINAL_DIVISION": (
         "{ctx}Выполняем деление.\n"
-        "➡️ <b>{left} / ({right}) = {result}</b>"
+        "➡️ <b>{left} / {right} = {result}</b>"
     ),
 
     # --- Powers (task 6) ---
@@ -141,7 +148,7 @@ STEP_TEMPLATES: Dict[str, str] = {
         "Для этого возводим в степень и числитель, и знаменатель <b>(a/b)ⁿ = aⁿ / bⁿ</b>"
     ),
     "POWERS_MULTIPLY_WITH_CANCEL": (
-    "{ctx}Умножаем <b>{left_num}</b> на дробь <b>{right_num}/{right_den}</b> с предварительным сокращением чисел <b>{cancel_num}</b> и <b>{cancel_den}</b> на <b>{cancel_gcd}</b>"
+        "{ctx}Умножаем <b>{left_num}</b> на дробь <b>{right_num}/{right_den}</b> с предварительным сокращением чисел <b>{cancel_num}</b> и <b>{cancel_den}</b> на <b>{cancel_gcd}</b>"
     ),
     "POWERS_MULTIPLY": (
         "{ctx}Умножаем <b>{left_num}</b> на дробь <b>{right_num}/{right_den}</b>"
@@ -178,7 +185,7 @@ STEP_TEMPLATES: Dict[str, str] = {
     ),
     "POWERS_TEN_EXPAND_POWER": (
         "{ctx}Раскроем первые скобки, используя свойство <b>(a · b)ⁿ = aⁿ · bⁿ</b>. "
-        "Затем применим свойство <b>(aⁿ)ᵐ = aⁿ ⁽ᵐ⁾</b>"
+        "Затем применим свойство <b>(aⁿ)ᵐ = aⁿ · ᵐ</b>"
     ),
     "POWERS_TEN_REWRITE": (
         "{ctx}Теперь подставим полученный результат в исходное выражение"
@@ -186,18 +193,20 @@ STEP_TEMPLATES: Dict[str, str] = {
     "POWERS_TEN_GROUP": (
         "{ctx}Группируем множители. Сгруппируем отдельно числовые множители и степени с основанием <b>10</b>"
     ),
-    "POWERS_TEN_CALCULATE": (
-        "{ctx}Выполняем вычисления. Перемножим числа. При умножении степеней с одинаковым основанием их показатели складываются <b>(aⁿ · aᵐ = aⁿ ⁺ ᵐ)</b>"
-    ),
     "POWERS_TEN_FINAL": (
         "{ctx}Записываем финальный ответ. Выполним последнее умножение"
     ),
     "POWERS_FINAL_ADD_INTEGERS": (
-    "Выполним финальное сложение."
+        "Выполним финальное сложение."
     ),
     "POWERS_FINAL_SUBTRACT_INTEGERS": (
         "Выполним финальное вычитание."
     ),
+    "POWERS_LEAVE_SECOND_NUMBER": "{ctx}Оставляем второе число без изменений.",
+    "POWERS_TEN_CALCULATE_MANTISSA": "{ctx}Выполним действие с числовыми множителями.",
+    "POWERS_TEN_CALCULATE_EXPONENT": "{ctx}Теперь выполним действие со степенями, используя свойство <b>aⁿ · aᵐ = aⁿ ⁺ ᵐ</b> (при умножении) или <b>aⁿ : aᵐ = aⁿ ⁻ ᵐ</b> (при делении).",
+    "POWERS_CALCULATE_SECOND_ADDEND": "{ctx}Теперь вычислим второе слагаемое.",
+    "POWERS_CALCULATE_SECOND_SUBTRAHEND": "{ctx}Теперь вычислим второе вычитаемое.",
 }
 
 
@@ -229,9 +238,10 @@ IDEA_TEMPLATES: Dict[str, str] = {
         "Следим за знаками — от этого зависит, будет ли результат положительным или отрицательным."
     ),
     "DF_FRACTION_STRUCT_IDEA": (
-        "Сначала находим значение в скобках — это знаменатель дроби. "
-        "Аккуратно переводим  десятичную дробь в обыкновенную. "
-        "Затем делим числитель на полученный результат."
+        "Согласно порядку действий, сначала нужно вычислить выражение в скобках — "
+        "это та часть дроби, где выполняется действие. "
+        "После нахождения значения подставляем его в выражение и выполняем деление: "
+        "делим числитель на знаменатель."
     ),
     "GENERIC_IDEA": (
         "Разберём выражение по шагам, чтобы чётко проследить каждое преобразование."
@@ -269,6 +279,7 @@ IDEA_TEMPLATES: Dict[str, str] = {
         "<b>(a · b)ⁿ = aⁿ · bⁿ и aⁿ · aᵐ = a⁽ⁿ ⁺ ᵐ⁾</b>. "
         "Сначала раскроем скобки, затем отдельно умножим числа и степени с основанием <b>10</b>."
     ),
+    "POWERS_FRACTIONS_FACTOR_OUT_IDEA": "Идея решения: Заметим, что в выражении есть общий множитель. Вынесение общего множителя за скобку — это самый рациональный способ решения, который сильно упрощает вычисления.",
 }
 
 HINT_TEMPLATES: Dict[str, str] = {

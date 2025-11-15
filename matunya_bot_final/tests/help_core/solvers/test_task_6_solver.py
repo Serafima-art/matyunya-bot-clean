@@ -6,7 +6,7 @@ from matunya_bot_final.help_core.solvers.task_6 import (
     common_fractions_solver,
     decimal_fractions_solver,
     mixed_fractions_solver,
-    powers_solver,
+    powers_solver_dubl,
 )
 
 
@@ -137,7 +137,7 @@ async def test_solve_powers_of_ten() -> None:
         "meta": {"pattern_id": "4.2", "difficulty": "medium"},
     }
 
-    result = await powers_solver.solve(task_data)
+    result = await powers_solver_dubl.solve(task_data)
 
     assert result["status"] == "success"
     primary = result["final_block"]["primary_value"]

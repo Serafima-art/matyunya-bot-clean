@@ -235,4 +235,3 @@ pytest -m fipi_etalon
 <b>Ответ:<b> <b>540<b>
 
 
-
