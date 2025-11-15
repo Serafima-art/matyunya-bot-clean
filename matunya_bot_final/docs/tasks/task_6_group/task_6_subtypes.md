@@ -1,7 +1,7 @@
 Тема 1: Действия с обыкновенными дробями (common_fractions)
 Паттерн 1.1: cf_addition_subtraction
 Пример: 1/10 + 11/18
-Паттерн 1.2: multiplication_division
+Паттерн 1.2: multiplication_division 
 Пример: 1 2/7 : 9/14
 Пример: 2 5/7 · 1 9/19
 Паттерн 1.3: parentheses_operations

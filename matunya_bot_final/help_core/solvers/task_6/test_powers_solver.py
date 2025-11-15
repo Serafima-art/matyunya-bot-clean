@@ -4,7 +4,7 @@
 
 import pytest
 import json
-from .powers_solver import solve
+from .powers_solver_dubl import solve
 
 
 def test_solve_powers_with_fractions_common_factor():
