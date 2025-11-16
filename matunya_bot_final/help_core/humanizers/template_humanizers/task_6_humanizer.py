@@ -20,25 +20,26 @@ STEP_TEMPLATES: Dict[str, str] = {
     "APPLY_POWER_OF_TEN_RULE": "{ctx}🔢 Складываем показатели степеней. {extra_explanation}",
     "FINAL_OPERATION": "{ctx}➖ Выполним {operation_name}. {extra_explanation}",
     "DIVIDE_AS_MULTIPLY": "{ctx}➗ Деление заменяем умножением на обратную дробь. {extra_explanation}",
-    "FIND_FINAL_ANSWER": "{ctx}🎯 Ответ: {value}",
+    "FIND_FINAL_ANSWER": "{ctx}🎯 Ответ: <b>{value}</b>",
     "PERFORM_MULTIPLICATION": "{ctx}✖️ Выполним {operation_name}. {extra_explanation}",
     "INITIAL_EXPRESSION": "{ctx}👁️ Рассмотрим выражение: <b>{expression}</b>",
 
-    "CONVERT_MIXED_FIRST": (
-        "{ctx}Преобразуем смешанное число {mixed_text} в неправильную дробь: "
-        "({whole}·{den} + {num})/{den} = {result_num}/{result_den}."
+    "CONVERT_ALL_MIXED": (
+    "{ctx}Переведём все смешанные числа в неправильные дроби:"
     ),
-    "CONVERT_MIXED_NEXT": (
-        "{ctx}Аналогично преобразуем {mixed_text}: "
-        "({whole}·{den} + {num})/{den} = {result_num}/{result_den}."
-    ),
+
     "SHOW_CONVERTED_EXPRESSION": "{ctx}После преобразования работаем с выражением {expression}.",
     "MULTIPLY_FRACTIONS_SETUP": (
         "{ctx}Записываем произведение дробей и вспоминаем правило умножения: "
         "(a/b) · (c/d) = (a·c)/(b·d)."
     ),
 
-    "DIVIDE_SAME_VALUE": "{ctx}Делим число само на себя и сразу получаем 1.",
+    "PARENTHESES_INNER_ADD_SUB": (
+        "{ctx}Выполняем действие в скобках {expression}. "
+        "Для этого приведём дроби к общему знаменателю <b>{lcm}</b>."
+    ),
+
+    "DIVIDE_SAME_VALUE": "{ctx}Делим число само на себя — получаем 1.",
 
     "COMPLEX_DIVISION_SETUP": (
         "{ctx}Теперь делим числитель {numerator} на знаменатель {denominator}."
@@ -47,10 +48,10 @@ STEP_TEMPLATES: Dict[str, str] = {
         "{ctx}Преобразуем полученную дробь {num}/{den} в десятичную для записи ответа, как требует формат ОГЭ."
     ),
     "EXTRACT_NUMERATOR": (
-        "{ctx}Берём числитель из дроби {num}/{den}: это {num}."
+    "{ctx}Берём числитель из дроби <b>{num}/{den}</b>: это <b>{num}</b>."
     ),
     "EXTRACT_DENOMINATOR": (
-        "{ctx}Берём знаменатель из дроби {num}/{den}: это {den}."
+        "{ctx}Берём знаменатель из дроби <b>{num}/{den}</b>: это <b>{den}</b>."
     ),
     "INITIAL_EXPRESSION_DECIMAL": "{ctx}Рассмотрим исходное выражение.",
     "CALCULATE_ADDITION_SIMPLE": "{ctx}Сложим числа {left} и {right}.",
@@ -97,10 +98,7 @@ STEP_TEMPLATES: Dict[str, str] = {
     "DECIMAL_OPERATION_IN_PART": (
         "Вычисляем {part}."
     ),
-    "MIXED_CONVERT_DECIMALS": (
-        "{ctx}Переведём все десятичные и смешанные дроби в обыкновенные. "
-        "Например, {decimal_examples}."
-    ),
+
     "MIXED_ADDITION_SUBTRACTION": (
         "{ctx}Теперь выполним {operation_name} дробей, соблюдая порядок действий. "
         "Приводим к общему знаменателю и вычисляем результат: {expression_result}."
@@ -484,27 +482,21 @@ def _render_paths(paths: List[Dict[str, Any]]) -> str:
 
 
 def _render_step(step: Dict[str, Any]) -> str:
-    """ФИНАЛЬНАЯ ВЕРСИЯ: Отрисовывает шаг без `<code>` и дублирования."""
     number = step.get("step_number")
     description = _format_step_description(step)
 
     formula = ""
     key = step.get("description_key")
 
-    # --- БЛОК 1: Отключаем дублирование формулы ---
-    # Для ключей MIXED_* формулы уже встроены в шаблон humanizer'а
     if key.startswith("MIXED_"):
-        formula = ""  # не дублируем
+        formula = ""
     else:
         formula = step.get("formula_calculation") or step.get("formula_representation") or ""
 
-    # --- БЛОК 2: Украшаем формулу (если она есть) ---
     if formula:
-        # Улучшаем отображение целых чисел в дробях (например, "2/1" становится "2")
         if "= " in formula:
             formula = re.sub(r"(\d+)/1(?!\d)", r"\1", formula)
 
-        # Превращаем ^2 в надстрочные символы
         if "^" in formula:
             sup_map = str.maketrans("0123456789-()", "⁰¹²³⁴⁵⁶⁷⁸⁹⁻⁽⁾")
             def replace_power(match):
@@ -513,9 +505,20 @@ def _render_step(step: Dict[str, Any]) -> str:
                 return f"{base}{exponent.translate(sup_map)}"
             formula = re.sub(r"(\S+)\^([-]?\d+|\(-?\d+\))", replace_power, formula)
 
-    # --- БЛОК 3: Собираем финальный HTML ---
-    # Убрали `<code>`, вернули `➡️`
-    formula_html = f"\n➡️ {formula}" if formula else ""
+    # 🔹 Спец-кейс для CONVERT_ALL_MIXED
+    if key == "CONVERT_ALL_MIXED" and formula:
+        lines = formula.split("\n")
+        formula = "\n".join(f"➡️ {line}" for line in lines)
+        formula_html = f"\n{formula}"
+    else:
+        if formula:
+            if "\n" in formula:
+                lines = formula.split("\n")
+                formula_html = "\n" + "\n".join(f"➡️ {line}" for line in lines)
+            else:
+                formula_html = f"\n➡️ {formula}"
+        else:
+            formula_html = ""
 
     return f"<b>Шаг {number}.</b> {description}{formula_html}"
 
@@ -599,9 +602,9 @@ def _format_step_description(step: Dict[str, Any]) -> str:
 
 
 def _render_final_answer(final_answer: Dict[str, Any]) -> str:
-    """Формирует блок финального ответа с лаконичным оформлением."""
+    """Красивый финальный ответ внизу решения."""
     value = str(final_answer.get("value_display", "")).strip()
-    return f"<b>Ответ:</b> <b>{value}</b>"
+    return f"🎯 Ответ: <b>{value}</b>"
 
 
 def _render_hints(solution_core: Dict[str, Any]) -> Optional[str]:
