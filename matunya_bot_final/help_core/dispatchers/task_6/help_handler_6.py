@@ -36,6 +36,8 @@ async def handle_task_6_help(
         state_data = await state.get_data()
         task_payload = state_data.get(f"task_{task_type}_data")
 
+        logger.error("[DEBUG HELP6] task_payload: %s", task_payload)
+
         if not isinstance(task_payload, dict):
             await send_solver_not_found_message(callback, bot, task_type, "unknown")
             return
