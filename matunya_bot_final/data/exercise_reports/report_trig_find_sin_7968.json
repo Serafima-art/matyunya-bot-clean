@@ -1,0 +1,25 @@
+{
+  "task": {
+    "id": "trig_find_sin_7968",
+    "type": "trigonometry",
+    "task_type": "find_sin",
+    "angle": 60,
+    "difficulty": "easy",
+    "additional_params": {},
+    "text": "В треугольнике ABC известен угол A = 60°. Найдите sin A."
+  },
+  "solution": {
+    "steps": [
+      {
+        "step": 1,
+        "formula": "Стандартное значение",
+        "calculation": "sin(60°) = √3/2",
+        "explanation": "Используем табличные значения для угла 60°"
+      }
+    ],
+    "final_result": "sin(60°) = √3/2"
+  },
+  "image_path": "visualization/examples/demo_trig_find_sin_trig_find_sin_7968.png",
+  "timestamp": "2025-11-17T17:28:01.366344",
+  "generated_by": "MatyunyaGenerator v1.0"
+}

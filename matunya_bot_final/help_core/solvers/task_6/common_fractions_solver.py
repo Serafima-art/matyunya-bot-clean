@@ -469,14 +469,28 @@ def _solve_parentheses(tree: Dict, builder: StepBuilder, question_text: str) -> 
             node["value"] = [improper_num, improper_den]
 
     # ------------------------------------------------------------------
-    # 2. Внутреннее выражение в скобках
+    # 2. Внутреннее выражение в скобках (универсальная обработка)
     # ------------------------------------------------------------------
-    # Возможны два случая:
-    #   (A ± B)
-    #   (A)
-    inner_node = tree["operands"][0]
-    op = inner_node["operation"]
-    left_node, right_node = inner_node["operands"]
+
+    # tree["operands"] всегда: [X, Y]
+    left_raw = tree["operands"][0]
+    right_raw = tree["operands"][1]
+
+    # Определяем, какая сторона — скобочное выражение (add/sub)
+    if isinstance(left_raw, dict) and left_raw.get("operation") in ("add", "subtract"):
+        # форма (A ± B) ⋅ C
+        bracket_node = left_raw
+        outer_node = right_raw
+    elif isinstance(right_raw, dict) and right_raw.get("operation") in ("add", "subtract"):
+        # форма A ⋅ (B ± C)
+        bracket_node = right_raw
+        outer_node = left_raw
+    else:
+        raise ValueError("Некорректное дерево: не найдено выражение в скобках")
+
+    # Теперь вычисляем внутреннее выражение в скобках
+    op = bracket_node["operation"]
+    left_node, right_node = bracket_node["operands"]
 
     left = _to_fraction(left_node)
     right = _to_fraction(right_node)
@@ -516,6 +530,9 @@ def _solve_parentheses(tree: Dict, builder: StepBuilder, question_text: str) -> 
         },
         full_formula
     )
+
+    # outer_node теперь наш множитель/делитель
+    right_operand = _to_fraction(outer_node)
 
     # ------------------------------------------------------------------
     # 3. Внешняя операция умножения или деления

@@ -1,0 +1,20 @@
+{
+  "task": {
+    "id": "task15_triangle_external_angle_6351",
+    "subtype": "triangle_external_angle",
+    "category": "angles",
+    "difficulty": "medium",
+    "description": "Известны два внутренних угла треугольника. Найди внешний угол при третьей вершине (сумма внешнего и внутреннего углов = 180°).",
+    "text": "В треугольнике ABC угол A = 30°, угол B = 45°. Найдите внешний угол при вершине C.",
+    "data": {
+      "internal_angle1": 30,
+      "internal_angle2": 45,
+      "third_angle": 105,
+      "external_angle": 75
+    },
+    "timestamp": "2025-11-17T19:29:07.275773",
+    "requires_visualization": true
+  },
+  "solution": {
+    "steps": [
+      

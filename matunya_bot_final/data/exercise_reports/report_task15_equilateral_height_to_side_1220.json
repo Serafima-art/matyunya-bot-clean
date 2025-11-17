@@ -1,0 +1,19 @@
+{
+  "task": {
+    "id": "task15_equilateral_height_to_side_1220",
+    "subtype": "equilateral_height_to_side",
+    "category": "general_triangles",
+    "difficulty": "medium",
+    "description": "По высоте равностороннего треугольника найди сторону, используя h = (√3/2)·a.",
+    "text": "В равностороннем треугольнике высота равна 8.66. Найдите сторону треугольника.",
+    "data": {
+      "side": 10,
+      "height": 8.66,
+      "given_element": "height"
+    },
+    "timestamp": "2025-11-17T19:29:07.580297",
+    "requires_visualization": true
+  },
+  "solution": {
+    "steps": [
+      
