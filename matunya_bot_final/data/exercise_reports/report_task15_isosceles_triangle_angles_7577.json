@@ -1,0 +1,19 @@
+{
+  "task": {
+    "id": "task15_isosceles_triangle_angles_7577",
+    "subtype": "isosceles_triangle_angles",
+    "category": "isosceles_triangles",
+    "difficulty": "medium",
+    "description": "В равнобедренном треугольнике даны равные стороны и один угол. Найди оставшиеся углы, используя сумму углов треугольника.",
+    "text": "В равнобедренном треугольнике ABC AB = BC. Угол при основании AC равен 50.0°. Найдите угол при вершине B.",
+    "data": {
+      "base_angle": 50.0,
+      "vertex_angle": 80,
+      "equal_sides": true
+    },
+    "timestamp": "2025-11-17T19:29:07.478394",
+    "requires_visualization": true
+  },
+  "solution": {
+    "steps": [
+      

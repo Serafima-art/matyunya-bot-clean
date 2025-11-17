@@ -1,0 +1,20 @@
+{
+  "task": {
+    "id": "task15_triangle_area_by_sin_2200",
+    "subtype": "triangle_area_by_sin",
+    "category": "general_triangles",
+    "difficulty": "medium",
+    "description": "Известны две стороны треугольника и угол между ними. Найди площадь с помощью формулы S = ½·a·b·sinC.",
+    "text": "В треугольнике две стороны равны 6 и 8, угол между ними 45°. Найдите площадь треугольника.",
+    "data": {
+      "side_a": 6,
+      "side_b": 8,
+      "angle_c": 45,
+      "area": 16.97
+    },
+    "timestamp": "2025-11-17T19:29:07.380250",
+    "requires_visualization": true
+  },
+  "solution": {
+    "steps": [
+      

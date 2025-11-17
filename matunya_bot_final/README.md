@@ -46,5 +46,4 @@ AI (Наш "Креативный Ассистент"): Используется 
    cd C:\Users\user\Documents\matunya
 
    Запусти бота:
-
-python -m matunya_bot_final.main_v2
+   python run.py

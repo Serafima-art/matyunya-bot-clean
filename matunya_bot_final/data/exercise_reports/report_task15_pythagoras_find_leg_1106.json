@@ -1,0 +1,19 @@
+{
+  "task": {
+    "id": "task15_pythagoras_find_leg_1106",
+    "subtype": "pythagoras_find_leg",
+    "category": "right_triangles",
+    "difficulty": "medium",
+    "description": "Известны катет и гипотенуза прямоугольного треугольника. Найди другой катет по теореме Пифагора.",
+    "text": "В прямоугольном треугольнике известны катет = 3 и гипотенуза = 17. Найдите другой катет.",
+    "data": {
+      "known_leg": 3,
+      "hypotenuse": 17,
+      "unknown_leg": 16.73
+    },
+    "timestamp": "2025-11-17T19:29:07.019021",
+    "requires_visualization": true
+  },
+  "solution": {
+    "steps": [
+      

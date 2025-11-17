@@ -30,47 +30,47 @@ SUBTYPES = {
 }
 
 
-Углы
+1.Углы
 
-triangle_external_angle
+Паттерн 1.1 triangle_external_angle
 
-angle_bisector_find_half_angle
+Паттерн 1.2 angle_bisector_find_half_angle
 
-Треугольники общего вида
+2.Треугольники общего вида
 
-triangle_area_by_sin
+Паттерн 2.1 triangle_area_by_sin
 
-triangle_area_by_dividing_point
+Паттерн 2.2 triangle_area_by_dividing_point
 
-triangle_area_by_parallel_line
+Паттерн 2.3 triangle_area_by_parallel_line
 
-triangle_area_by_midpoints
+Паттерн 2.4 triangle_area_by_midpoints
 
-cosine_law_find_cos
+Паттерн 2.5 cosine_law_find_cos
 
-triangle_by_two_angles_and_side
+Паттерн 2.6 triangle_by_two_angles_and_side
 
-(равносторонний как частный случай общего) equilateral_height_to_side
+Паттерн 2.7 equilateral_height_to_side (равносторонний как частный случай общего)
 
-(равносторонний как частный случай общего) equilateral_side_to_height
+Паттерн 2.8 equilateral_side_to_height (равносторонний как частный случай общего)
 
-Равнобедренные треугольники
+3.Равнобедренные треугольники
 
-isosceles_triangle_angles
+Паттерн 3.1 isosceles_triangle_angles
 
-Прямоугольный треугольник
+4.Прямоугольный треугольник
 
-right_triangle_angles_sum
+Паттерн 4.1 right_triangle_angles_sum
 
-pythagoras_find_leg
+Паттерн 4.2 pythagoras_find_leg
 
-pythagoras_find_hypotenuse
+Паттерн 4.3 pythagoras_find_hypotenuse
 
-find_cos_sin_tg_from_sides
+Паттерн 4.4 find_cos_sin_tg_from_sides
 
-find_side_from_trig_ratio
+Паттерн 4.5 find_side_from_trig_ratio
 
-right_triangle_median_to_hypotenuse
+Паттерн 4.6 right_triangle_median_to_hypotenuse
 
 Параллелограмм — нет подтипов в нашей выборке
 
@@ -102,7 +102,7 @@ T8. AngleWithBisector — ∠A в треугольнике, проведена �
 
 T9. ExteriorAngle — ΔABC + внешний угол при вершине (например, при C), стрелка-дуга с подписью (внешн. угол), показана линейная пара.
 
-Карта «подтип → шаблон + обязательные элементы»
+Карта «паттерн → шаблон + обязательные элементы»
 
 right_triangle_angles_sum → T1
 Обязательно: квадрат у ∠C, дуга у известного острого угла, подпись «90° − α» как подсказочная мини-метка (без формул в лоб).
