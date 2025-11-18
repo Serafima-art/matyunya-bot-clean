@@ -30,13 +30,13 @@ SUBTYPES = {
 }
 
 
-1.Углы
+1.Углы (angles)
 
 Паттерн 1.1 triangle_external_angle
 
 Паттерн 1.2 angle_bisector_find_half_angle
 
-2.Треугольники общего вида
+2.Треугольники общего вида (general_triangles)
 
 Паттерн 2.1 triangle_area_by_sin
 
@@ -54,11 +54,11 @@ SUBTYPES = {
 
 Паттерн 2.8 equilateral_side_to_height (равносторонний как частный случай общего)
 
-3.Равнобедренные треугольники
+3.Равнобедренные треугольники (isosceles_triangles)
 
 Паттерн 3.1 isosceles_triangle_angles
 
-4.Прямоугольный треугольник
+4.Прямоугольный треугольник (right_triangles)
 
 Паттерн 4.1 right_triangle_angles_sum
 
