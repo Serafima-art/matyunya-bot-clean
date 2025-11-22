@@ -111,14 +111,210 @@ radical_product | √(63·42·54)
 radical_product | √(12·30·40)
 
 # 🔹 Паттерн 2.4: `radical_product_with_powers` (Пример √(11·3⁴) · √(11·5²))
+radical_product_with_powers | √(11·5²) · √(11·7⁴)
+radical_product_with_powers | √(12·2⁶) · √(12·3⁴)
+radical_product_with_powers | √(13·5⁴) · √(13·2²)
+radical_product_with_powers | √(14·3⁴) · √(14·7²)
+radical_product_with_powers | √(15·2⁴) · √(15·5²)
+radical_product_with_powers | √(16·3⁴) · √(16·2²)
+radical_product_with_powers | √(17·2⁶) · √(17·3²)
+radical_product_with_powers | √(18·5²) · √(18·3⁴)
+radical_product_with_powers | √(19·2⁴) · √(19·7²)
+radical_product_with_powers | √(20·3²) · √(20·5⁴)
+radical_product_with_powers | √(10·7⁴) · √(10·2²)
+radical_product_with_powers | √(11·2⁴) · √(11·3⁴)
+radical_product_with_powers | √(12·5²) · √(12·7⁴)
+radical_product_with_powers | √(13·3²) · √(13·5⁴)
+radical_product_with_powers | √(14·2²) · √(14·3⁶)
+radical_product_with_powers | √(15·7²) · √(15·2⁶)
+radical_product_with_powers | √(16·5²) · √(16·7²)
+radical_product_with_powers | √(17·3²) · √(17·2⁶)
+radical_product_with_powers | √(18·2²) · √(18·3⁴)
+radical_product_with_powers | √(19·5²) · √(19·3²)
+radical_product_with_powers | √(20·3⁴) · √(20·7²)
+radical_product_with_powers | √(10·2⁴) · √(10·3⁴)
+radical_product_with_powers | √(12·2²) · √(12·5⁴)
+radical_product_with_powers | √(13·3⁴) · √(13·2⁶)
 
+# 🔹 Паттерн 2.5: `radical_fraction`(Пример ( √65 · √13 ) / √5)
+radical_fraction | (√28 · √14) / √2
+radical_fraction | (√48 · √12) / √4
+radical_fraction | (√66 · √24) / √11
+radical_fraction | (√126 · √14) / √9
+radical_fraction | (√99 · √11) / √9
+radical_fraction | (√75 · √27) / √9
+radical_fraction | (√192 · √24) / √8
+radical_fraction | (√189 · √21) / √9
+radical_fraction | (√6 · √30) / √5
+radical_fraction | (√45 · √20) / √9
 
+# 🔹 Паттерн 2.6: `conjugate_radicals`(Примеры: ( (√29 − 4 ) · ( √29 + 4 ), ( √11 − 2 ) · ( √11 + 2 ))
+conjugate_radicals | (√10 - 1) · (√10 + 1)
+conjugate_radicals | (√17 - 2) · (√17 + 2)
+conjugate_radicals | (√20 - 3) · (√20 + 3)
+conjugate_radicals | (√30 - 5) · (√30 + 5)
+conjugate_radicals | (√15 - 2) · (√15 + 2)
+conjugate_radicals | (√24 - 3) · (√24 + 3)
+conjugate_radicals | (√29 - 4) · (√29 + 4)
+conjugate_radicals | (√35 - 5) · (√35 + 5)
+conjugate_radicals | (√40 - 6) · (√40 + 6)
+conjugate_radicals | (√53 - 7) · (√53 + 7)
+conjugate_radicals | (√70 - 8) · (√70 + 8)
+conjugate_radicals | (√90 - 9) · (√90 + 9)
+conjugate_radicals | (√18 - 1) · (√18 + 1)
+conjugate_radicals | (√11 - 2) · (√11 + 2)
+conjugate_radicals | (√48 - 3) · (√48 + 3)
+conjugate_radicals | (√55 - 4) · (√55 + 4)
+conjugate_radicals | (√60 - 5) · (√60 + 5)
+conjugate_radicals | (√75 - 6) · (√75 + 6)
+conjugate_radicals | (√85 - 7) · (√85 + 7)
+conjugate_radicals | (√99 - 9) · (√99 + 9)
 
+# 🔹 Паттерн 2.7: `numeric_power_fraction`
+# ⭐ Форма A. Вложенные степени внутри знаменателя (Пример: 10⁹ / ( (2⁵)² · 5⁷ ))
+numeric_power_fraction | 10⁷ / ((2³)² · 5⁵)
+numeric_power_fraction | 6⁵ / ((2²)³ · 3⁴)
+numeric_power_fraction | 15⁸ / ((3⁴)² · 5⁷)
+numeric_power_fraction | 20⁴ / ((2³)² · 5³)
+numeric_power_fraction | 21¹⁰ / ((3⁵)² · 7⁹)
+numeric_power_fraction | 10⁶ / ((2³)² · 5⁵)
+numeric_power_fraction | 18³ / ((3²)² · 2²)
+numeric_power_fraction | 6⁸ / ((3³)² · 2⁶)
+numeric_power_fraction | 4⁵ / ((2²)³ · 2³)
+numeric_power_fraction | 12⁶ / ((3³)² · 4⁴)
+numeric_power_fraction | 24⁴ / ((3²)² · 8³)
+numeric_power_fraction | 25⁴ / ((5³)² · 5²)
+numeric_power_fraction | 15⁵ / ((3²)² · 5⁵)
+numeric_power_fraction | 12⁵ / ((3²)² · 4³)
+numeric_power_fraction | 10⁵ / ((2²)³ · 5³)
 
+# ⭐ Форма B — Одинаковые основания в числителе и в знаменателе aᵐ · aᵏ / aⁿ (Пример: 4⁻² · 4⁻⁷ / 4⁻¹¹)
+numeric_power_fraction | 4⁻² · 4⁻⁷ / 4⁻¹¹
+numeric_power_fraction | 5³ · 5⁻⁵ / 5⁻³
+numeric_power_fraction | 2⁴ · 2⁻⁶ / 2⁻⁵
+numeric_power_fraction | 3¹ · 3⁵ / 3⁶
+numeric_power_fraction | 4¹⁰ · 4⁻¹⁵ / 4⁻⁴
+numeric_power_fraction | 7² · 7⁴ / 7⁴
+numeric_power_fraction | 6⁻¹ · 6⁻³ / 6⁻⁵
+numeric_power_fraction | 9⁵ · 9⁻⁸ / 9⁻⁶
+numeric_power_fraction | 10³ · 10⁻⁴ / 10⁻⁴
+numeric_power_fraction | 5⁻⁵ · 5¹⁰ / 5⁵
+numeric_power_fraction | 2⁵ · 2⁻⁷ / 2⁻¹
+numeric_power_fraction | 3⁻⁴ · 3⁷ / 3²
+numeric_power_fraction | 4⁵ · 4² / 4⁴
+numeric_power_fraction | 7⁸ · 7⁻¹⁰ / 7⁻²
+numeric_power_fraction | 5³ · 5⁶ / 5¹⁰
+numeric_power_fraction | 9⁻² · 9⁷ / 9⁴
+numeric_power_fraction | 2¹⁰ · 2⁻¹² / 2⁻⁵
+numeric_power_fraction | 5⁶ · 5⁻⁹ / 5⁻³
+numeric_power_fraction | 10¹ · 10² / 10⁴
+numeric_power_fraction | 4⁷ · 4⁻³ / 4²
+numeric_power_fraction | 7⁻¹ · 7⁻² / 7⁻⁴
+numeric_power_fraction | 8⁴ · 8⁻¹ / 8⁰
+numeric_power_fraction | 10⁻⁵ · 10⁷ / 10²
 
+# ⭐ Форма C — Одинаковые основания в числителе и в знаменателе, в числителе степень в степени (aᵐ)ⁿ / aᵖ (Пример: (5²)⁻⁸ / 5⁻¹⁸)
+(aᵐ)ⁿ / aᵖ (Пример: (5²)⁻⁸ / 5⁻¹⁸)
+numeric_power_fraction | (5²)⁻⁸ / 5⁻¹⁸
+numeric_power_fraction | (3³)⁴ / 3¹¹
+numeric_power_fraction | (2⁻²)⁻⁵ / 2⁷
+numeric_power_fraction | (4¹)⁻⁶ / 4⁻⁶
+numeric_power_fraction | (10²)⁻³ / 10⁻⁷
+numeric_power_fraction | (7³)³ / 7⁷
+numeric_power_fraction | (6⁻²)⁻⁵ / 6⁸
+numeric_power_fraction | (8²)⁴ / 8⁵
+numeric_power_fraction | (9³)⁻⁴ / 9⁻¹³
+numeric_power_fraction | (2²)⁻⁴ / 2⁻⁹
+numeric_power_fraction | (3⁻³)³ / 3⁻¹²
+numeric_power_fraction | (5³)⁻² / 5⁻⁶
+numeric_power_fraction | (4³)⁻¹ / 4⁻⁴
+numeric_power_fraction | (10³)⁻² / 10⁻⁷
+numeric_power_fraction | (7³)⁻³ / 7⁻¹¹
+numeric_power_fraction | (4⁻²)⁻⁵ / 4⁹
+numeric_power_fraction | (2⁴)⁻¹ / 2⁻⁷
+numeric_power_fraction | (5³)⁻³ / 5⁻⁹
+numeric_power_fraction | (10⁴)⁻² / 10⁻⁸
+numeric_power_fraction | (5²)⁻⁵ / 5⁻¹¹
+numeric_power_fraction | (2⁵)² / 2⁸
+numeric_power_fraction | (5²)³ / 5³
+numeric_power_fraction | (3³)⁻² / 3⁻⁷
+numeric_power_fraction | (4⁴)² / 4⁸
 
+# ⭐ Форма D — Разные основания, которые можно преобразить до одинаковых (Пример: 27⁷ / 9¹⁰)
+numeric_power_fraction | 27⁷ / 9¹⁰
+numeric_power_fraction | 8⁴ / 4⁵
+numeric_power_fraction | 25³ / 5⁵
+numeric_power_fraction | 16⁵ / 8⁶
+numeric_power_fraction | 81² / 9⁴
+numeric_power_fraction | 125² / 25²
+numeric_power_fraction | 4¹⁰ / 8⁶
+numeric_power_fraction | 9⁸ / 27⁵
+numeric_power_fraction | 64³ / 32⁴
+numeric_power_fraction | 25⁴ / 125³
+numeric_power_fraction | 32³ / 4⁴
+numeric_power_fraction | 9⁵ / 81²
+numeric_power_fraction | 27⁴ / 9⁶
+numeric_power_fraction | 16³ / 4⁵
+numeric_power_fraction | 8² / 16²
+numeric_power_fraction | 64³ / 4⁸
+numeric_power_fraction | 81⁴ / 27⁵
+numeric_power_fraction | 125⁴ / 25⁷
+numeric_power_fraction | 4⁷ / 16³
+numeric_power_fraction | 32³ / 64²
+numeric_power_fraction | 25⁵ / 125³
+numeric_power_fraction | 9³ / 27²
+numeric_power_fraction | 8⁵ / 4⁷
+numeric_power_fraction | 4² / 2⁵
+numeric_power_fraction | 25⁶ / 5¹²
 
+# ⭐ Форма E. Смешанное основания в знаменателе (разложение на простые множители) (Пример: 14⁴ / (2⁵ · 7³))
+numeric_power_fraction | 14⁴ / (2⁵ · 7³)
+numeric_power_fraction | 10³ / (2² · 5³)
+numeric_power_fraction | 15⁴ / (3³ · 5²)
+numeric_power_fraction | 6⁵ / (2⁴ · 3⁵)
+numeric_power_fraction | 12³ / (2⁴ · 3²)
+numeric_power_fraction | 10² / (2³ · 5¹)
+numeric_power_fraction | 14³ / (2² · 7³)
+numeric_power_fraction | 6⁴ / (2³ · 3³)
+numeric_power_fraction | 15⁵ / (3⁵ · 5⁴)
+numeric_power_fraction | 10⁴ / (2⁵ · 5³)
+numeric_power_fraction | 14² / (2³ · 7¹)
+numeric_power_fraction | 12⁴ / (2⁸ · 3³)
+numeric_power_fraction | 10⁵ / (2⁴ · 5⁴)
+numeric_power_fraction | 6³ / (2² · 3³)
+numeric_power_fraction | 15² / (3¹ · 5³)
+numeric_power_fraction | 14⁵ / (2⁵ · 7⁵)
+numeric_power_fraction | 12² / (2³ · 3¹)
+numeric_power_fraction | 10⁴ / (2³ · 5⁵)
+numeric_power_fraction | 6² / (2³ · 3²)
+numeric_power_fraction | 14³ / (2⁴ · 7²)
+numeric_power_fraction | 15³ / (3² · 5³)
+numeric_power_fraction | 12⁵ / (2⁹ · 3⁴)
+numeric_power_fraction | 10³ / (2⁴ · 5²)
+numeric_power_fraction | 14² / (2¹ · 7²)
+numeric_power_fraction | 6³ / (2² · 3²)
 
+# 🔹 Паттерн 2.8: `count_integers_between_radicals` (Пример: Сколько целых чисел между 3√15 и 5√6?)
+count_integers_between_radicals | 2√10 и 6√3
+count_integers_between_radicals | 4√5 и 2√30
+count_integers_between_radicals | 5√2 и 3√11
+count_integers_between_radicals | 3√7 и 5√5
+count_integers_between_radicals | 2√19 и 3√10
+count_integers_between_radicals | 4√7 и 2√37
+count_integers_between_radicals | 6√2 и 3√10
+count_integers_between_radicals | 3√17 и 5√7
+count_integers_between_radicals | 7√3 и 4√11
+count_integers_between_radicals | 5√3 и 2√29
+count_integers_between_radicals | 2√40 и 5√7
+count_integers_between_radicals | 6√5 и 3√22
+count_integers_between_radicals | 4√13 и 5√10
+count_integers_between_radicals | 7√2 и 2√50
+count_integers_between_radicals | 3√19 и 4√12
+count_integers_between_radicals | 5√13 и 7√7
+count_integers_between_radicals | 2√20 и 6√3
+count_integers_between_radicals | 5√10 и 3√29
+count_integers_between_radicals | 7√5 и 4√18
+count_integers_between_radicals | 3√6 и 5√3
 
 
 

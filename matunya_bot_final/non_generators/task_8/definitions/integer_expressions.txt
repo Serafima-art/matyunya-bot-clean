@@ -1,0 +1,95 @@
+# 🔹 Паттерн 1.1: `alg_power_fraction` (пример: ((a³)⁵ · a³) / a²⁰ при a = 5)
+alg_power_fraction | ((a⁴)⁶ · a⁵) / a²⁷ | a=2
+alg_power_fraction | ((a²)⁸ · a¹⁰) / a²⁵ | a=3
+alg_power_fraction | ((a⁵)⁴ · a³) / a²³ | a=4
+alg_power_fraction | ((a³)⁷ · a⁶) / a²⁸ | a=10
+alg_power_fraction | ((a⁶)² · a¹⁵) / a²⁸ | a=2
+alg_power_fraction | ((a⁴)⁸ · a²) / a³⁰ | a=5
+alg_power_fraction | ((a³)⁶ · a¹¹) / a²⁷ | a=3
+alg_power_fraction | ((a⁵)⁵ · a²) / a²⁸ | a=10
+alg_power_fraction | ((a⁷)⁴ · a³) / a³⁰ | a=2
+alg_power_fraction | ((a²)¹⁵ · a⁴) / a³³ | a=4
+alg_power_fraction | ((a⁸)³ · a⁶) / a³⁰ | a=3
+alg_power_fraction | ((a³)¹⁰ · a²) / a³⁴ | a=5
+
+alg_power_fraction | (a¹⁷ · (b⁷)²) / (a · b)¹⁶ | a=3,  b=√2
+alg_power_fraction | (a²⁹ · (b³)⁹) / (a · b)²⁷ | a=11, b=15
+alg_power_fraction | (a¹⁵ · (b⁴)⁴) / (a · b)¹⁶ | a=10, b=5
+alg_power_fraction | (a¹⁶ · (b³)⁶) / (a · b)¹⁶ | a=2,  b=√3
+alg_power_fraction | (a¹⁶ · (b²)⁶) / (a · b)¹⁶ | a=5,  b=√5
+alg_power_fraction | (a¹⁹ · (b⁴)⁵) / (a · b)²⁰ | a=8,  b=2
+alg_power_fraction | (a¹⁷ · (b³)⁶) / (a · b)¹⁸ | a=10, b=√2
+alg_power_fraction | (a²⁰ · (b⁴)⁵) / (a · b)¹⁸ | a=3,  b=5
+alg_power_fraction | (a¹⁸ · (b²)⁷) / (a · b)¹⁴ | a=5, b=√10
+alg_power_fraction | (a²⁰ · (b⁶)⁴) / (a · b)²³ | a=2, b=4
+alg_power_fraction | (a¹⁴ · (b²)⁷) / (a · b)¹⁴ | a=5, b=2
+
+
+# 🔹 Паттерн 1.2: `alg_radical_power` (корень ОДИН и “накрывает” всю дробь/произведение, пример: √(100 · a²¹ / a¹⁹) при a = 8)
+alg_radical_power | √(64 · a²⁰ / a¹⁸) | a=3
+alg_radical_power | √(25 · a¹⁵ / a¹³) | a=7
+alg_radical_power | √(81 · a¹² / a¹⁰) | a=5
+alg_radical_power | √(16 · a²⁵ / a²³) | a=10
+alg_radical_power | √(49 · a³⁰ / a²⁸) | a=2
+alg_radical_power | √(36 · a¹⁸ / a¹⁶) | a=4
+alg_radical_power | √(100 · a¹¹ / a⁹) | a=0.5
+alg_radical_power | √(64 · a¹⁷ / a¹⁵) | a=0.2
+alg_radical_power | √(25 · a⁹ / a⁷) | a=0.1
+alg_radical_power | √(81 · a²⁴ / a²²) | a=3
+alg_radical_power | √(16 · a¹⁶ / a¹⁴) | a=6
+alg_radical_power | √(49 · a¹³ / a¹¹) | a=0.3
+alg_radical_power | √(36 · a²² / a²⁰) | a=9
+alg_radical_power | √(100 · a¹⁹ / a¹⁷) | a=0.4
+
+alg_radical_power | √(25 · a²) | a=3
+alg_radical_power | √(4 · b⁴) | b=5
+alg_radical_power | √(64 · x⁶) | x=2
+alg_radical_power | √(81 · k¹²) | k=1
+alg_radical_power | √(36 · c²) | c=1.5
+alg_radical_power | √(9 · x⁴) | x=10
+alg_radical_power | √(49 · y²) | y=0.4
+alg_radical_power | √(100 · k⁶) | k=3
+
+alg_radical_power | √((-a)² · a⁴) | a=3
+alg_radical_power | √((-a)⁴ · a⁸) | a=2
+alg_radical_power | √((-a)⁶ · a⁶) | a=2
+alg_radical_power | √((-a)¹⁰ · a²) | a=3
+alg_radical_power | √((-a)² · a²) | a=5
+alg_radical_power | √((-a)⁴ · a⁴) | a=3
+alg_radical_power | √((-a)² · a²) | a=0.5
+alg_radical_power | √((-a)⁶ · a⁶) | a=2
+alg_radical_power | √((-a)⁸ · a²) | a=2
+alg_radical_power | √((-a)⁴ · a¹⁰) | a=2
+
+alg_radical_power | √((-a)² · (a⁻²)²) | a=5
+alg_radical_power | √((-a)⁴ · (a⁻¹)⁶) | a=2
+alg_radical_power | √((-a)⁶ · (a⁻³)²) | a=10
+alg_radical_power | √((-a)⁸ · (a⁻²)³) | a=4
+alg_radical_power | √((-a)¹⁰ · (a⁻⁴)²) | a=3
+alg_radical_power | √((-a)⁶ · (a⁻²)⁴) | a=2
+alg_radical_power | √((-a)⁴ · (a⁻³)²) | a=10
+alg_radical_power | √((-a)⁸ · (a⁻⁴)²) | a=5
+alg_radical_power | √((-a)¹² · (a⁻⁶)²) | a=7
+alg_radical_power | √((-a)² · (a⁻¹)⁴) | a=4
+alg_radical_power | √((-a)¹⁰ · (a⁻³)²) | a=3
+alg_radical_power | √((-a)¹⁶ · (a⁻⁸)²) | a=2
+alg_radical_power | √((-a)⁴ · (a⁻²)⁴) | a=10
+alg_radical_power | √((-a)¹⁰ · (a⁻²)³) | a=5
+alg_radical_power | √((-a)⁸ · (a⁻²)²) | a=2
+
+# 🔹 Паттерн 1.3: `alg_radical_fraction` (несколько корней в числителе/знаменателе, пример: ( √25a · √4b³ ) / √(ab ) при a = 7, b = 11 )
+alg_radical_fraction | (√(25a³) · √(4b⁵)) / √(ab) | a=2, b=3 | 180
+alg_radical_fraction | (√(9a⁵) · √(16b³)) / √(ab) | a=4, b=5 | 960
+alg_radical_fraction | (√(4a⁷) · √(49b⁵)) / √(ab) | a=1, b=2 | 56
+alg_radical_fraction | (√(16a¹¹) · √(9b³)) / √(ab) | a=1, b=4 | 48
+alg_radical_fraction | (√(64a⁹) · √(4b³)) / √(ab) | a=2, b=1 | 256
+alg_radical_fraction | (√(25a¹³) · √(9b⁹)) / √(ab) | a=1, b=2 | 240
+alg_radical_fraction | (√(16a³) · √(4b⁵)) / √(ab) | a=5, b=2 | 160
+alg_radical_fraction | (√(100a¹¹) · √(9b⁵)) / √(ab) | a=1, b=3 | 270
+alg_radical_fraction | (√(4a⁵) · √(25b⁷)) / √(ab) | a=3, b=1 | 90
+alg_radical_fraction | (√(36a⁷) · √(4b³)) / √(ab) | a=2, b=3 | 288
+
+alg_radical_fraction | √(a·b) / (√(4 · a³) · √(4 · b³)) | a=1, b=5 | 0.05
+alg_radical_fraction | √(a·b) / (√(1 · a³) · √(25 · b⁵)) | a=4, b=1 | 0.05
+alg_radical_fraction | √(a·b) / (√(25 · a⁵) · √(4 · b³)) | a=1, b=10 | 0.01
+
