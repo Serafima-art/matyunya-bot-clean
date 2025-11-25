@@ -86,6 +86,8 @@ def main():
                     # структура строго такая, как возвращает валидатор
                     "expression_tree": rich_data["expression_tree"],
                     "variables": rich_data["variables"],
+                    # ДОБАВЛЕНО: забираем "красивые" переменные, если они есть
+                    "variables_display": rich_data.get("variables_display"),
                     "answer": rich_data["answer"],
 
                     # meta — минимальная, как в заданиях 20 и 6

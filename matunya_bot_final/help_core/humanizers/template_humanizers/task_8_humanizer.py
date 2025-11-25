@@ -1,93 +1,232 @@
-"""Рыба humanizer'а для задания 8 (integer_expressions)."""
+"""Humanizer for Task 8: Formats solution data into HTML (Strict Layout)."""
 
 from __future__ import annotations
 
 from typing import Any, Dict, Iterable, List
 
+# ============================================================================
+# 1. ШАБЛОНЫ ИДЕЙ (IDEA_TEMPLATES)
+# ============================================================================
+IDEA_TEMPLATES: Dict[str, str] = {
+    "IDEA_ALG_POWER_FRACTION": (
+        "Сначала приводим выражение к самой простой степени, используя свойства степеней\n"
+        "<b>aᵐ · aⁿ = aᵐ⁺ⁿ</b>\n"
+        "<b>(aᵐ)ⁿ = aᵐⁿ</b>\n"
+        "<b>(a · b)ⁿ = aⁿ · bⁿ</b>\n"
+        "<b>aᵐ : aⁿ = aᵐ⁻ⁿ</b>\n"
+        "<b>a⁻ⁿ = 1 / aⁿ</b>\n"
+        "А уже потом подставляем число вместо переменной, чтобы получить ответ."
+    ),
+    "IDEA_ALG_RADICAL_POWER": (
+        "Сначала аккуратно упрощаем выражение под корнем, используя свойства степеней:\n"
+        "<b>aᵐ : aⁿ = aᵐ⁻ⁿ</b>\n"
+        "<b>aᵐ · aⁿ = aᵐ⁺ⁿ</b>\n"
+        "<b>(aᵐ)ⁿ = aᵐⁿ</b>\n"
+        "<b>√(k · aⁿ) = √k · √aⁿ = √k · aⁿᐟ²</b> (где <b>n/2</b> — показатель степени)\n"
+        "Когда подкоренное выражение максимально простое, только потом подставляем число вместо переменной."
+    ),
+    "IDEA_ALG_RADICAL_FRACTION": (
+        "Сначала преобразуй корни в числителе (знаменателе), используя свойства корней:\n"
+        "<b>√(ab) = √a · √b</b>\n"
+        "<b>√(a / b) = √a / √b</b>\n"
+        "После объединения упрости подкоренное выражение (сокращай переменные, выноси степени),\n"
+        "а уже потом извлекай корни и подставляй значения переменных."
+    ),
+    "IDEA_GENERIC": "Решаем задачу, последовательно упрощая выражение.",
+}
 
-IDEA_PLACEHOLDER = "{{IDEA_TEXT}}"
-ATTENTION_TIPS: List[str] = [
-    "{{ATTENTION_TIP_1}}",
-    "{{ATTENTION_TIP_2}}",
-    "{{ATTENTION_TIP_3}}",
-]
-KNOWLEDGE_TIPS: List[str] = [
-    "{{KNOWLEDGE_TIP_1}}",
-    "{{KNOWLEDGE_TIP_2}}",
-    "{{KNOWLEDGE_TIP_3}}",
-]
+# ============================================================================
+# 2. ШАБЛОНЫ ШАГОВ (STEP_TEMPLATES)
+# ============================================================================
+STEP_TEMPLATES: Dict[str, str] = {
+    # --- Общие ---
+    "STEP_INITIAL": "Рассмотрим исходное выражение\n<b>{expr}</b> при {vars}",
+    "STEP_INITIAL_NO_VARS": "Рассмотрим исходное выражение\n<b>{expr}</b>",
+    "STEP_SUBSTITUTE_AND_CALC": "Подставим числовое значение переменной в итоговое упрощенное выражение и вычислим, <b>{vars}</b>",
+    "STEP_SUBSTITUTE_FINAL": "Подставляем значения переменной, <b>{vars}</b>",
+    "STEP_CONVERT_TO_DECIMAL": "Преобразуем дробь <b>{frac}</b> в десятичную, как требует формат ОГЭ",
+    "STEP_WRITE_ANSWER": "Записываем итоговый ответ",
+
+    # --- alg_power_fraction ---
+    "STEP_SIMPLIFY_NUMERATOR": "Упростим числитель <b>{expr}</b>, используя свойства степеней",
+    "STEP_DIVIDE_POWERS": "Разделим числитель на знаменатель, применяя свойство деления степеней",
+
+    # --- alg_radical_power ---
+    "STEP_SIMPLIFY_RADICAND_FRACTION": "Упростим дробь под корнем, применяя свойство деления степеней",
+    "STEP_SIMPLIFY_RADICAND_PRODUCT": "Упростим выражение под корнем, используя свойства степеней",
+    "STEP_RADICAND_ALREADY_SIMPLE": "Выражение под корнем уже максимально упрощено.",
+    "STEP_SUBSTITUTE_INTO_ROOT": "Подставим результат обратно под корень",
+    "STEP_EXTRACT_ROOT": "Извлечём корень, используя свойство √(k · aⁿ) = √k · √aⁿ",
+
+    # --- alg_radical_fraction (НОВЫЕ) ---
+    "STEP_TRANSFORM_NUMERATOR": "Преобразуем (упростим) числитель, разложив корни на множители.",
+    "STEP_TRANSFORM_DENOMINATOR": "Преобразуем (упростим) знаменатель, разложив корни на множители.",
+    "STEP_SUBSTITUTE_INTO_FRACTION": "Подставим полученный {part} в исходную дробь",
+    "STEP_REDUCE_ROOTS": "Видим, что и числитель, и знаменатель можно сократить на <b>{term}</b>",
+}
+
+# ============================================================================
+# 3. ШАБЛОНЫ ТЕОРИИ (KNOWLEDGE_TEMPLATES)
+# ============================================================================
+KNOWLEDGE_TEMPLATES: Dict[str, List[str]] = {
+    "KNOWLEDGE_ALG_POWER_FRACTION": [
+        "🔹\"Матрешка\" (степень в степени) — перемножаем степени\n"
+        "Если одно и то же основание:\n"
+        "— при умножении степени складываем: <b>aᵐ · aⁿ = aᵐ⁺ⁿ</b>\n"
+        "— при делении вычитаем: <b>aᵐ : aⁿ = aᵐ⁻ⁿ</b>",
+        "🔹Отрицательная степень - это не страшно, это просто знак «перемести меня в знаменатель» и всегда означает дробь:\n"
+        "<b>a⁻ⁿ = 1 / aⁿ</b>",
+        "🔹Подстановку числового значения вместо переменной делаем только после упрощения всех степеней."
+    ],
+    "KNOWLEDGE_ALG_RADICAL_POWER": [
+        "🔹Перед тем как извлекать корень, всегда наведи внутри него «генеральную уборку»: сократи степени и упрости дробь.",
+        "🔹Корень из степени — это половинка степени <b>√(aⁿ) = aⁿᐟ²</b>",
+        "🔹Корень можно «разбить» <b>√(k · aⁿ) = √k · √aⁿ = √k ·aⁿᐟ²</b>. И это очень ускоряет решение.",
+        "🔹Подстановку делаем только после упрощения, чтобы считать было проще и без ошибок."
+    ],
+    "KNOWLEDGE_ALG_RADICAL_FRACTION": [
+        "🔹 Часто удобно сначала «вытащить» из-под корня всё, что является полным квадратом",
+        "🔹 Если один и тот же корень встречается в числителе и знаменателе — их можно сократить, как обычные множители.",
+        "🔹 Если после упрощения какая-то переменная исчезла — это нормально, значит она полностью сократилась.",
+        "🔹 Подстановку числа делаем только в самом конце, когда выражение уже упростилось."
+    ]
+}
+
+# ============================================================================
+# 4. ШАБЛОНЫ ВНИМАНИЯ (ATTENTION_TEMPLATES)
+# ============================================================================
+ATTENTION_TEMPLATES: Dict[str, List[str]] = {
+    "ATTENTION_ALG_RADICAL_FRACTION_VAR_GONE": [
+        "переменная <b>{var}</b> исчезла из выражения, потому что полностью сократилась на шаге 4.",
+        "Поэтому подставлять <b>{var}</b> некуда — этой переменной просто не осталось в формуле."
+    ]
+}
 
 
-def render_task_8(solution_core: Dict[str, Any]) -> str:
-    """Собирает HTML-строку по solution_core без наполнения текстом."""
+# ============================================================================
+# MAIN RENDERER
+# ============================================================================
+
+def humanize(solution_core: Dict[str, Any]) -> str:
+    """
+    Главная функция. Превращает solution_core в HTML.
+    """
     parts: List[str] = []
 
-    idea_text = str(solution_core.get("explanation_idea") or IDEA_PLACEHOLDER)
-    parts.append(_render_idea(idea_text))
+    # 1. Идея решения
+    idea_key = solution_core.get("explanation_idea_key")
+    idea_text = ""
+    if idea_key:
+        idea_text = IDEA_TEMPLATES.get(idea_key, IDEA_TEMPLATES["IDEA_GENERIC"])
+    else:
+        idea_text = str(solution_core.get("explanation_idea") or "")
 
+    if idea_text:
+        parts.append(f"💡 <b>Идея решения: </b>{idea_text}")
+        parts.append("")
+
+    # 2. Шаги
     steps = solution_core.get("calculation_steps") or []
-    parts.append(_render_steps(steps))
+    if steps:
+        parts.append("🪜 <b>Пошаговое решение</b>")
+        parts.append("")
+        for step in steps:
+            parts.append(_render_step(step))
+            parts.append("")
 
-    final_answer_value = str(
-        (solution_core.get("final_answer") or {}).get("value_display", "{{FINAL_ANSWER}}")
-    )
-    parts.append(_render_final_answer(final_answer_value))
+    # 3. Ответ
+    final_answer_val = str((solution_core.get("final_answer") or {}).get("value_display", ""))
+    if final_answer_val:
+        parts.append(f"🎯Ответ: <b>{final_answer_val}</b>")
+        parts.append("")
 
-    attention_items = _extract_list(solution_core.get("attention_tips"), ATTENTION_TIPS)
-    parts.append(_render_attention_block(attention_items))
+    # 4. Обрати внимание (Attention)
+    attention_key = solution_core.get("attention_tips_key")
+    attention_params = solution_core.get("attention_tips_params") or {}
+    attention_items = []
 
-    knowledge_items = _extract_list(solution_core.get("knowledge_tips"), KNOWLEDGE_TIPS)
-    parts.append(_render_knowledge_block(knowledge_items))
+    if attention_key:
+        raw_items = ATTENTION_TEMPLATES.get(attention_key, [])
+        # Форматируем параметры внутри строк (например, {var})
+        for item in raw_items:
+            try:
+                attention_items.append(item.format(**attention_params))
+            except KeyError:
+                attention_items.append(item)
+    else:
+        attention_items = _extract_list(solution_core.get("attention_tips"))
 
-    return "\n".join(parts)
+    if attention_items:
+        parts.append(_render_attention_block(attention_items))
+        parts.append("")
+
+    # 5. Полезно знать (Knowledge)
+    knowledge_key = solution_core.get("knowledge_tips_key")
+    knowledge_items = []
+
+    if knowledge_key:
+        knowledge_items = KNOWLEDGE_TEMPLATES.get(knowledge_key, [])
+    else:
+        knowledge_items = _extract_list(solution_core.get("knowledge_tips"))
+
+    if knowledge_items:
+        parts.append(_render_knowledge_block(knowledge_items))
+
+    return "\n".join(parts).strip()
 
 
-def _render_idea(idea_text: str) -> str:
-    return (
-        "💡 <b>Идея решения:</b>\n"
-        f"{idea_text}\n"
-    )
-
-
-def _render_steps(steps: Iterable[Dict[str, Any]]) -> str:
-    rendered: List[str] = []
-    rendered.append("🪜 <b>Пошаговое решение</b>")
-    for step in steps:
-        rendered.append(_render_step(step))
-    return "\n".join(rendered)
-
+# ============================================================================
+# HELPERS
+# ============================================================================
 
 def _render_step(step: Dict[str, Any]) -> str:
-    number = step.get("step_number", "{{STEP_NUMBER}}")
-    description = str(step.get("description") or "{{STEP_DESCRIPTION}}")
+    number = step.get("step_number", "")
+
+    desc_key = step.get("description_key")
+    params = step.get("description_params") or {}
+
+    description = ""
+    if desc_key and desc_key in STEP_TEMPLATES:
+        try:
+            description = STEP_TEMPLATES[desc_key].format(**params)
+        except KeyError as e:
+            description = f"{desc_key} (ошибка шаблона: {e})"
+    else:
+        description = str(step.get("description") or "")
+
     formula = step.get("formula_calculation")
 
     lines = [f"<b>Шаг {number}.</b> {description}"]
     if formula:
-        lines.append(f"➡️ <b>{formula}</b>")
+        if "\n" in formula:
+             f_lines = formula.split("\n")
+             for fl in f_lines:
+                 if fl.strip():
+                     lines.append(f"➡️ <b>{fl}</b>")
+        else:
+            lines.append(f"➡️ <b>{formula}</b>")
+
     return "\n".join(lines)
 
 
-def _render_final_answer(value_display: str) -> str:
-    return f"🎯Ответ: <b>{value_display}</b>"
-
-
 def _render_attention_block(tips: Iterable[str]) -> str:
-    lines = ["✨ <b>Обрати внимание:</b>"]
+    # В макете заголовок с эмодзи, но без жирного шрифта
+    lines = ["✨ Обрати внимание:"]
     for tip in tips:
+        # В макете без буллитов, просто текст с новой строки
         lines.append(str(tip))
     return "\n".join(lines)
 
 
 def _render_knowledge_block(tips: Iterable[str]) -> str:
-    lines = ["✨ <b>Полезно знать</b>", "<tg-spoiler>"]
+    lines = ["✨ Полезно знать", "<tg-spoiler>"]
     for tip in tips:
         lines.append(str(tip))
     lines.append("</tg-spoiler>")
     return "\n".join(lines)
 
 
-def _extract_list(value: Any, fallback: List[str]) -> List[str]:
+def _extract_list(value: Any) -> List[str]:
     if isinstance(value, list) and value:
-        return [str(item) for item in value]
-    return list(fallback)
+        return [str(item) for item in value if item]
+    return []

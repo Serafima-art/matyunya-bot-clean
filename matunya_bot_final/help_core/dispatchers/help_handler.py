@@ -32,7 +32,7 @@ HELP_ROUTERS = {
 
     # --- Будущие задания ---
     # 7:  "matunya_bot_final.help_core.dispatchers.task_7.help_handler_7.handle_task_7_help",
-    # 8:  "matunya_bot_final.help_core.dispatchers.task_8.help_handler_8.handle_task_8_help",
+     8:  "matunya_bot_final.help_core.dispatchers.task_8.help_handler_8.handle_task_8_help",
     # 9:  "matunya_bot_final.help_core.dispatchers.task_9.help_handler_9.handle_task_9_help",
     # 10: "matunya_bot_final.help_core.dispatchers.task_10.help_handler_10.handle_task_10_help",
     # 12: "matunya_bot_final.help_core.dispatchers.task_12.help_handler_12.handle_task_12_help",

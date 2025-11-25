@@ -214,7 +214,6 @@ numeric_power_fraction | 8⁴ · 8⁻¹ / 8⁰
 numeric_power_fraction | 10⁻⁵ · 10⁷ / 10²
 
 # ⭐ Форма C — Одинаковые основания в числителе и в знаменателе, в числителе степень в степени (aᵐ)ⁿ / aᵖ (Пример: (5²)⁻⁸ / 5⁻¹⁸)
-(aᵐ)ⁿ / aᵖ (Пример: (5²)⁻⁸ / 5⁻¹⁸)
 numeric_power_fraction | (5²)⁻⁸ / 5⁻¹⁸
 numeric_power_fraction | (3³)⁴ / 3¹¹
 numeric_power_fraction | (2⁻²)⁻⁵ / 2⁷
