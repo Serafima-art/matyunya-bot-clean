@@ -34,10 +34,16 @@ SUPERSCRIPT_MAP = {
 
 
 def normalize_superscripts(expr: str) -> str:
-    """Преобразует Unicode-степени (a², b³) в обычный текст (a2, b3)."""
+    """
+    Нормализует Unicode-степени (a³, b⁵, a¹⁷) в формат a^3.
+    '^' добавляется, если предыдущий символ — буква или ')'.
+    """
     result = []
-    for ch in expr:
+    for idx, ch in enumerate(expr):
         if ch in SUPERSCRIPT_MAP:
+            prev = expr[idx - 1] if idx > 0 else ""
+            if prev.isalpha() or prev == ")":
+                result.append("^")
             result.append(SUPERSCRIPT_MAP[ch])
         else:
             result.append(ch)
@@ -116,33 +122,47 @@ def parse_raw_line(raw_line: str) -> Optional[Tuple[str, str, Dict[str, float]]]
         return None
 
     # Парсим variables
-    variables = {}
+    variables: Dict[str, float] = {}
 
-    # Если строка переменных пустая, возвращаем пустой словарь
+    # Если строка переменных пустая → просто вернуть
     if not variables_str:
         return (solution_pattern, expression, variables)
 
-    # Разбиваем по запятой
+    # Разбиваем строку переменных по запятой
     var_parts = [part.strip() for part in variables_str.split(",")]
 
-    # Регулярное выражение для парсинга: одна латинская буква = число
-    # Поддерживаем отрицательные числа и десятичные дроби
-    var_pattern = re.compile(r'^([a-zA-Z])\s*=\s*(-?\d+(?:\.\d+)?)$')
+    # Паттерны:
+    # 1) a = 3
+    # 2) b = √2
+    num_pattern = re.compile(r'^([a-zA-Z])\s*=\s*(-?\d+(?:\.\d+)?)$')
+    sqrt_pattern = re.compile(r'^([a-zA-Z])\s*=\s*√\s*(-?\d+(?:\.\d+)?)$')
 
     for var_part in var_parts:
-        match = var_pattern.match(var_part)
-        if not match:
-            return None
 
-        var_name = match.group(1)
-        var_value_str = match.group(2)
+        # Вариант 1: обычное число
+        m = num_pattern.match(var_part)
+        if m:
+            var_name = m.group(1)
+            value_str = m.group(2)
+            variables[var_name] = float(value_str)
+            continue
 
-        try:
-            var_value = float(var_value_str)
-        except ValueError:
-            return None
+        # Вариант 2: число под корнем √N
+        m = sqrt_pattern.match(var_part)
+        if m:
+            var_name = m.group(1)
+            radicand_str = m.group(2)
+            try:
+                radicand = float(radicand_str)
+                if radicand < 0:
+                    return None
+                variables[var_name] = radicand ** 0.5
+            except ValueError:
+                return None
+            continue
 
-        variables[var_name] = var_value
+        # Ни один формат не подошёл → ошибка
+        return None
 
     return (solution_pattern, expression, variables)
 
@@ -328,14 +348,6 @@ class _Parser:
                     "kind": "power",
                     "base": base,
                     "exp": exp_node
-                }
-            elif self.current() and self.current()["type"] == "INT":
-                exp_value = int(self.current()["value"])
-                self.advance()
-                base = {
-                    "kind": "power",
-                    "base": base,
-                    "exp": {"kind": "integer", "value": exp_value}
                 }
             else:
                 break
@@ -632,15 +644,19 @@ def _eval_node(node: Dict[str, Any], variables: Dict[str, float]) -> Optional[Fr
     # sqrt
     if node_type == "sqrt":
         radicand = _eval_node(node["radicand"], variables)
-        if radicand is None:
-            return None
         if radicand < 0:
             return None
-        # Извлекаем корень ТОЛЬКО если числитель и знаменатель — идеальные квадраты
-        num = radicand.numerator
-        den = radicand.denominator
-        if not _is_perfect_square_int(abs(num)) or not _is_perfect_square_int(abs(den)):
+
+        num = abs(radicand.numerator)
+        den = abs(radicand.denominator)
+
+        if not _is_perfect_square_int(num) or not _is_perfect_square_int(den):
             return None
+
+        num_root = int(num ** 0.5)
+        den_root = int(den ** 0.5)
+
+        return Fraction(num_root, den_root)
         # Извлекаем корень из числителя и знаменателя
         num_root = int(abs(num) ** 0.5)
         if num < 0:
@@ -737,6 +753,150 @@ def compute_answer(expression_tree: Dict[str, Any], variables: Dict[str, float])
 
     return s
 
+def _eval_node_float(node: Dict[str, Any], variables: Dict[str, float]) -> Optional[float]:
+    """
+    Упрощённый численный eval для alg_radical_fraction.
+    Работает с float, разрешает любые радикалы, а уже потом
+    мы пытаемся восстановить рациональное значение через Fraction.
+    """
+    if not isinstance(node, dict) or "type" not in node:
+        return None
+
+    node_type = node["type"]
+
+    # integer
+    if node_type == "integer":
+        return float(node["value"])
+
+    # variable
+    if node_type == "variable":
+        name = node["name"]
+        if name not in variables:
+            return None
+        try:
+            return float(variables[name])
+        except (TypeError, ValueError):
+            return None
+
+    # power
+    if node_type == "power":
+        base_val = _eval_node_float(node["base"], variables)
+        exp_val = _eval_node_float(node["exp"], variables)
+        if base_val is None or exp_val is None:
+            return None
+        # показатель степени должен быть целым
+        if abs(exp_val - int(round(exp_val))) > 1e-9:
+            return None
+        try:
+            return base_val ** int(round(exp_val))
+        except (OverflowError, ValueError, ZeroDivisionError):
+            return None
+
+    # product
+    if node_type == "product":
+        result = 1.0
+        for factor in node["factors"]:
+            val = _eval_node_float(factor, variables)
+            if val is None:
+                return None
+            result *= val
+        return result
+
+    # fraction
+    if node_type == "fraction":
+        num = _eval_node_float(node["numerator"], variables)
+        den = _eval_node_float(node["denominator"], variables)
+        if num is None or den is None or abs(den) < 1e-15:
+            return None
+        try:
+            return num / den
+        except (OverflowError, ValueError, ZeroDivisionError):
+            return None
+
+    # sqrt
+    if node_type == "sqrt":
+        rad = _eval_node_float(node["radicand"], variables)
+        if rad is None or rad < 0:
+            return None
+        try:
+            return rad ** 0.5
+        except (OverflowError, ValueError):
+            return None
+
+    return None
+
+
+def _fraction_to_decimal_string(frac: Fraction) -> str:
+    """
+    Превращает Fraction с "правильным" знаменателем (только 2 и 5 в разложении)
+    в десятичную запись с запятой.
+    """
+    num = frac.numerator
+    den = frac.denominator
+
+    if den == 1:
+        return str(num)
+
+    # разложим знаменатель на 2 и 5
+    d = abs(den)
+    c2 = c5 = 0
+    while d % 2 == 0:
+        d //= 2
+        c2 += 1
+    while d % 5 == 0:
+        d //= 5
+        c5 += 1
+
+    k = max(c2, c5)
+    scale_2 = k - c2
+    scale_5 = k - c5
+
+    scaled_num = num * (2 ** scale_2) * (5 ** scale_5)
+    # знаменатель теперь ровно 10^k
+
+    sign = "-" if scaled_num < 0 else ""
+    s = str(abs(scaled_num))
+
+    if k > 0:
+        if len(s) <= k:
+            s = "0" * (k - len(s) + 1) + s
+        int_part = s[:-k]
+        frac_part = s[-k:]
+        s = int_part + "," + frac_part
+    # если запятая есть — срежем хвостовые нули
+    if "," in s:
+        s = s.rstrip("0").rstrip(",")
+
+    return sign + s
+
+
+def compute_answer_alg_radical_fraction(
+    expression_tree: Dict[str, Any],
+    variables: Dict[str, float]
+) -> Optional[str]:
+    """
+    Численно вычисляет ответ для alg_radical_fraction:
+    1) считаем всё в float, разрешая любые радикалы;
+    2) приближаем результат рациональной дробью;
+    3) убеждаемся, что знаменатель даёт конечную десятичную дробь;
+    4) форматируем ответ в строку с запятой.
+    """
+    value = _eval_node_float(expression_tree, variables)
+    if value is None:
+        return None
+
+    # восстанавливаем дробь из float
+    frac = Fraction(value).limit_denominator(10**6)
+
+    # проверяем, что Fraction действительно хорошо аппроксимирует исходное значение
+    if abs(float(frac) - value) > 1e-9:
+        return None
+
+    if not is_terminating_denominator(frac.denominator):
+        return None
+
+    return _fraction_to_decimal_string(frac)
+
 
 # ============================================================================
 # Вспомогательные функции для валидации
@@ -796,38 +956,72 @@ def _extract_numeric_coeff(tree: Dict[str, Any]) -> List[int]:
 
 def _extract_variable_powers(tree: Dict[str, Any]) -> Dict[str, int]:
     """
-    Извлекает степени переменных из дерева.
-    Возвращает словарь {variable_name: total_power}.
+    Извлекает степени переменных из поддерева.
+    Работает строго по математическим правилам:
+        - power: степень умножается: (b^7)^2 → 14
+        - product: степени складываются
+        - fraction: знаменатель вычитает степени
+        - sqrt: степени внутри делятся на 2 (только для анализа радикандов)
+    Возвращает dict вида {"a": total_power, "b": total_power}.
     """
-    result = {}
 
-    def _traverse(node: Dict[str, Any], multiplier: int = 1):
+    result: Dict[str, int] = {}
+
+    def add_power(var: str, power: int):
+        result[var] = result.get(var, 0) + power
+
+    def traverse(node: Dict[str, Any], multiplier: float = 1.0):
+        """
+        multiplier:
+            numerator = +1
+            denominator = -1
+            внутри sqrt → степень делится на 2
+        """
         if not isinstance(node, dict) or "type" not in node:
             return
 
         node_type = node["type"]
 
+        # variable
         if node_type == "variable":
-            var_name = node["name"]
-            result[var_name] = result.get(var_name, 0) + multiplier
-        elif node_type == "power":
-            # Извлекаем степень
-            if node["exp"]["type"] == "integer":
-                exp_value = node["exp"]["value"]
-                _traverse(node["base"], multiplier * exp_value)
-        elif node_type == "product":
-            for factor in node["factors"]:
-                _traverse(factor, multiplier)
-        elif node_type == "fraction":
-            _traverse(node["numerator"], multiplier)
-            _traverse(node["denominator"], -multiplier)  # В знаменателе вычитаем
-        elif node_type == "sqrt":
-            # Под корнем степени делятся на 2
-            # Но для валидации мы просто передаём multiplier дальше
-            # Проверку чётности делаем отдельно
-            _traverse(node["radicand"], multiplier)
+            add_power(node["name"], int(multiplier))
+            return
 
-    _traverse(tree)
+        # integer → нет переменной
+        if node_type == "integer":
+            return
+
+        # power
+        if node_type == "power":
+            # вычисляем exponent — он integer внутри дерева
+            if node["exp"]["type"] != "integer":
+                return  # такого не должно быть, но безопасно
+
+            exp_val = node["exp"]["value"]
+
+            # база может быть переменной, продуктом, дробью
+            # multiplier умножаем на exp_val
+            traverse(node["base"], multiplier * exp_val)
+            return
+
+        # product
+        if node_type == "product":
+            for factor in node["factors"]:
+                traverse(factor, multiplier)
+            return
+
+        # fraction (числитель +multiplier, знаменатель -multiplier)
+        if node_type == "fraction":
+            traverse(node["numerator"], multiplier)
+            traverse(node["denominator"], -multiplier)
+            return
+
+        # sqrt — степень внутри делится на 2
+        if node_type == "sqrt":
+            traverse(node["radicand"], multiplier * 0.5)
+            return
+
+    traverse(tree)
     return result
 
 
@@ -1017,7 +1211,37 @@ def _validate_alg_power_fraction_rules(
         if abs(exp_value) > 30:
             return False
 
-    # 6. После вычисления результата дробь должна быть конечной
+    # ----------------------------------------------------------
+    # Разрешаем вложенную степень вида (b^n)^r в alg_power_fraction
+    # ----------------------------------------------------------
+    for power_node in all_powers:
+        base = power_node.get("base", {})
+
+        # Случай: степень применяется к степенному выражению
+        # Например: (b^7)^2
+        if isinstance(base, dict) and base.get("type") == "power":
+
+            inner_base = base["base"]
+            inner_exp = base["exp"]
+
+            # Разрешаем только:
+            # 1) база — переменная b
+            # 2) внутренняя степень — integer
+            # 3) внешняя степень — integer
+            if (
+                isinstance(inner_base, dict)
+                and inner_base.get("type") == "variable"
+                and inner_base.get("name") == "b"
+                and isinstance(inner_exp, dict)
+                and inner_exp.get("type") == "integer"
+                and power_node["exp"].get("type") == "integer"
+            ):
+                continue  # всё хорошо
+
+            # Если вложенная степень есть, но это не (b^n)^r → БРАК
+            return False
+
+    # 6. Проверяем, что ответ конечный и корректный
     answer = compute_answer(expression_tree, variables)
     if answer is None:
         return False
@@ -1153,11 +1377,9 @@ def _validate_alg_radical_fraction_rules(
         if not has_perfect_square:
             return False
 
-    # 4. Подставленный ответ должен быть конечной дробью
-    answer = compute_answer(expression_tree, variables)
-    if answer is None:
-        return False
-
+    # На этом этапе мы проверили только "структуру" подкоренных выражений.
+    # Само численное вычисление ответа для alg_radical_fraction
+    # выполняется отдельной функцией compute_answer_alg_radical_fraction.
     return True
 
 
@@ -1292,13 +1514,6 @@ def _validate_alg_radical_fraction(
     Примеры:
         ( √(25a) · √(4b³) ) / √(ab)
         √(ab) / (√(9a²) · √(16b))
-
-    Args:
-        expression: Строка с выражением
-        variables: Словарь переменных
-
-    Returns:
-        JSON-объект или None
     """
     # Парсинг выражения
     ast = parse_expression(expression, "alg_radical_fraction")
@@ -1310,12 +1525,12 @@ def _validate_alg_radical_fraction(
     if expression_tree is None:
         return None
 
-    # Валидация правил
+    # Валидация правил структуры
     if not run_validation_rules(expression_tree, "alg_radical_fraction", variables):
         return None
 
-    # Вычисление ответа
-    answer = compute_answer(expression_tree, variables)
+    # Численное вычисление ответа по спец-правилам для радикальной дроби
+    answer = compute_answer_alg_radical_fraction(expression_tree, variables)
     if answer is None:
         return None
 
