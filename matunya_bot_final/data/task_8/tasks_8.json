@@ -1,0 +1,2964 @@
+[
+    {
+        "id": "8_alg_power_fraction_uckn2y",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_power_fraction",
+        "expression_tree": {
+            "type": "fraction",
+            "numerator": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 29
+                        }
+                    },
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "power",
+                            "base": {
+                                "type": "variable",
+                                "name": "b"
+                            },
+                            "exp": {
+                                "type": "integer",
+                                "value": 3
+                            }
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 9
+                        }
+                    }
+                ]
+            },
+            "denominator": {
+                "type": "power",
+                "base": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "b"
+                        }
+                    ]
+                },
+                "exp": {
+                    "type": "integer",
+                    "value": 27
+                }
+            }
+        },
+        "variables": {
+            "a": 11.0,
+            "b": 15.0
+        },
+        "answer": "121",
+        "meta": {
+            "pattern_id": "alg_power_fraction"
+        }
+    },
+    {
+        "id": "8_alg_power_fraction_xru5vz",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_power_fraction",
+        "expression_tree": {
+            "type": "fraction",
+            "numerator": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 15
+                        }
+                    },
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "power",
+                            "base": {
+                                "type": "variable",
+                                "name": "b"
+                            },
+                            "exp": {
+                                "type": "integer",
+                                "value": 4
+                            }
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 4
+                        }
+                    }
+                ]
+            },
+            "denominator": {
+                "type": "power",
+                "base": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "b"
+                        }
+                    ]
+                },
+                "exp": {
+                    "type": "integer",
+                    "value": 16
+                }
+            }
+        },
+        "variables": {
+            "a": 10.0,
+            "b": 5.0
+        },
+        "answer": "0,1",
+        "meta": {
+            "pattern_id": "alg_power_fraction"
+        }
+    },
+    {
+        "id": "8_alg_power_fraction_x0ojdz",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_power_fraction",
+        "expression_tree": {
+            "type": "fraction",
+            "numerator": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 16
+                        }
+                    },
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "power",
+                            "base": {
+                                "type": "variable",
+                                "name": "b"
+                            },
+                            "exp": {
+                                "type": "integer",
+                                "value": 3
+                            }
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 6
+                        }
+                    }
+                ]
+            },
+            "denominator": {
+                "type": "power",
+                "base": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "b"
+                        }
+                    ]
+                },
+                "exp": {
+                    "type": "integer",
+                    "value": 16
+                }
+            }
+        },
+        "variables": {
+            "a": 2.0,
+            "b": 1.7320508075688772
+        },
+        "answer": "2,9999999999999996",
+        "meta": {
+            "pattern_id": "alg_power_fraction"
+        }
+    },
+    {
+        "id": "8_alg_power_fraction_2tzdhv",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_power_fraction",
+        "expression_tree": {
+            "type": "fraction",
+            "numerator": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 19
+                        }
+                    },
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "power",
+                            "base": {
+                                "type": "variable",
+                                "name": "b"
+                            },
+                            "exp": {
+                                "type": "integer",
+                                "value": 4
+                            }
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 5
+                        }
+                    }
+                ]
+            },
+            "denominator": {
+                "type": "power",
+                "base": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "b"
+                        }
+                    ]
+                },
+                "exp": {
+                    "type": "integer",
+                    "value": 20
+                }
+            }
+        },
+        "variables": {
+            "a": 8.0,
+            "b": 2.0
+        },
+        "answer": "0,125",
+        "meta": {
+            "pattern_id": "alg_power_fraction"
+        }
+    },
+    {
+        "id": "8_alg_power_fraction_uli0hl",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_power_fraction",
+        "expression_tree": {
+            "type": "fraction",
+            "numerator": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 17
+                        }
+                    },
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "power",
+                            "base": {
+                                "type": "variable",
+                                "name": "b"
+                            },
+                            "exp": {
+                                "type": "integer",
+                                "value": 3
+                            }
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 6
+                        }
+                    }
+                ]
+            },
+            "denominator": {
+                "type": "power",
+                "base": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "b"
+                        }
+                    ]
+                },
+                "exp": {
+                    "type": "integer",
+                    "value": 18
+                }
+            }
+        },
+        "variables": {
+            "a": 10.0,
+            "b": 1.4142135623730951
+        },
+        "answer": "0,1",
+        "meta": {
+            "pattern_id": "alg_power_fraction"
+        }
+    },
+    {
+        "id": "8_alg_power_fraction_rmekfv",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_power_fraction",
+        "expression_tree": {
+            "type": "fraction",
+            "numerator": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 20
+                        }
+                    },
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "power",
+                            "base": {
+                                "type": "variable",
+                                "name": "b"
+                            },
+                            "exp": {
+                                "type": "integer",
+                                "value": 4
+                            }
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 5
+                        }
+                    }
+                ]
+            },
+            "denominator": {
+                "type": "power",
+                "base": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "b"
+                        }
+                    ]
+                },
+                "exp": {
+                    "type": "integer",
+                    "value": 18
+                }
+            }
+        },
+        "variables": {
+            "a": 3.0,
+            "b": 5.0
+        },
+        "answer": "225",
+        "meta": {
+            "pattern_id": "alg_power_fraction"
+        }
+    },
+    {
+        "id": "8_alg_power_fraction_32e9k6",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_power_fraction",
+        "expression_tree": {
+            "type": "fraction",
+            "numerator": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 18
+                        }
+                    },
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "power",
+                            "base": {
+                                "type": "variable",
+                                "name": "b"
+                            },
+                            "exp": {
+                                "type": "integer",
+                                "value": 2
+                            }
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 7
+                        }
+                    }
+                ]
+            },
+            "denominator": {
+                "type": "power",
+                "base": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "b"
+                        }
+                    ]
+                },
+                "exp": {
+                    "type": "integer",
+                    "value": 14
+                }
+            }
+        },
+        "variables": {
+            "a": 5.0,
+            "b": 3.1622776601683795
+        },
+        "answer": "625",
+        "meta": {
+            "pattern_id": "alg_power_fraction"
+        }
+    },
+    {
+        "id": "8_alg_power_fraction_26wctv",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_power_fraction",
+        "expression_tree": {
+            "type": "fraction",
+            "numerator": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 20
+                        }
+                    },
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "power",
+                            "base": {
+                                "type": "variable",
+                                "name": "b"
+                            },
+                            "exp": {
+                                "type": "integer",
+                                "value": 6
+                            }
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 4
+                        }
+                    }
+                ]
+            },
+            "denominator": {
+                "type": "power",
+                "base": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "b"
+                        }
+                    ]
+                },
+                "exp": {
+                    "type": "integer",
+                    "value": 23
+                }
+            }
+        },
+        "variables": {
+            "a": 2.0,
+            "b": 4.0
+        },
+        "answer": "0,5",
+        "meta": {
+            "pattern_id": "alg_power_fraction"
+        }
+    },
+    {
+        "id": "8_alg_power_fraction_kmn7rr",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_power_fraction",
+        "expression_tree": {
+            "type": "fraction",
+            "numerator": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 14
+                        }
+                    },
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "power",
+                            "base": {
+                                "type": "variable",
+                                "name": "b"
+                            },
+                            "exp": {
+                                "type": "integer",
+                                "value": 2
+                            }
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 7
+                        }
+                    }
+                ]
+            },
+            "denominator": {
+                "type": "power",
+                "base": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "b"
+                        }
+                    ]
+                },
+                "exp": {
+                    "type": "integer",
+                    "value": 14
+                }
+            }
+        },
+        "variables": {
+            "a": 5.0,
+            "b": 2.0
+        },
+        "answer": "1",
+        "meta": {
+            "pattern_id": "alg_power_fraction"
+        }
+    },
+    {
+        "id": "8_alg_power_fraction_6tp8e7",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_power_fraction",
+        "expression_tree": {
+            "type": "fraction",
+            "numerator": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 18
+                        }
+                    },
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "power",
+                            "base": {
+                                "type": "variable",
+                                "name": "b"
+                            },
+                            "exp": {
+                                "type": "integer",
+                                "value": 3
+                            }
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 5
+                        }
+                    }
+                ]
+            },
+            "denominator": {
+                "type": "power",
+                "base": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "b"
+                        }
+                    ]
+                },
+                "exp": {
+                    "type": "integer",
+                    "value": 13
+                }
+            }
+        },
+        "variables": {
+            "a": 2.0,
+            "b": 2.23606797749979
+        },
+        "answer": "160,00000000000003",
+        "meta": {
+            "pattern_id": "alg_power_fraction"
+        }
+    },
+    {
+        "id": "8_alg_radical_power_uz4cz5",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_power",
+        "expression_tree": {
+            "type": "sqrt",
+            "radicand": {
+                "type": "fraction",
+                "numerator": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "integer",
+                            "value": 64
+                        },
+                        {
+                            "type": "power",
+                            "base": {
+                                "type": "variable",
+                                "name": "a"
+                            },
+                            "exp": {
+                                "type": "integer",
+                                "value": 20
+                            }
+                        }
+                    ]
+                },
+                "denominator": {
+                    "type": "power",
+                    "base": {
+                        "type": "variable",
+                        "name": "a"
+                    },
+                    "exp": {
+                        "type": "integer",
+                        "value": 18
+                    }
+                }
+            }
+        },
+        "variables": {
+            "a": 3.0
+        },
+        "answer": "24",
+        "meta": {
+            "pattern_id": "alg_radical_power"
+        }
+    },
+    {
+        "id": "8_alg_radical_power_zkc4dp",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_power",
+        "expression_tree": {
+            "type": "sqrt",
+            "radicand": {
+                "type": "fraction",
+                "numerator": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "integer",
+                            "value": 25
+                        },
+                        {
+                            "type": "power",
+                            "base": {
+                                "type": "variable",
+                                "name": "a"
+                            },
+                            "exp": {
+                                "type": "integer",
+                                "value": 15
+                            }
+                        }
+                    ]
+                },
+                "denominator": {
+                    "type": "power",
+                    "base": {
+                        "type": "variable",
+                        "name": "a"
+                    },
+                    "exp": {
+                        "type": "integer",
+                        "value": 13
+                    }
+                }
+            }
+        },
+        "variables": {
+            "a": 7.0
+        },
+        "answer": "35",
+        "meta": {
+            "pattern_id": "alg_radical_power"
+        }
+    },
+    {
+        "id": "8_alg_radical_power_5onenj",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_power",
+        "expression_tree": {
+            "type": "sqrt",
+            "radicand": {
+                "type": "fraction",
+                "numerator": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "integer",
+                            "value": 81
+                        },
+                        {
+                            "type": "power",
+                            "base": {
+                                "type": "variable",
+                                "name": "a"
+                            },
+                            "exp": {
+                                "type": "integer",
+                                "value": 12
+                            }
+                        }
+                    ]
+                },
+                "denominator": {
+                    "type": "power",
+                    "base": {
+                        "type": "variable",
+                        "name": "a"
+                    },
+                    "exp": {
+                        "type": "integer",
+                        "value": 10
+                    }
+                }
+            }
+        },
+        "variables": {
+            "a": 5.0
+        },
+        "answer": "45",
+        "meta": {
+            "pattern_id": "alg_radical_power"
+        }
+    },
+    {
+        "id": "8_alg_radical_power_jb5tbk",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_power",
+        "expression_tree": {
+            "type": "sqrt",
+            "radicand": {
+                "type": "fraction",
+                "numerator": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "integer",
+                            "value": 16
+                        },
+                        {
+                            "type": "power",
+                            "base": {
+                                "type": "variable",
+                                "name": "a"
+                            },
+                            "exp": {
+                                "type": "integer",
+                                "value": 25
+                            }
+                        }
+                    ]
+                },
+                "denominator": {
+                    "type": "power",
+                    "base": {
+                        "type": "variable",
+                        "name": "a"
+                    },
+                    "exp": {
+                        "type": "integer",
+                        "value": 23
+                    }
+                }
+            }
+        },
+        "variables": {
+            "a": 10.0
+        },
+        "answer": "40",
+        "meta": {
+            "pattern_id": "alg_radical_power"
+        }
+    },
+    {
+        "id": "8_alg_radical_power_pavky2",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_power",
+        "expression_tree": {
+            "type": "sqrt",
+            "radicand": {
+                "type": "fraction",
+                "numerator": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "integer",
+                            "value": 49
+                        },
+                        {
+                            "type": "power",
+                            "base": {
+                                "type": "variable",
+                                "name": "a"
+                            },
+                            "exp": {
+                                "type": "integer",
+                                "value": 30
+                            }
+                        }
+                    ]
+                },
+                "denominator": {
+                    "type": "power",
+                    "base": {
+                        "type": "variable",
+                        "name": "a"
+                    },
+                    "exp": {
+                        "type": "integer",
+                        "value": 28
+                    }
+                }
+            }
+        },
+        "variables": {
+            "a": 2.0
+        },
+        "answer": "14",
+        "meta": {
+            "pattern_id": "alg_radical_power"
+        }
+    },
+    {
+        "id": "8_alg_radical_power_0yv437",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_power",
+        "expression_tree": {
+            "type": "sqrt",
+            "radicand": {
+                "type": "fraction",
+                "numerator": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "integer",
+                            "value": 36
+                        },
+                        {
+                            "type": "power",
+                            "base": {
+                                "type": "variable",
+                                "name": "a"
+                            },
+                            "exp": {
+                                "type": "integer",
+                                "value": 18
+                            }
+                        }
+                    ]
+                },
+                "denominator": {
+                    "type": "power",
+                    "base": {
+                        "type": "variable",
+                        "name": "a"
+                    },
+                    "exp": {
+                        "type": "integer",
+                        "value": 16
+                    }
+                }
+            }
+        },
+        "variables": {
+            "a": 4.0
+        },
+        "answer": "24",
+        "meta": {
+            "pattern_id": "alg_radical_power"
+        }
+    },
+    {
+        "id": "8_alg_radical_power_d7h5wv",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_power",
+        "expression_tree": {
+            "type": "sqrt",
+            "radicand": {
+                "type": "fraction",
+                "numerator": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "integer",
+                            "value": 100
+                        },
+                        {
+                            "type": "power",
+                            "base": {
+                                "type": "variable",
+                                "name": "a"
+                            },
+                            "exp": {
+                                "type": "integer",
+                                "value": 11
+                            }
+                        }
+                    ]
+                },
+                "denominator": {
+                    "type": "power",
+                    "base": {
+                        "type": "variable",
+                        "name": "a"
+                    },
+                    "exp": {
+                        "type": "integer",
+                        "value": 9
+                    }
+                }
+            }
+        },
+        "variables": {
+            "a": 0.5
+        },
+        "answer": "5",
+        "meta": {
+            "pattern_id": "alg_radical_power"
+        }
+    },
+    {
+        "id": "8_alg_radical_power_6uvtzz",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_power",
+        "expression_tree": {
+            "type": "sqrt",
+            "radicand": {
+                "type": "fraction",
+                "numerator": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "integer",
+                            "value": 64
+                        },
+                        {
+                            "type": "power",
+                            "base": {
+                                "type": "variable",
+                                "name": "a"
+                            },
+                            "exp": {
+                                "type": "integer",
+                                "value": 17
+                            }
+                        }
+                    ]
+                },
+                "denominator": {
+                    "type": "power",
+                    "base": {
+                        "type": "variable",
+                        "name": "a"
+                    },
+                    "exp": {
+                        "type": "integer",
+                        "value": 15
+                    }
+                }
+            }
+        },
+        "variables": {
+            "a": 0.2
+        },
+        "answer": "1,6",
+        "meta": {
+            "pattern_id": "alg_radical_power"
+        }
+    },
+    {
+        "id": "8_alg_radical_power_2azwxo",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_power",
+        "expression_tree": {
+            "type": "sqrt",
+            "radicand": {
+                "type": "fraction",
+                "numerator": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "integer",
+                            "value": 81
+                        },
+                        {
+                            "type": "power",
+                            "base": {
+                                "type": "variable",
+                                "name": "a"
+                            },
+                            "exp": {
+                                "type": "integer",
+                                "value": 24
+                            }
+                        }
+                    ]
+                },
+                "denominator": {
+                    "type": "power",
+                    "base": {
+                        "type": "variable",
+                        "name": "a"
+                    },
+                    "exp": {
+                        "type": "integer",
+                        "value": 22
+                    }
+                }
+            }
+        },
+        "variables": {
+            "a": 3.0
+        },
+        "answer": "27",
+        "meta": {
+            "pattern_id": "alg_radical_power"
+        }
+    },
+    {
+        "id": "8_alg_radical_power_xww0xr",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_power",
+        "expression_tree": {
+            "type": "sqrt",
+            "radicand": {
+                "type": "fraction",
+                "numerator": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "integer",
+                            "value": 16
+                        },
+                        {
+                            "type": "power",
+                            "base": {
+                                "type": "variable",
+                                "name": "a"
+                            },
+                            "exp": {
+                                "type": "integer",
+                                "value": 16
+                            }
+                        }
+                    ]
+                },
+                "denominator": {
+                    "type": "power",
+                    "base": {
+                        "type": "variable",
+                        "name": "a"
+                    },
+                    "exp": {
+                        "type": "integer",
+                        "value": 14
+                    }
+                }
+            }
+        },
+        "variables": {
+            "a": 6.0
+        },
+        "answer": "24",
+        "meta": {
+            "pattern_id": "alg_radical_power"
+        }
+    },
+    {
+        "id": "8_alg_radical_power_58l7uo",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_power",
+        "expression_tree": {
+            "type": "sqrt",
+            "radicand": {
+                "type": "fraction",
+                "numerator": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "integer",
+                            "value": 36
+                        },
+                        {
+                            "type": "power",
+                            "base": {
+                                "type": "variable",
+                                "name": "a"
+                            },
+                            "exp": {
+                                "type": "integer",
+                                "value": 22
+                            }
+                        }
+                    ]
+                },
+                "denominator": {
+                    "type": "power",
+                    "base": {
+                        "type": "variable",
+                        "name": "a"
+                    },
+                    "exp": {
+                        "type": "integer",
+                        "value": 20
+                    }
+                }
+            }
+        },
+        "variables": {
+            "a": 9.0
+        },
+        "answer": "54",
+        "meta": {
+            "pattern_id": "alg_radical_power"
+        }
+    },
+    {
+        "id": "8_alg_radical_power_hi25z3",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_power",
+        "expression_tree": {
+            "type": "sqrt",
+            "radicand": {
+                "type": "fraction",
+                "numerator": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "integer",
+                            "value": 25
+                        },
+                        {
+                            "type": "power",
+                            "base": {
+                                "type": "variable",
+                                "name": "a"
+                            },
+                            "exp": {
+                                "type": "integer",
+                                "value": 9
+                            }
+                        }
+                    ]
+                },
+                "denominator": {
+                    "type": "power",
+                    "base": {
+                        "type": "variable",
+                        "name": "a"
+                    },
+                    "exp": {
+                        "type": "integer",
+                        "value": 7
+                    }
+                }
+            }
+        },
+        "variables": {
+            "a": 2.0
+        },
+        "answer": "10",
+        "meta": {
+            "pattern_id": "alg_radical_power"
+        }
+    },
+    {
+        "id": "8_alg_radical_power_wgq0og",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_power",
+        "expression_tree": {
+            "type": "sqrt",
+            "radicand": {
+                "type": "fraction",
+                "numerator": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "integer",
+                            "value": 49
+                        },
+                        {
+                            "type": "power",
+                            "base": {
+                                "type": "variable",
+                                "name": "a"
+                            },
+                            "exp": {
+                                "type": "integer",
+                                "value": 13
+                            }
+                        }
+                    ]
+                },
+                "denominator": {
+                    "type": "power",
+                    "base": {
+                        "type": "variable",
+                        "name": "a"
+                    },
+                    "exp": {
+                        "type": "integer",
+                        "value": 11
+                    }
+                }
+            }
+        },
+        "variables": {
+            "a": 3.0
+        },
+        "answer": "21",
+        "meta": {
+            "pattern_id": "alg_radical_power"
+        }
+    },
+    {
+        "id": "8_alg_radical_power_zgkisx",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_power",
+        "expression_tree": {
+            "type": "sqrt",
+            "radicand": {
+                "type": "fraction",
+                "numerator": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "integer",
+                            "value": 100
+                        },
+                        {
+                            "type": "power",
+                            "base": {
+                                "type": "variable",
+                                "name": "a"
+                            },
+                            "exp": {
+                                "type": "integer",
+                                "value": 19
+                            }
+                        }
+                    ]
+                },
+                "denominator": {
+                    "type": "power",
+                    "base": {
+                        "type": "variable",
+                        "name": "a"
+                    },
+                    "exp": {
+                        "type": "integer",
+                        "value": 17
+                    }
+                }
+            }
+        },
+        "variables": {
+            "a": 4.0
+        },
+        "answer": "40",
+        "meta": {
+            "pattern_id": "alg_radical_power"
+        }
+    },
+    {
+        "id": "8_alg_radical_power_dlu9yj",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_power",
+        "expression_tree": {
+            "type": "sqrt",
+            "radicand": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "integer",
+                        "value": 25
+                    },
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 2
+                        }
+                    }
+                ]
+            }
+        },
+        "variables": {
+            "a": 3.0
+        },
+        "answer": "15",
+        "meta": {
+            "pattern_id": "alg_radical_power"
+        }
+    },
+    {
+        "id": "8_alg_radical_power_qc9dcb",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_power",
+        "expression_tree": {
+            "type": "sqrt",
+            "radicand": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "integer",
+                        "value": 4
+                    },
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 4
+                        }
+                    }
+                ]
+            }
+        },
+        "variables": {
+            "a": 5.0
+        },
+        "answer": "50",
+        "meta": {
+            "pattern_id": "alg_radical_power"
+        }
+    },
+    {
+        "id": "8_alg_radical_power_xwqsyb",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_power",
+        "expression_tree": {
+            "type": "sqrt",
+            "radicand": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "integer",
+                        "value": 64
+                    },
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 6
+                        }
+                    }
+                ]
+            }
+        },
+        "variables": {
+            "a": 2.0
+        },
+        "answer": "64",
+        "meta": {
+            "pattern_id": "alg_radical_power"
+        }
+    },
+    {
+        "id": "8_alg_radical_power_ghd4em",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_power",
+        "expression_tree": {
+            "type": "sqrt",
+            "radicand": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "integer",
+                        "value": 81
+                    },
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 12
+                        }
+                    }
+                ]
+            }
+        },
+        "variables": {
+            "a": 1.0
+        },
+        "answer": "9",
+        "meta": {
+            "pattern_id": "alg_radical_power"
+        }
+    },
+    {
+        "id": "8_alg_radical_power_odxjjy",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_power",
+        "expression_tree": {
+            "type": "sqrt",
+            "radicand": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "integer",
+                        "value": 36
+                    },
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 2
+                        }
+                    }
+                ]
+            }
+        },
+        "variables": {
+            "a": 1.5
+        },
+        "answer": "9",
+        "meta": {
+            "pattern_id": "alg_radical_power"
+        }
+    },
+    {
+        "id": "8_alg_radical_power_byn83j",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_power",
+        "expression_tree": {
+            "type": "sqrt",
+            "radicand": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "integer",
+                        "value": 9
+                    },
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 4
+                        }
+                    }
+                ]
+            }
+        },
+        "variables": {
+            "a": 10.0
+        },
+        "answer": "300",
+        "meta": {
+            "pattern_id": "alg_radical_power"
+        }
+    },
+    {
+        "id": "8_alg_radical_power_epu0hr",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_power",
+        "expression_tree": {
+            "type": "sqrt",
+            "radicand": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "integer",
+                        "value": 100
+                    },
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 6
+                        }
+                    }
+                ]
+            }
+        },
+        "variables": {
+            "a": 3.0
+        },
+        "answer": "270",
+        "meta": {
+            "pattern_id": "alg_radical_power"
+        }
+    },
+    {
+        "id": "8_alg_radical_power_dln30e",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_power",
+        "expression_tree": {
+            "type": "sqrt",
+            "radicand": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": -1
+                                },
+                                {
+                                    "type": "variable",
+                                    "name": "a"
+                                }
+                            ]
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 2
+                        }
+                    },
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 4
+                        }
+                    }
+                ]
+            }
+        },
+        "variables": {
+            "a": 3.0
+        },
+        "answer": "27",
+        "meta": {
+            "pattern_id": "alg_radical_power"
+        }
+    },
+    {
+        "id": "8_alg_radical_power_w9gmvk",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_power",
+        "expression_tree": {
+            "type": "sqrt",
+            "radicand": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": -1
+                                },
+                                {
+                                    "type": "variable",
+                                    "name": "a"
+                                }
+                            ]
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 4
+                        }
+                    },
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 8
+                        }
+                    }
+                ]
+            }
+        },
+        "variables": {
+            "a": 2.0
+        },
+        "answer": "64",
+        "meta": {
+            "pattern_id": "alg_radical_power"
+        }
+    },
+    {
+        "id": "8_alg_radical_power_lbju8r",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_power",
+        "expression_tree": {
+            "type": "sqrt",
+            "radicand": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": -1
+                                },
+                                {
+                                    "type": "variable",
+                                    "name": "a"
+                                }
+                            ]
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 4
+                        }
+                    },
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 4
+                        }
+                    }
+                ]
+            }
+        },
+        "variables": {
+            "a": 3.0
+        },
+        "answer": "81",
+        "meta": {
+            "pattern_id": "alg_radical_power"
+        }
+    },
+    {
+        "id": "8_alg_radical_power_3662oa",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_power",
+        "expression_tree": {
+            "type": "sqrt",
+            "radicand": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": -1
+                                },
+                                {
+                                    "type": "variable",
+                                    "name": "a"
+                                }
+                            ]
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 4
+                        }
+                    },
+                    {
+                        "type": "power",
+                        "base": {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        "exp": {
+                            "type": "integer",
+                            "value": 10
+                        }
+                    }
+                ]
+            }
+        },
+        "variables": {
+            "a": 2.0
+        },
+        "answer": "128",
+        "meta": {
+            "pattern_id": "alg_radical_power"
+        }
+    },
+    {
+        "id": "8_alg_radical_fraction_r4x9yq",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_fraction",
+        "expression_tree": {
+            "type": "fraction",
+            "numerator": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "sqrt",
+                        "radicand": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": 25
+                                },
+                                {
+                                    "type": "power",
+                                    "base": {
+                                        "type": "variable",
+                                        "name": "a"
+                                    },
+                                    "exp": {
+                                        "type": "integer",
+                                        "value": 3
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "sqrt",
+                        "radicand": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": 4
+                                },
+                                {
+                                    "type": "power",
+                                    "base": {
+                                        "type": "variable",
+                                        "name": "b"
+                                    },
+                                    "exp": {
+                                        "type": "integer",
+                                        "value": 5
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "denominator": {
+                "type": "sqrt",
+                "radicand": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "b"
+                        }
+                    ]
+                }
+            }
+        },
+        "variables": {
+            "a": 2.0,
+            "b": 3.0
+        },
+        "answer": "180",
+        "meta": {
+            "pattern_id": "alg_radical_fraction"
+        }
+    },
+    {
+        "id": "8_alg_radical_fraction_hhv81n",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_fraction",
+        "expression_tree": {
+            "type": "fraction",
+            "numerator": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "sqrt",
+                        "radicand": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": 9
+                                },
+                                {
+                                    "type": "power",
+                                    "base": {
+                                        "type": "variable",
+                                        "name": "a"
+                                    },
+                                    "exp": {
+                                        "type": "integer",
+                                        "value": 5
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "sqrt",
+                        "radicand": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": 16
+                                },
+                                {
+                                    "type": "power",
+                                    "base": {
+                                        "type": "variable",
+                                        "name": "b"
+                                    },
+                                    "exp": {
+                                        "type": "integer",
+                                        "value": 3
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "denominator": {
+                "type": "sqrt",
+                "radicand": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "b"
+                        }
+                    ]
+                }
+            }
+        },
+        "variables": {
+            "a": 4.0,
+            "b": 5.0
+        },
+        "answer": "960",
+        "meta": {
+            "pattern_id": "alg_radical_fraction"
+        }
+    },
+    {
+        "id": "8_alg_radical_fraction_me9kha",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_fraction",
+        "expression_tree": {
+            "type": "fraction",
+            "numerator": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "sqrt",
+                        "radicand": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": 4
+                                },
+                                {
+                                    "type": "power",
+                                    "base": {
+                                        "type": "variable",
+                                        "name": "a"
+                                    },
+                                    "exp": {
+                                        "type": "integer",
+                                        "value": 7
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "sqrt",
+                        "radicand": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": 49
+                                },
+                                {
+                                    "type": "power",
+                                    "base": {
+                                        "type": "variable",
+                                        "name": "b"
+                                    },
+                                    "exp": {
+                                        "type": "integer",
+                                        "value": 5
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "denominator": {
+                "type": "sqrt",
+                "radicand": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "b"
+                        }
+                    ]
+                }
+            }
+        },
+        "variables": {
+            "a": 1.0,
+            "b": 2.0
+        },
+        "answer": "56",
+        "meta": {
+            "pattern_id": "alg_radical_fraction"
+        }
+    },
+    {
+        "id": "8_alg_radical_fraction_sg8u9h",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_fraction",
+        "expression_tree": {
+            "type": "fraction",
+            "numerator": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "sqrt",
+                        "radicand": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": 16
+                                },
+                                {
+                                    "type": "power",
+                                    "base": {
+                                        "type": "variable",
+                                        "name": "a"
+                                    },
+                                    "exp": {
+                                        "type": "integer",
+                                        "value": 11
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "sqrt",
+                        "radicand": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": 9
+                                },
+                                {
+                                    "type": "power",
+                                    "base": {
+                                        "type": "variable",
+                                        "name": "b"
+                                    },
+                                    "exp": {
+                                        "type": "integer",
+                                        "value": 3
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "denominator": {
+                "type": "sqrt",
+                "radicand": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "b"
+                        }
+                    ]
+                }
+            }
+        },
+        "variables": {
+            "a": 1.0,
+            "b": 4.0
+        },
+        "answer": "48",
+        "meta": {
+            "pattern_id": "alg_radical_fraction"
+        }
+    },
+    {
+        "id": "8_alg_radical_fraction_r6280k",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_fraction",
+        "expression_tree": {
+            "type": "fraction",
+            "numerator": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "sqrt",
+                        "radicand": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": 64
+                                },
+                                {
+                                    "type": "power",
+                                    "base": {
+                                        "type": "variable",
+                                        "name": "a"
+                                    },
+                                    "exp": {
+                                        "type": "integer",
+                                        "value": 9
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "sqrt",
+                        "radicand": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": 4
+                                },
+                                {
+                                    "type": "power",
+                                    "base": {
+                                        "type": "variable",
+                                        "name": "b"
+                                    },
+                                    "exp": {
+                                        "type": "integer",
+                                        "value": 3
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "denominator": {
+                "type": "sqrt",
+                "radicand": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "b"
+                        }
+                    ]
+                }
+            }
+        },
+        "variables": {
+            "a": 2.0,
+            "b": 1.0
+        },
+        "answer": "256",
+        "meta": {
+            "pattern_id": "alg_radical_fraction"
+        }
+    },
+    {
+        "id": "8_alg_radical_fraction_6252cj",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_fraction",
+        "expression_tree": {
+            "type": "fraction",
+            "numerator": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "sqrt",
+                        "radicand": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": 25
+                                },
+                                {
+                                    "type": "power",
+                                    "base": {
+                                        "type": "variable",
+                                        "name": "a"
+                                    },
+                                    "exp": {
+                                        "type": "integer",
+                                        "value": 13
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "sqrt",
+                        "radicand": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": 9
+                                },
+                                {
+                                    "type": "power",
+                                    "base": {
+                                        "type": "variable",
+                                        "name": "b"
+                                    },
+                                    "exp": {
+                                        "type": "integer",
+                                        "value": 9
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "denominator": {
+                "type": "sqrt",
+                "radicand": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "b"
+                        }
+                    ]
+                }
+            }
+        },
+        "variables": {
+            "a": 1.0,
+            "b": 2.0
+        },
+        "answer": "240",
+        "meta": {
+            "pattern_id": "alg_radical_fraction"
+        }
+    },
+    {
+        "id": "8_alg_radical_fraction_ji2qpy",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_fraction",
+        "expression_tree": {
+            "type": "fraction",
+            "numerator": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "sqrt",
+                        "radicand": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": 16
+                                },
+                                {
+                                    "type": "power",
+                                    "base": {
+                                        "type": "variable",
+                                        "name": "a"
+                                    },
+                                    "exp": {
+                                        "type": "integer",
+                                        "value": 3
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "sqrt",
+                        "radicand": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": 4
+                                },
+                                {
+                                    "type": "power",
+                                    "base": {
+                                        "type": "variable",
+                                        "name": "b"
+                                    },
+                                    "exp": {
+                                        "type": "integer",
+                                        "value": 5
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "denominator": {
+                "type": "sqrt",
+                "radicand": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "b"
+                        }
+                    ]
+                }
+            }
+        },
+        "variables": {
+            "a": 5.0,
+            "b": 2.0
+        },
+        "answer": "160",
+        "meta": {
+            "pattern_id": "alg_radical_fraction"
+        }
+    },
+    {
+        "id": "8_alg_radical_fraction_b8vvar",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_fraction",
+        "expression_tree": {
+            "type": "fraction",
+            "numerator": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "sqrt",
+                        "radicand": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": 100
+                                },
+                                {
+                                    "type": "power",
+                                    "base": {
+                                        "type": "variable",
+                                        "name": "a"
+                                    },
+                                    "exp": {
+                                        "type": "integer",
+                                        "value": 11
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "sqrt",
+                        "radicand": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": 9
+                                },
+                                {
+                                    "type": "power",
+                                    "base": {
+                                        "type": "variable",
+                                        "name": "b"
+                                    },
+                                    "exp": {
+                                        "type": "integer",
+                                        "value": 5
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "denominator": {
+                "type": "sqrt",
+                "radicand": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "b"
+                        }
+                    ]
+                }
+            }
+        },
+        "variables": {
+            "a": 1.0,
+            "b": 3.0
+        },
+        "answer": "270",
+        "meta": {
+            "pattern_id": "alg_radical_fraction"
+        }
+    },
+    {
+        "id": "8_alg_radical_fraction_7c04xb",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_fraction",
+        "expression_tree": {
+            "type": "fraction",
+            "numerator": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "sqrt",
+                        "radicand": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": 4
+                                },
+                                {
+                                    "type": "power",
+                                    "base": {
+                                        "type": "variable",
+                                        "name": "a"
+                                    },
+                                    "exp": {
+                                        "type": "integer",
+                                        "value": 5
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "sqrt",
+                        "radicand": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": 25
+                                },
+                                {
+                                    "type": "power",
+                                    "base": {
+                                        "type": "variable",
+                                        "name": "b"
+                                    },
+                                    "exp": {
+                                        "type": "integer",
+                                        "value": 7
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "denominator": {
+                "type": "sqrt",
+                "radicand": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "b"
+                        }
+                    ]
+                }
+            }
+        },
+        "variables": {
+            "a": 3.0,
+            "b": 1.0
+        },
+        "answer": "90",
+        "meta": {
+            "pattern_id": "alg_radical_fraction"
+        }
+    },
+    {
+        "id": "8_alg_radical_fraction_8c6tuv",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_fraction",
+        "expression_tree": {
+            "type": "fraction",
+            "numerator": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "sqrt",
+                        "radicand": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": 36
+                                },
+                                {
+                                    "type": "power",
+                                    "base": {
+                                        "type": "variable",
+                                        "name": "a"
+                                    },
+                                    "exp": {
+                                        "type": "integer",
+                                        "value": 7
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "sqrt",
+                        "radicand": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": 4
+                                },
+                                {
+                                    "type": "power",
+                                    "base": {
+                                        "type": "variable",
+                                        "name": "b"
+                                    },
+                                    "exp": {
+                                        "type": "integer",
+                                        "value": 3
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "denominator": {
+                "type": "sqrt",
+                "radicand": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "b"
+                        }
+                    ]
+                }
+            }
+        },
+        "variables": {
+            "a": 2.0,
+            "b": 3.0
+        },
+        "answer": "288",
+        "meta": {
+            "pattern_id": "alg_radical_fraction"
+        }
+    },
+    {
+        "id": "8_alg_radical_fraction_qzp2jn",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_fraction",
+        "expression_tree": {
+            "type": "fraction",
+            "numerator": {
+                "type": "sqrt",
+                "radicand": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "b"
+                        }
+                    ]
+                }
+            },
+            "denominator": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "sqrt",
+                        "radicand": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": 4
+                                },
+                                {
+                                    "type": "power",
+                                    "base": {
+                                        "type": "variable",
+                                        "name": "a"
+                                    },
+                                    "exp": {
+                                        "type": "integer",
+                                        "value": 3
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "sqrt",
+                        "radicand": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": 4
+                                },
+                                {
+                                    "type": "power",
+                                    "base": {
+                                        "type": "variable",
+                                        "name": "b"
+                                    },
+                                    "exp": {
+                                        "type": "integer",
+                                        "value": 3
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "variables": {
+            "a": 1.0,
+            "b": 5.0
+        },
+        "answer": "0,05",
+        "meta": {
+            "pattern_id": "alg_radical_fraction"
+        }
+    },
+    {
+        "id": "8_alg_radical_fraction_1exhup",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_fraction",
+        "expression_tree": {
+            "type": "fraction",
+            "numerator": {
+                "type": "sqrt",
+                "radicand": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "b"
+                        }
+                    ]
+                }
+            },
+            "denominator": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "sqrt",
+                        "radicand": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": 1
+                                },
+                                {
+                                    "type": "power",
+                                    "base": {
+                                        "type": "variable",
+                                        "name": "a"
+                                    },
+                                    "exp": {
+                                        "type": "integer",
+                                        "value": 3
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "sqrt",
+                        "radicand": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": 25
+                                },
+                                {
+                                    "type": "power",
+                                    "base": {
+                                        "type": "variable",
+                                        "name": "b"
+                                    },
+                                    "exp": {
+                                        "type": "integer",
+                                        "value": 5
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "variables": {
+            "a": 4.0,
+            "b": 1.0
+        },
+        "answer": "0,05",
+        "meta": {
+            "pattern_id": "alg_radical_fraction"
+        }
+    },
+    {
+        "id": "8_alg_radical_fraction_m7i8pl",
+        "task_number": 8,
+        "subtype": "integer_expressions",
+        "pattern": "alg_radical_fraction",
+        "expression_tree": {
+            "type": "fraction",
+            "numerator": {
+                "type": "sqrt",
+                "radicand": {
+                    "type": "product",
+                    "factors": [
+                        {
+                            "type": "variable",
+                            "name": "a"
+                        },
+                        {
+                            "type": "variable",
+                            "name": "b"
+                        }
+                    ]
+                }
+            },
+            "denominator": {
+                "type": "product",
+                "factors": [
+                    {
+                        "type": "sqrt",
+                        "radicand": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": 25
+                                },
+                                {
+                                    "type": "power",
+                                    "base": {
+                                        "type": "variable",
+                                        "name": "a"
+                                    },
+                                    "exp": {
+                                        "type": "integer",
+                                        "value": 5
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "sqrt",
+                        "radicand": {
+                            "type": "product",
+                            "factors": [
+                                {
+                                    "type": "integer",
+                                    "value": 4
+                                },
+                                {
+                                    "type": "power",
+                                    "base": {
+                                        "type": "variable",
+                                        "name": "b"
+                                    },
+                                    "exp": {
+                                        "type": "integer",
+                                        "value": 3
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "variables": {
+            "a": 1.0,
+            "b": 10.0
+        },
+        "answer": "0,01",
+        "meta": {
+            "pattern_id": "alg_radical_fraction"
+        }
+    }
+]
