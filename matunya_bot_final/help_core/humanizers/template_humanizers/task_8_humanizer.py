@@ -26,11 +26,11 @@ IDEA_TEMPLATES: Dict[str, str] = {
         "Когда подкоренное выражение максимально простое, только потом подставляем число вместо переменной."
     ),
     "IDEA_ALG_RADICAL_FRACTION": (
-        "Сначала преобразуй корни в числителе (знаменателе), используя свойства корней:\n"
-        "<b>√(ab) = √a · √b</b>\n"
-        "<b>√(a / b) = √a / √b</b>\n"
-        "После объединения упрости подкоренное выражение (сокращай переменные, выноси степени),\n"
-        "а уже потом извлекай корни и подставляй значения переменных."
+        "Главное правило — не подставлять числа сразу! 🛑\n"
+        "Сначала упростим выражение в <b>{location}</b>, разложив корни на множители.\n"
+        "Нам поможет свойство:\n"
+        "<b>√(a · b) = √a · √b</b>\n"
+        "Затем сократим одинаковые корни в числителе и знаменателе. И только когда выражение станет максимально простым — подставим значения."
     ),
     "IDEA_GENERIC": "Решаем задачу, последовательно упрощая выражение.",
 }
@@ -48,8 +48,19 @@ STEP_TEMPLATES: Dict[str, str] = {
     "STEP_WRITE_ANSWER": "Записываем итоговый ответ",
 
     # --- alg_power_fraction ---
-    "STEP_SIMPLIFY_NUMERATOR": "Упростим числитель <b>{expr}</b>, используя свойства степеней",
+    "STEP_SIMPLIFY_NUMERATOR": "Разложим <b>{expr}</b>, используя свойства степеней",
     "STEP_DIVIDE_POWERS": "Разделим числитель на знаменатель, применяя свойство деления степеней",
+    "STEP_SIMPLIFY_NUMERATOR": "Упростим числитель <b>{expr}</b>, используя свойства степеней",
+    "STEP_RESULT_NUMERATOR": "Получаем в числителе",
+
+    # ВОТ ЭТИХ СТРОК НЕ ХВАТАЕТ:
+    "STEP_SIMPLIFY_DENOMINATOR": "Упростим знаменатель <b>{expr}</b>",
+    "STEP_RESULT_FRACTION": "Получили выражение",
+
+    "STEP_DIVIDE_POWERS": "Разделим числитель на знаменатель, применяя свойство деления степеней",
+    "STEP_RESULT_AFTER_REDUCTION": "После сокращения получили выражение",
+
+    "STEP_SUBSTITUTE_AND_CALC": "Подставим числовое значение переменной в итоговое упрощенное выражение и вычислим, <b>{vars}</b>",
 
     # --- alg_radical_power ---
     "STEP_SIMPLIFY_RADICAND_FRACTION": "Упростим дробь под корнем, применяя свойство деления степеней",
@@ -59,8 +70,11 @@ STEP_TEMPLATES: Dict[str, str] = {
     "STEP_EXTRACT_ROOT": "Извлечём корень, используя свойство √(k · aⁿ) = √k · √aⁿ",
 
     # --- alg_radical_fraction (НОВЫЕ) ---
-    "STEP_TRANSFORM_NUMERATOR": "Преобразуем (упростим) числитель, разложив корни на множители.",
-    "STEP_TRANSFORM_DENOMINATOR": "Преобразуем (упростим) знаменатель, разложив корни на множители.",
+    "STEP_TRANSFORM_PART": (
+        "Преобразуем (упростим) выражение в <b>{part}</b>, разложив корни на множители.\n"
+        "{decomp_str}\n\n"
+        "После упрощения в {part} получаем выражение"
+    ),
     "STEP_SUBSTITUTE_INTO_FRACTION": "Подставим полученный {part} в исходную дробь",
     "STEP_REDUCE_ROOTS": "Видим, что и числитель, и знаменатель можно сократить на <b>{term}</b>",
 }
@@ -113,11 +127,19 @@ def humanize(solution_core: Dict[str, Any]) -> str:
     """
     parts: List[str] = []
 
-    # 1. Идея решения
+    # 1. Идея решения (ИСПРАВЛЕНО: добавлена подстановка параметров)
     idea_key = solution_core.get("explanation_idea_key")
+    idea_params = solution_core.get("explanation_idea_params") or {}
+
     idea_text = ""
     if idea_key:
-        idea_text = IDEA_TEMPLATES.get(idea_key, IDEA_TEMPLATES["IDEA_GENERIC"])
+        raw_template = IDEA_TEMPLATES.get(idea_key, IDEA_TEMPLATES["IDEA_GENERIC"])
+        try:
+            # Вот здесь происходит магия: {location} превращается в "числителе"
+            idea_text = raw_template.format(**idea_params)
+        except Exception:
+            # Если параметров не хватило, выводим как есть, чтобы не упасть
+            idea_text = raw_template
     else:
         idea_text = str(solution_core.get("explanation_idea") or "")
 
@@ -125,7 +147,7 @@ def humanize(solution_core: Dict[str, Any]) -> str:
         parts.append(f"💡 <b>Идея решения: </b>{idea_text}")
         parts.append("")
 
-    # 2. Шаги
+    # 2. Шаги (БЕЗ ИЗМЕНЕНИЙ)
     steps = solution_core.get("calculation_steps") or []
     if steps:
         parts.append("🪜 <b>Пошаговое решение</b>")
@@ -134,20 +156,19 @@ def humanize(solution_core: Dict[str, Any]) -> str:
             parts.append(_render_step(step))
             parts.append("")
 
-    # 3. Ответ
+    # 3. Ответ (БЕЗ ИЗМЕНЕНИЙ)
     final_answer_val = str((solution_core.get("final_answer") or {}).get("value_display", ""))
     if final_answer_val:
         parts.append(f"🎯Ответ: <b>{final_answer_val}</b>")
         parts.append("")
 
-    # 4. Обрати внимание (Attention)
+    # 4. Обрати внимание (БЕЗ ИЗМЕНЕНИЙ)
     attention_key = solution_core.get("attention_tips_key")
     attention_params = solution_core.get("attention_tips_params") or {}
     attention_items = []
 
     if attention_key:
         raw_items = ATTENTION_TEMPLATES.get(attention_key, [])
-        # Форматируем параметры внутри строк (например, {var})
         for item in raw_items:
             try:
                 attention_items.append(item.format(**attention_params))
@@ -160,7 +181,7 @@ def humanize(solution_core: Dict[str, Any]) -> str:
         parts.append(_render_attention_block(attention_items))
         parts.append("")
 
-    # 5. Полезно знать (Knowledge)
+    # 5. Полезно знать (БЕЗ ИЗМЕНЕНИЙ)
     knowledge_key = solution_core.get("knowledge_tips_key")
     knowledge_items = []
 
@@ -201,10 +222,31 @@ def _render_step(step: Dict[str, Any]) -> str:
         if "\n" in formula:
              f_lines = formula.split("\n")
              for fl in f_lines:
-                 if fl.strip():
-                     lines.append(f"➡️ <b>{fl}</b>")
+                 clean_fl = fl.strip()
+                 if not clean_fl: continue
+
+                 # Если строка уже со стрелкой - печатаем как есть
+                 if clean_fl.startswith("➡️"):
+                     lines.append(clean_fl)
+                 # Если это просто текст (нет жирного) - без стрелки
+                 elif "<b>" not in clean_fl:
+                     lines.append(clean_fl)
+                 # Иначе (формула) - добавляем стрелку, но не дублируем <b>
+                 else:
+                     # Если формула уже обернута в <b>, не добавляем лишний
+                     if clean_fl.startswith("<b>") and clean_fl.endswith("</b>"):
+                         lines.append(f"➡️ {clean_fl}")
+                     else:
+                         lines.append(f"➡️ <b>{clean_fl}</b>")
         else:
-            lines.append(f"➡️ <b>{formula}</b>")
+            # Для одиночной строки то же самое
+            clean_f = formula.strip()
+            if clean_f.startswith("➡️"):
+                lines.append(clean_f)
+            elif clean_f.startswith("<b>") and clean_f.endswith("</b>"):
+                lines.append(f"➡️ {clean_f}")
+            else:
+                lines.append(f"➡️ <b>{clean_f}</b>")
 
     return "\n".join(lines)
 
