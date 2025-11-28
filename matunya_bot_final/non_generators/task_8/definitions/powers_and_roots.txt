@@ -207,7 +207,7 @@ numeric_power_fraction | 5³ · 5⁶ / 5¹⁰
 numeric_power_fraction | 9⁻² · 9⁷ / 9⁴
 numeric_power_fraction | 2¹⁰ · 2⁻¹² / 2⁻⁵
 numeric_power_fraction | 5⁶ · 5⁻⁹ / 5⁻³
-numeric_power_fraction | 10¹ · 10² / 10⁴
+numeric_power_fraction | 10 · 10² / 10⁴
 numeric_power_fraction | 4⁷ · 4⁻³ / 4²
 numeric_power_fraction | 7⁻¹ · 7⁻² / 7⁻⁴
 numeric_power_fraction | 8⁴ · 8⁻¹ / 8⁰
@@ -217,7 +217,6 @@ numeric_power_fraction | 10⁻⁵ · 10⁷ / 10²
 numeric_power_fraction | (5²)⁻⁸ / 5⁻¹⁸
 numeric_power_fraction | (3³)⁴ / 3¹¹
 numeric_power_fraction | (2⁻²)⁻⁵ / 2⁷
-numeric_power_fraction | (4¹)⁻⁶ / 4⁻⁶
 numeric_power_fraction | (10²)⁻³ / 10⁻⁷
 numeric_power_fraction | (7³)³ / 7⁷
 numeric_power_fraction | (6⁻²)⁻⁵ / 6⁸

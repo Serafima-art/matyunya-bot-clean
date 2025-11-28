@@ -89,10 +89,22 @@ async def handle_ask_question(callback: CallbackQuery, callback_data: TaskCallba
     # Нормализуем название контекста диалога по типу задания
     dialog_context: str
     task_type_str = str(task_type) if task_type is not None else ""
+
+    # 1. Группа заданий 1-5 (Шины, Печки и т.д.)
     if task_type_str.isdigit() and int(task_type_str) in range(1, 6):
         dialog_context = "task_1_5"
+
+    # 2. Отдельные задания (Явный список)
+    elif task_type_str == "6":
+        dialog_context = "task_6"
+    elif task_type_str == "8":
+        dialog_context = "task_8"  # <--- Наше новое!
+    elif task_type_str == "11":
+        dialog_context = "task_11"
     elif task_type_str == "20":
         dialog_context = "task_20"
+
+    # 3. Fallback (для будущих заданий, если забыли прописать явно)
     elif task_type:
         dialog_context = f"task_{task_type}"
     else:

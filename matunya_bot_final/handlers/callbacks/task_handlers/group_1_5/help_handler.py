@@ -9,7 +9,7 @@ from aiogram.types import CallbackQuery
 from matunya_bot_final.core.callbacks.tasks_callback import TaskCallback
 from matunya_bot_final.gpt.phrases.ask_question_phrases import ASK_QUESTION_PHRASES
 from matunya_bot_final.help_core.knowledge.golden_set_reader import get_golden_set
-from matunya_bot_final.help_core.prompts.dialog_prompts import get_help_dialog_prompt
+from matunya_bot_final.help_core.prompts.task_1_5_dialog_prompts import get_task_1_5_dialog_prompt
 from matunya_bot_final.states.states import GPState
 from matunya_bot_final.utils.message_manager import (
     cleanup_messages_by_category,
@@ -69,7 +69,7 @@ async def handle_group_1_5_ask_gpt(
     )
     golden_set = await get_golden_set(subtype_for_prompt, task_type=task_type_for_prompt)
 
-    system_prompt = get_help_dialog_prompt(
+    system_prompt = get_task_1_5_dialog_prompt(
         task_1_5_data=task_1_5_data,
         solution_core=solution_core,
         dialog_history=[],

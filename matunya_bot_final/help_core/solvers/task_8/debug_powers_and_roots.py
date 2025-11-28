@@ -92,6 +92,6 @@ if __name__ == "__main__":
     # 7. numeric_power_fraction
     # 8. count_integers_between_radicals
 
-    TEST_PATTERN = "numeric_power_fraction"
+    TEST_PATTERN = "count_integers_between_radicals"
 
     run_test(TEST_PATTERN, limit=10)
