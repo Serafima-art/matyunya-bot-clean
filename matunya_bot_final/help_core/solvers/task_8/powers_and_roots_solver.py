@@ -468,10 +468,33 @@ def _solve_radical_product(task_data: Dict[str, Any]) -> Dict[str, Any]:
 
     # 1. Если есть внешние коэффициенты (9√7...) -> ФОРМА B
     if coeffs:
+        # ФОРМА B (есть коэффициенты снаружи: 9√7...)
         steps = _build_steps_form_b(task_data, coeffs, radicands)
         idea_key = "IDEA_RADICAL_PRODUCT_MIXED"
         know_key = "KNOWLEDGE_RADICAL_PRODUCT_MIXED"
-        idea_params = {}
+
+        # --- Подготовка умных параметров для идеи ---
+        # Ищем самый большой корень (14) и остальных (7, 2)
+        try:
+            # Сортируем: [2, 7, 14]
+            sorted_rads = sorted(radicands)
+            big = sorted_rads[-1] # 14
+            s1 = sorted_rads[0]   # 2
+            s2 = sorted_rads[1]   # 7 (если их 3)
+            # Берем любой коэффициент для примера (9)
+            c_example = coeffs[0] if coeffs else 1
+
+            idea_params = {
+                "root_big": str(big),
+                "root_s1": str(s1),
+                "root_s2": str(s2),
+                "coeff": str(c_example)
+            }
+        except (IndexError, ValueError):
+            # Fallback, если список странный
+            idea_params = {
+                "root_big": "14", "root_s1": "7", "root_s2": "2", "coeff": "9"
+            }
 
     # 2. Если коэффициентов нет, смотрим на верхушку дерева.
     # Если это один корень √(56·40·35) -> ФОРМА C
@@ -483,18 +506,31 @@ def _solve_radical_product(task_data: Dict[str, Any]) -> Dict[str, Any]:
 
     # 3. Иначе это произведение корней √(12·18)·√6 -> ФОРМА A
     else:
+        # ФОРМА A
         steps = _build_steps_form_a(task_data, radicands)
         idea_key = "IDEA_RADICAL_PRODUCT"
         know_key = "KNOWLEDGE_RADICAL_PRODUCT"
 
-        # Для идеи Формы А нужны визуальные части (inside/outside)
+        # Визуальные части для Идеи
         in_p, out_p = "...", "..."
         factors = tree.get("factors", [])
         for f in factors:
             if f.get("type") == "sqrt":
                 if f["radicand"].get("type") == "product": in_p = render_node(f)
                 else: out_p = render_node(f)
-        idea_params = {"part_inside": in_p, "part_outside": out_p}
+
+        # Числа для "Полезно знать" (берем первые два уникальных числа)
+        # Если чисел мало, берем какие есть
+        u_rads = list(set(radicands))
+        r1 = str(u_rads[0]) if len(u_rads) > 0 else "18"
+        r2 = str(u_rads[1]) if len(u_rads) > 1 else "6"
+
+        idea_params = {
+            "part_inside": in_p,
+            "part_outside": out_p,
+            "r1": r1, # Для подсказки
+            "r2": r2  # Для подсказки
+        }
 
     return {
         "question_id": "task8_radical_product",
@@ -512,7 +548,7 @@ def _solve_radical_product(task_data: Dict[str, Any]) -> Dict[str, Any]:
 def _build_steps_form_a(task_data: Dict[str, Any], all_numbers: List[int]) -> List[Dict[str, Any]]:
     """
     Логика для Формы А (вечеринка, LEGO-разбор).
-    Принимает готовый список all_numbers (например [12, 18, 6]).
+    УМНАЯ ВЕРСИЯ: ищет готовые пары и квадраты, чтобы не делать лишней работы.
     """
     tree = task_data["expression_tree"]
     steps = []
@@ -527,7 +563,6 @@ def _build_steps_form_a(task_data: Dict[str, Any], all_numbers: List[int]) -> Li
     })
     step_num += 1
 
-    # "Гость снаружи" для текста (просто берем последнее число, обычно оно снаружи)
     outside_guest = f"√{all_numbers[-1]}" if all_numbers else "..."
 
     # --- ШАГ 2. Объединение ---
@@ -542,61 +577,113 @@ def _build_steps_form_a(task_data: Dict[str, Any], all_numbers: List[int]) -> Li
     })
     step_num += 1
 
-    # --- ШАГ 3. Разбор на LEGO ---
-    breakdown_lines = []
-    all_components = []
+    # --- АНАЛИЗ ЧИСЕЛ (Умная сортировка) ---
+    # Нам нужно разделить числа на:
+    # 1. Готовые пары (10, 10) -> их не трогаем
+    # 2. Полные квадраты (36) -> их не трогаем
+    # 3. Остальные -> раскладываем
 
-    for num in all_numbers:
+    sorted_nums = sorted(all_numbers)
+
+    direct_pairs = []      # Числа, у которых уже есть пара (10)
+    processed_indices = set()
+
+    # 1. Ищем готовые пары
+    i = 0
+    while i < len(sorted_nums) - 1:
+        if sorted_nums[i] == sorted_nums[i+1]:
+            direct_pairs.append(sorted_nums[i])
+            processed_indices.add(i)
+            processed_indices.add(i+1)
+            i += 2
+        else:
+            i += 1
+
+    # 2. Разбираем оставшихся
+    breakdown_lines = []
+    final_squares = [] # Здесь будут квадраты (36) и квадраты из разложения (4)
+    final_primes_to_pair = [] # Осколки для спаривания (2, 3...)
+
+    leftovers = [n for idx, n in enumerate(sorted_nums) if idx not in processed_indices]
+
+    for num in leftovers:
+        # Проверка на полный квадрат (36)
+        root_check = int(math.isqrt(num))
+        if root_check * root_check == num:
+            final_squares.append(num)
+            breakdown_lines.append(f"➡️ <b>{num} = {num}</b> ({num} — уже готовый квадрат!)")
+            continue
+
+        # Если не квадрат — раскладываем
         sq, rem, factors_p = _smart_decompose(num)
         parts = []
         if sq > 1:
             parts.append(str(sq))
-            all_components.append((sq, True))
+            final_squares.append(sq)
         for p in factors_p:
             parts.append(str(p))
-            all_components.append((p, False))
+            final_primes_to_pair.append(p)
 
-        if not parts: parts = [str(num)] # если число 1 или не разложилось
+        if not parts: parts = [str(num)]
 
-        decomp_str = " · ".join(parts)
-        comment = f"({sq} — уже готовый квадрат!)" if sq > 1 else ""
-        line = f"➡️ <b>{num} = {decomp_str}</b> {comment}"
-        breakdown_lines.append(line)
+        d_str = " · ".join(parts)
+        comment = f"({sq} — квадрат!)" if sq > 1 else ""
+        breakdown_lines.append(f"➡️ <b>{num} = {d_str}</b> {comment}")
+
+    # --- ШАГ 3. Вывод разложения ---
+    # Если разложений не было (все нашлись парами), пишем, что всё готово
+    if not breakdown_lines and direct_pairs:
+        breakdown_text = "Все числа уже имеют пары, раскладывать не нужно!"
+    else:
+        breakdown_text = "\n".join(breakdown_lines)
 
     steps.append({
         "step_number": step_num,
         "description_key": "STEP_FACTORIZE_NUMBERS",
-        "description_params": {"breakdown_str": "\n".join(breakdown_lines)}
+        "description_params": {"breakdown_str": breakdown_text}
     })
     step_num += 1
 
     # --- ШАГ 4. Группировка ---
-    squares = [val for val, is_sq in all_components if is_sq]
-    primes = [val for val, is_sq in all_components if not is_sq]
-    primes.sort()
+    # Собираем пары из осколков (final_primes_to_pair)
+    final_primes_to_pair.sort()
+    assembled_pairs = [] # Пары из мелочи
 
-    pairs = []
-    i = 0
-    while i < len(primes) - 1:
-        if primes[i] == primes[i+1]:
-            pairs.append((primes[i], primes[i+1]))
-            i += 2
-        else: i += 1
+    j = 0
+    while j < len(final_primes_to_pair) - 1:
+        if final_primes_to_pair[j] == final_primes_to_pair[j+1]:
+            assembled_pairs.append(final_primes_to_pair[j])
+            j += 2
+        else: j += 1
 
-    str_squares_list = [str(s) for s in squares]
-    str_pairs_list = [f"({a} · {b})" for a, b in pairs]
-    full_group_inner = " · ".join(str_squares_list + str_pairs_list)
+    # Формируем списки для отображения
+    # 1. Квадраты (36)
+    str_squares = [str(s) for s in final_squares]
 
-    desc_squares = " и ".join(str_squares_list) if str_squares_list else "нет"
-    desc_pairs = " и ".join([f"<b>({a}·{b})</b>" for a, b in pairs]) if str_pairs_list else "нет"
+    # 2. Пары (10·10) и (2·2)
+    str_pairs = []
+    # Сначала готовые пары
+    for p in direct_pairs:
+        str_pairs.append(f"({p} · {p})")
+    # Потом собранные из мелочи
+    for p in assembled_pairs:
+        str_pairs.append(f"({p} · {p})")
+
+    full_group_inner = " · ".join(str_squares + str_pairs)
+
+    desc_sq = " и ".join(str_squares) if str_squares else "нет"
+
+    # Для описания объединяем все пары
+    all_pairs_vals = direct_pairs + assembled_pairs
+    desc_p = " и ".join([f"<b>({p}·{p})</b>" for p in all_pairs_vals]) if all_pairs_vals else "нет"
 
     steps.append({
         "step_number": step_num,
         "description_key": "STEP_GROUP_PAIRS",
         "description_params": {
             "grouped_root": f"√({full_group_inner})",
-            "squares_list": desc_squares,
-            "pairs_list": desc_pairs
+            "squares_list": desc_sq,
+            "pairs_list": desc_p
         }
     })
     step_num += 1
@@ -604,17 +691,19 @@ def _build_steps_form_a(task_data: Dict[str, Any], all_numbers: List[int]) -> Li
     # --- ШАГ 5. Вывод ---
     extraction_lines = []
     final_factors = []
-    for sq in squares:
+
+    # Выводим квадраты
+    for sq in final_squares:
         root = int(math.isqrt(sq))
         extraction_lines.append(f"➡️ <b>√{sq} выходит как {root}</b>")
         final_factors.append(str(root))
-    for p1, p2 in pairs:
-        extraction_lines.append(f"➡️ <b>√({p1} · {p2}) выходит как {p1}</b>")
-        final_factors.append(str(p1))
+
+    # Выводим пары
+    for p in all_pairs_vals:
+        extraction_lines.append(f"➡️ <b>√({p} · {p}) выходит как {p}</b>")
+        final_factors.append(str(p))
 
     final_prod_str = " · ".join(final_factors)
-
-    # Подсчет
     calc_val = 1
     for f in final_factors: calc_val *= int(f)
 
@@ -637,7 +726,10 @@ def _build_steps_form_a(task_data: Dict[str, Any], all_numbers: List[int]) -> Li
 
 
 def _build_steps_form_b(task_data: Dict[str, Any], coeffs: List[int], radicands: List[int]) -> List[Dict[str, Any]]:
-    """Логика для Формы B (смешанная: 9√7 · 2√2 · √14)."""
+    """
+    Логика для Формы B (9√7 · 2√2 · √14).
+    Стратегия: Числа отдельно -> Разложение большого корня -> Пары.
+    """
     tree = task_data["expression_tree"]
     steps = []
     step_num = 1
@@ -650,80 +742,124 @@ def _build_steps_form_b(task_data: Dict[str, Any], coeffs: List[int], radicands:
     })
     step_num += 1
 
-    # Шаг 2. Разложение (9 · 2 · √7 · √2 · √14)
-    # Собираем строку: числа в начале, корни в конце
-    part_coeffs = " · ".join(map(str, coeffs))
-    part_roots_individual = " · ".join([f"√{r}" for r in radicands])
-    full_decomposed = f"{part_coeffs} · {part_roots_individual}"
-
-    steps.append({
-        "step_number": step_num,
-        "description_key": "STEP_SEPARATE_NUMS_AND_ROOTS",
-        "formula_calculation": f"<b>{render_node(tree)} = {full_decomposed}</b>"
-    })
-    step_num += 1
-
-    # Шаг 3. Сбор корней (√7 · √2 · √14 = √(7·2·14))
-    inner_prod_str = " · ".join(map(str, radicands))
-    roots_combined_str = f"√({inner_prod_str})"
-
-    # Строка для описания: √7 · √2 · √14 = √(7 · 2 · 14)
-    roots_eq = f"{part_roots_individual} = {roots_combined_str}"
-
-    # Финальная формула шага: 9 · 2 · √(7 · 2 · 14)
-    step3_final = f"<b>{part_coeffs} · {roots_combined_str}</b>"
-
-    steps.append({
-        "step_number": step_num,
-        "description_key": "STEP_COMBINE_ROOTS_MIXED",
-        "description_params": {"roots_comb": roots_eq},
-        "formula_calculation": step3_final
-    })
-    step_num += 1
-
-    # Шаг 4. Вычисление внутри корня (7 · 2 · 14 = 196)
-    prod_rad = 1
-    for r in radicands: prod_rad *= r
-
-    root_val = int(math.isqrt(prod_rad)) # 14
-
-    calc_str = f"{inner_prod_str} = {prod_rad}"
-    step4_formula = f"<b>{roots_combined_str} = √{prod_rad} = {root_val}</b>"
-
-    steps.append({
-        "step_number": step_num,
-        "description_key": "STEP_CALC_ROOT_SQUARE",
-        "description_params": {
-            "calc_str": calc_str,
-            "sq_val": str(prod_rad),
-            "root_val": str(root_val)
-        },
-        "formula_calculation": step4_formula
-    })
-    step_num += 1
-
-    # Шаг 5. Финал (9 · 2 · 14 = 252)
-    # Сначала перемножаем коэффициенты для промежуточного шага (18 · 14) как в примере
+    # Шаг 2. Разделяй и властвуй (Коэффициенты сразу)
+    # 9·2 = 18, корни рядом
     coeff_prod = 1
-    for c in coeffs: coeff_prod *= c
+    coeff_parts = []
+    for c in coeffs:
+        coeff_prod *= c
+        coeff_parts.append(str(c))
 
-    # 9 · 2 · 14
-    part_start = f"{part_coeffs} · {root_val}"
-    # 18 · 14
-    part_mid = f"{coeff_prod} · {root_val}"
-    # 252
-    final_val = coeff_prod * root_val
+    # Список корней (исходный): √7 · √2 · √14
+    rads_str_list = [f"√{r}" for r in radicands]
+    rads_joined = " · ".join(rads_str_list)
 
-    # Собираем цепочку
-    if len(coeffs) > 1:
-        chain = f"<b>{part_start} = {part_mid} = {final_val}</b>"
-    else:
-        chain = f"<b>{part_start} = {final_val}</b>"
+    # Формула: Числа: 9·2=18. Корни: ...
+    # Получили: 18 · ...
+    calc_c_str = " · ".join(coeff_parts)
+
+    full_line = (
+        f"➡️ Числа: <b>{calc_c_str} = {coeff_prod}</b>\n"
+        f"➡️ Корни: <b>{rads_joined}</b>\n"
+        f"Получили: <b>{coeff_prod} · {rads_joined}</b>"
+    )
 
     steps.append({
         "step_number": step_num,
-        "description_key": "STEP_FINAL_MULTIPLICATION_MIXED",
-        "formula_calculation": chain
+        "description_key": "STEP_SEPARATE_AND_CALC_COEFFS", # Ключ уже был, но текст подправим
+        "formula_calculation": full_line
+    })
+    step_num += 1
+
+    # Шаг 3. Разложение большого корня
+    # √14 = √7 · √2
+    sorted_rads = sorted(radicands)
+    big = sorted_rads[-1] # 14
+    others = sorted_rads[:-1] # [2, 7]
+
+    # Пытаемся найти множители среди соседей
+    found_factors = []
+    for o in others:
+        if big % o == 0:
+            found_factors.append(o)
+
+    # Формируем строку разложения
+    # √14 = √(7·2) = √7 · √2
+    if found_factors:
+        # Упрощенно берем найденные. Если 14 = 7*2, берем их.
+        # Если множителей не хватило (редко), берем smart_decompose
+        parts = [str(f) for f in found_factors]
+        # Добиваем остаток, если есть (14 / (7*2) = 1)
+        prod_f = 1
+        for f in found_factors: prod_f *= f
+        rem = big // prod_f
+        if rem > 1: parts.append(str(rem))
+    else:
+        # Если соседи не подошли, просто раскладываем умно
+        _, _, primes = _smart_decompose(big)
+        parts = [str(p) for p in primes]
+
+    decomp_inner = " · ".join(parts)
+    decomp_roots = " · ".join([f"√{p}" for p in parts])
+
+    decomp_line = f"<b>√{big} = √({decomp_inner}) = {decomp_roots}</b>"
+
+    # Собираем все корни в кучу для итога шага
+    # 18 · √7 · √2 · √7 · √2
+    # Берем 'others' + 'parts' (из разложения)
+    final_rads_list = [f"√{r}" for r in others] + [f"√{p}" for p in parts]
+    final_rads_str = " · ".join(final_rads_list)
+
+    steps.append({
+        "step_number": step_num,
+        "description_key": "STEP_DECOMPOSE_BIGGEST_ROOT", # НОВЫЙ КЛЮЧ
+        "description_params": {"root_big": str(big)},
+        "formula_calculation": f"➡️ {decomp_line}\nТеперь у нас в выражении:\n➡️ <b>{coeff_prod} · {final_rads_str}</b>"
+    })
+    step_num += 1
+
+    # Шаг 4. Пары
+    # √7 · √7 = 7
+    pairs_lines = []
+    extracted_vals = []
+
+    # Собираем все числа из корней (others + parts)
+    all_small_nums = others + [int(p) for p in parts]
+    all_small_nums.sort()
+
+    i = 0
+    while i < len(all_small_nums) - 1:
+        if all_small_nums[i] == all_small_nums[i+1]:
+            val = all_small_nums[i]
+            pairs_lines.append(f"➡️ <b>√{val} · √{val} = {val}</b>")
+            extracted_vals.append(val)
+            i += 2
+        else:
+            # Одиночка? В 2.3 такого быть не должно, но добавим
+            extracted_vals.append(math.sqrt(all_small_nums[i])) # float, но оставим для расчета
+            i += 1
+
+    steps.append({
+        "step_number": step_num,
+        "description_key": "STEP_COLLECT_PAIRS", # НОВЫЙ КЛЮЧ
+        "formula_calculation": "\n".join(pairs_lines)
+    })
+    step_num += 1
+
+    # Шаг 5. Финал
+    # 18 · 7 · 2 = 252
+    calc_parts = [str(coeff_prod)] + [str(v) for v in extracted_vals]
+    calc_str = " · ".join(calc_parts)
+
+    final_val = coeff_prod
+    for v in extracted_vals: final_val *= v
+
+    final_ans = fmt_number(int(final_val) if float(final_val).is_integer() else final_val)
+
+    steps.append({
+        "step_number": step_num,
+        "description_key": "STEP_FINAL_MULTIPLICATION_MIXED", # Ключ уже был, текст подходит
+        "formula_calculation": f"<b>{calc_str} = {final_ans}</b>"
     })
 
     return steps
@@ -1387,8 +1523,14 @@ def _solve_form_a_boss(task_data) -> Dict[str, Any]:
     tree = task_data["expression_tree"]
 
     steps.append({
-        "step_number": step_num, "description_key": "STEP_INITIAL_NO_VARS",
-        "description_params": {"expr": render_node(tree)}
+        "step_number": step_num,
+        "description_key": "STEP_BOSS_FIGHT",
+        # ДОБАВЛЯЕМ ПАРАМЕТРЫ ДЛЯ ШАБЛОНА
+        "description_params": {
+            "base1": str(f1),
+            "base2": str(f2)
+        },
+        "formula_calculation": "\n".join([f"➡️ {l}" for l in lines])
     })
     step_num += 1
 
@@ -1424,14 +1566,21 @@ def _solve_form_a_boss(task_data) -> Dict[str, Any]:
     t_res = t_inn * t_out
 
     tower_calc = f"({t_base}{to_superscript(t_inn)}){to_superscript(t_out)} = {t_base}{to_superscript(f'{t_inn}·{t_out}')} = {t_base}{to_superscript(t_res)}"
-
-    # Рендерим простой узел заново, чтобы получить красивую строку
     den_res = f"{t_base}{to_superscript(t_res)} · {render_node(simple_node)}"
 
+    # Формируем 3 строки:
+    # 1. Формула (со стрелкой)
+    line_1 = f"<b>{tower_calc}</b>"
+    # 2. Текст (без стрелки, используем маркер text:)
+    line_2 = "text:Весь знаменатель теперь выглядит так:"
+    # 3. Результат (со стрелкой)
+    line_3 = f"<b>{den_res}</b>"
+
     steps.append({
-        "step_number": step_num, "description_key": "STEP_BOSS_SIMPLIFY_DENOM",
+        "step_number": step_num,
+        "description_key": "STEP_BOSS_SIMPLIFY_DENOM",
         "description_params": {"bracket": render_node(tower_node)},
-        "formula_calculation": f"<b>{tower_calc}</b>\nВесь знаменатель теперь выглядит так: <b>{den_res}</b>"
+        "formula_calculation": f"{line_1}\n{line_2}\n{line_3}"
     })
     step_num += 1
 
@@ -1518,11 +1667,15 @@ def _solve_form_b_same_base(task_data) -> Dict[str, Any]:
     # 2. Числитель
     # Если степень отрицательная, добавляем скобки для красоты: -2+(-7)
     p2_str = f"({p2})" if p2 < 0 else f"{p2}"
-    calc_num = f"{base}{to_superscript(p1)} · {base}{to_superscript(p2)} = {base}{to_superscript(f'{p1}+{p2_str}')} = {base}{to_superscript(p_num)}"
+    calc_num = f"<b>{base}{to_superscript(p1)} · {base}{to_superscript(p2)} = {base}{to_superscript(f'{p1}+{p2_str}')} = {base}{to_superscript(p_num)}</b>"
+
+    # Добавляем префикс text:, чтобы убрать стрелку
+    comment = f"text:Отлично, наверху теперь живёт только <b>{base}{to_superscript(p_num)}</b>."
 
     steps.append({
-        "step_number": step_num, "description_key": "STEP_SAME_BASE_NUMERATOR",
-        "formula_calculation": f"<b>{calc_num}</b>\nОтлично, наверху теперь живёт только <b>{base}{to_superscript(p_num)}</b>."
+        "step_number": step_num,
+        "description_key": "STEP_SAME_BASE_NUMERATOR",
+        "formula_calculation": f"{calc_num}\n{comment}"
     })
     step_num += 1
 
@@ -1557,11 +1710,13 @@ def _solve_form_b_same_base(task_data) -> Dict[str, Any]:
         "formula_calculation": f"<b>{base}{to_superscript(p_res)} = {res_fmt}</b>"
     })
 
+    # Передаем параметр base для подстановки в шаблоны
     return _pack_result(
         task_data,
         steps,
         "IDEA_NUM_POW_SAME_BASE",
-        know_key="KNOWLEDGE_NUM_POW_SAME_BASE" # <--- Добавили ключ
+        idea_params={"base": str(base)}, # <--- ДОБАВИЛИ ЭТО
+        know_key="KNOWLEDGE_NUM_POW_SAME_BASE"
     )
 
 
@@ -1578,25 +1733,49 @@ def _solve_form_c_tower(task_data) -> Dict[str, Any]:
     step_num += 1
 
     tower = tree["numerator"]
-    # Используем _safe_get_val вместо ["value"]
     base = _safe_get_val(tower["base"]["base"])
     p_in = _safe_get_val(tower["base"]["exp"])
     p_out = _safe_get_val(tower["exp"])
     p_num = p_in * p_out
 
-    # 2. Башня
-    calc_tower = f"{base}{to_superscript(p_in)} · ⁽{to_superscript(p_out)}⁾ = {base}{to_superscript(p_num)}"
+    # --- ШАГ 2. Башня ---
+    # Формируем красивую степень для отображения
+    p_out_sup = to_superscript(p_out)
+    p_out_display = f"⁽{p_out_sup}⁾" if p_out < 0 else p_out_sup
+
+    # 1. Жирная формула вычисления
+    line_1 = f"<b>{base}{to_superscript(p_in)} · {p_out_display} = {base}{to_superscript(p_num)}</b>"
+
+    # 2. Обычный текст (БЕЗ стрелки, используем text:)
+    line_2 = "text:Всё, наверху теперь порядок:"
+
+    # 3. Жирный результат
+    line_3 = f"<b>{base}{to_superscript(p_num)}</b>"
+
     steps.append({
-        "step_number": step_num, "description_key": "STEP_TOWER_RESOLVE",
+        "step_number": step_num,
+        "description_key": "STEP_TOWER_RESOLVE",
         "description_params": {"tower": render_node(tower)},
-        "formula_calculation": f"<b>{calc_tower}</b>\nВсё, наверху теперь порядок: <b>{base}{to_superscript(p_num)}</b>."
+        "formula_calculation": f"{line_1}\n{line_2}\n{line_3}"
     })
     step_num += 1
 
-    # 3. Дробь
+    # --- ШАГ 3. Дробь ---
     den = tree["denominator"]
-    p_den = _safe_get_val(den["exp"]) # И тут тоже!
+    p_den = _safe_get_val(den["exp"])
 
+    # ПРОВЕРКА НА ИДЕНТИЧНОСТЬ (Оптимизация)
+    # Если 5^-6 / 5^-6 -> сразу ответ 1
+    if p_num == p_den:
+        steps.append({
+            "step_number": step_num, "description_key": "STEP_TOWER_REWRITE",
+            "formula_calculation": f"<b>{base}{to_superscript(p_num)} / {base}{to_superscript(p_den)} = 1</b>"
+        })
+
+        # Сразу возвращаем результат, шаги 4 и 5 не нужны
+        return _pack_result(task_data, steps, "IDEA_NUM_POW_TOWER", know_key="KNOWLEDGE_NUM_POW_TOWER")
+
+    # Если степени разные - идем по полному пути
     steps.append({
         "step_number": step_num, "description_key": "STEP_TOWER_REWRITE",
         "formula_calculation": f"<b>{base}{to_superscript(p_num)} / {base}{to_superscript(p_den)}</b>"
@@ -1605,7 +1784,12 @@ def _solve_form_c_tower(task_data) -> Dict[str, Any]:
 
     # 4. Деление
     p_res = p_num - p_den
-    calc_div = f"{base}{to_superscript(f'{p_num}-({p_den})')} = {base}{to_superscript(p_res)}"
+    # Красивое вычитание (с учетом минуса)
+    sub_expr = f"{p_num}-{p_den}"
+    if p_den < 0: sub_expr = f"{p_num}-({p_den})"
+
+    calc_div = f"{base}{to_superscript(sub_expr)} = {base}{to_superscript(p_res)}"
+
     steps.append({
         "step_number": step_num, "description_key": "STEP_TOWER_DIVIDE",
         "formula_calculation": f"<b>{calc_div}</b>"
@@ -1614,9 +1798,13 @@ def _solve_form_c_tower(task_data) -> Dict[str, Any]:
 
     # 5. Ответ
     res_val = base ** p_res
+    # Округляем на всякий случай
+    if isinstance(res_val, float): res_val = round(res_val, 9)
+    res_fmt = fmt_number(int(res_val) if isinstance(res_val, int) or res_val.is_integer() else res_val)
+
     steps.append({
         "step_number": step_num, "description_key": "STEP_TOWER_CALC",
-        "formula_calculation": f"<b>{base}{to_superscript(p_res)} = {res_val}</b>"
+        "formula_calculation": f"<b>{base}{to_superscript(p_res)} = {res_fmt}</b>"
     })
 
     return _pack_result(
@@ -1675,8 +1863,8 @@ def _solve_form_d_spies(task_data) -> Dict[str, Any]:
     pb_d = get_pow(base_d, common)
 
     # Формируем разоблачение: 27 = 3³
-    rev_n = f"<b>{base_n} = {common}{to_superscript(pb_n)}</b>"
-    rev_d = f"<b>{base_d} = {common}{to_superscript(pb_d)}</b>"
+    rev_n = f"{base_n} = {common}{to_superscript(pb_n)}"
+    rev_d = f"{base_d} = {common}{to_superscript(pb_d)}"
 
     steps.append({
         "step_number": step_num,
@@ -1862,9 +2050,164 @@ def _solve_form_e_clone(task_data) -> Dict[str, Any]:
         know_key="KNOWLEDGE_NUM_POW_CLONES" # <--- Добавили ключ
     )
 
+# ============================================================================
+# ПАТТЕРН 2.8: count_integers_between_radicals
+# ============================================================================
+
 def _solve_count_integers_between_radicals(task_data: Dict[str, Any]) -> Dict[str, Any]:
-    # Паттерн 2.8: Между 3√15 и 5√6
-    return _solve_placeholder(task_data, "count_integers_between_radicals")
+    steps = _build_steps_for_count_integers(task_data)
+
+    # Для Идеи нужны исходные числа
+    tree = task_data["expression_tree"]
+    left_str = render_node(tree["left"])
+    right_str = render_node(tree["right"])
+
+    return {
+        "question_id": "task8_count_integers",
+        "question_group": "task_8_powers_and_roots",
+        "explanation_idea_key": "IDEA_COUNT_INTEGERS",
+        "explanation_idea_params": {"left": left_str, "right": right_str},
+        "knowledge_tips_key": "KNOWLEDGE_COUNT_INTEGERS",
+        "calculation_steps": steps,
+        "final_answer": {
+            "value_display": task_data["answer"],
+        },
+    }
+
+
+def _build_steps_for_count_integers(task_data: Dict[str, Any]) -> List[Dict[str, Any]]:
+    tree = task_data["expression_tree"]
+    steps = []
+    step_num = 1
+
+    # Шаг 1. Рассмотрим числа
+    left_node = tree["left"]
+    right_node = tree["right"]
+
+    left_disp = render_node(left_node)
+    right_disp = render_node(right_node)
+
+    steps.append({
+        "step_number": step_num,
+        "description_key": "STEP_CONSIDER_NUMBERS",
+        "description_params": {"left": left_disp, "right": right_disp}
+    })
+    step_num += 1
+
+    # Хелпер: превращает 3√15 в (строка_вычисления, значение_под_корнем)
+    def _process_val(node):
+        # Ожидаем либо Integer, либо Product(Integer, Sqrt)
+        if node.get("type") == "integer":
+            val = node["value"]
+            sq = val * val
+            # 5 = √25
+            return f"{val} = √{val}² = √{sq}", sq
+
+        if node.get("type") == "product":
+            # 3√15
+            coeff = 1
+            rad = 1
+            for f in node["factors"]:
+                if f["type"] == "integer": coeff = f["value"]
+                elif f["type"] == "sqrt": rad = f["radicand"]["value"]
+
+            sq_coeff = coeff * coeff
+            total = sq_coeff * rad
+            # 3√15 = √(3² · 15) = √(9 · 15) = √135
+            calc = f"{coeff}√{rad} = √({coeff}² · {rad}) = √({sq_coeff} · {rad}) = √{total}"
+            return calc, total
+
+        # Fallback (если просто корень √135)
+        if node.get("type") == "sqrt":
+            val = node["radicand"]["value"]
+            return f"√{val}", val
+
+        return "???", 0
+
+    calc_l, val_l = _process_val(left_node)
+    calc_r, val_r = _process_val(right_node)
+
+    steps.append({
+        "step_number": step_num,
+        "description_key": "STEP_MOVE_UNDER_ROOT",
+        "description_params": {
+            "calc_left": calc_l,
+            "calc_right": calc_r
+        }
+    })
+    step_num += 1
+
+    # Шаг 3. Перебор квадратов
+    min_v = min(val_l, val_r)
+    max_v = max(val_l, val_r)
+
+    # Определяем диапазон целых чисел для проверки
+    # Начинаем чуть раньше корня из минимума
+    start_n = int(math.isqrt(min_v))
+    if start_n * start_n >= min_v: start_n -= 1 # Берем запас снизу, чтобы показать "слишком мало"
+    if start_n < 1: start_n = 1
+
+    end_n = int(math.isqrt(max_v)) + 1 # Запас сверху
+
+    check_lines = []
+    found_integers = []
+
+    # Ограничитель, чтобы не спамить, если диапазон огромный (в ОГЭ не бывает, но всё же)
+    count_checks = 0
+
+    for n in range(start_n, end_n + 2):
+        if count_checks > 8: break # Защита
+
+        sq = n * n
+        line = f"<b>{n}² = {sq} (это √{sq})</b>"
+
+        if sq <= min_v:
+            line += f" — слишком мало, меньше <b>{min_v}</b>. ❌"
+        elif sq >= max_v:
+            line += f" — перебор, уже больше <b>{max_v}</b>. ❌"
+            check_lines.append(line)
+            break # Дальше не имеет смысла проверять
+        else:
+            line += f" — О! Попался! {sq} больше <b>{min_v}</b>, но меньше <b>{max_v}</b>. ✅"
+            found_integers.append(n)
+
+        check_lines.append(line)
+        count_checks += 1
+
+    steps.append({
+        "step_number": step_num,
+        "description_key": "STEP_CHECK_SQUARES",
+        "description_params": {
+            "min_val": str(min_v),
+            "max_val": str(max_v),
+            "checks_str": "\n".join(check_lines)
+        }
+    })
+    step_num += 1
+
+    # Шаг 4. Итог
+    found_lines = [f"➡️ <b>√{n*n} = {n}</b>" for n in found_integers]
+    count = len(found_integers)
+
+    # Грамматика: выбираем правильное окончание
+    if count == 1:
+        phrase = "попало"  # В наш капкан попало:
+    elif count > 1:
+        phrase = "попали"  # В наш капкан попали:
+    else:
+        phrase = "ничего не попало"
+
+    steps.append({
+        "step_number": step_num,
+        "description_key": "STEP_COUNT_MATCHES",
+        "description_params": {
+            "phrase_found": phrase,
+            "found_list": "\n".join(found_lines),
+            "count": str(count)
+        }
+    })
+
+    return steps
 
 # ============================================================================
 # HELPERS

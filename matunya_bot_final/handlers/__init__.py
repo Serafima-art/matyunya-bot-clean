@@ -2,7 +2,6 @@
 """Aggregates all routers used by main_v2 entry point."""
 
 from matunya_bot_final.handlers.start import router as start_router
-from matunya_bot_final.handlers.dialogs.handler import router as dialog_router
 from matunya_bot_final.handlers.callbacks.navigation.main_menu_callbacks import router as main_menu_router
 from matunya_bot_final.handlers.parts_handlers import router as parts_router
 from matunya_bot_final.handlers.chatter_handler import router as chatter_router
@@ -16,8 +15,10 @@ from matunya_bot_final.handlers.message_handlers.group_1_5_answer_handler import
 from matunya_bot_final.handlers.callbacks.task_handlers.group_1_5.theory_handler import router as theory_handler_1_5
 
 from matunya_bot_final.handlers.callbacks.task_handlers.task_6.task_6_handler import router as task_6_router
+from matunya_bot_final.handlers.message_handlers.task_6_answer_handler import router as task_6_answer_router
 from matunya_bot_final.handlers.callbacks.task_handlers.task_7_handler import router as task_7_router
 from matunya_bot_final.handlers.callbacks.task_handlers.task_8.task_8_handler import router as task_8_router
+from matunya_bot_final.handlers.message_handlers.task_8_answer_handler import router as task_8_answer_router
 from matunya_bot_final.handlers.callbacks.task_handlers.task_9_handler import router as task_9_router
 from matunya_bot_final.handlers.callbacks.task_handlers.task_10_handler import router as task_10_router
 from matunya_bot_final.handlers.callbacks.task_handlers.task_11 import task_11_router
@@ -47,14 +48,15 @@ routers = [
     theory_handler_1_5,
 
     # GPT-powered conversational handlers.
-    dialog_router,
     chatter_router,
     gpt_dialog_control_router,
 
     # Task-specific callback routers.
     task_6_router,
+    task_6_answer_router,
     task_7_router,
     task_8_router,
+    task_8_answer_router,
     task_9_router,
     task_10_router,
     task_11_router,

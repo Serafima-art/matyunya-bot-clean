@@ -68,8 +68,8 @@ async def process_user_answer(message: Message, state: FSMContext, session_maker
         task_subtype = user_data.get("task_subtype", "unknown")
 
         if not task_ids:
-            logger.error("❌ ANSWER HANDLER: task_ids не найдены в state")
-            await message.answer("❌ Ошибка: данные задания не найдены. Попробуйте начать заново.")
+            # Это не наши данные (возможно, пользователь решает задачу 6 или 8)
+            # Просто выходим, чтобы дать сработать следующему хендлеру
             return
 
         if current_task_index >= len(task_ids):

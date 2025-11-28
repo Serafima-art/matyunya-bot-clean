@@ -11,6 +11,7 @@ from aiogram import Bot, F, Router
 from aiogram.fsm.context import FSMContext
 from aiogram.types import CallbackQuery
 
+from matunya_bot_final.states.states import TaskState
 from matunya_bot_final.core.callbacks.tasks_callback import TaskCallback
 from matunya_bot_final.keyboards.inline_keyboards.after_task_keyboard import (
     compose_after_task_message_from_state,
@@ -259,3 +260,4 @@ async def send_task_6(query: CallbackQuery, bot: Bot, state: FSMContext, task_da
     )
 
     await state.update_data(task_6_data=task_data)
+    await state.set_state(TaskState.waiting_for_answer)
