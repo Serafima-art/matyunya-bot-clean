@@ -260,4 +260,4 @@ async def send_task_6(query: CallbackQuery, bot: Bot, state: FSMContext, task_da
     )
 
     await state.update_data(task_6_data=task_data)
-    await state.set_state(TaskState.waiting_for_answer)
+    await state.set_state(TaskState.waiting_for_answer_6)

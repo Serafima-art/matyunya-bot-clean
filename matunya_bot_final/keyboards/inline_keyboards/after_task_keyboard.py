@@ -92,9 +92,28 @@ def compose_after_task_message(gender: Optional[str] = None) -> str:
 
 async def compose_after_task_message_from_state(state: FSMContext) -> str:
     """
-    То же, но пол берём из FSM: gender | student_gender | user_gender | sex | pol.
+    Возвращает корректный нижний блок после условия:
+    — для заданий 20–25: специальный Part2-блок (без «Твой ход!»),
+    — для всех остальных задач: обычный блок (с учётом пола).
     """
+
     data = await state.get_data()
+
+    # 1) Пытаемся извлечь номер задания из FSM
+    task_type_raw = (
+        data.get("task_type")
+        or data.get("task_num")
+        or data.get("current_task")
+        or data.get("task_id")
+    )
+
+    # 2) Если номер найден и это задания второй части — возвращаем спец-блок
+    if task_type_raw and str(task_type_raw).isdigit():
+        task_num = int(task_type_raw)
+        if 20 <= task_num <= 25:
+            return compose_after_task_message_part2()
+
+    # 3) Иначе — обычный блок с учётом пола ученика
     gender_raw = (
         data.get("gender")
         or data.get("student_gender")
@@ -103,6 +122,7 @@ async def compose_after_task_message_from_state(state: FSMContext) -> str:
         or data.get("pol")
     )
     gender = _normalize_gender(gender_raw)
+
     return compose_after_task_message(gender)
 
 
@@ -122,6 +142,20 @@ async def compose_help_block_from_state(state: FSMContext) -> str:
     )
     gender = _normalize_gender(gender_raw)
     return _build_help_block_text(gender)
+
+def compose_after_task_message_part2() -> str:
+    """
+    Специальный текст для заданий второй части (20–25).
+    Используется вместо стандартного «🚀 Твой ход!».
+    """
+    return (
+        "📘 Во второй части ОГЭ проверяют именно ход решения.\n"
+        "Ответ может быть длинным, с корнями и дробями — поэтому вводить его не нужно.\n\n"
+        "Попробуй решить самостоятельно ✍️  \n"
+        "А чтобы сравнить с верным решением — нажми <b>🆘 Помощь</b>.\n\n"
+        "📚 Теория поможет вспомнить правила,\n"
+        "а ⏱ На время — натренирует скорость."
+    )
 
 
 def compose_hint_block(use_combined_prob: float = 0.55) -> str:
@@ -206,18 +240,26 @@ def get_task_completed_keyboard(
 ) -> InlineKeyboardMarkup:
 
     builder = InlineKeyboardBuilder()
-    builder.row(
-        InlineKeyboardButton(
-            text="🎯 Другое задание",
-            callback_data=TaskCallback(
-                action=f"{task_number}_select_theme",
-                task_type=task_number,
-                subtype_key=task_subtype
-            ).pack(),
-        )
+
+    # 🎯 Другое задание
+    other_task_btn = InlineKeyboardButton(
+        text="🎯 Другое задание",
+        callback_data=TaskCallback(
+            action=f"{task_number}_select_theme",
+            task_type=task_number,
+            subtype_key=task_subtype
+        ).pack(),
     )
-    for row in main_only_kb().inline_keyboard:
-        builder.row(*row)
+
+    # 🏠 В главное меню
+    main_menu_btn = InlineKeyboardButton(
+        text="🏠 В главное меню",
+        callback_data="back_to_main",
+    )
+
+    # 👉 Две кнопки в ОДНОМ ряду
+    builder.row(other_task_btn, main_menu_btn)
+
     return builder.as_markup()
 
 
