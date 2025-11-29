@@ -220,6 +220,9 @@ async def send_task_20(query: CallbackQuery, bot: Bot, state: FSMContext, task_d
 
     await cleanup_messages_by_category(bot, state, chat_id, "tasks")
 
+    # 🔥 Критично: сообщаем системе, что это задание №20
+    await state.update_data(task_type=20)
+
     footer_text = await compose_after_task_message_from_state(state)
     question_text = _task_text(task_data)
     if not question_text:

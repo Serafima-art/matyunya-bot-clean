@@ -1,173 +1,210 @@
-"""
-Handler for Task 6 User Answers.
-Checks the answer, updates the task message visually, and manages flow.
-"""
+import logging
+import re
+import random
+from typing import Any
 
-from aiogram import Router, F, Bot
-from aiogram.types import Message
+from aiogram import F, Router
 from aiogram.fsm.context import FSMContext
+from aiogram.types import Message
 
-# Утилиты и состояния
 from matunya_bot_final.states.states import TaskState
-from matunya_bot_final.utils.answer_utils import answers_equal
 from matunya_bot_final.utils.message_manager import (
-    send_tracked_message,
     cleanup_messages_by_category,
     get_message_id_by_tag,
-    track_existing_message
+    send_tracked_message,
 )
+from matunya_bot_final.utils.text_formatters import escape_for_telegram, format_task
+from matunya_bot_final.utils.answer_utils import answers_equal
 from matunya_bot_final.keyboards.inline_keyboards.after_task_keyboard import (
     get_after_task_keyboard,
     get_task_completed_keyboard,
-    compose_after_task_message_from_state
 )
 from matunya_bot_final.gpt.phrases.tasks.correct_answer_feedback import get_random_feedback
+from matunya_bot_final.gpt.phrases.tasks.incorrect_answer_feedback import (
+    INCORRECT_FEEDBACK_PHRASES,
+)
 
-# Форматтеры для текста
-from matunya_bot_final.utils.text_formatters import cleanup_math_for_display
-try:
-    from matunya_bot_final.utils.text_formatters import format_math_text as _fmt_math
-except ImportError:
-    _fmt_math = lambda s: s
-
-# Для заголовка темы
-from matunya_bot_final.keyboards.inline_keyboards.tasks.task_6.task_6_carousel import get_current_theme_name
-
+logger = logging.getLogger(__name__)
 router = Router()
 
-@router.message(TaskState.waiting_for_answer, F.text)
-async def handle_task_6_answer(message: Message, state: FSMContext, bot: Bot):
-    """
-    Обрабатывает ответ пользователя на Задание 6.
-    """
-    user_answer = message.text.strip()
-    chat_id = message.chat.id
+_ANSWER_TAG = "task_6_main_text"
+_ANSWER_LINE_PATTERN = re.compile(r"^Ответ:.*$", flags=re.MULTILINE)
 
-    # 1. Чистим сообщение пользователя и старые диалоги
+
+@router.message(TaskState.waiting_for_answer_6, F.text)
+async def handle_task_6_answer(message: Message, state: FSMContext) -> None:
+    """Обрабатывает текстовый ответ пользователя для задания 6."""
+    user_answer_raw = (message.text or "").strip()
+    user_id = message.from_user.id
+    logger.info(
+        "Task 6: получен ответ от пользователя %s: '%s'",
+        user_id,
+        user_answer_raw,
+    )
+
+    # Пытаемся удалить сообщение пользователя (чтобы не плодить мусор в чате)
     try:
         await message.delete()
-    except Exception:
-        pass
+        logger.info("Task 6: сообщение пользователя %s удалено.", user_id)
+    except Exception as exc:  # pragma: no cover
+        logger.error(
+            "Task 6: не удалось удалить сообщение пользователя %s: %s",
+            user_id,
+            exc,
+        )
 
-    await cleanup_messages_by_category(bot, state, chat_id, "dialog_messages")
-    await cleanup_messages_by_category(bot, state, chat_id, "answer_feedback")
+    # Чистим старые диалоговые сообщения (подсказки, комментарии)
+    await cleanup_messages_by_category(
+        bot=message.bot,
+        state=state,
+        chat_id=message.chat.id,
+        category="dialog_messages",
+    )
 
-    # 2. Получаем данные
     data = await state.get_data()
     task_data = data.get("task_6_data")
-
-    # Если это не 6 задание - выходим (пусть ловит другой хендлер)
-    # Проверяем либо наличие данных, либо явный флаг номера
-    if not task_data:
+    if not isinstance(task_data, dict):
+        logger.error("Task 6: данные задания не найдены в FSM.")
         return
 
-    # Дополнительная проверка: если в task_data есть task_number, сверяем его.
-    # Если нет - полагаемся на наличие ключа task_6_data в state.
-    if str(task_data.get("task_number", "6")) != "6":
+    formatted_text = data.get("task_6_formatted_text")
+    base_text = formatted_text or _build_base_text(task_data)
+
+    correct_answer = task_data.get("answer")
+    if correct_answer is None:
+        logger.error("Task 6: эталонный ответ отсутствует в task_data.")
         return
 
-    # 3. Проверка ответа
-    correct_answer = str(task_data.get("answer", ""))
-    is_correct = answers_equal(user_answer, correct_answer)
-
-    # 4. Визуальное обновление исходного сообщения
-    task_msg_id = await get_message_id_by_tag(state, "task_6_main_text")
-
-    if task_msg_id:
-        # Пересобираем текст задачи + вставляем ответ
-        new_text = await _rebuild_task_text_with_answer(task_data, user_answer, is_correct, state)
-
-        # Определяем клавиатуру
-        # В Task 6 subtype может лежать в 'subtype' или 'topic'
-        subtype = task_data.get("subtype") or task_data.get("topic") or "common_fractions"
-
-        if is_correct:
-            keyboard = get_task_completed_keyboard(task_number=6, task_subtype=subtype)
-        else:
-            keyboard = get_after_task_keyboard(task_number=6, task_subtype=subtype)
-
-        try:
-            await bot.edit_message_text(
-                chat_id=chat_id,
-                message_id=task_msg_id,
-                text=new_text,
-                parse_mode="HTML",
-                reply_markup=keyboard
-            )
-        except Exception:
-            pass
-
-    # 5. Отправка обратной связи
-    if is_correct:
-        # ПОБЕДА
-        feedback_text = get_random_feedback(
-            name=data.get("student_name"),
-            gender=data.get("gender")
+    task_message_id = await get_message_id_by_tag(state, _ANSWER_TAG)
+    if task_message_id is None:
+        logger.error(
+            "Task 6: не удалось получить message_id по тегу '%s'.",
+            _ANSWER_TAG,
         )
+        return
+
+    # --- Проверяем ответ ученика ---
+    is_correct = _compare_single_answer(user_answer_raw, correct_answer)
+
+    mark = "✅" if is_correct else "❌"
+    safe_user_answer = escape_for_telegram(user_answer_raw) if user_answer_raw else "—"
+    answer_line = f"Ответ: {mark} <b>{safe_user_answer}</b>"
+    updated_text = _merge_answer_line(base_text, answer_line)
+
+    task_number = task_data.get("task_number") or 6
+    task_subtype = task_data.get("subtype") or "common_fractions"
+
+    keyboard = (
+        get_task_completed_keyboard(task_number=task_number, task_subtype=task_subtype)
+        if is_correct
+        else get_after_task_keyboard(
+            task_number=task_number,
+            task_subtype=task_subtype,
+        )
+    )
+
+    # Обновляем основное окно задания
+    try:
+        await message.bot.edit_message_text(
+            chat_id=message.chat.id,
+            message_id=task_message_id,
+            text=updated_text,
+            reply_markup=keyboard,
+            parse_mode="HTML",
+        )
+        logger.info(
+            "Task 6: обновлено сообщение задания (message_id=%s).",
+            task_message_id,
+        )
+    except Exception as exc:
+        logger.error("Task 6: ошибка при обновлении сообщения: %s", exc)
+        return
+
+    # --- Если ответ правильный ---
+    if is_correct:
+        student_name = data.get("student_name")
+        gender = data.get("gender")
+        feedback_text = get_random_feedback(name=student_name, gender=gender)
 
         await send_tracked_message(
-            bot=bot,
-            chat_id=chat_id,
+            bot=message.bot,
+            chat_id=message.chat.id,
             state=state,
             text=feedback_text,
-            category="answer_feedback",
-            message_tag="feedback_success"
+            message_tag="task_6_success_feedback",
+            category="dialog_messages",
         )
 
-        # Сбрасываем состояние
-        await state.set_state(None)
+        updated_state = await state.get_data()
+        await _finalize_success(state, updated_state)
+        return
 
-    else:
-        # ОШИБКА
-        await send_tracked_message(
-            bot=bot,
-            chat_id=chat_id,
-            state=state,
-            text=f"❌ <b>Неверно.</b> Ты написал: {user_answer}\nПопробуй еще раз или нажми «🆘 Помощь»!",
-            category="answer_feedback",
-            message_tag="feedback_error"
-        )
+    # --- Если ответ неправильный ---
+    text = random.choice(INCORRECT_FEEDBACK_PHRASES)
+
+    await send_tracked_message(
+        bot=message.bot,
+        chat_id=message.chat.id,
+        state=state,
+        text=text,
+        message_tag="task_6_incorrect_answer_prompt",
+        category="dialog_messages",
+    )
+
+    await state.update_data(task_6_last_attempt=user_answer_raw)
 
 
-async def _rebuild_task_text_with_answer(task_data: dict, user_answer: str, is_correct: bool, state: FSMContext) -> str:
+# --------- Вспомогательные функции ---------
+
+
+def _compare_single_answer(user_answer: str, correct: Any) -> bool:
+    """Сравнение одиночного ответа с учётом формата (используем общий помощник)."""
+    return answers_equal(user_answer, str(correct))
+
+
+def _merge_answer_line(base_text: str, answer_line: str) -> str:
+    """Заменяет строку 'Ответ: ...' в тексте задания или добавляет её в конец."""
+    if _ANSWER_LINE_PATTERN.search(base_text):
+        return _ANSWER_LINE_PATTERN.sub(answer_line, base_text, count=1)
+    return f"{base_text}\n{answer_line}"
+
+
+def _build_base_text(task_data: dict) -> str:
     """
-    Заново собирает текст задачи 6, добавляя ответ пользователя.
+    Собирает базовый текст задания 6.
+
+    Для дробей основное условие лежит в question_text.
+    Если по какой-то причине его нет — пробуем text.
     """
-    # 1. Восстанавливаем условие
     raw_text = (
         task_data.get("question_text")
         or task_data.get("text")
-        or task_data.get("question")
         or ""
     )
-    # Форматируем математику (дроби и т.д.)
-    question_text = _fmt_math(raw_text)
 
-    # 2. Формируем строку ответа
-    icon = "✅" if is_correct else "❌"
-    safe_answer = str(user_answer).replace("<", "&lt;").replace(">", "&gt;")
-    answer_line = f"Ответ: <b>{safe_answer}</b> {icon}"
+    task_number = task_data.get("task_number") or 6
+    return format_task(str(task_number), raw_text)
 
-    # 3. Подвал (статистика)
-    footer_text = await compose_after_task_message_from_state(state)
 
-    # 4. Заголовок темы
-    topic_key = task_data.get("topic") or task_data.get("subtype") or "default"
-    topic_name = get_current_theme_name(topic_key)
+async def _finalize_success(state: FSMContext, data: dict) -> None:
+    """
+    Очищает состояние после успешно решённого задания,
+    но сохраняет служебные структуры трекинга сообщений.
+    """
+    tracked_messages = data.get("tracked_messages")
+    message_tags_by_category = data.get("message_tags_by_category")
 
-    # Сборка
-    final_text = (
-        f"<b>Задание 6:</b> {topic_name}\n"
-        f"\n"
-        f"{question_text}\n"
-        f"\n"
-        f"{answer_line}\n"
-        f"\n"
-        f"{footer_text}"
+    await state.clear()
+
+    preserved: dict[str, Any] = {}
+    if tracked_messages:
+        preserved["tracked_messages"] = tracked_messages
+    if message_tags_by_category:
+        preserved["message_tags_by_category"] = message_tags_by_category
+
+    if preserved:
+        await state.update_data(**preserved)
+
+    logger.info(
+        "Task 6: состояние очищено, пользователь завершил задачу.",
     )
-
-    # Финальная чистка (умножение, пробелы)
-    final_text = cleanup_math_for_display(final_text)
-    final_text = final_text.replace("·", "<code>·</code>") # Для красоты, как в основном хендлере
-
-    return final_text

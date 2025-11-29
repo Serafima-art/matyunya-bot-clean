@@ -161,4 +161,4 @@ async def send_task_8(query: CallbackQuery, bot: Bot, state: FSMContext, task_da
 
     await send_tracked_message(bot=bot, chat_id=chat_id, state=state, text=final_text, reply_markup=keyboard, message_tag="task_8_main_text", category="tasks", parse_mode="HTML")
     await state.update_data(task_8_data=task_data)
-    await state.set_state(TaskState.waiting_for_answer)
+    await state.set_state(TaskState.waiting_for_answer_8)
