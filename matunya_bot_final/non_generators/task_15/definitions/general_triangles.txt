@@ -1,137 +1,134 @@
 # Паттерн 2.1: triangle_area_by_sin
-triangle_area_by_sin|В треугольнике ABC известно, что AB = 10, BC = 18, а sin∠ABC = 1/6. Найдите площадь треугольника ABC.|15
-triangle_area_by_sin|В треугольнике ABC угол C равен 30°, AC = 10, BC = 16. Найдите площадь.|40
-triangle_area_by_sin|Стороны AB и AC треугольника ABC равны 15 и 10 соответственно. Синус угла A равен 0,8. Найдите площадь треугольника.|60
-triangle_area_by_sin|В треугольнике ABC угол B равен 45°, AB = 8, BC = 10√2. Вычислите площадь.|40
-triangle_area_by_sin|Найдите площадь треугольника ABC, если AC = 18, BC = 5, а синус угла C равен 1/3.|15
-triangle_area_by_sin|В треугольнике ABC известно, что AB = 14, AC = 9, а sin∠BAC = 2/7. Найдите площадь.|18
-triangle_area_by_sin|Стороны AB и BC треугольника ABC равны 20, а синус угла B равен 3/4. Найдите площадь треугольника.|150
-triangle_area_by_sin|В треугольнике ABC угол A равен 60°, AB = 10, AC = 6√3. Вычислите площадь.|45
-triangle_area_by_sin|Найдите площадь треугольника ABC, если AB = 24, BC = 11, а синус угла B равен 1/4.|33
-triangle_area_by_sin|В треугольнике ABC известно, что AC = 16, BC = 25, а sin∠BCA = 0,5. Найдите площадь треугольника ABC.|100
-triangle_area_by_sin|В треугольнике ABC стороны AB и AC равны 10 и 18, а угол A равен 150°. Найдите площадь.|45
-triangle_area_by_sin|В треугольнике ABC угол C равен 150°, AC = 8, BC = 14. Найдите площадь.|28
-triangle_area_by_sin|Найдите площадь треугольника ABC, если AB = 16, AC = 7, а синус угла A равен 3/4.|42
-triangle_area_by_sin|В треугольнике ABC известно, что AB = 6, BC = 15√2, а угол B равен 45°. Найдите площадь.|45
-triangle_area_by_sin|Стороны AC и BC треугольника ABC равны 30 и 8 соответственно. Синус угла C равен 5/12. Найдите площадь.|50
-triangle_area_by_sin|В треугольнике ABC угол A равен 30°, AB = 22, AC = 10. Вычислите площадь.|55
-triangle_area_by_sin|Найдите площадь треугольника ABC, если BC = 9, AC = 20, а sin∠C = 0,4.|36
-triangle_area_by_sin|В треугольнике ABC угол B равен 60°, AB = 12, BC = 10√3. Найдите площадь.|90
-triangle_area_by_sin|Известно, что стороны AB и BC треугольника ABC равны 14 и 10, а синус угла между ними 6/7. Найдите площадь.|60
-triangle_area_by_sin|В треугольнике ABC угол A равен 135°, AB = 6, AC = 5√2. Найдите площадь.|15
+triangle_area_by_sin|В треугольнике ABC известно, что AB = 10, BC = 18, а sin∠ABC = 1/6. Найди площадь треугольника ABC.
+triangle_area_by_sin|В треугольнике ABC ∠C равен 30°, AC = 10, BC = 16. Найди площадь.
+triangle_area_by_sin|Стороны AB и AC треугольника ABC равны 15 и 10 соответственно, sin∠A равен 0,8. Найди площадь треугольника.
+triangle_area_by_sin|В треугольнике ABC ∠B равен 45°, AB = 8, BC = 10√2. Вычислите площадь.
+triangle_area_by_sin|Найди площадь треугольника ABC, если AC = 18, BC = 5, а sin∠C равен 1/3.
+triangle_area_by_sin|В треугольнике ABC известно, что AB = 14, AC = 9, а sin∠BAC = 2/7. Найди площадь.
+triangle_area_by_sin|Стороны AB и BC треугольника ABC равны 20, а sin∠B равен 3/4. Найди площадь треугольника.
+triangle_area_by_sin|В треугольнике ABC ∠A равен 60°, AB = 10, AC = 6√3. Вычислите площадь.
+triangle_area_by_sin|Найди площадь треугольника ABC, если AB = 24, BC = 11, а sin∠B равен 1/4.
+triangle_area_by_sin|В треугольнике ABC известно, что AC = 16, BC = 25, а sin∠BCA = 0,5. Найди площадь треугольника ABC.
+triangle_area_by_sin|В треугольнике ABC стороны AB и AC равны 10 и 18, а ∠A равен 150°. Найди площадь.
+triangle_area_by_sin|В треугольнике ABC ∠C равен 150°, AC = 8, BC = 14. Найди площадь.
+triangle_area_by_sin|Найди площадь треугольника ABC, если AB = 16, AC = 7, а sin∠A равен 3/4.
+triangle_area_by_sin|В треугольнике ABC известно, что AB = 6, BC = 15√2, а ∠B равен 45°. Найди площадь.
+triangle_area_by_sin|Стороны AC и BC треугольника ABC равны 30 и 8 соответственно, sin∠C равен 5/12. Найди площадь.
+triangle_area_by_sin|В треугольнике ABC ∠A равен 30°, AB = 22, AC = 10. Вычислите площадь.
+triangle_area_by_sin|Найди площадь треугольника ABC, если BC = 9, AC = 20, а sin∠C = 0,4.
+triangle_area_by_sin|В треугольнике ABC ∠B равен 60°, AB = 12, BC = 10√3. Найди площадь.
+triangle_area_by_sin|Известно, что стороны AB и BC треугольника ABC равны 14 и 10, а синус угла между ними 6/7. Найди площадь.
+triangle_area_by_sin|В треугольнике ABC ∠A равен 135°, AB = 6, AC = 5√2. Найди площадь.
 
 # Паттерн 2.2: triangle_area_by_dividing_point
-triangle_area_by_dividing_point|На стороне AC треугольника ABC отмечена точка D так, что AD = 3, DC = 5. Площадь треугольника ABC равна 64. Найдите площадь треугольника BCD.|40
-triangle_area_by_dividing_point|На стороне AC треугольника ABC отмечена точка D так, что AD = 2, DC = 13. Площадь треугольника ABC равна 75. Найдите площадь треугольника ABD.|10
-triangle_area_by_dividing_point|На стороне AC треугольника ABC выбрана точка D так, что AD : DC = 2 : 3. Площадь треугольника ABC равна 50. Найдите площадь меньшего из треугольников ABD и BCD.|20
-triangle_area_by_dividing_point|Площадь треугольника ABC равна 120. На стороне AC отмечена точка D, делящая ее в отношении AD : DC = 3 : 5. Найдите площадь треугольника ABD.|45
-triangle_area_by_dividing_point|На стороне AC треугольника ABC отмечена точка D. Известно, что AD = 6, DC = 9, а площадь треугольника ABC равна 100. Найдите площадь треугольника BCD.|60
-triangle_area_by_dividing_point|Точка D делит сторону AC треугольника ABC на отрезки AD=4 и DC=5. Площадь треугольника ABD равна 36. Найдите площадь треугольника ABC.|81
-triangle_area_by_dividing_point|На стороне AC треугольника ABC выбрана точка D так, что AD : DC = 2 : 7. Площадь треугольника BCD равна 63. Найдите площадь треугольника ABC.|81
-triangle_area_by_dividing_point|В треугольнике ABC на стороне AC отмечена точка D, такая что AD = 5, DC = 8. Площадь треугольника ABC равна 65. Найдите площадь треугольника ABD.|25
-triangle_area_by_dividing_point|Площадь треугольника ABC равна 90. На стороне AC взята точка D, при этом AD = 10, DC = 8. Найдите площадь треугольника BCD.|40
-triangle_area_by_dividing_point|На стороне AC треугольника ABC отмечена точка D, делящая ее в отношении 4:5. Площадь треугольника ABD равна 20. Найдите площадь треугольника BCD.|25
-triangle_area_by_dividing_point|Известно, что AD = 3, DC = 11, а площадь треугольника ABC равна 56. Точка D лежит на стороне AC. Найдите площадь треугольника BCD.|44
-triangle_area_by_dividing_point|На стороне AC треугольника ABC выбрана точка D, для которой AD : DC = 5 : 6. Площадь треугольника ABC равна 121. Определите площадь треугольника ABD.|55
-triangle_area_by_dividing_point|Точка D на стороне AC треугольника ABC такова, что AD = 7 и DC = 8. Площадь треугольника BCD равна 48. Найдите площадь треугольника ABC.|90
-triangle_area_by_dividing_point|Площадь треугольника ABC равна 48. Точка D на стороне AC делит ее на отрезки в отношении AD:DC=1:2. Найдите площадь большего из образовавшихся треугольников.|32
-triangle_area_by_dividing_point|На стороне AC треугольника ABC отмечена точка D так, что AD = 1, DC = 5. Площадь треугольника ABC равна 72. Найдите площадь треугольника BCD.|60
-triangle_area_by_dividing_point|В треугольнике ABC на стороне AC взята точка D. Площадь треугольника ABD равна 14, а площадь треугольника BCD в 3 раза больше. Найдите площадь треугольника ABC.|56
-triangle_area_by_dividing_point|На стороне AC треугольника ABC отмечена точка D. AD=9, DC=12, а площадь всего треугольника ABC равна 84. Найдите площадь треугольника ABD.|36
-triangle_area_by_dividing_point|Точка D делит сторону AC в отношении AD:DC = 3:7. Площадь треугольника ABC равна 150. Найдите площадь треугольника BCD.|105
-triangle_area_by_dividing_point|На стороне AC треугольника ABC отмечена точка D так, что DC = 3 * AD. Площадь треугольника ABD равна 15. Найдите площадь треугольника ABC.|60
-triangle_area_by_dividing_point|В треугольнике ABC площадью 99 на стороне AC взята точка D, что AD:DC = 2:9. Найдите площадь треугольника ABD.|18
+triangle_area_by_dividing_point|На стороне AC треугольника ABC отмечена точка D так, что AD = 3, DC = 5. Площадь треугольника ABC равна 64. Найди площадь треугольника BCD.
+triangle_area_by_dividing_point|На стороне AC треугольника ABC отмечена точка D так, что AD = 2, DC = 13. Площадь треугольника ABC равна 75. Найди площадь треугольника ABD.
+triangle_area_by_dividing_point|На стороне AC треугольника ABC выбрана точка D так, что AD : DC = 2 : 3. Площадь треугольника ABC равна 50. Найди площадь меньшего из треугольников ABD и BCD.
+triangle_area_by_dividing_point|Площадь треугольника ABC равна 120. На стороне AC отмечена точка D, делящая ее в отношении AD : DC = 3 : 5. Найди площадь треугольника ABD.
+triangle_area_by_dividing_point|На стороне AC треугольника ABC отмечена точка D. Известно, что AD = 6, DC = 9, а площадь треугольника ABC равна 100. Найди площадь треугольника BCD.
+triangle_area_by_dividing_point|Точка D делит сторону AC треугольника ABC на отрезки AD=4 и DC=5. Площадь треугольника ABD равна 36. Найди площадь треугольника ABC.
+triangle_area_by_dividing_point|На стороне AC треугольника ABC выбрана точка D так, что AD : DC = 2 : 7. Площадь треугольника BCD равна 63. Найди площадь треугольника ABC.
+triangle_area_by_dividing_point|В треугольнике ABC на стороне AC отмечена точка D, такая что AD = 5, DC = 8. Площадь треугольника ABC равна 65. Найди площадь треугольника ABD.
+triangle_area_by_dividing_point|Площадь треугольника ABC равна 90. На стороне AC взята точка D, при этом AD = 10, DC = 8. Найди площадь треугольника BCD.
+triangle_area_by_dividing_point|На стороне AC треугольника ABC отмечена точка D, делящая ее в отношении 4:5. Площадь треугольника ABD равна 20. Найди площадь треугольника BCD.
+triangle_area_by_dividing_point|Известно, что AD = 3, DC = 11, а площадь треугольника ABC равна 56. Точка D лежит на стороне AC. Найди площадь треугольника BCD.
+triangle_area_by_dividing_point|На стороне AC треугольника ABC выбрана точка D, для которой AD : DC = 5 : 6. Площадь треугольника ABC равна 121. Определите площадь треугольника ABD.
+triangle_area_by_dividing_point|Точка D на стороне AC треугольника ABC такова, что AD = 7 и DC = 8. Площадь треугольника BCD равна 48. Найди площадь треугольника ABC.
+triangle_area_by_dividing_point|Площадь треугольника ABC равна 48. Точка D на стороне AC делит ее на отрезки в отношении AD:DC=1:2. Найди площадь большего из образовавшихся треугольников.
+triangle_area_by_dividing_point|На стороне AC треугольника ABC отмечена точка D так, что AD = 1, DC = 5. Площадь треугольника ABC равна 72. Найди площадь треугольника BCD.
+triangle_area_by_dividing_point|В треугольнике ABC на стороне AC взята точка D. Площадь треугольника ABD равна 14, а площадь треугольника BCD в 3 раза больше. Найди площадь треугольника ABC.
+triangle_area_by_dividing_point|На стороне AC треугольника ABC отмечена точка D. AD=9, DC=12, а площадь всего треугольника ABC равна 84. Найди площадь треугольника ABD.
+triangle_area_by_dividing_point|Точка D делит сторону AC в отношении AD:DC = 3:7. Площадь треугольника ABC равна 150. Найди площадь треугольника BCD.
+triangle_area_by_dividing_point|На стороне AC треугольника ABC отмечена точка D так, что DC = 3 * AD. Площадь треугольника ABD равна 15. Найди площадь треугольника ABC.
+triangle_area_by_dividing_point|В треугольнике ABC площадью 99 на стороне AC взята точка D, что AD:DC = 2:9. Найди площадь треугольника ABD.
 
 # Паттерн 2.3: triangle_area_by_parallel_line
-parallel_line_find_area|Прямая, параллельная стороне AC треугольника ABC, пересекает стороны AB и BC в точках M и N соответственно. AC = 20, MN = 12, а площадь треугольника ABC равна 150. Найдите площадь треугольника MBN.|54
-parallel_line_find_area|В треугольнике ABC проведена линия MN, параллельная AC. Площадь треугольника MBN равна 32, а площадь ABC равна 50. Найдите отношение MN : AC.|4/5
-parallel_line_find_area|Прямая, параллельная стороне AC треугольника ABC, пересекает стороны AB и BC в точках M и N. Известно, что AC = 24, MN = 16, а площадь треугольника MBN равна 40. Найдите площадь треугольника ABC.|90
-parallel_line_find_area|В треугольнике ABC сторона AC равна 30. На сторонах AB и BC отмечены точки M и N так, что MN параллельна AC и MN = 25. Площадь треугольника ABC равна 108. Найдите площадь MBN.|75
-parallel_line_find_area|Прямая, параллельная стороне AC, пересекает AB и BC в точках M и N. Площадь треугольника ABC равна 147, а площадь MBN = 12. Найдите отношение AC к MN.|7/2
-parallel_line_find_area|Прямая, параллельная стороне AC треугольника ABC, пересекает стороны AB и BC в точках M и N. AC = 33, MN = 22, площадь треугольника ABC = 162. Найдите площадь треугольника MBN.|72
-parallel_line_find_area|В треугольнике ABC с площадью 240, проведена линия MN параллельно AC. Найдите площадь треугольника MBN, если известно, что MN относится к AC как 1 к 2.|60
-parallel_line_find_area|Прямая, параллельная стороне AC, пересекает AB и BC в точках M и N. Площадь треугольника MBN равна 45, а площадь ABC равна 125. Найдите отношение MN / AC.|3/5
-parallel_line_find_area|В треугольнике ABC известно, что AC = 42, MN = 35, MN || AC. Площадь треугольника ABC равна 180. Найдите площадь MBN.|125
-parallel_line_find_area|Прямая, параллельная стороне AC, отсекает от треугольника ABC треугольник MBN. Площадь MBN равна 28, а площадь ABC равна 63. Найдите отношение MN к AC.|2/3
+triangle_area_by_parallel_line|Прямая, параллельная стороне AC треугольника ABC, пересекает стороны AB и BC в точках M и N соответственно. AC = 20, MN = 12, а площадь треугольника ABC равна 150. Найди площадь треугольника MBN.
+triangle_area_by_parallel_line|В треугольнике ABC проведена линия MN, параллельная AC. Площадь треугольника MBN равна 32, а площадь ABC равна 50. Найди отношение MN : AC.
+triangle_area_by_parallel_line|Прямая, параллельная стороне AC треугольника ABC, пересекает стороны AB и BC в точках M и N. Известно, что AC = 24, MN = 16, а площадь треугольника MBN равна 40. Найди площадь треугольника ABC.
+triangle_area_by_parallel_line|В треугольнике ABC сторона AC равна 30. На сторонах AB и BC отмечены точки M и N так, что MN параллельна AC, и MN = 25. Площадь треугольника ABC равна 108. Найди площадь MBN.
+triangle_area_by_parallel_line|Прямая, параллельная стороне AC, пересекает AB и BC в точках M и N. Площадь треугольника ABC равна 147, а площадь MBN = 12. Найди отношение AC к MN.
+triangle_area_by_parallel_line|Прямая, параллельная стороне AC треугольника ABC, пересекает стороны AB и BC в точках M и N. AC = 33, MN = 22, площадь треугольника ABC = 162. Найди площадь треугольника MBN.
+triangle_area_by_parallel_line|В треугольнике ABC с площадью 240, проведена линия MN параллельно AC. Найди площадь треугольника MBN, если известно, что MN относится к AC как 1 к 2.
+triangle_area_by_parallel_line|Прямая, параллельная стороне AC, пересекает AB и BC в точках M и N. Площадь треугольника MBN равна 45, а площадь ABC равна 125. Найди отношение MN / AC.
+triangle_area_by_parallel_line|В треугольнике ABC известно, что AC = 42, MN = 35, MN || AC. Площадь треугольника ABC равна 180. Найди площадь MBN.
 
-parallel_line_find_side|Прямая, параллельная стороне AC треугольника ABC, пересекает стороны AB и BC в точках M и N. AC = 28, MN = 12, AB = 21. Найдите AM.|12
-parallel_line_find_side|В треугольнике ABC проведена линия MN параллельно AC. Известно, что AB = 24, AC = 32, MN = 20. Найдите BM.|15
-parallel_line_find_side|На сторонах AB и BC треугольника ABC отмечены точки M и N. Известно, что BC = 18, MN = 6, AC = 27 и MN || AC. Найдите BN.|4
-parallel_line_find_side|Прямая, параллельная стороне AC, пересекает стороны AB и BC в точках M и N. AC = 15, MN = 10, а отрезок AM = 4. Найдите длину стороны AB.|12
-parallel_line_find_side|В треугольнике ABC линия MN параллельна AC. Известно, что NC = 10, AC = 35, MN = 21. Найдите BC.|25
-parallel_line_find_side|Прямая, параллельная стороне AC треугольника ABC, пересекает AB в точке M, а BC в точке N. Сторона AB = 33, AC = 44, MN = 28. Найдите BM.|21
-parallel_line_find_side|В треугольнике ABC MN || AC. Сторона BC = 30, CN = 12, MN = 15. Найдите AC.|25
-parallel_line_find_side|Прямая, параллельная стороне AC, пересекает стороны AB и BC в точках M и N. AB = 16, AM = 4, AC = 20. Найдите MN.|15
-parallel_line_find_side|В треугольнике ABC MN параллельна AC. Известно, что BC = 25, BN = 15, MN = 18. Найдите AC.|30
-parallel_line_find_side|Прямая, параллельная стороне AC, пересекает AB и BC в точках M и N. AC=49, MN=35, AM=10. Найдите AB.|35
+triangle_area_by_parallel_line|Прямая, параллельная стороне AC треугольника ABC, пересекает стороны AB и BC в точках M и N. AC = 28, MN = 12, AB = 21. Найди AM.
+triangle_area_by_parallel_line|В треугольнике ABC проведена линия MN параллельно AC. Известно, что AB = 24, AC = 32, MN = 20. Найди BM.
+triangle_area_by_parallel_line|На сторонах AB и BC треугольника ABC отмечены точки M и N. Известно, что BC = 18, MN = 6, AC = 27 и MN || AC. Найди BN.
+triangle_area_by_parallel_line|Прямая, параллельная стороне AC, пересекает стороны AB и BC в точках M и N. AC = 15, MN = 10, а отрезок AM = 4. Найди длину стороны AB.
+triangle_area_by_parallel_line|В треугольнике ABC линия MN параллельна AC. Известно, что NC = 10, AC = 35, MN = 21. Найди BC.
+triangle_area_by_parallel_line|Прямая, параллельная стороне AC треугольника ABC, пересекает AB в точке M, а BC в точке N. Сторона AB = 33, AC = 44, MN = 28. Найди BM.
+triangle_area_by_parallel_line|В треугольнике ABC MN || AC. Сторона BC = 30, CN = 12, MN = 15. Найди AC.
+triangle_area_by_parallel_line|Прямая, параллельная стороне AC, пересекает стороны AB и BC в точках M и N. AB = 16, AM = 4, AC = 20. Найди MN.
+triangle_area_by_parallel_line|В треугольнике ABC MN параллельна AC. Известно, что BC = 25, BN = 15, MN = 18. Найди AC.
+triangle_area_by_parallel_line|Прямая, параллельная стороне AC, пересекает AB и BC в точках M и N. AC=49, MN=35, AM=10. Найди AB.
 
 # Паттерн 2.4: triangle_area_by_midpoints
-triangle_area_by_midpoints|Точки M и N являются серединами сторон AB и BC треугольника ABC. Площадь треугольника MBN равна 12. Найдите площадь треугольника ABC.|48
-triangle_area_by_midpoints|В треугольнике ABC площадь равна 120. Точки M и N — середины сторон AB и BC. Найдите площадь треугольника MBN.|30
-triangle_area_by_midpoints|Площадь треугольника ABC равна 80. Точки M и N – середины сторон AB и BC соответственно. Найдите площадь четырехугольника AMNC.|60
-triangle_area_by_midpoints|Точки M и N - середины сторон AB и BC треугольника ABC. Площадь четырехугольника AMNC равна 72. Найдите площадь треугольника ABC.|96
-triangle_area_by_midpoints|В треугольнике ABC MN — средняя линия, где M — середина AB, а N — середина BC. Площадь треугольника ABC равна 100. Найдите площадь MBN.|25
-triangle_area_by_midpoints|Точки M и N являются серединами сторон AB и BC. Площадь треугольника MBN равна 15. Найдите площадь трапеции AMNC.|45
-triangle_area_by_midpoints|В треугольнике ABC точки M и N — середины сторон AB и BC. Площадь треугольника MBN равна 7. Найдите площадь ABC.|28
-triangle_area_by_midpoints|Площадь треугольника ABC равна 64. Точки M и N – середины AB и BC. Найдите площадь треугольника MBN.|16
-triangle_area_by_midpoints|В треугольнике ABC площадь равна 20. Точки M и N – середины сторон AB и BC. Найдите площадь четырехугольника AMNC.|15
-triangle_area_by_midpoints|Точки M и N являются серединами сторон AB и BC треугольника ABC. Площадь четырехугольника AMNC равна 48. Найдите площадь MBN.|16
-triangle_area_by_midpoints|MN — средняя линия треугольника ABC (M на AB, N на BC). Площадь треугольника MBN равна 21. Найдите площадь ABC.|84
-triangle_area_by_midpoints|В треугольнике ABC площадью 140, M и N — середины сторон AB и BC. Найдите площадь MBN.|35
-triangle_area_by_midpoints|Площадь треугольника ABC равна 96. M и N — середины сторон AB и BC. Найдите площадь трапеции AMNC.|72
-triangle_area_by_midpoints|Точки M и N - середины сторон AB и BC. Площадь трапеции AMNC равна 63. Найдите площадь треугольника ABC.|84
-triangle_area_by_midpoints|Площадь треугольника MBN равна 11, где M и N — середины сторон AB и BC треугольника ABC. Найдите площадь ABC.|44
-triangle_area_by_midpoints|В треугольнике ABC площадь равна 52. Точки M и N являются серединами сторон AB и BC. Найдите площадь треугольника MBN.|13
-triangle_area_by_midpoints|В треуголь-нике ABC площадью 72 M и N – середины AB и BC. Найдите площадь четырехугольника AMNC.|54
-triangle_area_by_midpoints|Площадь четырехугольника AMNC равна 99, где M и N - середины сторон AB и BC треугольника ABC. Найдите площадь треугольника MBN.|33
-triangle_area_by_midpoints|MN — средняя линия треугольника ABC. Площадь MBN равна 5. Найдите площадь трапеции AMNC.|15
-triangle_area_by_midpoints|В треугольнике ABC, площадь которого 108, точки M и N являются серединами сторон AB и BC. Найдите площадь треугольника MBN.|27
+triangle_area_by_midpoints|Точки M и N являются серединами сторон AB и BC треугольника ABC. Площадь треугольника MBN равна 12. Найди площадь треугольника ABC.
+triangle_area_by_midpoints|В треугольнике ABC площадь равна 120. Точки M и N — середины сторон AB и BC. Найди площадь треугольника MBN.
+triangle_area_by_midpoints|Площадь треугольника ABC равна 80. Точки M и N – середины сторон AB и BC соответственно. Найди площадь четырехугольника AMNC.
+triangle_area_by_midpoints|Точки M и N - середины сторон AB и BC треугольника ABC. Площадь четырехугольника AMNC равна 72. Найди площадь треугольника ABC.
+triangle_area_by_midpoints|В треугольнике ABC MN — средняя линия, где M — середина AB, а N — середина BC. Площадь треугольника ABC равна 100. Найди площадь MBN.
+triangle_area_by_midpoints|Точки M и N являются серединами сторон AB и BC. Площадь треугольника MBN равна 15. Найди площадь трапеции AMNC.
+triangle_area_by_midpoints|В треугольнике ABC точки M и N — середины сторон AB и BC. Площадь треугольника MBN равна 7. Найди площадь ABC.
+triangle_area_by_midpoints|Площадь треугольника ABC равна 64. Точки M и N – середины AB и BC. Найди площадь треугольника MBN.
+triangle_area_by_midpoints|В треугольнике ABC площадь равна 20. Точки M и N – середины сторон AB и BC. Найди площадь четырехугольника AMNC.
+triangle_area_by_midpoints|Точки M и N являются серединами сторон AB и BC треугольника ABC. Площадь четырехугольника AMNC равна 48. Найди площадь MBN.
+triangle_area_by_midpoints|MN — средняя линия треугольника ABC (M на AB, N на BC). Площадь треугольника MBN равна 21. Найди площадь ABC.
+triangle_area_by_midpoints|В треугольнике ABC площадью 140, M и N — середины сторон AB и BC. Найди площадь MBN.
+triangle_area_by_midpoints|Площадь треугольника ABC равна 96. M и N — середины сторон AB и BC. Найди площадь трапеции AMNC.
+triangle_area_by_midpoints|Точки M и N - середины сторон AB и BC. Площадь трапеции AMNC равна 63. Найди площадь треугольника ABC.
+triangle_area_by_midpoints|Площадь треугольника MBN равна 11, где M и N — середины сторон AB и BC треугольника ABC. Найди площадь ABC.
+triangle_area_by_midpoints|В треугольнике ABC площадь равна 52. Точки M и N являются серединами сторон AB и BC. Найди площадь треугольника MBN.
+triangle_area_by_midpoints|В треуголь-нике ABC площадью 72 M и N – середины AB и BC. Найди площадь четырехугольника AMNC.
+triangle_area_by_midpoints|Площадь четырехугольника AMNC равна 99, где M и N - середины сторон AB и BC треугольника ABC. Найди площадь треугольника MBN.
+triangle_area_by_midpoints|MN — средняя линия треугольника ABC. Площадь MBN равна 5. Найди площадь трапеции AMNC.
+triangle_area_by_midpoints|В треугольнике ABC, площадь которого 108, точки M и N являются серединами сторон AB и BC. Найди площадь треугольника MBN.
 
 # Паттерн 2.5: cosine_law_find_cos
-cosine_law_find_cos|В треугольнике ABC стороны равны: AB = 5, BC = 6, AC = 7. Найдите cos∠B.|0.2
-cosine_law_find_cos|Найдите косинус угла A в треугольнике ABC со сторонами AB=5, BC=9, AC=7. |-0.1
-cosine_law_find_cos|В треугольнике ABC стороны AB = 8, BC = 5, AC = 7. Найдите cos∠B.|0.5
-cosine_law_find_cos|Найдите cos∠A в треугольнике ABC со сторонами AB=5, BC=6, AC=4.|0.125
-cosine_law_find_cos|Стороны треугольника ABC равны: AB=13, BC=14, AC=15. Найдите cos∠C.|0.6
-cosine_law_find_cos|В треугольнике ABC стороны AB=5, BC=11, AC=8. Найдите cos∠A.|-0.4
-cosine_law_find_cos|В треугольнике ABC известно, что AB=4, BC=5, AC=6. Найдите cos∠B.|0.125
-cosine_law_find_cos|Найдите cos∠C в треугольнике ABC со сторонами AB=8, BC=9, AC=10. |0.65
-cosine_law_find_cos|В треугольнике ABC известно, что AB=7, BC=13, AC=8. Найдите cos∠A.|-0.5
-cosine_law_find_cos|В треугольнике ABC даны стороны AB=8, BC=10, AC=12. Найдите cos∠C.|0.75
-cosine_law_find_cos|В треугольнике ABC даны стороны AB=4, BC=3, AC=4. Найдите cos∠C.|0.375
-cosine_law_find_cos|В треугольнике ABC AB=7, BC=10, AC=11. Найдите cos∠B.|0.2
-cosine_law_find_cos|В треугольнике ABC стороны AB=15, BC=25, AC=16. Найдите cos∠A.|-0.3
-cosine_law_find_cos|Стороны треугольника ABC равны: AB = 8, BC = 13, AC = 15. Найдите cos∠A.|0.5
-cosine_law_find_cos|В треугольнике ABC стороны AB=8, BC=10, AC=12. Найдите cos∠B.|0.125
-cosine_law_find_cos|Стороны треугольника ABC равны: AB=8, BC=10, AC=14. Найдите cos∠B.|-0.2
-cosine_law_find_cos|В треугольнике ABC стороны AB=8, BC=19, AC=15. Найдите cos∠A.|-0.3
-cosine_law_find_cos|В треугольнике ABC стороны AB=4, BC=7, AC=5. Найдите cos∠A.|-0.2
-cosine_law_find_cos|Стороны треугольника ABC равны: AB=8, BC=11, AC=5. Найдите cos∠A.|-0.4
+cosine_law_find_cos|В треугольнике ABC стороны равны: AB = 5, BC = 6, AC = 7. Найди cos∠B.
+cosine_law_find_cos|Найди коsin∠A в треугольнике ABC со сторонами AB=5, BC=9, AC=7.
+cosine_law_find_cos|В треугольнике ABC стороны AB = 8, BC = 5, AC = 7. Найди cos∠B.
+cosine_law_find_cos|Найди cos∠A в треугольнике ABC со сторонами AB=5, BC=6, AC=4.
+cosine_law_find_cos|Стороны треугольника ABC равны: AB=13, BC=14, AC=15. Найди cos∠C.
+cosine_law_find_cos|В треугольнике ABC стороны AB=5, BC=11, AC=8. Найди cos∠A.
+cosine_law_find_cos|В треугольнике ABC известно, что AB=4, BC=5, AC=6. Найди cos∠B.
+cosine_law_find_cos|Найди cos∠C в треугольнике ABC со сторонами AB=8, BC=9, AC=10.
+cosine_law_find_cos|В треугольнике ABC известно, что AB=7, BC=13, AC=8. Найди cos∠A.
+cosine_law_find_cos|В треугольнике ABC даны стороны AB=8, BC=10, AC=12. Найди cos∠C.
+cosine_law_find_cos|В треугольнике ABC даны стороны AB=4, BC=3, AC=4. Найди cos∠C.
+cosine_law_find_cos|В треугольнике ABC AB=7, BC=10, AC=11. Найди cos∠B.
+cosine_law_find_cos|В треугольнике ABC стороны AB=15, BC=25, AC=16. Найди cos∠A.
+cosine_law_find_cos|Стороны треугольника ABC равны: AB = 8, BC = 13, AC = 15. Найди cos∠A.
+cosine_law_find_cos|В треугольнике ABC стороны AB=8, BC=10, AC=12. Найди cos∠B.
+cosine_law_find_cos|Стороны треугольника ABC равны: AB=8, BC=10, AC=14. Найди cos∠B.
+cosine_law_find_cos|В треугольнике ABC стороны AB=8, BC=19, AC=15. Найди cos∠A.
+cosine_law_find_cos|В треугольнике ABC стороны AB=4, BC=7, AC=5. Найди cos∠A.
+cosine_law_find_cos|Стороны треугольника ABC равны: AB=8, BC=11, AC=5. Найди cos∠A.
 
 # Паттерн 2.6: triangle_by_two_angles_and_side
-triangle_by_two_angles_and_side|В треугольнике ABC ∠A равен 45°, ∠B равен 30°, сторона BC = 10√2. Найдите сторону AC.|10
-triangle_by_two_angles_and_side|В треугольнике ABC ∠A равен 60°, ∠B равен 45°, сторона BC = 6√6. Найдите сторону AC.|12
-triangle_by_two_angles_and_side|В треугольнике ABC ∠B равен 135°, ∠C равен 30°, сторона AB = 8√2. Найдите сторону AC.|16
-triangle_by_two_angles_and_side|Найдите сторону BC треугольника ABC, если AC = 20√3, ∠B = 120°, а ∠A = 30°.|20
-triangle_by_two_angles_and_side|В треугольнике ABC ∠B = 135°, ∠C = 30°. Сторона AB равна 7√2. Найдите сторону AC.|14
-triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 30°, ∠B = 30°, сторона AB = 6√3. Найдите сторону BC.|6
-triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 60°, ∠B = 60°, сторона BC = 9. Найдите сторону AC.|9
-triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 60°, ∠C = 60°, сторона AB = 5. Найдите сторону BC.|5
-triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 45°, ∠B = 45°, сторона AB = 10√2. Найдите сторону BC.|10
-triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 30°, ∠B = 60°, сторона BC = 5. Найдите сторону AB.|10
-triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 30°, ∠B = 60°, сторона AC = 6√3. Найдите сторону AB.|12
-triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 30°, ∠B = 60°, сторона AB = 14. Найдите сторону BC.|7
-triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 60°, ∠B = 30°, сторона AC = 5. Найдите сторону AB.|10
-triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 30°, ∠B = 60°, сторона AC = 4√3. Найдите сторону BC.|4
-triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 30°, ∠B = 30°, сторона AB = 5√3. Найдите сторону BC.|5
-triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 30°, ∠B = 30°, сторона BC = 9. Найдите сторону AC.|9
-triangle_by_two_angles_and_side|В треугольнике ABC угол A = 60°, угол B = 60°, сторона BC = 11. Найдите сторону AC.|11
-triangle_by_two_angles_and_side|В треугольнике ABC угол A = 60°, угол B = 60°, сторона AB = 7. Найдите сторону BC.|7
-triangle_by_two_angles_and_side|В треугольнике ABC угол A = 30°, угол B = 90°, сторона AC = 10. Найдите сторону BC.|5
-triangle_by_two_angles_and_side|В треугольнике ABC угол A = 60°, угол B = 90°, сторона AC = 10. Найдите сторону AB.|5
-triangle_by_two_angles_and_side|В треугольнике ABC угол A = 45°, угол B = 90°, сторона BC = 12. Найдите сторону AB.|12
-triangle_by_two_angles_and_side|В треугольнике ABC угол A = 120°, угол B = 30°, сторона AC = 6√3. Найдите сторону BC.|18
-triangle_by_two_angles_and_side|В треугольнике ABC угол A = 30°, угол B = 90°, сторона AB = 6√3. Найдите сторону BC.|6
-
-
-
+triangle_by_two_angles_and_side|В треугольнике ABC ∠A равен 45°, ∠B равен 30°, сторона BC = 10√2. Найди сторону AC.
+triangle_by_two_angles_and_side|В треугольнике ABC ∠A равен 60°, ∠B равен 45°, сторона BC = 6√6. Найди сторону AC.
+triangle_by_two_angles_and_side|В треугольнике ABC ∠B равен 135°, ∠C равен 30°, сторона AB = 8√2. Найди сторону AC.
+triangle_by_two_angles_and_side|Найди сторону BC треугольника ABC, если AC = 20√3, ∠B = 120°, а ∠A = 30°.
+triangle_by_two_angles_and_side|В треугольнике ABC ∠B = 135°, ∠C = 30°, сторона AB равна 7√2. Найди сторону AC.
+triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 30°, ∠B = 30°, сторона AB = 6√3. Найди сторону BC.
+triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 45°, ∠B = 45°, сторона AB = 10√2. Найди сторону BC.
+triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 30°, ∠B = 60°, сторона AC = 6√3. Найди сторону AB.
+triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 30°, ∠B = 60°, сторона AB = 14. Найди сторону BC.
+triangle_by_two_angles_and_side|Найди сторону AB треугольника ABC, если ∠A = 60°, ∠B = 30°, сторона AC = 5.
+triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 30°, ∠B = 60°, сторона AC = 4√3. Найди сторону BC.
+triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 30°, ∠B = 30°, сторона AB = 5√3. Найди сторону BC.
+triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 60°, ∠B = 90°, сторона AC = 10. Найди сторону AB.
+triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 120°, ∠B = 30°, сторона AC = 6√3. Найди сторону BC.
+triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 30°, ∠B = 90°, сторона AB = 6√3. Найди сторону BC.
+triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 30°, ∠B = 45°, сторона BC = 4√2. Найди сторону AC.
+triangle_by_two_angles_and_side|Найди сторону AC треугольника ABC, если ∠A = 45°, ∠B = 60°, сторона BC = 4√6.
+triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 30°, ∠B = 45°, сторона AC = 3√2. Найди сторону BC.
+triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 45°, ∠B = 60°, сторона BC = 2√6. Найди сторону AC.
+triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 45°, ∠B = 60°, сторона AC = 5√6. Найди сторону BC.
+triangle_by_two_angles_and_side|Найди сторону BC треугольника ABC, если ∠A = 45°, ∠B = 75°, сторона AB = 4√6.
+triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 45°, ∠B = 75°, сторона BC = 3√6. Найди сторону AB.
+triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 60°, ∠B = 45°, сторона BC = 5√6. Найди сторону AC.
+triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 60°, ∠B = 45°, сторона AC = 4√6. Найди сторону BC.
