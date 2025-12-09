@@ -126,164 +126,105 @@ class GeneralTrianglesValidator:
         """
         Парсит две стороны и либо sin(угла), либо сам угол.
         Вычисляет площадь и возвращает Etalon 3.0 JSON.
+        ВЕРСИЯ 6 (ФИНАЛ): В given.sides сохраняются СТРОКИ, а не числа.
         """
         text = raw["text"]
 
-        # --- 1. Извлечение сторон ---
-        sides: Dict[str, float] = {}
+        # --- 1. Извлечение сторон (с сохранением raw-строк) ---
+        sides_for_calc: Dict[str, float] = {}
+        sides_for_json: Dict[str, str] = {}
 
-        # A) Формат "AB = 10", "AC = 6√3" и т.п.
+        def add_side(name: str, value_str: str):
+            clean_name = name.upper()
+            clean_value = value_str.strip().rstrip(".,")
+            if clean_name not in sides_for_calc:
+                sides_for_calc[clean_name] = self._parse_numeric_with_root(clean_value)
+                sides_for_json[clean_name] = clean_value
+
         for match in re.finditer(r"\b(AB|BC|AC)\s*=\s*([0-9.,√]+)", text, flags=re.IGNORECASE):
-            name, value = match.groups()
-            value = value.rstrip(".")
-            sides[name.upper()] = self._parse_numeric_with_root(value)
-
-        # B) Формат "стороны AC и BC ... равны 30 и 8 (соответственно)"
-        combo_pattern_1 = re.search(
-            r"(?:стороны|сторона)\s+(AB|BC|AC)\s+и\s+(AB|BC|AC)[^=]*?"
-            r"(?:равны|=)\s*([0-9.,√]+)\s+и\s+([0-9.,√]+)",
-            text,
-            flags=re.IGNORECASE,
-        )
-        if combo_pattern_1:
-            s1, s2, v1, v2 = combo_pattern_1.groups()
-            v1 = v1.rstrip(".")
-            v2 = v2.rstrip(".")
-            if s1.upper() not in sides:
-                sides[s1.upper()] = self._parse_numeric_with_root(v1)
-            if s2.upper() not in sides:
-                sides[s2.upper()] = self._parse_numeric_with_root(v2)
-
-        # C) Формат "AC и BC равны 30 и 8" (без слова "стороны")
-        combo_pattern_2 = re.search(
-            r"\b(AB|BC|AC)\s+и\s+(AB|BC|AC)\s+(?:равны|=)\s*([0-9.,√]+)\s+и\s+([0-9.,√]+)",
-            text,
-            flags=re.IGNORECASE,
-        )
-        if combo_pattern_2:
-            s1, s2, v1, v2 = combo_pattern_2.groups()
-            v1 = v1.rstrip(".")
-            v2 = v2.rstrip(".")
-            if s1.upper() not in sides:
-                sides[s1.upper()] = self._parse_numeric_with_root(v1)
-            if s2.upper() not in sides:
-                sides[s2.upper()] = self._parse_numeric_with_root(v2)
+            add_side(match.group(1), match.group(2))
+        pattern_b = re.search(r"(?:стороны|сторона)\s+(AB|BC|AC)\s+и\s+(AB|BC|AC)[^=]*?(?:равны|=)\s*([0-9.,√]+)\s+и\s+([0-9.,√]+)", text, flags=re.IGNORECASE)
+        if pattern_b: s1, s2, v1, v2 = pattern_b.groups(); add_side(s1, v1); add_side(s2, v2)
+        pattern_c = re.search(r"\b(AB|BC|AC)\s+и\s+(AB|BC|AC)\s+(?:равны|=)\s*([0-9.,√]+)\s+и\s+([0-9.,√]+)", text, flags=re.IGNORECASE)
+        if pattern_c: s1, s2, v1, v2 = pattern_c.groups(); add_side(s1, v1); add_side(s2, v2)
+        pattern_d = re.search(r"(?:стороны|сторона)\s+(AB|BC|AC)\s+и\s+(AB|BC|AC)[^=]*?(?:равны|=)\s*([0-9.,√]+)(?!\s+и)", text, flags=re.IGNORECASE)
+        if pattern_d: s1, s2, v = pattern_d.groups(); add_side(s1, v); add_side(s2, v)
 
         # --- 2. Парсинг угла (sin или градусы) ---
-        angle_letter = None          # A / B / C
+        angle_letter: Optional[str] = None
         sin_value_num: Optional[float] = None
         trig_info: Dict[str, str] = {}
         angle_display_name: Optional[str] = None
-        found_degrees: Optional[int] = None  # пока не используем, но пусть будет
+        found_degrees: Optional[int] = None
 
-        # Способ A: ищем явное "sin∠C = 5/12" или "sin C равен 0,4"
-        sin_match = re.search(
-            r"sin\s*[∠]?\s*([ABC]{1,3})\s*(?:=|равен|равна)\s*([0-9]+/[0-9]+|[0-9.,]+)",
-            text,
-            flags=re.IGNORECASE,
-        )
+        def get_angle_letter_from_spec(spec: str) -> str: return spec[1] if len(spec) == 3 else spec[0]
+
+        sin_match = re.search(r"sin\s*[∠]?\s*([ABC]{1,3})\s*(?:=|равен|равна)?\s*([0-9]+/[0-9]+|[0-9.,]+)", text, flags=re.IGNORECASE)
+        angle_match = re.search(r"(?:угол|∠)\s*([A-Z]{1,3})\s*(?:=|равен|равна)\s*(\d+)", text, flags=re.IGNORECASE)
+        between_match = re.search(r"(?:синус|sin)\s+угла\s+между\s+ними(?:=|равен|равна)?\s*([0-9]+/[0-9]+|[0-9.,]+)", text, flags=re.IGNORECASE)
+
         if sin_match:
-            angle_spec = sin_match.group(1).upper()      # "C" или "ABC"
-            angle_letter = angle_spec[1] if len(angle_spec) == 3 else angle_spec[0]
-            sin_value_raw = sin_match.group(2).strip().replace(",", ".")
-            if sin_value_raw.endswith("."):
-                sin_value_raw = sin_value_raw[:-1]
-
-            # безопасный разбор дроби/десятичного числа
-            if "/" in sin_value_raw:
-                num_str, den_str = sin_value_raw.split("/", 1)
-                sin_value_num = float(num_str) / float(den_str)
-            else:
-                sin_value_num = float(sin_value_raw)
-
+            angle_spec, sin_value_raw = sin_match.groups()
+            angle_spec = angle_spec.upper()
+            angle_letter = get_angle_letter_from_spec(angle_spec)
+            sin_value_raw = sin_value_raw.strip().replace(",", ".").rstrip(".")
             trig_info[f"sin_{angle_letter}"] = sin_value_raw
             angle_display_name = f"∠{angle_spec}"
+            if "/" in sin_value_raw: sin_value_num = float(sin_value_raw.split('/')[0]) / float(sin_value_raw.split('/')[1])
+            else: sin_value_num = float(sin_value_raw)
 
-        else:
-            # Способ Б: "угол A равен 150°"
-            angle_match = re.search(
-                r"(?:угол|∠)\s*([A-Z]{1,3})\s*(?:=|равен|равна)\s*(\d+)",
-                text,
-                flags=re.IGNORECASE,
-            )
-            if angle_match:
-                angle_spec = angle_match.group(1).upper()
-                angle_letter = angle_spec[1] if len(angle_spec) == 3 else angle_spec[0]
-                degrees = int(angle_match.group(2))
-                found_degrees = degrees
+        elif angle_match:
+            angle_spec, degrees_str = angle_match.groups()
+            angle_spec, degrees = angle_spec.upper(), int(degrees_str)
+            angle_letter = get_angle_letter_from_spec(angle_spec)
+            found_degrees = degrees
+            sin_map = {30:0.5, 45:math.sqrt(2)/2, 60:math.sqrt(3)/2, 90:1.0, 120:math.sqrt(3)/2, 135:math.sqrt(2)/2, 150:0.5}
+            if degrees in sin_map: sin_value_num = sin_map[degrees]; angle_display_name = f"∠{angle_spec}"
 
-                # стандартные значения sin для "красивых" углов
-                sin_map = {
-                    30: 0.5,
-                    45: math.sqrt(2) / 2,
-                    60: math.sqrt(3) / 2,
-                    90: 1.0,
-                    120: math.sqrt(3) / 2,
-                    135: math.sqrt(2) / 2,
-                    150: 0.5,
-                }
+        elif between_match and len(sides_for_calc) == 2:
+            s1, s2 = list(sides_for_calc.keys())
+            common_vertex = list(set(s1) & set(s2))
+            if common_vertex:
+                angle_letter = common_vertex[0]
+                sin_value_raw = between_match.group(1).strip().replace(",", ".").rstrip(".")
+                trig_info[f"sin_{angle_letter}"] = sin_value_raw
+                angle_display_name = f"∠{angle_letter}"
+                if "/" in sin_value_raw: sin_value_num = float(sin_value_raw.split('/')[0]) / float(sin_value_raw.split('/')[1])
+                else: sin_value_num = float(sin_value_raw)
 
-                if degrees in sin_map:
-                    sin_value_num = sin_map[degrees]
-                    angle_display_name = f"∠{angle_spec}"
-
-        # --- 3. Вычисление площади ---
+        # --- 3. Вычисление площади (используем числовые значения) ---
         area: Optional[float] = None
-        # какому углу какие стороны "прилежат"
-        side_pairs = {
-            "A": ("AB", "AC"),
-            "B": ("AB", "BC"),
-            "C": ("AC", "BC"),
-        }
-
+        side_pairs = {"A": ("AB", "AC"), "B": ("AB", "BC"), "C": ("AC", "BC")}
         if angle_letter in side_pairs and sin_value_num is not None:
-            side1_name, side2_name = side_pairs[angle_letter]
-            side1 = sides.get(side1_name)
-            side2 = sides.get(side2_name)
-            if side1 is not None and side2 is not None:
-                area = 0.5 * side1 * side2 * sin_value_num
+            side1 = sides_for_calc.get(side_pairs[angle_letter][0])
+            side2 = sides_for_calc.get(side_pairs[angle_letter][1])
+            if side1 is not None and side2 is not None: area = 0.5 * side1 * side2 * sin_value_num
 
         # --- 4. Выбор картинки ---
-        # Если угол в градусах есть и > 90°, используем тупой, иначе — острый.
         image_file = "T3_acute.svg"
-        if angle_letter:
-            obtuse_match = re.search(
-                rf"(?:угол\s*{angle_letter}|∠\s*{angle_letter})\s*(?:=|равен|равна)?\s*(\d+)",
-                text,
-                flags=re.IGNORECASE,
-            )
-            if obtuse_match and int(obtuse_match.group(1)) > 90:
-                image_file = f"T3_obtuse_{angle_letter}.svg"
+        if found_degrees and found_degrees > 90: image_file = f"T3_obtuse_{angle_letter}.svg"
 
         # --- 5. Сборка JSON строго по эталону ---
         return {
-            "id": raw.get("id"),
-            "pattern": "triangle_area_by_sin",
-            "text": text,
-            "answer": self._format_number(area),
-            "image_file": image_file,
+            "id": raw.get("id"), "pattern": "triangle_area_by_sin", "text": text,
+            "answer": self._format_number(area), "image_file": image_file,
             "variables": {
                 "given": {
-                    "triangle_name": "ABC",
-                    "triangle_type": "general",
-                    "sides": sides,
-                    "angles": {},
-                    "trig": trig_info,
-                    "elements": {},
-                    "points": {},
-                    "relations": {},
+                    "triangle_name": "ABC", "triangle_type": "general",
+                    # ИСПРАВЛЕНО: в sides теперь всегда "красивые" СТРОКИ
+                    "sides": sides_for_json,
+                    "angles": {}, "trig": trig_info, "elements": {}, "points": {}, "relations": {},
                 },
-                "to_find": {
-                    "type": "area",
-                    "name": "S_ABC",
-                },
+                "to_find": {"type": "area", "name": "S_ABC"},
                 "humanizer_data": {
                     "side_roles": {},
                     "angle_names": {angle_letter: angle_display_name} if angle_letter else {},
+                    # element_names больше не нужен, т.к. sides хранит строки
                     "element_names": {},
                 },
             },
         }
+
     # ============================================================
     # PATTERN 2.2
     # triangle_area_by_dividing_point
@@ -293,16 +234,16 @@ class GeneralTrianglesValidator:
         """
         Читаем AD/DC или их отношение, площади, определяем, что искать,
         считаем ответ и собираем Etalon 3.0.
+        ВЕРСИЯ 8 (ФИНАЛ): Оригинальная структура + точечные добавления.
         """
-
         text = raw["text"]
         text_lower = text.lower()
 
-        def parse_number(value: str) -> float | int:
-            return self._parse_numeric_with_root(value)
+        # --- Исходные стабильные функции ---
+        def parse_number(value: str) -> float:
+            return float(value.strip().replace(",", "."))
 
-        def extract_area(patterns: list[str]) -> float | int | None:
-            """ Ищем площадь по нескольким возможным паттернам """
+        def extract_area(patterns: list[str]) -> float | None:
             for pattern in patterns:
                 match = re.search(pattern, text, flags=re.IGNORECASE)
                 if match:
@@ -310,216 +251,90 @@ class GeneralTrianglesValidator:
             return None
 
         def asks_for(target: str) -> bool:
-            """
-            Определяет, что именно ПРОСЯТ найти:
-            — 'найдите площадь BCD'
-            — 'найти ABD'
-            — 'вычислите площадь треугольника ABC'
-            Не реагирует на данные 'площадь ABC равна ...'
-            """
-            # 1. Прямой запрос: найти ABC/ABD/BCD
-            if re.search(rf"(найти|найдите|вычислите|определите)[^.]*\b{target}\b", text_lower):
-                return True
-
-            # 2. Запрос «найдите площадь треугольника BCD»
-            if re.search(
-                rf"(найти|найдите|вычислите|определите)[^.]*площад[ьи][^.]*{target}",
-                text_lower
-            ):
-                return True
-
-            # 3. Запрос в стиле: "площадь треугольника BCD. Найди"
-            if re.search(
-                rf"найд[^\n\r]*площад[ьи][^\n\r]*{target}",
-                text_lower
-            ):
-                return True
-
+            if re.search(rf"(найти|найдите|вычислите|определите)[^.]*\b{target}\b", text_lower): return True
+            if re.search(rf"(найти|найдите|вычислите|определите)[^.]*площад[ьи][^.]*{target}", text_lower): return True
+            if re.search(rf"найд[^\n\r]*площад[ьи][^\n\r]*{target}", text_lower): return True
             return False
 
-        # ------------------------------------------------------------
-        # 1. Считываем AD и DC
-        # ------------------------------------------------------------
-        AD = None
-        DC = None
-
-        # Форматы AD=7, DC = 8
+        # --- 1. Считываем AD и DC (с новыми паттернами) ---
+        AD, DC = None, None
         for name, value in re.findall(r"(AD|DC)\s*=\s*([0-9]+(?:[.,][0-9]+)?)", text, flags=re.IGNORECASE):
-            if name.upper() == "AD":
-                AD = parse_number(value)
-            else:
-                DC = parse_number(value)
-
-        # Формат AD : DC = 2 : 7
+            if name.upper() == "AD": AD = parse_number(value)
+            else: DC = parse_number(value)
         ratio = re.search(r"AD\s*:\s*DC\s*=\s*([0-9]+)\s*:\s*([0-9]+)", text, flags=re.IGNORECASE)
-        if ratio:
-            AD = parse_number(ratio.group(1))
-            DC = parse_number(ratio.group(2))
-
-        # Обратное отношение
+        if ratio: AD, DC = parse_number(ratio.group(1)), parse_number(ratio.group(2))
         ratio_rev = re.search(r"DC\s*:\s*AD\s*=\s*([0-9]+)\s*:\s*([0-9]+)", text, flags=re.IGNORECASE)
-        if ratio_rev:
-            DC = parse_number(ratio_rev.group(1))
-            AD = parse_number(ratio_rev.group(2))
-
-        # 👉 ДОБАВИТЬ ВОТ ЭТО
+        if ratio_rev: DC, AD = parse_number(ratio_rev.group(1)), parse_number(ratio_rev.group(2))
         ratio_plain = re.search(r"в\s+отношени[ии]\s*([0-9]+)\s*[:]\s*([0-9]+)", text_lower)
-        if ratio_plain:
-            AD = parse_number(ratio_plain.group(1))
-            DC = parse_number(ratio_plain.group(2))
+        if ratio_plain: AD, DC = parse_number(ratio_plain.group(1)), parse_number(ratio_plain.group(2))
+        mult_ratio = re.search(r"(DC|AD)\s*=\s*([0-9]+)\s*\*\s*(AD|DC)", text, flags=re.IGNORECASE)
+        if mult_ratio:
+            s1, val, s2 = mult_ratio.groups()
+            if s1 == "DC" and s2 == "AD": AD, DC = 1.0, parse_number(val)
+            elif s1 == "AD" and s2 == "DC": DC, AD = 1.0, parse_number(val)
 
-        # ------------------------------------------------------------
-        # 2. Читаем площади
-        # ------------------------------------------------------------
+        # --- 2. Читаем площади (с новыми паттернами) ---
+        S_ABC = extract_area([r"площад[ьи](?: всего)?\s+треугольника\s+ABC[^0-9]*([0-9]+(?:[.,][0-9]+)?)", r"ABC\s+площадью\s+([0-9]+(?:[.,][0-9]+)?)"])
+        S_ABD = extract_area([r"площад[ьи]\s+треугольника\s+ABD[^0-9]*([0-9]+(?:[.,][0-9]+)?)"])
+        S_BCD = extract_area([r"площад[ьи]\s+треугольника\s+BCD[^0-9]*([0-9]+(?:[.,][0-9]+)?)"])
+        area_mult = re.search(r"площадь\s+треугольника\s+(BCD)\s+в\s+([0-9]+)\s+раза\s+больше", text_lower)
+        if area_mult and S_ABD:
+            mult = parse_number(area_mult.group(2))
+            S_BCD = S_ABD * mult
+            if AD is None: AD, DC = 1.0, mult
 
-        S_ABC = extract_area([
-            r"S\s*[_]?\s*ABC\s*=\s*([0-9]+(?:[.,][0-9]+)?)",
-            r"площад[ьи]\s+треугольника\s+ABC[^0-9]*([0-9]+(?:[.,][0-9]+)?)",
-            r"ABC[^0-9]*площад[ьюи]\s*([0-9]+(?:[.,][0-9]+)?)",
-        ])
-
-        S_ABD = extract_area([
-            r"S\s*[_]?\s*ABD\s*=\s*([0-9]+(?:[.,][0-9]+)?)",
-            r"площад[ьи]\s+треугольника\s+ABD[^0-9]*([0-9]+(?:[.,][0-9]+)?)",
-        ])
-
-        S_BCD = extract_area([
-            r"S\s*[_]?\s*BCD\s*=\s*([0-9]+(?:[.,][0-9]+)?)",
-            r"площад[ьи]\s+треугольника\s+BCD[^0-9]*([0-9]+(?:[.,][0-9]+)?)",
-        ])
-
-        base_total = float(AD) + float(DC) if AD is not None and DC is not None else None
-
-        # ------------------------------------------------------------
-        # 3. Определяем, какую площадь ищет задача
-        # ------------------------------------------------------------
+        # --- 3. Определяем, какую площадь ищет задача (исходный код) ---
         to_find_name = None
-
-        # 3.1 "меньшую/большую площадь"
-        if "меньш" in text_lower:
-            to_find_name = "S_small"
-        elif "больш" in text_lower:
-            to_find_name = "S_big"
-
+        if "меньш" in text_lower: to_find_name = "S_small"
+        elif "больш" in text_lower: to_find_name = "S_big"
         else:
-            # 3.2 прямой вопрос: НАЙТИ BCD/ABD/ABC
-            if asks_for("bcd"):
-                to_find_name = "S_BCD"
-            elif asks_for("abd"):
-                to_find_name = "S_ABD"
-            elif asks_for("abc"):
-                to_find_name = "S_ABC"
-
-            # 3.3 fallback — ловим последнее слово после "найти" перед точкой
+            if asks_for("bcd"): to_find_name = "S_BCD"
+            elif asks_for("abd"): to_find_name = "S_ABD"
+            elif asks_for("abc"): to_find_name = "S_ABC"
             if to_find_name is None:
                 m = re.search(r"найти[^.]*?(abd|bcd|abc)", text_lower)
-                if m:
-                    token = m.group(1)
-                    to_find_name = f"S_{token.upper()}"
+                if m: to_find_name = f"S_{m.group(1).upper()}"
+        if to_find_name is None: raise ValueError(f"Не удалось определить искомую площадь: {text}")
 
-            # 3.4 если так и не определили — ошибка данных
-            if to_find_name is None:
-                raise ValueError(f"Не удалось определить искомую площадь: {text}")
-
-        # ------------------------------------------------------------
-        # 4. Считаем ответ
-        # ------------------------------------------------------------
+        # --- 4. Считаем ответ (исходный код) ---
         answer = None
+        base_total = (AD + DC) if AD is not None and DC is not None else None
 
         if to_find_name == "S_ABC":
-            if S_ABC is not None:
-                answer = S_ABC
-            elif S_ABD is not None and AD and base_total:
-                answer = float(S_ABD) * base_total / float(AD)
-            elif S_BCD is not None and DC and base_total:
-                answer = float(S_BCD) * base_total / float(DC)
-
+            if S_ABD and base_total and AD: answer = S_ABD * base_total / AD
+            elif S_BCD and base_total and DC: answer = S_BCD * base_total / DC
+            elif S_ABD and S_BCD: answer = S_ABD + S_BCD
         elif to_find_name == "S_ABD":
-            if S_ABD is not None:
-                answer = S_ABD
-            elif S_ABC is not None and AD and base_total:
-                answer = float(S_ABC) * float(AD) / base_total
-            elif S_BCD is not None and AD and DC:
-                answer = float(S_BCD) * float(AD) / float(DC)
-
+            if S_ABC and base_total and AD: answer = S_ABC * AD / base_total
+            elif S_BCD and AD and DC: answer = S_BCD * AD / DC
         elif to_find_name == "S_BCD":
-            if S_BCD is not None:
-                answer = S_BCD
-            elif S_ABC is not None and DC and base_total:
-                answer = float(S_ABC) * float(DC) / base_total
-            elif S_ABD is not None and AD and DC:
-                answer = float(S_ABD) * float(DC) / float(AD)
+            if S_ABC and base_total and DC: answer = S_ABC * DC / base_total
+            elif S_ABD and AD and DC: answer = S_ABD * DC / AD
+        elif to_find_name in ("S_small", "S_big") and S_ABC and base_total:
+            a1, a2 = S_ABC * AD / base_total, S_ABC * DC / base_total
+            answer = min(a1, a2) if to_find_name == "S_small" else max(a1, a2)
 
-        elif to_find_name in {"S_small", "S_big"}:
-            area_abd = area_bcd = None
-
-            if S_ABC is not None and AD and DC:
-                area_abd = float(S_ABC) * float(AD) / float(base_total)
-                area_bcd = float(S_ABC) * float(DC) / float(base_total)
-
-            elif S_ABD is not None and AD and DC:
-                total_area = float(S_ABD) * float(base_total) / float(AD)
-                area_abd = float(S_ABD)
-                area_bcd = total_area - area_abd
-
-            elif S_BCD is not None and AD and DC:
-                total_area = float(S_BCD) * float(base_total) / float(DC)
-                area_bcd = float(S_BCD)
-                area_abd = total_area - area_bcd
-
-            if area_abd is not None and area_bcd is not None:
-                answer = min(area_abd, area_bcd) if to_find_name == "S_small" else max(area_abd, area_bcd)
-
-        # Финальный формат числа
-        answer = self._format_number(answer)
-
-        # ------------------------------------------------------------
-        # 5. Выбор картинки T4_AD_DC или T4_DC_AD
-        # ------------------------------------------------------------
+        # --- 5. Сборка JSON (исходный код) ---
         image_file = None
-        if AD is not None and DC is not None:
-            image_file = "T4_AD_DC.svg" if AD > DC else "T4_DC_AD.svg"
-
-        # ------------------------------------------------------------
-        # 6. Сборка JSON
-        # ------------------------------------------------------------
-        relations: Dict[str, float | int | str] = {}
-        if S_ABC is not None:
-            relations["S_ABC"] = self._format_number(S_ABC)
-        if S_ABD is not None:
-            relations["S_ABD"] = self._format_number(S_ABD)
-        if S_BCD is not None:
-            relations["S_BCD"] = self._format_number(S_BCD)
-
+        if AD is not None and DC is not None: image_file = "T4_AD_DC.svg" if AD > DC else "T4_DC_AD.svg"
+        relations = {}
+        if S_ABC is not None: relations["S_ABC"] = self._format_number(S_ABC)
+        if S_ABD is not None: relations["S_ABD"] = self._format_number(S_ABD)
+        if S_BCD is not None: relations["S_BCD"] = self._format_number(S_BCD)
         points_info = {"D_on_AC": {}}
-        if AD is not None:
-            points_info["D_on_AC"]["AD"] = self._format_number(AD)
-        if DC is not None:
-            points_info["D_on_AC"]["DC"] = self._format_number(DC)
+        if AD is not None: points_info["D_on_AC"]["AD"] = self._format_number(AD)
+        if DC is not None: points_info["D_on_AC"]["DC"] = self._format_number(DC)
 
         return {
-            "id": raw.get("id"),
-            "pattern": raw["pattern"],
-            "text": raw["text"],
-            "answer": answer,
-            "image_file": image_file,
+            "id": raw.get("id"), "pattern": raw["pattern"], "text": text,
+            "answer": self._format_number(answer), "image_file": image_file,
             "variables": {
                 "given": {
-                    "triangle_name": "ABC",
-                    "triangle_type": "general",
-                    "sides": {},
-                    "angles": {},
-                    "trig": {},
-                    "elements": {},
-                    "points": points_info,
-                    "relations": relations,
+                    "triangle_name": "ABC", "triangle_type": "general", "sides": {}, "angles": {},
+                    "trig": {}, "elements": {}, "points": points_info, "relations": relations,
                 },
                 "to_find": {"type": "area", "name": to_find_name},
-                "humanizer_data": {
-                    "side_roles": {},
-                    "angle_names": {},
-                    "element_names": {},
-                },
+                "humanizer_data": {"side_roles": {}, "angle_names": {}, "element_names": {}},
             },
         }
 
@@ -531,371 +346,146 @@ class GeneralTrianglesValidator:
     def _handle_triangle_area_by_parallel_line(self, raw: Dict[str, Any]) -> Dict[str, Any]:
         """
         Задачи вида: MN ∥ AC, M ∈ AB, N ∈ BC.
-
-        Умеем:
-        - находить площадь S_MBN или S_ABC;
-        - находить стороны (AM, BM, AB, BN, NC, BC, AC, MN);
-        - находить отношение MN : AC (как десятичное число).
+        ФИНАЛЬНАЯ ВЕРСИЯ: Точный парсер площадей, дедукция длин, расчет всех форм.
         """
         text = raw["text"]
-        text_lower = text.lower()
 
-        # ---------- 0. Определение задач на отношение ----------
-        relation_task = False
-        relation_target = None  # 'MN/AC' или 'AC/MN', или по X:Y
+        # === ШАГ 1: УНИВЕРСАЛЬНЫЙ ПАРСИНГ ДАННЫХ ===
 
-        # a) Форматы "MN / AC", "MN : AC"
-        m_rel = re.search(r"(MN)\s*[:/]\s*(AC)", text, flags=re.IGNORECASE)
-        if not m_rel:
-            m_rel = re.search(r"(AC)\s*[:/]\s*(MN)", text, flags=re.IGNORECASE)
+        # 1.1. Парсинг всех длин отрезков
+        lengths: Dict[str, float | int] = {}
+        pattern = r"(?:сторона\s*)?\b(AC|MN|AB|BC|AM|BM|BN|NC|CN)\b\s*(?:равна|равен|=)\s*([0-9]+(?:[.,][0-9]+)?)"
+        for name, value_str in re.findall(pattern, text, flags=re.IGNORECASE):
+            key = "NC" if name.upper() == "CN" else name.upper()
+            lengths[key] = self._parse_numeric_with_root(value_str)
 
-        if m_rel:
-            relation_task = True
-            a, b = m_rel.group(1).upper(), m_rel.group(2).upper()
-            relation_target = f"{a}/{b}"
+        # 1.1a. Дедукция недостающих длин
+        if lengths.get("AB") and lengths.get("AM") and not lengths.get("BM"):
+            lengths["BM"] = lengths["AB"] - lengths["AM"]
+        if lengths.get("AB") and lengths.get("BM") and not lengths.get("AM"):
+            lengths["AM"] = lengths["AB"] - lengths["BM"]
+        if lengths.get("AM") and lengths.get("BM") and not lengths.get("AB"):
+            lengths["AB"] = lengths["AM"] + lengths["BM"]
+        if lengths.get("BC") and lengths.get("BN") and not lengths.get("NC"):
+            lengths["NC"] = lengths["BC"] - lengths["BN"]
+        if lengths.get("BC") and lengths.get("NC") and not lengths.get("BN"):
+            lengths["BN"] = lengths["BC"] - lengths["NC"]
+        if lengths.get("BN") and lengths.get("NC") and not lengths.get("BC"):
+            lengths["BC"] = lengths["BN"] + lengths["NC"]
 
-        # b) Форматы "отношение MN к AC"
-        m_rel2 = re.search(r"отношени[ея]\s+([A-Z]{2})\s+(?:к|и)\s+([A-Z]{2})", text_lower)
-        if m_rel2:
-            relation_task = True
-            a, b = m_rel2.group(1).upper(), m_rel2.group(2).upper()
-            relation_target = f"{a}/{b}"
+        # 1.2. Точный парсинг всех площадей (не жадный)
+        areas: Dict[str, float | int] = {}
+        area_patterns = [
+            r"площад[ьи](?:\s+треугольника)?\s+(ABC|MBN)\s*равна\s*([0-9]+(?:[.,][0-9]+)?)",
+            r"треугольник[а]?\s+(ABC|MBN)\s+с\s+площад[ьюи]\s*([0-9]+(?:[.,][0-9]+)?)",
+            r"S\s*[_]?\s*(ABC|MBN)\s*=\s*([0-9]+(?:[.,][0-9]+)?)"
+        ]
+        for p in area_patterns:
+            for name, value_str in re.findall(p, text, flags=re.IGNORECASE):
+                key = f"S_{name.upper()}"
+                if key not in areas:
+                    areas[key] = self._parse_numeric_with_root(value_str)
 
-        # c) Формат "MN относится к AC как 1 к 2"
-        m_rel3 = re.search(
-            r"(MN|AC)\s+относит[^\n]*?\s+(AC|MN)\s+как\s+(\d+)\s*к\s*(\d+)",
-            text_lower,
-        )
-        ratio_value = None
-        if m_rel3:
-            relation_task = True
-            a = m_rel3.group(1).upper()
-            b = m_rel3.group(2).upper()
-            x = int(m_rel3.group(3))
-            y = int(m_rel3.group(4))
-            relation_target = f"{a}/{b}"
-            ratio_value = x / y
+        # 1.3. Парсинг явного отношения (коэффициента k)
+        k_ratio: float | None = None
+        ratio_pattern = r"([A-Z]{2})[^\n\r]*?относ[^\n\r]*?([A-Z]{2})[^\d]*?([0-9]+)\s*к\s*([0-9]+)"
+        m_ratio_text = re.search(ratio_pattern, text, flags=re.IGNORECASE)
+        if m_ratio_text:
+            side1, side2, num, den = m_ratio_text.groups()
+            if float(den) != 0:
+                if side1.upper() == "MN" and side2.upper() == "AC":
+                    k_ratio = float(num) / float(den)
+                elif side1.upper() == "AC" and side2.upper() == "MN":
+                    k_ratio = float(den) / float(num)
 
-        # ---------- Вспомогательные парсеры ----------
+        # === ШАГ 2: ОПРЕДЕЛЕНИЕ ТОГО, ЧТО НУЖНО НАЙТИ ===
 
-        def parse_number(value: str) -> float | int:
-            cleaned = value.strip().replace(",", ".")
-            num = float(cleaned)
-            return int(num) if num.is_integer() else num
-
-        def extract_area(patterns: list[str]) -> float | int | None:
-            """Ищем площадь по набору шаблонов."""
-            for pattern in patterns:
-                m = re.search(pattern, text, flags=re.IGNORECASE)
-                if m:
-                    return parse_number(m.group(1))
-            return None
-
-        def extract_ratio_mn_ac() -> float | None:
-            """
-            Ищем отношение MN : AC в формах:
-            - 'MN относится к AC как 1 к 2'
-            - 'отношение MN : AC равно 1 : 2'
-            - 'MN : AC = 1 : 2'
-            Возвращаем k = MN/AC.
-            """
-            # MN относится к AC как 1 к 2
-            m = re.search(
-                r"MN[^\n\r]*?относ[^\n\r]*?AC[^\d]*?([0-9]+)\s*к\s*([0-9]+)",
-                text,
-                flags=re.IGNORECASE,
-            )
-            if m:
-                a, b = m.groups()
-                if float(b) != 0:
-                    return float(a) / float(b)
-
-            # отношение MN : AC равно 1 : 2
-            m = re.search(
-                r"отношен[иея][^\n\r]*MN\s*[:]\s*AC[^\d]*([0-9]+)\s*[:]\s*([0-9]+)",
-                text,
-                flags=re.IGNORECASE,
-            )
-            if m:
-                a, b = m.groups()
-                if float(b) != 0:
-                    return float(a) / float(b)
-
-            # MN : AC = 1 : 2
-            m = re.search(
-                r"MN\s*[:]\s*AC[^\d]*([0-9]+)\s*[:]\s*([0-9]+)",
-                text,
-                flags=re.IGNORECASE,
-            )
-            if m:
-                a, b = m.groups()
-                if float(b) != 0:
-                    return float(a) / float(b)
-
-            return None
-
-        # ---------- 1. Числа при равенствах длин ----------
-
-        lengths: Dict[str, float | int | None] = {
-            name: None for name in ("AC", "MN", "AB", "BC", "AM", "BM", "BN", "NC")
-        }
-
-        # Формат "AC = 30"
-        for name, value in re.findall(
-            r"\b(AC|MN|AB|BC|AM|BM|BN|NC|CN)\b\s*=\s*([0-9]+(?:[.,][0-9]+)?)",
-            text,
-            flags=re.IGNORECASE,
-        ):
-            key = name.upper()
-            if key == "CN":
-                key = "NC"   # <-- нормализуем
-            lengths[key] = parse_number(value)
-
-        # Формат "AC равна 30", "AB равен 16"
-        for name, value in re.findall(
-            r"\b(AC|MN|AB|BC|AM|BM|BN|NC|CN)\b\s+равн[аое]\s*([0-9]+(?:[.,][0-9]+)?)",
-            text,
-            flags=re.IGNORECASE,
-        ):
-            key = name.upper()
-            if key == "CN":
-                key = "NC"
-            if lengths[key] is None:
-                lengths[key] = parse_number(value)
-
-        AC = lengths["AC"]
-        MN = lengths["MN"]
-        AB = lengths["AB"]
-        BC = lengths["BC"]
-        BN = lengths["BN"]
-
-        # ---------- 2. Площади S_ABC и S_MBN ----------
-
-        S_ABC = extract_area(
-            [
-                r"S\s*[_]?\s*ABC\s*=\s*([0-9]+(?:[.,][0-9]+)?)",
-                r"площад[ьи]\s+треугольника\s+ABC[^0-9]*([0-9]+(?:[.,][0-9]+)?)",
-                r"треугольник[а]?\s+ABC\s+с\s+площад[ьюи]\s*([0-9]+(?:[.,][0-9]+)?)",
-            ]
-        )
-
-        S_MBN = extract_area(
-            [
-                r"S\s*[_]?\s*MBN\s*=\s*([0-9]+(?:[.,][0-9]+)?)",
-                r"площад[ьи]\s+треугольника\s+MBN[^0-9]*([0-9]+(?:[.,][0-9]+)?)",
-            ]
-        )
-
-        # ---------- 3. Коэффициент подобия k = MN / AC ----------
-
-        k: float | None = None
-
-        # a) Явное отношение MN:AC
-        k = extract_ratio_mn_ac()
-
-        # b) Если k не нашли, но заданы MN и AC
-        if k is None and MN is not None and AC is not None and AC != 0:
-            k = float(MN) / float(AC)
-
-        # c) Если k всё ещё None, пробуем BN / BC
-        if k is None and BN is not None and BC is not None and BC != 0:
-            k = float(BN) / float(BC)
-
-        def parse_to_find(text: str):
-            """Определяет, что нужно найти: площадь, отношение или сторону."""
-
-            # --- 1. ПЛОЩАДЬ ---
-
-            # Формат: «Найди площадь треугольника MBN»
-            m = re.search(
-                r"найд[^\n\r]*площад[^\n\r]*треугольник[а]?\s+([A-Z]{2,3})",
-                text,
-                flags=re.IGNORECASE,
-            )
-            if m:
-                tri = m.group(1).upper()
-                return {"type": "area", "name": f"S_{tri}"}
-
-            # Формат: «Найди площадь MBN»
-            m = re.search(
-                r"найд[^\n\r]*площад[^\n\r]*([A-Z]{2,3})",
-                text,
-                flags=re.IGNORECASE,
-            )
-            if m:
-                tri = m.group(1).upper()
-                return {"type": "area", "name": f"S_{tri}"}
-
-            # --- 2. ОТНОШЕНИЕ ---
-
-            # Формат: «Найди отношение MN : AC» или «MN / AC»
-            m = re.search(
-                r"найд[^\n\r]*отношен[^\n\r]*([A-Z]{2})\s*[:/]\s*([A-Z]{2})",
-                text,
-                flags=re.IGNORECASE,
-            )
-            if m:
-                a = m.group(1).upper()
-                b = m.group(2).upper()
+        def _parse_to_find(text_to_scan: str) -> Dict[str, str]:
+            m_ratio = re.search(r"найд[^\n\r]*?отношен[^\n\r]*?([A-Z]{2})\s*(?:к|[:/])\s*([A-Z]{2})", text, flags=re.IGNORECASE)
+            if m_ratio:
+                a, b = m_ratio.group(1).upper(), m_ratio.group(2).upper()
                 return {"type": "ratio", "name": f"{a}/{b}"}
-
-            # Формат: «Найди отношение AC к MN»
-            m = re.search(
-                r"найд[^\n\r]*отношен[^\n\r]*([A-Z]{2})\s+к\s+([A-Z]{2})",
-                text,
-                flags=re.IGNORECASE,
-            )
-            if m:
-                a = m.group(1).upper()
-                b = m.group(2).upper()
-                return {"type": "ratio", "name": f"{a}/{b}"}
-
-            # --- 3. СТОРОНА (AM, BM, AB, AC...) ---
-
-            m = re.search(
-                r"найд[^\n\r]*\b([ABCMN]{1,2})\b",
-                text,
-                flags=re.IGNORECASE,
-            )
-            if m:
-                return {"type": "side", "name": m.group(1).upper()}
-
+            m_area = re.search(r"найд[^\n\r]*?площад[ьи](?:\s+треугольника)?\s+([A-Z]{3})", text, flags=re.IGNORECASE)
+            if m_area:
+                return {"type": "area", "name": f"S_{m_area.group(1).upper()}"}
+            m_side = re.search(r"найд[^\n\r]*?(?:\bдлину\b|\bстороны\b|\bсторону\b)?\s*([A-Z]{2,3})", text, flags=re.IGNORECASE)
+            if m_side:
+                name = m_side.group(1).upper()
+                return {"type": "area" if name in ("ABC", "MBN") else "side", "name": f"S_{name}" if name in ("ABC", "MBN") else name}
             raise ValueError(f"Не удалось определить, что нужно найти: {text}")
 
+        to_find = _parse_to_find(text)
 
-        def compute_answer(parsed, given):
-            """
-            Вычисляет числовой ответ по формулам подобия.
-            parsed = {"type": "...", "name": "..."}
-            given = словарь relations + sides + elements
-            """
+        # === ШАГ 3: ВЫЗОВ СПЕЦИАЛИЗИРОВАННОЙ ФУНКЦИИ ("СБОРОЧНОЙ ЛИНИИ") ===
 
-            relations = given.get("relations", {})
-            sides = given.get("sides", {})
-            elements = given.get("elements", {})
+        k: float | None = k_ratio
+        if k is None:
+            if lengths.get("MN") is not None and lengths.get("AC") is not None and lengths.get("AC") != 0:
+                k = lengths["MN"] / lengths["AC"]
+            elif lengths.get("BM") is not None and lengths.get("AB") is not None and lengths.get("AB") != 0:
+                k = lengths["BM"] / lengths["AB"]
+            elif lengths.get("BN") is not None and lengths.get("BC") is not None and lengths.get("BC") != 0:
+                k = lengths["BN"] / lengths["BC"]
+            elif areas.get("S_MBN") is not None and areas.get("S_ABC") is not None and areas.get("S_ABC") != 0:
+                k = math.sqrt(areas["S_MBN"] / areas["S_ABC"])
 
-            # Удобные обозначения:
-            S_ABC = relations.get("S_ABC")
-            S_MBN = relations.get("S_MBN")
-            AC = sides.get("AC")
-            MN = elements.get("MN")
-
-            # -----------------------------
-            # 1) ИЩЕМ ПЛОЩАДЬ S_MBN
-            # -----------------------------
-            if parsed["type"] == "area" and parsed["name"] == "S_MBN":
-                if S_ABC is not None and AC and MN:
-                    k = MN / AC
-                    return S_ABC * k * k
-                if S_MBN is not None:  # уже дана
-                    return S_MBN
-
-            # -----------------------------
-            # 2) ИЩЕМ ПЛОЩАДЬ S_ABC
-            # -----------------------------
-            if parsed["type"] == "area" and parsed["name"] == "S_ABC":
-                if S_MBN is not None and AC and MN:
-                    k = MN / AC
-                    return S_MBN / (k * k)
-                if S_ABC is not None:
-                    return S_ABC
-
-            # -----------------------------
-            # 3) ИЩЕМ ОТНОШЕНИЕ MN/AC
-            # -----------------------------
-            if parsed["type"] == "ratio" and parsed["name"] == "MN/AC":
-                if S_MBN is not None and S_ABC is not None:
-                    return math.sqrt(S_MBN / S_ABC)
-                if MN and AC:
-                    return MN / AC
-
-            # -----------------------------
-            # 4) ИЩЕМ СТОРОНУ (например, AM)
-            # -----------------------------
-            # Пока возвращаем None — это отдельный подтип
-            if parsed["type"] == "side":
-                return None
-
+        def _compute_area_answer(target_name: str, given_areas: dict, main_k: float | None) -> float | None:
+            if main_k is None: return None
+            k_squared = main_k ** 2
+            if target_name == "S_MBN": return given_areas.get("S_ABC") * k_squared if given_areas.get("S_ABC") is not None else None
+            if target_name == "S_ABC": return given_areas.get("S_MBN") / k_squared if given_areas.get("S_MBN") is not None else None
             return None
 
-        # ---------- 6. Подготовка JSON ----------
+        def _compute_ratio_answer(target_name: str, main_k: float | None) -> float | None:
+            if main_k is None: return None
+            if target_name == "MN/AC": return main_k
+            if target_name == "AC/MN" and main_k != 0: return 1 / main_k
+            return None
 
+        def _compute_side_answer(target_name: str, given_lengths: dict, main_k: float | None) -> float | None:
+            if main_k is None: return None
+            AC, MN = given_lengths.get("AC"), given_lengths.get("MN")
+            AB, AM, BM = given_lengths.get("AB"), given_lengths.get("AM"), given_lengths.get("BM")
+            BC, BN, NC = given_lengths.get("BC"), given_lengths.get("BN"), given_lengths.get("NC")
+
+            if target_name == "AC": return MN / main_k if MN is not None else None
+            if target_name == "MN": return AC * main_k if AC is not None else None
+            if target_name == "AB":
+                if BM is not None: return BM / main_k
+                if AM is not None and main_k != 1: return AM / (1 - main_k)
+            if target_name == "BM": return AB * main_k if AB is not None else None
+            if target_name == "AM": return AB * (1 - main_k) if AB is not None else None
+            if target_name == "BC":
+                if BN is not None: return BN / main_k
+                if NC is not None and main_k != 1: return NC / (1 - main_k)
+            if target_name == "BN": return BC * main_k if BC is not None else None
+            if target_name == "NC": return BC * (1 - main_k) if BC is not None else None
+            return None
+
+        answer = None
+        if to_find["type"] == "area": answer = _compute_area_answer(to_find["name"], areas, k)
+        elif to_find["type"] == "ratio": answer = _compute_ratio_answer(to_find["name"], k)
+        elif to_find["type"] == "side": answer = _compute_side_answer(to_find["name"], lengths, k)
+
+        # === ШАГ 4: ФОРМИРОВАНИЕ ИТОГОВОГО JSON ===
         image_file = "T5_triangle_area_by_parallel_line.svg"
-
-        sides = {
-            key: self._format_number(val)
-            for key, val in lengths.items()
-            if key in ("AC", "AB", "BC") and val is not None
-        }
-        elements = {
-            key: self._format_number(val)
-            for key, val in lengths.items()
-            if key not in ("AC", "AB", "BC") and val is not None
-        }
-
-        relations: Dict[str, float | int | str] = {}
-        if S_ABC is not None:
-            relations["S_ABC"] = self._format_number(S_ABC)
-        if S_MBN is not None:
-            relations["S_MBN"] = self._format_number(S_MBN)
-
+        sides = {k: v for k, v in lengths.items() if k in ("AC", "AB", "BC")}
+        elements = {k: v for k, v in lengths.items() if k not in ("AC", "AB", "BC")}
         points: Dict[str, str] = {}
-        if AB is not None:
-            points["M"] = "on AB"
-        if BC is not None:
-            points["N"] = "on BC"
-
-        parsed_to_find = parse_to_find(text)
-
-        # -------------------------------------------------------------
-        # ВОССТАНАВЛИВАЕМ ПЕРЕМЕННЫЕ ДЛЯ JSON (answer, area_task, to_find_name)
-        # -------------------------------------------------------------
-
-        # 1. area_task — ищем его так же, как было раньше
-        area_task = ("найди площадь" in text_lower) or ("вычисли площадь" in text_lower)
-
-        # 2. to_find_name — используем parsed_to_find
-        to_find_name = parsed_to_find["name"]
-
-        # 3. answer — вычисляем правильно
-        answer = compute_answer(parsed_to_find, {
-            "sides": sides,
-            "elements": elements,
-            "relations": relations,
-        })
-        answer = self._format_number(answer)
+        if lengths.get("AB") or lengths.get("AM") or lengths.get("BM"): points["M"] = "on AB"
+        if lengths.get("BC") or lengths.get("BN") or lengths.get("NC"): points["N"] = "on BC"
 
         return {
-        "id": raw.get("id"),
-        "pattern": "triangle_area_by_parallel_line",
-        "text": text,
-        "answer": answer,
-        "image_file": image_file,
-        "variables": {
-            "given": {
-                "triangle_name": "ABC",
-                "triangle_type": "general",
-                "sides": sides,
-                "angles": {},
-                "trig": {},
-                "elements": elements,
-                "points": points,
-                "relations": relations,
+            "id": raw.get("id"), "pattern": "triangle_area_by_parallel_line", "text": text,
+            "answer": self._format_number(answer), "image_file": image_file,
+            "variables": {
+                "given": {
+                    "triangle_name": "ABC", "triangle_type": "general", "sides": sides,
+                    "angles": {}, "trig": {}, "elements": elements, "points": points, "relations": areas,
+                },
+                "to_find": to_find, "humanizer_data": {"side_roles": {}, "angle_names": {}, "element_names": {}},
             },
-            "to_find": {
-                "type": (
-                    "ratio" if relation_task
-                    else ("area" if area_task else "side")
-                ),
-                "name": to_find_name,
-            },
-            "humanizer_data": {
-                "side_roles": {},
-                "angle_names": {},
-                "element_names": {},
-            },
-        },
-    }
+        }
 
     # ============================================================
     # PATTERN 2.4: triangle_area_by_midpoints
