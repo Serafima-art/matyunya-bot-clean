@@ -77,13 +77,13 @@ def run_pattern(pattern_name: str, max_cases: int = 10, random_case: bool = Fals
 @pytest.mark.parametrize(
     "pattern_name, max_cases, random_case",
     [
-        #("triangle_by_two_angles_and_side", 10, False),
+        ("triangle_by_two_angles_and_side", 30, False),
         # Можно включать другие паттерны:
         #("triangle_area_by_sin" , 30, False),
-        # ("triangle_area_by_midpoints", 10, False),
+        #("triangle_area_by_midpoints", 30, False),
         #("triangle_area_by_parallel_line", 30, False),
-        ("triangle_area_by_dividing_point", 30, False),
-        # ("cosine_law_find_cos", 10, False),
+        #("triangle_area_by_dividing_point", 30, False),
+        #("cosine_law_find_cos", 30, False),
         # Чтобы тестировать рандомные примеры:
         # ("triangle_by_two_angles_and_side", 1, True),
     ]

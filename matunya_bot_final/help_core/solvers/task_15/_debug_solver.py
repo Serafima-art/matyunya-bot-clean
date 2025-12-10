@@ -12,8 +12,14 @@ from pathlib import Path
 
 # --- ИМПОРТЫ ---
 try:
+    # Добавляем корень проекта в sys.path для стабильных импортов
+    # __file__ -> .../_debug_solver.py -> task_15 -> solvers -> help_core -> matunya_bot_final
+    project_root_for_import = Path(__file__).resolve().parents[4]
+    sys.path.append(str(project_root_for_import))
+
     # ⭐️ ВАЖНО: Импортируем solve НАПРЯМУЮ из тематического солвера
-    from matunya_bot_final.help_core.solvers.task_15.angles_solver import solve
+    from matunya_bot_final.help_core.solvers.task_15.general_triangles_solver import solve
+    #from matunya_bot_final.help_core.solvers.task_15.angles_solver import solve
     from matunya_bot_final.help_core.humanizers.template_humanizers.task_15_humanizer import humanize
 except ImportError as e:
     print(f"🔴 Ошибка импорта: {e}. Проверьте правильность путей и структуру проекта.")
@@ -26,13 +32,13 @@ logger = logging.getLogger(__name__)
 def load_db_tasks() -> list:
     """Загружает все задачи из итоговой базы данных."""
     try:
-        # 1. Находим корень проекта (папку matunya)
-        # __file__ -> .../task_15/_debug_solver.py
-        # parents[4] -> .../matunya
-        project_root = Path(__file__).resolve().parents[4]
+        # Ищем корень проекта (папку matunya_bot_final)
+        current_path = Path(__file__).resolve()
+        project_root = current_path
+        while project_root.name != 'matunya_bot_final':
+            project_root = project_root.parent
 
-        # 2. Строим путь к БД ОТ КОРНЯ
-        db_path = project_root / "matunya_bot_final" / "data" / "tasks_15" / "tasks_15.json"
+        db_path = project_root / "data" / "tasks_15" / "tasks_15.json"
 
         if not db_path.exists():
             logger.error(f"❌ Файл БД не найден по пути: {db_path}")
@@ -92,8 +98,24 @@ def run_test(target_pattern: str, limit: int = 3):
 
 
 if __name__ == "__main__":
-    # === ЗДЕСЬ МЕНЯЕМ ПАТТЕРН ДЛЯ ТЕСТА ===
+    # === СПИСОК ПАТТЕРНОВ ДЛЯ ТЕСТИРОВАНИЯ ===
+    # Чтобы протестировать паттерн, просто раскомментируй нужную строку
 
-    TEST_PATTERN = "angle_bisector_find_half_angle"
+    # --- ТЕМА 1: УГЛЫ ---
+    # TEST_PATTERN = "triangle_external_angle"
+    # TEST_PATTERN = "angle_bisector_find_half_angle"
 
-    run_test(TEST_PATTERN, limit=3)
+    # --- ТЕМА 2: ПРОИЗВОЛЬНЫЕ ТРЕУГОЛЬНИКИ ---
+    # TEST_PATTERN = "triangle_area_by_midpoints"
+    TEST_PATTERN = "triangle_area_by_sin"
+    # TEST_PATTERN = "triangle_area_by_dividing_point"
+    # TEST_PATTERN = "triangle_area_by_parallel_line"
+    # TEST_PATTERN = "cosine_law_find_cos"
+    # TEST_PATTERN = "triangle_by_two_angles_and_side"
+
+    # --- НАСТРОЙКИ ЗАПУСКА ---
+    # Сколько случайных примеров показать
+    TEST_LIMIT = 25
+
+    # ----------------------------------------
+    run_test(TEST_PATTERN, limit=TEST_LIMIT)

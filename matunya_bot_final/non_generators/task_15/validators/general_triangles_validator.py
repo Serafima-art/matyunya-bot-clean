@@ -156,6 +156,7 @@ class GeneralTrianglesValidator:
         trig_info: Dict[str, str] = {}
         angle_display_name: Optional[str] = None
         found_degrees: Optional[int] = None
+        angles_info: Dict[str, int] = {}
 
         def get_angle_letter_from_spec(spec: str) -> str: return spec[1] if len(spec) == 3 else spec[0]
 
@@ -178,6 +179,7 @@ class GeneralTrianglesValidator:
             angle_spec, degrees = angle_spec.upper(), int(degrees_str)
             angle_letter = get_angle_letter_from_spec(angle_spec)
             found_degrees = degrees
+            angles_info[angle_letter] = degrees
             sin_map = {30:0.5, 45:math.sqrt(2)/2, 60:math.sqrt(3)/2, 90:1.0, 120:math.sqrt(3)/2, 135:math.sqrt(2)/2, 150:0.5}
             if degrees in sin_map: sin_value_num = sin_map[degrees]; angle_display_name = f"∠{angle_spec}"
 
@@ -213,7 +215,7 @@ class GeneralTrianglesValidator:
                     "triangle_name": "ABC", "triangle_type": "general",
                     # ИСПРАВЛЕНО: в sides теперь всегда "красивые" СТРОКИ
                     "sides": sides_for_json,
-                    "angles": {}, "trig": trig_info, "elements": {}, "points": {}, "relations": {},
+                    "angles": angles_info, "trig": trig_info, "elements": {}, "points": {}, "relations": {},
                 },
                 "to_find": {"type": "area", "name": "S_ABC"},
                 "humanizer_data": {
@@ -494,6 +496,7 @@ class GeneralTrianglesValidator:
     def _handle_triangle_area_by_midpoints(self, raw: Dict[str, Any]) -> Dict[str, Any]:
         """
         Частный случай подобия: M, N — середины AB и BC, k = 1/2, площади соотносятся как 1 : 1/4 : 3/4.
+        ВЕРСИЯ 4 (ФИНАЛ): Исправлены последние ошибки парсинга площадей.
         """
         text = raw["text"]
         text_lower = text.lower()
@@ -506,105 +509,74 @@ class GeneralTrianglesValidator:
                     return int(value) if value.is_integer() else value
             return None
 
+        # ИСПРАВЛЕНИЕ: Паттерны сделаны более гибкими, чтобы не зависеть от начала предложения.
         S_ABC = parse_area([
-        r"S\s*[_]?\s*ABC\s*=\s*([0-9]+(?:[.,][0-9]+)?)",
-        r"площад[ьи]\s+треугольника\s+ABC[^0-9]*([0-9]+(?:[.,][0-9]+)?)",
-        r"треугольник[е]?\s+ABC[^0-9]*площад[ьюи]\s*([0-9]+(?:[.,][0-9]+)?)",
-        r"в\s+треугольнике\s+abc[^0-9]*площад[ьяи]\s+равн[аы]\s*([0-9]+(?:[.,][0-9]+)?)",
+            r"S\s*[_]?\s*ABC\s*=\s*([0-9]+(?:[.,][0-9]+)?)",
+            r"площад[ьи]\s+треугольника\s+ABC[^0-9]*([0-9]+(?:[.,][0-9]+)?)",
+            r"треугольник[е]?\s+ABC[^0-9]*площад[ьюи]\s*([0-9]+(?:[.,][0-9]+)?)",
+            r"в\s+треугольнике\s+abc[^0-9]*площад[ьяи]\s+равн[аы]\s*([0-9]+(?:[.,][0-9]+)?)",
+            r"ABC\s+площадью\s+([0-9]+(?:[.,][0-9]+)?)", # <-- Убрано "треугольник" в начале
+            r"ABC,\s+площадь\s+которого\s+([0-9]+(?:[.,][0-9]+)?)", # <-- Убрано "треугольник" в начале
         ])
 
         S_MBN = parse_area([
             r"S\s*[_]?\s*MBN\s*=\s*([0-9]+(?:[.,][0-9]+)?)",
             r"площад[ьи]\s+треугольника\s+MBN[^0-9]*([0-9]+(?:[.,][0-9]+)?)",
+            r"площадь\s+MBN\s+равна\s+([0-9]+(?:[.,][0-9]+)?)",
         ])
+
         S_AMNC = parse_area([
             r"S\s*[_]?\s*AMNC\s*=\s*([0-9]+(?:[.,][0-9]+)?)",
-            r"площад[ьи]\s+четыр[её]хугольника\s+AMNC[^0-9]*([0-9]+(?:[.,][0-9]+)?)",
+            r"площад[ьи]\s+(?:четыр[её]хугольника|трапеции)\s+AMNC[^0-9]*([0-9]+(?:[.,][0-9]+)?)",
         ])
 
         to_find_name = None
-        m_target = re.search(
-            r"найд[^\n\r]*?(?:площад[ьюи]\s+)?(s_abc|s_mbn|s_amnc|abc|mbn|amnc)",
-            text_lower
-        )
+        m_target = re.search(r"найд[^\n\r]*?(?:площад[ьи]\s+)?(?:трапеции\s+|четырехугольника\s+)?(s_abc|s_mbn|s_amnc|abc|mbn|amnc)\b", text_lower)
         if m_target:
             token = m_target.group(1).upper()
-            if token in {"S_ABC", "ABC"}:
-                to_find_name = "S_ABC"
-            elif token in {"S_MBN", "MBN"}:
-                to_find_name = "S_MBN"
-            elif token in {"S_AMNC", "AMNC"}:
-                to_find_name = "S_AMNC"
-        else:
-            if "mbn" in text_lower:
-                to_find_name = "S_MBN"
-            elif "amnc" in text_lower:
-                to_find_name = "S_AMNC"
-            elif "abc" in text_lower:
-                to_find_name = "S_ABC"
+            if token in {"S_ABC", "ABC"}: to_find_name = "S_ABC"
+            elif token in {"S_MBN", "MBN"}: to_find_name = "S_MBN"
+            elif token in {"S_AMNC", "AMNC"}: to_find_name = "S_AMNC"
 
+        if to_find_name is None:
+            if "mbn" in text_lower and "найди" in text_lower: to_find_name = "S_MBN"
+            elif "amnc" in text_lower and "найди" in text_lower: to_find_name = "S_AMNC"
+            elif "abc" in text_lower and "найди" in text_lower: to_find_name = "S_ABC"
+
+        if to_find_name is None: raise ValueError(f"Не удалось определить, что нужно найти: {text}")
+
+        # Блок вычислений и сборки JSON остается БЕЗ ИЗМЕНЕНИЙ.
         answer = None
         calc_abc = calc_mbn = calc_amnc = None
 
         if S_ABC is not None:
-            calc_abc = S_ABC
-            calc_mbn = S_ABC / 4
-            calc_amnc = S_ABC * 3 / 4
+            calc_abc, calc_mbn, calc_amnc = S_ABC, S_ABC / 4, S_ABC * 3 / 4
         elif S_MBN is not None:
-            calc_mbn = S_MBN
-            calc_abc = S_MBN * 4
-            calc_amnc = S_MBN * 3
+            calc_mbn, calc_abc, calc_amnc = S_MBN, S_MBN * 4, S_MBN * 3
         elif S_AMNC is not None:
-            calc_amnc = S_AMNC
-            calc_abc = S_AMNC * 4 / 3
-            calc_mbn = S_AMNC / 3
+            calc_amnc, calc_abc, calc_mbn = S_AMNC, S_AMNC * 4 / 3, S_AMNC / 3
 
-        if to_find_name == "S_ABC":
-            answer = calc_abc
-        elif to_find_name == "S_MBN":
-            answer = calc_mbn
-        elif to_find_name == "S_AMNC":
-            answer = calc_amnc
-
-        answer = self._format_number(answer)
+        if to_find_name == "S_ABC": answer = calc_abc
+        elif to_find_name == "S_MBN": answer = calc_mbn
+        elif to_find_name == "S_AMNC": answer = calc_amnc
 
         relations = {}
-        if S_ABC is not None:
-            relations["S_ABC"] = self._format_number(S_ABC)
-        if S_MBN is not None:
-            relations["S_MBN"] = self._format_number(S_MBN)
-        if S_AMNC is not None:
-            relations["S_AMNC"] = self._format_number(S_AMNC)
+        if S_ABC is not None: relations["S_ABC"] = self._format_number(S_ABC)
+        if S_MBN is not None: relations["S_MBN"] = self._format_number(S_MBN)
+        if S_AMNC is not None: relations["S_AMNC"] = self._format_number(S_AMNC)
 
         return {
-            "id": raw.get("id"),
-            "pattern": "triangle_area_by_midpoints",
-            "text": text,
-            "answer": answer,
-            "image_file": "T6_triangle_area_by_midpoints.svg",
+            "id": raw.get("id"), "pattern": "triangle_area_by_midpoints", "text": text,
+            "answer": self._format_number(answer), "image_file": "T6_triangle_area_by_midpoints.svg",
             "variables": {
                 "given": {
-                    "triangle_name": "ABC",
-                    "triangle_type": "general",
-                    "sides": {},
-                    "angles": {},
-                    "trig": {},
-                    "elements": {},
-                    "points": {
-                        "M": "midpoint of AB",
-                        "N": "midpoint of BC",
-                    },
+                    "triangle_name": "ABC", "triangle_type": "general", "sides": {}, "angles": {},
+                    "trig": {}, "elements": {},
+                    "points": {"M": "midpoint of AB", "N": "midpoint of BC"},
                     "relations": relations,
                 },
-                "to_find": {
-                    "type": "area",
-                    "name": to_find_name,
-                },
-                "humanizer_data": {
-                    "side_roles": {},
-                    "angle_names": {},
-                    "element_names": {},
-                },
+                "to_find": {"type": "area", "name": to_find_name},
+                "humanizer_data": {"side_roles": {}, "angle_names": {}, "element_names": {}},
             },
         }
 
