@@ -114,12 +114,97 @@ def _solve_area_by_sin(task: Dict[str, Any]) -> List[Dict[str, Any]]:
     return [{"action": f"{task['pattern']}:{narrative}", "data": context}]
 
 # ============================================================
-# РЫБА-ЗАГОТОВКА ДЛЯ ПАТТЕРНА 2.2: triangle_area_by_dividing_point
+# ПАТТЕРН 2.2: triangle_area_by_dividing_point
 # ============================================================
 def _solve_area_by_dividing_point(task: Dict[str, Any]) -> List[Dict[str, Any]]:
     """Решает задачу на отношение площадей треугольников с общей высотой."""
-    # TODO: Реализовать логику
-    return [{"description_key": "TODO", "variables": {}}]
+    variables = task.get("variables", {})
+    given = variables.get("given", {})
+    to_find = variables.get("to_find", {})
+    points = given.get("points", {}).get("D_on_AC", {})
+    relations = given.get("relations", {})
+
+    ad_val = _parse_value(points.get("AD", 0))
+    dc_val = _parse_value(points.get("DC", 0))
+    s_abc_val = _parse_value(relations.get("S_ABC")) if relations.get("S_ABC") else None
+    s_abd_val = _parse_value(relations.get("S_ABD")) if relations.get("S_ABD") else None
+    s_bcd_val = _parse_value(relations.get("S_BCD")) if relations.get("S_BCD") else None
+
+    to_find_name = to_find.get("name")
+    context = {"res": task.get("answer")}
+    narrative = ""
+
+    if s_abc_val:
+        narrative = "find_small_from_big"
+        context["tips_key"] = "find_small_from_big"
+        base_total = ad_val + dc_val
+        target_area_name, target_base_name, target_base_val = ("S(ABD)", "AD", ad_val)
+        if to_find_name == "S_BCD": target_area_name, target_base_name, target_base_val = ("S(BCD)", "DC", dc_val)
+        if to_find_name in ("S_small", "S_big"):
+            area_abd, area_bcd = s_abc_val * ad_val / base_total, s_abc_val * dc_val / base_total
+            is_abd_target = (area_abd < area_bcd and to_find_name == "S_small") or (area_abd > area_bcd and to_find_name == "S_big")
+            if not is_abd_target: target_area_name, target_base_name, target_base_val = ("S(BCD)", "DC", dc_val)
+        context.update({"s_abc_val": format_number(s_abc_val), "ad_val": format_number(ad_val), "dc_val": format_number(dc_val), "target_area_name": target_area_name,
+                        "target_base_name": target_base_name, "base_total_val": format_number(base_total),
+                        "target_base_share_str": f"{format_number(target_base_val)}/{format_number(base_total)}"})
+
+    elif s_abd_val or s_bcd_val:
+        narrative = "find_from_small"
+
+        known_area_name = "S(ABD)" if s_abd_val else "S(BCD)"
+        known_area_val = s_abd_val or s_bcd_val
+
+        known_base_parts = ad_val if s_abd_val else dc_val
+        one_part_val = known_area_val / known_base_parts
+
+        # какое основание и какой треугольник ищем
+        if to_find_name == "S_ABC":
+            target_triangle_name = "S(ABC)"
+            target_base_parts = ad_val + dc_val
+        else:
+            # всегда ищем второй маленький треугольник
+            if known_area_name == "S(ABD)":
+                target_triangle_name = "S(BCD)"
+                target_base_parts = dc_val
+            else:
+                target_triangle_name = "S(ABD)"
+                target_base_parts = ad_val
+
+        total_parts = ad_val + dc_val
+
+        context.update({
+            "known_area_name": known_area_name,
+            "known_area_val": format_number(known_area_val),
+
+            "ad_val": format_number(ad_val),
+            "dc_val": format_number(dc_val),
+
+            "known_base_parts": format_number(known_base_parts),
+            "one_part_val": format_number(one_part_val),
+
+            "is_find_big": to_find_name == "S_ABC",
+
+            "total_parts": format_number(total_parts),
+
+            # ✅ ПРАВИЛЬНОЕ ИМЯ
+            "target_area_name": target_triangle_name,
+            "target_base_parts": format_number(target_base_parts),
+
+            "other_small_area_val": format_number(one_part_val * target_base_parts),
+            "total_area_val": format_number(one_part_val * total_parts),
+
+            # ⬇ можно оставить, они не мешают
+            "target_parts": format_number(target_base_parts),
+            "target_area_val": format_number(one_part_val * target_base_parts)
+        })
+
+    pre_image_filename = ""
+    if ad_val is not None and dc_val is not None:
+        image_base = "T4_AD_DC.svg" if ad_val > dc_val else "T4_DC_AD.svg"
+        pre_image_filename = image_base.replace(".svg", "_with_height.svg")
+
+    solution_core = [{"action": f"{task.get('pattern')}:{narrative}", "data": context, "pre_image_filename": pre_image_filename}]
+    return solution_core
 
 # ============================================================
 # РЫБА-ЗАГОТОВКА ДЛЯ ПАТТЕРНА 2.3: triangle_area_by_parallel_line
