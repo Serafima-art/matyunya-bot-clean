@@ -106,6 +106,39 @@ class GeneralTrianglesValidator:
             "triangle_by_two_angles_and_side": self._handle_triangle_by_two_angles_and_side,
         }
 
+    def _parse_to_find_parallel_line(self, text: str) -> dict:
+        """
+        Понимает, что нужно найти в задачах с MN || AC.
+        Возвращает:
+        - {"type": "area", "name": "S_ABC"|"S_MBN"}
+        - {"type": "side", "name": "MN"|"AC"|...}
+        - {"type": "ratio", "name": "MN/AC"|"AC/MN"}
+        """
+        m = re.search(
+            r"найд[^\n\r]*?(?:площад[ьи]\s+)?(?:отношение\s+)?([A-Z]{2,3}(?:\s*[:/]\s*[A-Z]{2})?)",
+            text,
+            flags=re.IGNORECASE
+        )
+        if not m:
+            raise ValueError("Не удалось определить, что нужно найти (ожидаю 'Найди ...').")
+
+        target = m.group(1).strip().upper().replace(" ", "")
+
+        # отношение
+        if "/" in target or ":" in target:
+            target = target.replace(":", "/")
+            if target not in ("MN/AC", "AC/MN"):
+                # Если встретится что-то нестандартное — лучше явно упасть
+                raise ValueError(f"Неизвестное отношение в вопросе: {target}")
+            return {"type": "ratio", "name": target}
+
+        # площадь
+        if target in ("ABC", "MBN"):
+            return {"type": "area", "name": f"S_{target}"}
+
+        # сторона/отрезок
+        return {"type": "side", "name": target}
+
     # ============================================================
     # PUBLIC API
     # ============================================================
@@ -346,146 +379,212 @@ class GeneralTrianglesValidator:
     # ============================================================
 
     def _handle_triangle_area_by_parallel_line(self, raw: Dict[str, Any]) -> Dict[str, Any]:
-        """
-        Задачи вида: MN ∥ AC, M ∈ AB, N ∈ BC.
-        ФИНАЛЬНАЯ ВЕРСИЯ: Точный парсер площадей, дедукция длин, расчет всех форм.
-        """
         text = raw["text"]
 
-        # === ШАГ 1: УНИВЕРСАЛЬНЫЙ ПАРСИНГ ДАННЫХ ===
+        # --- 1) СБОР ДАННЫХ ИЗ ТЕКСТА ---
+        raw_s: Dict[str, str] = {}
 
-        # 1.1. Парсинг всех длин отрезков
-        lengths: Dict[str, float | int] = {}
-        pattern = r"(?:сторона\s*)?\b(AC|MN|AB|BC|AM|BM|BN|NC|CN)\b\s*(?:равна|равен|=)\s*([0-9]+(?:[.,][0-9]+)?)"
-        for name, value_str in re.findall(pattern, text, flags=re.IGNORECASE):
+        # 1а) длины/отрезки
+        for name, val_str in re.findall(
+            r"\b(AC|MN|AB|BC|AM|BM|BN|NC|CN)\b\s*=\s*([0-9.,√]+)",
+            text,
+            flags=re.IGNORECASE
+        ):
             key = "NC" if name.upper() == "CN" else name.upper()
-            lengths[key] = self._parse_numeric_with_root(value_str)
+            if key not in raw_s:
+                raw_s[key] = val_str.strip("., ")
 
-        # 1.1a. Дедукция недостающих длин
-        if lengths.get("AB") and lengths.get("AM") and not lengths.get("BM"):
-            lengths["BM"] = lengths["AB"] - lengths["AM"]
-        if lengths.get("AB") and lengths.get("BM") and not lengths.get("AM"):
-            lengths["AM"] = lengths["AB"] - lengths["BM"]
-        if lengths.get("AM") and lengths.get("BM") and not lengths.get("AB"):
-            lengths["AB"] = lengths["AM"] + lengths["BM"]
-        if lengths.get("BC") and lengths.get("BN") and not lengths.get("NC"):
-            lengths["NC"] = lengths["BC"] - lengths["BN"]
-        if lengths.get("BC") and lengths.get("NC") and not lengths.get("BN"):
-            lengths["BN"] = lengths["BC"] - lengths["NC"]
-        if lengths.get("BN") and lengths.get("NC") and not lengths.get("BC"):
-            lengths["BC"] = lengths["BN"] + lengths["NC"]
+        # 1б) площади (оба формата: "площадь ... = X" и "треугольник ... площадью X")
+        for name, val_str in re.findall(
+            r"площад[ьи](?:\s+треугольника|\s+трапеции)?\s+(ABC|MBN)\s*=\s*([0-9.,√]+)",
+            text,
+            flags=re.IGNORECASE
+        ):
+            key = f"S_{name.upper()}"
+            if key not in raw_s:
+                raw_s[key] = val_str.strip("., ")
 
-        # 1.2. Точный парсинг всех площадей (не жадный)
-        areas: Dict[str, float | int] = {}
-        area_patterns = [
-            r"площад[ьи](?:\s+треугольника)?\s+(ABC|MBN)\s*равна\s*([0-9]+(?:[.,][0-9]+)?)",
-            r"треугольник[а]?\s+(ABC|MBN)\s+с\s+площад[ьюи]\s*([0-9]+(?:[.,][0-9]+)?)",
-            r"S\s*[_]?\s*(ABC|MBN)\s*=\s*([0-9]+(?:[.,][0-9]+)?)"
-        ]
-        for p in area_patterns:
-            for name, value_str in re.findall(p, text, flags=re.IGNORECASE):
-                key = f"S_{name.upper()}"
-                if key not in areas:
-                    areas[key] = self._parse_numeric_with_root(value_str)
+        for name, val_str in re.findall(
+            r"(?:в треугольнике|треугольник)\s+(ABC|MBN)\s+площадью\s+([0-9.,√]+)",
+            text,
+            flags=re.IGNORECASE
+        ):
+            key = f"S_{name.upper()}"
+            if key not in raw_s:
+                raw_s[key] = val_str.strip("., ")
 
-        # 1.3. Парсинг явного отношения (коэффициента k)
-        k_ratio: float | None = None
-        ratio_pattern = r"([A-Z]{2})[^\n\r]*?относ[^\n\r]*?([A-Z]{2})[^\d]*?([0-9]+)\s*к\s*([0-9]+)"
-        m_ratio_text = re.search(ratio_pattern, text, flags=re.IGNORECASE)
+        # 1в) числовая модель s (ТОЛЬКО из числовых полей, без текстового отношения!)
+        s: Dict[str, float] = {}
+        for k, v in raw_s.items():
+            s[k] = self._parse_numeric_with_root(v)
+
+        # --- 2) ДЕДУКЦИЯ (дополняем модель) ---
+        # AB, AM, BM
+        if s.get("AB") is not None and s.get("AM") is not None:
+            s.setdefault("BM", s["AB"] - s["AM"])
+        if s.get("AB") is not None and s.get("BM") is not None:
+            s.setdefault("AM", s["AB"] - s["BM"])
+        if s.get("AM") is not None and s.get("BM") is not None:
+            s.setdefault("AB", s["AM"] + s["BM"])
+
+        # BC, BN, NC (NC = CN)
+        if s.get("BC") is not None and s.get("BN") is not None:
+            s.setdefault("NC", s["BC"] - s["BN"])
+        if s.get("BC") is not None and s.get("NC") is not None:
+            s.setdefault("BN", s["BC"] - s["NC"])
+        if s.get("BN") is not None and s.get("NC") is not None:
+            s.setdefault("BC", s["BN"] + s["NC"])
+
+        # --- 3) ПАРСИНГ ЦЕЛИ (что ищем) ---
+        to_find = self._parse_to_find_parallel_line(text)
+
+        # --- 4) ВЫЧИСЛЕНИЕ k ---
+        # k = MN/AC = BM/AB = BN/BC = sqrt(S_MBN/S_ABC) = из текста "MN относится к AC как a к b"
+        k = None
+
+        # 4а) из текстового отношения (СРАЗУ числом)
+        m_ratio_text = re.search(
+            r"MN[^\d]*?относится[^\d]*?AC[^\d]*?(\d+)\s*к\s*(\d+)",
+            text,
+            flags=re.IGNORECASE
+        )
         if m_ratio_text:
-            side1, side2, num, den = m_ratio_text.groups()
-            if float(den) != 0:
-                if side1.upper() == "MN" and side2.upper() == "AC":
-                    k_ratio = float(num) / float(den)
-                elif side1.upper() == "AC" and side2.upper() == "MN":
-                    k_ratio = float(den) / float(num)
+            a = float(m_ratio_text.group(1))
+            b = float(m_ratio_text.group(2))
+            if b == 0:
+                raise ValueError("Валидатор: отношение MN:AC содержит деление на ноль.")
+            k = a / b
 
-        # === ШАГ 2: ОПРЕДЕЛЕНИЕ ТОГО, ЧТО НУЖНО НАЙТИ ===
+        # 4б) иначе — по данным
+        if k is None and s.get("MN") is not None and s.get("AC") is not None and s["AC"] != 0:
+            k = s["MN"] / s["AC"]
 
-        def _parse_to_find(text_to_scan: str) -> Dict[str, str]:
-            m_ratio = re.search(r"найд[^\n\r]*?отношен[^\n\r]*?([A-Z]{2})\s*(?:к|[:/])\s*([A-Z]{2})", text, flags=re.IGNORECASE)
-            if m_ratio:
-                a, b = m_ratio.group(1).upper(), m_ratio.group(2).upper()
-                return {"type": "ratio", "name": f"{a}/{b}"}
-            m_area = re.search(r"найд[^\n\r]*?площад[ьи](?:\s+треугольника)?\s+([A-Z]{3})", text, flags=re.IGNORECASE)
-            if m_area:
-                return {"type": "area", "name": f"S_{m_area.group(1).upper()}"}
-            m_side = re.search(r"найд[^\n\r]*?(?:\bдлину\b|\bстороны\b|\bсторону\b)?\s*([A-Z]{2,3})", text, flags=re.IGNORECASE)
-            if m_side:
-                name = m_side.group(1).upper()
-                return {"type": "area" if name in ("ABC", "MBN") else "side", "name": f"S_{name}" if name in ("ABC", "MBN") else name}
-            raise ValueError(f"Не удалось определить, что нужно найти: {text}")
+        if k is None and s.get("BM") is not None and s.get("AB") is not None and s["AB"] != 0:
+            k = s["BM"] / s["AB"]
 
-        to_find = _parse_to_find(text)
+        if k is None and s.get("BN") is not None and s.get("BC") is not None and s["BC"] != 0:
+            k = s["BN"] / s["BC"]
 
-        # === ШАГ 3: ВЫЗОВ СПЕЦИАЛИЗИРОВАННОЙ ФУНКЦИИ ("СБОРОЧНОЙ ЛИНИИ") ===
+        if k is None and s.get("S_MBN") is not None and s.get("S_ABC") is not None and s["S_ABC"] != 0:
+            val = s["S_MBN"] / s["S_ABC"]
+            if val <= 0:
+                raise ValueError("Валидатор: отношение площадей не может быть <= 0.")
+            k = math.sqrt(val)
 
-        k: float | None = k_ratio
         if k is None:
-            if lengths.get("MN") is not None and lengths.get("AC") is not None and lengths.get("AC") != 0:
-                k = lengths["MN"] / lengths["AC"]
-            elif lengths.get("BM") is not None and lengths.get("AB") is not None and lengths.get("AB") != 0:
-                k = lengths["BM"] / lengths["AB"]
-            elif lengths.get("BN") is not None and lengths.get("BC") is not None and lengths.get("BC") != 0:
-                k = lengths["BN"] / lengths["BC"]
-            elif areas.get("S_MBN") is not None and areas.get("S_ABC") is not None and areas.get("S_ABC") != 0:
-                k = math.sqrt(areas["S_MBN"] / areas["S_ABC"])
+            raise ValueError("Валидатор: недостаточно данных для вычисления коэффициента подобия k.")
 
-        def _compute_area_answer(target_name: str, given_areas: dict, main_k: float | None) -> float | None:
-            if main_k is None: return None
-            k_squared = main_k ** 2
-            if target_name == "S_MBN": return given_areas.get("S_ABC") * k_squared if given_areas.get("S_ABC") is not None else None
-            if target_name == "S_ABC": return given_areas.get("S_MBN") / k_squared if given_areas.get("S_MBN") is not None else None
-            return None
+        # sanity (обычно k в (0,1), но не будем жёстко запрещать, только мягкий контроль на знак)
+        if k <= 0:
+            raise ValueError("Валидатор: коэффициент подобия k должен быть > 0.")
 
-        def _compute_ratio_answer(target_name: str, main_k: float | None) -> float | None:
-            if main_k is None: return None
-            if target_name == "MN/AC": return main_k
-            if target_name == "AC/MN" and main_k != 0: return 1 / main_k
-            return None
-
-        def _compute_side_answer(target_name: str, given_lengths: dict, main_k: float | None) -> float | None:
-            if main_k is None: return None
-            AC, MN = given_lengths.get("AC"), given_lengths.get("MN")
-            AB, AM, BM = given_lengths.get("AB"), given_lengths.get("AM"), given_lengths.get("BM")
-            BC, BN, NC = given_lengths.get("BC"), given_lengths.get("BN"), given_lengths.get("NC")
-
-            if target_name == "AC": return MN / main_k if MN is not None else None
-            if target_name == "MN": return AC * main_k if AC is not None else None
-            if target_name == "AB":
-                if BM is not None: return BM / main_k
-                if AM is not None and main_k != 1: return AM / (1 - main_k)
-            if target_name == "BM": return AB * main_k if AB is not None else None
-            if target_name == "AM": return AB * (1 - main_k) if AB is not None else None
-            if target_name == "BC":
-                if BN is not None: return BN / main_k
-                if NC is not None and main_k != 1: return NC / (1 - main_k)
-            if target_name == "BN": return BC * main_k if BC is not None else None
-            if target_name == "NC": return BC * (1 - main_k) if BC is not None else None
-            return None
-
+        # --- 5) ВЫЧИСЛЕНИЕ ОТВЕТА ---
         answer = None
-        if to_find["type"] == "area": answer = _compute_area_answer(to_find["name"], areas, k)
-        elif to_find["type"] == "ratio": answer = _compute_ratio_answer(to_find["name"], k)
-        elif to_find["type"] == "side": answer = _compute_side_answer(to_find["name"], lengths, k)
 
-        # === ШАГ 4: ФОРМИРОВАНИЕ ИТОГОВОГО JSON ===
-        image_file = "T5_triangle_area_by_parallel_line.svg"
-        sides = {k: v for k, v in lengths.items() if k in ("AC", "AB", "BC")}
-        elements = {k: v for k, v in lengths.items() if k not in ("AC", "AB", "BC")}
-        points: Dict[str, str] = {}
-        if lengths.get("AB") or lengths.get("AM") or lengths.get("BM"): points["M"] = "on AB"
-        if lengths.get("BC") or lengths.get("BN") or lengths.get("NC"): points["N"] = "on BC"
+        if to_find["type"] == "area":
+            if to_find["name"] == "S_MBN":
+                if s.get("S_ABC") is not None:
+                    answer = s["S_ABC"] * (k ** 2)
+
+            elif to_find["name"] == "S_ABC":
+                if s.get("S_MBN") is not None:
+                    answer = s["S_MBN"] / (k ** 2)
+
+        elif to_find["type"] == "side":
+            name = to_find["name"]
+
+            if name == "MN":
+                if s.get("AC") is not None:
+                    answer = s["AC"] * k
+
+            elif name == "AC":
+                if s.get("MN") is not None:
+                    answer = s["MN"] / k
+
+            elif name == "BM":
+                if s.get("BM") is not None:
+                    answer = s["BM"]
+                elif s.get("AB") is not None:
+                    answer = s["AB"] * k
+
+            elif name == "AM":
+                if s.get("AM") is not None:
+                    answer = s["AM"]
+                elif s.get("AB") is not None:
+                    answer = s["AB"] * (1 - k)
+
+            elif name == "AB":
+                if s.get("BM") is not None:
+                    answer = s["BM"] / k
+                elif s.get("AM") is not None:
+                    answer = s["AM"] / (1 - k)
+
+            elif name == "BN":
+                if s.get("BN") is not None:
+                    answer = s["BN"]
+                elif s.get("BC") is not None:
+                    answer = s["BC"] * k
+
+            elif name == "NC":
+                if s.get("NC") is not None:
+                    answer = s["NC"]
+                elif s.get("BC") is not None:
+                    answer = s["BC"] * (1 - k)
+
+            elif name == "BC":
+                if s.get("BN") is not None:
+                    answer = s["BN"] / k
+                elif s.get("NC") is not None:
+                    answer = s["NC"] / (1 - k)
+
+        elif to_find["type"] == "ratio":
+            ratio_name = to_find["name"].replace(" ", "")
+            if ratio_name == "MN/AC":
+                answer = k
+            elif ratio_name == "AC/MN":
+                answer = 1 / k
+
+        # --- ЕДИНСТВЕННАЯ ПРОВЕРКА ---
+        if answer is None:
+            raise ValueError(
+                f"Валидатор: недостаточно данных для вычисления {to_find['name']}."
+            )
+
+        # --- 6) СБОРКА JSON (ИЗ ЧИСЛОВОЙ МОДЕЛИ s) ---
+        given_sides = {key: float(s[key]) for key in ("AB", "BC", "AC") if key in s}
+        given_elements = {key: float(s[key]) for key in ("MN", "AM", "BM", "BN", "NC") if key in s}
+        given_relations = {key: float(s[key]) for key in ("S_ABC", "S_MBN") if key in s}
+
+        # points — оставим как раньше (минимально, чтобы не ломать общий стиль)
+        points = {}
+        if "AM" in s or "BM" in s:
+            points["M"] = "on AB"
+        if "BN" in s or "NC" in s:
+            points["N"] = "on BC"
 
         return {
-            "id": raw.get("id"), "pattern": "triangle_area_by_parallel_line", "text": text,
-            "answer": self._format_number(answer), "image_file": image_file,
+            "id": raw.get("id"),
+            "pattern": raw["pattern"],
+            "text": text,
+            "answer": self._format_number(answer),
+            "image_file": "T5_triangle_area_by_parallel_line.svg",
             "variables": {
                 "given": {
-                    "triangle_name": "ABC", "triangle_type": "general", "sides": sides,
-                    "angles": {}, "trig": {}, "elements": elements, "points": points, "relations": areas,
+                    "triangle_name": "ABC",
+                    "triangle_type": "general",
+                    "sides": given_sides,
+                    "angles": {},
+                    "trig": {},
+                    "elements": given_elements,
+                    "points": points,
+                    "relations": given_relations,
                 },
-                "to_find": to_find, "humanizer_data": {"side_roles": {}, "angle_names": {}, "element_names": {}},
+                "to_find": to_find,
+                "humanizer_data": {
+                    "side_roles": {},
+                    "angle_names": {},
+                    "element_names": {},
+                },
             },
         }
 

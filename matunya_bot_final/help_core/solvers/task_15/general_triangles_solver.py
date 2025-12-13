@@ -6,6 +6,15 @@ import math
 from typing import Dict, Any, List
 from matunya_bot_final.help_core.solvers.task_15.task_15_text_formatter import format_number
 
+
+# Нормализация названий площадей
+def _norm_area_name(name: str | None) -> str | None:
+    if name in ("S(MBN)", "S_MBN"):
+        return "S_MBN"
+    if name in ("S(ABC)", "S_ABC"):
+        return "S_ABC"
+    return name
+
 # НОВАЯ, БОЛЕЕ МОЩНАЯ ФУНКЦИЯ ПАРСИНГА
 def _parse_value_components(val: str | int | float) -> Dict[str, float]:
     """Разбирает строку ('5√2', '√2/2', '10') на компоненты."""
@@ -32,6 +41,45 @@ def _parse_value(val: str | int | float) -> float:
     """Старая функция для простого вычисления итогового значения."""
     parts = _parse_value_components(val)
     return (parts["coef"] * math.sqrt(parts["radicand"])) / parts["denominator"]
+
+def _get_area_relation(relations: Dict[str, Any], key: str) -> float | None:
+    """
+    Надёжно достаёт площадь из relations с учётом разных ключей:
+    S_ABC / S(ABC), S_MBN / S(MBN)
+    """
+    if not relations:
+        return None
+
+    aliases = {
+        "S_ABC": ("S_ABC", "S(ABC)"),
+        "S_MBN": ("S_MBN", "S(MBN)"),
+    }.get(key, (key,))
+
+    for k in aliases:
+        if relations.get(k) is not None:
+            return _parse_value(relations[k])
+
+    return None
+
+
+def _norm_ratio_request(name: str | None) -> str | None:
+    """
+    Нормализует запрос отношения к двум каноническим вариантам:
+    - 'MN/AC'
+    - 'AC/MN'
+    Поддерживает 'MN : AC', 'AC : MN', пробелы, разные двоеточия.
+    """
+    if not name:
+        return None
+
+    s = str(name).upper().replace(" ", "")
+    s = s.replace("∶", ":").replace("：", ":")
+    s = s.replace(":", "/")
+
+    if "MN" in s and "AC" in s:
+        return "AC/MN" if s.find("AC") < s.find("MN") else "MN/AC"
+
+    return None
 
 # ============================================================
 # ПАТТЕРН 2.1: triangle_area_by_sin
@@ -207,12 +255,291 @@ def _solve_area_by_dividing_point(task: Dict[str, Any]) -> List[Dict[str, Any]]:
     return solution_core
 
 # ============================================================
-# РЫБА-ЗАГОТОВКА ДЛЯ ПАТТЕРНА 2.3: triangle_area_by_parallel_line
+# ПАТТЕРН 2.3: triangle_area_by_parallel_line
 # ============================================================
 def _solve_area_by_parallel_line(task: Dict[str, Any]) -> List[Dict[str, Any]]:
-    """Решает задачу на площади подобных треугольников."""
-    # TODO: Реализовать логику
-    return [{"description_key": "TODO", "variables": {}}]
+    """
+    Паттерн 2.3: triangle_area_by_parallel_line
+    Формы:
+    - area_by_similarity
+    - segments_by_similarity
+    - ratio_by_similarity
+    """
+
+    import math
+
+    variables = task.get("variables", {})
+    given = variables.get("given", {})
+    to_find = variables.get("to_find", {})
+
+    # -------------------------------------------------
+    # 1. СБОР ИСХОДНЫХ ДАННЫХ
+    # -------------------------------------------------
+    raw_sides = {**given.get("sides", {}), **given.get("elements", {})}
+    s = {k: _parse_value(v) for k, v in raw_sides.items() if v is not None}
+
+    # дедукция отрезков
+    if "AB" in s and "AM" in s and "BM" not in s:
+        s["BM"] = s["AB"] - s["AM"]
+    if "AB" in s and "BM" in s and "AM" not in s:
+        s["AM"] = s["AB"] - s["BM"]
+    if "AM" in s and "BM" in s and "AB" not in s:
+        s["AB"] = s["AM"] + s["BM"]
+
+    if "BC" in s and "BN" in s and "NC" not in s:
+        s["NC"] = s["BC"] - s["BN"]
+    if "BC" in s and "NC" in s and "BN" not in s:
+        s["BN"] = s["BC"] - s["NC"]
+    if "BN" in s and "NC" in s and "BC" not in s:
+        s["BC"] = s["BN"] + s["NC"]
+
+    # площади (устойчиво к S_ABC/S(ABC) и S_MBN/S(MBN))
+    relations = given.get("relations", {}) or {}
+    s_abc = _get_area_relation(relations, "S_ABC")
+    s_mbn = _get_area_relation(relations, "S_MBN")
+
+    if s_abc is None and given.get("S_ABC") is not None:
+        s_abc = _parse_value(given["S_ABC"])
+
+    if s_mbn is None and given.get("S_MBN") is not None:
+        s_mbn = _parse_value(given["S_MBN"])
+
+    def _compute_k() -> float | None:
+        # 1) прямое отношение MN/AC
+        if "MN" in s and "AC" in s and s["AC"]:
+            return s["MN"] / s["AC"]
+
+        # 2) заданное отношение MN_to_AC_ratio (например "1:2" или "1/2")
+        ratio_str = given.get("MN_to_AC_ratio")
+        if ratio_str:
+            t = str(ratio_str).strip().replace(" ", "")
+            t = t.replace(",", ".")
+            if ":" in t:
+                a, b = t.split(":", 1)
+                return float(a) / float(b)
+            if "/" in t:
+                a, b = t.split("/", 1)
+                return float(a) / float(b)
+
+        # 3) другие стороны малого/большого
+        if "BN" in s and "BC" in s and s["BC"]:
+            return s["BN"] / s["BC"]
+
+        if "BM" in s and "AB" in s and s["AB"]:
+            return s["BM"] / s["AB"]
+
+        if "NC" in s and "BC" in s and s["BC"]:
+            return s["NC"] / s["BC"]
+
+        # 4) из площадей, если обе известны
+        if s_mbn is not None and s_abc is not None and s_abc:
+            return math.sqrt(s_mbn / s_abc)
+
+        return None
+
+    k = _compute_k()
+
+    # -------------------------------------------------
+    # 2. ОПРЕДЕЛЯЕМ FORM (narrative) — строго по to_find.type
+    # -------------------------------------------------
+    to_find_type = to_find.get("type")
+    to_find_name = to_find.get("name")
+
+    if to_find_type == "area":
+        narrative = "area_by_similarity"
+
+    elif to_find_type == "ratio":
+        narrative = "ratio_by_similarity"
+
+    elif to_find_type == "side":
+        narrative = "segments_by_similarity"
+
+    else:
+        raise ValueError(f"Неизвестный тип искомой величины: {to_find_type}")
+
+    # -------------------------------------------------
+    # 4. ПОДГОТОВКА CONTEXT (БЕЗ МУСОРА)
+    # -------------------------------------------------
+    context = {
+        "res": task.get("answer"),
+        "ac_val": format_number(s.get("AC")),
+        "mn_val": format_number(s.get("MN")),
+        "ab_val": format_number(s.get("AB")),
+        "am_val": format_number(s.get("AM")),
+        "bm_val": format_number(s.get("BM")),
+        "bc_val": format_number(s.get("BC")),
+        "bn_val": format_number(s.get("BN")),
+        "nc_val": format_number(s.get("NC")),
+        "s_abc_val": format_number(s_abc),
+        "s_mbn_val": format_number(s_mbn),
+        "to_find_name": to_find_name,
+    }
+
+    # -------------------------------------------------
+    # 5. ЛОГИКА ПО ФОРМАМ
+    # -------------------------------------------------
+
+    # 🔵 AREA BY SIMILARITY
+    if narrative == "area_by_similarity":
+
+        if k is None:
+            # пробуем взять k из текстового отношения MN:AC
+            ratio_str = given.get("MN_to_AC_ratio")
+            if ratio_str:
+                t = str(ratio_str).replace(" ", "")
+                if ":" in t:
+                    a, b = t.split(":", 1)
+                    k = float(a) / float(b)
+                elif "/" in t:
+                    a, b = t.split("/", 1)
+                    k = float(a) / float(b)
+
+        if k is None:
+            raise ValueError("Недостаточно данных для вычисления k")
+
+        # Как показываем k² в шагах
+        if s.get("MN") is not None and s.get("AC") is not None:
+            k_squared_str = f"({format_number(s['MN'])}/{format_number(s['AC'])})²"
+        else:
+            k_squared_str = f"{format_number(k)}²"
+
+        # Чётко определяем, что ищем
+        if to_find_name == "S_MBN":
+            if s_abc is None:
+                raise ValueError("Недостаточно данных: неизвестна площадь S(ABC)")
+            known_area_name = "S(ABC)"
+            known_area_val = format_number(s_abc)
+            target_area_name = "S(MBN)"
+
+        elif to_find_name == "S_ABC":
+            if s_mbn is None:
+                raise ValueError("Недостаточно данных: неизвестна площадь S(MBN)")
+            known_area_name = "S(MBN)"
+            known_area_val = format_number(s_mbn)
+            target_area_name = "S(ABC)"
+
+        else:
+            raise ValueError(
+                f"Искомая величина не относится к площадям: {to_find_name}"
+            )
+
+        context.update({
+            "known_area_name": known_area_name,
+            "known_area_val": known_area_val,
+            "target_area_name": target_area_name,
+            "k_squared_str": k_squared_str,
+        })
+
+    # 🟡 SEGMENTS BY SIMILARITY — ЧИСТЫЙ SOLVER
+    elif narrative == "segments_by_similarity":
+
+        if to_find_name in ("BM", "BN", "MN"):
+            platform = "direct_by_k"
+        else:
+            platform = "restore_whole_side"
+
+        context["platform"] = platform
+
+        # 0. Проверка коэффициента подобия
+        if k is None:
+            raise ValueError("Недостаточно данных для коэффициента подобия")
+
+        # 1. Восстановление MN / AC через k
+        if "AC" not in s and "MN" in s:
+            s["AC"] = s["MN"] / k
+        if "MN" not in s and "AC" in s:
+            s["MN"] = s["AC"] * k
+
+        # 2. Восстановление частей через k
+        if "BM" not in s and "AB" in s:
+            s["BM"] = s["AB"] * k
+        if "BN" not in s and "BC" in s:
+            s["BN"] = s["BC"] * k
+
+        # 3. Восстановление частей через разность
+        if "AM" not in s and "AB" in s and "BM" in s:
+            s["AM"] = s["AB"] - s["BM"]
+        if "NC" not in s and "BC" in s and "BN" in s:
+            s["NC"] = s["BC"] - s["BN"]
+
+        # 4. Восстановление целых сторон
+        if "AB" not in s and "BM" in s:
+            s["AB"] = s["BM"] / k
+        if "AB" not in s and "AM" in s:
+            s["AB"] = s["AM"] / (1 - k)
+
+        if "BC" not in s and "BN" in s:
+            s["BC"] = s["BN"] / k
+        if "BC" not in s and "NC" in s:
+            s["BC"] = s["NC"] / (1 - k)
+
+        # 5. Финальная проверка
+        if to_find_name not in s or s[to_find_name] is None:
+            raise ValueError(f"Невозможно найти отрезок {to_find_name}")
+
+        # 6. Подготовка ЧИСТОГО контекста (только числа)
+        temp_context = {
+            f"{side.lower()}_val": format_number(s.get(side))
+            for side in ["AC", "MN", "AB", "AM", "BM", "BC", "BN", "NC"]
+            if side in s
+        }
+
+        context.update(temp_context)
+
+        # 7. Числа, нужные humanizer'у
+        context.update({
+            "k_val": format_number(k),
+            "one_minus_k": format_number(1 - k),
+            "final_value": format_number(s[to_find_name])
+        })
+
+    # 🟣 RATIO BY SIMILARITY
+    elif narrative == "ratio_by_similarity":
+
+        if k is None and s_mbn is not None and s_abc is not None and s_abc != 0:
+            k = math.sqrt(s_mbn / s_abc)
+
+        # 1️⃣ k должен быть уже посчитан в _compute_k()
+        local_k = k
+
+        # 2️⃣ если вдруг не найден — допускаем ТОЛЬКО вывод через площади
+        if local_k is None and s_mbn is not None and s_abc is not None and s_abc != 0:
+            local_k = math.sqrt(s_mbn / s_abc)
+
+        # 3️⃣ если всё ещё нет — честная ошибка
+        if local_k is None:
+            raise ValueError("Для отношения нужны данные для вычисления k")
+
+        # 4️⃣ определяем направление отношения (по исходному name!)
+        ratio_req = _norm_ratio_request(to_find.get("name"))
+
+        # 5️⃣ считаем итоговое отношение
+        if ratio_req == "AC/MN":
+            ratio_val = 1 / local_k
+        else:
+            # по умолчанию MN/AC
+            ratio_val = local_k
+
+        context.update({
+            "k_val": format_number(local_k),
+            "ratio_str": format_number(ratio_val),
+        })
+
+        context.update({
+            "k_val": format_number(local_k),
+            "ratio_str": format_number(ratio_val),
+            "ratio_req": ratio_req or "MN/AC",
+        })
+
+
+    # -------------------------------------------------
+    # 6. ВОЗВРАТ SOLUTION_CORE
+    # -------------------------------------------------
+    return [{
+        "action": f"{task.get('pattern')}:{narrative}",
+        "data": context
+    }]
+
 
 # ============================================================
 # РЫБА-ЗАГОТОВКА ДЛЯ ПАТТЕРНА 2.4: triangle_area_by_midpoints
