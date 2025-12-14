@@ -2814,7 +2814,6 @@
         "trig": {},
         "elements": {
           "MN": 15.0,
-          "BN": 18.0,
           "NC": 12.0
         },
         "points": {
@@ -2851,8 +2850,7 @@
         "angles": {},
         "trig": {},
         "elements": {
-          "AM": 4.0,
-          "BM": 12.0
+          "AM": 4.0
         },
         "points": {
           "M": "on AB"
@@ -2888,8 +2886,7 @@
         "trig": {},
         "elements": {
           "MN": 18.0,
-          "BN": 15.0,
-          "NC": 10.0
+          "BN": 15.0
         },
         "points": {
           "N": "on BC"

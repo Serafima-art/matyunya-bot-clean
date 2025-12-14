@@ -265,281 +265,175 @@ def _solve_area_by_parallel_line(task: Dict[str, Any]) -> List[Dict[str, Any]]:
     - segments_by_similarity
     - ratio_by_similarity
     """
-
     import math
 
     variables = task.get("variables", {})
     given = variables.get("given", {})
     to_find = variables.get("to_find", {})
 
-    # -------------------------------------------------
-    # 1. СБОР ИСХОДНЫХ ДАННЫХ
-    # -------------------------------------------------
-    raw_sides = {**given.get("sides", {}), **given.get("elements", {})}
-    s = {k: _parse_value(v) for k, v in raw_sides.items() if v is not None}
+    # =================================================
+    # ШАГ 1: РАЗДЕЛЕНИЕ ДАННЫХ (КЛЮЧЕВОЕ ИСПРАВЛЕНИЕ)
+    # =================================================
 
-    # дедукция отрезков
-    if "AB" in s and "AM" in s and "BM" not in s:
-        s["BM"] = s["AB"] - s["AM"]
-    if "AB" in s and "BM" in s and "AM" not in s:
-        s["AM"] = s["AB"] - s["BM"]
-    if "AM" in s and "BM" in s and "AB" not in s:
-        s["AB"] = s["AM"] + s["BM"]
+    # 1А: ДАННЫЕ ДЛЯ ОТОБРАЖЕНИЯ ("ДАНО")
+    # Создаем context и наполняем его СЫРЫМИ данными, как они пришли из JSON.
+    # Это решает проблему с CN/NC и появлением вычисленных значений в "Дано".
+    context = {}
+    raw_sides_display = {**given.get("sides", {}), **given.get("elements", {})}
+    for key, value in raw_sides_display.items():
+        if value is not None:
+            context[f"{key.lower()}_val"] = format_number(_parse_value(value))
 
-    if "BC" in s and "BN" in s and "NC" not in s:
-        s["NC"] = s["BC"] - s["BN"]
-    if "BC" in s and "NC" in s and "BN" not in s:
-        s["BN"] = s["BC"] - s["NC"]
-    if "BN" in s and "NC" in s and "BC" not in s:
-        s["BC"] = s["BN"] + s["NC"]
+    # 1Б: ДАННЫЕ ДЛЯ ВЫЧИСЛЕНИЙ
+    # Создаем рабочий словарь 's', в котором будем проводить все вычисления.
+    raw_sides_calc = {**given.get("sides", {}), **given.get("elements", {})}
+    s = {k: _parse_value(v) for k, v in raw_sides_calc.items() if v is not None}
 
-    # площади (устойчиво к S_ABC/S(ABC) и S_MBN/S(MBN))
+    # Нормализуем имена в рабочем словаре для единообразия.
+    if "CN" in s and "NC" not in s: s["NC"] = s["CN"]
+    if "MA" in s and "AM" not in s: s["AM"] = s["MA"]
+
+    # 1В: РАННЯЯ ДЕДУКЦИЯ (ДЛЯ ВЫЧИСЛЕНИЯ k)
+    # Вычисляем недостающие части сторон, если это необходимо для нахождения 'k'.
+    if "AB" in s and "AM" in s and "BM" not in s: s["BM"] = s["AB"] - s["AM"]
+    if "BC" in s and "BN" in s and "NC" not in s: s["NC"] = s["BC"] - s["BN"]
+
+    # 1Г: СБОР ПЛОЩАДЕЙ
     relations = given.get("relations", {}) or {}
     s_abc = _get_area_relation(relations, "S_ABC")
     s_mbn = _get_area_relation(relations, "S_MBN")
+    if s_abc is None and given.get("S_ABC") is not None: s_abc = _parse_value(given["S_ABC"])
+    if s_mbn is None and given.get("S_MBN") is not None: s_mbn = _parse_value(given["S_MBN"])
 
-    if s_abc is None and given.get("S_ABC") is not None:
-        s_abc = _parse_value(given["S_ABC"])
+    # =================================================
+    # ШАГ 2: ОБЩИЕ ВЫЧИСЛЕНИЯ (k)
+    # =================================================
+    def _compute_k() -> Dict[str, Any] | None:
+        # Возвращает словарь: {"value": k, "num": numerator, "den": denominator}
+        # Это позволит humanizer'у показать исходную дробь
+        def result(val, num, den): return {"value": val, "num": num, "den": den}
 
-    if s_mbn is None and given.get("S_MBN") is not None:
-        s_mbn = _parse_value(given["S_MBN"])
+        if "MN" in s and "AC" in s and s["AC"]: return result(s["MN"] / s["AC"], s["MN"], s["AC"])
 
-    def _compute_k() -> float | None:
-        # 1) прямое отношение MN/AC
-        if "MN" in s and "AC" in s and s["AC"]:
-            return s["MN"] / s["AC"]
-
-        # 2) заданное отношение MN_to_AC_ratio (например "1:2" или "1/2")
         ratio_str = given.get("MN_to_AC_ratio")
         if ratio_str:
-            t = str(ratio_str).strip().replace(" ", "")
-            t = t.replace(",", ".")
-            if ":" in t:
-                a, b = t.split(":", 1)
-                return float(a) / float(b)
-            if "/" in t:
-                a, b = t.split("/", 1)
-                return float(a) / float(b)
+            t = str(ratio_str).strip().replace(" ", "").replace(",", ".")
+            if ":" in t: a, b = t.split(":", 1); return result(float(a) / float(b), float(a), float(b))
+            if "/" in t: a, b = t.split("/", 1); return result(float(a) / float(b), float(a), float(b))
 
-        # 3) другие стороны малого/большого
-        if "BN" in s and "BC" in s and s["BC"]:
-            return s["BN"] / s["BC"]
-
-        if "BM" in s and "AB" in s and s["AB"]:
-            return s["BM"] / s["AB"]
+        if "BN" in s and "BC" in s and s["BC"]: return result(s["BN"] / s["BC"], s["BN"], s["BC"])
+        if "BM" in s and "AB" in s and s["AB"]: return result(s["BM"] / s["AB"], s["BM"], s["AB"])
 
         if "NC" in s and "BC" in s and s["BC"]:
-            return s["NC"] / s["BC"]
+            # k = (BC-NC)/BC
+            return result(1 - (s["NC"] / s["BC"]), s["BC"] - s["NC"], s["BC"])
 
-        # 4) из площадей, если обе известны
         if s_mbn is not None and s_abc is not None and s_abc:
-            return math.sqrt(s_mbn / s_abc)
+            # Здесь у нас нет исходной дроби, только результат
+            val = math.sqrt(s_mbn / s_abc)
+            return result(val, None, None)
 
         return None
 
-    k = _compute_k()
+    k_data = _compute_k()
+    k = k_data["value"] if k_data else None
 
-    # -------------------------------------------------
-    # 2. ОПРЕДЕЛЯЕМ FORM (narrative) — строго по to_find.type
-    # -------------------------------------------------
+    # =================================================
+    # ШАГ 3: ОПРЕДЕЛЕНИЕ СЦЕНАРИЯ
+    # =================================================
     to_find_type = to_find.get("type")
     to_find_name = to_find.get("name")
 
-    if to_find_type == "area":
-        narrative = "area_by_similarity"
+    if to_find_type == "area": narrative = "area_by_similarity"
+    elif to_find_type == "ratio": narrative = "ratio_by_similarity"
+    elif to_find_type == "side": narrative = "segments_by_similarity"
+    else: raise ValueError(f"Неизвестный тип искомой величины: {to_find_type}")
 
-    elif to_find_type == "ratio":
-        narrative = "ratio_by_similarity"
-
-    elif to_find_type == "side":
-        narrative = "segments_by_similarity"
-
-    else:
-        raise ValueError(f"Неизвестный тип искомой величины: {to_find_type}")
-
-    # -------------------------------------------------
-    # 4. ПОДГОТОВКА CONTEXT (БЕЗ МУСОРА)
-    # -------------------------------------------------
-    context = {
+    # =================================================
+    # ШАГ 4: ДОБАВЛЕНИЕ ОБЩИХ ДАННЫХ В КОНТЕКСТ
+    # =================================================
+    context.update({
         "res": task.get("answer"),
-        "ac_val": format_number(s.get("AC")),
-        "mn_val": format_number(s.get("MN")),
-        "ab_val": format_number(s.get("AB")),
-        "am_val": format_number(s.get("AM")),
-        "bm_val": format_number(s.get("BM")),
-        "bc_val": format_number(s.get("BC")),
-        "bn_val": format_number(s.get("BN")),
-        "nc_val": format_number(s.get("NC")),
         "s_abc_val": format_number(s_abc),
         "s_mbn_val": format_number(s_mbn),
         "to_find_name": to_find_name,
-    }
+        "k_num": format_number(k_data.get("num")) if k_data else None,
+        "k_den": format_number(k_data.get("den")) if k_data else None,
+    })
 
-    # -------------------------------------------------
-    # 5. ЛОГИКА ПО ФОРМАМ
-    # -------------------------------------------------
-
-    # 🔵 AREA BY SIMILARITY
+    # =================================================
+    # ШАГ 5: ЛОГИКА ПО ФОРМАМ
+    # =================================================
     if narrative == "area_by_similarity":
+        if k is None: raise ValueError("Недостаточно данных для вычисления k")
 
-        if k is None:
-            # пробуем взять k из текстового отношения MN:AC
-            ratio_str = given.get("MN_to_AC_ratio")
-            if ratio_str:
-                t = str(ratio_str).replace(" ", "")
-                if ":" in t:
-                    a, b = t.split(":", 1)
-                    k = float(a) / float(b)
-                elif "/" in t:
-                    a, b = t.split("/", 1)
-                    k = float(a) / float(b)
+        # Получаем отформатированное значение k (например, "2/3")
+        k_val_formatted = format_number(k)
 
-        if k is None:
-            raise ValueError("Недостаточно данных для вычисления k")
+        # Формируем строку для k² из УЖЕ СОКРАЩЕННОЙ дроби
+        k_squared_str = f"({k_val_formatted})²"
 
-        # Как показываем k² в шагах
-        if s.get("MN") is not None and s.get("AC") is not None:
-            k_squared_str = f"({format_number(s['MN'])}/{format_number(s['AC'])})²"
-        else:
-            k_squared_str = f"{format_number(k)}²"
+        if to_find_name == "S_MBN": known_area_name, known_area_val, target_area_name = "S(ABC)", format_number(s_abc), "S(MBN)"
+        elif to_find_name == "S_ABC": known_area_name, known_area_val, target_area_name = "S(MBN)", format_number(s_mbn), "S(ABC)"
+        else: raise ValueError(f"Искомая величина не относится к площадям: {to_find_name}")
 
-        # Чётко определяем, что ищем
-        if to_find_name == "S_MBN":
-            if s_abc is None:
-                raise ValueError("Недостаточно данных: неизвестна площадь S(ABC)")
-            known_area_name = "S(ABC)"
-            known_area_val = format_number(s_abc)
-            target_area_name = "S(MBN)"
-
-        elif to_find_name == "S_ABC":
-            if s_mbn is None:
-                raise ValueError("Недостаточно данных: неизвестна площадь S(MBN)")
-            known_area_name = "S(MBN)"
-            known_area_val = format_number(s_mbn)
-            target_area_name = "S(ABC)"
-
-        else:
-            raise ValueError(
-                f"Искомая величина не относится к площадям: {to_find_name}"
-            )
-
+        # Добавляем в context и k_val, и k_squared_str
         context.update({
+            "k_val": k_val_formatted,
             "known_area_name": known_area_name,
             "known_area_val": known_area_val,
             "target_area_name": target_area_name,
-            "k_squared_str": k_squared_str,
+            "k_squared_str": k_squared_str
         })
 
-    # 🟡 SEGMENTS BY SIMILARITY — ЧИСТЫЙ SOLVER
     elif narrative == "segments_by_similarity":
-
-        if to_find_name in ("BM", "BN", "MN"):
-            platform = "direct_by_k"
-        else:
-            platform = "restore_whole_side"
-
+        # --- 5.1 ОПРЕДЕЛЕНИЕ ПЛАТФОРМЫ РЕШЕНИЯ ---
+        has_top_part = (to_find_name == "AB" and "AM" in s) or (to_find_name == "BC" and "NC" in s)
+        is_find_top = (to_find_name == "AM" and "AB" in s) or (to_find_name == "NC" and "BC" in s)
+        if has_top_part: platform = "restore_whole_side"
+        elif is_find_top: platform = "find_top_part"
+        else: platform = "direct_by_k"
         context["platform"] = platform
 
-        # 0. Проверка коэффициента подобия
-        if k is None:
-            raise ValueError("Недостаточно данных для коэффициента подобия")
+        if k is None: raise ValueError("Нет данных для k")
 
-        # 1. Восстановление MN / AC через k
-        if "AC" not in s and "MN" in s:
-            s["AC"] = s["MN"] / k
-        if "MN" not in s and "AC" in s:
-            s["MN"] = s["AC"] * k
+        # --- 5.2 ПОЛНАЯ ДЕДУКЦИЯ ДЛЯ РЕШЕНИЯ ---
+        # Здесь мы вычисляем ВСЕ возможные стороны, чтобы гарантированно найти ответ.
+        # Это не влияет на "Дано", т.к. работа идет только со словарем 's'.
+        if "AC" not in s and "MN" in s: s["AC"] = s["MN"] / k
+        if "MN" not in s and "AC" in s: s["MN"] = s["AC"] * k
+        if "BM" not in s and "AB" in s: s["BM"] = s["AB"] * k
+        if "BN" not in s and "BC" in s: s["BN"] = s["BC"] * k
+        if "AB" not in s and "BM" in s: s["AB"] = s["BM"] / k
+        if "BC" not in s and "BN" in s: s["BC"] = s["BN"] / k
+        if "AB" in s and "BM" in s and "AM" not in s: s["AM"] = s["AB"] - s["BM"]
+        if "BC" in s and "BN" in s and "NC" not in s: s["NC"] = s["BC"] - s["BN"]
+        if platform == "restore_whole_side" and to_find_name not in s:
+            if to_find_name == "AB" and "AM" in s: s["AB"] = s["AM"] / (1 - k)
+            if to_find_name == "BC" and "NC" in s: s["BC"] = s["NC"] / (1 - k)
 
-        # 2. Восстановление частей через k
-        if "BM" not in s and "AB" in s:
-            s["BM"] = s["AB"] * k
-        if "BN" not in s and "BC" in s:
-            s["BN"] = s["BC"] * k
+        # --- 5.3 ДОБАВЛЕНИЕ УНИКАЛЬНЫХ КЛЮЧЕЙ ДЛЯ ШАБЛОНОВ ---
+        context.update({"k_val": format_number(k), "one_minus_k": format_number(1 - k), "final_value": format_number(s.get(to_find_name))})
+        if platform == "restore_whole_side":
+            whole, part, unknown_part, point_name = to_find_name, ("AM" if to_find_name == "AB" else "NC"), ("BM" if to_find_name == "AB" else "BN"), ("M" if to_find_name == "AB" else "N")
+            context.update({"restore_whole_name": whole, "restore_part_name": part, "restore_part_val": format_number(s.get(part)), "restore_unknown_part_name": unknown_part, "restore_point_name": point_name})
+        elif platform == "find_top_part":
+            whole, bottom_part = ("AB" if to_find_name == "AM" else "BC"), ("BM" if to_find_name == "AM" else "BN")
+            context.update({"find_top_whole_name": whole, "find_top_whole_val": format_number(s.get(whole)), "find_top_bottom_part_name": bottom_part, "find_top_bottom_part_val": format_number(s.get(bottom_part))})
+        elif platform == "direct_by_k":
+            if "MN" in to_find_name or "AC" in to_find_name: small, big = "MN", "AC"
+            elif "BM" in to_find_name or "AB" in to_find_name: small, big = "BM", "AB"
+            else: small, big = "BN", "BC"
+            big_val = "" if to_find_name == big else format_number(s.get(big))
+            context.update({"direct_small_side": small, "direct_big_side": big, "direct_small_side_val": format_number(s.get(small)), "direct_big_side_val": big_val})
 
-        # 3. Восстановление частей через разность
-        if "AM" not in s and "AB" in s and "BM" in s:
-            s["AM"] = s["AB"] - s["BM"]
-        if "NC" not in s and "BC" in s and "BN" in s:
-            s["NC"] = s["BC"] - s["BN"]
-
-        # 4. Восстановление целых сторон
-        if "AB" not in s and "BM" in s:
-            s["AB"] = s["BM"] / k
-        if "AB" not in s and "AM" in s:
-            s["AB"] = s["AM"] / (1 - k)
-
-        if "BC" not in s and "BN" in s:
-            s["BC"] = s["BN"] / k
-        if "BC" not in s and "NC" in s:
-            s["BC"] = s["NC"] / (1 - k)
-
-        # 5. Финальная проверка
-        if to_find_name not in s or s[to_find_name] is None:
-            raise ValueError(f"Невозможно найти отрезок {to_find_name}")
-
-        # 6. Подготовка ЧИСТОГО контекста (только числа)
-        temp_context = {
-            f"{side.lower()}_val": format_number(s.get(side))
-            for side in ["AC", "MN", "AB", "AM", "BM", "BC", "BN", "NC"]
-            if side in s
-        }
-
-        context.update(temp_context)
-
-        # 7. Числа, нужные humanizer'у
-        context.update({
-            "k_val": format_number(k),
-            "one_minus_k": format_number(1 - k),
-            "final_value": format_number(s[to_find_name])
-        })
-
-    # 🟣 RATIO BY SIMILARITY
     elif narrative == "ratio_by_similarity":
-
-        if k is None and s_mbn is not None and s_abc is not None and s_abc != 0:
-            k = math.sqrt(s_mbn / s_abc)
-
-        # 1️⃣ k должен быть уже посчитан в _compute_k()
-        local_k = k
-
-        # 2️⃣ если вдруг не найден — допускаем ТОЛЬКО вывод через площади
-        if local_k is None and s_mbn is not None and s_abc is not None and s_abc != 0:
-            local_k = math.sqrt(s_mbn / s_abc)
-
-        # 3️⃣ если всё ещё нет — честная ошибка
-        if local_k is None:
-            raise ValueError("Для отношения нужны данные для вычисления k")
-
-        # 4️⃣ определяем направление отношения (по исходному name!)
+        if k is None: raise ValueError("Для отношения нужны данные для вычисления k")
         ratio_req = _norm_ratio_request(to_find.get("name"))
+        ratio_val = 1 / k if ratio_req == "AC/MN" else k
+        context.update({"k_val": format_number(k), "ratio_str": format_number(ratio_val), "ratio_req": ratio_req or "MN/AC"})
 
-        # 5️⃣ считаем итоговое отношение
-        if ratio_req == "AC/MN":
-            ratio_val = 1 / local_k
-        else:
-            # по умолчанию MN/AC
-            ratio_val = local_k
-
-        context.update({
-            "k_val": format_number(local_k),
-            "ratio_str": format_number(ratio_val),
-        })
-
-        context.update({
-            "k_val": format_number(local_k),
-            "ratio_str": format_number(ratio_val),
-            "ratio_req": ratio_req or "MN/AC",
-        })
-
-
-    # -------------------------------------------------
-    # 6. ВОЗВРАТ SOLUTION_CORE
-    # -------------------------------------------------
-    return [{
-        "action": f"{task.get('pattern')}:{narrative}",
-        "data": context
-    }]
-
+    return [{"action": f"{task.get('pattern')}:{narrative}", "data": context}]
 
 # ============================================================
 # РЫБА-ЗАГОТОВКА ДЛЯ ПАТТЕРНА 2.4: triangle_area_by_midpoints

@@ -551,8 +551,8 @@ class GeneralTrianglesValidator:
             )
 
         # --- 6) СБОРКА JSON (ИЗ ЧИСЛОВОЙ МОДЕЛИ s) ---
-        given_sides = {key: float(s[key]) for key in ("AB", "BC", "AC") if key in s}
-        given_elements = {key: float(s[key]) for key in ("MN", "AM", "BM", "BN", "NC") if key in s}
+        given_sides = {key: float(s[key]) for key in ("AB", "BC", "AC") if key in raw_s}
+        given_elements = {key: float(s[key]) for key in ("MN", "AM", "BM", "BN", "NC", "CN") if key in raw_s}
         given_relations = {key: float(s[key]) for key in ("S_ABC", "S_MBN") if key in s}
 
         # points — оставим как раньше (минимально, чтобы не ломать общий стиль)
