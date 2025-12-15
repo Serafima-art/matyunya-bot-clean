@@ -3488,7 +3488,7 @@
   {
     "id": 1500106,
     "pattern": "triangle_area_by_midpoints",
-    "text": "В треуголь-нике ABC площадью 72 M и N – середины AB и BC. Найди площадь четырехугольника AMNC.",
+    "text": "В треугольнике ABC площадью 72 M и N – середины AB и BC. Найди площадь четырехугольника AMNC.",
     "answer": 54,
     "image_file": "T6_triangle_area_by_midpoints.svg",
     "variables": {

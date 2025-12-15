@@ -436,12 +436,68 @@ def _solve_area_by_parallel_line(task: Dict[str, Any]) -> List[Dict[str, Any]]:
     return [{"action": f"{task.get('pattern')}:{narrative}", "data": context}]
 
 # ============================================================
-# РЫБА-ЗАГОТОВКА ДЛЯ ПАТТЕРНА 2.4: triangle_area_by_midpoints
+# ПАТТЕРН 2.4: triangle_area_by_midpoints
 # ============================================================
 def _solve_area_by_midpoints(task: Dict[str, Any]) -> List[Dict[str, Any]]:
     """Решает задачу на площадь треугольника, отсекаемого средней линией."""
-    # TODO: Реализовать логику
-    return [{"description_key": "TODO", "variables": {}}]
+
+    variables = task.get("variables", {})
+    given = variables.get("given", {})
+    to_find = variables.get("to_find", {})
+    relations = given.get("relations", {})
+
+    # Определяем искомую площадь ОДИН РАЗ
+    to_find_name = to_find.get("name")
+
+    s_abc, s_mbn, s_amnc = None, None, None
+    from_part = None
+
+    # --- 1. Определяем, что дано, и вычисляем остальные площади ---
+    if "S_ABC" in relations:
+        from_part = "from_big_triangle"
+        s_abc = _parse_value(relations["S_ABC"])
+        s_mbn = s_abc / 4
+        s_amnc = s_abc * 3 / 4
+    elif "S_MBN" in relations:
+        from_part = "from_small_triangle"
+        s_mbn = _parse_value(relations["S_MBN"])
+        s_abc = s_mbn * 4
+        s_amnc = s_mbn * 3
+    elif "S_AMNC" in relations:
+        from_part = "from_trapezoid"
+        s_amnc = _parse_value(relations["S_AMNC"])
+        s_mbn = s_amnc / 3
+        s_abc = s_amnc * 4 / 3
+    else:
+        raise ValueError("midpoints_solver: не найдена известная площадь в given.relations")
+
+    # --- 2. ФОРМИРУЕМ NARRATIVE ИЗ ДВУХ ЧАСТЕЙ ---
+    to_part = {
+        "S_ABC": "find_big_triangle",
+        "S_MBN": "find_small_triangle",
+        "S_AMNC": "find_trapezoid"
+    }.get(to_find_name)
+
+    if not from_part or not to_part:
+        raise ValueError("midpoints_solver: не удалось определить from/to части narrative")
+
+    final_narrative = f"{from_part}:{to_part}"
+
+    # --- 3. Формируем контекст для Humanizer'а ---
+    context = {
+        "res": task.get("answer"),
+        "s_abc_val": format_number(s_abc),
+        "s_mbn_val": format_number(s_mbn),
+        "s_amnc_val": format_number(s_amnc),
+        "to_find_name_human": to_find_name.replace("_", "(") + ")",
+    }
+
+    # --- 4. Возвращаем solution_core ---
+    return [{
+        # Используем ПОЛНЫЙ, составной narrative
+        "action": f"{task.get('pattern')}:{final_narrative}",
+        "data": context
+    }]
 
 # ============================================================
 # РЫБА-ЗАГОТОВКА ДЛЯ ПАТТЕРНА 2.5: cosine_law_find_cos
