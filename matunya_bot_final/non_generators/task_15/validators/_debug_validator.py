@@ -14,7 +14,7 @@ from pathlib import Path
 # НАСТРОЙКИ
 # ---------------------------------------------------------------------
 
-TARGET_PATTERN = "triangle_area_by_parallel_line"
+TARGET_PATTERN = "triangle_area_by_midpoints"
 DEFINITIONS_FILE = "general_triangles.txt"
 
 # ---------------------------------------------------------------------

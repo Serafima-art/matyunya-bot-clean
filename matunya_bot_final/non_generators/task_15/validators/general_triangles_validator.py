@@ -591,93 +591,138 @@ class GeneralTrianglesValidator:
     # ============================================================
     # PATTERN 2.4: triangle_area_by_midpoints
     # ============================================================
-
     def _handle_triangle_area_by_midpoints(self, raw: Dict[str, Any]) -> Dict[str, Any]:
         """
-        Частный случай подобия: M, N — середины AB и BC, k = 1/2, площади соотносятся как 1 : 1/4 : 3/4.
-        ВЕРСИЯ 4 (ФИНАЛ): Исправлены последние ошибки парсинга площадей.
+        Обрабатывает задачи со средней линией.
+        Различает два подтипа:
+        1. Нахождение длины средней линии (задача-ловушка).
+        2. Нахождение площадей (S_ABC, S_MBN, S_AMNC).
         """
         text = raw["text"]
         text_lower = text.lower()
 
-        def parse_area(patterns: list[str]) -> float | int | None:
-            for pattern in patterns:
-                m = re.search(pattern, text, flags=re.IGNORECASE)
-                if m:
-                    value = float(m.group(1).replace(",", "."))
-                    return int(value) if value.is_integer() else value
-            return None
-
-        # ИСПРАВЛЕНИЕ: Паттерны сделаны более гибкими, чтобы не зависеть от начала предложения.
-        S_ABC = parse_area([
-            r"S\s*[_]?\s*ABC\s*=\s*([0-9]+(?:[.,][0-9]+)?)",
-            r"площад[ьи]\s+треугольника\s+ABC[^0-9]*([0-9]+(?:[.,][0-9]+)?)",
-            r"треугольник[е]?\s+ABC[^0-9]*площад[ьюи]\s*([0-9]+(?:[.,][0-9]+)?)",
-            r"в\s+треугольнике\s+abc[^0-9]*площад[ьяи]\s+равн[аы]\s*([0-9]+(?:[.,][0-9]+)?)",
-            r"ABC\s+площадью\s+([0-9]+(?:[.,][0-9]+)?)", # <-- Убрано "треугольник" в начале
-            r"ABC,\s+площадь\s+которого\s+([0-9]+(?:[.,][0-9]+)?)", # <-- Убрано "треугольник" в начале
-        ])
-
-        S_MBN = parse_area([
-            r"S\s*[_]?\s*MBN\s*=\s*([0-9]+(?:[.,][0-9]+)?)",
-            r"площад[ьи]\s+треугольника\s+MBN[^0-9]*([0-9]+(?:[.,][0-9]+)?)",
-            r"площадь\s+MBN\s+равна\s+([0-9]+(?:[.,][0-9]+)?)",
-        ])
-
-        S_AMNC = parse_area([
-            r"S\s*[_]?\s*AMNC\s*=\s*([0-9]+(?:[.,][0-9]+)?)",
-            r"площад[ьи]\s+(?:четыр[её]хугольника|трапеции)\s+AMNC[^0-9]*([0-9]+(?:[.,][0-9]+)?)",
-        ])
-
+        # --- 0. Определяем, что нужно найти: длину или площадь ---
         to_find_name = None
-        m_target = re.search(r"найд[^\n\r]*?(?:площад[ьи]\s+)?(?:трапеции\s+|четырехугольника\s+)?(s_abc|s_mbn|s_amnc|abc|mbn|amnc)\b", text_lower)
-        if m_target:
-            token = m_target.group(1).upper()
-            if token in {"S_ABC", "ABC"}: to_find_name = "S_ABC"
-            elif token in {"S_MBN", "MBN"}: to_find_name = "S_MBN"
-            elif token in {"S_AMNC", "AMNC"}: to_find_name = "S_AMNC"
+        to_find_type = None
+
+        m_find_side = re.search(r"(?:найд[^\n\r]*?|чему\s+равна\s+длина\s+)(MN|AC)\b", text, flags=re.IGNORECASE)
+        if m_find_side:
+            to_find_type = "side"
+            to_find_name = m_find_side.group(1).upper()
+        else:
+            to_find_type = "area"
+            m_target = re.search(r"найд[^\n\r]*?(?:площад[ьи]\s+)?(?:трапеции\s+|четырехугольника\s+)?(s_abc|s_mbn|s_amnc|abc|mbn|amnc)\b", text_lower)
+            if m_target:
+                token = m_target.group(1).upper()
+                if token in {"S_ABC", "ABC"}: to_find_name = "S_ABC"
+                elif token in {"S_MBN", "MBN"}: to_find_name = "S_MBN"
+                elif token in {"S_AMNC", "AMNC"}: to_find_name = "S_AMNC"
 
         if to_find_name is None:
-            if "mbn" in text_lower and "найди" in text_lower: to_find_name = "S_MBN"
-            elif "amnc" in text_lower and "найди" in text_lower: to_find_name = "S_AMNC"
-            elif "abc" in text_lower and "найди" in text_lower: to_find_name = "S_ABC"
+            raise ValueError(f"Midpoints Validator: Не удалось определить, что нужно найти в тексте: '{text}'")
 
-        if to_find_name is None: raise ValueError(f"Не удалось определить, что нужно найти: {text}")
+        # --- ВЕТКА 1: РАБОТАЕМ С ДЛИНАМИ (ЗАДАЧА-ЛОВУШКА) ---
+        if to_find_type == "side":
+            sides: Dict[str, float] = {}
+            # Улучшенный парсер: ищет и "AC = X", и "сторона AC равна X"
+            all_sides = {"AB", "BC", "AC", "MN"}
+            for side_name in all_sides:
+                # Ищем "AC = 62"
+                m_eq = re.search(rf"\b{side_name}\b\s*=\s*([0-9]+(?:[.,][0-9]+)?)", text, flags=re.IGNORECASE)
+                if m_eq:
+                    sides[side_name] = float(m_eq.group(1).replace(",", "."))
+                    continue # Переходим к следующей стороне
 
-        # Блок вычислений и сборки JSON остается БЕЗ ИЗМЕНЕНИЙ.
-        answer = None
-        calc_abc = calc_mbn = calc_amnc = None
+                # Ищем "сторона AC равна 62", "длина MN равна 17", "отрезок AC равен 10"
+                m_word = re.search(rf"(?:сторона|основание|длина|отрезок)\s+\b{side_name}\b\s+(?:равна?|равен)\s+([0-9]+(?:[.,][0-9]+)?)", text, flags=re.IGNORECASE)
+                if m_word:
+                    sides[side_name] = float(m_word.group(1).replace(",", "."))
 
-        if S_ABC is not None:
-            calc_abc, calc_mbn, calc_amnc = S_ABC, S_ABC / 4, S_ABC * 3 / 4
-        elif S_MBN is not None:
-            calc_mbn, calc_abc, calc_amnc = S_MBN, S_MBN * 4, S_MBN * 3
-        elif S_AMNC is not None:
-            calc_amnc, calc_abc, calc_mbn = S_AMNC, S_AMNC * 4 / 3, S_AMNC / 3
+            answer = None
+            if to_find_name == "MN" and "AC" in sides:
+                answer = sides["AC"] / 2
+            elif to_find_name == "AC" and "MN" in sides:
+                answer = sides["MN"] * 2
 
-        if to_find_name == "S_ABC": answer = calc_abc
-        elif to_find_name == "S_MBN": answer = calc_mbn
-        elif to_find_name == "S_AMNC": answer = calc_amnc
+            if answer is None:
+                raise ValueError(f"Midpoints Validator: не хватает данных для поиска длины {to_find_name}")
 
-        relations = {}
-        if S_ABC is not None: relations["S_ABC"] = self._format_number(S_ABC)
-        if S_MBN is not None: relations["S_MBN"] = self._format_number(S_MBN)
-        if S_AMNC is not None: relations["S_AMNC"] = self._format_number(S_AMNC)
-
-        return {
-            "id": raw.get("id"), "pattern": "triangle_area_by_midpoints", "text": text,
-            "answer": self._format_number(answer), "image_file": "T6_triangle_area_by_midpoints.svg",
-            "variables": {
-                "given": {
-                    "triangle_name": "ABC", "triangle_type": "general", "sides": {}, "angles": {},
-                    "trig": {}, "elements": {},
-                    "points": {"M": "midpoint of AB", "N": "midpoint of BC"},
-                    "relations": relations,
+            return {
+                "id": raw.get("id"), "pattern": raw["pattern"], "text": text,
+                "answer": self._format_number(answer), "image_file": "T6_triangle_area_by_midpoints.svg",
+                "variables": {
+                    "given": {
+                        "triangle_name": "ABC", "triangle_type": "general", "sides": sides, "angles": {},
+                        "trig": {}, "elements": {},
+                        "points": {"M": "midpoint of AB", "N": "midpoint of BC"},
+                        "relations": {},
+                    },
+                    "to_find": {"type": "side", "name": to_find_name},
+                    "humanizer_data": {},
                 },
-                "to_find": {"type": "area", "name": to_find_name},
-                "humanizer_data": {"side_roles": {}, "angle_names": {}, "element_names": {}},
-            },
-        }
+            }
+
+        # --- ВЕТКА 2: РАБОТАЕМ С ПЛОЩАДЯМИ (СТАРЫЙ РАБОЧИЙ КОД) ---
+        else: # to_find_type == "area"
+            def parse_area(patterns: list[str]) -> float | int | None:
+                for pattern in patterns:
+                    m = re.search(pattern, text, flags=re.IGNORECASE)
+                    if m:
+                        value = float(m.group(1).replace(",", "."))
+                        return int(value) if value.is_integer() else value
+                return None
+
+            S_ABC = parse_area([
+                r"S\s*[_]?\s*ABC\s*=\s*([0-9]+(?:[.,][0-9]+)?)",
+                r"площад[ьи]\s+треугольника\s+ABC[^0-9]*([0-9]+(?:[.,][0-9]+)?)",
+                r"треугольник[е]?\s+ABC[^0-9]*площад[ьюи]\s*([0-9]+(?:[.,][0-9]+)?)",
+                r"в\s+треугольнике\s+abc[^0-9]*площад[ьяи]\s+равн[аы]\s*([0-9]+(?:[.,][0-9]+)?)",
+                r"ABC\s+площадью\s+([0-9]+(?:[.,][0-9]+)?)",
+                r"ABC,\s+площадь\s+которого\s+([0-9]+(?:[.,][0-9]+)?)",
+            ])
+            S_MBN = parse_area([
+                r"S\s*[_]?\s*MBN\s*=\s*([0-9]+(?:[.,][0-9]+)?)",
+                r"площад[ьи]\s+треугольника\s+MBN[^0-9]*([0-9]+(?:[.,][0-9]+)?)",
+                r"площадь\s+MBN\s+равна\s+([0-9]+(?:[.,][0-9]+)?)",
+            ])
+            S_AMNC = parse_area([
+                r"S\s*[_]?\s*AMNC\s*=\s*([0-9]+(?:[.,][0-9]+)?)",
+                r"площад[ьи]\s+(?:четыр[её]хугольника|трапеции)\s+AMNC[^0-9]*([0-9]+(?:[.,][0-9]+)?)",
+            ])
+
+            answer = None
+            calc_abc = calc_mbn = calc_amnc = None
+
+            if S_ABC is not None:
+                calc_abc, calc_mbn, calc_amnc = S_ABC, S_ABC / 4, S_ABC * 3 / 4
+            elif S_MBN is not None:
+                calc_mbn, calc_abc, calc_amnc = S_MBN, S_MBN * 4, S_MBN * 3
+            elif S_AMNC is not None:
+                calc_amnc, calc_abc, calc_mbn = S_AMNC, S_AMNC * 4 / 3, S_AMNC / 3
+
+            if to_find_name == "S_ABC": answer = calc_abc
+            elif to_find_name == "S_MBN": answer = calc_mbn
+            elif to_find_name == "S_AMNC": answer = calc_amnc
+
+            relations = {}
+            if S_ABC is not None: relations["S_ABC"] = self._format_number(S_ABC)
+            if S_MBN is not None: relations["S_MBN"] = self._format_number(S_MBN)
+            if S_AMNC is not None: relations["S_AMNC"] = self._format_number(S_AMNC)
+
+            return {
+                "id": raw.get("id"), "pattern": "triangle_area_by_midpoints", "text": text,
+                "answer": self._format_number(answer), "image_file": "T6_triangle_area_by_midpoints.svg",
+                "variables": {
+                    "given": {
+                        "triangle_name": "ABC", "triangle_type": "general", "sides": {}, "angles": {},
+                        "trig": {}, "elements": {},
+                        "points": {"M": "midpoint of AB", "N": "midpoint of BC"},
+                        "relations": relations,
+                    },
+                    "to_find": {"type": "area", "name": to_find_name},
+                    "humanizer_data": {"side_roles": {}, "angle_names": {}, "element_names": {}},
+                },
+            }
 
     # ============================================================
     # PATTERN 2.5: cosine_law_find_cos

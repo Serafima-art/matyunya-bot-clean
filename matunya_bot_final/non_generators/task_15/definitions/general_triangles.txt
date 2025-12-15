@@ -84,6 +84,11 @@ triangle_area_by_midpoints|В треугольнике ABC площадью 72 M
 triangle_area_by_midpoints|Площадь четырехугольника AMNC равна 99, где M и N - середины сторон AB и BC треугольника ABC. Найди площадь треугольника MBN.
 triangle_area_by_midpoints|MN — средняя линия треугольника ABC. Площадь MBN равна 5. Найди площадь трапеции AMNC.
 triangle_area_by_midpoints|В треугольнике ABC, площадь которого 108, точки M и N являются серединами сторон AB и BC. Найди площадь треугольника MBN.
+triangle_area_by_midpoints|Точки M и N являются серединами сторон AB и BC треугольника ABC. Сторона AB равна 20, сторона BC равна 30, а сторона AC равна 24. Найдите MN.
+triangle_area_by_midpoints|Отрезок MN является средней линией треугольника ABC, параллельной стороне AC. Длина MN равна 17. Найдите сторону AC, если известно, что боковые стороны AB и BC равны 30 и 32.
+triangle_area_by_midpoints|Стороны треугольника ABC равны AB=40, BC=44 и AC=48. Отрезок MN соединяет середины сторон AB и BC. Чему равна длина MN?
+triangle_area_by_midpoints|Точки M и N — середины сторон AB и BC соответственно. Стороны малого треугольника MBN равны: BM=7, BN=8, MN=9. Найдите сторону AC.
+triangle_area_by_midpoints|В треугольнике ABC на сторонах AB и BC отмечены их середины M и N. Найдите MN, если известно, что AB=50, BC=60 и AC=62.
 
 # Паттерн 2.5: cosine_law_find_cos
 cosine_law_find_cos|В треугольнике ABC стороны равны: AB = 5, BC = 6, AC = 7. Найди cos∠B.
