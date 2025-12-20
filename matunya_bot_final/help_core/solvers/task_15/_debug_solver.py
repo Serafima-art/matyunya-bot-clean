@@ -106,12 +106,12 @@ if __name__ == "__main__":
     # TEST_PATTERN = "angle_bisector_find_half_angle"
 
     # --- ТЕМА 2: ПРОИЗВОЛЬНЫЕ ТРЕУГОЛЬНИКИ ---
-    TEST_PATTERN = "triangle_area_by_midpoints"
+    # TEST_PATTERN = "triangle_area_by_midpoints"
     # TEST_PATTERN = "triangle_area_by_sin"
     # TEST_PATTERN = "triangle_area_by_dividing_point"
     # TEST_PATTERN = "triangle_area_by_parallel_line"
     # TEST_PATTERN = "cosine_law_find_cos"
-    # TEST_PATTERN = "triangle_by_two_angles_and_side"
+    TEST_PATTERN = "triangle_by_two_angles_and_side"
 
     # --- НАСТРОЙКИ ЗАПУСКА ---
     # Сколько случайных примеров показать

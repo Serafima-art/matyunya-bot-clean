@@ -5,6 +5,7 @@
 import math
 from typing import Dict, Any, List
 from matunya_bot_final.help_core.solvers.task_15.task_15_text_formatter import format_number
+from fractions import Fraction
 
 
 # Нормализация названий площадей
@@ -439,81 +440,253 @@ def _solve_area_by_parallel_line(task: Dict[str, Any]) -> List[Dict[str, Any]]:
 # ПАТТЕРН 2.4: triangle_area_by_midpoints
 # ============================================================
 def _solve_area_by_midpoints(task: Dict[str, Any]) -> List[Dict[str, Any]]:
-    """Решает задачу на площадь треугольника, отсекаемого средней линией."""
+    """Решает задачи со средней линией (на площади и на длину)."""
 
     variables = task.get("variables", {})
     given = variables.get("given", {})
     to_find = variables.get("to_find", {})
-    relations = given.get("relations", {})
 
-    # Определяем искомую площадь ОДИН РАЗ
+    to_find_type = to_find.get("type")
     to_find_name = to_find.get("name")
 
-    s_abc, s_mbn, s_amnc = None, None, None
-    from_part = None
+    # --- ВЕТКА 1: РАБОТАЕМ С ДЛИНАМИ (НОВАЯ ЛОГИКА) ---
+    if to_find_type == "side":
+        narrative = "find_midsegment_length"
+        sides = {**given.get("sides", {}), **given.get("elements", {})}
 
-    # --- 1. Определяем, что дано, и вычисляем остальные площади ---
-    if "S_ABC" in relations:
-        from_part = "from_big_triangle"
-        s_abc = _parse_value(relations["S_ABC"])
-        s_mbn = s_abc / 4
-        s_amnc = s_abc * 3 / 4
-    elif "S_MBN" in relations:
-        from_part = "from_small_triangle"
-        s_mbn = _parse_value(relations["S_MBN"])
-        s_abc = s_mbn * 4
-        s_amnc = s_mbn * 3
-    elif "S_AMNC" in relations:
-        from_part = "from_trapezoid"
-        s_amnc = _parse_value(relations["S_AMNC"])
-        s_mbn = s_amnc / 3
-        s_abc = s_amnc * 4 / 3
-    else:
-        raise ValueError("midpoints_solver: не найдена известная площадь в given.relations")
+        # Переводим строковые значения в числа для вычислений
+        s = {k: _parse_value(v) for k, v in sides.items()}
 
-    # --- 2. ФОРМИРУЕМ NARRATIVE ИЗ ДВУХ ЧАСТЕЙ ---
-    to_part = {
-        "S_ABC": "find_big_triangle",
-        "S_MBN": "find_small_triangle",
-        "S_AMNC": "find_trapezoid"
-    }.get(to_find_name)
+        # Готовим context для Humanizer'а
+        context = { "res": task.get("answer") }
+        # Добавляем все стороны в context, чтобы показать "ловушку"
+        for side_name, side_value in sides.items():
+            context[f"{side_name.lower()}_val"] = format_number(side_value)
 
-    if not from_part or not to_part:
-        raise ValueError("midpoints_solver: не удалось определить from/to части narrative")
+        context["to_find_name"] = to_find_name
+        context["is_finding_mn"] = (to_find_name == "MN")
+        context["is_finding_ac"] = (to_find_name == "AC")
 
-    final_narrative = f"{from_part}:{to_part}"
+        return [{"action": f"{task.get('pattern')}:{narrative}", "data": context}]
 
-    # --- 3. Формируем контекст для Humanizer'а ---
+    # --- ВЕТКА 2: РАБОТАЕМ С ПЛОЩАДЯМИ (СТАРАЯ ЛОГИКА) ---
+    else: # to_find_type == "area"
+        relations = given.get("relations", {})
+        s_abc, s_mbn, s_amnc = None, None, None
+        from_part = None
+
+        if "S_ABC" in relations:
+            from_part = "from_big_triangle"
+            s_abc = _parse_value(relations["S_ABC"])
+            s_mbn = s_abc / 4
+            s_amnc = s_abc * 3 / 4
+        elif "S_MBN" in relations:
+            from_part = "from_small_triangle"
+            s_mbn = _parse_value(relations["S_MBN"])
+            s_abc = s_mbn * 4
+            s_amnc = s_mbn * 3
+        elif "S_AMNC" in relations:
+            from_part = "from_trapezoid"
+            s_amnc = _parse_value(relations["S_AMNC"])
+            s_mbn = s_amnc / 3
+            s_abc = s_amnc * 4 / 3
+        else:
+            raise ValueError("midpoints_solver: не найдена известная площадь в given.relations")
+
+        to_part = {
+            "S_ABC": "find_big_triangle",
+            "S_MBN": "find_small_triangle",
+            "S_AMNC": "find_trapezoid"
+        }.get(to_find_name)
+
+        if not from_part or not to_part:
+            raise ValueError("midpoints_solver: не удалось определить from/to части narrative")
+
+        final_narrative = f"{from_part}:{to_part}"
+
+        context = {
+            "res": task.get("answer"),
+            "s_abc_val": format_number(s_abc),
+            "s_mbn_val": format_number(s_mbn),
+            "s_amnc_val": format_number(s_amnc),
+            "to_find_name_human": to_find_name.replace("_", "(") + ")",
+        }
+
+        return [{"action": f"{task.get('pattern')}:{final_narrative}", "data": context}]
+
+# ============================================================
+# ПАТТЕРН 2.5: cosine_law_find_cos
+# ============================================================
+def _solve_cosine_law_find_cos(task: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """Решает задачу на нахождение косинуса угла по трем сторонам."""
+
+    variables = task.get("variables", {})
+    given = variables.get("given", {})
+    to_find = variables.get("to_find", {})
+
+    sides = given.get("sides", {})
+    if len(sides) < 3:
+        raise ValueError("cosine_law_find_cos: в 'given' должно быть 3 стороны.")
+
+    # --- 1. Определяем роли сторон ---
+    to_find_name = to_find.get("name") # e.g., "cos_B"
+    target_angle = to_find_name.split("_")[1] # "B"
+
+    side_map = {"A": "BC", "B": "AC", "C": "AB"}
+    adj_map = {"A": ("AB", "AC"), "B": ("AB", "BC"), "C": ("AC", "BC")}
+
+    opp_side_name = side_map.get(target_angle)
+    adj1_side_name, adj2_side_name = adj_map.get(target_angle)
+
+    if not opp_side_name or not adj1_side_name or not adj2_side_name:
+        raise ValueError(f"Неизвестный угол для теоремы косинусов: {target_angle}")
+
+    # --- 2. Получаем числовые значения ---
+    s = {k: _parse_value(v) for k, v in sides.items()}
+    adj1_val = s.get(adj1_side_name)
+    adj2_val = s.get(adj2_side_name)
+    opp_val = s.get(opp_side_name)
+
+    if not all([adj1_val, adj2_val, opp_val]):
+        raise ValueError("Одна или несколько сторон отсутствуют в 'given.sides'")
+
+    # --- 3. Выполняем вычисления по эталону ---
+    num_val = adj1_val**2 + adj2_val**2 - opp_val**2
+    den_val = 2 * adj1_val * adj2_val
+
+    final_fraction = Fraction(num_val / den_val).limit_denominator(1000)
+
+    # --- 4. Формируем context ---
     context = {
         "res": task.get("answer"),
-        "s_abc_val": format_number(s_abc),
-        "s_mbn_val": format_number(s_mbn),
-        "s_amnc_val": format_number(s_amnc),
-        "to_find_name_human": to_find_name.replace("_", "(") + ")",
+        "target_angle": target_angle,
+
+        "adj1_name": adj1_side_name,
+        "adj1_val": format_number(adj1_val),
+        "adj2_name": adj2_side_name,
+        "adj2_val": format_number(adj2_val),
+        "opp_name": opp_side_name,
+        "opp_val": format_number(opp_val),
+
+        "numerator_calc_str": f"{format_number(adj1_val)}² + {format_number(adj2_val)}² - {format_number(opp_val)}²",
+        "denominator_calc_str": f"2 · {format_number(adj1_val)} · {format_number(adj2_val)}",
+
+        "numerator_res": format_number(num_val),
+        "denominator_res": format_number(den_val),
+
+        "final_fraction": f"{final_fraction.numerator}/{final_fraction.denominator}",
     }
 
-    # --- 4. Возвращаем solution_core ---
     return [{
-        # Используем ПОЛНЫЙ, составной narrative
-        "action": f"{task.get('pattern')}:{final_narrative}",
+        "action": f"{task.get('pattern')}:find_cos_by_sides",
         "data": context
     }]
 
 # ============================================================
-# РЫБА-ЗАГОТОВКА ДЛЯ ПАТТЕРНА 2.5: cosine_law_find_cos
-# ============================================================
-def _solve_cosine_law_find_cos(task: Dict[str, Any]) -> List[Dict[str, Any]]:
-    """Решает задачу на нахождение косинуса угла по трем сторонам."""
-    # TODO: Реализовать логику
-    return [{"description_key": "TODO", "variables": {}}]
-
-# ============================================================
-# РЫБА-ЗАГОТОВКА ДЛЯ ПАТТЕРНА 2.6: triangle_by_two_angles_and_side
+# ПАТТЕРН 2.6: triangle_by_two_angles_and_side
 # ============================================================
 def _solve_triangle_by_two_angles_and_side(task: Dict[str, Any]) -> List[Dict[str, Any]]:
-    """Решает задачу на нахождение стороны по теореме синусов."""
-    # TODO: Реализовать логику
-    return [{"description_key": "TODO", "variables": {}}]
+    """Решает задачу на нахождение стороны (Теорема синусов и частные случаи)."""
+
+    variables = task.get("variables", {})
+    given = variables.get("given", {})
+    to_find = variables.get("to_find", {})
+
+    given_angles = given.get("angles", {})
+    given_sides = given.get("sides", {})
+    to_find_name = to_find.get("name")
+
+    angles = given_angles.copy()
+    if len(angles) == 2:
+        angle_sum = sum(angles.values())
+        missing_angle_letter = list({"A", "B", "C"} - set(angles.keys()))[0]
+        angles[missing_angle_letter] = 180 - angle_sum
+
+    narrative = ""
+    angle_vals = list(angles.values())
+    side_to_angle = {"BC": "A", "AC": "B", "AB": "C"}
+    angle_to_side = {v: k for k, v in side_to_angle.items()}
+    given_side_name = list(given_sides.keys())[0]
+
+    is_isosceles_solvable = False
+    if len(set(angle_vals)) < 3:
+        equal_angle_val = next((a for a in angle_vals if angle_vals.count(a) > 1), None)
+        if equal_angle_val:
+            equal_angles = [k for k,v in angles.items() if v == equal_angle_val]
+            side1, side2 = angle_to_side[equal_angles[0]], angle_to_side[equal_angles[1]]
+            if (given_side_name == side1 and to_find_name == side2) or \
+               (given_side_name == side2 and to_find_name == side1):
+                is_isosceles_solvable = True
+
+    if is_isosceles_solvable:
+        narrative = "isosceles_triangle_trap"
+    elif 90 in angle_vals:
+        narrative = "right_triangle_trap"
+    else:
+        narrative = "default_sine_theorem"
+
+    context = {"res": task.get("answer")}
+    for angle, value in angles.items():
+        context[f"angle_{angle.lower()}_val"] = format_number(value)
+    for side, value in given_sides.items():
+        context[f"side_{side.lower()}_val"] = value
+
+    context["to_find_name"] = to_find_name
+
+    if narrative == "default_sine_theorem":
+        known_pair_angle = side_to_angle[given_side_name]
+        target_pair_angle = side_to_angle[to_find_name]
+        given_angle_keys = list(given_angles.keys())
+        context.update({
+            "known_side_name": given_side_name,
+            "known_side_val": context.get(f"side_{given_side_name.lower()}_val"),
+            "known_angle_name": known_pair_angle,
+            "target_angle_name": target_pair_angle,
+            "sin_known_angle": f"sin{format_number(angles[known_pair_angle])}°",
+            "sin_target_angle": f"sin{format_number(angles[target_pair_angle])}°",
+            "angle_a_key": given_angle_keys[0],
+            "angle_b_key": given_angle_keys[1]
+        })
+
+    elif narrative == "isosceles_triangle_trap":
+        equal_angle_val = next(a for a in angle_vals if angle_vals.count(a) > 1)
+        equal_angles = [k for k,v in angles.items() if v == equal_angle_val]
+        side1, side2 = angle_to_side[equal_angles[0]], angle_to_side[equal_angles[1]]
+        context.update({
+            "equal_angle_1": equal_angles[0], "equal_angle_2": equal_angles[1],
+            "equal_angle_val": format_number(equal_angle_val),
+            "side_opposite_1": side1,
+            "side_opposite_2": side2,
+            "known_equal_side_val": context.get(f"side_{given_side_name.lower()}_val")
+        })
+
+    elif narrative == "right_triangle_trap":
+        right_angle = next(k for k,v in angles.items() if v == 90)
+        hypotenuse = angle_to_side[right_angle]
+        hyp_val_str = context.get(f"side_{hypotenuse.lower()}_val")
+        if not hyp_val_str and given_side_name != hypotenuse:
+            given_angle_opp = side_to_angle[given_side_name]
+            hyp_val_num = _parse_value(context[f"side_{given_side_name.lower()}_val"]) / math.sin(math.radians(angles[given_angle_opp]))
+            hyp_val_str = format_number(hyp_val_num)
+
+        known_pair_angle = side_to_angle[given_side_name]
+        target_pair_angle = side_to_angle[to_find_name]
+
+        context.update({
+            "right_angle": right_angle,
+            "hypotenuse_name": hypotenuse,
+            "hypotenuse_val": hyp_val_str,
+            "angle_30_exists": 30 in angles.values(),
+
+            "known_side_name": given_side_name,
+            "known_side_val": context.get(f"side_{given_side_name.lower()}_val"),
+            "known_angle_name": known_pair_angle,
+            "target_angle_name": target_pair_angle,
+            "sin_known_angle": f"sin{format_number(angles[known_pair_angle])}°",
+            "sin_target_angle": f"sin{format_number(angles[target_pair_angle])}°",
+        })
+
+    return [{"action": f"{task.get('pattern')}:{narrative}", "data": context}]
 
 # ============================================================
 # ГЛАВНЫЙ ДИСПЕТЧЕР
