@@ -20,6 +20,7 @@ class GeneralTrianglesValidator:
       - triangle_area_by_midpoints
       - cosine_law_find_cos
       - triangle_by_two_angles_and_side
+      - trig_identity_find_trig_func
     """
 
     # ============================================================
@@ -74,15 +75,32 @@ class GeneralTrianglesValidator:
 
     def _parse_numeric_with_root(self, token: str) -> float:
         """
-        Универсальный парсер чисел с возможным корнем: 10√3, √5, 3.5.
+        Универсальный парсер чисел: 10, 3.5, 4/5, 10√3, √5, (2√6)/5.
         """
-        cleaned = token.strip().replace(",", ".")
+        cleaned = token.strip().replace(",", ".").rstrip('.')
+
+        numerator = 1.0
+        denominator = 1.0
+
+        # Сначала разбираемся с дробью, если она есть
+        if "/" in cleaned:
+            num_part, den_part = cleaned.split("/", 1)
+            denominator = float(den_part)
+            cleaned = num_part
+
+        # Теперь работаем с числителем (который может содержать корень)
         if "√" in cleaned:
+            # Убираем скобки, если они есть
+            cleaned = cleaned.strip("()")
+
             coef_part, root_part = cleaned.split("√", 1)
             coef = float(coef_part) if coef_part not in ("", "+", "-") else (1.0 if coef_part != "-" else -1.0)
             radicand = float(root_part) if root_part else 0.0
-            return coef * math.sqrt(radicand)
-        return float(cleaned)
+            numerator = coef * math.sqrt(radicand)
+        else:
+            numerator = float(cleaned)
+
+        return numerator / denominator
 
     def _format_number(self, value: float | int | None) -> float | int | str | None:
         """
@@ -104,6 +122,7 @@ class GeneralTrianglesValidator:
             "triangle_area_by_midpoints": self._handle_triangle_area_by_midpoints,
             "cosine_law_find_cos": self._handle_cosine_law_find_cos,
             "triangle_by_two_angles_and_side": self._handle_triangle_by_two_angles_and_side,
+            "trig_identity_find_trig_func": self._handle_trig_identity_find_trig_func,
         }
 
     def _parse_to_find_parallel_line(self, text: str) -> dict:
@@ -865,9 +884,7 @@ class GeneralTrianglesValidator:
         for name, val in re.findall(pattern, text, flags=re.IGNORECASE):
 
             # Убираем точку в конце, если она не относится к числу
-            cleaned_val = val.strip()
-            if cleaned_val.endswith(".") and not re.search(r"\d\.\d", cleaned_val):
-                cleaned_val = cleaned_val[:-1]
+            cleaned_val = val.strip().rstrip(".,")
 
             sides[name.upper()] = cleaned_val
 
@@ -958,6 +975,64 @@ class GeneralTrianglesValidator:
                     "element_names": {}
                 }
             }
+        }
+
+    # ============================================================
+    # PATTERN 2.7: trig_identity_find_trig_func
+    # ============================================================
+    def _handle_trig_identity_find_trig_func(self, raw: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Парсит задачу на основное тригонометрическое тождество (sin <-> cos).
+        """
+        text = raw["text"]
+
+        # --- 1. Парсим, что дано ---
+        # Ищет "косинус ... A равен ЗНАЧЕНИЕ" или "синус ... B равен ЗНАЧЕНИЕ"
+        m_given = re.search(r"(синус|косинус)\s+острого\s+угла\s+([A-Z])(?:[^=]*?)(?:равен|=)\s*([0-9.,√/]+)", text, flags=re.IGNORECASE)
+        if not m_given:
+            raise ValueError("TrigIdentity Validator: не удалось найти данное значение sin/cos.")
+
+        given_func_rus, angle_letter, given_val_str = m_given.groups()
+
+        # >>> ИСПРАВЛЕНИЕ 1: Превращаем "косинус" в "cos" <<<
+        given_func_eng = "cos" if "кос" in given_func_rus.lower() else "sin"
+        angle_letter = angle_letter.upper()
+        # >>> ИСПРАВЛЕНИЕ 2: Убираем мусор в конце значения <<<
+        given_val_str = given_val_str.strip().rstrip(".,")
+
+        # --- 2. Парсим, что найти ---
+        m_to_find = re.search(r"Найдите\s+(sin|cos)\s*[∠]?\s*([A-Z])", text, flags=re.IGNORECASE)
+        if not m_to_find:
+            raise ValueError("TrigIdentity Validator: не удалось определить, что нужно найти.")
+
+        to_find_func_eng, angle_letter_to_find = m_to_find.groups()
+        to_find_func_eng = to_find_func_eng.lower()
+
+        # --- 3. Вычисляем ответ ---
+        given_val_num = self._parse_numeric_with_root(given_val_str)
+        if not (-1 <= given_val_num <= 1):
+            raise ValueError(f"Значение {given_func_rus} не может быть {given_val_num}")
+        answer_val = math.sqrt(1 - given_val_num**2)
+
+        # --- 4. Сборка JSON ---
+        # >>> ИСПРАВЛЕНИЕ 3: Используем английский ключ <<<
+        given_trig = {f"{given_func_eng}_{angle_letter}": given_val_str}
+        to_find = {"type": "trig", "name": f"{to_find_func_eng}_{angle_letter}"}
+
+        return {
+            "id": raw.get("id"), "pattern": "trig_identity_find_trig_func", "text": text,
+            "answer": self._format_number(answer_val),
+            "image_file": None,
+            "variables": {
+                "given": {
+                    "triangle_name": "ABC", "triangle_type": "general", "sides": {}, "angles": {},
+                    "trig": given_trig, "elements": {}, "points": {}, "relations": {},
+                },
+                "to_find": to_find,
+                "humanizer_data": {
+                    "angle_names": {angle_letter: f"∠{angle_letter}"}
+                },
+            },
         }
 
 
