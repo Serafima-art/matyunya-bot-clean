@@ -75,6 +75,9 @@ async def handle_task_8_help(
             task_subtype,
         )
 
+        # ✅ Фиксируем, что помощь ОТКРЫТА
+        await state.update_data(help_opened=True)
+
         logger.info("[Help8] Решение успешно сформировано для подтипа %s", task_subtype)
 
     except Exception as exc:

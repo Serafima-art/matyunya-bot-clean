@@ -152,3 +152,20 @@ trig_identity_find_trig_func|В треугольнике ABC косинус ос
 trig_identity_find_trig_func|В треугольнике ABC косинус острого угла A равен √9/5. Найдите sin∠A.
 trig_identity_find_trig_func|Синус острого угла A треугольника ABC равен 0,6. Найдите cos∠A.
 trig_identity_find_trig_func|Синус острого угла A треугольника ABC равен 0,8. Найдите cos∠A.
+
+# Паттерн 2.8: triangle_medians_intersection
+triangle_medians_intersection|Точки M и N являются серединами сторон AB и BC треугольника ABC соответственно. Отрезки AN и CM пересекаются в точке O, AN = 21, CM = 24. Найдите AO.
+triangle_medians_intersection|В треугольнике ABC медианы AN и CM пересекаются в точке O. Длина CM = 18, AN = 15. Найдите CO.
+triangle_medians_intersection|Медианы CM и AN треугольника ABC пересекаются в точке O. Известно, что AN = 33, а CM = 21. Найдите OM.
+triangle_medians_intersection|В треугольнике ABC проведены медианы AN и CM, которые пересекаются в точке O. Найдите ON, если известно, что AN = 27, а CM = 30.
+triangle_medians_intersection|Точки M и N — середины сторон AB и BC. Отрезки AN и CM пересекаются в точке O. Найдите AO, если AN = 9. Длина CM = 12.
+triangle_medians_intersection|В треугольнике ABC медианы AN и CM пересекаются в точке O. Найдите CO, если CM = 36. Длина AN = 24.
+triangle_medians_intersection|Отрезки CM и AN являются медианами треугольника ABC и пересекаются в точке O. Известно, что AN = 45 и CM = 42. Найдите ON.
+triangle_medians_intersection|В треугольнике ABC проведены медианы CM и AN к сторонам AB и BC. Их точка пересечения — O. Найдите OM, если CM = 15, а AN = 18.
+triangle_medians_intersection|Найдите длину большего отрезка медианы AN, если AN = 18, а вторая медиана CM = 27.
+triangle_medians_intersection|Найдите длину меньшего отрезка медианы CM, если CM = 24, а вторая медиана AN = 30.
+triangle_medians_intersection|Медианы AN и CM треугольника ABC пересекаются в точке O. AN = 33. Найдите AO.
+triangle_medians_intersection|В треугольнике ABC проведены медианы AN и CM. Они пересекаются в точке O. Найдите CO, если CM = 12.
+triangle_medians_intersection|Точка O — точка пересечения медиан AN и CM. Найдите длину отрезка ON, если вся медиана AN равна 21.
+triangle_medians_intersection|Медианы треугольника ABC, проведенные из вершин A и C, пересекаются в точке O. Найдите OM, если медиана CM равна 39.
+triangle_medians_intersection|В треугольнике ABC медианы AN и CM пересекаются в точке O. Известно, что CO = 14. Найдите CM.

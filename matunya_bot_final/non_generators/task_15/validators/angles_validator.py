@@ -42,11 +42,11 @@ class AnglesValidator:
         internal_c = 180 - answer
 
         if internal_c < 90:
-            image_file = "T9_ext_acute.svg"
+            image_file = "T9_ext_acute.png"
         elif internal_c == 90:
-            image_file = "T9_ext_right.svg"
+            image_file = "T9_ext_right.png"
         else:
-            image_file = "T9_ext_obtuse.svg"
+            image_file = "T9_ext_obtuse.png"
 
         return {
             "id": raw.get("id"),
@@ -92,11 +92,11 @@ class AnglesValidator:
         answer = int(half_angle) if float(half_angle).is_integer() else half_angle
 
         if full_angle < 90:
-            image_file = "T8_sharp.svg"
+            image_file = "T8_acute.png"
         elif full_angle == 90:
-            image_file = "T8_right.svg"
+            image_file = "T8_right.png"
         else:
-            image_file = "T8_obtuse.svg"
+            image_file = "T8_obtuse.png"
 
         return {
             "id": raw.get("id"),

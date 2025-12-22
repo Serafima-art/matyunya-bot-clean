@@ -40,6 +40,7 @@ def load_all_tasks():
         "9": DATA_DIR / "tasks_9" / "tasks_9.json",
         "11": DATA_DIR / "tasks_11" / "tasks_11.json",
         "12": DATA_DIR / "tasks_12" / "tasks_12.json",
+        "15": DATA_DIR / "tasks_15" / "tasks_15.json",
         "20": DATA_DIR / "tasks_20" / "tasks_20.json",
     }
 

@@ -136,7 +136,11 @@ async def handle_task_11_answer(message: Message, state: FSMContext) -> None:
     if is_fully_correct:
         student_name = data.get("student_name")
         gender = data.get("gender")
-        feedback_text = get_random_feedback(name=student_name, gender=gender)
+        feedback_text = get_random_feedback(
+            name=student_name,
+            gender=gender,
+            help_opened=bool(data.get("help_opened")),
+        )
 
         await send_tracked_message(
             bot=message.bot,

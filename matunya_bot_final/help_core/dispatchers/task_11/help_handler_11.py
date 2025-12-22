@@ -73,6 +73,9 @@ async def handle_task_11_help(
             task_subtype,
         )
 
+        # ✅ Фиксируем, что помощь действительно была открыта
+        await state.update_data(help_opened=True)
+
         logger.info("[Help11] Решение сформировано для подтипа %s", task_subtype)
 
     except Exception as exc:  # pragma: no cover

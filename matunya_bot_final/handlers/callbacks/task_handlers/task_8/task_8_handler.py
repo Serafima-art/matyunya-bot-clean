@@ -140,6 +140,10 @@ async def back_to_carousel_8(callback: CallbackQuery, state: FSMContext, bot: Bo
 
 async def send_task_8(query: CallbackQuery, bot: Bot, state: FSMContext, task_data: dict) -> None:
     chat_id = query.message.chat.id
+
+    # ⬅️ ВАЖНО: сначала чистим меню
+    await cleanup_messages_by_category(bot, state, chat_id, "menus")
+    # ⬅️ потом чистим прошлые задания
     await cleanup_messages_by_category(bot, state, chat_id, "tasks")
     footer_text = await compose_after_task_message_from_state(state)
 

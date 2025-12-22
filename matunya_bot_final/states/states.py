@@ -14,9 +14,10 @@ class TaskState(StatesGroup):
     """Track progress while solving training tasks."""
 
     waiting_for_answer = State()
+    waiting_for_answer_6 = State()
+    waiting_for_answer_8 = State()
     waiting_for_answer_11 = State()
-    waiting_for_answer_6 = State()    # Персонально для Задания 6
-    waiting_for_answer_8 = State()    # Персонально для Задания 8
+    waiting_for_answer_15 = State()
     waiting_for_answer_20 = State()
     task_in_progress = State()
     task_completed = State()

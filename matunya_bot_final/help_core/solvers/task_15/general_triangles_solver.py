@@ -3,6 +3,7 @@
 Решатель (Solver) для всех подтипов темы "Произвольные треугольники" Задания 15.
 """
 import math
+import re
 from typing import Dict, Any, List
 from matunya_bot_final.help_core.solvers.task_15.task_15_text_formatter import format_number
 from fractions import Fraction
@@ -280,15 +281,15 @@ def _solve_area_by_parallel_line(task: Dict[str, Any]) -> List[Dict[str, Any]]:
     # Создаем context и наполняем его СЫРЫМИ данными, как они пришли из JSON.
     # Это решает проблему с CN/NC и появлением вычисленных значений в "Дано".
     context = {}
-    raw_sides_display = {**given.get("sides", {}), **given.get("elements", {})}
-    for key, value in raw_sides_display.items():
+    task_sides_display = {**given.get("sides", {}), **given.get("elements", {})}
+    for key, value in task_sides_display.items():
         if value is not None:
             context[f"{key.lower()}_val"] = format_number(_parse_value(value))
 
     # 1Б: ДАННЫЕ ДЛЯ ВЫЧИСЛЕНИЙ
     # Создаем рабочий словарь 's', в котором будем проводить все вычисления.
-    raw_sides_calc = {**given.get("sides", {}), **given.get("elements", {})}
-    s = {k: _parse_value(v) for k, v in raw_sides_calc.items() if v is not None}
+    task_sides_calc = {**given.get("sides", {}), **given.get("elements", {})}
+    s = {k: _parse_value(v) for k, v in task_sides_calc.items() if v is not None}
 
     # Нормализуем имена в рабочем словаре для единообразия.
     if "CN" in s and "NC" not in s: s["NC"] = s["CN"]
@@ -689,6 +690,162 @@ def _solve_triangle_by_two_angles_and_side(task: Dict[str, Any]) -> List[Dict[st
     return [{"action": f"{task.get('pattern')}:{narrative}", "data": context}]
 
 # ============================================================
+# PATTERN 2.7: trig_identity_find_trig_func
+# ============================================================
+def _solve_trig_identity_find_trig_func(task: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """Решает задачу на основное тригонометрическое тождество (sin <-> cos)."""
+
+    variables = task.get("variables", {})
+    given = variables.get("given", {})
+    to_find = variables.get("to_find", {})
+
+    # --- 1. Извлекаем данные из JSON ---
+    given_trig = given.get("trig", {})
+    given_key = list(given_trig.keys())[0] # e.g., "cos_A"
+    given_val_str = given_trig[given_key]
+
+    given_func, angle_letter = given_key.split("_") # "cos", "A"
+
+    # --- 2. Определяем Narrative ---
+    narrative = "find_sin_from_cos" if given_func == "cos" else "find_cos_from_sin"
+
+    # --- 3. Вычисляем значения для шаблона ---
+    given_val_num = _parse_value(given_val_str)
+
+    # Вычисляем квадраты и разность
+    given_val_sq_num = 1 - given_val_num**2
+    one_minus_sq_frac = Fraction(given_val_sq_num).limit_denominator(1000)
+
+    # --- 4. Формируем context ---
+    context = {
+        "res": task.get("answer"),
+        "angle_letter": angle_letter,
+        "given_func": given_func,
+        "given_val": given_val_str,
+        "given_val_sq": format_number(given_val_num**2),
+        "one_minus_sq": f"{one_minus_sq_frac.numerator}/{one_minus_sq_frac.denominator}",
+        "final_fraction": format_number(math.sqrt(given_val_sq_num)),
+
+        # Специальные ключи для find_cos_from_sin
+        "as_fraction_str": format_number(Fraction(given_val_num).limit_denominator(100)),
+        "as_fraction_str_for_calc": format_number(Fraction(given_val_num).limit_denominator(100))
+    }
+
+    # Если исходное значение уже было дробью, не показываем "удобнее работать с дробью"
+    if "/" in given_val_str:
+        context["as_fraction_str"] = "" # Пустая строка
+        context["as_fraction_str_for_calc"] = given_val_str
+
+    # --- 5. Возвращаем solution_core в правильном формате (список) ---
+    return [{"action": f"{task.get('pattern')}:{narrative}", "data": context}]
+
+# ============================================================
+# PATTERN 2.8: triangle_medians_intersection
+# ============================================================
+def _solve_triangle_medians_intersection(task: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """Решает задачу на свойство точки пересечения медиан."""
+
+    variables = task.get("variables", {})
+    given = variables.get("given", {})
+    to_find = variables.get("to_find", {})
+
+    elements = given.get("elements", {})
+    to_find_name = to_find.get("name")
+
+    # --- 1. Определяем, какая медиана и ее части задействованы ---
+    # (AO, ON) <-> AN
+    # (CO, OM) <-> CM
+
+    whole_median, large_part, small_part = None, None, None
+    if to_find_name in ("AN", "AO", "ON"):
+        whole_median, large_part, small_part = "AN", "AO", "ON"
+    elif to_find_name in ("CM", "CO", "OM"):
+        whole_median, large_part, small_part = "CM", "CO", "OM"
+    else:
+        raise ValueError(f"Medians Solver: Неизвестный искомый отрезок {to_find_name}")
+
+    # --- 2. Готовим context ---
+    context = {
+        "res": task.get("answer"),
+        "to_find_name": to_find_name,
+
+        "an_val": format_number(elements.get("AN")),
+        "cm_val": format_number(elements.get("CM")),
+        "ao_val": format_number(elements.get("AO")),
+        "co_val": format_number(elements.get("CO")),
+        "on_val": format_number(elements.get("ON")),
+        "om_val": format_number(elements.get("OM")),
+
+        "whole_median": whole_median,
+        "large_part": large_part,
+        "small_part": small_part,
+
+        # 🔒 ВСЕ флаги — всегда определены
+        "is_given_AO": False,
+        "is_given_CO": False,
+        "is_given_ON": False,
+        "is_given_OM": False,
+    }
+
+    # --- 2.1 Формируем строку "Дано" для humanizer ---
+    given_parts = []
+
+    if context["an_val"]:
+        given_parts.append(f"<b>AN = {context['an_val']}</b>")
+    if context["cm_val"]:
+        given_parts.append(f"<b>CM = {context['cm_val']}</b>")
+    if context["ao_val"]:
+        given_parts.append(f"<b>AO = {context['ao_val']}</b>")
+    if context["co_val"]:
+        given_parts.append(f"<b>CO = {context['co_val']}</b>")
+    if context["on_val"]:
+        given_parts.append(f"<b>ON = {context['on_val']}</b>")
+    if context["om_val"]:
+        given_parts.append(f"<b>OM = {context['om_val']}</b>")
+
+    context["given_line"] = ", ".join(given_parts)
+
+    # --- 3. Определяем Narrative ---
+    if to_find_name in ("AO", "CO") and elements.get(whole_median) is not None:
+        narrative = "find_large_part"
+        context["given_median_val"] = context.get(f"{whole_median.lower()}_val")
+
+    elif to_find_name in ("ON", "OM") and elements.get(whole_median) is not None:
+        narrative = "find_small_part"
+        context["given_median_val"] = context.get(f"{whole_median.lower()}_val")
+
+    elif to_find_name in ("AN", "CM"):
+        narrative = "find_whole_median"
+
+        if elements.get(large_part) is not None:
+            context["given_part_val"] = context.get(f"{large_part.lower()}_val")
+            context[f"is_given_{large_part}"] = True
+
+            context["given_part_explanation"] = (
+                f"Отрезок <b>{large_part}</b> — это большая часть медианы, "
+                "она составляет <b>2/3</b> от всей длины."
+            )
+            context["calculation_line"] = (
+                f"<b>{to_find_name} = {large_part} · 3/2 = "
+                f"{context['given_part_val']} · 3/2 = {context['res']}</b>"
+            )
+
+        elif elements.get(small_part) is not None:
+            context["given_part_val"] = context.get(f"{small_part.lower()}_val")
+            context[f"is_given_{small_part}"] = True
+
+            context["given_part_explanation"] = (
+                f"Отрезок <b>{small_part}</b> — это меньшая часть медианы, "
+                "она составляет <b>1/3</b> от всей длины."
+            )
+            context["calculation_line"] = (
+                f"<b>{to_find_name} = {small_part} · 3 = "
+                f"{context['given_part_val']} · 3 = {context['res']}</b>"
+            )
+
+    return [{"action": f"{task.get('pattern')}:{narrative}", "data": context}]
+
+# ============================================================
 # ГЛАВНЫЙ ДИСПЕТЧЕР
 # ============================================================
 HANDLERS = {
@@ -698,6 +855,8 @@ HANDLERS = {
     "triangle_area_by_midpoints": _solve_area_by_midpoints,
     "cosine_law_find_cos": _solve_cosine_law_find_cos,
     "triangle_by_two_angles_and_side": _solve_triangle_by_two_angles_and_side,
+    "trig_identity_find_trig_func": _solve_trig_identity_find_trig_func,
+    "triangle_medians_intersection": _solve_triangle_medians_intersection
 }
 
 def solve(task: Dict[str, Any]) -> List[Dict[str, Any]]:

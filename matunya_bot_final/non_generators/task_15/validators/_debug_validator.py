@@ -14,7 +14,7 @@ from pathlib import Path
 # НАСТРОЙКИ
 # ---------------------------------------------------------------------
 
-TARGET_PATTERN = "trig_identity_find_trig_func"
+TARGET_PATTERN = "triangle_medians_intersection"
 DEFINITIONS_FILE = "general_triangles.txt"
 
 # ---------------------------------------------------------------------

@@ -217,13 +217,13 @@ def get_after_task_keyboard(
 
     row_buttons = [
         InlineKeyboardButton(
-            text="🎯 Другое задание",
-            callback_data=TaskCallback(
-                action=f"{task_number}_select_theme",
-                task_type=task_number,
-                subtype_key=task_subtype
-            ).pack(),
-        )
+        text="🎯 Другое задание",
+        callback_data=TaskCallback(
+            action=f"{task_number}_select_theme",
+            task_type=task_number,
+            subtype_key="__USE_STATE_THEME__"
+        ).pack(),
+    )
     ]
 
     for row in main_only_kb().inline_keyboard:

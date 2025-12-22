@@ -21,6 +21,7 @@ class GeneralTrianglesValidator:
       - cosine_law_find_cos
       - triangle_by_two_angles_and_side
       - trig_identity_find_trig_func
+      - triangle_medians_intersection
     """
 
     # ============================================================
@@ -123,6 +124,7 @@ class GeneralTrianglesValidator:
             "cosine_law_find_cos": self._handle_cosine_law_find_cos,
             "triangle_by_two_angles_and_side": self._handle_triangle_by_two_angles_and_side,
             "trig_identity_find_trig_func": self._handle_trig_identity_find_trig_func,
+            "triangle_medians_intersection": self._handle_triangle_medians_intersection,
         }
 
     def _parse_to_find_parallel_line(self, text: str) -> dict:
@@ -255,8 +257,8 @@ class GeneralTrianglesValidator:
             if side1 is not None and side2 is not None: area = 0.5 * side1 * side2 * sin_value_num
 
         # --- 4. Выбор картинки ---
-        image_file = "T3_acute.svg"
-        if found_degrees and found_degrees > 90: image_file = f"T3_obtuse_{angle_letter}.svg"
+        image_file = "T3_acute.png"
+        if found_degrees and found_degrees > 90: image_file = f"T3_obtuse_{angle_letter}.png"
 
         # --- 5. Сборка JSON строго по эталону ---
         return {
@@ -370,7 +372,7 @@ class GeneralTrianglesValidator:
 
         # --- 5. Сборка JSON (исходный код) ---
         image_file = None
-        if AD is not None and DC is not None: image_file = "T4_AD_DC.svg" if AD > DC else "T4_DC_AD.svg"
+        if AD is not None and DC is not None: image_file = "T4_AD_DC.png" if AD > DC else "T4_DC_AD.png"
         relations = {}
         if S_ABC is not None: relations["S_ABC"] = self._format_number(S_ABC)
         if S_ABD is not None: relations["S_ABD"] = self._format_number(S_ABD)
@@ -586,7 +588,7 @@ class GeneralTrianglesValidator:
             "pattern": raw["pattern"],
             "text": text,
             "answer": self._format_number(answer),
-            "image_file": "T5_triangle_area_by_parallel_line.svg",
+            "image_file": "T5_triangle_area_by_parallel_line.png",
             "variables": {
                 "given": {
                     "triangle_name": "ABC",
@@ -668,7 +670,7 @@ class GeneralTrianglesValidator:
 
             return {
                 "id": raw.get("id"), "pattern": raw["pattern"], "text": text,
-                "answer": self._format_number(answer), "image_file": "T6_triangle_area_by_midpoints.svg",
+                "answer": self._format_number(answer), "image_file": "T6_triangle_area_by_midpoints.png",
                 "variables": {
                     "given": {
                         "triangle_name": "ABC", "triangle_type": "general", "sides": sides, "angles": {},
@@ -730,7 +732,7 @@ class GeneralTrianglesValidator:
 
             return {
                 "id": raw.get("id"), "pattern": "triangle_area_by_midpoints", "text": text,
-                "answer": self._format_number(answer), "image_file": "T6_triangle_area_by_midpoints.svg",
+                "answer": self._format_number(answer), "image_file": "T6_triangle_area_by_midpoints.png",
                 "variables": {
                     "given": {
                         "triangle_name": "ABC", "triangle_type": "general", "sides": {}, "angles": {},
@@ -789,7 +791,7 @@ class GeneralTrianglesValidator:
         answer = self._format_number(answer)
 
         # --- Выбор картинки ---
-        image_file = "T3_acute.svg"  # По умолчанию - остроугольный
+        image_file = "T3_acute.png"  # По умолчанию - остроугольный
 
         # Конвертируем ответ обратно в число для сравнения
         numeric_answer = None
@@ -804,10 +806,10 @@ class GeneralTrianglesValidator:
         if numeric_answer is not None:
             if numeric_answer < 0:
                 # Если ответ отрицательный, угол тупой. Выбираем картинку с нужной буквой.
-                image_file = f"T3_obtuse_{angle_to_find}.svg"
+                image_file = f"T3_obtuse_{angle_to_find}.png"
             elif numeric_answer == 0:
                 # Если ответ 0, угол прямой.
-                image_file = f"T3_right_{angle_to_find}.svg"
+                image_file = f"T3_right_{angle_to_find}.png"
 
         return {
             "id": id_,
@@ -929,22 +931,22 @@ class GeneralTrianglesValidator:
         answer_val = k * sin_target
         answer = int(round(answer_val))
 
-        image_file = "T3_acute.svg"
+        image_file = "T3_acute.png"
         if A > 90:
-            image_file = "T3_obtuse_A.svg"
+            image_file = "T3_obtuse_A.png"
         elif B > 90:
-            image_file = "T3_obtuse_B.svg"
+            image_file = "T3_obtuse_B.png"
         elif C > 90:
-            image_file = "T3_obtuse_C.svg"
+            image_file = "T3_obtuse_C.png"
         elif A == 90:
-            image_file = "T3_right_A.svg"
+            image_file = "T3_right_A.png"
         elif B == 90:
-            image_file = "T3_right_B.svg"
+            image_file = "T3_right_B.png"
         elif C == 90:
             if A == 45 and B == 45:
-                image_file = "T3_right_isosceles_C.svg"
+                image_file = "T3_right_isosceles_C.png"
             else:
-                image_file = "T3_right_C.svg"
+                image_file = "T3_right_C.png"
 
         return {
             "id": id_,
@@ -1032,6 +1034,86 @@ class GeneralTrianglesValidator:
                 "humanizer_data": {
                     "angle_names": {angle_letter: f"∠{angle_letter}"}
                 },
+            },
+        }
+
+    # ============================================================
+    # PATTERN 2.8: triangle_medians_intersection
+    # ============================================================
+    def _handle_triangle_medians_intersection(self, raw: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Парсит задачу на свойство точки пересечения медиан (деление в отношении 2:1).
+        """
+        text = raw["text"]
+
+        # --- 1. Парсим все известные отрезки ---
+        elements = {}
+        # Улучшенный парсер: ищет и "AN = X", и "медиана AN равна X"
+        all_segments = {"AN", "CM", "AO", "CO", "ON", "OM"}
+        for segment_name in all_segments:
+            m = re.search(rf"(?:медиана\s+|вся\s+медиана\s+)?\b{segment_name}\b\s+(?:равна|=)\s*([0-9]+(?:[.,][0-9]+)?)", text, flags=re.IGNORECASE)
+            if m:
+                elements[segment_name] = float(m.group(1).replace(",", "."))
+
+        # --- 2. Определяем, что нужно найти ---
+        m_to_find = re.search(r"найд[^\n\r]*?(?:длину\s+)?(большего|меньшего)?\s*(?:отрезка\s+медианы\s+)?(AN|CM|AO|CO|ON|OM)\b", text, flags=re.IGNORECASE)
+        if not m_to_find:
+            raise ValueError("Medians Validator: не удалось определить искомый отрезок.")
+
+        size_word, segment_name = m_to_find.groups()
+        to_find_name = segment_name.upper()
+
+        # Обрабатываем "больший/меньший отрезок медианы AN/CM"
+        if size_word:
+            size_word = size_word.lower()
+            if "больш" in size_word:
+                to_find_name = "AO" if to_find_name == "AN" else "CO"
+            elif "меньш" in size_word:
+                to_find_name = "ON" if to_find_name == "AN" else "OM"
+
+        # --- 3. Вычисляем ответ ---
+        answer = None
+
+        # --- Ищем части по целой медиане ---
+        if to_find_name == "AO" and "AN" in elements: answer = elements["AN"] * 2 / 3
+        elif to_find_name == "ON" and "AN" in elements: answer = elements["AN"] / 3
+        elif to_find_name == "CO" and "CM" in elements: answer = elements["CM"] * 2 / 3
+        elif to_find_name == "OM" and "CM" in elements: answer = elements["CM"] / 3
+
+        # --- Ищем целую медиану по части ---
+        elif to_find_name == "AN" and "AO" in elements: answer = elements["AO"] * 3 / 2
+        elif to_find_name == "AN" and "ON" in elements: answer = elements["ON"] * 3
+        elif to_find_name == "CM" and "CO" in elements: answer = elements["CO"] * 3 / 2
+        elif to_find_name == "CM" and "OM" in elements: answer = elements["OM"] * 3
+
+        if answer is None:
+            raise ValueError(f"Medians Validator: не хватает данных для прямого расчета {to_find_name}")
+
+        # --- 4. Сборка JSON ---
+        return {
+            "id": raw.get("id"),
+            "pattern": raw["pattern"],
+            "text": text,
+            "answer": self._format_number(answer),
+            "image_file": "T2_triangle_medians_intersection.png",
+            "variables": {
+                "given": {
+                    "triangle_name": "ABC",
+                    "triangle_type": "general",
+                    "sides": {}, "angles": {}, "trig": {},
+                    "elements": elements,
+                    "points": {
+                        "M": "midpoint of AB",
+                        "N": "midpoint of BC",
+                        "O": "intersection of AN and CM"
+                    },
+                    "relations": {},
+                },
+                "to_find": {
+                    "type": "element",
+                    "name": to_find_name
+                },
+                "humanizer_data": {},
             },
         }
 

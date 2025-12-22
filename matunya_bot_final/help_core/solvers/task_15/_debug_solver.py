@@ -111,7 +111,9 @@ if __name__ == "__main__":
     # TEST_PATTERN = "triangle_area_by_dividing_point"
     # TEST_PATTERN = "triangle_area_by_parallel_line"
     # TEST_PATTERN = "cosine_law_find_cos"
-    TEST_PATTERN = "triangle_by_two_angles_and_side"
+    # TEST_PATTERN = "triangle_by_two_angles_and_side"
+    # TEST_PATTERN = "trig_identity_find_trig_func"
+    TEST_PATTERN = "triangle_medians_intersection"
 
     # --- НАСТРОЙКИ ЗАПУСКА ---
     # Сколько случайных примеров показать
