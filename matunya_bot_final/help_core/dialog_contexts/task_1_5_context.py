@@ -6,7 +6,6 @@ from matunya_bot_final.handlers.callbacks.dialogs.gpt_dialog_control_handler imp
 from matunya_bot_final.help_core.knowledge.golden_set_reader import get_golden_set
 from matunya_bot_final.help_core.prompts.task_1_5_dialog_prompts import get_task_1_5_dialog_prompt
 
-
 @register_context('task_1_5')
 async def handle_task_1_5_dialog(data: Dict[str, Any], history: List[Dict[str, Any]]) -> Optional[str]:
     task_data = data.get('task_1_5_data')

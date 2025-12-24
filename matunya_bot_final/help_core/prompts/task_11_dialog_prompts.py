@@ -7,7 +7,11 @@ from typing import Any, Dict, Sequence, Union
 
 from matunya_bot_final.gpt.prompts.prompt_utils import safe_text
 from matunya_bot_final.gpt.prompts.rules_format import RULES_FORMAT
-from matunya_bot_final.gpt.prompts.chatter_prompt import BASE_CHATTER_PERSONA
+from matunya_bot_final.gpt.prompts.behavior_protocols import (
+    BASE_CHATTER_PERSONA,
+    TASK_FOCUS_PROTOCOL,
+    DIALOG_HISTORY_PROTOCOL,
+)
 
 def get_task_11_dialog_prompt(
     *,

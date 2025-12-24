@@ -9,6 +9,12 @@ from typing import Any, Dict, List, Optional, Union, Sequence
 from matunya_bot_final.gpt.prompts.rules_format import RULES_FORMAT
 from matunya_bot_final.gpt.prompts.prompt_utils import gender_words, safe_text
 
+from matunya_bot_final.gpt.prompts.behavior_protocols import (
+    BASE_CHATTER_PERSONA,
+    TASK_FOCUS_PROTOCOL,
+    DIALOG_HISTORY_PROTOCOL,
+)
+
 # --- ИМПОРТЫ СПЕЦИФИКИ ЗАДАНИЯ 8 ---
 # Форматтер формул (чтобы GPT видела условие так же, как ученик)
 from matunya_bot_final.help_core.solvers.task_8.task_8_text_formatter import render_node, fmt_number

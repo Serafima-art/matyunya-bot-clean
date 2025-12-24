@@ -283,9 +283,16 @@ async def send_task_15(
         parse_mode="HTML",
     )
 
+    topic_key = task_data.get("pattern") or "default"
+    theme_key = PATTERN_TO_THEME.get(topic_key, "default")
+
     # 5) FSM
     await state.update_data(
         task_type=15,
-        task_15_data=task_data,
+        task_15_data={
+            **task_data,
+            "pattern": topic_key,
+            "theme_key": theme_key,
+        },
     )
     await state.set_state(TaskState.waiting_for_answer_15)

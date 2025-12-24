@@ -2,7 +2,11 @@
 
 from typing import Any, Dict, Optional
 
-from matunya_bot_final.gpt.prompts.chatter_prompt import BASE_CHATTER_PERSONA
+from matunya_bot_final.gpt.prompts.behavior_protocols import (
+    BASE_CHATTER_PERSONA,
+    TASK_FOCUS_PROTOCOL,
+    DIALOG_HISTORY_PROTOCOL,
+)
 from matunya_bot_final.gpt.prompts.rules_format import RULES_FORMAT
 
 

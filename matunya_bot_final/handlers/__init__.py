@@ -4,7 +4,6 @@
 from matunya_bot_final.handlers.start import router as start_router
 from matunya_bot_final.handlers.callbacks.navigation.main_menu_callbacks import router as main_menu_router
 from matunya_bot_final.handlers.parts_handlers import router as parts_router
-from matunya_bot_final.handlers.chatter_handler import router as chatter_router
 from matunya_bot_final.handlers.callbacks.dialogs.gpt_dialog_control_handler import router as gpt_dialog_control_router
 
 #from matunya_bot_final.help_core.dispatchers.theory_dispatcher import theory_router
@@ -52,7 +51,6 @@ routers = [
     theory_handler_1_5,
 
     # GPT-powered conversational handlers.
-    chatter_router,
     gpt_dialog_control_router,
 
     # Task-specific callback routers.

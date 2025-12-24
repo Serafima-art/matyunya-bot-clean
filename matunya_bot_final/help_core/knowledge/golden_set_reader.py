@@ -17,18 +17,20 @@ SERVICE_ACCOUNT_ENV = "GOOGLE_SERVICE_ACCOUNT"
 SHEET_URL_ENV = "GOOGLE_SHEET_URL"
 
 
-def _load_sheet() -> gspread.Worksheet:
+def _load_sheet() -> Optional[gspread.Worksheet]:
     credentials_json = os.getenv(SERVICE_ACCOUNT_ENV)
     if not credentials_json:
-        raise RuntimeError(
-            f"Environment variable {SERVICE_ACCOUNT_ENV} is not set."
+        logger.info(
+            "[GoldenSet] GOOGLE_SERVICE_ACCOUNT не задан — golden set отключён"
         )
+        return None
 
     sheet_url = os.getenv(SHEET_URL_ENV)
     if not sheet_url:
-        raise RuntimeError(
-            f"Environment variable {SHEET_URL_ENV} is not set."
+        logger.info(
+            "[GoldenSet] GOOGLE_SHEET_URL не задан — golden set отключён"
         )
+        return None
 
     creds_info = json.loads(credentials_json)
     client = gspread.service_account_from_dict(creds_info)
@@ -38,8 +40,10 @@ def _load_sheet() -> gspread.Worksheet:
 
 def _fetch_golden_set_sync(subtype: str, task_type: Optional[int]) -> List[str]:
     worksheet = _load_sheet()
-    records = worksheet.get_all_records()
+    if worksheet is None:
+        return []
 
+    records = worksheet.get_all_records()
     results: List[str] = []
     for row in records:
         row_subtype = str(row.get("subtype", "")).strip()

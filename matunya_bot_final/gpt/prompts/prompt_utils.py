@@ -14,25 +14,44 @@ def gender_words(gender: str) -> Dict[str, str]:
     # По умолчанию (male или None)
     return {"ready": "готов", "sure": "уверен", "dear": "дорогой"}
 
-def format_history(dialog_history: Union[str, Sequence[Dict[str, Any]], None], limit: int = 16) -> str:
+def format_history(
+    dialog_history: Union[str, Sequence[Dict[str, Any]], None],
+    limit: int = 16,
+) -> str:
     """
-    Сворачивает историю диалога в красивый, читаемый блок для GPT.
+    Сворачивает историю диалога в читаемый и безопасный блок для GPT.
+
+    Канон:
+    • учитываются ТОЛЬКО роли user и assistant
+    • system-сообщения полностью игнорируются
+    • история ограничена по длине (limit)
+    • формат пригоден для анализа модели (нумерация + роли)
     """
+
     if not dialog_history:
         return "— (история пуста)"
+
+    # Если история уже пришла готовой строкой — используем её
     if isinstance(dialog_history, str):
-        return dialog_history.strip() or "— (история пуста)"
+        text = dialog_history.strip()
+        return text if text else "— (история пуста)"
 
     lines: List[str] = []
-    for i, msg in enumerate(list(dialog_history)[-limit:], 1):
+
+    # Берём только последние limit сообщений
+    recent_messages = list(dialog_history)[-limit:]
+
+    for i, msg in enumerate(recent_messages, 1):
         role = str(msg.get("role", "")).strip().lower()
         content = str(msg.get("content", "")).strip()
-        if not content:
+
+        # ❌ system и пустые сообщения не допускаются
+        if role not in {"user", "assistant"} or not content:
             continue
-        
-        who = {"user": "Ученик", "assistant": "Матюня", "system": "System"}.get(role, role)
+
+        who = "Ученик" if role == "user" else "Матюня"
         lines.append(f"{i}. [{who}]: {content}")
-        
+
     return "\n".join(lines) if lines else "— (история пуста)"
 
 def safe_text(obj: Any) -> str:
