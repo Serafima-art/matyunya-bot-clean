@@ -40,7 +40,7 @@ logger = logging.getLogger(__name__)
 
 async def handle_group_1_5_help(callback: CallbackQuery, callback_data: TaskCallback, bot: Bot, state: FSMContext) -> None:
     """
-    Обработка запросов помощи для заданий 1–5.
+    Обработка запросов помощи для заданий 1-5.
     Использует GPT-гуманизацию (solution_humanizer).
     """
     try:
@@ -49,11 +49,28 @@ async def handle_group_1_5_help(callback: CallbackQuery, callback_data: TaskCall
         task_type = 1  # группа 1–5
         task_subtype = callback_data.subtype_key
         state_data = await state.get_data()
-        task_payload = state_data.get("task_1_5_data")
+        task_payload_raw = state_data.get("task_1_5_data")
 
-        if not isinstance(task_payload, dict):
+        if not isinstance(task_payload_raw, dict):
             logger.error("Отсутствуют данные задания для task_1_5")
             return
+
+        # 🔐 FSM-INVARIANT: index ОБЯЗАН быть передан в solver
+        index = state_data.get("index")
+        if index is None:
+            logger.critical(
+                "🚨 FSM CONTRACT BROKEN: handle_group_1_5_help вызван без state['index']"
+            )
+            await send_solution_error(
+                callback,
+                bot,
+                "Произошла внутренняя ошибка. Попробуй открыть задание ещё раз 🙏",
+            )
+            return
+
+        # 🔑 ВАЖНО: делаем КОПИЮ и инжектим index
+        task_payload = dict(task_payload_raw)
+        task_payload["index"] = index
 
         # Отправляем сообщение о начале
         processing_message = await send_processing_message(callback, bot, state, task_type, task_subtype)

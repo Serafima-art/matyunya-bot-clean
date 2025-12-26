@@ -56,9 +56,5 @@ def get_gpt_dialog_keyboard() -> InlineKeyboardMarkup:
             text="✅ Всё понятно, спасибо!",
             callback_data=TaskCallback(action="end_gpt_dialog").pack(),
         ),
-        InlineKeyboardButton(
-            text="❓ Ещё вопрос",
-            callback_data=TaskCallback(action="continue_gpt_dialog").pack(),
-        ),
     )
     return builder.as_markup()

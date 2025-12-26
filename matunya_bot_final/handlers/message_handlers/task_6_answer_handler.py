@@ -24,6 +24,8 @@ from matunya_bot_final.gpt.phrases.tasks.incorrect_answer_feedback import (
     INCORRECT_FEEDBACK_PHRASES,
 )
 
+from matunya_bot_final.utils.fsm_guards import ensure_task_index
+
 logger = logging.getLogger(__name__)
 router = Router()
 
@@ -62,6 +64,13 @@ async def handle_task_6_answer(message: Message, state: FSMContext) -> None:
     )
 
     data = await state.get_data()
+
+    # 🔐 FSM-инвариант (превентивно)
+    idx = await ensure_task_index(state)
+    if idx is None:
+        logger.critical("Task 6: FSM contract broken — index отсутствует.")
+        return
+
     task_data = data.get("task_6_data")
     if not isinstance(task_data, dict):
         logger.error("Task 6: данные задания не найдены в FSM.")

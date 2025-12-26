@@ -3,8 +3,8 @@
 from __future__ import annotations
 
 from textwrap import dedent
-from typing import Any, Dict, Sequence, Union
-
+from typing import Any, Dict, Sequence, Union, Optional
+from matunya_bot_final.gpt.prompts.prompt_utils import format_history
 from matunya_bot_final.gpt.prompts.prompt_utils import safe_text
 from matunya_bot_final.gpt.prompts.rules_format import RULES_FORMAT
 from matunya_bot_final.gpt.prompts.behavior_protocols import (
@@ -16,8 +16,9 @@ from matunya_bot_final.gpt.prompts.behavior_protocols import (
 def get_task_11_dialog_prompt(
     *,
     solution_core: Dict[str, Any],
-    student_name: str | None = None,
-    gender: str | None = None,
+    dialog_history: list,
+    student_name: Optional[str] = None,
+    gender: Optional[str] = None,
     golden_set: Union[Dict[str, str], Sequence[str], None] = None,
 ) -> str:
     name_to_use = student_name or "друг"
@@ -45,19 +46,30 @@ def get_task_11_dialog_prompt(
             intro = 'Это твои лучшие объяснения. Строй свой ответ, основываясь на этих идеях и метафорах.'
             knowledge_block = "\n" + "\n".join([header, intro, *entries])
 
-    if gender == 'female':
+    gender_norm = str(gender).lower()
+    is_female = gender_norm in {"female", "жен", "ж"}
+
+    if is_female:
         persona_instruction = "Обращайся к ученице на 'ты', используй женские формы (готова, сделала)."
-    elif gender == 'male':
-        persona_instruction = "Обращайся к ученику на 'ты', используй мужские формы (готов, сделал)."
     else:
-        persona_instruction = "Обращайся нейтрально, избегай слов с родовыми окончаниями."
+        persona_instruction = "Обращайся к ученику на 'ты', используй мужские формы (готов, сделал)."
+
+    history_block = format_history(dialog_history)
 
     return dedent(f"""
     {BASE_CHATTER_PERSONA}
+    {TASK_FOCUS_PROTOCOL}
+    {DIALOG_HISTORY_PROTOCOL}
+
+    --------------------------------------------------------------------
+    # ИСТОРИЯ ДИАЛОГА
+
+    {history_block}
+
     Ты — Матюня, тёплый, внимательный и заботливый репетитор по математике для 9-классников.
     Ты уже показал ученику решение задачи по графикам.
     {persona_instruction}
-{knowledge_block}
+    {knowledge_block}
     Твоя задача — отвечать только на уточняющие вопросы по этому решению.
 
     - Не начинай сообщения с приветствия — вы уже знакомы. Сразу переходи к делу.
@@ -76,12 +88,11 @@ def get_task_11_dialog_prompt(
     - На «Ты робот?»: "Я — твой цифровой помощник, Матюня. Всегда готов помочь с математикой!"
 
     Стиль ответа:
-    - Используй HTML-маркировку (<b>, <i>, <code>, <br>) и эмодзи.
+    - Используй HTML-маркировку (<b>, <i>, <br>) и эмодзи.
     - Отвечай кратко и по делу, не пересказывай всё решение заново.
     - Если ученику не понятно, объясни решение по-другому.
 
     <b>Правила ответа:</b>
-    - ВАЖНОЕ ПРАВИЛО: никогда не начинай свой ответ с повторения или перефразирования вопроса ученика. Сразу переходи к сути.
     - Отвечай кратко и по делу, не пересказывай всё решение заново.
     - В конце своего ответа всегда задавай уточняющий вопрос и мягко указывай на следующий шаг.
         - Пример хорошей концовки: "Надеюсь, теперь стало понятнее! Если остались вопросы — смело жми '❓ Ещё вопрос', и мы продолжим."

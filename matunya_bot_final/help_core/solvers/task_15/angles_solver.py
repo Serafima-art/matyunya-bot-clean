@@ -14,14 +14,20 @@ def solve(task_data: Dict[str, Any]) -> List[Dict[str, Any]]:
 
     context = {}
     if pattern == "triangle_external_angle":
+        narrative = "external_angle"
         context = _solve_triangle_external_angle(task_data)
+
     elif pattern == "angle_bisector_find_half_angle":
+        narrative = "bisector_half"
         context = _solve_angle_bisector(task_data)
 
-    if not context:
+    else:
         return []
 
-    return [{"action": pattern, "data": context}]
+    return [{
+        "action": f"{pattern}:{narrative}",
+        "data": context
+    }]
 
 # ============================================================================
 # ЛОГИКА ВЫЧИСЛЕНИЙ

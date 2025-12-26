@@ -168,6 +168,8 @@ async def send_focused_task_block_tires(bot: Bot, state: FSMContext, chat_id: in
         return
 
     task = tasks[question_num - 1]
+    await state.update_data(index=question_num - 1)
+
     user_data = await state.get_data()
     subtype_key = user_data.get("task_subtype", "tires")
     focused_keyboard = build_focused_keyboard(question_num, len(tasks), subtype_key)

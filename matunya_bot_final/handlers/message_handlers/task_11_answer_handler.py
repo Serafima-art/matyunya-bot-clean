@@ -19,6 +19,7 @@ from matunya_bot_final.utils.message_manager import (
     get_message_id_by_tag,
     send_tracked_message,
 )
+from matunya_bot_final.utils.fsm_guards import ensure_task_index
 from matunya_bot_final.utils.text_formatters import escape_for_telegram, format_task
 from matunya_bot_final.gpt.phrases.tasks.correct_answer_feedback import get_random_feedback
 from matunya_bot_final.gpt.phrases.tasks.incorrect_answer_feedback import INCORRECT_FEEDBACK_PHRASES
@@ -59,8 +60,20 @@ async def handle_task_11_answer(message: Message, state: FSMContext) -> None:
         category="dialog_messages",
     )
 
+    # 🔐 FSM-инвариант (превентивно)
+    idx = await ensure_task_index(state)
+    if idx is None:
+        logger.critical("Task 11: FSM contract broken — index отсутствует.")
+        return
+
+    # ⬇️ только после guard читаем state
     data = await state.get_data()
+
     task_data = data.get("task_11_data")
+    if not isinstance(task_data, dict):
+        logger.error("Task 11: данные задания не найдены в FSM.")
+        return
+
     if not isinstance(task_data, dict):
         logger.error("Task 11: данные задания не найдены в FSM.")
         return

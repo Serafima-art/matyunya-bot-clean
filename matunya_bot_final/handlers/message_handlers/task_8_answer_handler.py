@@ -22,6 +22,7 @@ from matunya_bot_final.keyboards.inline_keyboards.after_task_keyboard import (
     get_after_task_keyboard,
     get_task_completed_keyboard,
 )
+from matunya_bot_final.utils.fsm_guards import ensure_task_index
 
 # ✨ Рендерим текст задания из expression_tree
 from matunya_bot_final.help_core.solvers.task_8.task_8_text_formatter import render_node
@@ -54,7 +55,15 @@ async def handle_task_8_answer(message: Message, state: FSMContext) -> None:
         category="dialog_messages",
     )
 
+    # 🔐 FSM-инвариант (превентивно)
+    idx = await ensure_task_index(state)
+    if idx is None:
+        logger.critical("Task 8: FSM contract broken — index отсутствует.")
+        return
+
+    # ⬇️ только ПОСЛЕ guard перечитываем state
     data = await state.get_data()
+
     task_data = data.get("task_8_data")
     if not isinstance(task_data, dict):
         logger.error("Task 8: отсутствует task_8_data")

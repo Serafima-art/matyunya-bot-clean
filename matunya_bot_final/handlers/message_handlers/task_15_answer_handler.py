@@ -18,6 +18,7 @@ from aiogram import F, Router
 from aiogram.fsm.context import FSMContext
 from aiogram.types import Message
 
+from matunya_bot_final.utils.fsm_guards import ensure_task_index
 from matunya_bot_final.states.states import TaskState
 from matunya_bot_final.utils.message_manager import (
     cleanup_messages_by_category,
@@ -82,6 +83,13 @@ async def handle_task_15_answer(message: Message, state: FSMContext) -> None:
         category="dialog_messages",
     )
 
+    # 🔐 FSM-инвариант (превентивно)
+    idx = await ensure_task_index(state)
+    if idx is None:
+        logger.critical("Task 15: FSM contract broken — index отсутствует.")
+        return
+
+    # ⬇️ только после guard читаем FSM
     data = await state.get_data()
     task_data = data.get("task_15_data")
 
@@ -111,9 +119,8 @@ async def handle_task_15_answer(message: Message, state: FSMContext) -> None:
     is_correct = ua == ca
 
     mark = "✅" if is_correct else "❌"
-    safe_user_answer = escape_for_telegram(
-        cleanup_math_for_display(user_answer_raw)
-    )
+    cleaned_user_answer = cleanup_math_for_display(user_answer_raw).strip()
+    safe_user_answer = escape_for_telegram(cleaned_user_answer) if cleaned_user_answer else "—"
     answer_line = f"Ответ: {mark} <b>{safe_user_answer}</b>"
 
     updated_text = _merge_answer_line(base_text, answer_line)
@@ -122,8 +129,8 @@ async def handle_task_15_answer(message: Message, state: FSMContext) -> None:
     task_subtype = task_data.get("pattern") or "default"
 
     keyboard = get_after_task_keyboard(
-    task_number=task_number,
-    task_subtype=task_subtype,
+        task_number=task_number,
+        task_subtype=task_subtype,
     )
 
     # 7️⃣ Обновляем сообщение с заданием

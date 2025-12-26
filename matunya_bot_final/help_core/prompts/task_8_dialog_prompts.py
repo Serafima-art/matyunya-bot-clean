@@ -6,8 +6,8 @@ from textwrap import dedent
 from typing import Any, Dict, List, Optional, Union, Sequence
 
 # --- ИМПОРТЫ ОБЩИХ СТАНДАРТОВ ---
+from matunya_bot_final.gpt.prompts.prompt_utils import format_history
 from matunya_bot_final.gpt.prompts.rules_format import RULES_FORMAT
-from matunya_bot_final.gpt.prompts.prompt_utils import gender_words, safe_text
 
 from matunya_bot_final.gpt.prompts.behavior_protocols import (
     BASE_CHATTER_PERSONA,
@@ -29,7 +29,7 @@ from matunya_bot_final.help_core.humanizers.template_humanizers.task_8_humanizer
 def get_task_8_dialog_prompt(
     task_data: Dict[str, Any],
     solution_core: Dict[str, Any],
-    dialog_history: List[Dict[str, Any]],  # Используется в общем контексте, здесь может быть не нужен, но сохраняем сигнатуру
+    dialog_history: List[Dict[str, Any]],
     student_name: Optional[str] = None,
     gender: Optional[str] = None,
     golden_set: Union[Dict[str, str], Sequence[str], None] = None,
@@ -39,16 +39,12 @@ def get_task_8_dialog_prompt(
     """
     name = student_name or "друг"
 
-    # Определяем формы слов для обращения
-    gw = gender_words(gender) # returns {'ready': 'готова', ...}
-
     # Формируем обращение к ученику (для инструкции)
-    if gender in ['female', 'жен', 'ж']:
-        pronoun = "ученице"
-        suffix_l = ""     # поняла
-    else:
-        pronoun = "ученику"
-        suffix_l = "а"    # понял
+    gender_norm = str(gender).lower()
+    is_female = gender_norm in {"female", "жен", "ж"}
+
+    pronoun = "ученице" if is_female else "ученику"
+    suffix_l = "" if is_female else "а"
 
     # 1. ФОРМИРУЕМ УСЛОВИЕ ЗАДАЧИ
     try:
@@ -101,14 +97,24 @@ def get_task_8_dialog_prompt(
         if entries:
             golden_block = "\n### БАЗА ЗНАНИЙ (GOLDEN SET)\n" + "\n".join(entries)
 
+    history_block = format_history(dialog_history)
 
     # 4. ФИНАЛЬНЫЙ ПРОМПТ
     return dedent(f"""
+    {BASE_CHATTER_PERSONA}
+    {TASK_FOCUS_PROTOCOL}
+    {DIALOG_HISTORY_PROTOCOL}
+
+    --------------------------------------------------------------------
+    # ИСТОРИЯ ДИАЛОГА
+
+    {history_block}
+
     Ты — Матюня, тёплый, внимательный и заботливый репетитор по математике для 9-классников.
     Ты помогаешь {pronoun} {name} разобраться с **Заданием 8** ОГЭ (Алгебраические выражения: степени и корни).
 
     # КОНТЕКСТ ЗАДАЧИ
-    Ученик решает задание: <code>{source_expression}</code>
+    Ученик решает задание: <b>{source_expression}</b>
 
     # ЭТАЛОННОЕ РЕШЕНИЕ (ТВОЯ ШПАРГАЛКА)
     В диалоге опирайся на этот алгоритм. Не придумывай другие способы, если ученик не просит.
@@ -126,11 +132,13 @@ def get_task_8_dialog_prompt(
     # ТВОЯ РОЛЬ И ПРАВИЛА
 
     1. **Главная цель:** Не решить за ученика, а привести его к пониманию. Если ученик просит ответ, скажи: "Давай лучше разберемся, как его получить, чтобы на экзамене ты справился сам!".
+       - Ты отвечаешь только по текущему заданию.
+       - Если ученик уходит в сторону или задаёт неучебные вопросы — мягко возвращай фокус к задаче.
 
     2. **Верификация (КРИТИЧЕСКИ ВАЖНО):**
        Когда ученик пишет формулу или ответ, **СНАЧАЛА** переспроси, правильно ли ты понял{suffix_l}.
-       Пример: "Проверю, правильно ли я тебя понял{suffix_l}. Ты имеешь в виду, что $2^3 * 2^2 = 2^6$? Всё верно?"
-       Только после подтверждения объясняй ошибку (правильно будет $2^5$).
+       Пример: "Проверю, правильно ли я тебя понял{suffix_l}. Ты имеешь в виду, что <b>2³ · 2² = 2⁶</b>? Всё верно?"
+       Только после подтверждения объясняй ошибку (правильно будет <b>2⁵</b>).
 
     3. **Специфика Задания 8 (Алгебра):**
        - **Терминология:** ИСПОЛЬЗУЙ слово **«раскладываем»** (на множители). НИКОГДА не пиши «разлагаем» (это звучит плохо).
@@ -144,7 +152,7 @@ def get_task_8_dialog_prompt(
        - Обращайся по имени: <b>{name}</b>.
 
     5. **Форматирование:**
-       - Используй HTML теги: <code>...</code> для формул и чисел, <b>...</b> для акцентов.
+       - Используй HTML теги: <b>...</b> для формул и чисел, <b>...</b> для акцентов.
        - Не используй LaTeX ($...$).
 
     {RULES_FORMAT}
@@ -189,10 +197,11 @@ def _format_steps_for_ai(steps: list) -> str:
         # 3. Формула
         formula = str(step.get("formula_calculation") or "")
 
-        # ЧИСТКА ФОРМУЛЫ: Убираем HTML и наш служебный маркер text:
-        # Заменяем <b> на ` (markdown код) для GPT
-        clean_formula = formula.replace("<b>", "`").replace("</b>", "`").replace("\n", " ")
-        clean_formula = clean_formula.replace("text:", "")
+        clean_formula = (
+            formula
+            .replace("\n", " ")
+            .replace("text:", "")
+        )
 
         # Сборка блока
         step_block = f"Шаг {num}. {clean_desc}"
