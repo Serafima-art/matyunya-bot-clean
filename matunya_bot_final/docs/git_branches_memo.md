@@ -161,7 +161,11 @@ git push origin main
 - обновила документацию.
 
 ```bash
-git add .
+git add run.py
+git add matunya_bot_final/
+git add docs/
+git add .gitignore
+❌ git add . — только если уверен на 200%
 git commit -m "feat: добавлен подтип задания 20" --no-verify — пробел перед --no-verify важен.
 git push origin feat/help-system-dev
 git checkout main
