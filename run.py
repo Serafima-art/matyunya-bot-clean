@@ -18,14 +18,14 @@ parser = argparse.ArgumentParser(description="Run Matyunya bot")
 parser.add_argument(
     "--dev",
     action="store_true",
-    help="Запустить Матюню в режиме разработки с .env.dev",
+    help="Запустить Матюню в режиме разработки с .env.local",
 )
 args = parser.parse_args()
 
 # ---------------------------------------
 # 3) Определяем нужный .env файл
 # ---------------------------------------
-env_file = project_root / (".env.dev" if args.dev else ".env")
+env_file = project_root / ".env.local" if args.dev else project_root / ".env"
 
 if not env_file.exists():
     raise FileNotFoundError(f"Файл {env_file} не найден.")
