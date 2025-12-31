@@ -52,6 +52,9 @@ SUBTYPES = {
 
 Паттерн 2.7 trig_identity_find_trig_func
 
+Паттерн 2.8: triangle_medians_intersection
+
+
 # 🟩 ТЕМА 3. `Равнобедренные треугольники (isosceles_triangles)`
 
 Паттерн 3.1 isosceles_triangle_angles

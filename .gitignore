@@ -1,5 +1,21 @@
+# ===== Environment =====
 .env
 .env.*
 .env.local
-*.db
 .venv/
+
+# ===== Python cache =====
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ===== Logs =====
+*.log
+
+# ===== Databases =====
+*.db
+
+# ===== OS / IDE =====
+.DS_Store
+.idea/
+.vscode/

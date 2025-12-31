@@ -46,14 +46,14 @@ PATTERN_TO_THEME = {
     # Углы
     "triangle_external_angle": "angles",
     "angle_bisector_find_half_angle": "angles",
-    "cosine_law_find_cos": "angles",
-    "trig_identity_find_trig_func": "angles",
     # Треугольники общего вида
     "triangle_area_by_sin": "general_triangles",
     "triangle_area_by_dividing_point": "general_triangles",
     "triangle_area_by_parallel_line": "general_triangles",
     "triangle_area_by_midpoints": "general_triangles",
+    "cosine_law_find_cos": "general_triangles",
     "triangle_by_two_angles_and_side": "general_triangles",
+    "trig_identity_find_trig_func": "general_triangles",
     "triangle_medians_intersection": "general_triangles",
     # Равнобедренные
     "isosceles_triangle_trap": "isosceles_triangles",

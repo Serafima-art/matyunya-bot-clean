@@ -57,7 +57,7 @@ async def main():
 
     # --- ШАГ 1: Настраиваем БД ---
     # Эта функция создаст engine и session_maker
-    db_manager.setup_database()
+    await db_manager.setup_database()
 
     # Проверяем, что session_maker был создан
     if not db_manager.session_maker:
