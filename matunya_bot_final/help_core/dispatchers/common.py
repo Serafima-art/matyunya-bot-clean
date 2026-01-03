@@ -348,63 +348,38 @@ async def send_solution_result(callback: CallbackQuery, bot: Bot, state: FSMCont
         logger.error(f"Ошибка отправки решения: {e}")
 
 
-async def send_solver_not_found_message(callback: CallbackQuery, bot: Bot, task_type: int, task_subtype: str) -> None:
+async def send_solver_not_found_message(
+    callback: CallbackQuery,
+    bot: Bot,
+    task_type: int
+) -> None:
     """
-    Отправляет сообщение о том, что решатель не найден.
+    Максимально простая и универсальная заглушка для всех заданий.
     """
     not_found_text = (
         f"😔 <b>Решение пока недоступно</b>\n\n"
-        f"📋 Задание №<b>{task_type}</b> (<b>{task_subtype}</b>)\n\n"
-        f"🔧 Полное решение для этого типа заданий еще не готово.\n\n"
+        f"🔧 Пошаговое решение для этого типа задач ещё находится в разработке.\n\n"
         f"💡 <b>Что можно сделать:</b>\n"
-        f"• Изучи теорию к заданию\n"
-        f"• Задай вопрос — постараюсь помочь!\n"
-        f"• Попробуй решить самостоятельно"
+        f"• Попробуй решить самостоятельно\n"
+        f"• Выбери другую тему или задание"
     )
 
-    # ⚠️ Fallback-клавиатура:
-    # Используется только если решатель для задания не найден.
-    # В отличие от основной create_solution_keyboard, эта клавиатура автономна,
-    # чтобы сообщение "Решение пока недоступно" могло работать даже без импорта UI-модулей.
-    # Кнопки:
-    # • 📚 Теория — переход к теоретическому разделу
-    # • ❓ Задать вопрос — запуск диалога с GPT
-    # • ❌ Закрыть — закрытие окна помощи
-    fallback_keyboard = InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(
-            text="📚 Теория",
-            callback_data=TaskCallback(
-                action="request_theory",
-                subtype_key=task_subtype,
-                question_num=task_type
-            ).pack()
-        )],
-        [InlineKeyboardButton(
-            text="❓ Задать вопрос",
-            callback_data=TaskCallback(
-                action="ask_question",
-                subtype_key=task_subtype,
-                question_num=task_type
-            ).pack()
-        )],
-        [InlineKeyboardButton(
-            text="❌ Закрыть",
-            callback_data=TaskCallback(
-                action="hide_help",
-                subtype_key=task_subtype,
-                question_num=task_type
-            ).pack()
-        )]
+    # Кнопки в один ряд
+    keyboard = InlineKeyboardMarkup(inline_keyboard=[
+        [
+            InlineKeyboardButton(text="💫 Назад", callback_data=f"back_to_carousel_{task_type}"),
+            InlineKeyboardButton(text="🏠 В меню", callback_data="back_to_main")
+        ]
     ])
 
     try:
         await callback.message.edit_text(
             not_found_text,
             parse_mode="HTML",
-            reply_markup=fallback_keyboard
+            reply_markup=keyboard
         )
     except Exception as e:
-        logger.error(f"Ошибка отправки fallback сообщения о решателе: {e}")
+        logger.error(f"Ошибка в общем диспетчере (задание {task_type}): {e}")
 
 
 async def send_solution_error(callback: CallbackQuery, bot: Bot, error_message: str) -> None:

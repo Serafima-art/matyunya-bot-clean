@@ -84,11 +84,11 @@ triangle_area_by_midpoints|В треугольнике ABC площадью 72 M
 triangle_area_by_midpoints|Площадь четырехугольника AMNC равна 99, где M и N - середины сторон AB и BC треугольника ABC. Найди площадь треугольника MBN.
 triangle_area_by_midpoints|MN — средняя линия треугольника ABC. Площадь MBN равна 5. Найди площадь трапеции AMNC.
 triangle_area_by_midpoints|В треугольнике ABC, площадь которого 108, точки M и N являются серединами сторон AB и BC. Найди площадь треугольника MBN.
-triangle_area_by_midpoints|Точки M и N являются серединами сторон AB и BC треугольника ABC. Сторона AB равна 20, сторона BC равна 30, а сторона AC равна 24. Найдите MN.
-triangle_area_by_midpoints|Отрезок MN является средней линией треугольника ABC, параллельной стороне AC. Длина MN равна 17. Найдите сторону AC, если известно, что боковые стороны AB и BC равны 30 и 32.
+triangle_area_by_midpoints|Точки M и N являются серединами сторон AB и BC треугольника ABC. Сторона AB равна 20, сторона BC равна 30, а сторона AC равна 24. Найди MN.
+triangle_area_by_midpoints|Отрезок MN является средней линией треугольника ABC, параллельной стороне AC. Длина MN равна 17. Найди сторону AC, если известно, что боковые стороны AB и BC равны 30 и 32.
 triangle_area_by_midpoints|Стороны треугольника ABC равны AB=40, BC=44 и AC=48. Отрезок MN соединяет середины сторон AB и BC. Чему равна длина MN?
-triangle_area_by_midpoints|Точки M и N — середины сторон AB и BC соответственно. Стороны малого треугольника MBN равны: BM=7, BN=8, MN=9. Найдите сторону AC.
-triangle_area_by_midpoints|В треугольнике ABC на сторонах AB и BC отмечены их середины M и N. Найдите MN, если известно, что AB=50, BC=60 и AC=62.
+triangle_area_by_midpoints|Точки M и N — середины сторон AB и BC соответственно. Стороны малого треугольника MBN равны: BM=7, BN=8, MN=9. Найди сторону AC.
+triangle_area_by_midpoints|В треугольнике ABC на сторонах AB и BC отмечены их середины M и N. Найди MN, если известно, что AB=50, BC=60 и AC=62.
 
 # Паттерн 2.5: cosine_law_find_cos
 cosine_law_find_cos|В треугольнике ABC стороны равны: AB = 5, BC = 6, AC = 7. Найди cos∠B.
@@ -138,34 +138,34 @@ triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 60°, ∠
 triangle_by_two_angles_and_side|В треугольнике ABC ∠A = 60°, ∠B = 45°, сторона AC = 4√6. Найди сторону BC.
 
 # Паттерн 2.7: trig_identity_find_trig_func
-trig_identity_find_trig_func|В треугольнике ABC косинус острого угла A равен 4/5. Найдите sin∠A.
-trig_identity_find_trig_func|В треугольнике ABC косинус острого угла A равен 3/5. Найдите sin∠A.
-trig_identity_find_trig_func|В треугольнике ABC косинус острого угла A равен √3/2. Найдите sin∠A.
-trig_identity_find_trig_func|В треугольнике ABC косинус острого угла A равен √7/4. Найдите sin∠A.
-trig_identity_find_trig_func|В треугольнике ABC косинус острого угла A равен √15/4. Найдите sin∠A.
-trig_identity_find_trig_func|В треугольнике ABC косинус острого угла A равен √19/10. Найдите sin∠A.
-trig_identity_find_trig_func|В треугольнике ABC косинус острого угла A равен √91/10. Найдите sin∠A.
-trig_identity_find_trig_func|В треугольнике ABC косинус острого угла A равен √21/5. Найдите sin∠A.
-trig_identity_find_trig_func|В треугольнике ABC косинус острого угла A равен √51/10. Найдите sin∠A.
-trig_identity_find_trig_func|В треугольнике ABC косинус острого угла A равен √24/5. Найдите sin∠A.
-trig_identity_find_trig_func|В треугольнике ABC косинус острого угла A равен √16/5. Найдите sin∠A.
-trig_identity_find_trig_func|В треугольнике ABC косинус острого угла A равен √9/5. Найдите sin∠A.
-trig_identity_find_trig_func|Синус острого угла A треугольника ABC равен 0,6. Найдите cos∠A.
-trig_identity_find_trig_func|Синус острого угла A треугольника ABC равен 0,8. Найдите cos∠A.
+trig_identity_find_trig_func|В треугольнике ABC косинус острого угла A равен 4/5. Найди sin∠A.
+trig_identity_find_trig_func|В треугольнике ABC косинус острого угла A равен 3/5. Найди sin∠A.
+trig_identity_find_trig_func|В треугольнике ABC косинус острого угла A равен √3/2. Найди sin∠A.
+trig_identity_find_trig_func|В треугольнике ABC косинус острого угла A равен √7/4. Найди sin∠A.
+trig_identity_find_trig_func|В треугольнике ABC косинус острого угла A равен √15/4. Найди sin∠A.
+trig_identity_find_trig_func|В треугольнике ABC косинус острого угла A равен √19/10. Найди sin∠A.
+trig_identity_find_trig_func|В треугольнике ABC косинус острого угла A равен √91/10. Найди sin∠A.
+trig_identity_find_trig_func|В треугольнике ABC косинус острого угла A равен √21/5. Найди sin∠A.
+trig_identity_find_trig_func|В треугольнике ABC косинус острого угла A равен √51/10. Найди sin∠A.
+trig_identity_find_trig_func|В треугольнике ABC косинус острого угла A равен √24/5. Найди sin∠A.
+trig_identity_find_trig_func|В треугольнике ABC косинус острого угла A равен √16/5. Найди sin∠A.
+trig_identity_find_trig_func|В треугольнике ABC косинус острого угла A равен √9/5. Найди sin∠A.
+trig_identity_find_trig_func|Синус острого угла A треугольника ABC равен 0,6. Найди cos∠A.
+trig_identity_find_trig_func|Синус острого угла A треугольника ABC равен 0,8. Найди cos∠A.
 
 # Паттерн 2.8: triangle_medians_intersection
-triangle_medians_intersection|Точки M и N являются серединами сторон AB и BC треугольника ABC соответственно. Отрезки AN и CM пересекаются в точке O, AN = 21, CM = 24. Найдите AO.
-triangle_medians_intersection|В треугольнике ABC медианы AN и CM пересекаются в точке O. Длина CM = 18, AN = 15. Найдите CO.
-triangle_medians_intersection|Медианы CM и AN треугольника ABC пересекаются в точке O. Известно, что AN = 33, а CM = 21. Найдите OM.
-triangle_medians_intersection|В треугольнике ABC проведены медианы AN и CM, которые пересекаются в точке O. Найдите ON, если известно, что AN = 27, а CM = 30.
-triangle_medians_intersection|Точки M и N — середины сторон AB и BC. Отрезки AN и CM пересекаются в точке O. Найдите AO, если AN = 9. Длина CM = 12.
-triangle_medians_intersection|В треугольнике ABC медианы AN и CM пересекаются в точке O. Найдите CO, если CM = 36. Длина AN = 24.
-triangle_medians_intersection|Отрезки CM и AN являются медианами треугольника ABC и пересекаются в точке O. Известно, что AN = 45 и CM = 42. Найдите ON.
-triangle_medians_intersection|В треугольнике ABC проведены медианы CM и AN к сторонам AB и BC. Их точка пересечения — O. Найдите OM, если CM = 15, а AN = 18.
-triangle_medians_intersection|Найдите длину большего отрезка медианы AN, если AN = 18, а вторая медиана CM = 27.
-triangle_medians_intersection|Найдите длину меньшего отрезка медианы CM, если CM = 24, а вторая медиана AN = 30.
-triangle_medians_intersection|Медианы AN и CM треугольника ABC пересекаются в точке O. AN = 33. Найдите AO.
-triangle_medians_intersection|В треугольнике ABC проведены медианы AN и CM. Они пересекаются в точке O. Найдите CO, если CM = 12.
-triangle_medians_intersection|Точка O — точка пересечения медиан AN и CM. Найдите длину отрезка ON, если вся медиана AN равна 21.
-triangle_medians_intersection|Медианы треугольника ABC, проведенные из вершин A и C, пересекаются в точке O. Найдите OM, если медиана CM равна 39.
-triangle_medians_intersection|В треугольнике ABC медианы AN и CM пересекаются в точке O. Известно, что CO = 14. Найдите CM.
+triangle_medians_intersection|Точки M и N являются серединами сторон AB и BC треугольника ABC соответственно. Отрезки AN и CM пересекаются в точке O, AN = 21, CM = 24. Найди AO.
+triangle_medians_intersection|В треугольнике ABC медианы AN и CM пересекаются в точке O. Длина CM = 18, AN = 15. Найди CO.
+triangle_medians_intersection|Медианы CM и AN треугольника ABC пересекаются в точке O. Известно, что AN = 33, а CM = 21. Найди OM.
+triangle_medians_intersection|В треугольнике ABC проведены медианы AN и CM, которые пересекаются в точке O. Найди ON, если известно, что AN = 27, а CM = 30.
+triangle_medians_intersection|Точки M и N — середины сторон AB и BC. Отрезки AN и CM пересекаются в точке O. Найди AO, если AN = 9. Длина CM = 12.
+triangle_medians_intersection|В треугольнике ABC медианы AN и CM пересекаются в точке O. Найди CO, если CM = 36. Длина AN = 24.
+triangle_medians_intersection|Отрезки CM и AN являются медианами треугольника ABC и пересекаются в точке O. Известно, что AN = 45 и CM = 42. Найди ON.
+triangle_medians_intersection|В треугольнике ABC проведены медианы CM и AN к сторонам AB и BC. Их точка пересечения — O. Найди OM, если CM = 15, а AN = 18.
+triangle_medians_intersection|Найди длину большего отрезка медианы AN, если AN = 18, а вторая медиана CM = 27.
+triangle_medians_intersection|Найди длину меньшего отрезка медианы CM, если CM = 24, а вторая медиана AN = 30.
+triangle_medians_intersection|Медианы AN и CM треугольника ABC пересекаются в точке O. AN = 33. Найди AO.
+triangle_medians_intersection|В треугольнике ABC проведены медианы AN и CM. Они пересекаются в точке O. Найди CO, если CM = 12.
+triangle_medians_intersection|Точка O — точка пересечения медиан AN и CM. Найди длину отрезка ON, если вся медиана AN равна 21.
+triangle_medians_intersection|Медианы треугольника ABC, проведенные из вершин A и C, пересекаются в точке O. Найди OM, если медиана CM равна 39.
+triangle_medians_intersection|В треугольнике ABC медианы AN и CM пересекаются в точке O. Известно, что CO = 14. Найди CM.

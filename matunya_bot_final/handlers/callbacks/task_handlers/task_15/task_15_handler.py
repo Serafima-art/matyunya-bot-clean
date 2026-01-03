@@ -56,7 +56,9 @@ PATTERN_TO_THEME = {
     "trig_identity_find_trig_func": "general_triangles",
     "triangle_medians_intersection": "general_triangles",
     # Равнобедренные
-    "isosceles_triangle_trap": "isosceles_triangles",
+    "isosceles_triangle_angles": "isosceles_triangles",
+    "equilateral_height_to_side": "isosceles_triangles",
+    "equilateral_side_to_element": "isosceles_triangles",
     # Прямоугольные
     "right_triangle_trap": "right_triangles",
 }

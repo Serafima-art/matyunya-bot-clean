@@ -70,7 +70,7 @@ async def handle_task_15_help(
         )
 
         if not isinstance(solution_core, list) or not solution_core:
-            await send_solver_not_found_message(callback, bot, task_type, theme_key)
+            await send_solver_not_found_message(callback, bot, task_type)
             return
 
         # --- 2. Гуманизация решения ---

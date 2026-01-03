@@ -1,21 +1,28 @@
+# matunya_bot_final\non_generators\task_15\validators\_debug_validator.py
 """
 Лабораторный стенд для отладки ВАЛИДАТОРА Задания 15
-ТОЧЕЧНЫЙ РЕЖИМ: проверяем ТОЛЬКО triangle_area_by_parallel_line
+ТОЧЕЧНЫЙ РЕЖИМ: проверяем ТОЛЬКО один паттерн (TARGET_PATTERN)
 
 Запускается локально, без Telegram.
+
+Опции:
+  --to-file   перенаправляет stdout+stderr в файл debug_validator_output.txt
 """
 
 import json
 import sys
 import logging
+import argparse
 from pathlib import Path
+from typing import Optional
 
 # ---------------------------------------------------------------------
 # НАСТРОЙКИ
 # ---------------------------------------------------------------------
 
-TARGET_PATTERN = "triangle_medians_intersection"
-DEFINITIONS_FILE = "general_triangles.txt"
+TARGET_PATTERN = "find_cos_sin_tg_from_sides"
+DEFINITIONS_FILE = "right_triangles.txt"
+OUTPUT_FILENAME = "debug_validator_output.txt"
 
 # ---------------------------------------------------------------------
 # НАСТРОЙКА ПУТЕЙ
@@ -30,8 +37,8 @@ sys.path.append(str(project_root / "matunya_bot_final"))
 # ---------------------------------------------------------------------
 
 try:
-    from non_generators.task_15.validators.general_triangles_validator import (
-        GeneralTrianglesValidator,
+    from non_generators.task_15.validators.right_triangles_validator import (
+        RightTrianglesValidator,
     )
 except ImportError as e:
     print(f"🔴 Ошибка импорта валидатора: {e}")
@@ -83,7 +90,7 @@ def load_raw_tasks(filename: str) -> list[str]:
 # ---------------------------------------------------------------------
 
 
-def run_test():
+def run_test() -> None:
     print("\n" + "=" * 80)
     print("🔬 ДИАГНОСТИКА ВАЛИДАТОРА")
     print(f"🎯 ПАТТЕРН: {TARGET_PATTERN}")
@@ -95,7 +102,7 @@ def run_test():
         return
 
     # --- Фильтруем только нужный паттерн ---
-    tasks = []
+    tasks: list[str] = []
     for line in raw_lines:
         if "|" not in line:
             continue
@@ -109,7 +116,7 @@ def run_test():
 
     print(f"✅ Найдено задач: {len(tasks)}")
 
-    validator = GeneralTrianglesValidator()
+    validator = RightTrianglesValidator()
 
     # --- Прогоняем ВСЕ задачи этого паттерна ---
     for i, line in enumerate(tasks, start=1):
@@ -132,6 +139,7 @@ def run_test():
 
         except Exception as e:
             print("❌ CRASH VALIDATOR")
+            # ВАЖНО: это уйдет в stderr (а при --to-file тоже попадет в файл)
             logger.error(str(e), exc_info=True)
 
     print("\n" + "=" * 80)
@@ -140,6 +148,54 @@ def run_test():
 
 
 # ---------------------------------------------------------------------
+# ENTRYPOINT
+# ---------------------------------------------------------------------
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Debug validator for task_15 pattern")
+    parser.add_argument(
+        "--to-file",
+        action="store_true",
+        help=f"Redirect stdout+stderr to {OUTPUT_FILENAME}",
+    )
+    return parser.parse_args()
+
 
 if __name__ == "__main__":
-    run_test()
+    args = parse_args()
+
+    original_stdout = sys.stdout
+    original_stderr = sys.stderr
+    output_file: Optional[object] = None
+
+    try:
+        if args.to_file:
+            output_path = Path(OUTPUT_FILENAME)
+            output_file = output_path.open("w", encoding="utf-8")
+
+            # Перенаправляем ОБА потока: stdout и stderr
+            sys.stdout = output_file
+            sys.stderr = output_file
+
+            print("🧪 DEBUG VALIDATOR OUTPUT")
+            print("=" * 80)
+            print(f"📌 Redirected stdout+stderr to: {output_path.resolve()}")
+            print("=" * 80)
+
+        run_test()
+
+        print("\n✅ Диагностика завершена. Ошибок не обнаружено.")
+
+    finally:
+        if output_file:
+            try:
+                print("\n🏁 LOG FILE CLOSED")
+                print("=" * 80)
+            except Exception:
+                # если вдруг поток уже недоступен — просто молчим
+                pass
+
+            output_file.close()
+            sys.stdout = original_stdout
+            sys.stderr = original_stderr

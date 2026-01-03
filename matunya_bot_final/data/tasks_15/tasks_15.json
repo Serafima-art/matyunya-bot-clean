@@ -3523,8 +3523,8 @@
         "triangle_name": "ABC",
         "triangle_type": "general",
         "sides": {
-          "BC": 30.0,
           "AC": 24.0,
+          "BC": 30.0,
           "AB": 20.0
         },
         "angles": {},
@@ -3583,8 +3583,8 @@
         "triangle_name": "ABC",
         "triangle_type": "general",
         "sides": {
-          "BC": 44.0,
           "AC": 48.0,
+          "BC": 44.0,
           "AB": 40.0
         },
         "angles": {},
@@ -3643,8 +3643,8 @@
         "triangle_name": "ABC",
         "triangle_type": "general",
         "sides": {
-          "BC": 60.0,
           "AC": 62.0,
+          "BC": 60.0,
           "AB": 50.0
         },
         "angles": {},
@@ -6027,6 +6027,1944 @@
         "name": "CM"
       },
       "humanizer_data": {}
+    }
+  },
+  {
+    "id": 1500187,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_base_angle",
+    "text": "В равнобедренном треугольнике ABC с основанием AC угол при вершине B равен 48°. Найди величину угла при основании C.",
+    "answer": 66,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "ABC",
+        "angle": {
+          "value": 48,
+          "role": "vertex",
+          "letter": ""
+        }
+      },
+      "to_find": {
+        "role": "base",
+        "letter": "A"
+      },
+      "humanizer_data": {
+        "vertex_letter": "",
+        "base_letters": [
+          "A",
+          "B",
+          "C"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500188,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_base_angle",
+    "text": "В треугольнике KLM стороны KL и LM равны, а угол при вершине L составляет 116°. Определи угол при основании K.",
+    "answer": 32,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "KLM",
+        "angle": {
+          "value": 116,
+          "role": "vertex",
+          "letter": "L"
+        }
+      },
+      "to_find": {
+        "role": "base",
+        "letter": "K"
+      },
+      "humanizer_data": {
+        "vertex_letter": "L",
+        "base_letters": [
+          "K",
+          "M"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500189,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_base_angle",
+    "text": "Угол между боковыми сторонами равнобедренного треугольника равен 32°. Вычисли градусную меру угла при его основании.",
+    "answer": 74,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "ABC",
+        "angle": {
+          "value": 32,
+          "role": "vertex",
+          "letter": ""
+        }
+      },
+      "to_find": {
+        "role": "base",
+        "letter": "A"
+      },
+      "humanizer_data": {
+        "vertex_letter": "",
+        "base_letters": [
+          "A",
+          "B",
+          "C"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500190,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_base_angle",
+    "text": "В треугольнике ABC известно, что AB = BC, а угол при вершине B равен 154°. Найди угол при основании A. Ответ дай в градусах.",
+    "answer": 13,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "ABC",
+        "angle": {
+          "value": 154,
+          "role": "vertex",
+          "letter": "B"
+        }
+      },
+      "to_find": {
+        "role": "base",
+        "letter": "A"
+      },
+      "humanizer_data": {
+        "vertex_letter": "B",
+        "base_letters": [
+          "A",
+          "C"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500191,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_vertex_angle",
+    "text": "В равнобедренном треугольнике PQR угол Q, противолежащий основанию PR, равен 76°. Найди угол при основании R.",
+    "answer": 28,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "PQR",
+        "angle": {
+          "value": 76,
+          "role": "base",
+          "letter": ""
+        }
+      },
+      "to_find": {
+        "role": "vertex",
+        "letter": ""
+      },
+      "humanizer_data": {
+        "vertex_letter": "",
+        "base_letters": [
+          "P",
+          "Q",
+          "R"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500192,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_base_angle",
+    "text": "Найди угол при основании равнобедренного треугольника, если угол при его вершине равен 108°.",
+    "answer": 36,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "ABC",
+        "angle": {
+          "value": 108,
+          "role": "vertex",
+          "letter": ""
+        }
+      },
+      "to_find": {
+        "role": "base",
+        "letter": "A"
+      },
+      "humanizer_data": {
+        "vertex_letter": "",
+        "base_letters": [
+          "A",
+          "B",
+          "C"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500193,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_base_angle",
+    "text": "В треугольнике XYZ стороны XY и YZ равны. Угол при вершине Y равен 50°. Найди величину угла при основании Z.",
+    "answer": 65,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "XYZ",
+        "angle": {
+          "value": 50,
+          "role": "vertex",
+          "letter": "Y"
+        }
+      },
+      "to_find": {
+        "role": "base",
+        "letter": "X"
+      },
+      "humanizer_data": {
+        "vertex_letter": "Y",
+        "base_letters": [
+          "X",
+          "Z"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500194,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_base_angle",
+    "text": "Вершина равнобедренного треугольника имеет угол 24°. Чему равен один из углов при его основании?",
+    "answer": 78,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "ABC",
+        "angle": {
+          "value": 24,
+          "role": "vertex",
+          "letter": ""
+        }
+      },
+      "to_find": {
+        "role": "base",
+        "letter": "A"
+      },
+      "humanizer_data": {
+        "vertex_letter": "",
+        "base_letters": [
+          "A",
+          "B",
+          "C"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500195,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_base_angle",
+    "text": "В треугольнике ABC стороны AC и BC равны. Угол при вершине C равен 94°. Найди градусную меру угла при основании B.",
+    "answer": 43,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "ABC",
+        "angle": {
+          "value": 94,
+          "role": "vertex",
+          "letter": "C"
+        }
+      },
+      "to_find": {
+        "role": "base",
+        "letter": "A"
+      },
+      "humanizer_data": {
+        "vertex_letter": "C",
+        "base_letters": [
+          "A",
+          "B"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500196,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_base_angle",
+    "text": "В равнобедренном треугольнике угол, лежащий против основания, равен 130°. Найди величину угла при основании.",
+    "answer": 25,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "ABC",
+        "angle": {
+          "value": 130,
+          "role": "vertex",
+          "letter": ""
+        }
+      },
+      "to_find": {
+        "role": "base",
+        "letter": "A"
+      },
+      "humanizer_data": {
+        "vertex_letter": "",
+        "base_letters": [
+          "A",
+          "B",
+          "C"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500197,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_base_angle",
+    "text": "Дан треугольник DEF, в котором DE = EF. Угол при вершине E равен 44°. Найди величину угла при основании D.",
+    "answer": 68,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "ABC",
+        "angle": {
+          "value": 44,
+          "role": "vertex",
+          "letter": "E"
+        }
+      },
+      "to_find": {
+        "role": "base",
+        "letter": "A"
+      },
+      "humanizer_data": {
+        "vertex_letter": "E",
+        "base_letters": [
+          "A",
+          "B",
+          "C"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500198,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_base_angle",
+    "text": "В треугольнике MNK с равными сторонами MN и NK угол при вершине N равен 82°. Вычисли угол при основании K.",
+    "answer": 49,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "MNK",
+        "angle": {
+          "value": 82,
+          "role": "vertex",
+          "letter": "N"
+        }
+      },
+      "to_find": {
+        "role": "base",
+        "letter": "K"
+      },
+      "humanizer_data": {
+        "vertex_letter": "N",
+        "base_letters": [
+          "K",
+          "M"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500199,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_base_angle",
+    "text": "Угол при вершине равнобедренного треугольника равен 68°. Найди один из углов при основании этого треугольника.",
+    "answer": 56,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "ABC",
+        "angle": {
+          "value": 68,
+          "role": "vertex",
+          "letter": ""
+        }
+      },
+      "to_find": {
+        "role": "base",
+        "letter": "A"
+      },
+      "humanizer_data": {
+        "vertex_letter": "",
+        "base_letters": [
+          "A",
+          "B",
+          "C"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500200,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_base_angle",
+    "text": "В треугольнике ABC стороны AB и BC равны, угол при вершине B равен 142°. Найди величину угла при основании C.",
+    "answer": 19,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "ABC",
+        "angle": {
+          "value": 142,
+          "role": "vertex",
+          "letter": "B"
+        }
+      },
+      "to_find": {
+        "role": "base",
+        "letter": "A"
+      },
+      "humanizer_data": {
+        "vertex_letter": "B",
+        "base_letters": [
+          "A",
+          "C"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500201,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_base_angle",
+    "text": "В равнобедренном треугольнике угол между равными сторонами составляет 58°. Определи величину угла при основании.",
+    "answer": 61,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "ABC",
+        "angle": {
+          "value": 58,
+          "role": "vertex",
+          "letter": ""
+        }
+      },
+      "to_find": {
+        "role": "base",
+        "letter": "A"
+      },
+      "humanizer_data": {
+        "vertex_letter": "",
+        "base_letters": [
+          "A",
+          "B",
+          "C"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500202,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_vertex_angle",
+    "text": "В равнобедренном треугольнике ABC угол при основании A равен 52°. Найди угол при вершине B, если AB = BC.",
+    "answer": 76,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "ABC",
+        "angle": {
+          "value": 52,
+          "role": "base",
+          "letter": ""
+        }
+      },
+      "to_find": {
+        "role": "vertex",
+        "letter": "B"
+      },
+      "humanizer_data": {
+        "vertex_letter": "B",
+        "base_letters": [
+          "A",
+          "C"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500203,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_vertex_angle",
+    "text": "Угол при основании равнобедренного треугольника составляет 71°. Вычисли угол, противолежащий основанию треугольника.",
+    "answer": 38,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "ABC",
+        "angle": {
+          "value": 71,
+          "role": "base",
+          "letter": ""
+        }
+      },
+      "to_find": {
+        "role": "vertex",
+        "letter": ""
+      },
+      "humanizer_data": {
+        "vertex_letter": "",
+        "base_letters": [
+          "A",
+          "B",
+          "C"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500204,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_vertex_angle",
+    "text": "В треугольнике KLM стороны KL и LM равны. Известно, что угол при основании K равен 37°. Найди величину угла при вершине L.",
+    "answer": 106,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "KLM",
+        "angle": {
+          "value": 37,
+          "role": "base",
+          "letter": ""
+        }
+      },
+      "to_find": {
+        "role": "vertex",
+        "letter": "L"
+      },
+      "humanizer_data": {
+        "vertex_letter": "L",
+        "base_letters": [
+          "K",
+          "M"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500205,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_vertex_angle",
+    "text": "В треугольнике ABC сторона AC является основанием. Угол при основании A равен 49°. Найди угол при вершине B.",
+    "answer": 82,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "ABC",
+        "angle": {
+          "value": 49,
+          "role": "base",
+          "letter": ""
+        }
+      },
+      "to_find": {
+        "role": "vertex",
+        "letter": ""
+      },
+      "humanizer_data": {
+        "vertex_letter": "",
+        "base_letters": [
+          "A",
+          "B",
+          "C"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500206,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_vertex_angle",
+    "text": "Один из углов при основании равнобедренного треугольника равен 28°. Найди угол при вершине этого треугольника.",
+    "answer": 124,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "ABC",
+        "angle": {
+          "value": 28,
+          "role": "base",
+          "letter": ""
+        }
+      },
+      "to_find": {
+        "role": "vertex",
+        "letter": ""
+      },
+      "humanizer_data": {
+        "vertex_letter": "",
+        "base_letters": [
+          "A",
+          "B",
+          "C"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500207,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_vertex_angle",
+    "text": "В треугольнике XYZ равны стороны XY и YZ. Угол при основании Z равен 64°. Определи величину угла при вершине Y. Ответ дай в градусах.",
+    "answer": 52,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "XYZ",
+        "angle": {
+          "value": 64,
+          "role": "base",
+          "letter": ""
+        }
+      },
+      "to_find": {
+        "role": "vertex",
+        "letter": "Y"
+      },
+      "humanizer_data": {
+        "vertex_letter": "Y",
+        "base_letters": [
+          "X",
+          "Z"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500208,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_vertex_angle",
+    "text": "В равнобедренном треугольнике угол при основании равен 18°. Найди угол между боковыми сторонами треугольника.",
+    "answer": 144,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "ABC",
+        "angle": {
+          "value": 18,
+          "role": "base",
+          "letter": ""
+        }
+      },
+      "to_find": {
+        "role": "vertex",
+        "letter": ""
+      },
+      "humanizer_data": {
+        "vertex_letter": "",
+        "base_letters": [
+          "A",
+          "B",
+          "C"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500209,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_vertex_angle",
+    "text": "Определи угол при вершине равнобедренного треугольника, если угол при его основании равен 75°.",
+    "answer": 30,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "ABC",
+        "angle": {
+          "value": 75,
+          "role": "base",
+          "letter": ""
+        }
+      },
+      "to_find": {
+        "role": "vertex",
+        "letter": ""
+      },
+      "humanizer_data": {
+        "vertex_letter": "",
+        "base_letters": [
+          "A",
+          "B",
+          "C"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500210,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_vertex_angle",
+    "text": "В треугольнике PQR известно, что PQ = QR. Угол при основании P равен 41°. Найди угол при вершине Q.",
+    "answer": 98,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "PQR",
+        "angle": {
+          "value": 41,
+          "role": "base",
+          "letter": ""
+        }
+      },
+      "to_find": {
+        "role": "vertex",
+        "letter": "Q"
+      },
+      "humanizer_data": {
+        "vertex_letter": "Q",
+        "base_letters": [
+          "P",
+          "R"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500211,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_vertex_angle",
+    "text": "В равнобедренном треугольнике угол при основании равен 55°. Чему равен угол, лежащий напротив этого основания?",
+    "answer": 70,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "ABC",
+        "angle": {
+          "value": 55,
+          "role": "base",
+          "letter": ""
+        }
+      },
+      "to_find": {
+        "role": "vertex",
+        "letter": ""
+      },
+      "humanizer_data": {
+        "vertex_letter": "",
+        "base_letters": [
+          "A",
+          "B",
+          "C"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500212,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_vertex_angle",
+    "text": "В треугольнике ABC с основанием AC угол при основании C равен 23°. Найди величину угла при вершине B.",
+    "answer": 134,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "ABC",
+        "angle": {
+          "value": 23,
+          "role": "base",
+          "letter": ""
+        }
+      },
+      "to_find": {
+        "role": "vertex",
+        "letter": ""
+      },
+      "humanizer_data": {
+        "vertex_letter": "",
+        "base_letters": [
+          "A",
+          "B",
+          "C"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500213,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_vertex_angle",
+    "text": "В треугольнике DEF стороны DE и EF равны. Угол при основании D равен 67°. Найди угол при вершине E.",
+    "answer": 46,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "DEF",
+        "angle": {
+          "value": 67,
+          "role": "base",
+          "letter": ""
+        }
+      },
+      "to_find": {
+        "role": "vertex",
+        "letter": "E"
+      },
+      "humanizer_data": {
+        "vertex_letter": "E",
+        "base_letters": [
+          "D",
+          "F"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500214,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_vertex_angle",
+    "text": "Угол при основании равнобедренного треугольника равен 81°. Найди градусную меру угла при его вершине.",
+    "answer": 18,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "ABC",
+        "angle": {
+          "value": 81,
+          "role": "base",
+          "letter": ""
+        }
+      },
+      "to_find": {
+        "role": "vertex",
+        "letter": ""
+      },
+      "humanizer_data": {
+        "vertex_letter": "",
+        "base_letters": [
+          "A",
+          "B",
+          "C"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500215,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_vertex_angle",
+    "text": "В равнобедренном треугольнике ABC стороны AC и BC равны. Угол при основании B равен 34°. Найди величину угла при вершине C.",
+    "answer": 112,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "ABC",
+        "angle": {
+          "value": 34,
+          "role": "base",
+          "letter": ""
+        }
+      },
+      "to_find": {
+        "role": "vertex",
+        "letter": "C"
+      },
+      "humanizer_data": {
+        "vertex_letter": "C",
+        "base_letters": [
+          "A",
+          "B"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500216,
+    "pattern": "isosceles_triangle_angles",
+    "narrative": "find_vertex_angle",
+    "text": "Дан равнобедренный треугольник, угол при основании которого равен 46°. Найди его угол при вершине.",
+    "answer": 88,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_name": "ABC",
+        "angle": {
+          "value": 46,
+          "role": "base",
+          "letter": ""
+        }
+      },
+      "to_find": {
+        "role": "vertex",
+        "letter": ""
+      },
+      "humanizer_data": {
+        "vertex_letter": "",
+        "base_letters": [
+          "A",
+          "B",
+          "C"
+        ],
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500217,
+    "pattern": "equilateral_height_to_side",
+    "narrative": "find_side_by_height",
+    "text": "Высота равностороннего треугольника равна 4√3. Найди сторону этого треугольника.",
+    "answer": 8,
+    "image_file": "T1_equilateral_height_to_side.png",
+    "variables": {
+      "given": {
+        "triangle_type": "equilateral",
+        "element": "height",
+        "value_raw": "4√3",
+        "coefficient": 4,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "side"
+      },
+      "humanizer_data": {
+        "k": 4,
+        "formula": "a = 2h / √3"
+      }
+    }
+  },
+  {
+    "id": 1500218,
+    "pattern": "equilateral_height_to_side",
+    "narrative": "find_side_by_height",
+    "text": "В равностороннем треугольнике высота равна 15√3. Определи длину стороны треугольника.",
+    "answer": 30,
+    "image_file": "T1_equilateral_height_to_side.png",
+    "variables": {
+      "given": {
+        "triangle_type": "equilateral",
+        "element": "height",
+        "value_raw": "15√3",
+        "coefficient": 15,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "side"
+      },
+      "humanizer_data": {
+        "k": 15,
+        "formula": "a = 2h / √3"
+      }
+    }
+  },
+  {
+    "id": 1500219,
+    "pattern": "equilateral_height_to_side",
+    "narrative": "find_side_by_height",
+    "text": "Найди сторону равностороннего треугольника, если его высота составляет 6√3.",
+    "answer": 12,
+    "image_file": "T1_equilateral_height_to_side.png",
+    "variables": {
+      "given": {
+        "triangle_type": "equilateral",
+        "element": "height",
+        "value_raw": "6√3",
+        "coefficient": 6,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "side"
+      },
+      "humanizer_data": {
+        "k": 6,
+        "formula": "a = 2h / √3"
+      }
+    }
+  },
+  {
+    "id": 1500220,
+    "pattern": "equilateral_height_to_side",
+    "narrative": "find_side_by_height",
+    "text": "Вычисли длину стороны правильного треугольника, высота которого равна 24√3.",
+    "answer": 48,
+    "image_file": "T1_equilateral_height_to_side.png",
+    "variables": {
+      "given": {
+        "triangle_type": "equilateral",
+        "element": "height",
+        "value_raw": "24√3",
+        "coefficient": 24,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "side"
+      },
+      "humanizer_data": {
+        "k": 24,
+        "formula": "a = 2h / √3"
+      }
+    }
+  },
+  {
+    "id": 1500221,
+    "pattern": "equilateral_height_to_side",
+    "narrative": "find_side_by_height",
+    "text": "Высота правильного треугольника равна 9√3. Найди его сторону.",
+    "answer": 18,
+    "image_file": "T1_equilateral_height_to_side.png",
+    "variables": {
+      "given": {
+        "triangle_type": "equilateral",
+        "element": "height",
+        "value_raw": "9√3",
+        "coefficient": 9,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "side"
+      },
+      "humanizer_data": {
+        "k": 9,
+        "formula": "a = 2h / √3"
+      }
+    }
+  },
+  {
+    "id": 1500222,
+    "pattern": "equilateral_height_to_side",
+    "narrative": "find_side_by_height",
+    "text": "В равностороннем треугольнике проведена высота, равная 11√3. Найди сторону этого треугольника.",
+    "answer": 22,
+    "image_file": "T1_equilateral_height_to_side.png",
+    "variables": {
+      "given": {
+        "triangle_type": "equilateral",
+        "element": "height",
+        "value_raw": "11√3",
+        "coefficient": 11,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "side"
+      },
+      "humanizer_data": {
+        "k": 11,
+        "formula": "a = 2h / √3"
+      }
+    }
+  },
+  {
+    "id": 1500223,
+    "pattern": "equilateral_height_to_side",
+    "narrative": "find_side_by_height",
+    "text": "Сторона правильного треугольника неизвестна, а его высота равна 13√3. Найди сторону.",
+    "answer": 26,
+    "image_file": "T1_equilateral_height_to_side.png",
+    "variables": {
+      "given": {
+        "triangle_type": "equilateral",
+        "element": "height",
+        "value_raw": "13√3",
+        "coefficient": 13,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "side"
+      },
+      "humanizer_data": {
+        "k": 13,
+        "formula": "a = 2h / √3"
+      }
+    }
+  },
+  {
+    "id": 1500224,
+    "pattern": "equilateral_height_to_side",
+    "narrative": "find_side_by_height",
+    "text": "Чему равна сторона равностороннего треугольника, если его высота составляет 17√3?",
+    "answer": 34,
+    "image_file": "T1_equilateral_height_to_side.png",
+    "variables": {
+      "given": {
+        "triangle_type": "equilateral",
+        "element": "height",
+        "value_raw": "17√3",
+        "coefficient": 17,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "side"
+      },
+      "humanizer_data": {
+        "k": 17,
+        "formula": "a = 2h / √3"
+      }
+    }
+  },
+  {
+    "id": 1500225,
+    "pattern": "equilateral_height_to_side",
+    "narrative": "find_side_by_height",
+    "text": "Высота равностороннего треугольника равна 21√3. Найди длину его стороны.",
+    "answer": 42,
+    "image_file": "T1_equilateral_height_to_side.png",
+    "variables": {
+      "given": {
+        "triangle_type": "equilateral",
+        "element": "height",
+        "value_raw": "21√3",
+        "coefficient": 21,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "side"
+      },
+      "humanizer_data": {
+        "k": 21,
+        "formula": "a = 2h / √3"
+      }
+    }
+  },
+  {
+    "id": 1500226,
+    "pattern": "equilateral_height_to_side",
+    "narrative": "find_side_by_height",
+    "text": "В правильном треугольнике высота равна 8√3. Определи сторону этого треугольника.",
+    "answer": 16,
+    "image_file": "T1_equilateral_height_to_side.png",
+    "variables": {
+      "given": {
+        "triangle_type": "equilateral",
+        "element": "height",
+        "value_raw": "8√3",
+        "coefficient": 8,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "side"
+      },
+      "humanizer_data": {
+        "k": 8,
+        "formula": "a = 2h / √3"
+      }
+    }
+  },
+  {
+    "id": 1500227,
+    "pattern": "equilateral_height_to_side",
+    "narrative": "find_side_by_height",
+    "text": "Высота равностороннего треугольника равна 5√3. Найди сторону треугольника.",
+    "answer": 10,
+    "image_file": "T1_equilateral_height_to_side.png",
+    "variables": {
+      "given": {
+        "triangle_type": "equilateral",
+        "element": "height",
+        "value_raw": "5√3",
+        "coefficient": 5,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "side"
+      },
+      "humanizer_data": {
+        "k": 5,
+        "formula": "a = 2h / √3"
+      }
+    }
+  },
+  {
+    "id": 1500228,
+    "pattern": "equilateral_height_to_side",
+    "narrative": "find_side_by_height",
+    "text": "Найди длину стороны равностороннего треугольника, высота которого равна 14√3.",
+    "answer": 28,
+    "image_file": "T1_equilateral_height_to_side.png",
+    "variables": {
+      "given": {
+        "triangle_type": "equilateral",
+        "element": "height",
+        "value_raw": "14√3",
+        "coefficient": 14,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "side"
+      },
+      "humanizer_data": {
+        "k": 14,
+        "formula": "a = 2h / √3"
+      }
+    }
+  },
+  {
+    "id": 1500229,
+    "pattern": "equilateral_height_to_side",
+    "narrative": "find_side_by_height",
+    "text": "В равностороннем треугольнике известна высота, равная 16√3. Найди его сторону.",
+    "answer": 32,
+    "image_file": "T1_equilateral_height_to_side.png",
+    "variables": {
+      "given": {
+        "triangle_type": "equilateral",
+        "element": "height",
+        "value_raw": "16√3",
+        "coefficient": 16,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "side"
+      },
+      "humanizer_data": {
+        "k": 16,
+        "formula": "a = 2h / √3"
+      }
+    }
+  },
+  {
+    "id": 1500230,
+    "pattern": "equilateral_height_to_side",
+    "narrative": "find_side_by_height",
+    "text": "Вычисли сторону правильного треугольника, если высота равна 25√3.",
+    "answer": 50,
+    "image_file": "T1_equilateral_height_to_side.png",
+    "variables": {
+      "given": {
+        "triangle_type": "equilateral",
+        "element": "height",
+        "value_raw": "25√3",
+        "coefficient": 25,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "side"
+      },
+      "humanizer_data": {
+        "k": 25,
+        "formula": "a = 2h / √3"
+      }
+    }
+  },
+  {
+    "id": 1500231,
+    "pattern": "equilateral_height_to_side",
+    "narrative": "find_side_by_height",
+    "text": "Высота равностороннего треугольника равна 10√3. Найди сторону этого треугольника.",
+    "answer": 20,
+    "image_file": "T1_equilateral_height_to_side.png",
+    "variables": {
+      "given": {
+        "triangle_type": "equilateral",
+        "element": "height",
+        "value_raw": "10√3",
+        "coefficient": 10,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "side"
+      },
+      "humanizer_data": {
+        "k": 10,
+        "formula": "a = 2h / √3"
+      }
+    }
+  },
+  {
+    "id": 1500232,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_height_by_side",
+    "text": "Сторона равностороннего треугольника равна 2√3. Найди высоту этого треугольника.",
+    "answer": 3,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "2√3",
+        "k": 2,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "height"
+      },
+      "humanizer_data": {
+        "target_name": "height",
+        "k": 2
+      }
+    }
+  },
+  {
+    "id": 1500233,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_height_by_side",
+    "text": "В равностороннем треугольнике сторона равна 4√3. Определи длину его высоты.",
+    "answer": 6,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "4√3",
+        "k": 4,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "height"
+      },
+      "humanizer_data": {
+        "target_name": "height",
+        "k": 4
+      }
+    }
+  },
+  {
+    "id": 1500234,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_height_by_side",
+    "text": "Вычисли высоту правильного треугольника, сторона которого составляет 6√3.",
+    "answer": 9,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "6√3",
+        "k": 6,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "height"
+      },
+      "humanizer_data": {
+        "target_name": "height",
+        "k": 6
+      }
+    }
+  },
+  {
+    "id": 1500235,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_height_by_side",
+    "text": "Найди высоту равностороннего треугольника, если его сторона равна 8√3.",
+    "answer": 12,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "8√3",
+        "k": 8,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "height"
+      },
+      "humanizer_data": {
+        "target_name": "height",
+        "k": 8
+      }
+    }
+  },
+  {
+    "id": 1500236,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_height_by_side",
+    "text": "Сторона правильного треугольника равна 10√3. Найди длину его высоты.",
+    "answer": 15,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "10√3",
+        "k": 10,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "height"
+      },
+      "humanizer_data": {
+        "target_name": "height",
+        "k": 10
+      }
+    }
+  },
+  {
+    "id": 1500237,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_height_by_side",
+    "text": "В равностороннем треугольнике сторона равна 12√3. Найди его высоту.",
+    "answer": 18,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "12√3",
+        "k": 12,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "height"
+      },
+      "humanizer_data": {
+        "target_name": "height",
+        "k": 12
+      }
+    }
+  },
+  {
+    "id": 1500238,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_height_by_side",
+    "text": "Найди длину высоты равностороннего треугольника, сторона которого равна 14√3.",
+    "answer": 21,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "14√3",
+        "k": 14,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "height"
+      },
+      "humanizer_data": {
+        "target_name": "height",
+        "k": 14
+      }
+    }
+  },
+  {
+    "id": 1500239,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_height_by_side",
+    "text": "Сторона равностороннего треугольника равна 16√3. Вычисли его высоту.",
+    "answer": 24,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "16√3",
+        "k": 16,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "height"
+      },
+      "humanizer_data": {
+        "target_name": "height",
+        "k": 16
+      }
+    }
+  },
+  {
+    "id": 1500240,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_height_by_side",
+    "text": "В правильном треугольнике сторона составляет 18√3. Найди высоту.",
+    "answer": 27,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "18√3",
+        "k": 18,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "height"
+      },
+      "humanizer_data": {
+        "target_name": "height",
+        "k": 18
+      }
+    }
+  },
+  {
+    "id": 1500241,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_height_by_side",
+    "text": "Найди высоту равностороннего треугольника со стороной 20√3.",
+    "answer": 30,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "20√3",
+        "k": 20,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "height"
+      },
+      "humanizer_data": {
+        "target_name": "height",
+        "k": 20
+      }
+    }
+  },
+  {
+    "id": 1500242,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_median_by_side",
+    "text": "Сторона равностороннего треугольника равна 2√3. Найди медиану этого треугольника.",
+    "answer": 3,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "2√3",
+        "k": 2,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "median"
+      },
+      "humanizer_data": {
+        "target_name": "median",
+        "k": 2
+      }
+    }
+  },
+  {
+    "id": 1500243,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_median_by_side",
+    "text": "В равностороннем треугольнике сторона равна 6√3. Определи длину медианы.",
+    "answer": 9,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "6√3",
+        "k": 6,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "median"
+      },
+      "humanizer_data": {
+        "target_name": "median",
+        "k": 6
+      }
+    }
+  },
+  {
+    "id": 1500244,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_median_by_side",
+    "text": "Найди медианну правильного треугольника, сторона которого равна 10√3.",
+    "answer": 15,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "10√3",
+        "k": 10,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "median"
+      },
+      "humanizer_data": {
+        "target_name": "median",
+        "k": 10
+      }
+    }
+  },
+  {
+    "id": 1500245,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_median_by_side",
+    "text": "Вычисли медиану равностороннего треугольника со стороной 14√3.",
+    "answer": 21,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "14√3",
+        "k": 14,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "median"
+      },
+      "humanizer_data": {
+        "target_name": "median",
+        "k": 14
+      }
+    }
+  },
+  {
+    "id": 1500246,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_median_by_side",
+    "text": "Сторона правильного треугольника равна 4√3. Найди его медиану.",
+    "answer": 6,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "4√3",
+        "k": 4,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "median"
+      },
+      "humanizer_data": {
+        "target_name": "median",
+        "k": 4
+      }
+    }
+  },
+  {
+    "id": 1500247,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_median_by_side",
+    "text": "В равностороннем треугольнике сторона равна 8√3. Найди длину медианы.",
+    "answer": 12,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "8√3",
+        "k": 8,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "median"
+      },
+      "humanizer_data": {
+        "target_name": "median",
+        "k": 8
+      }
+    }
+  },
+  {
+    "id": 1500248,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_median_by_side",
+    "text": "Найди медиану равностороннего треугольника, сторона которого составляет 12√3.",
+    "answer": 18,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "12√3",
+        "k": 12,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "median"
+      },
+      "humanizer_data": {
+        "target_name": "median",
+        "k": 12
+      }
+    }
+  },
+  {
+    "id": 1500249,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_median_by_side",
+    "text": "Сторона правильного треугольника равна 16√3. Найди его медиану.",
+    "answer": 24,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "16√3",
+        "k": 16,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "median"
+      },
+      "humanizer_data": {
+        "target_name": "median",
+        "k": 16
+      }
+    }
+  },
+  {
+    "id": 1500250,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_median_by_side",
+    "text": "В равностороннем треугольнике сторона равна 18√3. Найди медиану.",
+    "answer": 27,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "18√3",
+        "k": 18,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "median"
+      },
+      "humanizer_data": {
+        "target_name": "median",
+        "k": 18
+      }
+    }
+  },
+  {
+    "id": 1500251,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_median_by_side",
+    "text": "Сторона равностороннего треугольника равна 20√3. Найди его медиану.",
+    "answer": 30,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "20√3",
+        "k": 20,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "median"
+      },
+      "humanizer_data": {
+        "target_name": "median",
+        "k": 20
+      }
+    }
+  },
+  {
+    "id": 1500252,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_bisector_by_side",
+    "text": "Сторона равностороннего треугольника равна 2√3. Найди биссектрису этого треугольника.",
+    "answer": 3,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "2√3",
+        "k": 2,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "bisector"
+      },
+      "humanizer_data": {
+        "target_name": "bisector",
+        "k": 2
+      }
+    }
+  },
+  {
+    "id": 1500253,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_bisector_by_side",
+    "text": "В равностороннем треугольнике сторона равна 4√3. Определи длину биссектрисы.",
+    "answer": 6,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "4√3",
+        "k": 4,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "bisector"
+      },
+      "humanizer_data": {
+        "target_name": "bisector",
+        "k": 4
+      }
+    }
+  },
+  {
+    "id": 1500254,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_bisector_by_side",
+    "text": "Найди биссектрису правильного треугольника со стороной 6√3.",
+    "answer": 9,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "6√3",
+        "k": 6,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "bisector"
+      },
+      "humanizer_data": {
+        "target_name": "bisector",
+        "k": 6
+      }
+    }
+  },
+  {
+    "id": 1500255,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_bisector_by_side",
+    "text": "Вычисли длину биссектрисы равностороннего треугольника, сторона которого 5√3.",
+    "answer": 7.5,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "5√3",
+        "k": 5,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "bisector"
+      },
+      "humanizer_data": {
+        "target_name": "bisector",
+        "k": 5
+      }
+    }
+  },
+  {
+    "id": 1500256,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_bisector_by_side",
+    "text": "Сторона правильного треугольника равна 7√3. Найди его биссектрису.",
+    "answer": 10.5,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "7√3",
+        "k": 7,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "bisector"
+      },
+      "humanizer_data": {
+        "target_name": "bisector",
+        "k": 7
+      }
+    }
+  },
+  {
+    "id": 1500257,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_bisector_by_side",
+    "text": "В равностороннем треугольнике сторона равна 9√3. Найди биссектрису.",
+    "answer": 13.5,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "9√3",
+        "k": 9,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "bisector"
+      },
+      "humanizer_data": {
+        "target_name": "bisector",
+        "k": 9
+      }
+    }
+  },
+  {
+    "id": 1500258,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_bisector_by_side",
+    "text": "Найди биссектрису равностороннего треугольника со стороной 11√3.",
+    "answer": 16.5,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "11√3",
+        "k": 11,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "bisector"
+      },
+      "humanizer_data": {
+        "target_name": "bisector",
+        "k": 11
+      }
+    }
+  },
+  {
+    "id": 1500259,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_bisector_by_side",
+    "text": "Сторона правильного треугольника составляет 13√3. Найди длину биссектрисы.",
+    "answer": 19.5,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "13√3",
+        "k": 13,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "bisector"
+      },
+      "humanizer_data": {
+        "target_name": "bisector",
+        "k": 13
+      }
+    }
+  },
+  {
+    "id": 1500260,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_bisector_by_side",
+    "text": "В правильном треугольнике сторона равна 15√3. Найди биссектрису.",
+    "answer": 22.5,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "15√3",
+        "k": 15,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "bisector"
+      },
+      "humanizer_data": {
+        "target_name": "bisector",
+        "k": 15
+      }
+    }
+  },
+  {
+    "id": 1500261,
+    "pattern": "equilateral_side_to_element",
+    "narrative": "find_bisector_by_side",
+    "text": "Найди длину биссектрисы равностороннего треугольника, если его сторона 17√3.",
+    "answer": 25.5,
+    "image_file": "T1_equilateral_side_to_element.png",
+    "variables": {
+      "given": {
+        "side_value": "17√3",
+        "k": 17,
+        "has_root": true
+      },
+      "to_find": {
+        "element": "bisector"
+      },
+      "humanizer_data": {
+        "target_name": "bisector",
+        "k": 17
+      }
     }
   }
 ]

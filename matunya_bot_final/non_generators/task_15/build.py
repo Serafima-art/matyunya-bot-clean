@@ -18,6 +18,7 @@ import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../")))
 
 from matunya_bot_final.non_generators.task_15.validators.angles_validator import AnglesValidator
+from matunya_bot_final.non_generators.task_15.validators.isosceles_triangles_validator import IsoscelesValidator
 from matunya_bot_final.non_generators.task_15.validators.general_triangles_validator import (
     GeneralTrianglesValidator,
 )
@@ -36,6 +37,7 @@ OUTPUT_FILE = os.path.join(OUTPUT_DIR, "tasks_15.json")
 VALIDATOR_MAPPING = {
     "angles.txt": AnglesValidator,
     "general_triangles.txt": GeneralTrianglesValidator,
+    "isosceles_triangles.txt": IsoscelesValidator,
 }
 
 
