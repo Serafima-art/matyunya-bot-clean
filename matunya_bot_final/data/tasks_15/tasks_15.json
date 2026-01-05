@@ -2,7 +2,7 @@
   {
     "id": 1500001,
     "pattern": "triangle_external_angle",
-    "text": "В треугольнике ABC угол A равен 41°, а угол B равен 33°. Найдите внешний угол при вершине C.",
+    "text": "В треугольнике ABC угол A равен 41°, а угол B равен 33°. Найди внешний угол при вершине C.",
     "answer": 74,
     "image_file": "T9_ext_obtuse.png",
     "variables": {
@@ -30,7 +30,7 @@
   {
     "id": 1500002,
     "pattern": "triangle_external_angle",
-    "text": "Два угла треугольника ABC (при вершинах A и B) равны 54° и 48°. Найдите внешний угол при вершине C. Ответ дайте в градусах.",
+    "text": "Два угла треугольника ABC (при вершинах A и B) равны 54° и 48°. Найди внешний угол при вершине C. Ответ дайте в градусах.",
     "answer": 102,
     "image_file": "T9_ext_acute.png",
     "variables": {
@@ -86,7 +86,7 @@
   {
     "id": 1500004,
     "pattern": "triangle_external_angle",
-    "text": "Углы A и B треугольника ABC равны 67° и 31° соответственно. Найдите внешний угол при вершине C.",
+    "text": "Углы A и B треугольника ABC равны 67° и 31° соответственно. Найди внешний угол при вершине C.",
     "answer": 98,
     "image_file": "T9_ext_acute.png",
     "variables": {
@@ -114,7 +114,7 @@
   {
     "id": 1500005,
     "pattern": "triangle_external_angle",
-    "text": "В треугольнике ABC угол при вершине A составляет 28°, а угол при вершине B — 80°. Определите внешний угол при вершине C.",
+    "text": "В треугольнике ABC угол при вершине A составляет 28°, а угол при вершине B — 80°. Определи внешний угол при вершине C.",
     "answer": 108,
     "image_file": "T9_ext_acute.png",
     "variables": {
@@ -142,7 +142,7 @@
   {
     "id": 1500006,
     "pattern": "triangle_external_angle",
-    "text": "Найдите внешний угол треугольника ABC при вершине C, если два других угла, A и B, равны 51° и 52°.",
+    "text": "Найди внешний угол треугольника ABC при вершине C, если два других угла, A и B, равны 51° и 52°.",
     "answer": 103,
     "image_file": "T9_ext_acute.png",
     "variables": {
@@ -170,7 +170,7 @@
   {
     "id": 1500007,
     "pattern": "triangle_external_angle",
-    "text": "В треугольнике ABC угол A равен 44°, угол B равен 79°. Найдите величину внешнего угла при вершине C.",
+    "text": "В треугольнике ABC угол A равен 44°, угол B равен 79°. Найди величину внешнего угла при вершине C.",
     "answer": 123,
     "image_file": "T9_ext_acute.png",
     "variables": {
@@ -198,7 +198,7 @@
   {
     "id": 1500008,
     "pattern": "triangle_external_angle",
-    "text": "В треугольнике ABC известны углы: ∠A = 61°, ∠B = 43°. Найдите внешний угол при вершине C.",
+    "text": "В треугольнике ABC известны углы: ∠A = 61°, ∠B = 43°. Найди внешний угол при вершине C.",
     "answer": 104,
     "image_file": "T9_ext_acute.png",
     "variables": {
@@ -226,7 +226,7 @@
   {
     "id": 1500009,
     "pattern": "triangle_external_angle",
-    "text": "Определите внешний угол при вершине C треугольника ABC, если ∠A = 49° и ∠B = 50°.",
+    "text": "Определи внешний угол при вершине C треугольника ABC, если ∠A = 49° и ∠B = 50°.",
     "answer": 99,
     "image_file": "T9_ext_acute.png",
     "variables": {
@@ -282,7 +282,7 @@
   {
     "id": 1500011,
     "pattern": "triangle_external_angle",
-    "text": "В треугольнике ABC угол A равен 37°, угол B равен 46°. Найдите внешний угол при вершине C.",
+    "text": "В треугольнике ABC угол A равен 37°, угол B равен 46°. Найди внешний угол при вершине C.",
     "answer": 83,
     "image_file": "T9_ext_obtuse.png",
     "variables": {
@@ -310,7 +310,7 @@
   {
     "id": 1500012,
     "pattern": "triangle_external_angle",
-    "text": "Два внутренних угла треугольника A и B равны 22° и 130°. Найдите внешний угол при вершине C.",
+    "text": "Два внутренних угла треугольника A и B равны 22° и 130°. Найди внешний угол при вершине C.",
     "answer": 152,
     "image_file": "T9_ext_acute.png",
     "variables": {
@@ -338,7 +338,7 @@
   {
     "id": 1500013,
     "pattern": "triangle_external_angle",
-    "text": "В треугольнике ABC угол A=53°, угол B=63°. Определите градусную меру внешнего угла при вершине C.",
+    "text": "В треугольнике ABC угол A=53°, угол B=63°. Определи градусную меру внешнего угла при вершине C.",
     "answer": 116,
     "image_file": "T9_ext_acute.png",
     "variables": {
@@ -394,7 +394,7 @@
   {
     "id": 1500015,
     "pattern": "triangle_external_angle",
-    "text": "Найдите внешний угол при вершине C, если два других угла треугольника A и B равны 60° и 60°.",
+    "text": "Найди внешний угол при вершине C, если два других угла треугольника A и B равны 60° и 60°.",
     "answer": 120,
     "image_file": "T9_ext_acute.png",
     "variables": {
@@ -422,7 +422,7 @@
   {
     "id": 1500016,
     "pattern": "triangle_external_angle",
-    "text": "В треугольнике ABC угол A = 72°, угол B = 19°. Найдите внешний угол при вершине C.",
+    "text": "В треугольнике ABC угол A = 72°, угол B = 19°. Найди внешний угол при вершине C.",
     "answer": 91,
     "image_file": "T9_ext_acute.png",
     "variables": {
@@ -450,7 +450,7 @@
   {
     "id": 1500017,
     "pattern": "triangle_external_angle",
-    "text": "В треугольнике ABC угол A равен 90°, угол B равен 35°. Найдите внешний угол при вершине C.",
+    "text": "В треугольнике ABC угол A равен 90°, угол B равен 35°. Найди внешний угол при вершине C.",
     "answer": 125,
     "image_file": "T9_ext_acute.png",
     "variables": {
@@ -478,7 +478,7 @@
   {
     "id": 1500018,
     "pattern": "triangle_external_angle",
-    "text": "В треугольнике ABC угол A = 23°, угол B = 108°. Определите внешний угол при C.",
+    "text": "В треугольнике ABC угол A = 23°, угол B = 108°. Определи внешний угол при C.",
     "answer": 131,
     "image_file": "T9_ext_acute.png",
     "variables": {
@@ -506,7 +506,7 @@
   {
     "id": 1500019,
     "pattern": "triangle_external_angle",
-    "text": "В треугольнике ABC углы A и B равны 45° и 90°. Найдите внешний угол при вершине C.",
+    "text": "В треугольнике ABC углы A и B равны 45° и 90°. Найди внешний угол при вершине C.",
     "answer": 135,
     "image_file": "T9_ext_acute.png",
     "variables": {
@@ -534,7 +534,7 @@
   {
     "id": 1500020,
     "pattern": "angle_bisector_find_half_angle",
-    "text": "В треугольнике ABC известно, что ∠BAC = 86°, AD — биссектриса. Найдите угол BAD. Ответ дайте в градусах.",
+    "text": "В треугольнике ABC известно, что ∠BAC = 86°, AD — биссектриса. Найди угол BAD. Ответ дайте в градусах.",
     "answer": 43,
     "image_file": "T8_acute.png",
     "variables": {
@@ -563,7 +563,7 @@
   {
     "id": 1500021,
     "pattern": "angle_bisector_find_half_angle",
-    "text": "Угол A треугольника ABC равен 58°. Биссектриса AD делит его пополам. Найдите угол CAD.",
+    "text": "Угол A треугольника ABC равен 58°. Биссектриса AD делит его пополам. Найди угол CAD.",
     "answer": 29,
     "image_file": "T8_acute.png",
     "variables": {
@@ -621,7 +621,7 @@
   {
     "id": 1500023,
     "pattern": "angle_bisector_find_half_angle",
-    "text": "В треугольнике ABC проведена биссектриса AD. Угол BAC равен 124°. Найдите величину угла BAD.",
+    "text": "В треугольнике ABC проведена биссектриса AD. Угол BAC равен 124°. Найди величину угла BAD.",
     "answer": 62,
     "image_file": "T8_obtuse.png",
     "variables": {
@@ -650,7 +650,7 @@
   {
     "id": 1500024,
     "pattern": "angle_bisector_find_half_angle",
-    "text": "В треугольнике ABC угол при вершине A равен 94°, AD — биссектриса этого угла. Найдите угол CAD.",
+    "text": "В треугольнике ABC угол при вершине A равен 94°, AD — биссектриса этого угла. Найди угол CAD.",
     "answer": 47,
     "image_file": "T8_obtuse.png",
     "variables": {
@@ -679,7 +679,7 @@
   {
     "id": 1500025,
     "pattern": "angle_bisector_find_half_angle",
-    "text": "Биссектриса угла A треугольника ABC делит его на два угла. Найдите каждый из этих углов, если ∠A=102°.",
+    "text": "Биссектриса угла A треугольника ABC делит его на два угла. Найди каждый из этих углов, если ∠A=102°.",
     "answer": 51,
     "image_file": "T8_obtuse.png",
     "variables": {
@@ -708,7 +708,7 @@
   {
     "id": 1500026,
     "pattern": "angle_bisector_find_half_angle",
-    "text": "В треугольнике ABC луч AD является биссектрисой угла A. Найдите угол BAD, если ∠A = 66°.",
+    "text": "В треугольнике ABC луч AD является биссектрисой угла A. Найди угол BAD, если ∠A = 66°.",
     "answer": 33,
     "image_file": "T8_acute.png",
     "variables": {
@@ -766,7 +766,7 @@
   {
     "id": 1500028,
     "pattern": "angle_bisector_find_half_angle",
-    "text": "В треугольнике ABC проведена биссектриса AD. Найдите угол CAD, если ∠BAC = 130°.",
+    "text": "В треугольнике ABC проведена биссектриса AD. Найди угол CAD, если ∠BAC = 130°.",
     "answer": 65,
     "image_file": "T8_obtuse.png",
     "variables": {
@@ -795,7 +795,7 @@
   {
     "id": 1500029,
     "pattern": "angle_bisector_find_half_angle",
-    "text": "Найдите угол, образованный биссектрисой AD и стороной AC треугольника ABC, если угол A равен 54°.",
+    "text": "Найди угол, образованный биссектрисой AD и стороной AC треугольника ABC, если угол A равен 54°.",
     "answer": 27,
     "image_file": "T8_acute.png",
     "variables": {
@@ -824,7 +824,7 @@
   {
     "id": 1500030,
     "pattern": "angle_bisector_find_half_angle",
-    "text": "Угол A при вершине равнобедренного треугольника ABC равен 108°. Биссектриса AD делит его пополам. Найдите угол между биссектрисой и боковой стороной AB.",
+    "text": "Угол A при вершине равнобедренного треугольника ABC равен 108°. Биссектриса AD делит его пополам. Найди угол между биссектрисой и боковой стороной AB.",
     "answer": 54,
     "image_file": "T8_obtuse.png",
     "variables": {
@@ -882,7 +882,7 @@
   {
     "id": 1500032,
     "pattern": "angle_bisector_find_half_angle",
-    "text": "Дан треугольник ABC, в котором ∠BAC = 90°. Биссектриса AD делит прямой угол. Найдите угол BAD.",
+    "text": "Дан треугольник ABC, в котором ∠BAC = 90°. Биссектриса AD делит прямой угол. Найди угол BAD.",
     "answer": 45,
     "image_file": "T8_right.png",
     "variables": {
@@ -911,7 +911,7 @@
   {
     "id": 1500033,
     "pattern": "angle_bisector_find_half_angle",
-    "text": "В треугольнике ABC угол A равен 112°, AD — биссектриса. Найдите угол BAD.",
+    "text": "В треугольнике ABC угол A равен 112°, AD — биссектриса. Найди угол BAD.",
     "answer": 56,
     "image_file": "T8_obtuse.png",
     "variables": {
@@ -940,7 +940,7 @@
   {
     "id": 1500034,
     "pattern": "angle_bisector_find_half_angle",
-    "text": "Угол A треугольника ABC равен 28°. Найдите угол, который образует его биссектриса AD со стороной AC.",
+    "text": "Угол A треугольника ABC равен 28°. Найди угол, который образует его биссектриса AD со стороной AC.",
     "answer": 14,
     "image_file": "T8_acute.png",
     "variables": {
@@ -969,7 +969,7 @@
   {
     "id": 1500035,
     "pattern": "angle_bisector_find_half_angle",
-    "text": "В треугольнике ABC проведена биссектриса AD. Угол BAC равен 80°. Определите угол BAD.",
+    "text": "В треугольнике ABC проведена биссектриса AD. Угол BAC равен 80°. Определи угол BAD.",
     "answer": 40,
     "image_file": "T8_acute.png",
     "variables": {
@@ -998,7 +998,7 @@
   {
     "id": 1500036,
     "pattern": "angle_bisector_find_half_angle",
-    "text": "Из вершины A проведена биссектриса AD. Угол BAC равен 60°. Найдите угол CAD.",
+    "text": "Из вершины A проведена биссектриса AD. Угол BAC равен 60°. Найди угол CAD.",
     "answer": 30,
     "image_file": "T8_acute.png",
     "variables": {
@@ -1027,7 +1027,7 @@
   {
     "id": 1500037,
     "pattern": "angle_bisector_find_half_angle",
-    "text": "Биссектриса угла A, равного 150°, делит его на два угла. Найдите их величину.",
+    "text": "Биссектриса угла A, равного 150°, делит его на два угла. Найди их величину.",
     "answer": 75,
     "image_file": "T8_obtuse.png",
     "variables": {
@@ -1056,7 +1056,7 @@
   {
     "id": 1500038,
     "pattern": "angle_bisector_find_half_angle",
-    "text": "В треугольнике ABC известно, что ∠A = 92°, AD — биссектриса. Найдите угол CAD.",
+    "text": "В треугольнике ABC известно, что ∠A = 92°, AD — биссектриса. Найди угол CAD.",
     "answer": 46,
     "image_file": "T8_obtuse.png",
     "variables": {
@@ -1085,7 +1085,7 @@
   {
     "id": 1500039,
     "pattern": "angle_bisector_find_half_angle",
-    "text": "Угол A равен 44°. AD — биссектриса. Найдите угол между биссектрисой AD и стороной AC.",
+    "text": "Угол A равен 44°. AD — биссектриса. Найди угол между биссектрисой AD и стороной AC.",
     "answer": 22,
     "image_file": "T8_acute.png",
     "variables": {
@@ -3515,7 +3515,7 @@
   {
     "id": 1500110,
     "pattern": "triangle_area_by_midpoints",
-    "text": "Точки M и N являются серединами сторон AB и BC треугольника ABC. Сторона AB равна 20, сторона BC равна 30, а сторона AC равна 24. Найдите MN.",
+    "text": "Точки M и N являются серединами сторон AB и BC треугольника ABC. Сторона AB равна 20, сторона BC равна 30, а сторона AC равна 24. Найди MN.",
     "answer": 12,
     "image_file": "T6_triangle_area_by_midpoints.png",
     "variables": {
@@ -3524,8 +3524,8 @@
         "triangle_type": "general",
         "sides": {
           "AC": 24.0,
-          "BC": 30.0,
-          "AB": 20.0
+          "AB": 20.0,
+          "BC": 30.0
         },
         "angles": {},
         "trig": {},
@@ -3546,7 +3546,7 @@
   {
     "id": 1500111,
     "pattern": "triangle_area_by_midpoints",
-    "text": "Отрезок MN является средней линией треугольника ABC, параллельной стороне AC. Длина MN равна 17. Найдите сторону AC, если известно, что боковые стороны AB и BC равны 30 и 32.",
+    "text": "Отрезок MN является средней линией треугольника ABC, параллельной стороне AC. Длина MN равна 17. Найди сторону AC, если известно, что боковые стороны AB и BC равны 30 и 32.",
     "answer": 34,
     "image_file": "T6_triangle_area_by_midpoints.png",
     "variables": {
@@ -3584,8 +3584,8 @@
         "triangle_type": "general",
         "sides": {
           "AC": 48.0,
-          "BC": 44.0,
-          "AB": 40.0
+          "AB": 40.0,
+          "BC": 44.0
         },
         "angles": {},
         "trig": {},
@@ -3606,7 +3606,7 @@
   {
     "id": 1500113,
     "pattern": "triangle_area_by_midpoints",
-    "text": "Точки M и N — середины сторон AB и BC соответственно. Стороны малого треугольника MBN равны: BM=7, BN=8, MN=9. Найдите сторону AC.",
+    "text": "Точки M и N — середины сторон AB и BC соответственно. Стороны малого треугольника MBN равны: BM=7, BN=8, MN=9. Найди сторону AC.",
     "answer": 18,
     "image_file": "T6_triangle_area_by_midpoints.png",
     "variables": {
@@ -3635,7 +3635,7 @@
   {
     "id": 1500114,
     "pattern": "triangle_area_by_midpoints",
-    "text": "В треугольнике ABC на сторонах AB и BC отмечены их середины M и N. Найдите MN, если известно, что AB=50, BC=60 и AC=62.",
+    "text": "В треугольнике ABC на сторонах AB и BC отмечены их середины M и N. Найди MN, если известно, что AB=50, BC=60 и AC=62.",
     "answer": 31,
     "image_file": "T6_triangle_area_by_midpoints.png",
     "variables": {
@@ -3644,8 +3644,8 @@
         "triangle_type": "general",
         "sides": {
           "AC": 62.0,
-          "BC": 60.0,
-          "AB": 50.0
+          "AB": 50.0,
+          "BC": 60.0
         },
         "angles": {},
         "trig": {},
@@ -5152,7 +5152,7 @@
   {
     "id": 1500158,
     "pattern": "trig_identity_find_trig_func",
-    "text": "В треугольнике ABC косинус острого угла A равен 4/5. Найдите sin∠A.",
+    "text": "В треугольнике ABC косинус острого угла A равен 4/5. Найди sin∠A.",
     "answer": "0,6",
     "image_file": null,
     "variables": {
@@ -5182,7 +5182,7 @@
   {
     "id": 1500159,
     "pattern": "trig_identity_find_trig_func",
-    "text": "В треугольнике ABC косинус острого угла A равен 3/5. Найдите sin∠A.",
+    "text": "В треугольнике ABC косинус острого угла A равен 3/5. Найди sin∠A.",
     "answer": "0,8",
     "image_file": null,
     "variables": {
@@ -5212,7 +5212,7 @@
   {
     "id": 1500160,
     "pattern": "trig_identity_find_trig_func",
-    "text": "В треугольнике ABC косинус острого угла A равен √3/2. Найдите sin∠A.",
+    "text": "В треугольнике ABC косинус острого угла A равен √3/2. Найди sin∠A.",
     "answer": "0,5",
     "image_file": null,
     "variables": {
@@ -5242,7 +5242,7 @@
   {
     "id": 1500161,
     "pattern": "trig_identity_find_trig_func",
-    "text": "В треугольнике ABC косинус острого угла A равен √7/4. Найдите sin∠A.",
+    "text": "В треугольнике ABC косинус острого угла A равен √7/4. Найди sin∠A.",
     "answer": "0,75",
     "image_file": null,
     "variables": {
@@ -5272,7 +5272,7 @@
   {
     "id": 1500162,
     "pattern": "trig_identity_find_trig_func",
-    "text": "В треугольнике ABC косинус острого угла A равен √15/4. Найдите sin∠A.",
+    "text": "В треугольнике ABC косинус острого угла A равен √15/4. Найди sin∠A.",
     "answer": "0,25",
     "image_file": null,
     "variables": {
@@ -5302,7 +5302,7 @@
   {
     "id": 1500163,
     "pattern": "trig_identity_find_trig_func",
-    "text": "В треугольнике ABC косинус острого угла A равен √19/10. Найдите sin∠A.",
+    "text": "В треугольнике ABC косинус острого угла A равен √19/10. Найди sin∠A.",
     "answer": "0,9",
     "image_file": null,
     "variables": {
@@ -5332,7 +5332,7 @@
   {
     "id": 1500164,
     "pattern": "trig_identity_find_trig_func",
-    "text": "В треугольнике ABC косинус острого угла A равен √91/10. Найдите sin∠A.",
+    "text": "В треугольнике ABC косинус острого угла A равен √91/10. Найди sin∠A.",
     "answer": "0,3",
     "image_file": null,
     "variables": {
@@ -5362,7 +5362,7 @@
   {
     "id": 1500165,
     "pattern": "trig_identity_find_trig_func",
-    "text": "В треугольнике ABC косинус острого угла A равен √21/5. Найдите sin∠A.",
+    "text": "В треугольнике ABC косинус острого угла A равен √21/5. Найди sin∠A.",
     "answer": "0,4",
     "image_file": null,
     "variables": {
@@ -5392,7 +5392,7 @@
   {
     "id": 1500166,
     "pattern": "trig_identity_find_trig_func",
-    "text": "В треугольнике ABC косинус острого угла A равен √51/10. Найдите sin∠A.",
+    "text": "В треугольнике ABC косинус острого угла A равен √51/10. Найди sin∠A.",
     "answer": "0,7",
     "image_file": null,
     "variables": {
@@ -5422,7 +5422,7 @@
   {
     "id": 1500167,
     "pattern": "trig_identity_find_trig_func",
-    "text": "В треугольнике ABC косинус острого угла A равен √24/5. Найдите sin∠A.",
+    "text": "В треугольнике ABC косинус острого угла A равен √24/5. Найди sin∠A.",
     "answer": "0,2",
     "image_file": null,
     "variables": {
@@ -5452,7 +5452,7 @@
   {
     "id": 1500168,
     "pattern": "trig_identity_find_trig_func",
-    "text": "В треугольнике ABC косинус острого угла A равен √16/5. Найдите sin∠A.",
+    "text": "В треугольнике ABC косинус острого угла A равен √16/5. Найди sin∠A.",
     "answer": "0,6",
     "image_file": null,
     "variables": {
@@ -5482,7 +5482,7 @@
   {
     "id": 1500169,
     "pattern": "trig_identity_find_trig_func",
-    "text": "В треугольнике ABC косинус острого угла A равен √9/5. Найдите sin∠A.",
+    "text": "В треугольнике ABC косинус острого угла A равен √9/5. Найди sin∠A.",
     "answer": "0,8",
     "image_file": null,
     "variables": {
@@ -5512,7 +5512,7 @@
   {
     "id": 1500170,
     "pattern": "trig_identity_find_trig_func",
-    "text": "Синус острого угла A треугольника ABC равен 0,6. Найдите cos∠A.",
+    "text": "Синус острого угла A треугольника ABC равен 0,6. Найди cos∠A.",
     "answer": "0,8",
     "image_file": null,
     "variables": {
@@ -5542,7 +5542,7 @@
   {
     "id": 1500171,
     "pattern": "trig_identity_find_trig_func",
-    "text": "Синус острого угла A треугольника ABC равен 0,8. Найдите cos∠A.",
+    "text": "Синус острого угла A треугольника ABC равен 0,8. Найди cos∠A.",
     "answer": "0,6",
     "image_file": null,
     "variables": {
@@ -5572,7 +5572,7 @@
   {
     "id": 1500172,
     "pattern": "triangle_medians_intersection",
-    "text": "Точки M и N являются серединами сторон AB и BC треугольника ABC соответственно. Отрезки AN и CM пересекаются в точке O, AN = 21, CM = 24. Найдите AO.",
+    "text": "Точки M и N являются серединами сторон AB и BC треугольника ABC соответственно. Отрезки AN и CM пересекаются в точке O, AN = 21, CM = 24. Найди AO.",
     "answer": 14,
     "image_file": "T2_triangle_medians_intersection.png",
     "variables": {
@@ -5603,7 +5603,7 @@
   {
     "id": 1500173,
     "pattern": "triangle_medians_intersection",
-    "text": "В треугольнике ABC медианы AN и CM пересекаются в точке O. Длина CM = 18, AN = 15. Найдите CO.",
+    "text": "В треугольнике ABC медианы AN и CM пересекаются в точке O. Длина CM = 18, AN = 15. Найди CO.",
     "answer": 12,
     "image_file": "T2_triangle_medians_intersection.png",
     "variables": {
@@ -5634,7 +5634,7 @@
   {
     "id": 1500174,
     "pattern": "triangle_medians_intersection",
-    "text": "Медианы CM и AN треугольника ABC пересекаются в точке O. Известно, что AN = 33, а CM = 21. Найдите OM.",
+    "text": "Медианы CM и AN треугольника ABC пересекаются в точке O. Известно, что AN = 33, а CM = 21. Найди OM.",
     "answer": 7,
     "image_file": "T2_triangle_medians_intersection.png",
     "variables": {
@@ -5665,7 +5665,7 @@
   {
     "id": 1500175,
     "pattern": "triangle_medians_intersection",
-    "text": "В треугольнике ABC проведены медианы AN и CM, которые пересекаются в точке O. Найдите ON, если известно, что AN = 27, а CM = 30.",
+    "text": "В треугольнике ABC проведены медианы AN и CM, которые пересекаются в точке O. Найди ON, если известно, что AN = 27, а CM = 30.",
     "answer": 9,
     "image_file": "T2_triangle_medians_intersection.png",
     "variables": {
@@ -5696,7 +5696,7 @@
   {
     "id": 1500176,
     "pattern": "triangle_medians_intersection",
-    "text": "Точки M и N — середины сторон AB и BC. Отрезки AN и CM пересекаются в точке O. Найдите AO, если AN = 9. Длина CM = 12.",
+    "text": "Точки M и N — середины сторон AB и BC. Отрезки AN и CM пересекаются в точке O. Найди AO, если AN = 9. Длина CM = 12.",
     "answer": 6,
     "image_file": "T2_triangle_medians_intersection.png",
     "variables": {
@@ -5727,7 +5727,7 @@
   {
     "id": 1500177,
     "pattern": "triangle_medians_intersection",
-    "text": "В треугольнике ABC медианы AN и CM пересекаются в точке O. Найдите CO, если CM = 36. Длина AN = 24.",
+    "text": "В треугольнике ABC медианы AN и CM пересекаются в точке O. Найди CO, если CM = 36. Длина AN = 24.",
     "answer": 24,
     "image_file": "T2_triangle_medians_intersection.png",
     "variables": {
@@ -5758,7 +5758,7 @@
   {
     "id": 1500178,
     "pattern": "triangle_medians_intersection",
-    "text": "Отрезки CM и AN являются медианами треугольника ABC и пересекаются в точке O. Известно, что AN = 45 и CM = 42. Найдите ON.",
+    "text": "Отрезки CM и AN являются медианами треугольника ABC и пересекаются в точке O. Известно, что AN = 45 и CM = 42. Найди ON.",
     "answer": 15,
     "image_file": "T2_triangle_medians_intersection.png",
     "variables": {
@@ -5789,7 +5789,7 @@
   {
     "id": 1500179,
     "pattern": "triangle_medians_intersection",
-    "text": "В треугольнике ABC проведены медианы CM и AN к сторонам AB и BC. Их точка пересечения — O. Найдите OM, если CM = 15, а AN = 18.",
+    "text": "В треугольнике ABC проведены медианы CM и AN к сторонам AB и BC. Их точка пересечения — O. Найди OM, если CM = 15, а AN = 18.",
     "answer": 5,
     "image_file": "T2_triangle_medians_intersection.png",
     "variables": {
@@ -5820,7 +5820,7 @@
   {
     "id": 1500180,
     "pattern": "triangle_medians_intersection",
-    "text": "Найдите длину большего отрезка медианы AN, если AN = 18, а вторая медиана CM = 27.",
+    "text": "Найди длину большего отрезка медианы AN, если AN = 18, а вторая медиана CM = 27.",
     "answer": 12,
     "image_file": "T2_triangle_medians_intersection.png",
     "variables": {
@@ -5851,7 +5851,7 @@
   {
     "id": 1500181,
     "pattern": "triangle_medians_intersection",
-    "text": "Найдите длину меньшего отрезка медианы CM, если CM = 24, а вторая медиана AN = 30.",
+    "text": "Найди длину меньшего отрезка медианы CM, если CM = 24, а вторая медиана AN = 30.",
     "answer": 8,
     "image_file": "T2_triangle_medians_intersection.png",
     "variables": {
@@ -5882,7 +5882,7 @@
   {
     "id": 1500182,
     "pattern": "triangle_medians_intersection",
-    "text": "Медианы AN и CM треугольника ABC пересекаются в точке O. AN = 33. Найдите AO.",
+    "text": "Медианы AN и CM треугольника ABC пересекаются в точке O. AN = 33. Найди AO.",
     "answer": 22,
     "image_file": "T2_triangle_medians_intersection.png",
     "variables": {
@@ -5912,7 +5912,7 @@
   {
     "id": 1500183,
     "pattern": "triangle_medians_intersection",
-    "text": "В треугольнике ABC проведены медианы AN и CM. Они пересекаются в точке O. Найдите CO, если CM = 12.",
+    "text": "В треугольнике ABC проведены медианы AN и CM. Они пересекаются в точке O. Найди CO, если CM = 12.",
     "answer": 8,
     "image_file": "T2_triangle_medians_intersection.png",
     "variables": {
@@ -5942,7 +5942,7 @@
   {
     "id": 1500184,
     "pattern": "triangle_medians_intersection",
-    "text": "Точка O — точка пересечения медиан AN и CM. Найдите длину отрезка ON, если вся медиана AN равна 21.",
+    "text": "Точка O — точка пересечения медиан AN и CM. Найди длину отрезка ON, если вся медиана AN равна 21.",
     "answer": 7,
     "image_file": "T2_triangle_medians_intersection.png",
     "variables": {
@@ -5972,7 +5972,7 @@
   {
     "id": 1500185,
     "pattern": "triangle_medians_intersection",
-    "text": "Медианы треугольника ABC, проведенные из вершин A и C, пересекаются в точке O. Найдите OM, если медиана CM равна 39.",
+    "text": "Медианы треугольника ABC, проведенные из вершин A и C, пересекаются в точке O. Найди OM, если медиана CM равна 39.",
     "answer": 13,
     "image_file": "T2_triangle_medians_intersection.png",
     "variables": {
@@ -6002,7 +6002,7 @@
   {
     "id": 1500186,
     "pattern": "triangle_medians_intersection",
-    "text": "В треугольнике ABC медианы AN и CM пересекаются в точке O. Известно, что CO = 14. Найдите CM.",
+    "text": "В треугольнике ABC медианы AN и CM пересекаются в точке O. Известно, что CO = 14. Найди CM.",
     "answer": 21,
     "image_file": "T2_triangle_medians_intersection.png",
     "variables": {
@@ -7964,6 +7964,4005 @@
       "humanizer_data": {
         "target_name": "bisector",
         "k": 17
+      }
+    }
+  },
+  {
+    "id": 1500262,
+    "pattern": "right_triangle_angles_sum",
+    "narrative": "find_second_acute_angle",
+    "text": "В прямоугольном треугольнике один из острых углов равен 43°. Найди его второй острый угол.",
+    "answer": 47,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "angle_alpha": 43
+      },
+      "to_find": {
+        "type": "angle",
+        "role": "second_acute"
+      },
+      "humanizer_data": {
+        "sum_total": 90,
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500263,
+    "pattern": "right_triangle_angles_sum",
+    "narrative": "find_second_acute_angle",
+    "text": "Один из острых углов прямоугольного треугольника составляет 12°. Вычисли величину другого острого угла.",
+    "answer": 78,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "angle_alpha": 12
+      },
+      "to_find": {
+        "type": "angle",
+        "role": "second_acute"
+      },
+      "humanizer_data": {
+        "sum_total": 90,
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500264,
+    "pattern": "right_triangle_angles_sum",
+    "narrative": "find_second_acute_angle",
+    "text": "В прямоугольном треугольнике один из углов равен 57°. Найди второй острый угол.",
+    "answer": 33,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "angle_alpha": 57
+      },
+      "to_find": {
+        "type": "angle",
+        "role": "second_acute"
+      },
+      "humanizer_data": {
+        "sum_total": 90,
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500265,
+    "pattern": "right_triangle_angles_sum",
+    "narrative": "find_second_acute_angle",
+    "text": "Острый угол прямоугольного треугольника равен 66°. Определи величину его второго острого угла.",
+    "answer": 24,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "angle_alpha": 66
+      },
+      "to_find": {
+        "type": "angle",
+        "role": "second_acute"
+      },
+      "humanizer_data": {
+        "sum_total": 90,
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500266,
+    "pattern": "right_triangle_angles_sum",
+    "narrative": "find_second_acute_angle",
+    "text": "Один из острых углов прямоугольного треугольника равен 21°. Найди его другой острый угол.",
+    "answer": 69,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "angle_alpha": 21
+      },
+      "to_find": {
+        "type": "angle",
+        "role": "second_acute"
+      },
+      "humanizer_data": {
+        "sum_total": 90,
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500267,
+    "pattern": "right_triangle_angles_sum",
+    "narrative": "find_second_acute_angle",
+    "text": "В прямоугольном треугольнике ABC ∠C = 90° угол B равен 49°. Чему равен угол A?",
+    "answer": 41,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "angle_alpha": 49
+      },
+      "to_find": {
+        "type": "angle",
+        "role": "second_acute"
+      },
+      "humanizer_data": {
+        "sum_total": 90,
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500268,
+    "pattern": "right_triangle_angles_sum",
+    "narrative": "find_second_acute_angle",
+    "text": "Один из углов прямоугольного треугольника равен 64°. Найди его второй острый угол.",
+    "answer": 26,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "angle_alpha": 64
+      },
+      "to_find": {
+        "type": "angle",
+        "role": "second_acute"
+      },
+      "humanizer_data": {
+        "sum_total": 90,
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500269,
+    "pattern": "right_triangle_angles_sum",
+    "narrative": "find_second_acute_angle",
+    "text": "В прямоугольном треугольнике один из острых углов равен 5°. Найди второй острый угол.",
+    "answer": 85,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "angle_alpha": 5
+      },
+      "to_find": {
+        "type": "angle",
+        "role": "second_acute"
+      },
+      "humanizer_data": {
+        "sum_total": 90,
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500270,
+    "pattern": "right_triangle_angles_sum",
+    "narrative": "find_second_acute_angle",
+    "text": "Найди острый угол прямоугольного треугольника, если другой его острый угол составляет 33°.",
+    "answer": 57,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "angle_alpha": 33
+      },
+      "to_find": {
+        "type": "angle",
+        "role": "second_acute"
+      },
+      "humanizer_data": {
+        "sum_total": 90,
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500271,
+    "pattern": "right_triangle_angles_sum",
+    "narrative": "find_second_acute_angle",
+    "text": "В прямоугольном треугольнике один острый угол равен 41°. Определи величину второго острого угла.",
+    "answer": 49,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "angle_alpha": 41
+      },
+      "to_find": {
+        "type": "angle",
+        "role": "second_acute"
+      },
+      "humanizer_data": {
+        "sum_total": 90,
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500272,
+    "pattern": "right_triangle_angles_sum",
+    "narrative": "find_second_acute_angle",
+    "text": "В треугольнике ABC угол C прямой, а угол A равен 55°. Найди угол B.",
+    "answer": 35,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "angle_alpha": 55
+      },
+      "to_find": {
+        "type": "angle",
+        "role": "second_acute"
+      },
+      "humanizer_data": {
+        "sum_total": 90,
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500273,
+    "pattern": "right_triangle_angles_sum",
+    "narrative": "find_second_acute_angle",
+    "text": "Чему равен второй острый угол в прямоугольном треугольнике, если один из них составляет 82°?",
+    "answer": 8,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "angle_alpha": 82
+      },
+      "to_find": {
+        "type": "angle",
+        "role": "second_acute"
+      },
+      "humanizer_data": {
+        "sum_total": 90,
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500274,
+    "pattern": "right_triangle_angles_sum",
+    "narrative": "find_second_acute_angle",
+    "text": "Один из острых углов прямоугольного треугольника равен 59°. Найди его другой острый угол.",
+    "answer": 31,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "angle_alpha": 59
+      },
+      "to_find": {
+        "type": "angle",
+        "role": "second_acute"
+      },
+      "humanizer_data": {
+        "sum_total": 90,
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500275,
+    "pattern": "right_triangle_angles_sum",
+    "narrative": "find_second_acute_angle",
+    "text": "Один из острых углов прямоугольного треугольника равен 27°. Найди другой острый угол.",
+    "answer": 63,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "angle_alpha": 27
+      },
+      "to_find": {
+        "type": "angle",
+        "role": "second_acute"
+      },
+      "humanizer_data": {
+        "sum_total": 90,
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500276,
+    "pattern": "right_triangle_angles_sum",
+    "narrative": "find_second_acute_angle",
+    "text": "В прямоугольном треугольнике острый угол составляет 39°. Вычисли градусную меру другого острого угла.",
+    "answer": 51,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "angle_alpha": 39
+      },
+      "to_find": {
+        "type": "angle",
+        "role": "second_acute"
+      },
+      "humanizer_data": {
+        "sum_total": 90,
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500277,
+    "pattern": "right_triangle_angles_sum",
+    "narrative": "find_second_acute_angle",
+    "text": "В треугольнике ABC известно, что угол C равен 90°, а угол A равен 14°. Найди угол B.",
+    "answer": 76,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "angle_alpha": 14
+      },
+      "to_find": {
+        "type": "angle",
+        "role": "second_acute"
+      },
+      "humanizer_data": {
+        "sum_total": 90,
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500278,
+    "pattern": "right_triangle_angles_sum",
+    "narrative": "find_second_acute_angle",
+    "text": "Найди величину острого угла прямоугольного треугольника, если второй его острый угол равен 52°.",
+    "answer": 38,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "angle_alpha": 52
+      },
+      "to_find": {
+        "type": "angle",
+        "role": "second_acute"
+      },
+      "humanizer_data": {
+        "sum_total": 90,
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500279,
+    "pattern": "right_triangle_angles_sum",
+    "narrative": "find_second_acute_angle",
+    "text": "Острый угол прямоугольного треугольника равен 61°. Определи величину другого острого угла.",
+    "answer": 29,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "angle_alpha": 61
+      },
+      "to_find": {
+        "type": "angle",
+        "role": "second_acute"
+      },
+      "humanizer_data": {
+        "sum_total": 90,
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500280,
+    "pattern": "right_triangle_angles_sum",
+    "narrative": "find_second_acute_angle",
+    "text": "В прямоугольном треугольнике один из острых углов равен 73°. Найди его второй острый угол.",
+    "answer": 17,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "angle_alpha": 73
+      },
+      "to_find": {
+        "type": "angle",
+        "role": "second_acute"
+      },
+      "humanizer_data": {
+        "sum_total": 90,
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500281,
+    "pattern": "right_triangle_angles_sum",
+    "narrative": "find_second_acute_angle",
+    "text": "В прямоугольном треугольнике один острый угол равен 22°. Вычисли другой острый угол.",
+    "answer": 68,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "angle_alpha": 22
+      },
+      "to_find": {
+        "type": "angle",
+        "role": "second_acute"
+      },
+      "humanizer_data": {
+        "sum_total": 90,
+        "angle_symbol": "∠"
+      }
+    }
+  },
+  {
+    "id": 1500282,
+    "pattern": "pythagoras_find_leg",
+    "narrative": "find_leg_by_hypotenuse_and_leg",
+    "text": "В прямоугольном треугольнике гипотенуза равна 10, а один из его катетов равен 6. Найди длину другого катета.",
+    "answer": 8,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "hypotenuse": 10,
+        "known_leg": 6
+      },
+      "to_find": {
+        "type": "side",
+        "role": "unknown_leg"
+      },
+      "humanizer_data": {
+        "formula": "b² = c² - a²",
+        "c_squared": 100,
+        "a_squared": 36,
+        "diff": 64
+      }
+    }
+  },
+  {
+    "id": 1500283,
+    "pattern": "pythagoras_find_leg",
+    "narrative": "find_leg_by_hypotenuse_and_leg",
+    "text": "Стороны прямоугольного треугольника равны 5 и 13. Если 13 — это гипотенуза, Найди неизвестный катет.",
+    "answer": 12,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "hypotenuse": 13,
+        "known_leg": 5
+      },
+      "to_find": {
+        "type": "side",
+        "role": "unknown_leg"
+      },
+      "humanizer_data": {
+        "formula": "b² = c² - a²",
+        "c_squared": 169,
+        "a_squared": 25,
+        "diff": 144
+      }
+    }
+  },
+  {
+    "id": 1500284,
+    "pattern": "pythagoras_find_leg",
+    "narrative": "find_leg_by_hypotenuse_and_leg",
+    "text": "В прямоугольном треугольнике гипотенуза равна 17, а один из катетов равен 8. Вычисли второй катет.",
+    "answer": 15,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "hypotenuse": 17,
+        "known_leg": 8
+      },
+      "to_find": {
+        "type": "side",
+        "role": "unknown_leg"
+      },
+      "humanizer_data": {
+        "formula": "b² = c² - a²",
+        "c_squared": 289,
+        "a_squared": 64,
+        "diff": 225
+      }
+    }
+  },
+  {
+    "id": 1500285,
+    "pattern": "pythagoras_find_leg",
+    "narrative": "find_leg_by_hypotenuse_and_leg",
+    "text": "Найди катет прямоугольного треугольника, если его гипотенуза равна 25, а другой катет равен 7.",
+    "answer": 24,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "hypotenuse": 25,
+        "known_leg": 7
+      },
+      "to_find": {
+        "type": "side",
+        "role": "unknown_leg"
+      },
+      "humanizer_data": {
+        "formula": "b² = c² - a²",
+        "c_squared": 625,
+        "a_squared": 49,
+        "diff": 576
+      }
+    }
+  },
+  {
+    "id": 1500286,
+    "pattern": "pythagoras_find_leg",
+    "narrative": "find_leg_by_hypotenuse_and_leg",
+    "text": "Гипотенуза прямоугольного треугольника равна 41, а один из катетов равен 9. Найди второй катет.",
+    "answer": 40,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "hypotenuse": 41,
+        "known_leg": 9
+      },
+      "to_find": {
+        "type": "side",
+        "role": "unknown_leg"
+      },
+      "humanizer_data": {
+        "formula": "b² = c² - a²",
+        "c_squared": 1681,
+        "a_squared": 81,
+        "diff": 1600
+      }
+    }
+  },
+  {
+    "id": 1500287,
+    "pattern": "pythagoras_find_leg",
+    "narrative": "find_leg_by_hypotenuse_and_leg",
+    "text": "В прямоугольном треугольнике катет равен 12, а гипотенуза равна 15. Найди длину другого катета.",
+    "answer": 9,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "hypotenuse": 15,
+        "known_leg": 12
+      },
+      "to_find": {
+        "type": "side",
+        "role": "unknown_leg"
+      },
+      "humanizer_data": {
+        "formula": "b² = c² - a²",
+        "c_squared": 225,
+        "a_squared": 144,
+        "diff": 81
+      }
+    }
+  },
+  {
+    "id": 1500288,
+    "pattern": "pythagoras_find_leg",
+    "narrative": "find_leg_by_hypotenuse_and_leg",
+    "text": "Найди второй катет прямоугольного треугольника, если его гипотенуза равна 20, а первый катет равен 16.",
+    "answer": 12,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "hypotenuse": 20,
+        "known_leg": 16
+      },
+      "to_find": {
+        "type": "side",
+        "role": "unknown_leg"
+      },
+      "humanizer_data": {
+        "formula": "b² = c² - a²",
+        "c_squared": 400,
+        "a_squared": 256,
+        "diff": 144
+      }
+    }
+  },
+  {
+    "id": 1500289,
+    "pattern": "pythagoras_find_leg",
+    "narrative": "find_leg_by_hypotenuse_and_leg",
+    "text": "Один из катетов прямоугольного треугольника равен 24, а гипотенуза равна 26. Вычисли длину другого катета.",
+    "answer": 10,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "hypotenuse": 26,
+        "known_leg": 24
+      },
+      "to_find": {
+        "type": "side",
+        "role": "unknown_leg"
+      },
+      "humanizer_data": {
+        "formula": "b² = c² - a²",
+        "c_squared": 676,
+        "a_squared": 576,
+        "diff": 100
+      }
+    }
+  },
+  {
+    "id": 1500290,
+    "pattern": "pythagoras_find_leg",
+    "narrative": "find_leg_by_hypotenuse_and_leg",
+    "text": "В прямоугольном треугольнике гипотенуза равна 37, а один из катетов равен 35. Найди неизвестный катет.",
+    "answer": 12,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "hypotenuse": 37,
+        "known_leg": 35
+      },
+      "to_find": {
+        "type": "side",
+        "role": "unknown_leg"
+      },
+      "humanizer_data": {
+        "formula": "b² = c² - a²",
+        "c_squared": 1369,
+        "a_squared": 1225,
+        "diff": 144
+      }
+    }
+  },
+  {
+    "id": 1500291,
+    "pattern": "pythagoras_find_leg",
+    "narrative": "find_leg_by_hypotenuse_and_leg",
+    "text": "Найди катет прямоугольного треугольника, если другой его катет равен 20, а гипотенуза равна 25.",
+    "answer": 15,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "hypotenuse": 25,
+        "known_leg": 20
+      },
+      "to_find": {
+        "type": "side",
+        "role": "unknown_leg"
+      },
+      "humanizer_data": {
+        "formula": "b² = c² - a²",
+        "c_squared": 625,
+        "a_squared": 400,
+        "diff": 225
+      }
+    }
+  },
+  {
+    "id": 1500292,
+    "pattern": "pythagoras_find_leg",
+    "narrative": "find_leg_by_hypotenuse_and_leg",
+    "text": "Гипотенуза прямоугольного треугольника равна 50, а один из катетов равен 30. Найди второй катет.",
+    "answer": 40,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "hypotenuse": 50,
+        "known_leg": 30
+      },
+      "to_find": {
+        "type": "side",
+        "role": "unknown_leg"
+      },
+      "humanizer_data": {
+        "formula": "b² = c² - a²",
+        "c_squared": 2500,
+        "a_squared": 900,
+        "diff": 1600
+      }
+    }
+  },
+  {
+    "id": 1500293,
+    "pattern": "pythagoras_find_leg",
+    "narrative": "find_leg_by_hypotenuse_and_leg",
+    "text": "В прямоугольном треугольнике гипотенуза равна 13, а один из катетов равен 12. Найди другой катет.",
+    "answer": 5,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "hypotenuse": 13,
+        "known_leg": 12
+      },
+      "to_find": {
+        "type": "side",
+        "role": "unknown_leg"
+      },
+      "humanizer_data": {
+        "formula": "b² = c² - a²",
+        "c_squared": 169,
+        "a_squared": 144,
+        "diff": 25
+      }
+    }
+  },
+  {
+    "id": 1500294,
+    "pattern": "pythagoras_find_leg",
+    "narrative": "find_leg_by_hypotenuse_and_leg",
+    "text": "Найди длину катета прямоугольного треугольника, если его гипотенуза равна 17, а другой катет равен 15.",
+    "answer": 8,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "hypotenuse": 17,
+        "known_leg": 15
+      },
+      "to_find": {
+        "type": "side",
+        "role": "unknown_leg"
+      },
+      "humanizer_data": {
+        "formula": "b² = c² - a²",
+        "c_squared": 289,
+        "a_squared": 225,
+        "diff": 64
+      }
+    }
+  },
+  {
+    "id": 1500295,
+    "pattern": "pythagoras_find_leg",
+    "narrative": "find_leg_by_hypotenuse_and_leg",
+    "text": "В прямоугольном треугольнике гипотенуза равна 25, а один из катетов равен 24. Чему равен второй катет?",
+    "answer": 7,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "hypotenuse": 25,
+        "known_leg": 24
+      },
+      "to_find": {
+        "type": "side",
+        "role": "unknown_leg"
+      },
+      "humanizer_data": {
+        "formula": "b² = c² - a²",
+        "c_squared": 625,
+        "a_squared": 576,
+        "diff": 49
+      }
+    }
+  },
+  {
+    "id": 1500296,
+    "pattern": "pythagoras_find_leg",
+    "narrative": "find_leg_by_hypotenuse_and_leg",
+    "text": "Вычисли катет прямоугольного треугольника, если его гипотенуза равна 10, а другой катет равен 8.",
+    "answer": 6,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "hypotenuse": 10,
+        "known_leg": 8
+      },
+      "to_find": {
+        "type": "side",
+        "role": "unknown_leg"
+      },
+      "humanizer_data": {
+        "formula": "b² = c² - a²",
+        "c_squared": 100,
+        "a_squared": 64,
+        "diff": 36
+      }
+    }
+  },
+  {
+    "id": 1500297,
+    "pattern": "pythagoras_find_leg",
+    "narrative": "find_leg_by_hypotenuse_and_leg",
+    "text": "Катет прямоугольного треугольника равен 21, а его гипотенуза равна 29. Найди второй катет.",
+    "answer": 20,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "hypotenuse": 29,
+        "known_leg": 21
+      },
+      "to_find": {
+        "type": "side",
+        "role": "unknown_leg"
+      },
+      "humanizer_data": {
+        "formula": "b² = c² - a²",
+        "c_squared": 841,
+        "a_squared": 441,
+        "diff": 400
+      }
+    }
+  },
+  {
+    "id": 1500298,
+    "pattern": "pythagoras_find_leg",
+    "narrative": "find_leg_by_hypotenuse_and_leg",
+    "text": "В прямоугольном треугольнике гипотенуза равна 39, а катет равен 15. Найди длину другого катета.",
+    "answer": 36,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "hypotenuse": 39,
+        "known_leg": 15
+      },
+      "to_find": {
+        "type": "side",
+        "role": "unknown_leg"
+      },
+      "humanizer_data": {
+        "formula": "b² = c² - a²",
+        "c_squared": 1521,
+        "a_squared": 225,
+        "diff": 1296
+      }
+    }
+  },
+  {
+    "id": 1500299,
+    "pattern": "pythagoras_find_leg",
+    "narrative": "find_leg_by_hypotenuse_and_leg",
+    "text": "Гипотенуза прямоугольного треугольника равна 65, а один из катетов равен 25. Вычисли неизвестный катет.",
+    "answer": 60,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "hypotenuse": 65,
+        "known_leg": 25
+      },
+      "to_find": {
+        "type": "side",
+        "role": "unknown_leg"
+      },
+      "humanizer_data": {
+        "formula": "b² = c² - a²",
+        "c_squared": 4225,
+        "a_squared": 625,
+        "diff": 3600
+      }
+    }
+  },
+  {
+    "id": 1500300,
+    "pattern": "pythagoras_find_leg",
+    "narrative": "find_leg_by_hypotenuse_and_leg",
+    "text": "Найди второй катет прямоугольного треугольника, если гипотенуза равна 34, а первый катет равен 30.",
+    "answer": 16,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "hypotenuse": 34,
+        "known_leg": 30
+      },
+      "to_find": {
+        "type": "side",
+        "role": "unknown_leg"
+      },
+      "humanizer_data": {
+        "formula": "b² = c² - a²",
+        "c_squared": 1156,
+        "a_squared": 900,
+        "diff": 256
+      }
+    }
+  },
+  {
+    "id": 1500301,
+    "pattern": "pythagoras_find_leg",
+    "narrative": "find_leg_by_hypotenuse_and_leg",
+    "text": "В прямоугольном треугольнике гипотенуза равна 85, а один из катетов равен 13. Найди другой катет.",
+    "answer": 84,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "hypotenuse": 85,
+        "known_leg": 13
+      },
+      "to_find": {
+        "type": "side",
+        "role": "unknown_leg"
+      },
+      "humanizer_data": {
+        "formula": "b² = c² - a²",
+        "c_squared": 7225,
+        "a_squared": 169,
+        "diff": 7056
+      }
+    }
+  },
+  {
+    "id": 1500302,
+    "pattern": "pythagoras_find_hypotenuse",
+    "narrative": "find_hypotenuse_by_legs",
+    "text": "В прямоугольном треугольнике катеты равны 3 и 4. Найди его гипотенузу.",
+    "answer": 5,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "leg_1": 3,
+        "leg_2": 4
+      },
+      "to_find": {
+        "type": "side",
+        "role": "hypotenuse"
+      },
+      "humanizer_data": {
+        "formula": "c² = a² + b²",
+        "a_squared": 9,
+        "b_squared": 16,
+        "sum_squared": 25
+      }
+    }
+  },
+  {
+    "id": 1500303,
+    "pattern": "pythagoras_find_hypotenuse",
+    "narrative": "find_hypotenuse_by_legs",
+    "text": "Найди длину гипотенузы прямоугольного треугольника, если его катеты составляют 5 и 12.",
+    "answer": 13,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "leg_1": 5,
+        "leg_2": 12
+      },
+      "to_find": {
+        "type": "side",
+        "role": "hypotenuse"
+      },
+      "humanizer_data": {
+        "formula": "c² = a² + b²",
+        "a_squared": 25,
+        "b_squared": 144,
+        "sum_squared": 169
+      }
+    }
+  },
+  {
+    "id": 1500304,
+    "pattern": "pythagoras_find_hypotenuse",
+    "narrative": "find_hypotenuse_by_legs",
+    "text": "Катеты прямоугольного треугольника равны 6 и 8. Вычисли длину его самой большой стороны.",
+    "answer": 10,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "leg_1": 6,
+        "leg_2": 8
+      },
+      "to_find": {
+        "type": "side",
+        "role": "hypotenuse"
+      },
+      "humanizer_data": {
+        "formula": "c² = a² + b²",
+        "a_squared": 36,
+        "b_squared": 64,
+        "sum_squared": 100
+      }
+    }
+  },
+  {
+    "id": 1500305,
+    "pattern": "pythagoras_find_hypotenuse",
+    "narrative": "find_hypotenuse_by_legs",
+    "text": "В прямоугольном треугольнике один катет равен 8, а другой — 15. Чему равна гипотенуза?",
+    "answer": 17,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "leg_1": 8,
+        "leg_2": 15
+      },
+      "to_find": {
+        "type": "side",
+        "role": "hypotenuse"
+      },
+      "humanizer_data": {
+        "formula": "c² = a² + b²",
+        "a_squared": 64,
+        "b_squared": 225,
+        "sum_squared": 289
+      }
+    }
+  },
+  {
+    "id": 1500306,
+    "pattern": "pythagoras_find_hypotenuse",
+    "narrative": "find_hypotenuse_by_legs",
+    "text": "Найди гипотенузу прямоугольного треугольника, стороны которого, образующие прямой угол, равны 9 и 12.",
+    "answer": 15,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "leg_1": 9,
+        "leg_2": 12
+      },
+      "to_find": {
+        "type": "side",
+        "role": "hypotenuse"
+      },
+      "humanizer_data": {
+        "formula": "c² = a² + b²",
+        "a_squared": 81,
+        "b_squared": 144,
+        "sum_squared": 225
+      }
+    }
+  },
+  {
+    "id": 1500307,
+    "pattern": "pythagoras_find_hypotenuse",
+    "narrative": "find_hypotenuse_by_legs",
+    "text": "Вычисли расстояние между концами катетов, если их длины в прямоугольном треугольнике равны 12 и 16.",
+    "answer": 20,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "leg_1": 12,
+        "leg_2": 16
+      },
+      "to_find": {
+        "type": "side",
+        "role": "hypotenuse"
+      },
+      "humanizer_data": {
+        "formula": "c² = a² + b²",
+        "a_squared": 144,
+        "b_squared": 256,
+        "sum_squared": 400
+      }
+    }
+  },
+  {
+    "id": 1500308,
+    "pattern": "pythagoras_find_hypotenuse",
+    "narrative": "find_hypotenuse_by_legs",
+    "text": "Два катета прямоугольного треугольника равны 7 и 24. Найди длину гипотенузы.",
+    "answer": 25,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "leg_1": 7,
+        "leg_2": 24
+      },
+      "to_find": {
+        "type": "side",
+        "role": "hypotenuse"
+      },
+      "humanizer_data": {
+        "formula": "c² = a² + b²",
+        "a_squared": 49,
+        "b_squared": 576,
+        "sum_squared": 625
+      }
+    }
+  },
+  {
+    "id": 1500309,
+    "pattern": "pythagoras_find_hypotenuse",
+    "narrative": "find_hypotenuse_by_legs",
+    "text": "В прямоугольном треугольнике стороны, прилежащие к прямому углу, равны 20 и 21. Найди третью сторону.",
+    "answer": 29,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "leg_1": 20,
+        "leg_2": 21
+      },
+      "to_find": {
+        "type": "side",
+        "role": "hypotenuse"
+      },
+      "humanizer_data": {
+        "formula": "c² = a² + b²",
+        "a_squared": 400,
+        "b_squared": 441,
+        "sum_squared": 841
+      }
+    }
+  },
+  {
+    "id": 1500310,
+    "pattern": "pythagoras_find_hypotenuse",
+    "narrative": "find_hypotenuse_by_legs",
+    "text": "Катеты прямоугольного треугольника равны 10 и 24. Вычисли его гипотенузу.",
+    "answer": 26,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "leg_1": 10,
+        "leg_2": 24
+      },
+      "to_find": {
+        "type": "side",
+        "role": "hypotenuse"
+      },
+      "humanizer_data": {
+        "formula": "c² = a² + b²",
+        "a_squared": 100,
+        "b_squared": 576,
+        "sum_squared": 676
+      }
+    }
+  },
+  {
+    "id": 1500311,
+    "pattern": "pythagoras_find_hypotenuse",
+    "narrative": "find_hypotenuse_by_legs",
+    "text": "Найди гипотенузу прямоугольного треугольника, если его катеты равны 15 и 20.",
+    "answer": 25,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "leg_1": 15,
+        "leg_2": 20
+      },
+      "to_find": {
+        "type": "side",
+        "role": "hypotenuse"
+      },
+      "humanizer_data": {
+        "formula": "c² = a² + b²",
+        "a_squared": 225,
+        "b_squared": 400,
+        "sum_squared": 625
+      }
+    }
+  },
+  {
+    "id": 1500312,
+    "pattern": "pythagoras_find_hypotenuse",
+    "narrative": "find_hypotenuse_by_legs",
+    "text": "Чему равна гипотенуза прямоугольного треугольника с катетами 12 и 35?",
+    "answer": 37,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "leg_1": 12,
+        "leg_2": 35
+      },
+      "to_find": {
+        "type": "side",
+        "role": "hypotenuse"
+      },
+      "humanizer_data": {
+        "formula": "c² = a² + b²",
+        "a_squared": 144,
+        "b_squared": 1225,
+        "sum_squared": 1369
+      }
+    }
+  },
+  {
+    "id": 1500313,
+    "pattern": "pythagoras_find_hypotenuse",
+    "narrative": "find_hypotenuse_by_legs",
+    "text": "Найди большую сторону прямоугольного треугольника, если две другие его стороны равны 16 и 30.",
+    "answer": 34,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "leg_1": 16,
+        "leg_2": 30
+      },
+      "to_find": {
+        "type": "side",
+        "role": "hypotenuse"
+      },
+      "humanizer_data": {
+        "formula": "c² = a² + b²",
+        "a_squared": 256,
+        "b_squared": 900,
+        "sum_squared": 1156
+      }
+    }
+  },
+  {
+    "id": 1500314,
+    "pattern": "pythagoras_find_hypotenuse",
+    "narrative": "find_hypotenuse_by_legs",
+    "text": "В прямоугольном треугольнике катеты равны 9 и 40. Найди длину гипотенузы.",
+    "answer": 41,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "leg_1": 9,
+        "leg_2": 40
+      },
+      "to_find": {
+        "type": "side",
+        "role": "hypotenuse"
+      },
+      "humanizer_data": {
+        "formula": "c² = a² + b²",
+        "a_squared": 81,
+        "b_squared": 1600,
+        "sum_squared": 1681
+      }
+    }
+  },
+  {
+    "id": 1500315,
+    "pattern": "pythagoras_find_hypotenuse",
+    "narrative": "find_hypotenuse_by_legs",
+    "text": "Вычисли гипотенузу прямоугольного треугольника, катеты которого равны 18 и 24.",
+    "answer": 30,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "leg_1": 18,
+        "leg_2": 24
+      },
+      "to_find": {
+        "type": "side",
+        "role": "hypotenuse"
+      },
+      "humanizer_data": {
+        "formula": "c² = a² + b²",
+        "a_squared": 324,
+        "b_squared": 576,
+        "sum_squared": 900
+      }
+    }
+  },
+  {
+    "id": 1500316,
+    "pattern": "pythagoras_find_hypotenuse",
+    "narrative": "find_hypotenuse_by_legs",
+    "text": "В треугольнике с прямым углом катеты равны 21 и 28. Чему равна гипотенуза?",
+    "answer": 35,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "leg_1": 21,
+        "leg_2": 28
+      },
+      "to_find": {
+        "type": "side",
+        "role": "hypotenuse"
+      },
+      "humanizer_data": {
+        "formula": "c² = a² + b²",
+        "a_squared": 441,
+        "b_squared": 784,
+        "sum_squared": 1225
+      }
+    }
+  },
+  {
+    "id": 1500317,
+    "pattern": "pythagoras_find_hypotenuse",
+    "narrative": "find_hypotenuse_by_legs",
+    "text": "Найди длину самой длинной стороны прямоугольного треугольника, если его катеты равны 11 и 60.",
+    "answer": 61,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "leg_1": 11,
+        "leg_2": 60
+      },
+      "to_find": {
+        "type": "side",
+        "role": "hypotenuse"
+      },
+      "humanizer_data": {
+        "formula": "c² = a² + b²",
+        "a_squared": 121,
+        "b_squared": 3600,
+        "sum_squared": 3721
+      }
+    }
+  },
+  {
+    "id": 1500318,
+    "pattern": "pythagoras_find_hypotenuse",
+    "narrative": "find_hypotenuse_by_legs",
+    "text": "Катеты прямоугольного треугольника равны 20 и 48. Вычисли расстояние между их крайними точками.",
+    "answer": 52,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "leg_1": 20,
+        "leg_2": 48
+      },
+      "to_find": {
+        "type": "side",
+        "role": "hypotenuse"
+      },
+      "humanizer_data": {
+        "formula": "c² = a² + b²",
+        "a_squared": 400,
+        "b_squared": 2304,
+        "sum_squared": 2704
+      }
+    }
+  },
+  {
+    "id": 1500319,
+    "pattern": "pythagoras_find_hypotenuse",
+    "narrative": "find_hypotenuse_by_legs",
+    "text": "Найди гипотенузу прямоугольного треугольника, если известно, что его катеты равны 13 и 84.",
+    "answer": 85,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "leg_1": 13,
+        "leg_2": 84
+      },
+      "to_find": {
+        "type": "side",
+        "role": "hypotenuse"
+      },
+      "humanizer_data": {
+        "formula": "c² = a² + b²",
+        "a_squared": 169,
+        "b_squared": 7056,
+        "sum_squared": 7225
+      }
+    }
+  },
+  {
+    "id": 1500320,
+    "pattern": "pythagoras_find_hypotenuse",
+    "narrative": "find_hypotenuse_by_legs",
+    "text": "В прямоугольном треугольнике катеты составляют 48 и 14. Найди гипотенузу.",
+    "answer": 50,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "leg_1": 48,
+        "leg_2": 14
+      },
+      "to_find": {
+        "type": "side",
+        "role": "hypotenuse"
+      },
+      "humanizer_data": {
+        "formula": "c² = a² + b²",
+        "a_squared": 2304,
+        "b_squared": 196,
+        "sum_squared": 2500
+      }
+    }
+  },
+  {
+    "id": 1500321,
+    "pattern": "pythagoras_find_hypotenuse",
+    "narrative": "find_hypotenuse_by_legs",
+    "text": "Найди гипотенузу, если катеты прямоугольного треугольника равны 25 и 60.",
+    "answer": 65,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "leg_1": 25,
+        "leg_2": 60
+      },
+      "to_find": {
+        "type": "side",
+        "role": "hypotenuse"
+      },
+      "humanizer_data": {
+        "formula": "c² = a² + b²",
+        "a_squared": 625,
+        "b_squared": 3600,
+        "sum_squared": 4225
+      }
+    }
+  },
+  {
+    "id": 1500322,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "В треугольнике ABC угол C равен 90°, AB = 5, BC = 3. Найди sin A.",
+    "answer": 0.6,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "BC": 3.0,
+        "AC": 4.0,
+        "AB": 5.0
+      },
+      "target": {
+        "fn": "sin",
+        "angle": "A",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "formula_name": "противолежащий катет / гипотенуза",
+        "ratio_values": "3.0 / 5.0",
+        "opp_leg": "BC",
+        "adj_leg": "AC",
+        "hypotenuse": "AB",
+        "derived": "adj"
+      }
+    }
+  },
+  {
+    "id": 1500323,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "Дан треугольник ABC с прямым углом A. Известно, что BC = 25, а катет AC = 7. Вычисли sin B.",
+    "answer": 0.28,
+    "image_file": "T3_right_A.png",
+    "variables": {
+      "given": {
+        "AC": 7.0,
+        "AB": 24.0,
+        "BC": 25.0
+      },
+      "target": {
+        "fn": "sin",
+        "angle": "B",
+        "right_angle": "A"
+      },
+      "humanizer_data": {
+        "formula_name": "противолежащий катет / гипотенуза",
+        "ratio_values": "7.0 / 25.0",
+        "opp_leg": "AC",
+        "adj_leg": "AB",
+        "hypotenuse": "BC",
+        "derived": "adj"
+      }
+    }
+  },
+  {
+    "id": 1500324,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "В прямоугольном треугольнике ABC угол B — прямой. Гипотенуза AC равна 10, катет AB равен 8. Найди sin C.",
+    "answer": 0.8,
+    "image_file": "T3_right_B.png",
+    "variables": {
+      "given": {
+        "AB": 8.0,
+        "BC": 6.0,
+        "AC": 10.0
+      },
+      "target": {
+        "fn": "sin",
+        "angle": "C",
+        "right_angle": "B"
+      },
+      "humanizer_data": {
+        "formula_name": "противолежащий катет / гипотенуза",
+        "ratio_values": "8.0 / 10.0",
+        "opp_leg": "AB",
+        "adj_leg": "BC",
+        "hypotenuse": "AC",
+        "derived": "adj"
+      }
+    }
+  },
+  {
+    "id": 1500325,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "Найди синус угла B в треугольнике ABC, если угол C = 90°, катет AC = 16, а гипотенуза AB = 20.",
+    "answer": 0.8,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "AC": 16.0,
+        "BC": 12.0,
+        "AB": 20.0
+      },
+      "target": {
+        "fn": "sin",
+        "angle": "B",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "formula_name": "противолежащий катет / гипотенуза",
+        "ratio_values": "16.0 / 20.0",
+        "opp_leg": "AC",
+        "adj_leg": "BC",
+        "hypotenuse": "AB",
+        "derived": "adj"
+      }
+    }
+  },
+  {
+    "id": 1500326,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "В треугольнике ABC ∠A = 90°, катеты AC и AB равны 14 и 48 соответственно. Чему равен sin B?",
+    "answer": 0.28,
+    "image_file": "T3_right_A.png",
+    "variables": {
+      "given": {
+        "AC": 14.0,
+        "AB": 48.0,
+        "BC": 50.0
+      },
+      "target": {
+        "fn": "sin",
+        "angle": "B",
+        "right_angle": "A"
+      },
+      "humanizer_data": {
+        "formula_name": "противолежащий катет / гипотенуза",
+        "ratio_values": "14.0 / 50.0",
+        "opp_leg": "AC",
+        "adj_leg": "AB",
+        "hypotenuse": "BC",
+        "derived": "hyp"
+      }
+    }
+  },
+  {
+    "id": 1500327,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "В треугольнике ABC угол C прямой. Сторона AB равна 25, сторона BC равна 20. Найди sin A.",
+    "answer": 0.8,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "BC": 20.0,
+        "AC": 15.0,
+        "AB": 25.0
+      },
+      "target": {
+        "fn": "sin",
+        "angle": "A",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "formula_name": "противолежащий катет / гипотенуза",
+        "ratio_values": "20.0 / 25.0",
+        "opp_leg": "BC",
+        "adj_leg": "AC",
+        "hypotenuse": "AB",
+        "derived": "adj"
+      }
+    }
+  },
+  {
+    "id": 1500328,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "Прямоугольный треугольник ABC имеет прямой угол B. Найди sin A, если AC = 50, а BC = 40.",
+    "answer": 0.8,
+    "image_file": "T3_right_B.png",
+    "variables": {
+      "given": {
+        "BC": 40.0,
+        "AB": 30.0,
+        "AC": 50.0
+      },
+      "target": {
+        "fn": "sin",
+        "angle": "A",
+        "right_angle": "B"
+      },
+      "humanizer_data": {
+        "formula_name": "противолежащий катет / гипотенуза",
+        "ratio_values": "40.0 / 50.0",
+        "opp_leg": "BC",
+        "adj_leg": "AB",
+        "hypotenuse": "AC",
+        "derived": "adj"
+      }
+    }
+  },
+  {
+    "id": 1500329,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "В треугольнике ABC угол C равен 90°, AC = 15, BC = 20. Вычисли sin B.",
+    "answer": 0.6,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "AC": 15.0,
+        "BC": 20.0,
+        "AB": 25.0
+      },
+      "target": {
+        "fn": "sin",
+        "angle": "B",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "formula_name": "противолежащий катет / гипотенуза",
+        "ratio_values": "15.0 / 25.0",
+        "opp_leg": "AC",
+        "adj_leg": "BC",
+        "hypotenuse": "AB",
+        "derived": "hyp"
+      }
+    }
+  },
+  {
+    "id": 1500330,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "Найди sin C в треугольнике ABC, где угол A равен 90°, AB = 12, а гипотенуза BC = 15.",
+    "answer": 0.8,
+    "image_file": "T3_right_A.png",
+    "variables": {
+      "given": {
+        "AB": 12.0,
+        "AC": 9.0,
+        "BC": 15.0
+      },
+      "target": {
+        "fn": "sin",
+        "angle": "C",
+        "right_angle": "A"
+      },
+      "humanizer_data": {
+        "formula_name": "противолежащий катет / гипотенуза",
+        "ratio_values": "12.0 / 15.0",
+        "opp_leg": "AB",
+        "adj_leg": "AC",
+        "hypotenuse": "BC",
+        "derived": "adj"
+      }
+    }
+  },
+  {
+    "id": 1500331,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "В треугольнике ABC угол C равен 90°, катет AC = 9, гипотенуза AB = 15. Найди cos A.",
+    "answer": 0.6,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "BC": 12.0,
+        "AC": 9.0,
+        "AB": 15.0
+      },
+      "target": {
+        "fn": "cos",
+        "angle": "A",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "formula_name": "прилежащий катет / гипотенуза",
+        "ratio_values": "9.0 / 15.0",
+        "opp_leg": "BC",
+        "adj_leg": "AC",
+        "hypotenuse": "AB",
+        "derived": "opp"
+      }
+    }
+  },
+  {
+    "id": 1500332,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "Дан треугольник ABC, в котором ∠A = 90°. Сторона BC = 25, сторона AC = 24. Найди cos C.",
+    "answer": 0.96,
+    "image_file": "T3_right_A.png",
+    "variables": {
+      "given": {
+        "AB": 7.0,
+        "AC": 24.0,
+        "BC": 25.0
+      },
+      "target": {
+        "fn": "cos",
+        "angle": "C",
+        "right_angle": "A"
+      },
+      "humanizer_data": {
+        "formula_name": "прилежащий катет / гипотенуза",
+        "ratio_values": "24.0 / 25.0",
+        "opp_leg": "AB",
+        "adj_leg": "AC",
+        "hypotenuse": "BC",
+        "derived": "opp"
+      }
+    }
+  },
+  {
+    "id": 1500333,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "В прямоугольном треугольнике ABC с прямым углом B гипотенуза AC равна 10, катет BC равен 6. Найди cos C.",
+    "answer": 0.6,
+    "image_file": "T3_right_B.png",
+    "variables": {
+      "given": {
+        "AB": 8.0,
+        "BC": 6.0,
+        "AC": 10.0
+      },
+      "target": {
+        "fn": "cos",
+        "angle": "C",
+        "right_angle": "B"
+      },
+      "humanizer_data": {
+        "formula_name": "прилежащий катет / гипотенуза",
+        "ratio_values": "6.0 / 10.0",
+        "opp_leg": "AB",
+        "adj_leg": "BC",
+        "hypotenuse": "AC",
+        "derived": "opp"
+      }
+    }
+  },
+  {
+    "id": 1500334,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "Чему равен косинус угла B в треугольнике ABC, если угол C = 90°, BC = 12, а AB = 15?",
+    "answer": 0.8,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "AC": 9.0,
+        "BC": 12.0,
+        "AB": 15.0
+      },
+      "target": {
+        "fn": "cos",
+        "angle": "B",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "formula_name": "прилежащий катет / гипотенуза",
+        "ratio_values": "12.0 / 15.0",
+        "opp_leg": "AC",
+        "adj_leg": "BC",
+        "hypotenuse": "AB",
+        "derived": "opp"
+      }
+    }
+  },
+  {
+    "id": 1500335,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "В треугольнике ABC угол A прямой. Найди cos B, если катет AB = 32, а гипотенуза BC = 40.",
+    "answer": 0.8,
+    "image_file": "T3_right_A.png",
+    "variables": {
+      "given": {
+        "AC": 24.0,
+        "AB": 32.0,
+        "BC": 40.0
+      },
+      "target": {
+        "fn": "cos",
+        "angle": "B",
+        "right_angle": "A"
+      },
+      "humanizer_data": {
+        "formula_name": "прилежащий катет / гипотенуза",
+        "ratio_values": "32.0 / 40.0",
+        "opp_leg": "AC",
+        "adj_leg": "AB",
+        "hypotenuse": "BC",
+        "derived": "opp"
+      }
+    }
+  },
+  {
+    "id": 1500336,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "В треугольнике ABC угол C = 90°, катеты AC и BC равны 7 и 24. Найди cos A.",
+    "answer": 0.28,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "BC": 24.0,
+        "AC": 7.0,
+        "AB": 25.0
+      },
+      "target": {
+        "fn": "cos",
+        "angle": "A",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "formula_name": "прилежащий катет / гипотенуза",
+        "ratio_values": "7.0 / 25.0",
+        "opp_leg": "BC",
+        "adj_leg": "AC",
+        "hypotenuse": "AB",
+        "derived": "hyp"
+      }
+    }
+  },
+  {
+    "id": 1500337,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "В треугольнике ABC угол B равен 90°, AB = 14, AC = 50. Вычисли cos A.",
+    "answer": 0.28,
+    "image_file": "T3_right_B.png",
+    "variables": {
+      "given": {
+        "BC": 48.0,
+        "AB": 14.0,
+        "AC": 50.0
+      },
+      "target": {
+        "fn": "cos",
+        "angle": "A",
+        "right_angle": "B"
+      },
+      "humanizer_data": {
+        "formula_name": "прилежащий катет / гипотенуза",
+        "ratio_values": "14.0 / 50.0",
+        "opp_leg": "BC",
+        "adj_leg": "AB",
+        "hypotenuse": "AC",
+        "derived": "opp"
+      }
+    }
+  },
+  {
+    "id": 1500338,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "Найди cos B в прямоугольном треугольнике ABC с прямым углом C, если катет BC = 21, а гипотенуза AB = 35.",
+    "answer": 0.6,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "AC": 28.0,
+        "BC": 21.0,
+        "AB": 35.0
+      },
+      "target": {
+        "fn": "cos",
+        "angle": "B",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "formula_name": "прилежащий катет / гипотенуза",
+        "ratio_values": "21.0 / 35.0",
+        "opp_leg": "AC",
+        "adj_leg": "BC",
+        "hypotenuse": "AB",
+        "derived": "opp"
+      }
+    }
+  },
+  {
+    "id": 1500339,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "В треугольнике ABC угол A равен 90°, AB = 9, AC = 12. Найди cos B.",
+    "answer": 0.6,
+    "image_file": "T3_right_A.png",
+    "variables": {
+      "given": {
+        "AC": 12.0,
+        "AB": 9.0,
+        "BC": 15.0
+      },
+      "target": {
+        "fn": "cos",
+        "angle": "B",
+        "right_angle": "A"
+      },
+      "humanizer_data": {
+        "formula_name": "прилежащий катет / гипотенуза",
+        "ratio_values": "9.0 / 15.0",
+        "opp_leg": "AC",
+        "adj_leg": "AB",
+        "hypotenuse": "BC",
+        "derived": "hyp"
+      }
+    }
+  },
+  {
+    "id": 1500340,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "В треугольнике ABC угол C равен 90°, AB = 20, BC = 16. Найди cos B.",
+    "answer": 0.8,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "AC": 12.0,
+        "BC": 16.0,
+        "AB": 20.0
+      },
+      "target": {
+        "fn": "cos",
+        "angle": "B",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "formula_name": "прилежащий катет / гипотенуза",
+        "ratio_values": "16.0 / 20.0",
+        "opp_leg": "AC",
+        "adj_leg": "BC",
+        "hypotenuse": "AB",
+        "derived": "opp"
+      }
+    }
+  },
+  {
+    "id": 1500341,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "В треугольнике ABC угол C = 90°, катеты AC = 20 и BC = 8. Найди tg A.",
+    "answer": 0.4,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "BC": 8.0,
+        "AC": 20.0,
+        "AB": 21.54
+      },
+      "target": {
+        "fn": "tg",
+        "angle": "A",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "formula_name": "противолежащий катет / прилежащий катет",
+        "ratio_values": "8.0 / 20.0",
+        "opp_leg": "BC",
+        "adj_leg": "AC",
+        "hypotenuse": "AB",
+        "derived": "hyp"
+      }
+    }
+  },
+  {
+    "id": 1500342,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "В треугольнике ABC ∠C = 90°, катеты AC = 12 и BC = 6. Найди tg A.",
+    "answer": 0.5,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "BC": 6.0,
+        "AC": 12.0,
+        "AB": 13.42
+      },
+      "target": {
+        "fn": "tg",
+        "angle": "A",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "formula_name": "противолежащий катет / прилежащий катет",
+        "ratio_values": "6.0 / 12.0",
+        "opp_leg": "BC",
+        "adj_leg": "AC",
+        "hypotenuse": "AB",
+        "derived": "hyp"
+      }
+    }
+  },
+  {
+    "id": 1500343,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "В прямоугольном треугольнике ABC с прямым углом C катеты AC = 10 и BC = 6. Найди tg A.",
+    "answer": 0.6,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "BC": 6.0,
+        "AC": 10.0,
+        "AB": 11.66
+      },
+      "target": {
+        "fn": "tg",
+        "angle": "A",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "formula_name": "противолежащий катет / прилежащий катет",
+        "ratio_values": "6.0 / 10.0",
+        "opp_leg": "BC",
+        "adj_leg": "AC",
+        "hypotenuse": "AB",
+        "derived": "hyp"
+      }
+    }
+  },
+  {
+    "id": 1500344,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "В треугольнике ABC угол C прямой, катеты AC = 10 и BC = 8. Найди tg A.",
+    "answer": 0.8,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "BC": 8.0,
+        "AC": 10.0,
+        "AB": 12.81
+      },
+      "target": {
+        "fn": "tg",
+        "angle": "A",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "formula_name": "противолежащий катет / прилежащий катет",
+        "ratio_values": "8.0 / 10.0",
+        "opp_leg": "BC",
+        "adj_leg": "AC",
+        "hypotenuse": "AB",
+        "derived": "hyp"
+      }
+    }
+  },
+  {
+    "id": 1500345,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "В треугольнике ABC угол C = 90°, катеты AC = 20 и BC = 21. Найди tg A.",
+    "answer": 1.05,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "BC": 21.0,
+        "AC": 20.0,
+        "AB": 29.0
+      },
+      "target": {
+        "fn": "tg",
+        "angle": "A",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "formula_name": "противолежащий катет / прилежащий катет",
+        "ratio_values": "21.0 / 20.0",
+        "opp_leg": "BC",
+        "adj_leg": "AC",
+        "hypotenuse": "AB",
+        "derived": "hyp"
+      }
+    }
+  },
+  {
+    "id": 1500346,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "В прямоугольном треугольнике ABC ∠C = 90°, катеты AC = 20 и BC = 25. Найди tg A.",
+    "answer": 1.25,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "BC": 25.0,
+        "AC": 20.0,
+        "AB": 32.02
+      },
+      "target": {
+        "fn": "tg",
+        "angle": "A",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "formula_name": "противолежащий катет / прилежащий катет",
+        "ratio_values": "25.0 / 20.0",
+        "opp_leg": "BC",
+        "adj_leg": "AC",
+        "hypotenuse": "AB",
+        "derived": "hyp"
+      }
+    }
+  },
+  {
+    "id": 1500347,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "В треугольнике ABC угол C = 90°, катеты AC = 10 и BC = 15. Найди tg A.",
+    "answer": 1.5,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "BC": 15.0,
+        "AC": 10.0,
+        "AB": 18.03
+      },
+      "target": {
+        "fn": "tg",
+        "angle": "A",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "formula_name": "противолежащий катет / прилежащий катет",
+        "ratio_values": "15.0 / 10.0",
+        "opp_leg": "BC",
+        "adj_leg": "AC",
+        "hypotenuse": "AB",
+        "derived": "hyp"
+      }
+    }
+  },
+  {
+    "id": 1500348,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "В прямоугольном треугольнике ABC с прямым углом C катеты AC = 6 и BC = 12. Найди tg A.",
+    "answer": 2.0,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "BC": 12.0,
+        "AC": 6.0,
+        "AB": 13.42
+      },
+      "target": {
+        "fn": "tg",
+        "angle": "A",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "formula_name": "противолежащий катет / прилежащий катет",
+        "ratio_values": "12.0 / 6.0",
+        "opp_leg": "BC",
+        "adj_leg": "AC",
+        "hypotenuse": "AB",
+        "derived": "hyp"
+      }
+    }
+  },
+  {
+    "id": 1500349,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "В треугольнике ABC ∠C = 90°, катеты AC = 10 и BC = 24. Найди tg A.",
+    "answer": 2.4,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "BC": 24.0,
+        "AC": 10.0,
+        "AB": 26.0
+      },
+      "target": {
+        "fn": "tg",
+        "angle": "A",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "formula_name": "противолежащий катет / прилежащий катет",
+        "ratio_values": "24.0 / 10.0",
+        "opp_leg": "BC",
+        "adj_leg": "AC",
+        "hypotenuse": "AB",
+        "derived": "hyp"
+      }
+    }
+  },
+  {
+    "id": 1500350,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "В треугольнике ABC угол C = 90°, гипотенуза AB = 26, катет BC = 10. Найди tg B.",
+    "answer": 2.4,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "AC": 24.0,
+        "BC": 10.0,
+        "AB": 26.0
+      },
+      "target": {
+        "fn": "tg",
+        "angle": "B",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "formula_name": "противолежащий катет / прилежащий катет",
+        "ratio_values": "24.0 / 10.0",
+        "opp_leg": "AC",
+        "adj_leg": "BC",
+        "hypotenuse": "AB",
+        "derived": "opp"
+      }
+    }
+  },
+  {
+    "id": 1500351,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "В прямоугольном треугольнике ABC с прямым углом C гипотенуза AB = 29, катет AC = 20. Найди tg A.",
+    "answer": 1.05,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "BC": 21.0,
+        "AC": 20.0,
+        "AB": 29.0
+      },
+      "target": {
+        "fn": "tg",
+        "angle": "A",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "formula_name": "противолежащий катет / прилежащий катет",
+        "ratio_values": "21.0 / 20.0",
+        "opp_leg": "BC",
+        "adj_leg": "AC",
+        "hypotenuse": "AB",
+        "derived": "opp"
+      }
+    }
+  },
+  {
+    "id": 1500352,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "В треугольнике ABC ∠C = 90°, гипотенуза AB = 10, катет AC = 8. Найди tg A.",
+    "answer": 0.75,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "BC": 6.0,
+        "AC": 8.0,
+        "AB": 10.0
+      },
+      "target": {
+        "fn": "tg",
+        "angle": "A",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "formula_name": "противолежащий катет / прилежащий катет",
+        "ratio_values": "6.0 / 8.0",
+        "opp_leg": "BC",
+        "adj_leg": "AC",
+        "hypotenuse": "AB",
+        "derived": "opp"
+      }
+    }
+  },
+  {
+    "id": 1500353,
+    "pattern": "find_cos_sin_tg_from_sides",
+    "text": "В треугольнике ABC ∠C = 90°, гипотенуза AB = 20, катет AC = 16. Найди tg A.",
+    "answer": 0.75,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "BC": 12.0,
+        "AC": 16.0,
+        "AB": 20.0
+      },
+      "target": {
+        "fn": "tg",
+        "angle": "A",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "formula_name": "противолежащий катет / прилежащий катет",
+        "ratio_values": "12.0 / 16.0",
+        "opp_leg": "BC",
+        "adj_leg": "AC",
+        "hypotenuse": "AB",
+        "derived": "opp"
+      }
+    }
+  },
+  {
+    "id": 1500354,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В треугольнике ABC угол C равен 90°, cos A = 3/5, AC = 12. Найди гипотенузу AB.",
+    "answer": 20.0,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "trig_fn": "cos",
+        "angle": "A",
+        "AC": 12.0
+      },
+      "target": {
+        "find": "AB",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "ratio": "3.0/5.0",
+        "formula": "cos = 3.0/5.0"
+      }
+    }
+  },
+  {
+    "id": 1500355,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В треугольнике ABC угол A прямой, cos B = 5/13, AB = 20. Найди гипотенузу BC.",
+    "answer": 52.0,
+    "image_file": "T3_right_A.png",
+    "variables": {
+      "given": {
+        "trig_fn": "cos",
+        "angle": "B",
+        "AB": 20.0
+      },
+      "target": {
+        "find": "BC",
+        "right_angle": "A"
+      },
+      "humanizer_data": {
+        "ratio": "5.0/13.0",
+        "formula": "cos = 5.0/13.0"
+      }
+    }
+  },
+  {
+    "id": 1500356,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В прямоугольном треугольнике ABC ∠C = 90°, cos B = 4/5, AB = 25. Найди катет BC.",
+    "answer": 20.0,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "trig_fn": "cos",
+        "angle": "B",
+        "AB": 25.0
+      },
+      "target": {
+        "find": "BC",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "ratio": "4.0/5.0",
+        "formula": "cos = 4.0/5.0"
+      }
+    }
+  },
+  {
+    "id": 1500357,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В треугольнике ABC угол B равен 90°, cos A = 12/13, AB = 24. Найди гипотенузу AC.",
+    "answer": 26.0,
+    "image_file": "T3_right_B.png",
+    "variables": {
+      "given": {
+        "trig_fn": "cos",
+        "angle": "A",
+        "AB": 24.0
+      },
+      "target": {
+        "find": "AC",
+        "right_angle": "B"
+      },
+      "humanizer_data": {
+        "ratio": "12.0/13.0",
+        "formula": "cos = 12.0/13.0"
+      }
+    }
+  },
+  {
+    "id": 1500358,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В треугольнике ABC ∠C = 90°, cos A = 8/17, AC = 16. Найди гипотенузу AB.",
+    "answer": 34.0,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "trig_fn": "cos",
+        "angle": "A",
+        "AC": 16.0
+      },
+      "target": {
+        "find": "AB",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "ratio": "8.0/17.0",
+        "formula": "cos = 8.0/17.0"
+      }
+    }
+  },
+  {
+    "id": 1500359,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В прямоугольном треугольнике ABC угол A прямой, cos C = 9/15, AC = 18. Найди гипотенузу BC.",
+    "answer": 30.0,
+    "image_file": "T3_right_A.png",
+    "variables": {
+      "given": {
+        "trig_fn": "cos",
+        "angle": "C",
+        "AC": 18.0
+      },
+      "target": {
+        "find": "BC",
+        "right_angle": "A"
+      },
+      "humanizer_data": {
+        "ratio": "9.0/15.0",
+        "formula": "cos = 9.0/15.0"
+      }
+    }
+  },
+  {
+    "id": 1500360,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В треугольнике ABC ∠B = 90°, cos C = 7/25, BC = 14. Найди гипотенузу AC.",
+    "answer": 50.0,
+    "image_file": "T3_right_B.png",
+    "variables": {
+      "given": {
+        "trig_fn": "cos",
+        "angle": "C",
+        "BC": 14.0
+      },
+      "target": {
+        "find": "AC",
+        "right_angle": "B"
+      },
+      "humanizer_data": {
+        "ratio": "7.0/25.0",
+        "formula": "cos = 7.0/25.0"
+      }
+    }
+  },
+  {
+    "id": 1500361,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В треугольнике ABC угол C равен 90°, cos B = 5/12, AB = 60. Найди катет BC.",
+    "answer": 25.0,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "trig_fn": "cos",
+        "angle": "B",
+        "AB": 60.0
+      },
+      "target": {
+        "find": "BC",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "ratio": "5.0/12.0",
+        "formula": "cos = 5.0/12.0"
+      }
+    }
+  },
+  {
+    "id": 1500362,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В прямоугольном треугольнике ABC ∠A = 90°, cos C = 20/29, AC = 40. Найди гипотенузу BC.",
+    "answer": 58.0,
+    "image_file": "T3_right_A.png",
+    "variables": {
+      "given": {
+        "trig_fn": "cos",
+        "angle": "C",
+        "AC": 40.0
+      },
+      "target": {
+        "find": "BC",
+        "right_angle": "A"
+      },
+      "humanizer_data": {
+        "ratio": "20.0/29.0",
+        "formula": "cos = 20.0/29.0"
+      }
+    }
+  },
+  {
+    "id": 1500363,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В треугольнике ABC угол B прямой, cos A = 15/17, AB = 30. Найди гипотенузу AC.",
+    "answer": 34.0,
+    "image_file": "T3_right_B.png",
+    "variables": {
+      "given": {
+        "trig_fn": "cos",
+        "angle": "A",
+        "AB": 30.0
+      },
+      "target": {
+        "find": "AC",
+        "right_angle": "B"
+      },
+      "humanizer_data": {
+        "ratio": "15.0/17.0",
+        "formula": "cos = 15.0/17.0"
+      }
+    }
+  },
+  {
+    "id": 1500364,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В треугольнике ABC угол C равен 90°, sin A = 3/5, AB = 25. Найди катет BC.",
+    "answer": 15.0,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "trig_fn": "sin",
+        "angle": "A",
+        "AB": 25.0
+      },
+      "target": {
+        "find": "BC",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "ratio": "3.0/5.0",
+        "formula": "sin = 3.0/5.0"
+      }
+    }
+  },
+  {
+    "id": 1500365,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В прямоугольном треугольнике ABC ∠A = 90°, sin B = 5/13, AC = 20. Найди гипотенузу BC.",
+    "answer": 52.0,
+    "image_file": "T3_right_A.png",
+    "variables": {
+      "given": {
+        "trig_fn": "sin",
+        "angle": "B",
+        "AC": 20.0
+      },
+      "target": {
+        "find": "BC",
+        "right_angle": "A"
+      },
+      "humanizer_data": {
+        "ratio": "5.0/13.0",
+        "formula": "sin = 5.0/13.0"
+      }
+    }
+  },
+  {
+    "id": 1500366,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В треугольнике ABC ∠C = 90°, sin B = 4/5, AB = 30. Найди катет AC.",
+    "answer": 24.0,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "trig_fn": "sin",
+        "angle": "B",
+        "AB": 30.0
+      },
+      "target": {
+        "find": "AC",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "ratio": "4.0/5.0",
+        "formula": "sin = 4.0/5.0"
+      }
+    }
+  },
+  {
+    "id": 1500367,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В треугольнике ABC угол B прямой, sin A = 7/25, AC = 50. Найди гипотенузу BC.",
+    "answer": 14.0,
+    "image_file": "T3_right_B.png",
+    "variables": {
+      "given": {
+        "trig_fn": "sin",
+        "angle": "A",
+        "AC": 50.0
+      },
+      "target": {
+        "find": "BC",
+        "right_angle": "B"
+      },
+      "humanizer_data": {
+        "ratio": "7.0/25.0",
+        "formula": "sin = 7.0/25.0"
+      }
+    }
+  },
+  {
+    "id": 1500368,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В прямоугольном треугольнике ABC ∠C = 90°, sin A = 6/10, AB = 20. Найди катет BC.",
+    "answer": 12.0,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "trig_fn": "sin",
+        "angle": "A",
+        "AB": 20.0
+      },
+      "target": {
+        "find": "BC",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "ratio": "6.0/10.0",
+        "formula": "sin = 6.0/10.0"
+      }
+    }
+  },
+  {
+    "id": 1500369,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В треугольнике ABC угол A равен 90°, sin C = 9/15, BC = 18. Найди гипотенузу AB.",
+    "answer": 10.8,
+    "image_file": "T3_right_A.png",
+    "variables": {
+      "given": {
+        "trig_fn": "sin",
+        "angle": "C",
+        "BC": 18.0
+      },
+      "target": {
+        "find": "AB",
+        "right_angle": "A"
+      },
+      "humanizer_data": {
+        "ratio": "9.0/15.0",
+        "formula": "sin = 9.0/15.0"
+      }
+    }
+  },
+  {
+    "id": 1500370,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В прямоугольном треугольнике ABC ∠B = 90°, sin A = 8/17, AC = 34. Найди гипотенузу BC.",
+    "answer": 16.0,
+    "image_file": "T3_right_B.png",
+    "variables": {
+      "given": {
+        "trig_fn": "sin",
+        "angle": "A",
+        "AC": 34.0
+      },
+      "target": {
+        "find": "BC",
+        "right_angle": "B"
+      },
+      "humanizer_data": {
+        "ratio": "8.0/17.0",
+        "formula": "sin = 8.0/17.0"
+      }
+    }
+  },
+  {
+    "id": 1500371,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В треугольнике ABC ∠C = 90°, sin B = 12/13, AB = 26. Найди катет AC.",
+    "answer": 24.0,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "trig_fn": "sin",
+        "angle": "B",
+        "AB": 26.0
+      },
+      "target": {
+        "find": "AC",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "ratio": "12.0/13.0",
+        "formula": "sin = 12.0/13.0"
+      }
+    }
+  },
+  {
+    "id": 1500372,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В треугольнике ABC угол A прямой, sin C = 5/13, AB = 10. Найди гипотенузу BC.",
+    "answer": 26.0,
+    "image_file": "T3_right_A.png",
+    "variables": {
+      "given": {
+        "trig_fn": "sin",
+        "angle": "C",
+        "AB": 10.0
+      },
+      "target": {
+        "find": "BC",
+        "right_angle": "A"
+      },
+      "humanizer_data": {
+        "ratio": "5.0/13.0",
+        "formula": "sin = 5.0/13.0"
+      }
+    }
+  },
+  {
+    "id": 1500373,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В прямоугольном треугольнике ABC ∠B = 90°, sin C = 20/29, AC = 58. Найди гипотенузу AB.",
+    "answer": 40.0,
+    "image_file": "T3_right_B.png",
+    "variables": {
+      "given": {
+        "trig_fn": "sin",
+        "angle": "C",
+        "AC": 58.0
+      },
+      "target": {
+        "find": "AB",
+        "right_angle": "B"
+      },
+      "humanizer_data": {
+        "ratio": "20.0/29.0",
+        "formula": "sin = 20.0/29.0"
+      }
+    }
+  },
+  {
+    "id": 1500374,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В треугольнике ABC угол C равен 90°, tg A = 3/4, AC = 20. Найди катет BC.",
+    "answer": 15.0,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "trig_fn": "tg",
+        "angle": "A",
+        "AC": 20.0
+      },
+      "target": {
+        "find": "BC",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "ratio": "3.0/4.0",
+        "formula": "tg = 3.0/4.0"
+      }
+    }
+  },
+  {
+    "id": 1500375,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В прямоугольном треугольнике ABC ∠B = 90°, tg A = 5/12, AB = 24. Найди катет BC.",
+    "answer": 10.0,
+    "image_file": "T3_right_B.png",
+    "variables": {
+      "given": {
+        "trig_fn": "tg",
+        "angle": "A",
+        "AB": 24.0
+      },
+      "target": {
+        "find": "BC",
+        "right_angle": "B"
+      },
+      "humanizer_data": {
+        "ratio": "5.0/12.0",
+        "formula": "tg = 5.0/12.0"
+      }
+    }
+  },
+  {
+    "id": 1500376,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В треугольнике ABC угол C прямой, tg B = 4/3, BC = 12. Найди катет AC.",
+    "answer": 16.0,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "trig_fn": "tg",
+        "angle": "B",
+        "BC": 12.0
+      },
+      "target": {
+        "find": "AC",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "ratio": "4.0/3.0",
+        "formula": "tg = 4.0/3.0"
+      }
+    }
+  },
+  {
+    "id": 1500377,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В треугольнике ABC ∠C = 90°, tg A = 6/5, AC = 25. Найди катет BC.",
+    "answer": 30.0,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "trig_fn": "tg",
+        "angle": "A",
+        "AC": 25.0
+      },
+      "target": {
+        "find": "BC",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "ratio": "6.0/5.0",
+        "formula": "tg = 6.0/5.0"
+      }
+    }
+  },
+  {
+    "id": 1500378,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В треугольнике ABC ∠C = 90°, tg B = 5/2, BC = 10. Найди катет AC.",
+    "answer": 25.0,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "trig_fn": "tg",
+        "angle": "B",
+        "BC": 10.0
+      },
+      "target": {
+        "find": "AC",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "ratio": "5.0/2.0",
+        "formula": "tg = 5.0/2.0"
+      }
+    }
+  },
+  {
+    "id": 1500379,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В треугольнике ABC угол C равен 90°, tg A = 3/5, AC = 20. Найди катет BC.",
+    "answer": 12.0,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "trig_fn": "tg",
+        "angle": "A",
+        "AC": 20.0
+      },
+      "target": {
+        "find": "BC",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "ratio": "3.0/5.0",
+        "formula": "tg = 3.0/5.0"
+      }
+    }
+  },
+  {
+    "id": 1500380,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В прямоугольном треугольнике ABC ∠B = 90°, tg A = 3/4, AB = 8. Найди катет BC.",
+    "answer": 6.0,
+    "image_file": "T3_right_B.png",
+    "variables": {
+      "given": {
+        "trig_fn": "tg",
+        "angle": "A",
+        "AB": 8.0
+      },
+      "target": {
+        "find": "BC",
+        "right_angle": "B"
+      },
+      "humanizer_data": {
+        "ratio": "3.0/4.0",
+        "formula": "tg = 3.0/4.0"
+      }
+    }
+  },
+  {
+    "id": 1500381,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В треугольнике ABC угол A прямой, tg C = 5/12, катет AB = 10. Найди катет AC.",
+    "answer": 24.0,
+    "image_file": "T3_right_A.png",
+    "variables": {
+      "given": {
+        "trig_fn": "tg",
+        "angle": "C",
+        "AB": 10.0
+      },
+      "target": {
+        "find": "AC",
+        "right_angle": "A"
+      },
+      "humanizer_data": {
+        "ratio": "5.0/12.0",
+        "formula": "tg = 5.0/12.0"
+      }
+    }
+  },
+  {
+    "id": 1500382,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В прямоугольном треугольнике ABC ∠C = 90°, tg A = 7/24, BC = 14. Найди катет AC.",
+    "answer": 48.0,
+    "image_file": "T3_right_C.png",
+    "variables": {
+      "given": {
+        "trig_fn": "tg",
+        "angle": "A",
+        "BC": 14.0
+      },
+      "target": {
+        "find": "AC",
+        "right_angle": "C"
+      },
+      "humanizer_data": {
+        "ratio": "7.0/24.0",
+        "formula": "tg = 7.0/24.0"
+      }
+    }
+  },
+  {
+    "id": 1500383,
+    "pattern": "find_side_from_trig_ratio",
+    "text": "В треугольнике ABC угол B равен 90°, tg A = 5/6, AB = 12. Найди катет BC.",
+    "answer": 10.0,
+    "image_file": "T3_right_B.png",
+    "variables": {
+      "given": {
+        "trig_fn": "tg",
+        "angle": "A",
+        "AB": 12.0
+      },
+      "target": {
+        "find": "BC",
+        "right_angle": "B"
+      },
+      "humanizer_data": {
+        "ratio": "5.0/6.0",
+        "formula": "tg = 5.0/6.0"
+      }
+    }
+  },
+  {
+    "id": 1500384,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_median_by_hypotenuse",
+    "text": "В треугольнике ABC ∠C = 90°. Сторона AB равна 14. Найди медиану CM.",
+    "answer": 7,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "C",
+        "hypotenuse": "AB",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "median"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500385,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_median_by_hypotenuse",
+    "text": "В треугольнике ABC ∠A = 90°. Гипотенуза BC равна 18. Найди медиану AM.",
+    "answer": 9,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "A",
+        "hypotenuse": "BC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "median"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500386,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_median_by_hypotenuse",
+    "text": "В треугольнике ABC ∠B = 90°. Сторона AC равна 20. Найди медиану BM.",
+    "answer": 10,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "B",
+        "hypotenuse": "AC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "median"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500387,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_median_by_hypotenuse",
+    "text": "В треугольнике ABC ∠C = 90°. Сторона AB равна 26. Найди медиану CM.",
+    "answer": 13,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "C",
+        "hypotenuse": "AB",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "median"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500388,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_median_by_hypotenuse",
+    "text": "В треугольнике ABC ∠A = 90°. Сторона BC равна 24. Найди медиану AM.",
+    "answer": 12,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "A",
+        "hypotenuse": "BC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "median"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500389,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_median_by_hypotenuse",
+    "text": "В треугольнике ABC ∠B = 90°. Гипотенуза AC равна 16. Найди медиану BM.",
+    "answer": 8,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "B",
+        "hypotenuse": "AC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "median"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500390,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_median_by_hypotenuse",
+    "text": "В треугольнике ABC ∠C = 90°. Сторона AB равна 30. Найди медиану CM.",
+    "answer": 15,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "C",
+        "hypotenuse": "AB",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "median"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500391,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_median_by_hypotenuse",
+    "text": "В треугольнике ABC ∠A = 90°. Сторона BC равна 28. Найди медиану AM.",
+    "answer": 14,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "A",
+        "hypotenuse": "BC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "median"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500392,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_median_by_hypotenuse",
+    "text": "В треугольнике ABC ∠B = 90°. Гипотенуза AC равна 22. Найди медиану BM.",
+    "answer": 11,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "B",
+        "hypotenuse": "AC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "median"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500393,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_median_by_hypotenuse",
+    "text": "В треугольнике ABC ∠C = 90°. Сторона AB равна 12. Найди медиану CM.",
+    "answer": 6,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "C",
+        "hypotenuse": "AB",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "median"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500394,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_median_by_hypotenuse",
+    "text": "В треугольнике ABC ∠A = 90°. Сторона BC равна 40. Найди медиану AM.",
+    "answer": 20,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "A",
+        "hypotenuse": "BC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "median"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500395,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_median_by_hypotenuse",
+    "text": "В треугольнике ABC ∠B = 90°. Сторона AC равна 18. Найди медиану BM.",
+    "answer": 9,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "B",
+        "hypotenuse": "AC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "median"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500396,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_median_by_hypotenuse",
+    "text": "В треугольнике ABC ∠C = 90°. Сторона AB равна 32. Найди медиану CM.",
+    "answer": 16,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "C",
+        "hypotenuse": "AB",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "median"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500397,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_median_by_hypotenuse",
+    "text": "В треугольнике ABC ∠A = 90°. Гипотенуза BC равна 20. Найди медиану AM.",
+    "answer": 10,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "A",
+        "hypotenuse": "BC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "median"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500398,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_median_by_hypotenuse",
+    "text": "В треугольнике ABC ∠B = 90°. Сторона AC равна 36. Найди медиану BM.",
+    "answer": 18,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "B",
+        "hypotenuse": "AC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "median"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500399,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_hypotenuse_by_median",
+    "text": "В треугольнике ABC ∠C = 90°. Медиана CM равна 7. Найди гипотенузу AB.",
+    "answer": 14,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "C",
+        "hypotenuse": "AB",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "hypotenuse"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500400,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_hypotenuse_by_median",
+    "text": "В треугольнике ABC ∠C = 90°. CM = 9. Найди гипотенузу AB.",
+    "answer": 18,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "C",
+        "hypotenuse": "AB",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "hypotenuse"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500401,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_hypotenuse_by_median",
+    "text": "В треугольнике ABC ∠A = 90°. Медиана AM равна 10. Найди гипотенузу BC.",
+    "answer": 20,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "A",
+        "hypotenuse": "BC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "hypotenuse"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500402,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_hypotenuse_by_median",
+    "text": "В треугольнике ABC ∠B = 90°. BM = 8. Найди гипотенузу AC.",
+    "answer": 16,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "B",
+        "hypotenuse": "AC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "hypotenuse"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500403,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_hypotenuse_by_median",
+    "text": "В треугольнике ABC ∠C = 90°. Медиана CM равна 12. Найди гипотенузу AB.",
+    "answer": 24,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "C",
+        "hypotenuse": "AB",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "hypotenuse"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500404,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_hypotenuse_by_median",
+    "text": "В треугольнике ABC ∠A = 90°. AM = 11. Найди гипотенузу BC.",
+    "answer": 22,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "A",
+        "hypotenuse": "BC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "hypotenuse"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500405,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_hypotenuse_by_median",
+    "text": "В треугольнике ABC ∠B = 90°. Медиана BM равна 13. Найди гипотенузу AC.",
+    "answer": 26,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "B",
+        "hypotenuse": "AC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "hypotenuse"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500406,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_hypotenuse_by_median",
+    "text": "В треугольнике ABC ∠C = 90°. Медиана CM равна 6. Найди гипотенузу AB.",
+    "answer": 12,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "C",
+        "hypotenuse": "AB",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "hypotenuse"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500407,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_hypotenuse_by_median",
+    "text": "В треугольнике ABC ∠C = 90°. CM = 14. Найди гипотенузу AB.",
+    "answer": 28,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "C",
+        "hypotenuse": "AB",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "hypotenuse"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500408,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_hypotenuse_by_median",
+    "text": "В треугольнике ABC ∠A = 90°. Медиана AM равна 15. Найди гипотенузу BC.",
+    "answer": 30,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "A",
+        "hypotenuse": "BC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "hypotenuse"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500409,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_hypotenuse_by_median",
+    "text": "В треугольнике ABC ∠B = 90°. BM = 9. Найди гипотенузу AC.",
+    "answer": 18,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "B",
+        "hypotenuse": "AC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "hypotenuse"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500410,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_hypotenuse_by_median",
+    "text": "В треугольнике ABC ∠C = 90°. Медиана CM равна 16. Найди гипотенузу AB.",
+    "answer": 32,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "C",
+        "hypotenuse": "AB",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "hypotenuse"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500411,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_hypotenuse_by_median",
+    "text": "В треугольнике ABC ∠A = 90°. AM = 8. Найди гипотенузу BC.",
+    "answer": 16,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "A",
+        "hypotenuse": "BC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "hypotenuse"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500412,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_hypotenuse_by_median",
+    "text": "В треугольнике ABC ∠B = 90°. BM = 18. Найди гипотенузу AC.",
+    "answer": 36,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "B",
+        "hypotenuse": "AC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "hypotenuse"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500413,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_hypotenuse_by_median",
+    "text": "В треугольнике ABC ∠C = 90°. Медиана CM равна 20. Найди гипотенузу AB.",
+    "answer": 40,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "C",
+        "hypotenuse": "AB",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "hypotenuse"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500414,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_median_by_hypotenuse",
+    "text": "В треугольнике ABC угол C равен 90°, точка M — середина стороны AB. Известно, что AB = 24 и BC = 12. Найди CM.",
+    "answer": 12,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "C",
+        "hypotenuse": "AB",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "median"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500415,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_median_by_hypotenuse",
+    "text": "В прямоугольном треугольнике ABC с прямым углом при A точка M — середина стороны BC. Даны BC = 20 и AC = 16. Найди медиану AM.",
+    "answer": 10,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "A",
+        "hypotenuse": "BC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "median"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500416,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_median_by_hypotenuse",
+    "text": "В треугольнике ABC угол B прямой, точка M — середина стороны AC. Известно, что AC = 30 и AB = 18. Найди BM.",
+    "answer": 15,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "A",
+        "hypotenuse": "AC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "median"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500417,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_hypotenuse_by_median",
+    "text": "В треугольнике ABC угол C равен 90°, точка M — середина стороны AB. Медиана CM равна 7, а BC = 9. Найди AB.",
+    "answer": 14,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "C",
+        "hypotenuse": "AB",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "hypotenuse"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500418,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_hypotenuse_by_median",
+    "text": "В прямоугольном треугольнике ABC с прямым углом при A точка M — середина стороны BC. Известно, что AM = 10 и AC = 12. Найди BC.",
+    "answer": 20,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "A",
+        "hypotenuse": "BC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "hypotenuse"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500419,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_median_by_hypotenuse",
+    "text": "В треугольнике ABC прямой угол при B, точка M — середина стороны AC. Даны AC = 26 и BC = 10. Найди медиану BM.",
+    "answer": 13,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "A",
+        "hypotenuse": "AC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "median"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500420,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_median_by_hypotenuse",
+    "text": "В треугольнике ABC угол C равен 90°, точка M — середина стороны AB. Стороны AB и AC равны 40 и 24 соответственно. Найди CM.",
+    "answer": 20,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "C",
+        "hypotenuse": "AB",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "median"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500421,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_hypotenuse_by_median",
+    "text": "В треугольнике ABC угол A прямой, точка M — середина стороны BC. Известно, что AM = 8 и AB = 12. Найди длину гипотенузы BC.",
+    "answer": 16,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "A",
+        "hypotenuse": "BC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "hypotenuse"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500422,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_hypotenuse_by_median",
+    "text": "В прямоугольном треугольнике ABC с прямым углом при B точка M — середина стороны AC. Медиана BM равна 11, а BC = 13. Найди гипотенузу AC.",
+    "answer": 22,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "A",
+        "hypotenuse": "AC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "hypotenuse"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500423,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_median_by_hypotenuse",
+    "text": "В треугольнике ABC угол C прямой, точка M — середина стороны AB. Известно, что AB = 28 и BC = 21. Найди CM.",
+    "answer": 14,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "A",
+        "hypotenuse": "AB",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "median"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500424,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_median_by_hypotenuse",
+    "text": "В прямоугольном треугольнике ABC с прямым углом при A точка M — середина стороны BC. Стороны BC и AC равны 34 и 16. Найди AM.",
+    "answer": 17,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "A",
+        "hypotenuse": "BC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "median"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500425,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_hypotenuse_by_median",
+    "text": "В треугольнике ABC угол B прямой, точка M — середина стороны AC. Известно, что BM = 9 и AB = 15. Найди AC.",
+    "answer": 18,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "A",
+        "hypotenuse": "AC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "hypotenuse"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500426,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_hypotenuse_by_median",
+    "text": "В треугольнике ABC угол C равен 90°, точка M — середина стороны AB. Медиана CM равна 12, а AC = 16. Найди AB.",
+    "answer": 24,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "C",
+        "hypotenuse": "AB",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "hypotenuse"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500427,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_median_by_hypotenuse",
+    "text": "В прямоугольном треугольнике ABC с прямым углом при A точка M — середина стороны BC. Даны BC = 30 и AC = 18. Найди AM.",
+    "answer": 15,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "A",
+        "hypotenuse": "BC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "median"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
+      }
+    }
+  },
+  {
+    "id": 1500428,
+    "pattern": "right_triangle_median_to_hypotenuse",
+    "narrative": "find_median_by_hypotenuse",
+    "text": "В треугольнике ABC угол B прямой, точка M — середина стороны AC. Стороны AC и BC равны 36 и 27 соответственно. Найди медиану BM.",
+    "answer": 18,
+    "image_file": null,
+    "variables": {
+      "given": {
+        "triangle_type": "right",
+        "right_angle": "A",
+        "hypotenuse": "AC",
+        "median_point": "M"
+      },
+      "to_find": {
+        "type": "median"
+      },
+      "humanizer_data": {
+        "property": "median_equals_half_hypotenuse",
+        "formula": "m = c / 2"
       }
     }
   }

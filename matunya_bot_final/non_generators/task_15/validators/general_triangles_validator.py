@@ -990,7 +990,11 @@ class GeneralTrianglesValidator:
 
         # --- 1. Парсим, что дано ---
         # Ищет "косинус ... A равен ЗНАЧЕНИЕ" или "синус ... B равен ЗНАЧЕНИЕ"
-        m_given = re.search(r"(синус|косинус)\s+острого\s+угла\s+([A-Z])(?:[^=]*?)(?:равен|=)\s*([0-9.,√/]+)", text, flags=re.IGNORECASE)
+        m_given = re.search(
+            r"(синус|косинус)\s+острого\s+угла\s+([A-Z]).*?(?:равен|=)\s*([0-9.,√/]+)",
+            text,
+            flags=re.IGNORECASE
+        )
         if not m_given:
             raise ValueError("TrigIdentity Validator: не удалось найти данное значение sin/cos.")
 
@@ -1003,12 +1007,18 @@ class GeneralTrianglesValidator:
         given_val_str = given_val_str.strip().rstrip(".,")
 
         # --- 2. Парсим, что найти ---
-        m_to_find = re.search(r"Найдите\s+(sin|cos)\s*[∠]?\s*([A-Z])", text, flags=re.IGNORECASE)
+        m_to_find = re.search(
+            r"Найди\s+(sin|cos)\s*(?:∠)?\s*([A-Z])",
+            text,
+            flags=re.IGNORECASE
+        )
         if not m_to_find:
-            raise ValueError("TrigIdentity Validator: не удалось определить, что нужно найти.")
+            raise ValueError(
+                "TrigIdentity Validator: не удалось определить, что нужно найти."
+            )
 
-        to_find_func_eng, angle_letter_to_find = m_to_find.groups()
-        to_find_func_eng = to_find_func_eng.lower()
+        to_find_func_eng = m_to_find.group(1).lower()   # sin / cos
+        angle_letter_to_find = m_to_find.group(2).upper()  # A
 
         # --- 3. Вычисляем ответ ---
         given_val_num = self._parse_numeric_with_root(given_val_str)

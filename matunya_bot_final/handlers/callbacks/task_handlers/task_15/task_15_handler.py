@@ -60,7 +60,12 @@ PATTERN_TO_THEME = {
     "equilateral_height_to_side": "isosceles_triangles",
     "equilateral_side_to_element": "isosceles_triangles",
     # Прямоугольные
-    "right_triangle_trap": "right_triangles",
+    "right_triangle_angles_sum": "right_triangles",
+    "pythagoras_find_leg": "right_triangles",
+    "pythagoras_find_hypotenuse": "right_triangles",
+    "find_cos_sin_tg_from_sides": "right_triangles",
+    "find_side_from_trig_ratio": "right_triangles",
+    "right_triangle_median_to_hypotenuse": "right_triangles",
 }
 
 THEMES: tuple[str, ...] = (

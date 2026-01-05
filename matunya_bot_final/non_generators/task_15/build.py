@@ -19,9 +19,9 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.
 
 from matunya_bot_final.non_generators.task_15.validators.angles_validator import AnglesValidator
 from matunya_bot_final.non_generators.task_15.validators.isosceles_triangles_validator import IsoscelesValidator
-from matunya_bot_final.non_generators.task_15.validators.general_triangles_validator import (
-    GeneralTrianglesValidator,
-)
+from matunya_bot_final.non_generators.task_15.validators.general_triangles_validator import GeneralTrianglesValidator
+from matunya_bot_final.non_generators.task_15.validators.right_triangles_validator import RightTrianglesValidator
+
 
 # --- КОНФИГУРАЦИЯ ПУТЕЙ ---
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -38,6 +38,7 @@ VALIDATOR_MAPPING = {
     "angles.txt": AnglesValidator,
     "general_triangles.txt": GeneralTrianglesValidator,
     "isosceles_triangles.txt": IsoscelesValidator,
+    "right_triangles.txt": RightTrianglesValidator,
 }
 
 

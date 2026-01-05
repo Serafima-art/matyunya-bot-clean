@@ -105,40 +105,40 @@ find_cos_sin_tg_from_sides|В треугольнике ABC ∠C = 90°, гипо
 
 #Паттерн: find_side_from_trig_ratio
 #Дан cos
-find_side_from_trig_ratio|В треугольнике ABC угол C равен 90°, cos A = 3/5, AC = 12. Найдите гипотенузу AB.
-find_side_from_trig_ratio|В треугольнике ABC угол A прямой, cos B = 5/13, AB = 20. Найдите гипотенузу BC.
-find_side_from_trig_ratio|В прямоугольном треугольнике ABC ∠C = 90°, cos B = 4/5, AB = 25. Найдите катет BC.
-find_side_from_trig_ratio|В треугольнике ABC угол B равен 90°, cos A = 12/13, AB = 24. Найдите гипотенузу AC.
-find_side_from_trig_ratio|В треугольнике ABC ∠C = 90°, cos A = 8/17, AC = 16. Найдите гипотенузу AB.
-find_side_from_trig_ratio|В прямоугольном треугольнике ABC угол A прямой, cos C = 9/15, AC = 18. Найдите гипотенузу BC.
-find_side_from_trig_ratio|В треугольнике ABC ∠B = 90°, cos C = 7/25, BC = 14. Найдите гипотенузу AC.
-find_side_from_trig_ratio|В треугольнике ABC угол C равен 90°, cos B = 5/12, AB = 60. Найдите катет BC.
-find_side_from_trig_ratio|В прямоугольном треугольнике ABC ∠A = 90°, cos C = 20/29, AC = 40. Найдите гипотенузу BC.
-find_side_from_trig_ratio|В треугольнике ABC угол B прямой, cos A = 15/17, AB = 30. Найдите гипотенузу AC.
+find_side_from_trig_ratio|В треугольнике ABC угол C равен 90°, cos A = 3/5, AC = 12. Найди гипотенузу AB.
+find_side_from_trig_ratio|В треугольнике ABC угол A прямой, cos B = 5/13, AB = 20. Найди гипотенузу BC.
+find_side_from_trig_ratio|В прямоугольном треугольнике ABC ∠C = 90°, cos B = 4/5, AB = 25. Найди катет BC.
+find_side_from_trig_ratio|В треугольнике ABC угол B равен 90°, cos A = 12/13, AB = 24. Найди гипотенузу AC.
+find_side_from_trig_ratio|В треугольнике ABC ∠C = 90°, cos A = 8/17, AC = 16. Найди гипотенузу AB.
+find_side_from_trig_ratio|В прямоугольном треугольнике ABC угол A прямой, cos C = 9/15, AC = 18. Найди гипотенузу BC.
+find_side_from_trig_ratio|В треугольнике ABC ∠B = 90°, cos C = 7/25, BC = 14. Найди гипотенузу AC.
+find_side_from_trig_ratio|В треугольнике ABC угол C равен 90°, cos B = 5/12, AB = 60. Найди катет BC.
+find_side_from_trig_ratio|В прямоугольном треугольнике ABC ∠A = 90°, cos C = 20/29, AC = 40. Найди гипотенузу BC.
+find_side_from_trig_ratio|В треугольнике ABC угол B прямой, cos A = 15/17, AB = 30. Найди гипотенузу AC.
 
 #Дан sin
-find_side_from_trig_ratio|В треугольнике ABC угол C равен 90°, sin A = 3/5, AB = 25. Найдите катет BC.
-find_side_from_trig_ratio|В прямоугольном треугольнике ABC ∠A = 90°, sin B = 5/13, AC = 20. Найдите гипотенузу BC.
-find_side_from_trig_ratio|В треугольнике ABC ∠C = 90°, sin B = 4/5, AB = 30. Найдите катет AC.
-find_side_from_trig_ratio|В треугольнике ABC угол B прямой, sin A = 7/25, AC = 50. Найдите гипотенузу BC.
-find_side_from_trig_ratio|В прямоугольном треугольнике ABC ∠C = 90°, sin A = 6/10, AB = 20. Найдите катет BC.
-find_side_from_trig_ratio|В треугольнике ABC угол A равен 90°, sin C = 9/15, BC = 18. Найдите гипотенузу AB.
-find_side_from_trig_ratio|В прямоугольном треугольнике ABC ∠B = 90°, sin A = 8/17, AC = 34. Найдите гипотенузу BC.
-find_side_from_trig_ratio|В треугольнике ABC ∠C = 90°, sin B = 12/13, AB = 26. Найдите катет AC.
-find_side_from_trig_ratio|В треугольнике ABC угол A прямой, sin C = 5/13, AB = 10. Найдите гипотенузу BC.
-find_side_from_trig_ratio|В прямоугольном треугольнике ABC ∠B = 90°, sin C = 20/29, AC = 58. Найдите гипотенузу AB.
+find_side_from_trig_ratio|В треугольнике ABC угол C равен 90°, sin A = 3/5, AB = 25. Найди катет BC.
+find_side_from_trig_ratio|В прямоугольном треугольнике ABC ∠A = 90°, sin B = 5/13, AC = 20. Найди гипотенузу BC.
+find_side_from_trig_ratio|В треугольнике ABC ∠C = 90°, sin B = 4/5, AB = 30. Найди катет AC.
+find_side_from_trig_ratio|В треугольнике ABC угол B прямой, sin A = 7/25, AC = 50. Найди гипотенузу BC.
+find_side_from_trig_ratio|В прямоугольном треугольнике ABC ∠C = 90°, sin A = 6/10, AB = 20. Найди катет BC.
+find_side_from_trig_ratio|В треугольнике ABC угол A равен 90°, sin C = 9/15, BC = 18. Найди гипотенузу AB.
+find_side_from_trig_ratio|В прямоугольном треугольнике ABC ∠B = 90°, sin A = 8/17, AC = 34. Найди гипотенузу BC.
+find_side_from_trig_ratio|В треугольнике ABC ∠C = 90°, sin B = 12/13, AB = 26. Найди катет AC.
+find_side_from_trig_ratio|В треугольнике ABC угол A прямой, sin C = 5/13, AB = 10. Найди гипотенузу BC.
+find_side_from_trig_ratio|В прямоугольном треугольнике ABC ∠B = 90°, sin C = 20/29, AC = 58. Найди гипотенузу AB.
 
 #Дан tg
-find_side_from_trig_ratio|В треугольнике ABC угол C равен 90°, tg A = 3/4, AC = 20. Найдите катет BC.
-find_side_from_trig_ratio|В прямоугольном треугольнике ABC ∠B = 90°, tg A = 5/12, AB = 24. Найдите катет BC.
-find_side_from_trig_ratio|В треугольнике ABC угол C прямой, tg B = 4/3, BC = 12. Найдите катет AC.
-find_side_from_trig_ratio|В треугольнике ABC ∠C = 90°, tg A = 6/5, AC = 25. Найдите катет BC.
-find_side_from_trig_ratio|В треугольнике ABC ∠C = 90°, tg B = 5/2, BC = 10. Найдите катет AC.
-find_side_from_trig_ratio|В треугольнике ABC угол C равен 90°, tg A = 3/5, AC = 20. Найдите катет BC.
-find_side_from_trig_ratio|В прямоугольном треугольнике ABC ∠B = 90°, tg A = 3/4, AB = 8. Найдите катет BC.
-find_side_from_trig_ratio|В треугольнике ABC угол A прямой, tg C = 5/12, катет AB = 10. Найдите катет AC.
-find_side_from_trig_ratio|В прямоугольном треугольнике ABC ∠C = 90°, tg A = 7/24, BC = 14. Найдите катет AC.
-find_side_from_trig_ratio|В треугольнике ABC угол B равен 90°, tg A = 5/6, AB = 12. Найдите катет BC.
+find_side_from_trig_ratio|В треугольнике ABC угол C равен 90°, tg A = 3/4, AC = 20. Найди катет BC.
+find_side_from_trig_ratio|В прямоугольном треугольнике ABC ∠B = 90°, tg A = 5/12, AB = 24. Найди катет BC.
+find_side_from_trig_ratio|В треугольнике ABC угол C прямой, tg B = 4/3, BC = 12. Найди катет AC.
+find_side_from_trig_ratio|В треугольнике ABC ∠C = 90°, tg A = 6/5, AC = 25. Найди катет BC.
+find_side_from_trig_ratio|В треугольнике ABC ∠C = 90°, tg B = 5/2, BC = 10. Найди катет AC.
+find_side_from_trig_ratio|В треугольнике ABC угол C равен 90°, tg A = 3/5, AC = 20. Найди катет BC.
+find_side_from_trig_ratio|В прямоугольном треугольнике ABC ∠B = 90°, tg A = 3/4, AB = 8. Найди катет BC.
+find_side_from_trig_ratio|В треугольнике ABC угол A прямой, tg C = 5/12, катет AB = 10. Найди катет AC.
+find_side_from_trig_ratio|В прямоугольном треугольнике ABC ∠C = 90°, tg A = 7/24, BC = 14. Найди катет AC.
+find_side_from_trig_ratio|В треугольнике ABC угол B равен 90°, tg A = 5/6, AB = 12. Найди катет BC.
 
 # Паттерн: right_triangle_median_to_hypotenuse
 # Найди медиану

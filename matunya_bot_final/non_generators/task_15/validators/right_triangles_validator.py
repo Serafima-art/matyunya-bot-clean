@@ -564,13 +564,196 @@ class RightTrianglesValidator:
         }
 
     # -----------------------------------------------------------
-    # Паттерн 4.6: Свойство медианы к гипотенузе (right_triangle_median_to_hypotenuse)
+    # Паттерн 4.6: Свойство медианы к гипотенузе
     # -----------------------------------------------------------
     def _handle_median_to_hypotenuse(self, raw: Dict[str, Any]) -> Dict[str, Any]:
-        """
-        Логика: Медиана, проведенная к гипотенузе, равна её половине.
-        """
-        raise NotImplementedError("Паттерн 4.6 еще не реализован")
+        text = raw["text"]
+        task_id = raw.get("id")
+
+        # -------------------------------------------------------
+        # 1. Определяем прямой угол
+        # -------------------------------------------------------
+        right_angle = extract_right_angle(text)
+
+        vertices = {"A", "B", "C"}
+
+        # -------------------------------------------------------
+        # 2. Ищем фразу "M — середина стороны XY"
+        #    Это ПРИОРИТЕТНЫЙ источник гипотенузы
+        # -------------------------------------------------------
+        mid_match = re.search(
+            r"M\s*[—-]\s*середин[аы]\s+сторон[ы]\s+([A-Z]{2})",
+            text,
+            re.IGNORECASE
+        )
+
+        hyp_name = None
+
+        if mid_match:
+            hyp_name = mid_match.group(1).upper()
+        else:
+            # если не нашли через середину — определяем по прямому углу
+            hyp_name = "".join(sorted(vertices - {right_angle}))
+
+        # -------------------------------------------------------
+        # 3. Извлекаем все числовые данные
+        # -------------------------------------------------------
+        values = {}
+
+        # --- формат: "AB = 24", "AC равна 16"
+        side_matches = re.findall(
+            r"([A-Z]{2})\s*(?:=|равна|равен|равны)\s*([\d,.]+)",
+            text
+        )
+        for name, val in side_matches:
+            values[name.upper()] = float(val.replace(",", "."))
+
+        # --- формат: "Сторона AB равна 14"
+        single_side_match = re.findall(
+            r"сторон[аы]\s+([A-Z]{2})\s+(?:=|равна|равен)\s+([\d,.]+)",
+            text,
+            re.IGNORECASE
+        )
+        for name, val in single_side_match:
+            values[name.upper()] = float(val.replace(",", "."))
+
+        # --- формат: "Стороны AB и AC равны 40 и 24"
+        pair_match = re.search(
+            r"сторон[ыа]\s+([A-Z]{2})\s*(?:,|\s+и\s+)\s*([A-Z]{2})\s+равн[ыа]\s+([\d,.]+)\s+и\s+([\d,.]+)",
+            text,
+            re.IGNORECASE
+        )
+        if pair_match:
+            s1, s2, v1, v2 = pair_match.groups()
+            values[s1.upper()] = float(v1.replace(",", "."))
+            values[s2.upper()] = float(v2.replace(",", "."))
+
+        # --- формат: "Гипотенуза AB равна 10"
+        hyp_match = re.findall(
+            r"гипотенуз[аы]\s+([A-Z]{2})\s+(?:=|равна|равен)\s+([\d,.]+)",
+            text,
+            re.IGNORECASE
+        )
+
+        for name, val in hyp_match:
+            values[name.upper()] = float(val.replace(",", "."))
+
+        # --- медиана: "CM = 7", "AM равна 10"
+        median_match = re.search(
+            r"([ABC])M\s*(?:=|равна|равен)\s*([\d,.]+)",
+            text
+        )
+
+        median_vertex = None
+        median_value = None
+        if median_match:
+            median_vertex = median_match.group(1).upper()
+            median_value = float(median_match.group(2).replace(",", "."))
+
+        # -------------------------------------------------------
+        # 4. Определяем, ЧТО НУЖНО НАЙТИ
+        # -------------------------------------------------------
+        text_l = text.lower()
+
+        # 🔴 АБСОЛЮТНЫЙ приоритет — формулировка "найди"
+        if re.search(r"найди\s+(?:длину\s+)?(гипотенуз|ab|bc|ac)", text_l):
+            find_hypotenuse = True
+            find_median = False
+
+        elif re.search(r"найди\s+медиан", text_l):
+            find_median = True
+            find_hypotenuse = False
+
+        else:
+            # резерв — по объекту
+            find_median = bool(re.search(r"\b[ABC]M\b", text))
+            find_hypotenuse = bool(re.search(r"\b(AB|BC|AC)\b", text)) and not find_median
+
+        if not (find_median or find_hypotenuse):
+            raise ValueError("Не удалось определить, что требуется найти")
+
+        # -------------------------------------------------------
+        # 4.1 Подстраховка: гипотенуза может быть дана отдельно
+        # -------------------------------------------------------
+        # например: "Гипотенуза AB равна 10" или "AB = 10"
+
+        if find_median and hyp_name not in values:
+            hyp_match = re.search(
+                rf"{hyp_name}\s*(?:=|равна|равен)\s*([\d,.]+)",
+                text,
+                re.IGNORECASE
+            )
+            if hyp_match:
+                values[hyp_name] = float(
+                    hyp_match.group(1).replace(",", ".")
+                )
+
+        # -------------------------------------------------------
+        # 5. Вычисление
+        # -------------------------------------------------------
+        if find_hypotenuse:
+            # ищем гипотенузу → медиана ОБЯЗАНА быть числом
+            if median_value is None:
+                raise ValueError(
+                    "Для нахождения гипотенузы не задана медиана"
+                )
+
+            answer = median_value * 2
+            narrative = "find_hypotenuse_by_median"
+            to_find = "hypotenuse"
+
+        else:
+            # ищем медиану
+            hyp = values.get(hyp_name)
+
+            if hyp is not None:
+                # числовой ответ
+                answer = hyp / 2
+            else:
+                # логический ответ по свойству
+                answer = None
+
+            narrative = "find_median_by_hypotenuse"
+            to_find = "median"
+
+        # -------------------------------------------------------
+        # 6. Красивый ответ
+        # -------------------------------------------------------
+        if answer is None:
+            pass  # допустимо, логический ответ без числа
+
+        elif isinstance(answer, (int, float)):
+            if float(answer).is_integer():
+                answer = int(answer)
+            else:
+                answer = round(answer, 2)
+
+        # -------------------------------------------------------
+        # 7. Финальный JSON
+        # -------------------------------------------------------
+        return {
+            "id": task_id,
+            "pattern": "right_triangle_median_to_hypotenuse",
+            "narrative": narrative,
+            "text": text,
+            "answer": answer,
+            "image_file": None,
+            "variables": {
+                "given": {
+                    "triangle_type": "right",
+                    "right_angle": right_angle,
+                    "hypotenuse": hyp_name,
+                    "median_point": "M",
+                },
+                "to_find": {
+                    "type": to_find
+                },
+                "humanizer_data": {
+                    "property": "median_equals_half_hypotenuse",
+                    "formula": "m = c / 2",
+                }
+            }
+        }
 
 
 # =======================================================
