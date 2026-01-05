@@ -139,3 +139,82 @@ find_side_from_trig_ratio|В прямоугольном треугольнике
 find_side_from_trig_ratio|В треугольнике ABC угол A прямой, tg C = 5/12, катет AB = 10. Найдите катет AC.
 find_side_from_trig_ratio|В прямоугольном треугольнике ABC ∠C = 90°, tg A = 7/24, BC = 14. Найдите катет AC.
 find_side_from_trig_ratio|В треугольнике ABC угол B равен 90°, tg A = 5/6, AB = 12. Найдите катет BC.
+
+# Паттерн: right_triangle_median_to_hypotenuse
+# Найди медиану
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠C = 90°. Сторона AB равна 14. Найди медиану CM.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠A = 90°. Гипотенуза BC равна 18. Найди медиану AM.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠B = 90°. Сторона AC равна 20. Найди медиану BM.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠C = 90°. Сторона AB равна 26. Найди медиану CM.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠A = 90°. Сторона BC равна 24. Найди медиану AM.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠B = 90°. Гипотенуза AC равна 16. Найди медиану BM.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠C = 90°. Сторона AB равна 30. Найди медиану CM.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠A = 90°. Сторона BC равна 28. Найди медиану AM.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠B = 90°. Гипотенуза AC равна 22. Найди медиану BM.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠C = 90°. Сторона AB равна 12. Найди медиану CM.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠A = 90°. Сторона BC равна 40. Найди медиану AM.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠B = 90°. Сторона AC равна 18. Найди медиану BM.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠C = 90°. Сторона AB равна 32. Найди медиану CM.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠A = 90°. Гипотенуза BC равна 20. Найди медиану AM.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠B = 90°. Сторона AC равна 36. Найди медиану BM.
+
+# Найди гипотенузу
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠C = 90°. Медиана CM равна 7. Найди гипотенузу AB.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠C = 90°. CM = 9. Найди гипотенузу AB.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠A = 90°. Медиана AM равна 10. Найди гипотенузу BC.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠B = 90°. BM = 8. Найди гипотенузу AC.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠C = 90°. Медиана CM равна 12. Найди гипотенузу AB.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠A = 90°. AM = 11. Найди гипотенузу BC.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠B = 90°. Медиана BM равна 13. Найди гипотенузу AC.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠C = 90°. Медиана CM равна 6. Найди гипотенузу AB.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠C = 90°. CM = 14. Найди гипотенузу AB.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠A = 90°. Медиана AM равна 15. Найди гипотенузу BC.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠B = 90°. BM = 9. Найди гипотенузу AC.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠C = 90°. Медиана CM равна 16. Найди гипотенузу AB.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠A = 90°. AM = 8. Найди гипотенузу BC.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠B = 90°. BM = 18. Найди гипотенузу AC.
+right_triangle_median_to_hypotenuse|В треугольнике ABC ∠C = 90°. Медиана CM равна 20. Найди гипотенузу AB.
+
+# Ловушка — дана лишняя сторона (M — середина гипотенузы)
+
+right_triangle_median_to_hypotenuse|В треугольнике ABC угол C равен 90°, точка M — середина стороны AB. Известно, что AB = 24 и BC = 12. Найди CM.
+right_triangle_median_to_hypotenuse|В прямоугольном треугольнике ABC с прямым углом при A точка M — середина стороны BC. Даны BC = 20 и AC = 16. Найди медиану AM.
+right_triangle_median_to_hypotenuse|В треугольнике ABC угол B прямой, точка M — середина стороны AC. Известно, что AC = 30 и AB = 18. Найди BM.
+right_triangle_median_to_hypotenuse|В треугольнике ABC угол C равен 90°, точка M — середина стороны AB. Медиана CM равна 7, а BC = 9. Найди AB.
+right_triangle_median_to_hypotenuse|В прямоугольном треугольнике ABC с прямым углом при A точка M — середина стороны BC. Известно, что AM = 10 и AC = 12. Найди BC.
+right_triangle_median_to_hypotenuse|В треугольнике ABC прямой угол при B, точка M — середина стороны AC. Даны AC = 26 и BC = 10. Найди медиану BM.
+right_triangle_median_to_hypotenuse|В треугольнике ABC угол C равен 90°, точка M — середина стороны AB. Стороны AB и AC равны 40 и 24 соответственно. Найди CM.
+right_triangle_median_to_hypotenuse|В треугольнике ABC угол A прямой, точка M — середина стороны BC. Известно, что AM = 8 и AB = 12. Найди длину гипотенузы BC.
+right_triangle_median_to_hypotenuse|В прямоугольном треугольнике ABC с прямым углом при B точка M — середина стороны AC. Медиана BM равна 11, а BC = 13. Найди гипотенузу AC.
+right_triangle_median_to_hypotenuse|В треугольнике ABC угол C прямой, точка M — середина стороны AB. Известно, что AB = 28 и BC = 21. Найди CM.
+right_triangle_median_to_hypotenuse|В прямоугольном треугольнике ABC с прямым углом при A точка M — середина стороны BC. Стороны BC и AC равны 34 и 16. Найди AM.
+right_triangle_median_to_hypotenuse|В треугольнике ABC угол B прямой, точка M — середина стороны AC. Известно, что BM = 9 и AB = 15. Найди AC.
+right_triangle_median_to_hypotenuse|В треугольнике ABC угол C равен 90°, точка M — середина стороны AB. Медиана CM равна 12, а AC = 16. Найди AB.
+right_triangle_median_to_hypotenuse|В прямоугольном треугольнике ABC с прямым углом при A точка M — середина стороны BC. Даны BC = 30 и AC = 18. Найди AM.
+right_triangle_median_to_hypotenuse|В треугольнике ABC угол B прямой, точка M — середина стороны AC. Стороны AC и BC равны 36 и 27 соответственно. Найди медиану BM.
+
+#Найди половину гипотенузы или медиану по половине гипотенузе
+#right_triangle_median_to_hypotenuse|В треугольнике ABC угол C равен 90°, M — середина стороны AB. Найди AM, если CM = 6.
+#right_triangle_median_to_hypotenuse|В прямоугольном треугольнике ABC с прямым углом при A медиана AM равна 8. Найди CM.
+#right_triangle_median_to_hypotenuse|В треугольнике ABC угол C прямой. Известно, что медиана CM равна 9. Найди половину гипотенузы AB.
+#right_triangle_median_to_hypotenuse|В треугольнике ABC угол B равен 90°. Найди AM, если BM = 7.
+#right_triangle_median_to_hypotenuse|В прямоугольном треугольнике ABC ∠C = 90°, медиана CM равна 10. Найди половину гипотенузы.
+#right_triangle_median_to_hypotenuse|В треугольнике ABC прямой угол расположен при A. Если AM = 4, чему равна половина гипотенузы?
+#right_triangle_median_to_hypotenuse|В треугольнике с прямым углом при B медиана BM имеет длину 11. Найди половину гипотенузы.
+#right_triangle_median_to_hypotenuse|В прямоугольном треугольнике ABC угол C равен 90°. Если CM = 13, найди половину стороны AB.
+#right_triangle_median_to_hypotenuse|В треугольнике ABC прямой угол при A. Длина медианы AM равна 15. Найди половину гипотенузы BC.
+#right_triangle_median_to_hypotenuse|В прямоугольном треугольнике с прямым углом при B медиана BM равна 6. Чему равна половина гипотенузы?
+#right_triangle_median_to_hypotenuse|В треугольнике ABC угол C прямой, медиана CM равна 14. Найди BM.
+#right_triangle_median_to_hypotenuse|В прямоугольном треугольнике ABC ∠A = 90° длина AM равна 9. Найди CM.
+#right_triangle_median_to_hypotenuse|В треугольнике ABC прямой угол расположен при B. Если BM = 16, определи AM.
+
+#right_triangle_median_to_hypotenuse|В треугольнике ABC угол C равен 90°. Точка M — середина стороны AB. Если AM = 7, найди медиану CM.
+#right_triangle_median_to_hypotenuse|В прямоугольном треугольнике ABC с прямым углом при A точка M — середина стороны BC. Если BM = 10, найди медиану AM.
+#right_triangle_median_to_hypotenuse|В треугольнике ABC угол B прямой. Точка M — середина стороны AC. Если CM = 6, найди медиану BM.
+#right_triangle_median_to_hypotenuse|В прямоугольном треугольнике ABC ∠C = 90° точка M — середина стороны AB. Если MB = 12, найди медиану CM.
+#right_triangle_median_to_hypotenuse|В треугольнике ABC прямой угол расположен при A. Точка M — середина стороны BC. Если CM = 9, найди медиану AM.
+#right_triangle_median_to_hypotenuse|В треугольнике ABC угол B равен 90°. Точка M — середина стороны AC. Если AM = 8, найди медиану BM.
+#right_triangle_median_to_hypotenuse|В прямоугольном треугольнике ABC с прямым углом при C точка M — середина стороны AB. Если AM = 11, найди медиану CM.
+#right_triangle_median_to_hypotenuse|В треугольнике ABC прямой угол при A. Точка M — середина стороны BC. Если BM = 14, найди медиану AM.
+#right_triangle_median_to_hypotenuse|В прямоугольном треугольнике ABC ∠B = 90° точка M — середина стороны AC. Если CM = 5, найди медиану BM.
+#right_triangle_median_to_hypotenuse|В треугольнике ABC угол C прямой. Точка M — середина стороны AB. Если MB = 13, найди медиану CM.

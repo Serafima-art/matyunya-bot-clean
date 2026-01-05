@@ -20,7 +20,7 @@ from typing import Optional
 # НАСТРОЙКИ
 # ---------------------------------------------------------------------
 
-TARGET_PATTERN = "find_cos_sin_tg_from_sides"
+TARGET_PATTERN = "right_triangle_median_to_hypotenuse"
 DEFINITIONS_FILE = "right_triangles.txt"
 OUTPUT_FILENAME = "debug_validator_output.txt"
 

@@ -402,13 +402,166 @@ class RightTrianglesValidator:
         }
 
     # ----------------------------------------------------------
-    # Паттерн 4.5: Нахождение стороны по sin, cos, tg (find_side_from_trig_ratio)
+    # Паттерн 4.5: Нахождение стороны по sin, cos, tg
     # -----------------------------------------------------------
     def _handle_side_from_trig(self, raw: Dict[str, Any]) -> Dict[str, Any]:
-        """
-        Логика: Дана одна сторона и trig(angle), найти другую сторону.
-        """
-        raise NotImplementedError("Паттерн 4.5 еще не реализован")
+        text = raw["text"]
+        task_id = raw.get("id")
+
+        # -------------------------------------------------------
+        # 1. Определяем прямой угол (ТОЧНО как в 4.4)
+        # -------------------------------------------------------
+        def extract_explicit_right_angle(text: str) -> str:
+            t = text.replace("∠", "угол ").lower()
+
+            patterns = [
+                r"\bугол\s*([abc])\s*(=|равен)\s*90",
+                r"\bугол\s*([abc])\s*[—-]?\s*прям",
+                r"\bпрям(ой|ым)\s*угл(ом|а)\s*([abc])",
+                r"\b(с|имеет)\s*прям(ым|ой)?\s*угл(ом|а)?\s*([abc])",
+                r"\bпрямоугольн\w*\s+треугольник\w*\s+abc.*?угол\s*([abc])",
+            ]
+
+            for p in patterns:
+                m = re.search(p, t, re.IGNORECASE | re.DOTALL)
+                if not m:
+                    continue
+                for g in m.groups():
+                    if g and g.upper() in ("A", "B", "C"):
+                        return g.upper()
+
+            raise ValueError("Не удалось определить прямой угол")
+
+        right_angle = extract_explicit_right_angle(text)
+
+        # -------------------------------------------------------
+        # 2. Определяем тригонометрическую функцию
+        # -------------------------------------------------------
+        text_l = text.lower()
+        if "tg" in text_l or "тангенс" in text_l:
+            trig_fn = "tg"
+        elif "cos" in text_l or "косинус" in text_l:
+            trig_fn = "cos"
+        elif "sin" in text_l or "синус" in text_l:
+            trig_fn = "sin"
+        else:
+            raise ValueError("Не удалось определить sin / cos / tg")
+
+        # -------------------------------------------------------
+        # 3. Определяем угол, при котором задана функция
+        # -------------------------------------------------------
+        target_angle = extract_target_angle(text)
+
+        if target_angle == right_angle:
+            raise ValueError("Тригонометрическая функция задана при прямом угле")
+
+        other_vertex = list({"A", "B", "C"} - {right_angle, target_angle})[0]
+
+        # -------------------------------------------------------
+        # 4. Извлекаем числовые значения
+        # -------------------------------------------------------
+        ratio_match = re.search(r"=\s*([\d,.]+)\s*/\s*([\d,.]+)", text)
+        if not ratio_match:
+            raise ValueError("Не удалось извлечь значение тригонометрического отношения")
+
+        num = float(ratio_match.group(1).replace(",", "."))
+        den = float(ratio_match.group(2).replace(",", "."))
+
+        value = num / den
+
+        side_match = re.search(
+            r"([A-Z]{2})\s*(?:=|равен|равна)\s*([\d,.]+)",
+            text
+        )
+        if not side_match:
+            raise ValueError("Не удалось извлечь заданную сторону")
+
+        known_side_name = side_match.group(1).upper()
+        known_side_val = float(side_match.group(2).replace(",", "."))
+
+        # -------------------------------------------------------
+        # 5. Имена сторон
+        # -------------------------------------------------------
+        hyp_name = "".join(sorted({"A", "B", "C"} - {right_angle}))
+        adj_name = "".join(sorted({right_angle, target_angle}))
+        opp_name = "".join(sorted({right_angle, other_vertex}))
+
+        # -------------------------------------------------------
+        # 6. Вычисление искомой стороны
+        # -------------------------------------------------------
+        if trig_fn == "sin":
+            # sin = opp / hyp
+            if known_side_name == hyp_name:
+                opp = value * known_side_val
+                hyp = known_side_val
+                adj = (hyp**2 - opp**2) ** 0.5
+                find = opp_name
+            else:
+                opp = known_side_val
+                hyp = opp / value
+                adj = (hyp**2 - opp**2) ** 0.5
+                find = hyp_name
+
+        elif trig_fn == "cos":
+            # cos = adj / hyp
+            if known_side_name == hyp_name:
+                adj = value * known_side_val
+                hyp = known_side_val
+                opp = (hyp**2 - adj**2) ** 0.5
+                find = adj_name
+            else:
+                adj = known_side_val
+                hyp = adj / value
+                opp = (hyp**2 - adj**2) ** 0.5
+                find = hyp_name
+
+        else:
+            # tg = opp / adj
+            if known_side_name == adj_name:
+                opp = value * known_side_val
+                adj = known_side_val
+                hyp = (opp**2 + adj**2) ** 0.5
+                find = opp_name
+            else:
+                opp = known_side_val
+                adj = opp / value
+                hyp = (opp**2 + adj**2) ** 0.5
+                find = adj_name
+
+        answer = round(
+            {"hyp": hyp, "adj": adj, "opp": opp}[
+                "hyp" if find == hyp_name else
+                "adj" if find == adj_name else
+                "opp"
+            ],
+            2
+        )
+
+        # -------------------------------------------------------
+        # 7. Финальный JSON
+        # -------------------------------------------------------
+        return {
+            "id": task_id,
+            "pattern": "find_side_from_trig_ratio",
+            "text": text,
+            "answer": answer,
+            "image_file": f"T3_right_{right_angle}.png",
+            "variables": {
+                "given": {
+                    "trig_fn": trig_fn,
+                    "angle": target_angle,
+                    known_side_name: known_side_val,
+                },
+                "target": {
+                    "find": find,
+                    "right_angle": right_angle,
+                },
+                "humanizer_data": {
+                    "ratio": f"{num}/{den}",
+                    "formula": f"{trig_fn} = {num}/{den}",
+                },
+            },
+        }
 
     # -----------------------------------------------------------
     # Паттерн 4.6: Свойство медианы к гипотенузе (right_triangle_median_to_hypotenuse)
