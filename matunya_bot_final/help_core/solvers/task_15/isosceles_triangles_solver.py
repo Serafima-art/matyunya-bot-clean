@@ -7,39 +7,102 @@ from typing import Dict, Any, List
 def _solve_isosceles_triangle_angles(task: Dict[str, Any]) -> List[Dict[str, Any]]:
     """
     Решает задачи на углы в равнобедренном треугольнике.
+
     Формы:
-    - find_base_angle      (дан угол при вершине)
-    - find_vertex_angle   (дан угол при основании)
+    - find_base_angle      (дан угол при вершине → найти угол при основании)
+    - find_vertex_angle   (дан угол при основании → найти угол при вершине)
+
+    Legacy-совместим с существующим humanizer.
     """
 
+    # --------------------------------------------------
+    # Извлечение данных
+    # --------------------------------------------------
     variables = task.get("variables", {})
     given = variables.get("given", {})
     to_find = variables.get("to_find", {})
     humanizer_data = variables.get("humanizer_data", {})
 
-    narrative = variables.get("narrative")
+    narrative = task.get("narrative")
+
+    triangle_name = given.get("triangle_name", "ABC")
+
+    angle_data = given.get("angle", {})
+    given_angle_value = angle_data.get("value")
+    given_angle_role = angle_data.get("role")        # "vertex" | "base"
+    given_angle_letter = angle_data.get("letter", "")
+
+    if given_angle_value is None:
+        raise ValueError("isosceles_triangle_angles: не задано значение угла")
+
+    # --------------------------------------------------
+    # Определяем вершину и основания ЯВНО
+    # --------------------------------------------------
+    vertex = humanizer_data.get("vertex_letter")
+
+    if not vertex:
+        raise ValueError(
+            "isosceles_triangle_angles: не указана вершина треугольника"
+        )
+
+    triangle = triangle_name.strip()
+    if len(triangle) != 3:
+        raise ValueError(
+            "isosceles_triangle_angles: некорректное имя треугольника"
+        )
+
+    base_letters = [c for c in triangle if c != vertex]
+
+    if len(base_letters) != 2:
+        raise ValueError(
+            "isosceles_triangle_angles: не удалось определить углы при основании"
+        )
+
+    base_1, base_2 = base_letters
+
+    target_letter = to_find.get("letter") or base_1
+
+    # --------------------------------------------------
+    # Общий context для humanizer
+    # --------------------------------------------------
     context: Dict[str, Any] = {
-        "res": task.get("answer")
+        "triangle_name": triangle_name,
+        "given_angle_value": given_angle_value,
+        "given_angle_letter": given_angle_letter,
+        "target_angle_letter": target_letter,
+        "equal_sides": humanizer_data.get(
+            "equal_sides",
+            f"{vertex}{base_1} = {vertex}{base_2}"
+        ),
+        "res": task.get("answer"),
     }
 
-    # --------------------------------------------------
+    # ==================================================
     # ФОРМА 1: find_base_angle
-    # Дан угол при вершине → найти угол при основании
-    # --------------------------------------------------
+    # Дан угол при вершине → ищем угол при основании
+    # ==================================================
     if narrative == "find_base_angle":
-        vertex_angle = given.get("angles", {}).get("vertex")
 
-        if vertex_angle is None:
-            raise ValueError("isosceles_triangle_angles: не задан угол при вершине")
+        if given_angle_role != "vertex":
+            raise ValueError(
+                "isosceles_triangle_angles: ожидался угол при вершине"
+            )
 
-        two_base_sum = 180 - vertex_angle
-        res = two_base_sum // 2
+        # 180° − угол при вершине
+        two_base_sum = 180 - given_angle_value
+
+        # каждый угол при основании
+        base_angle = two_base_sum / 2
 
         context.update({
-            "vertex_angle": vertex_angle,
+            "vertex_angle": given_angle_value,
             "two_base_sum": two_base_sum,
-            "res": res,
-            "base_angle_name": to_find.get("name", "C")
+            "context_base_angle": base_angle,
+            "base_angle_name": target_letter,
+            "second_base_angle_name": (
+                base_2 if target_letter != base_2 else base_1
+            ),
+            "vertex_name": vertex,          # ← ВОТ ЭТО
         })
 
         return [{
@@ -47,27 +110,30 @@ def _solve_isosceles_triangle_angles(task: Dict[str, Any]) -> List[Dict[str, Any
             "data": context
         }]
 
-    # --------------------------------------------------
+    # ==================================================
     # ФОРМА 2: find_vertex_angle
-    # Дан угол при основании → найти угол при вершине
-    # --------------------------------------------------
+    # Дан угол при основании → ищем угол при вершине
+    # ==================================================
     elif narrative == "find_vertex_angle":
-        base_angle = given.get("angles", {}).get("base")
 
-        if base_angle is None:
-            raise ValueError("isosceles_triangle_angles: не задан угол при основании")
+        if given_angle_role != "base":
+            raise ValueError(
+                "isosceles_triangle_angles: ожидался угол при основании"
+            )
 
-        double_base = base_angle * 2
-        res = 180 - double_base
+        # сумма двух углов при основании
+        double_base = 2 * given_angle_value
+
+        # угол при вершине
+        vertex_angle = 180 - double_base
 
         context.update({
-            "base_angle": base_angle,
-            "double_base": double_base,
-            "res": res,
-            "vertex_name": to_find.get("name", "A"),
-            "base_angle_name": given.get("base_angle_name", "B"),
-            "second_base_angle_name": given.get("second_base_angle_name", "C"),
-            "equal_sides": given.get("equal_sides", "AB = AC")
+            "base_angle": given_angle_value,
+            "double_base": double_base,                    # ← для humanizer
+            "context_vertex_angle": vertex_angle,
+            "vertex_name": vertex,
+            "base_angle_name": base_1,
+            "second_base_angle_name": base_2,
         })
 
         return [{
@@ -75,11 +141,13 @@ def _solve_isosceles_triangle_angles(task: Dict[str, Any]) -> List[Dict[str, Any
             "data": context
         }]
 
+    # ==================================================
+    # Неизвестная форма
+    # ==================================================
     else:
         raise ValueError(
             f"isosceles_triangle_angles: неизвестная форма '{narrative}'"
         )
-
 
 # ============================================================================
 # ПАТТЕРН 3.2: equilateral_height_to_side

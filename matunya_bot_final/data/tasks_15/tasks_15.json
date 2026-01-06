@@ -3523,9 +3523,9 @@
         "triangle_name": "ABC",
         "triangle_type": "general",
         "sides": {
-          "AC": 24.0,
+          "BC": 30.0,
           "AB": 20.0,
-          "BC": 30.0
+          "AC": 24.0
         },
         "angles": {},
         "trig": {},
@@ -3583,9 +3583,9 @@
         "triangle_name": "ABC",
         "triangle_type": "general",
         "sides": {
-          "AC": 48.0,
+          "BC": 44.0,
           "AB": 40.0,
-          "BC": 44.0
+          "AC": 48.0
         },
         "angles": {},
         "trig": {},
@@ -3643,9 +3643,9 @@
         "triangle_name": "ABC",
         "triangle_type": "general",
         "sides": {
-          "AC": 62.0,
+          "BC": 60.0,
           "AB": 50.0,
-          "BC": 60.0
+          "AC": 62.0
         },
         "angles": {},
         "trig": {},
@@ -6033,7 +6033,7 @@
     "id": 1500187,
     "pattern": "isosceles_triangle_angles",
     "narrative": "find_base_angle",
-    "text": "В равнобедренном треугольнике ABC с основанием AC угол при вершине B равен 48°. Найди величину угла при основании C.",
+    "text": "В равнобедренном треугольнике ABC с основанием AC угол при вершине B равен 48°. Найди величину угла при основании AC.",
     "answer": 66,
     "image_file": null,
     "variables": {
@@ -6042,7 +6042,7 @@
         "angle": {
           "value": 48,
           "role": "vertex",
-          "letter": ""
+          "letter": "B"
         }
       },
       "to_find": {
@@ -6050,10 +6050,9 @@
         "letter": "A"
       },
       "humanizer_data": {
-        "vertex_letter": "",
+        "vertex_letter": "B",
         "base_letters": [
           "A",
-          "B",
           "C"
         ],
         "angle_symbol": "∠"
@@ -6064,7 +6063,7 @@
     "id": 1500188,
     "pattern": "isosceles_triangle_angles",
     "narrative": "find_base_angle",
-    "text": "В треугольнике KLM стороны KL и LM равны, а угол при вершине L составляет 116°. Определи угол при основании K.",
+    "text": "В треугольнике KLM стороны KL и LM равны, а угол при вершине L составляет 116°. Определи угол при основании KM.",
     "answer": 32,
     "image_file": null,
     "variables": {
@@ -6094,7 +6093,7 @@
     "id": 1500189,
     "pattern": "isosceles_triangle_angles",
     "narrative": "find_base_angle",
-    "text": "Угол между боковыми сторонами равнобедренного треугольника равен 32°. Вычисли градусную меру угла при его основании.",
+    "text": "В равнобедренном треугольнике ABC с боковыми сторонами AB и BC угол при вершине B равен 32°. Найди величину угла при основании AC.",
     "answer": 74,
     "image_file": null,
     "variables": {
@@ -6103,7 +6102,7 @@
         "angle": {
           "value": 32,
           "role": "vertex",
-          "letter": ""
+          "letter": "B"
         }
       },
       "to_find": {
@@ -6111,10 +6110,9 @@
         "letter": "A"
       },
       "humanizer_data": {
-        "vertex_letter": "",
+        "vertex_letter": "B",
         "base_letters": [
           "A",
-          "B",
           "C"
         ],
         "angle_symbol": "∠"
@@ -6125,7 +6123,7 @@
     "id": 1500190,
     "pattern": "isosceles_triangle_angles",
     "narrative": "find_base_angle",
-    "text": "В треугольнике ABC известно, что AB = BC, а угол при вершине B равен 154°. Найди угол при основании A. Ответ дай в градусах.",
+    "text": "В треугольнике ABC известно, что AB = BC, а угол при вершине B равен 154°. Найди угол при основании AC.",
     "answer": 13,
     "image_file": null,
     "variables": {
@@ -6154,28 +6152,27 @@
   {
     "id": 1500191,
     "pattern": "isosceles_triangle_angles",
-    "narrative": "find_vertex_angle",
-    "text": "В равнобедренном треугольнике PQR угол Q, противолежащий основанию PR, равен 76°. Найди угол при основании R.",
-    "answer": 28,
+    "narrative": "find_base_angle",
+    "text": "В равнобедренном треугольнике PQR с основанием PR угол при вершине Q равен 76°. Найди угол при основании PR.",
+    "answer": 52,
     "image_file": null,
     "variables": {
       "given": {
         "triangle_name": "PQR",
         "angle": {
           "value": 76,
-          "role": "base",
-          "letter": ""
+          "role": "vertex",
+          "letter": "Q"
         }
       },
       "to_find": {
-        "role": "vertex",
-        "letter": ""
+        "role": "base",
+        "letter": "P"
       },
       "humanizer_data": {
-        "vertex_letter": "",
+        "vertex_letter": "Q",
         "base_letters": [
           "P",
-          "Q",
           "R"
         ],
         "angle_symbol": "∠"
@@ -6186,7 +6183,7 @@
     "id": 1500192,
     "pattern": "isosceles_triangle_angles",
     "narrative": "find_base_angle",
-    "text": "Найди угол при основании равнобедренного треугольника, если угол при его вершине равен 108°.",
+    "text": "В равнобедренном треугольнике ABC с основанием AC угол при вершине B равен 108°. Найди угол при основании AC.",
     "answer": 36,
     "image_file": null,
     "variables": {
@@ -6195,7 +6192,7 @@
         "angle": {
           "value": 108,
           "role": "vertex",
-          "letter": ""
+          "letter": "B"
         }
       },
       "to_find": {
@@ -6203,10 +6200,9 @@
         "letter": "A"
       },
       "humanizer_data": {
-        "vertex_letter": "",
+        "vertex_letter": "B",
         "base_letters": [
           "A",
-          "B",
           "C"
         ],
         "angle_symbol": "∠"
@@ -6217,7 +6213,7 @@
     "id": 1500193,
     "pattern": "isosceles_triangle_angles",
     "narrative": "find_base_angle",
-    "text": "В треугольнике XYZ стороны XY и YZ равны. Угол при вершине Y равен 50°. Найди величину угла при основании Z.",
+    "text": "В треугольнике XYZ стороны XY и YZ равны. Угол при вершине Y равен 50°. Найди величину угла при основании XZ.",
     "answer": 65,
     "image_file": null,
     "variables": {
@@ -6247,7 +6243,7 @@
     "id": 1500194,
     "pattern": "isosceles_triangle_angles",
     "narrative": "find_base_angle",
-    "text": "Вершина равнобедренного треугольника имеет угол 24°. Чему равен один из углов при его основании?",
+    "text": "В равнобедренном треугольнике ABC угол при вершине B равен 24°. Чему равен угол при основании AC?",
     "answer": 78,
     "image_file": null,
     "variables": {
@@ -6256,7 +6252,7 @@
         "angle": {
           "value": 24,
           "role": "vertex",
-          "letter": ""
+          "letter": "B"
         }
       },
       "to_find": {
@@ -6264,10 +6260,9 @@
         "letter": "A"
       },
       "humanizer_data": {
-        "vertex_letter": "",
+        "vertex_letter": "B",
         "base_letters": [
           "A",
-          "B",
           "C"
         ],
         "angle_symbol": "∠"
@@ -6278,7 +6273,7 @@
     "id": 1500195,
     "pattern": "isosceles_triangle_angles",
     "narrative": "find_base_angle",
-    "text": "В треугольнике ABC стороны AC и BC равны. Угол при вершине C равен 94°. Найди градусную меру угла при основании B.",
+    "text": "В треугольнике ABC стороны AC и BC равны. Угол при вершине C равен 94°. Найди градусную меру угла при основании AB.",
     "answer": 43,
     "image_file": null,
     "variables": {
@@ -6308,7 +6303,7 @@
     "id": 1500196,
     "pattern": "isosceles_triangle_angles",
     "narrative": "find_base_angle",
-    "text": "В равнобедренном треугольнике угол, лежащий против основания, равен 130°. Найди величину угла при основании.",
+    "text": "В равнобедренном треугольнике ABC угол при вершине A равен 130°. Найди величину угла при основании BC.",
     "answer": 25,
     "image_file": null,
     "variables": {
@@ -6317,17 +6312,16 @@
         "angle": {
           "value": 130,
           "role": "vertex",
-          "letter": ""
+          "letter": "A"
         }
       },
       "to_find": {
         "role": "base",
-        "letter": "A"
+        "letter": "B"
       },
       "humanizer_data": {
-        "vertex_letter": "",
+        "vertex_letter": "A",
         "base_letters": [
-          "A",
           "B",
           "C"
         ],
@@ -6339,12 +6333,12 @@
     "id": 1500197,
     "pattern": "isosceles_triangle_angles",
     "narrative": "find_base_angle",
-    "text": "Дан треугольник DEF, в котором DE = EF. Угол при вершине E равен 44°. Найди величину угла при основании D.",
+    "text": "Дан треугольник DEF, в котором DE = EF. Угол при вершине E равен 44°. Найди величину угла при основании DF.",
     "answer": 68,
     "image_file": null,
     "variables": {
       "given": {
-        "triangle_name": "ABC",
+        "triangle_name": "DEF",
         "angle": {
           "value": 44,
           "role": "vertex",
@@ -6353,14 +6347,13 @@
       },
       "to_find": {
         "role": "base",
-        "letter": "A"
+        "letter": "D"
       },
       "humanizer_data": {
         "vertex_letter": "E",
         "base_letters": [
-          "A",
-          "B",
-          "C"
+          "D",
+          "F"
         ],
         "angle_symbol": "∠"
       }
@@ -6370,7 +6363,7 @@
     "id": 1500198,
     "pattern": "isosceles_triangle_angles",
     "narrative": "find_base_angle",
-    "text": "В треугольнике MNK с равными сторонами MN и NK угол при вершине N равен 82°. Вычисли угол при основании K.",
+    "text": "В треугольнике MNK с равными сторонами MN и NK угол при вершине N равен 82°. Вычисли угол при основании MK.",
     "answer": 49,
     "image_file": null,
     "variables": {
@@ -6400,28 +6393,27 @@
     "id": 1500199,
     "pattern": "isosceles_triangle_angles",
     "narrative": "find_base_angle",
-    "text": "Угол при вершине равнобедренного треугольника равен 68°. Найди один из углов при основании этого треугольника.",
+    "text": "В равнобедренном треугольнике KLM угол при вершине L равен 68°. Найди один из углов при основании KM.",
     "answer": 56,
     "image_file": null,
     "variables": {
       "given": {
-        "triangle_name": "ABC",
+        "triangle_name": "KLM",
         "angle": {
           "value": 68,
           "role": "vertex",
-          "letter": ""
+          "letter": "L"
         }
       },
       "to_find": {
         "role": "base",
-        "letter": "A"
+        "letter": "K"
       },
       "humanizer_data": {
-        "vertex_letter": "",
+        "vertex_letter": "L",
         "base_letters": [
-          "A",
-          "B",
-          "C"
+          "K",
+          "M"
         ],
         "angle_symbol": "∠"
       }
@@ -6431,7 +6423,7 @@
     "id": 1500200,
     "pattern": "isosceles_triangle_angles",
     "narrative": "find_base_angle",
-    "text": "В треугольнике ABC стороны AB и BC равны, угол при вершине B равен 142°. Найди величину угла при основании C.",
+    "text": "В треугольнике ABC стороны AB и BC равны, угол при вершине B равен 142°. Найди величину угла при основании AC.",
     "answer": 19,
     "image_file": null,
     "variables": {
@@ -6461,7 +6453,7 @@
     "id": 1500201,
     "pattern": "isosceles_triangle_angles",
     "narrative": "find_base_angle",
-    "text": "В равнобедренном треугольнике угол между равными сторонами составляет 58°. Определи величину угла при основании.",
+    "text": "В равнобедренном треугольнике ABC угол между равными сторонами AB и BC равен 58°. Найди величину угла при основании AC.",
     "answer": 61,
     "image_file": null,
     "variables": {
@@ -6470,7 +6462,7 @@
         "angle": {
           "value": 58,
           "role": "vertex",
-          "letter": ""
+          "letter": "B"
         }
       },
       "to_find": {
@@ -6478,10 +6470,9 @@
         "letter": "A"
       },
       "humanizer_data": {
-        "vertex_letter": "",
+        "vertex_letter": "B",
         "base_letters": [
           "A",
-          "B",
           "C"
         ],
         "angle_symbol": "∠"
@@ -6522,7 +6513,7 @@
     "id": 1500203,
     "pattern": "isosceles_triangle_angles",
     "narrative": "find_vertex_angle",
-    "text": "Угол при основании равнобедренного треугольника составляет 71°. Вычисли угол, противолежащий основанию треугольника.",
+    "text": "В равнобедренном треугольнике ABC угол при основании A равен 71°. Найди угол при вершине B.",
     "answer": 38,
     "image_file": null,
     "variables": {
@@ -6536,13 +6527,12 @@
       },
       "to_find": {
         "role": "vertex",
-        "letter": ""
+        "letter": "B"
       },
       "humanizer_data": {
-        "vertex_letter": "",
+        "vertex_letter": "B",
         "base_letters": [
           "A",
-          "B",
           "C"
         ],
         "angle_symbol": "∠"
@@ -6553,7 +6543,7 @@
     "id": 1500204,
     "pattern": "isosceles_triangle_angles",
     "narrative": "find_vertex_angle",
-    "text": "В треугольнике KLM стороны KL и LM равны. Известно, что угол при основании K равен 37°. Найди величину угла при вершине L.",
+    "text": "В треугольнике KLM стороны KL и LM равны. Известно, что угол при основании KM равен 37°. Найди величину угла при вершине L.",
     "answer": 106,
     "image_file": null,
     "variables": {
@@ -6597,13 +6587,12 @@
       },
       "to_find": {
         "role": "vertex",
-        "letter": ""
+        "letter": "B"
       },
       "humanizer_data": {
-        "vertex_letter": "",
+        "vertex_letter": "B",
         "base_letters": [
           "A",
-          "B",
           "C"
         ],
         "angle_symbol": "∠"
@@ -6614,7 +6603,7 @@
     "id": 1500206,
     "pattern": "isosceles_triangle_angles",
     "narrative": "find_vertex_angle",
-    "text": "Один из углов при основании равнобедренного треугольника равен 28°. Найди угол при вершине этого треугольника.",
+    "text": "В равнобедренном треугольнике ABC с основанием AC угол при основании C равен 28°. Найди угол при вершине B.",
     "answer": 124,
     "image_file": null,
     "variables": {
@@ -6628,13 +6617,12 @@
       },
       "to_find": {
         "role": "vertex",
-        "letter": ""
+        "letter": "B"
       },
       "humanizer_data": {
-        "vertex_letter": "",
+        "vertex_letter": "B",
         "base_letters": [
           "A",
-          "B",
           "C"
         ],
         "angle_symbol": "∠"
@@ -6645,7 +6633,7 @@
     "id": 1500207,
     "pattern": "isosceles_triangle_angles",
     "narrative": "find_vertex_angle",
-    "text": "В треугольнике XYZ равны стороны XY и YZ. Угол при основании Z равен 64°. Определи величину угла при вершине Y. Ответ дай в градусах.",
+    "text": "В треугольнике XYZ равны стороны XY и YZ. Угол при основании Z равен 64°. Определи величину угла при вершине Y.",
     "answer": 52,
     "image_file": null,
     "variables": {
@@ -6675,7 +6663,7 @@
     "id": 1500208,
     "pattern": "isosceles_triangle_angles",
     "narrative": "find_vertex_angle",
-    "text": "В равнобедренном треугольнике угол при основании равен 18°. Найди угол между боковыми сторонами треугольника.",
+    "text": "В равнобедренном треугольнике ABC с основанием AC угол при основании A равен 18°. Найди угол при вершине B.",
     "answer": 144,
     "image_file": null,
     "variables": {
@@ -6689,13 +6677,12 @@
       },
       "to_find": {
         "role": "vertex",
-        "letter": ""
+        "letter": "B"
       },
       "humanizer_data": {
-        "vertex_letter": "",
+        "vertex_letter": "B",
         "base_letters": [
           "A",
-          "B",
           "C"
         ],
         "angle_symbol": "∠"
@@ -6706,7 +6693,7 @@
     "id": 1500209,
     "pattern": "isosceles_triangle_angles",
     "narrative": "find_vertex_angle",
-    "text": "Определи угол при вершине равнобедренного треугольника, если угол при его основании равен 75°.",
+    "text": "В равнобедренном треугольнике ABC с основанием AC угол при основании A равен 75°. Определи угол при вершине B.",
     "answer": 30,
     "image_file": null,
     "variables": {
@@ -6720,13 +6707,12 @@
       },
       "to_find": {
         "role": "vertex",
-        "letter": ""
+        "letter": "B"
       },
       "humanizer_data": {
-        "vertex_letter": "",
+        "vertex_letter": "B",
         "base_letters": [
           "A",
-          "B",
           "C"
         ],
         "angle_symbol": "∠"
@@ -6767,7 +6753,7 @@
     "id": 1500211,
     "pattern": "isosceles_triangle_angles",
     "narrative": "find_vertex_angle",
-    "text": "В равнобедренном треугольнике угол при основании равен 55°. Чему равен угол, лежащий напротив этого основания?",
+    "text": "В равнобедренном треугольнике ABC с основанием AC угол при основании A равен 55°. Чему равен угол при вершине B?",
     "answer": 70,
     "image_file": null,
     "variables": {
@@ -6781,13 +6767,12 @@
       },
       "to_find": {
         "role": "vertex",
-        "letter": ""
+        "letter": "B"
       },
       "humanizer_data": {
-        "vertex_letter": "",
+        "vertex_letter": "B",
         "base_letters": [
           "A",
-          "B",
           "C"
         ],
         "angle_symbol": "∠"
@@ -6798,7 +6783,7 @@
     "id": 1500212,
     "pattern": "isosceles_triangle_angles",
     "narrative": "find_vertex_angle",
-    "text": "В треугольнике ABC с основанием AC угол при основании C равен 23°. Найди величину угла при вершине B.",
+    "text": "В треугольнике ABC с основанием AC угол при основании C равен 23°. Найди угол при вершине B.",
     "answer": 134,
     "image_file": null,
     "variables": {
@@ -6812,13 +6797,12 @@
       },
       "to_find": {
         "role": "vertex",
-        "letter": ""
+        "letter": "B"
       },
       "humanizer_data": {
-        "vertex_letter": "",
+        "vertex_letter": "B",
         "base_letters": [
           "A",
-          "B",
           "C"
         ],
         "angle_symbol": "∠"
@@ -6859,7 +6843,7 @@
     "id": 1500214,
     "pattern": "isosceles_triangle_angles",
     "narrative": "find_vertex_angle",
-    "text": "Угол при основании равнобедренного треугольника равен 81°. Найди градусную меру угла при его вершине.",
+    "text": "В равнобедренном треугольнике ABC с основанием AC угол при основании A равен 81°. Найди угол при вершине B.",
     "answer": 18,
     "image_file": null,
     "variables": {
@@ -6873,13 +6857,12 @@
       },
       "to_find": {
         "role": "vertex",
-        "letter": ""
+        "letter": "B"
       },
       "humanizer_data": {
-        "vertex_letter": "",
+        "vertex_letter": "B",
         "base_letters": [
           "A",
-          "B",
           "C"
         ],
         "angle_symbol": "∠"
@@ -6920,7 +6903,7 @@
     "id": 1500216,
     "pattern": "isosceles_triangle_angles",
     "narrative": "find_vertex_angle",
-    "text": "Дан равнобедренный треугольник, угол при основании которого равен 46°. Найди его угол при вершине.",
+    "text": "Дан равнобедренный треугольник ABC с основанием AC. Угол при основании A равен 46°. Найди угол при вершине B.",
     "answer": 88,
     "image_file": null,
     "variables": {
@@ -6934,13 +6917,12 @@
       },
       "to_find": {
         "role": "vertex",
-        "letter": ""
+        "letter": "B"
       },
       "humanizer_data": {
-        "vertex_letter": "",
+        "vertex_letter": "B",
         "base_letters": [
           "A",
-          "B",
           "C"
         ],
         "angle_symbol": "∠"

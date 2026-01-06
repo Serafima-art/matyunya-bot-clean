@@ -55,7 +55,7 @@ SUBTYPES = {
 Паттерн 2.8: triangle_medians_intersection
 
 
-# 🟩 ТЕМА 3. `Равнобедренные треугольники (isosceles_triangles)`
+# 🟩 ТЕМА 3. `Равнобедренные и равносторонние треугольники (isosceles_triangles)`
 
 Паттерн 3.1 isosceles_triangle_angles
 

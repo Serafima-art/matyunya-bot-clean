@@ -33,9 +33,10 @@ class IsoscelesValidator:
         val = int(val_match.group(1))
 
         # 2. Детекция букв
-        triangle_name = "ABC"
-        tr_match = re.search(r"треугольнике\s+([A-Z]{3})", text)
-        if tr_match: triangle_name = tr_match.group(1)
+        tr_match = re.search(r"треугольник[еа]?\s+([A-Z]{3})", text)
+        if not tr_match:
+            raise ValueError(f"Не удалось определить имя треугольника в задаче {task_id}")
+        triangle_name = tr_match.group(1)
 
         vertex_letter = ""
         pair_match = re.search(r"([A-Z]{2})\s*(?:и|=)\s*([A-Z]{2})", text)
@@ -43,6 +44,12 @@ class IsoscelesValidator:
             s1, s2 = pair_match.groups()
             common = list(set(s1) & set(s2))
             if common: vertex_letter = common[0]
+
+        # 🔹 ДОПОЛНИТЕЛЬНО: вершина по формулировке "угол при вершине B"
+        if not vertex_letter:
+            vertex_match = re.search(r"угол\s+при\s+вершин[еы]\s+([A-Z])", text, re.IGNORECASE)
+            if vertex_match:
+                vertex_letter = vertex_match.group(1)
 
         # 3. УЛЬТРА-ДЕТЕКЦИЯ РОЛИ
         given_role = None
@@ -59,7 +66,6 @@ class IsoscelesValidator:
 
             # Берем кусок текста ДО числа и чуть-чуть ПОСЛЕ
             prefix = text[max(0, val_start-60):val_start].lower()
-            suffix = text[val_end:val_end+20].lower()
 
             vertex_kw = ["вершин", "противолежащ", "между боков", "напротив", "вершина"]
             base_kw = ["основан"]
@@ -96,10 +102,36 @@ class IsoscelesValidator:
         all_letters = list(triangle_name)
         base_letters = sorted([c for c in all_letters if c != vertex_letter])
 
-        find_match = re.search(r"(?:Найди|Вычисли|Определи|Чему равен).*?угол\s+([A-Z])", text, re.IGNORECASE)
-        target_letter = find_match.group(1) if find_match else ""
+        find_match = re.search(
+            r"(?:Найди|Вычисли|Определи|Чему равен).*?угол\s+([A-Z])",
+            text,
+            re.IGNORECASE
+        )
+
+        if find_match:
+            target_letter = find_match.group(1)
+        else:
+            # ФИПИ-формулировки без буквы
+            if narrative == "find_base_angle":
+                target_letter = base_letters[0]  # любой угол при основании
+            else:
+                target_letter = vertex_letter    # угол при вершине
+
         if not target_letter:
-            target_letter = base_letters[0] if narrative == "find_base_angle" and base_letters else vertex_letter
+            raise ValueError(f"Не удалось определить искомый угол в задаче {task_id}")
+
+
+        if vertex_letter and vertex_letter not in triangle_name:
+            raise ValueError("vertex_letter не принадлежит треугольнику")
+
+        if target_letter and target_letter not in triangle_name:
+            raise ValueError("target_letter не принадлежит треугольнику")
+
+        if not vertex_letter:
+            raise ValueError(f"Не удалось определить вершину равнобедренного треугольника в задаче {task_id}")
+
+        if set(base_letters + [vertex_letter]) != set(triangle_name):
+            raise ValueError("буквы треугольника не согласованы")
 
         return {
             "id": task_id,

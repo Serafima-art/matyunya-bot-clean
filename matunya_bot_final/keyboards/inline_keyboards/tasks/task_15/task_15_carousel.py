@@ -10,7 +10,7 @@ from matunya_bot_final.keyboards.navigation.navigation import back_and_main_kb
 THEMES_DISPLAY = {
     "angles": "📐 Углы",
     "general_triangles": "🔺 Треугольники общего вида",
-    "isosceles_triangles": "🔻 Равнобедренные треугольники",
+    "isosceles_triangles": "🔻 Равнобедренные и равносторонние треугольники",
     "right_triangles": "📏 Прямоугольный треугольник",
 }
 
