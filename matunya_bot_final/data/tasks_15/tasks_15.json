@@ -3523,9 +3523,9 @@
         "triangle_name": "ABC",
         "triangle_type": "general",
         "sides": {
-          "BC": 30.0,
           "AB": 20.0,
-          "AC": 24.0
+          "AC": 24.0,
+          "BC": 30.0
         },
         "angles": {},
         "trig": {},
@@ -3583,9 +3583,9 @@
         "triangle_name": "ABC",
         "triangle_type": "general",
         "sides": {
-          "BC": 44.0,
           "AB": 40.0,
-          "AC": 48.0
+          "AC": 48.0,
+          "BC": 44.0
         },
         "angles": {},
         "trig": {},
@@ -3643,9 +3643,9 @@
         "triangle_name": "ABC",
         "triangle_type": "general",
         "sides": {
-          "BC": 60.0,
           "AB": 50.0,
-          "AC": 62.0
+          "AC": 62.0,
+          "BC": 60.0
         },
         "angles": {},
         "trig": {},
@@ -9392,6 +9392,7 @@
   {
     "id": 1500322,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "direct",
     "text": "В треугольнике ABC угол C равен 90°, AB = 5, BC = 3. Найди sin A.",
     "answer": 0.6,
     "image_file": "T3_right_C.png",
@@ -9419,6 +9420,7 @@
   {
     "id": 1500323,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "direct",
     "text": "Дан треугольник ABC с прямым углом A. Известно, что BC = 25, а катет AC = 7. Вычисли sin B.",
     "answer": 0.28,
     "image_file": "T3_right_A.png",
@@ -9446,6 +9448,7 @@
   {
     "id": 1500324,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "direct",
     "text": "В прямоугольном треугольнике ABC угол B — прямой. Гипотенуза AC равна 10, катет AB равен 8. Найди sin C.",
     "answer": 0.8,
     "image_file": "T3_right_B.png",
@@ -9473,6 +9476,7 @@
   {
     "id": 1500325,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "direct",
     "text": "Найди синус угла B в треугольнике ABC, если угол C = 90°, катет AC = 16, а гипотенуза AB = 20.",
     "answer": 0.8,
     "image_file": "T3_right_C.png",
@@ -9500,6 +9504,7 @@
   {
     "id": 1500326,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "calc_hyp",
     "text": "В треугольнике ABC ∠A = 90°, катеты AC и AB равны 14 и 48 соответственно. Чему равен sin B?",
     "answer": 0.28,
     "image_file": "T3_right_A.png",
@@ -9527,6 +9532,7 @@
   {
     "id": 1500327,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "direct",
     "text": "В треугольнике ABC угол C прямой. Сторона AB равна 25, сторона BC равна 20. Найди sin A.",
     "answer": 0.8,
     "image_file": "T3_right_C.png",
@@ -9554,6 +9560,7 @@
   {
     "id": 1500328,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "direct",
     "text": "Прямоугольный треугольник ABC имеет прямой угол B. Найди sin A, если AC = 50, а BC = 40.",
     "answer": 0.8,
     "image_file": "T3_right_B.png",
@@ -9581,6 +9588,7 @@
   {
     "id": 1500329,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "calc_hyp",
     "text": "В треугольнике ABC угол C равен 90°, AC = 15, BC = 20. Вычисли sin B.",
     "answer": 0.6,
     "image_file": "T3_right_C.png",
@@ -9608,6 +9616,7 @@
   {
     "id": 1500330,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "direct",
     "text": "Найди sin C в треугольнике ABC, где угол A равен 90°, AB = 12, а гипотенуза BC = 15.",
     "answer": 0.8,
     "image_file": "T3_right_A.png",
@@ -9635,6 +9644,7 @@
   {
     "id": 1500331,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "direct",
     "text": "В треугольнике ABC угол C равен 90°, катет AC = 9, гипотенуза AB = 15. Найди cos A.",
     "answer": 0.6,
     "image_file": "T3_right_C.png",
@@ -9662,6 +9672,7 @@
   {
     "id": 1500332,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "direct",
     "text": "Дан треугольник ABC, в котором ∠A = 90°. Сторона BC = 25, сторона AC = 24. Найди cos C.",
     "answer": 0.96,
     "image_file": "T3_right_A.png",
@@ -9689,6 +9700,7 @@
   {
     "id": 1500333,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "direct",
     "text": "В прямоугольном треугольнике ABC с прямым углом B гипотенуза AC равна 10, катет BC равен 6. Найди cos C.",
     "answer": 0.6,
     "image_file": "T3_right_B.png",
@@ -9716,6 +9728,7 @@
   {
     "id": 1500334,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "direct",
     "text": "Чему равен косинус угла B в треугольнике ABC, если угол C = 90°, BC = 12, а AB = 15?",
     "answer": 0.8,
     "image_file": "T3_right_C.png",
@@ -9743,6 +9756,7 @@
   {
     "id": 1500335,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "direct",
     "text": "В треугольнике ABC угол A прямой. Найди cos B, если катет AB = 32, а гипотенуза BC = 40.",
     "answer": 0.8,
     "image_file": "T3_right_A.png",
@@ -9770,6 +9784,7 @@
   {
     "id": 1500336,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "calc_hyp",
     "text": "В треугольнике ABC угол C = 90°, катеты AC и BC равны 7 и 24. Найди cos A.",
     "answer": 0.28,
     "image_file": "T3_right_C.png",
@@ -9797,6 +9812,7 @@
   {
     "id": 1500337,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "direct",
     "text": "В треугольнике ABC угол B равен 90°, AB = 14, AC = 50. Вычисли cos A.",
     "answer": 0.28,
     "image_file": "T3_right_B.png",
@@ -9824,6 +9840,7 @@
   {
     "id": 1500338,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "direct",
     "text": "Найди cos B в прямоугольном треугольнике ABC с прямым углом C, если катет BC = 21, а гипотенуза AB = 35.",
     "answer": 0.6,
     "image_file": "T3_right_C.png",
@@ -9851,6 +9868,7 @@
   {
     "id": 1500339,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "calc_hyp",
     "text": "В треугольнике ABC угол A равен 90°, AB = 9, AC = 12. Найди cos B.",
     "answer": 0.6,
     "image_file": "T3_right_A.png",
@@ -9878,6 +9896,7 @@
   {
     "id": 1500340,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "direct",
     "text": "В треугольнике ABC угол C равен 90°, AB = 20, BC = 16. Найди cos B.",
     "answer": 0.8,
     "image_file": "T3_right_C.png",
@@ -9905,6 +9924,7 @@
   {
     "id": 1500341,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "direct",
     "text": "В треугольнике ABC угол C = 90°, катеты AC = 20 и BC = 8. Найди tg A.",
     "answer": 0.4,
     "image_file": "T3_right_C.png",
@@ -9932,6 +9952,7 @@
   {
     "id": 1500342,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "direct",
     "text": "В треугольнике ABC ∠C = 90°, катеты AC = 12 и BC = 6. Найди tg A.",
     "answer": 0.5,
     "image_file": "T3_right_C.png",
@@ -9959,6 +9980,7 @@
   {
     "id": 1500343,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "direct",
     "text": "В прямоугольном треугольнике ABC с прямым углом C катеты AC = 10 и BC = 6. Найди tg A.",
     "answer": 0.6,
     "image_file": "T3_right_C.png",
@@ -9986,6 +10008,7 @@
   {
     "id": 1500344,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "direct",
     "text": "В треугольнике ABC угол C прямой, катеты AC = 10 и BC = 8. Найди tg A.",
     "answer": 0.8,
     "image_file": "T3_right_C.png",
@@ -10013,6 +10036,7 @@
   {
     "id": 1500345,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "direct",
     "text": "В треугольнике ABC угол C = 90°, катеты AC = 20 и BC = 21. Найди tg A.",
     "answer": 1.05,
     "image_file": "T3_right_C.png",
@@ -10040,6 +10064,7 @@
   {
     "id": 1500346,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "direct",
     "text": "В прямоугольном треугольнике ABC ∠C = 90°, катеты AC = 20 и BC = 25. Найди tg A.",
     "answer": 1.25,
     "image_file": "T3_right_C.png",
@@ -10067,6 +10092,7 @@
   {
     "id": 1500347,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "direct",
     "text": "В треугольнике ABC угол C = 90°, катеты AC = 10 и BC = 15. Найди tg A.",
     "answer": 1.5,
     "image_file": "T3_right_C.png",
@@ -10094,6 +10120,7 @@
   {
     "id": 1500348,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "direct",
     "text": "В прямоугольном треугольнике ABC с прямым углом C катеты AC = 6 и BC = 12. Найди tg A.",
     "answer": 2.0,
     "image_file": "T3_right_C.png",
@@ -10121,6 +10148,7 @@
   {
     "id": 1500349,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "direct",
     "text": "В треугольнике ABC ∠C = 90°, катеты AC = 10 и BC = 24. Найди tg A.",
     "answer": 2.4,
     "image_file": "T3_right_C.png",
@@ -10148,6 +10176,7 @@
   {
     "id": 1500350,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "calc_leg",
     "text": "В треугольнике ABC угол C = 90°, гипотенуза AB = 26, катет BC = 10. Найди tg B.",
     "answer": 2.4,
     "image_file": "T3_right_C.png",
@@ -10175,6 +10204,7 @@
   {
     "id": 1500351,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "calc_leg",
     "text": "В прямоугольном треугольнике ABC с прямым углом C гипотенуза AB = 29, катет AC = 20. Найди tg A.",
     "answer": 1.05,
     "image_file": "T3_right_C.png",
@@ -10202,6 +10232,7 @@
   {
     "id": 1500352,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "calc_leg",
     "text": "В треугольнике ABC ∠C = 90°, гипотенуза AB = 10, катет AC = 8. Найди tg A.",
     "answer": 0.75,
     "image_file": "T3_right_C.png",
@@ -10229,6 +10260,7 @@
   {
     "id": 1500353,
     "pattern": "find_cos_sin_tg_from_sides",
+    "narrative": "calc_leg",
     "text": "В треугольнике ABC ∠C = 90°, гипотенуза AB = 20, катет AC = 16. Найди tg A.",
     "answer": 0.75,
     "image_file": "T3_right_C.png",

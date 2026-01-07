@@ -20,8 +20,8 @@ from typing import Optional
 # НАСТРОЙКИ
 # ---------------------------------------------------------------------
 
-TARGET_PATTERN = "trig_identity_find_trig_func"
-DEFINITIONS_FILE = "general_triangles.txt"
+TARGET_PATTERN = "find_cos_sin_tg_from_sides"
+DEFINITIONS_FILE = "right_triangles.txt"
 OUTPUT_FILENAME = "debug_validator_output.txt"
 
 # ---------------------------------------------------------------------
@@ -37,8 +37,8 @@ sys.path.append(str(project_root / "matunya_bot_final"))
 # ---------------------------------------------------------------------
 
 try:
-    from non_generators.task_15.validators.general_triangles_validator import (
-        GeneralTrianglesValidator,
+    from non_generators.task_15.validators.right_triangles_validator import (
+        RightTrianglesValidator,
     )
 except ImportError as e:
     print(f"🔴 Ошибка импорта валидатора: {e}")
@@ -116,7 +116,7 @@ def run_test() -> None:
 
     print(f"✅ Найдено задач: {len(tasks)}")
 
-    validator = GeneralTrianglesValidator()
+    validator = RightTrianglesValidator()
 
     # --- Прогоняем ВСЕ задачи этого паттерна ---
     for i, line in enumerate(tasks, start=1):

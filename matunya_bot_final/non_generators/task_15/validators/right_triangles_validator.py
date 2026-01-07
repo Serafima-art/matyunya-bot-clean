@@ -343,7 +343,6 @@ class RightTrianglesValidator:
         # -------------------------------------------------------
         # 6. Стороны (ЭТАЛОННАЯ ВЕРСИЯ)
         # -------------------------------------------------------
-
         hyp, adj, opp, derived = resolve_triangle_sides(
             right_angle=right_angle,
             target_angle=target_angle,
@@ -367,15 +366,47 @@ class RightTrianglesValidator:
             ratio = f"{round(opp,1)} / {round(adj,1)}"
 
         # -------------------------------------------------------
-        # 8. JSON
+        # 8. ОПРЕДЕЛЕНИЕ НАРРАТИВА (НОВАЯ ЛОГИКА)
         # -------------------------------------------------------
-        n_opp = "".join(sorted([right_angle, other_vertex]))
-        n_adj = "".join(sorted([right_angle, target_angle]))
-        n_hyp = "".join(sorted([target_angle, other_vertex]))
+        # Нам нужно понять, какие стороны были ИЗНАЧАЛЬНО в side_values
 
+        n_opp = "".join(sorted([right_angle, other_vertex])) # Например BC
+        n_adj = "".join(sorted([right_angle, target_angle])) # Например AC
+        n_hyp = "".join(sorted([target_angle, other_vertex])) # Например AB
+
+        # Проверяем наличие в исходном словаре side_values
+        # (frozenset позволяет искать независимо от порядка букв)
+        has_opp = frozenset(n_opp) in side_values
+        has_adj = frozenset(n_adj) in side_values
+        has_hyp = frozenset(n_hyp) in side_values
+
+        narrative = "direct" # По умолчанию
+
+        if target_fn == "sin": # Нужны opp и hyp
+            if not has_hyp and has_opp and has_adj:
+                narrative = "calc_hyp"
+            elif not has_opp and has_hyp and has_adj:
+                narrative = "calc_leg"
+
+        elif target_fn == "cos": # Нужны adj и hyp
+            if not has_hyp and has_opp and has_adj:
+                narrative = "calc_hyp"
+            elif not has_adj and has_hyp and has_opp:
+                narrative = "calc_leg"
+
+        elif target_fn == "tg": # Нужны opp и adj
+            if not has_adj and has_hyp and has_opp:
+                narrative = "calc_leg" # Ищем прилежащий
+            elif not has_opp and has_hyp and has_adj:
+                narrative = "calc_leg" # Ищем противолежащий
+
+        # -------------------------------------------------------
+        # 9. JSON
+        # -------------------------------------------------------
         return {
             "id": task_id,
             "pattern": "find_cos_sin_tg_from_sides",
+            "narrative": narrative,
             "text": text,
             "answer": round(ans, 2),
             "image_file": f"T3_right_{right_angle}.png",

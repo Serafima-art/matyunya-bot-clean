@@ -1,4 +1,5 @@
 from typing import Dict, Any, List
+from unittest import result
 
 
 # ============================================================
@@ -151,15 +152,78 @@ def _solve_isosceles_triangle_angles(task: Dict[str, Any]) -> List[Dict[str, Any
 
 # ============================================================================
 # ПАТТЕРН 3.2: equilateral_height_to_side
+# Сторона равностороннего треугольника по высоте
 # ============================================================================
 def _solve_equilateral_height_to_side(task: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """
+    Решает задачи вида:
+    equilateral_height_to_side (дана высота → найти сторону)
+
+    Формула:
+    h = a · √3 / 2  →  a = (2 · h) / √3
+
+    Поддерживает legacy-JSON вида:
+    given: {
+        "element": "height",
+        "value_raw": "15√3",
+        "coefficient": 15,
+        "has_root": true
+    }
+    """
+
+    # --------------------------------------------------
+    # Извлечение данных
+    # --------------------------------------------------
     variables = task.get("variables", {})
+    given = variables.get("given", {})
+    to_find = variables.get("to_find", {})
     humanizer_data = variables.get("humanizer_data", {})
 
-    context = {
-        "res": task.get("answer"),
+    # --------------------------------------------------
+    # Проверка корректности входных данных
+    # --------------------------------------------------
+    if given.get("element") != "height":
+        raise ValueError(
+            "equilateral_height_to_side: ожидался элемент height"
+        )
+
+    h_coeff = given.get("coefficient")
+    has_root = given.get("has_root", False)
+    h_value_raw = given.get("value_raw")
+
+    if h_coeff is None:
+        raise ValueError(
+            "equilateral_height_to_side: не задан коэффициент высоты"
+        )
+
+    # --------------------------------------------------
+    # Вычисление стороны
+    # --------------------------------------------------
+    # h = a * √3 / 2  →  a = 2h / √3
+    # Если h = k√3 → a = 2k
+    if has_root:
+        side = 2 * h_coeff
+    else:
+        # запасной вариант (на будущее)
+        import math
+        side = (2 * h_coeff) / math.sqrt(3)
+
+    # --------------------------------------------------
+    # Контекст для humanizer
+    # --------------------------------------------------
+    context: Dict[str, Any] = {
         "task_text": task.get("text"),
-        **humanizer_data,
+
+        # 🔑 ключи, которые ждёт humanizer
+        "k": h_coeff,
+        "h": h_value_raw or f"{h_coeff}√3",
+
+        # можно оставить для совместимости
+        "h_coeff": h_coeff,
+        "h_value_raw": h_value_raw or f"{h_coeff}√3",
+
+        "formula": humanizer_data.get("formula", "a = (2 · h) / √3"),
+        "res": side,
     }
 
     action = f"{task['pattern']}:{task.get('narrative', 'default')}"
@@ -168,31 +232,115 @@ def _solve_equilateral_height_to_side(task: Dict[str, Any]) -> List[Dict[str, An
         "action": action,
         "data": context,
     }]
-
 
 # ============================================================================
 # ПАТТЕРН 3.3: equilateral_side_to_element
+# Высота / медиана / биссектриса по стороне
 # ============================================================================
+
 def _solve_equilateral_side_to_element(task: Dict[str, Any]) -> List[Dict[str, Any]]:
     variables = task.get("variables", {})
-    humanizer_data = variables.get("humanizer_data", {})
+    given = variables.get("given", {})
+    to_find = variables.get("to_find", {})
 
-    context = {
-        # обязательное
-        "res": task.get("answer"),
-        "task_text": task.get("text"),
+    side_value = given.get("side_value")
+    k = given.get("k")
+    has_root = given.get("has_root", False)
 
-        # данные для сценариев humanizer
-        **humanizer_data,
+    if side_value is None or k is None or not has_root:
+        raise ValueError("equilateral_side_to_element: некорректные данные стороны")
+
+    target = to_find.get("element")
+    if target is None:
+        raise ValueError("equilateral_side_to_element: не указан искомый элемент")
+
+    # 1. СЛОВАРЬ СКЛОНЕНИЙ И СИМВОЛОВ
+    # acc - Винительный (Найти кого/что? -> Медиану)
+    # gen - Родительный (Формула для нахождения кого/чего? -> Медианы)
+    # lower - Именительный с маленькой (вспомним: медиана равна высоте)
+    # acc_lower - Винительный с маленькой (найти медиану)
+
+    ELEMENT_MAP = {
+        "height": {
+            "label": "Высота",
+            "symbol": "h",
+            "acc": "Высоту",
+            "gen": "Высоты",
+            "lower": "высота",
+            "acc_lower": "высоту"
+        },
+        "median": {
+            "label": "Медиана",
+            "symbol": "m",
+            "acc": "Медиану",
+            "gen": "Медианы",
+            "lower": "медиана",
+            "acc_lower": "медиану"
+        },
+        "bisector": {
+            "label": "Биссектриса",
+            "symbol": "l",
+            "acc": "Биссектрису",
+            "gen": "Биссектрисы",
+            "lower": "биссектриса",
+            "acc_lower": "биссектрису"
+        },
     }
 
-    action = f"{task['pattern']}:{task.get('narrative', 'default')}"
+    if target not in ELEMENT_MAP:
+         raise ValueError(f"equilateral_side_to_element: неизвестный элемент '{target}'")
+
+    meta = ELEMENT_MAP[target]
+
+    # 2. МАТЕМАТИКА
+    # a = k√3 → h = a√3 / 2 = (k√3 * √3) / 2 = 3k / 2
+
+    # Приводим k к числу (может прийти строкой "6")
+    try:
+        k_val = float(k)
+        if k_val.is_integer():
+            k_val = int(k_val)
+    except ValueError:
+         raise ValueError(f"equilateral_side_to_element: коэффициент k='{k}' не является числом")
+
+    # Промежуточное вычисление для Шага 5 (числитель дроби после умножения корней)
+    k_times_3 = k_val * 3
+
+    # Итоговый результат
+    result_val = k_times_3 / 2
+
+    # Форматирование результата (убираем .0, если число целое)
+    if result_val.is_integer():
+        res_formatted = int(result_val)
+    else:
+        res_formatted = result_val
+
+    # 3. КОНТЕКСТ ДЛЯ ШАБЛОНА
+    context = {
+        # Данные из условия
+        "k": k_val,
+        "a_value_raw": side_value,  # Например "6√3"
+
+        # Целевой элемент и его склонения
+        "target_label": meta["label"],          # "Медиана"
+        "target_label_acc": meta["acc"],        # "Медиану" (для Шага 1)
+        "target_label_gen": meta["gen"],        # "Медианы" (для Шага 3)
+        "target_label_lower": meta["lower"],    # "медиана" (для Шага 2)
+        "target_label_acc_lower": meta["acc_lower"], # "медиану"
+        "target_symbol": meta["symbol"],        # "m"
+
+        # Вычисленные значения
+        "k_times_3": k_times_3,                 # 18 (для Шага 5)
+        "res": res_formatted,                   # 9 (для Ответа)
+
+        # Логика ветвления
+        "target_is_not_height": meta["symbol"] != "h",
+    }
 
     return [{
-        "action": action,
+        "action": f"{task['pattern']}:{task.get('narrative', 'default')}",
         "data": context,
     }]
-
 
 # ============================================================================
 # ДИСПЕТЧЕР ТЕМЫ 3

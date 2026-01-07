@@ -12,7 +12,6 @@ import argparse
 from pathlib import Path
 from contextlib import redirect_stdout, redirect_stderr
 
-
 # =============================================================
 # sys.path — СНАЧАЛА (ОБЯЗАТЕЛЬНО)
 # =============================================================
@@ -25,7 +24,8 @@ sys.path.insert(0, str(PROJECT_ROOT))
 # ИМПОРТЫ ПРОЕКТА (ПОСЛЕ sys.path)
 # =============================================================
 # ⭐️ ВАЖНО: импортируем solve НАПРЯМУЮ из нужного солвера темы
-from matunya_bot_final.help_core.solvers.task_15.isosceles_triangles_solver import solve
+#from matunya_bot_final.help_core.solvers.task_15.isosceles_triangles_solver import solve
+from matunya_bot_final.help_core.solvers.task_15.right_triangles_solver import solve
 from matunya_bot_final.help_core.humanizers.template_humanizers.task_15_humanizer import humanize
 
 
@@ -155,14 +155,12 @@ if __name__ == "__main__":
         # -------------------------------------------------------------
         # ТЕМА 1: УГЛЫ
         # -------------------------------------------------------------
-
         # TEST_PATTERN = "triangle_external_angle"
         # TEST_PATTERN = "angle_bisector_find_half_angle"
 
         # -------------------------------------------------------------
         # ТЕМА 2: ТРЕУГОЛЬНИКИ ОБЩЕГО ВИДА
         # -------------------------------------------------------------
-
         # TEST_PATTERN = "triangle_area_by_midpoints"
         # TEST_PATTERN = "triangle_area_by_sin"
         # TEST_PATTERN = "triangle_area_by_dividing_point"
@@ -175,10 +173,19 @@ if __name__ == "__main__":
         # -------------------------------------------------------------
         # ТЕМА 3: РАВНОБЕДРЕННЫЕ И РАВНОСТОРОННИЕ ТРЕУГОЛЬНИКИ
         # -------------------------------------------------------------
-
-        TEST_PATTERN = "isosceles_triangle_angles"
+        # TEST_PATTERN = "isosceles_triangle_angles"
         # TEST_PATTERN = "equilateral_height_to_side"
         # TEST_PATTERN = "equilateral_side_to_element"
+
+        # -------------------------------------------------------------
+        # ТЕМА 4: ПРЯМОУГОЛЬНЫЕ ТРЕУГОЛЬНИКИ
+        # -------------------------------------------------------------
+        # TEST_PATTERN = "right_triangle_angles_sum"
+        #TEST_PATTERN = "pythagoras_find_leg"
+        # TEST_PATTERN = "pythagoras_find_hypotenuse"
+        TEST_PATTERN = "find_cos_sin_tg_from_sides"
+        # TEST_PATTERN = "find_side_from_trig_ratio"
+        # TEST_PATTERN = "right_triangle_median_to_hypotenuse"
 
         # -------------------------------------------------------------
         # НАСТРОЙКИ ЗАПУСКА
