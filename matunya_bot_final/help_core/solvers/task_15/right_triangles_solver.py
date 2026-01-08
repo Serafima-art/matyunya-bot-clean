@@ -1,6 +1,8 @@
 from typing import Dict, Any, List
 import math
 
+from matunya_bot_final.help_core.solvers.task_15.task_15_text_formatter import format_number
+
 # ============================================================
 # ПАТТЕРН 4.1: right_triangle_angles_sum
 # Сумма острых углов прямоугольного треугольника
@@ -365,35 +367,291 @@ def _solve_find_cos_sin_tg_from_sides(task: Dict[str, Any]) -> List[Dict[str, An
 
 # ============================================================
 # ПАТТЕРН 4.5: find_side_from_trig_ratio
-# Нахождение стороны через синус, косинус или тангенс
+# Нахождение стороны по sin, cos, tg
+# ЭТАЛОННЫЕ ШАГИ: роли -> подстановка сторон -> подстановка чисел -> крест-накрест
 # ============================================================
 def _solve_find_side_from_trig_ratio(task: Dict[str, Any]) -> List[Dict[str, Any]]:
-    """
-    Решает задачи вида: "Найди катет BC, если AB=20 и sin A = 0.5"
-    """
     variables = task.get("variables", {})
     given = variables.get("given", {})
-    to_find = variables.get("to_find", {})
+    target = variables.get("target", {})
 
-    # Пока заглушка
-    raise NotImplementedError("Паттерн find_side_from_trig_ratio еще не реализован")
+    trig_fn = given.get("trig_fn")            # "sin" / "cos" / "tg"
+    angle = given.get("angle")                # "A" / "B" / "C"
+    right_angle = target.get("right_angle")   # "A" / "B" / "C"
+    find_side = target.get("find")            # "AB" / "BC" / "AC"
 
+    vertex_set = {"A", "B", "C"}
+
+    # Названия сторон
+    hyp_name = "".join(sorted(vertex_set - {right_angle}))
+    opp_name = "".join(sorted(vertex_set - {angle}))
+    adj_name = "".join(sorted([angle, right_angle]))
+
+    def _get_val(side: str):
+        # важно: не использовать "or", чтобы не ломать 0
+        v = given.get(side)
+        if v is not None:
+            return v
+        return given.get(side[::-1])
+
+    def _num(x: float) -> int | float:
+        """Число для хранения: int, если целое; иначе float."""
+        if abs(x - round(x)) < 1e-9:
+            return int(round(x))
+        return float(x)
+
+    def _snum(x: float) -> str:
+        """Число для печати в шагах (запятая, без .0)."""
+        return format_number(float(x))
+
+    # -----------------------------
+    # 1) Определяем известную сторону (в задаче она всегда одна)
+    # -----------------------------
+    known_name = None
+    known_val: int | float | None = None
+
+    for side_name in (hyp_name, opp_name, adj_name):
+        v = _get_val(side_name)
+        if v is not None:
+            known_name = side_name
+            known_val = _num(float(v))
+            break
+
+    if known_val is None or known_name is None:
+        raise ValueError(
+            f"Не удалось определить заданную сторону в find_side_from_trig_ratio (id={task.get('id')})"
+        )
+
+    # -----------------------------
+    # 2) Разбираем отношение (в humanizer_data лежит строка вида "12/13")
+    # -----------------------------
+    ratio_raw = variables.get("humanizer_data", {}).get("ratio", "")
+    if not ratio_raw or "/" not in ratio_raw:
+        raise ValueError(
+            f"Не удалось прочитать ratio для find_side_from_trig_ratio (id={task.get('id')}): {ratio_raw!r}"
+        )
+
+    num_str, den_str = ratio_raw.split("/", 1)
+
+    try:
+        num = float(num_str)
+        den = float(den_str)
+    except ValueError:
+        raise ValueError(
+            f"Некорректное ratio для find_side_from_trig_ratio (id={task.get('id')}): {ratio_raw!r}"
+        )
+
+    if abs(num) < 1e-12 or abs(den) < 1e-12:
+        raise ValueError(
+            f"Некорректное ratio (деление на ноль) для find_side_from_trig_ratio (id={task.get('id')}): {ratio_raw!r}"
+        )
+
+    ratio_pretty = f"{_snum(num)}/{_snum(den)}"  # ✅ "6/5", без .0
+
+    # -----------------------------
+    # 3) Определяем роли по trig: trig = X / Y
+    # -----------------------------
+    trig_fn_rus = {"sin": "синуса", "cos": "косинуса", "tg": "тангенса"}.get(trig_fn, str(trig_fn))
+
+    if trig_fn == "sin":
+        role_num_rus = "противолежащий катет"
+        role_den_rus = "гипотенуза"
+        X = opp_name  # числитель
+        Y = hyp_name  # знаменатель
+    elif trig_fn == "cos":
+        role_num_rus = "прилежащий катет"
+        role_den_rus = "гипотенуза"
+        X = adj_name
+        Y = hyp_name
+    elif trig_fn == "tg":
+        role_num_rus = "противолежащий катет"
+        role_den_rus = "прилежащий катет"
+        X = opp_name
+        Y = adj_name
+    else:
+        raise ValueError(f"Неизвестная trig_fn={trig_fn!r} (id={task.get('id')})")
+
+    # Искомая сторона должна быть X или Y
+    if find_side not in (X, Y):
+        raise ValueError(
+            f"Искомая сторона {find_side} не участвует в формуле {trig_fn} ({X}/{Y}) "
+            f"(id={task.get('id')})"
+        )
+
+    # В корректных задачах известная сторона — это как раз одна из X или Y
+    if known_name not in (X, Y):
+        raise ValueError(
+            f"Заданная сторона {known_name} не совпала с формульными сторонами {X} и {Y} "
+            f"(id={task.get('id')})"
+        )
+
+    # -----------------------------
+    # 4) Решаем пропорцию num/den = X/Y
+    # -----------------------------
+    # Сценарии:
+    #   если ищем X -> должна быть известна Y
+    #   если ищем Y -> должна быть известна X
+    if find_side == X:
+        # X искомая -> известна должна быть Y
+        if known_name != Y:
+            raise ValueError(f"Недостаточно данных: чтобы найти {X}, должна быть задана {Y} (id={task.get('id')})")
+        res_val = (num / den) * float(known_val)
+        unknown = X
+        known_for_eq_side = Y
+        known_for_eq_val = float(known_val)
+    else:
+        # Y искомая -> известна должна быть X
+        if known_name != X:
+            raise ValueError(f"Недостаточно данных: чтобы найти {Y}, должна быть задана {X} (id={task.get('id')})")
+        res_val = (den / num) * float(known_val)
+        unknown = Y
+        known_for_eq_side = X
+        known_for_eq_val = float(known_val)
+
+    # ✅ храним результат как int, если целое
+    res: int | float = _num(res_val)
+    res_pretty = _snum(float(res))
+
+    # -----------------------------
+    # 5) Готовим эталонные строки (только текст)
+    # -----------------------------
+    equation_left = f"{_snum(num)}/{_snum(den)}"
+
+    # Всегда строим правую часть так, чтобы там были "число" и "неизвестная сторона"
+    # Если неизвестная в знаменателе:  num/den = known/unknown
+    # Если неизвестная в числителе:   num/den = unknown/known
+    if unknown == Y:
+        # unknown в знаменателе
+        equation_right = f"{_snum(known_for_eq_val)}/{unknown}"
+        cross1 = f"{_snum(num)} · {unknown} = {_snum(den)} · {_snum(known_for_eq_val)}"
+        cross2 = f"{unknown} = {_snum(den * known_for_eq_val)}/{_snum(num)} = {_snum(float(res))}"
+    else:
+        # unknown в числителе
+        equation_right = f"{unknown}/{_snum(known_for_eq_val)}"
+        cross1 = f"{_snum(num)} · {_snum(known_for_eq_val)} = {_snum(den)} · {unknown}"
+        cross2 = f"{unknown} = {_snum(num * known_for_eq_val)}/{_snum(den)} = {_snum(float(res))}"
+
+    # -----------------------------
+    # 6) Контекст для humanizer
+    # -----------------------------
+    context = {
+        "trig_fn": trig_fn,
+        "trig_fn_rus": trig_fn_rus,
+        "angle": angle,
+        "right_angle": right_angle,
+
+        "hyp_name": hyp_name,
+        "opp_name": opp_name,
+        "adj_name": adj_name,
+
+        "known_name": known_name,
+        "known_val": known_val,          # ✅ int/float без .0
+        "ratio": ratio_pretty,           # ✅ "6/5"
+
+        # роли/стороны
+        "role_num_rus": role_num_rus,
+        "role_den_rus": role_den_rus,
+        "role_num_side": X,
+        "role_den_side": Y,
+
+        # эталонные строки
+        "equation_left": equation_left,
+        "equation_right": equation_right,
+        "cross1": cross1,
+        "cross2": cross2,
+
+        # результат
+        "res": res,                      # ✅ int/float без .0
+        "res_pretty": res_pretty,        # ✅ строка для шаблонов humanizer
+        "target_side": find_side,
+    }
+
+    return [{
+        "action": task["pattern"],
+        "data": context
+    }]
 
 # ============================================================
 # ПАТТЕРН 4.6: right_triangle_median_to_hypotenuse
-# Свойство медианы, проведенной к гипотенузе
+# Свойство медианы, проведённой к гипотенузе
 # ============================================================
 def _solve_right_triangle_median_to_hypotenuse(task: Dict[str, Any]) -> List[Dict[str, Any]]:
     """
-    Свойство: Медиана, проведенная к гипотенузе, равна её половине.
-    m = c / 2
+    Свойство:
+    В прямоугольном треугольнике медиана,
+    проведённая к гипотенузе, равна половине гипотенузы.
+
+    Сценарии (через narrative):
+    - find_median_by_hypotenuse
+    - find_hypotenuse_by_median
     """
+
     variables = task.get("variables", {})
     given = variables.get("given", {})
-    to_find = variables.get("to_find", {})
 
-    # Пока заглушка
-    raise NotImplementedError("Паттерн right_triangle_median_to_hypotenuse еще не реализован")
+    narrative = task.get("narrative")
+    right_angle = given.get("right_angle")          # A / B / C
+    hypotenuse = given.get("hypotenuse")            # AB / BC / AC
+    median_point = given.get("median_point", "M")  # M
+
+    # Ответ уже вычислен валидатором
+    res = task.get("answer")
+    if res is None:
+        raise ValueError(
+            f"В задаче отсутствует answer "
+            f"для right_triangle_median_to_hypotenuse (id={task.get('id')})"
+        )
+
+    # Название медианы: AM / BM / CM
+    median_name = f"{right_angle}{median_point}"
+
+    # --------------------------------------------------------
+    # ЛОГИКА ЧЕРЕЗ NARRATIVE
+    # --------------------------------------------------------
+    if narrative == "find_median_by_hypotenuse":
+        target = "median"
+        formula = f"{median_name} = {hypotenuse} / 2"
+
+    elif narrative == "find_hypotenuse_by_median":
+        target = "hypotenuse"
+        formula = f"{hypotenuse} = 2 · {median_name}"
+
+    else:
+        raise ValueError(
+            f"Неизвестный narrative {narrative!r} "
+            f"в right_triangle_median_to_hypotenuse (id={task.get('id')})"
+        )
+
+    # --------------------------------------------------------
+    # КОНТЕКСТ ДЛЯ HUMANIZER
+    # --------------------------------------------------------
+    context = {
+        "right_angle": right_angle,
+        "hyp_name": hypotenuse,
+        "median_name": median_name,
+
+        "narrative": narrative,
+        "target": target,
+        "formula": formula,
+
+        # ⬇️ ВАЖНО
+        "given_hyp": None,
+        "given_med": None,
+
+        "res": res,
+    }
+
+    if narrative == "find_median_by_hypotenuse":
+        context["given_hyp"] = context["hyp_name"]
+
+    elif narrative == "find_hypotenuse_by_median":
+        context["given_med"] = context["median_name"]
+
+    return [{
+        "action": f"{task['pattern']}:{narrative}",
+        "narrative": narrative,   # ← ВОТ ЭТО КРИТИЧНО
+        "data": context
+    }]
 
 
 # ============================================================================

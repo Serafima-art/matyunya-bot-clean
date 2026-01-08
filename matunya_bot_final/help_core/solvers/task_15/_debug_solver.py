@@ -183,9 +183,9 @@ if __name__ == "__main__":
         # TEST_PATTERN = "right_triangle_angles_sum"
         #TEST_PATTERN = "pythagoras_find_leg"
         # TEST_PATTERN = "pythagoras_find_hypotenuse"
-        TEST_PATTERN = "find_cos_sin_tg_from_sides"
+        # TEST_PATTERN = "find_cos_sin_tg_from_sides"
         # TEST_PATTERN = "find_side_from_trig_ratio"
-        # TEST_PATTERN = "right_triangle_median_to_hypotenuse"
+        TEST_PATTERN = "right_triangle_median_to_hypotenuse"
 
         # -------------------------------------------------------------
         # НАСТРОЙКИ ЗАПУСКА
