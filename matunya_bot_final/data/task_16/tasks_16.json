@@ -1,0 +1,3762 @@
+[
+  {
+    "id": 1600001,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "Угол A четырёхугольника ABCD, вписанного в окружность, равен 58°. Найди угол C.",
+    "answer": 122,
+    "image_file": "task_cyclic_quad_angles_abcd_simple_v1.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "A",
+      "angle_given_val": 58,
+      "angle_target_name": "C"
+    }
+  },
+  {
+    "id": 1600002,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол A равен 74°. Найди угол C.",
+    "answer": 106,
+    "image_file": "task_cyclic_quad_angles_abcd_simple_v1.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "A",
+      "angle_given_val": 74,
+      "angle_target_name": "C"
+    }
+  },
+  {
+    "id": 1600003,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "Угол D вписанного в окружность четырёхугольника ABCD равен 112°. Найди угол B.",
+    "answer": 68,
+    "image_file": "task_cyclic_quad_angles_abcd_simple_v3.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "D",
+      "angle_given_val": 112,
+      "angle_target_name": "B"
+    }
+  },
+  {
+    "id": 1600004,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол D равен 96°. Чему равен угол B?",
+    "answer": 84,
+    "image_file": "task_cyclic_quad_angles_abcd_simple_v3.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "D",
+      "angle_given_val": 96,
+      "angle_target_name": "B"
+    }
+  },
+  {
+    "id": 1600005,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "Угол B четырёхугольника ABCD, вписанного в окружность, равен 88°. Найди угол D.",
+    "answer": 92,
+    "image_file": "task_cyclic_quad_angles_abcd_simple_v3.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "B",
+      "angle_given_val": 88,
+      "angle_target_name": "D"
+    }
+  },
+  {
+    "id": 1600006,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол B равен 76°. Чему равен угол D?",
+    "answer": 104,
+    "image_file": "task_cyclic_quad_angles_abcd_simple_v3.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "B",
+      "angle_given_val": 76,
+      "angle_target_name": "D"
+    }
+  },
+  {
+    "id": 1600007,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "Угол C вписанного в окружность четырёхугольника ABCD равен 154°. Найди угол A.",
+    "answer": 26,
+    "image_file": "task_cyclic_quad_angles_abcd_simple_v1.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "C",
+      "angle_given_val": 154,
+      "angle_target_name": "A"
+    }
+  },
+  {
+    "id": 1600008,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол C равен 132°. Найди угол A.",
+    "answer": 48,
+    "image_file": "task_cyclic_quad_angles_abcd_simple_v1.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "C",
+      "angle_given_val": 132,
+      "angle_target_name": "A"
+    }
+  },
+  {
+    "id": 1600009,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "Угол A четырёхугольника ABCD, вписанного в окружность, равен 117°. Найди угол C.",
+    "answer": 63,
+    "image_file": "task_cyclic_quad_angles_abcd_simple_v2.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "A",
+      "angle_given_val": 117,
+      "angle_target_name": "C"
+    }
+  },
+  {
+    "id": 1600010,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол A равен 128°. Найди угол C.",
+    "answer": 52,
+    "image_file": "task_cyclic_quad_angles_abcd_simple_v2.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "A",
+      "angle_given_val": 128,
+      "angle_target_name": "C"
+    }
+  },
+  {
+    "id": 1600011,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "Угол D вписанного в окружность четырёхугольника ABCD равен 64°. Найди угол B.",
+    "answer": 116,
+    "image_file": "task_cyclic_quad_angles_abcd_simple_v3.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "D",
+      "angle_given_val": 64,
+      "angle_target_name": "B"
+    }
+  },
+  {
+    "id": 1600012,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол D равен 82°. Чему равен угол B?",
+    "answer": 98,
+    "image_file": "task_cyclic_quad_angles_abcd_simple_v3.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "D",
+      "angle_given_val": 82,
+      "angle_target_name": "B"
+    }
+  },
+  {
+    "id": 1600013,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "Угол B четырёхугольника ABCD, вписанного в окружность, равен 108°. Найди угол D.",
+    "answer": 72,
+    "image_file": "task_cyclic_quad_angles_abcd_simple_v3.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "B",
+      "angle_given_val": 108,
+      "angle_target_name": "D"
+    }
+  },
+  {
+    "id": 1600014,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол B равен 124°. Чему равен угол D?",
+    "answer": 56,
+    "image_file": "task_cyclic_quad_angles_abcd_simple_v3.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "B",
+      "angle_given_val": 124,
+      "angle_target_name": "D"
+    }
+  },
+  {
+    "id": 1600015,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "Угол C вписанного в окружность четырёхугольника ABCD равен 47°. Найди угол A.",
+    "answer": 133,
+    "image_file": "task_cyclic_quad_angles_abcd_simple_v2.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "C",
+      "angle_given_val": 47,
+      "angle_target_name": "A"
+    }
+  },
+  {
+    "id": 1600016,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол C равен 71°. Найди угол A.",
+    "answer": 109,
+    "image_file": "task_cyclic_quad_angles_abcd_simple_v2.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "C",
+      "angle_given_val": 71,
+      "angle_target_name": "A"
+    }
+  },
+  {
+    "id": 1600017,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "Угол A четырёхугольника ABCD, вписанного в окружность, равен 86°. Найди угол C.",
+    "answer": 94,
+    "image_file": "task_cyclic_quad_angles_abcd_simple_v1.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "A",
+      "angle_given_val": 86,
+      "angle_target_name": "C"
+    }
+  },
+  {
+    "id": 1600018,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол A равен 69°. Найди угол C.",
+    "answer": 111,
+    "image_file": "task_cyclic_quad_angles_abcd_simple_v1.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "A",
+      "angle_given_val": 69,
+      "angle_target_name": "C"
+    }
+  },
+  {
+    "id": 1600019,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "Угол D вписанного в окружность четырёхугольника ABCD равен 53°. Найди угол B.",
+    "answer": 127,
+    "image_file": "task_cyclic_quad_angles_abcd_simple_v3.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "D",
+      "angle_given_val": 53,
+      "angle_target_name": "B"
+    }
+  },
+  {
+    "id": 1600020,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол D равен 34°. Чему равен угол B?",
+    "answer": 146,
+    "image_file": "task_cyclic_quad_angles_abcd_simple_v3.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "D",
+      "angle_given_val": 34,
+      "angle_target_name": "B"
+    }
+  },
+  {
+    "id": 1600021,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "Угол B четырёхугольника ABCD, вписанного в окружность, равен 142°. Найди угол D.",
+    "answer": 38,
+    "image_file": "task_cyclic_quad_angles_abcd_simple_v3.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "B",
+      "angle_given_val": 142,
+      "angle_target_name": "D"
+    }
+  },
+  {
+    "id": 1600022,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол B равен 135°. Чему равен угол D?",
+    "answer": 45,
+    "image_file": "task_cyclic_quad_angles_abcd_simple_v3.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "B",
+      "angle_given_val": 135,
+      "angle_target_name": "D"
+    }
+  },
+  {
+    "id": 1600023,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "Угол C вписанного в окружность четырёхугольника ABCD равен 123°. Найди угол A.",
+    "answer": 57,
+    "image_file": "task_cyclic_quad_angles_abcd_simple_v1.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "C",
+      "angle_given_val": 123,
+      "angle_target_name": "A"
+    }
+  },
+  {
+    "id": 1600024,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол C равен 109°. Найди угол A.",
+    "answer": 71,
+    "image_file": "task_cyclic_quad_angles_abcd_simple_v1.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "C",
+      "angle_given_val": 109,
+      "angle_target_name": "A"
+    }
+  },
+  {
+    "id": 1600025,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "Угол K четырёхугольника KLMN, вписанного в окружность, равен 54°. Найди угол M.",
+    "answer": 126,
+    "image_file": "task_cyclic_quad_angles_klmn_simple_v1.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "K",
+      "angle_given_val": 54,
+      "angle_target_name": "M"
+    }
+  },
+  {
+    "id": 1600026,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол K равен 49°. Найди угол M.",
+    "answer": 131,
+    "image_file": "task_cyclic_quad_angles_klmn_simple_v1.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "K",
+      "angle_given_val": 49,
+      "angle_target_name": "M"
+    }
+  },
+  {
+    "id": 1600027,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "Угол M вписанного в окружность четырёхугольника KLMN равен 115°. Найди угол K.",
+    "answer": 65,
+    "image_file": "task_cyclic_quad_angles_klmn_simple_v1.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "M",
+      "angle_given_val": 115,
+      "angle_target_name": "K"
+    }
+  },
+  {
+    "id": 1600028,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол M равен 134°. Чему равен угол K?",
+    "answer": 46,
+    "image_file": "task_cyclic_quad_angles_klmn_simple_v1.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "M",
+      "angle_given_val": 134,
+      "angle_target_name": "K"
+    }
+  },
+  {
+    "id": 1600029,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "Угол L четырёхугольника KLMN, вписанного в окружность, равен 98°. Найди угол N.",
+    "answer": 82,
+    "image_file": "task_cyclic_quad_angles_klmn_simple_v3.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "L",
+      "angle_given_val": 98,
+      "angle_target_name": "N"
+    }
+  },
+  {
+    "id": 1600030,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол L равен 122°. Чему равен угол N?",
+    "answer": 58,
+    "image_file": "task_cyclic_quad_angles_klmn_simple_v3.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "L",
+      "angle_given_val": 122,
+      "angle_target_name": "N"
+    }
+  },
+  {
+    "id": 1600031,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "Угол N вписанного в окружность четырёхугольника KLMN равен 65°. Найди угол L.",
+    "answer": 115,
+    "image_file": "task_cyclic_quad_angles_klmn_simple_v3.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "N",
+      "angle_given_val": 65,
+      "angle_target_name": "L"
+    }
+  },
+  {
+    "id": 1600032,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол N равен 42°. Найди угол L.",
+    "answer": 138,
+    "image_file": "task_cyclic_quad_angles_klmn_simple_v3.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "N",
+      "angle_given_val": 42,
+      "angle_target_name": "L"
+    }
+  },
+  {
+    "id": 1600033,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "Угол K четырёхугольника KLMN, вписанного в окружность, равен 151°. Найди угол M.",
+    "answer": 29,
+    "image_file": "task_cyclic_quad_angles_klmn_simple_v2.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "K",
+      "angle_given_val": 151,
+      "angle_target_name": "M"
+    }
+  },
+  {
+    "id": 1600034,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол K равен 127°. Найди угол M.",
+    "answer": 53,
+    "image_file": "task_cyclic_quad_angles_klmn_simple_v2.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "K",
+      "angle_given_val": 127,
+      "angle_target_name": "M"
+    }
+  },
+  {
+    "id": 1600035,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "Угол M вписанного в окружность четырёхугольника KLMN равен 56°. Найди угол K.",
+    "answer": 124,
+    "image_file": "task_cyclic_quad_angles_klmn_simple_v2.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "M",
+      "angle_given_val": 56,
+      "angle_target_name": "K"
+    }
+  },
+  {
+    "id": 1600036,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол M равен 41°. Чему равен угол K?",
+    "answer": 139,
+    "image_file": "task_cyclic_quad_angles_klmn_simple_v2.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "M",
+      "angle_given_val": 41,
+      "angle_target_name": "K"
+    }
+  },
+  {
+    "id": 1600037,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "Угол L четырёхугольника KLMN, вписанного в окружность, равен 73°. Найди угол N.",
+    "answer": 107,
+    "image_file": "task_cyclic_quad_angles_klmn_simple_v3.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "L",
+      "angle_given_val": 73,
+      "angle_target_name": "N"
+    }
+  },
+  {
+    "id": 1600038,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол L равен 89°. Чему равен угол N?",
+    "answer": 91,
+    "image_file": "task_cyclic_quad_angles_klmn_simple_v3.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "L",
+      "angle_given_val": 89,
+      "angle_target_name": "N"
+    }
+  },
+  {
+    "id": 1600039,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "Угол N вписанного в окружность четырёхугольника KLMN равен 103°. Найди угол L.",
+    "answer": 77,
+    "image_file": "task_cyclic_quad_angles_klmn_simple_v3.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "N",
+      "angle_given_val": 103,
+      "angle_target_name": "L"
+    }
+  },
+  {
+    "id": 1600040,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол N равен 137°. Найди угол L.",
+    "answer": 43,
+    "image_file": "task_cyclic_quad_angles_klmn_simple_v3.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "N",
+      "angle_given_val": 137,
+      "angle_target_name": "L"
+    }
+  },
+  {
+    "id": 1600041,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "Угол N четырёхугольника KLMN, вписанного в окружность, равен 48°. Найди угол L.",
+    "answer": 132,
+    "image_file": "task_cyclic_quad_angles_klmn_simple_v3.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "N",
+      "angle_given_val": 48,
+      "angle_target_name": "L"
+    }
+  },
+  {
+    "id": 1600042,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол N равен 63°. Найди угол L.",
+    "answer": 117,
+    "image_file": "task_cyclic_quad_angles_klmn_simple_v3.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "N",
+      "angle_given_val": 63,
+      "angle_target_name": "L"
+    }
+  },
+  {
+    "id": 1600043,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "Угол L вписанного в окружность четырёхугольника KLMN равен 167°. Найди угол N.",
+    "answer": 13,
+    "image_file": "task_cyclic_quad_angles_klmn_simple_v3.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "L",
+      "angle_given_val": 167,
+      "angle_target_name": "N"
+    }
+  },
+  {
+    "id": 1600044,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол L равен 129°. Чему равен угол N?",
+    "answer": 51,
+    "image_file": "task_cyclic_quad_angles_klmn_simple_v3.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "L",
+      "angle_given_val": 129,
+      "angle_target_name": "N"
+    }
+  },
+  {
+    "id": 1600045,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "Угол K четырёхугольника KLMN, вписанного в окружность, равен 75°. Найди угол M.",
+    "answer": 105,
+    "image_file": "task_cyclic_quad_angles_klmn_simple_v1.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "K",
+      "angle_given_val": 75,
+      "angle_target_name": "M"
+    }
+  },
+  {
+    "id": 1600046,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол K равен 85°. Чему равен угол M?",
+    "answer": 95,
+    "image_file": "task_cyclic_quad_angles_klmn_simple_v1.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "K",
+      "angle_given_val": 85,
+      "angle_target_name": "M"
+    }
+  },
+  {
+    "id": 1600047,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "Угол M вписанного в окружность четырёхугольника KLMN равен 105°. Найди угол K.",
+    "answer": 75,
+    "image_file": "task_cyclic_quad_angles_klmn_simple_v1.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "M",
+      "angle_given_val": 105,
+      "angle_target_name": "K"
+    }
+  },
+  {
+    "id": 1600048,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_opposite_angle",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол M равен 114°. Найди угол K.",
+    "answer": 66,
+    "image_file": "task_cyclic_quad_angles_klmn_simple_v1.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative_type": "opposite_sum",
+      "angle_given_name": "M",
+      "angle_given_val": 114,
+      "angle_target_name": "K"
+    }
+  },
+  {
+    "id": 1600049,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол ADB равен 44°, угол ACD равен 31°. Найди угол BCD.",
+    "answer": 75,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ab.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "BCD",
+      "angle_known_part_name": "ACD",
+      "angle_known_part_val": 31,
+      "angle_alien_name": "ADB",
+      "angle_alien_val": 44,
+      "angle_hidden_part_name": "ACB",
+      "arc_name": "AB"
+    }
+  },
+  {
+    "id": 1600050,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Известно, что угол ADB равен 52°, а угол ACD равен 26°. Найди угол BCD.",
+    "answer": 78,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ab.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "BCD",
+      "angle_known_part_name": "ACD",
+      "angle_known_part_val": 26,
+      "angle_alien_name": "ADB",
+      "angle_alien_val": 52,
+      "angle_hidden_part_name": "ACB",
+      "arc_name": "AB"
+    }
+  },
+  {
+    "id": 1600051,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол ADB равен 35°, угол ACD равен 42°. Найди угол BCD.",
+    "answer": 77,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ab.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "BCD",
+      "angle_known_part_name": "ACD",
+      "angle_known_part_val": 42,
+      "angle_alien_name": "ADB",
+      "angle_alien_val": 35,
+      "angle_hidden_part_name": "ACB",
+      "arc_name": "AB"
+    }
+  },
+  {
+    "id": 1600052,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Известно, что угол ADB равен 48°, а угол ACD равен 29°. Найди угол BCD.",
+    "answer": 77,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ab.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "BCD",
+      "angle_known_part_name": "ACD",
+      "angle_known_part_val": 29,
+      "angle_alien_name": "ADB",
+      "angle_alien_val": 48,
+      "angle_hidden_part_name": "ACB",
+      "arc_name": "AB"
+    }
+  },
+  {
+    "id": 1600053,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол ADB равен 33°, угол ACD равен 45°. Найди угол BCD.",
+    "answer": 78,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ab.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "BCD",
+      "angle_known_part_name": "ACD",
+      "angle_known_part_val": 45,
+      "angle_alien_name": "ADB",
+      "angle_alien_val": 33,
+      "angle_hidden_part_name": "ACB",
+      "arc_name": "AB"
+    }
+  },
+  {
+    "id": 1600054,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол ACB равен 38°, угол CDB равен 41°. Найди угол CDA.",
+    "answer": 79,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ab.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "CDA",
+      "angle_known_part_name": "CDB",
+      "angle_known_part_val": 41,
+      "angle_alien_name": "ACB",
+      "angle_alien_val": 38,
+      "angle_hidden_part_name": "ADB",
+      "arc_name": "AB"
+    }
+  },
+  {
+    "id": 1600055,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Известно, что угол ACB равен 45°, а угол CDB равен 32°. Найди угол CDA.",
+    "answer": 77,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ab.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "CDA",
+      "angle_known_part_name": "CDB",
+      "angle_known_part_val": 32,
+      "angle_alien_name": "ACB",
+      "angle_alien_val": 45,
+      "angle_hidden_part_name": "ADB",
+      "arc_name": "AB"
+    }
+  },
+  {
+    "id": 1600056,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол ACB равен 29°, угол CDB равен 53°. Найди угол CDA.",
+    "answer": 82,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ab.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "CDA",
+      "angle_known_part_name": "CDB",
+      "angle_known_part_val": 53,
+      "angle_alien_name": "ACB",
+      "angle_alien_val": 29,
+      "angle_hidden_part_name": "ADB",
+      "arc_name": "AB"
+    }
+  },
+  {
+    "id": 1600057,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Известно, что угол ACB равен 54°, а угол CDB равен 28°. Найди угол CDA.",
+    "answer": 82,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ab.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "CDA",
+      "angle_known_part_name": "CDB",
+      "angle_known_part_val": 28,
+      "angle_alien_name": "ACB",
+      "angle_alien_val": 54,
+      "angle_hidden_part_name": "ADB",
+      "arc_name": "AB"
+    }
+  },
+  {
+    "id": 1600058,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол ACB равен 36°, угол CDB равен 47°. Найди угол CDA.",
+    "answer": 83,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ab.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "CDA",
+      "angle_known_part_name": "CDB",
+      "angle_known_part_val": 47,
+      "angle_alien_name": "ACB",
+      "angle_alien_val": 36,
+      "angle_hidden_part_name": "ADB",
+      "arc_name": "AB"
+    }
+  },
+  {
+    "id": 1600059,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол DAC равен 68°, угол BDC равен 44°. Найди угол DAB.",
+    "answer": 112,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_bc.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "DAB",
+      "angle_known_part_name": "DAC",
+      "angle_known_part_val": 68,
+      "angle_alien_name": "BDC",
+      "angle_alien_val": 44,
+      "angle_hidden_part_name": "BAC",
+      "arc_name": "BC"
+    }
+  },
+  {
+    "id": 1600060,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Известно, что угол DAC равен 75°, а угол BDC равен 38°. Найди угол DAB.",
+    "answer": 113,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_bc.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "DAB",
+      "angle_known_part_name": "DAC",
+      "angle_known_part_val": 75,
+      "angle_alien_name": "BDC",
+      "angle_alien_val": 38,
+      "angle_hidden_part_name": "BAC",
+      "arc_name": "BC"
+    }
+  },
+  {
+    "id": 1600061,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол DAC равен 62°, угол BDC равен 49°. Найди угол DAB.",
+    "answer": 111,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_bc.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "DAB",
+      "angle_known_part_name": "DAC",
+      "angle_known_part_val": 62,
+      "angle_alien_name": "BDC",
+      "angle_alien_val": 49,
+      "angle_hidden_part_name": "BAC",
+      "arc_name": "BC"
+    }
+  },
+  {
+    "id": 1600062,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Известно, что угол DAC равен 59°, а угол BDC равен 52°. Найди угол DAB.",
+    "answer": 111,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_bc.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "DAB",
+      "angle_known_part_name": "DAC",
+      "angle_known_part_val": 59,
+      "angle_alien_name": "BDC",
+      "angle_alien_val": 52,
+      "angle_hidden_part_name": "BAC",
+      "arc_name": "BC"
+    }
+  },
+  {
+    "id": 1600063,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол DAC равен 81°, угол BDC равен 34°. Найди угол DAB.",
+    "answer": 115,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_bc.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "DAB",
+      "angle_known_part_name": "DAC",
+      "angle_known_part_val": 81,
+      "angle_alien_name": "BDC",
+      "angle_alien_val": 34,
+      "angle_hidden_part_name": "BAC",
+      "arc_name": "BC"
+    }
+  },
+  {
+    "id": 1600064,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол ADB равен 42°, угол BAC равен 36°. Найди угол ADC.",
+    "answer": 78,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_bc.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "ADC",
+      "angle_known_part_name": "ADB",
+      "angle_known_part_val": 42,
+      "angle_alien_name": "BAC",
+      "angle_alien_val": 36,
+      "angle_hidden_part_name": "BDC",
+      "arc_name": "BC"
+    }
+  },
+  {
+    "id": 1600065,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Известно, что угол ADB равен 39°, а угол BAC равен 45°. Найди угол ADC.",
+    "answer": 84,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_bc.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "ADC",
+      "angle_known_part_name": "ADB",
+      "angle_known_part_val": 39,
+      "angle_alien_name": "BAC",
+      "angle_alien_val": 45,
+      "angle_hidden_part_name": "BDC",
+      "arc_name": "BC"
+    }
+  },
+  {
+    "id": 1600066,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол ADB равен 47°, угол BAC равен 29°. Найди угол ADC.",
+    "answer": 76,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_bc.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "ADC",
+      "angle_known_part_name": "ADB",
+      "angle_known_part_val": 47,
+      "angle_alien_name": "BAC",
+      "angle_alien_val": 29,
+      "angle_hidden_part_name": "BDC",
+      "arc_name": "BC"
+    }
+  },
+  {
+    "id": 1600067,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Известно, что угол ADB равен 33°, а угол BAC равен 38°. Найди угол ADC.",
+    "answer": 71,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_bc.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "ADC",
+      "angle_known_part_name": "ADB",
+      "angle_known_part_val": 33,
+      "angle_alien_name": "BAC",
+      "angle_alien_val": 38,
+      "angle_hidden_part_name": "BDC",
+      "arc_name": "BC"
+    }
+  },
+  {
+    "id": 1600068,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол ADB равен 41°, угол BAC равен 32°. Найди угол ADC.",
+    "answer": 73,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_bc.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "ADC",
+      "angle_known_part_name": "ADB",
+      "angle_known_part_val": 41,
+      "angle_alien_name": "BAC",
+      "angle_alien_val": 32,
+      "angle_hidden_part_name": "BDC",
+      "arc_name": "BC"
+    }
+  },
+  {
+    "id": 1600069,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол CAB равен 64°, угол CBD равен 41°. Найди угол DAB.",
+    "answer": 105,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_cd.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "DAB",
+      "angle_known_part_name": "CAB",
+      "angle_known_part_val": 64,
+      "angle_alien_name": "CBD",
+      "angle_alien_val": 41,
+      "angle_hidden_part_name": "CAD",
+      "arc_name": "CD"
+    }
+  },
+  {
+    "id": 1600070,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Известно, что угол CAB равен 58°, а угол CBD равен 49°. Найди угол DAB.",
+    "answer": 107,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_cd.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "DAB",
+      "angle_known_part_name": "CAB",
+      "angle_known_part_val": 58,
+      "angle_alien_name": "CBD",
+      "angle_alien_val": 49,
+      "angle_hidden_part_name": "CAD",
+      "arc_name": "CD"
+    }
+  },
+  {
+    "id": 1600071,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол CAB равен 72°, угол CBD равен 35°. Найди угол DAB.",
+    "answer": 107,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_cd.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "DAB",
+      "angle_known_part_name": "CAB",
+      "angle_known_part_val": 72,
+      "angle_alien_name": "CBD",
+      "angle_alien_val": 35,
+      "angle_hidden_part_name": "CAD",
+      "arc_name": "CD"
+    }
+  },
+  {
+    "id": 1600072,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Известно, что угол CAB равен 69°, а угол CBD равен 44°. Найди угол DAB.",
+    "answer": 113,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_cd.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "DAB",
+      "angle_known_part_name": "CAB",
+      "angle_known_part_val": 69,
+      "angle_alien_name": "CBD",
+      "angle_alien_val": 44,
+      "angle_hidden_part_name": "CAD",
+      "arc_name": "CD"
+    }
+  },
+  {
+    "id": 1600073,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол CAB равен 55°, угол CBD равен 51°. Найди угол DAB.",
+    "answer": 106,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_cd.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "DAB",
+      "angle_known_part_name": "CAB",
+      "angle_known_part_val": 55,
+      "angle_alien_name": "CBD",
+      "angle_alien_val": 51,
+      "angle_hidden_part_name": "CAD",
+      "arc_name": "CD"
+    }
+  },
+  {
+    "id": 1600074,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол ABD равен 66°, угол CAD равен 42°. Найди угол ABC.",
+    "answer": 108,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_cd.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "ABC",
+      "angle_known_part_name": "ABD",
+      "angle_known_part_val": 66,
+      "angle_alien_name": "CAD",
+      "angle_alien_val": 42,
+      "angle_hidden_part_name": "CBD",
+      "arc_name": "CD"
+    }
+  },
+  {
+    "id": 1600075,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Известно, что угол ABD равен 71°, а угол CAD равен 38°. Найди угол ABC.",
+    "answer": 109,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_cd.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "ABC",
+      "angle_known_part_name": "ABD",
+      "angle_known_part_val": 71,
+      "angle_alien_name": "CAD",
+      "angle_alien_val": 38,
+      "angle_hidden_part_name": "CBD",
+      "arc_name": "CD"
+    }
+  },
+  {
+    "id": 1600076,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол ABD равен 59°, угол CAD равен 47°. Найди угол ABC.",
+    "answer": 106,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_cd.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "ABC",
+      "angle_known_part_name": "ABD",
+      "angle_known_part_val": 59,
+      "angle_alien_name": "CAD",
+      "angle_alien_val": 47,
+      "angle_hidden_part_name": "CBD",
+      "arc_name": "CD"
+    }
+  },
+  {
+    "id": 1600077,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Известно, что угол ABD равен 63°, а угол CAD равен 54°. Найди угол ABC.",
+    "answer": 117,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_cd.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "ABC",
+      "angle_known_part_name": "ABD",
+      "angle_known_part_val": 63,
+      "angle_alien_name": "CAD",
+      "angle_alien_val": 54,
+      "angle_hidden_part_name": "CBD",
+      "arc_name": "CD"
+    }
+  },
+  {
+    "id": 1600078,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол ABD равен 75°, угол CAD равен 36°. Найди угол ABC.",
+    "answer": 111,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_cd.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "ABC",
+      "angle_known_part_name": "ABD",
+      "angle_known_part_val": 75,
+      "angle_alien_name": "CAD",
+      "angle_alien_val": 36,
+      "angle_hidden_part_name": "CBD",
+      "arc_name": "CD"
+    }
+  },
+  {
+    "id": 1600079,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол DBC равен 68°, угол ACD равен 44°. Найди угол ABC.",
+    "answer": 112,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ad.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "ABC",
+      "angle_known_part_name": "DBC",
+      "angle_known_part_val": 68,
+      "angle_alien_name": "ACD",
+      "angle_alien_val": 44,
+      "angle_hidden_part_name": "ABD",
+      "arc_name": "AD"
+    }
+  },
+  {
+    "id": 1600080,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Известно, что угол DBC равен 55°, а угол ACD равен 59°. Найди угол ABC.",
+    "answer": 114,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ad.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "ABC",
+      "angle_known_part_name": "DBC",
+      "angle_known_part_val": 55,
+      "angle_alien_name": "ACD",
+      "angle_alien_val": 59,
+      "angle_hidden_part_name": "ABD",
+      "arc_name": "AD"
+    }
+  },
+  {
+    "id": 1600081,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол DBC равен 72°, угол ACD равен 35°. Найди угол ABC.",
+    "answer": 107,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ad.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "ABC",
+      "angle_known_part_name": "DBC",
+      "angle_known_part_val": 72,
+      "angle_alien_name": "ACD",
+      "angle_alien_val": 35,
+      "angle_hidden_part_name": "ABD",
+      "arc_name": "AD"
+    }
+  },
+  {
+    "id": 1600082,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Известно, что угол DBC равен 63°, а угол ACD равен 48°. Найди угол ABC.",
+    "answer": 111,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ad.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "ABC",
+      "angle_known_part_name": "DBC",
+      "angle_known_part_val": 63,
+      "angle_alien_name": "ACD",
+      "angle_alien_val": 48,
+      "angle_hidden_part_name": "ABD",
+      "arc_name": "AD"
+    }
+  },
+  {
+    "id": 1600083,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол DBC равен 51°, угол ACD равен 61°. Найди угол ABC.",
+    "answer": 112,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ad.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "ABC",
+      "angle_known_part_name": "DBC",
+      "angle_known_part_val": 51,
+      "angle_alien_name": "ACD",
+      "angle_alien_val": 61,
+      "angle_hidden_part_name": "ABD",
+      "arc_name": "AD"
+    }
+  },
+  {
+    "id": 1600084,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол ACB равен 34°, угол ABD равен 42°. Найди угол BCD.",
+    "answer": 76,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ad.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "BCD",
+      "angle_known_part_name": "ACB",
+      "angle_known_part_val": 34,
+      "angle_alien_name": "ABD",
+      "angle_alien_val": 42,
+      "angle_hidden_part_name": "ACD",
+      "arc_name": "AD"
+    }
+  },
+  {
+    "id": 1600085,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Известно, что угол ACB равен 29°, а угол ABD равен 45°. Найди угол BCD.",
+    "answer": 74,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ad.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "BCD",
+      "angle_known_part_name": "ACB",
+      "angle_known_part_val": 29,
+      "angle_alien_name": "ABD",
+      "angle_alien_val": 45,
+      "angle_hidden_part_name": "ACD",
+      "arc_name": "AD"
+    }
+  },
+  {
+    "id": 1600086,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол ACB равен 38°, угол ABD равен 33°. Найди угол BCD.",
+    "answer": 71,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ad.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "BCD",
+      "angle_known_part_name": "ACB",
+      "angle_known_part_val": 38,
+      "angle_alien_name": "ABD",
+      "angle_alien_val": 33,
+      "angle_hidden_part_name": "ACD",
+      "arc_name": "AD"
+    }
+  },
+  {
+    "id": 1600087,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Известно, что угол ACB равен 41°, а угол ABD равен 47°. Найди угол BCD.",
+    "answer": 88,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ad.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "BCD",
+      "angle_known_part_name": "ACB",
+      "angle_known_part_val": 41,
+      "angle_alien_name": "ABD",
+      "angle_alien_val": 47,
+      "angle_hidden_part_name": "ACD",
+      "arc_name": "AD"
+    }
+  },
+  {
+    "id": 1600088,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол ACB равен 25°, угол ABD равен 56°. Найди угол BCD.",
+    "answer": 81,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ad.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "BCD",
+      "angle_known_part_name": "ACB",
+      "angle_known_part_val": 25,
+      "angle_alien_name": "ABD",
+      "angle_alien_val": 56,
+      "angle_hidden_part_name": "ACD",
+      "arc_name": "AD"
+    }
+  },
+  {
+    "id": 1600089,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KML равен 42°, угол LNM равен 33°. Найди угол KNM.",
+    "answer": 75,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kl.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "KNM",
+      "angle_known_part_name": "LNM",
+      "angle_known_part_val": 33,
+      "angle_alien_name": "KML",
+      "angle_alien_val": 42,
+      "angle_hidden_part_name": "KNL",
+      "arc_name": "KL"
+    }
+  },
+  {
+    "id": 1600090,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Известно, что угол KML равен 35°, а угол LNM равен 48°. Найди угол KNM.",
+    "answer": 83,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kl.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "KNM",
+      "angle_known_part_name": "LNM",
+      "angle_known_part_val": 48,
+      "angle_alien_name": "KML",
+      "angle_alien_val": 35,
+      "angle_hidden_part_name": "KNL",
+      "arc_name": "KL"
+    }
+  },
+  {
+    "id": 1600091,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KML равен 29°, угол LNM равен 51°. Найди угол KNM.",
+    "answer": 80,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kl.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "KNM",
+      "angle_known_part_name": "LNM",
+      "angle_known_part_val": 51,
+      "angle_alien_name": "KML",
+      "angle_alien_val": 29,
+      "angle_hidden_part_name": "KNL",
+      "arc_name": "KL"
+    }
+  },
+  {
+    "id": 1600092,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Известно, что угол KML равен 44°, а угол LNM равен 26°. Найди угол KNM.",
+    "answer": 70,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kl.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "KNM",
+      "angle_known_part_name": "LNM",
+      "angle_known_part_val": 26,
+      "angle_alien_name": "KML",
+      "angle_alien_val": 44,
+      "angle_hidden_part_name": "KNL",
+      "arc_name": "KL"
+    }
+  },
+  {
+    "id": 1600093,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KML равен 38°, угол LNM равен 34°. Найди угол KNM.",
+    "answer": 72,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kl.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "KNM",
+      "angle_known_part_name": "LNM",
+      "angle_known_part_val": 34,
+      "angle_alien_name": "KML",
+      "angle_alien_val": 38,
+      "angle_hidden_part_name": "KNL",
+      "arc_name": "KL"
+    }
+  },
+  {
+    "id": 1600094,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KNL равен 37°, угол KMN равен 45°. Найди угол LMN.",
+    "answer": 82,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kl.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "LMN",
+      "angle_known_part_name": "KMN",
+      "angle_known_part_val": 45,
+      "angle_alien_name": "KNL",
+      "angle_alien_val": 37,
+      "angle_hidden_part_name": "KML",
+      "arc_name": "KL"
+    }
+  },
+  {
+    "id": 1600095,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Известно, что угол KNL равен 28°, а угол KMN равен 54°. Найди угол LMN.",
+    "answer": 82,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kl.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "LMN",
+      "angle_known_part_name": "KMN",
+      "angle_known_part_val": 54,
+      "angle_alien_name": "KNL",
+      "angle_alien_val": 28,
+      "angle_hidden_part_name": "KML",
+      "arc_name": "KL"
+    }
+  },
+  {
+    "id": 1600096,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KNL равен 41°, угол KMN равен 33°. Найди угол LMN.",
+    "answer": 74,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kl.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "LMN",
+      "angle_known_part_name": "KMN",
+      "angle_known_part_val": 33,
+      "angle_alien_name": "KNL",
+      "angle_alien_val": 41,
+      "angle_hidden_part_name": "KML",
+      "arc_name": "KL"
+    }
+  },
+  {
+    "id": 1600097,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Известно, что угол KNL равен 32°, а угол KMN равен 49°. Найди угол LMN.",
+    "answer": 81,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kl.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "LMN",
+      "angle_known_part_name": "KMN",
+      "angle_known_part_val": 49,
+      "angle_alien_name": "KNL",
+      "angle_alien_val": 32,
+      "angle_hidden_part_name": "KML",
+      "arc_name": "KL"
+    }
+  },
+  {
+    "id": 1600098,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KNL равен 46°, угол KMN равен 25°. Найди угол LMN.",
+    "answer": 71,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kl.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "LMN",
+      "angle_known_part_name": "KMN",
+      "angle_known_part_val": 25,
+      "angle_alien_name": "KNL",
+      "angle_alien_val": 46,
+      "angle_hidden_part_name": "KML",
+      "arc_name": "KL"
+    }
+  },
+  {
+    "id": 1600099,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол MKN равен 64°, угол LNM равен 41°. Найди угол LKN.",
+    "answer": 105,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_lm.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "LKN",
+      "angle_known_part_name": "MKN",
+      "angle_known_part_val": 64,
+      "angle_alien_name": "LNM",
+      "angle_alien_val": 41,
+      "angle_hidden_part_name": "LKM",
+      "arc_name": "LM"
+    }
+  },
+  {
+    "id": 1600100,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Известно, что угол MKN равен 78°, а угол LNM равен 45°. Найди угол LKN.",
+    "answer": 123,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_lm.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "LKN",
+      "angle_known_part_name": "MKN",
+      "angle_known_part_val": 78,
+      "angle_alien_name": "LNM",
+      "angle_alien_val": 45,
+      "angle_hidden_part_name": "LKM",
+      "arc_name": "LM"
+    }
+  },
+  {
+    "id": 1600101,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол MKN равен 52°, угол LNM равен 66°. Найди угол LKN.",
+    "answer": 118,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_lm.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "LKN",
+      "angle_known_part_name": "MKN",
+      "angle_known_part_val": 52,
+      "angle_alien_name": "LNM",
+      "angle_alien_val": 66,
+      "angle_hidden_part_name": "LKM",
+      "arc_name": "LM"
+    }
+  },
+  {
+    "id": 1600102,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Известно, что угол MKN равен 44°, а угол LNM равен 72°. Найди угол LKN.",
+    "answer": 116,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_lm.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "LKN",
+      "angle_known_part_name": "MKN",
+      "angle_known_part_val": 44,
+      "angle_alien_name": "LNM",
+      "angle_alien_val": 72,
+      "angle_hidden_part_name": "LKM",
+      "arc_name": "LM"
+    }
+  },
+  {
+    "id": 1600103,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол MKN равен 42°, угол LNM равен 61°. Найди угол LKN.",
+    "answer": 103,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_lm.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "LKN",
+      "angle_known_part_name": "MKN",
+      "angle_known_part_val": 42,
+      "angle_alien_name": "LNM",
+      "angle_alien_val": 61,
+      "angle_hidden_part_name": "LKM",
+      "arc_name": "LM"
+    }
+  },
+  {
+    "id": 1600104,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KNL равен 33°, угол LKM равен 44°. Найди угол KNM.",
+    "answer": 77,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_lm.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "KNM",
+      "angle_known_part_name": "KNL",
+      "angle_known_part_val": 33,
+      "angle_alien_name": "LKM",
+      "angle_alien_val": 44,
+      "angle_hidden_part_name": "LNM",
+      "arc_name": "LM"
+    }
+  },
+  {
+    "id": 1600105,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Известно, что угол KNL равен 48°, а угол LKM равен 27°. Найди угол KNM.",
+    "answer": 75,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_lm.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "KNM",
+      "angle_known_part_name": "KNL",
+      "angle_known_part_val": 48,
+      "angle_alien_name": "LKM",
+      "angle_alien_val": 27,
+      "angle_hidden_part_name": "LNM",
+      "arc_name": "LM"
+    }
+  },
+  {
+    "id": 1600106,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KNL равен 26°, угол LKM равен 51°. Найди угол KNM.",
+    "answer": 77,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_lm.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "KNM",
+      "angle_known_part_name": "KNL",
+      "angle_known_part_val": 26,
+      "angle_alien_name": "LKM",
+      "angle_alien_val": 51,
+      "angle_hidden_part_name": "LNM",
+      "arc_name": "LM"
+    }
+  },
+  {
+    "id": 1600107,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Известно, что угол KNL равен 35°, а угол LKM равен 38°. Найди угол KNM.",
+    "answer": 73,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_lm.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "KNM",
+      "angle_known_part_name": "KNL",
+      "angle_known_part_val": 35,
+      "angle_alien_name": "LKM",
+      "angle_alien_val": 38,
+      "angle_hidden_part_name": "LNM",
+      "arc_name": "LM"
+    }
+  },
+  {
+    "id": 1600108,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KNL равен 43°, угол LKM равен 29°. Найди угол KNM.",
+    "answer": 72,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_lm.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "KNM",
+      "angle_known_part_name": "KNL",
+      "angle_known_part_val": 43,
+      "angle_alien_name": "LKM",
+      "angle_alien_val": 29,
+      "angle_hidden_part_name": "LNM",
+      "arc_name": "LM"
+    }
+  },
+  {
+    "id": 1600109,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол LKM равен 35°, угол NLM равен 40°. Найди угол LKN.",
+    "answer": 75,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_mn.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "LKN",
+      "angle_known_part_name": "LKM",
+      "angle_known_part_val": 35,
+      "angle_alien_name": "NLM",
+      "angle_alien_val": 40,
+      "angle_hidden_part_name": "MKN",
+      "arc_name": "MN"
+    }
+  },
+  {
+    "id": 1600110,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Известно, что угол LKM равен 28°, а угол NLM равен 46°. Найди угол LKN.",
+    "answer": 74,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_mn.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "LKN",
+      "angle_known_part_name": "LKM",
+      "angle_known_part_val": 28,
+      "angle_alien_name": "NLM",
+      "angle_alien_val": 46,
+      "angle_hidden_part_name": "MKN",
+      "arc_name": "MN"
+    }
+  },
+  {
+    "id": 1600111,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол LKM равен 42°, угол NLM равен 33°. Найди угол LKN.",
+    "answer": 75,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_mn.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "LKN",
+      "angle_known_part_name": "LKM",
+      "angle_known_part_val": 42,
+      "angle_alien_name": "NLM",
+      "angle_alien_val": 33,
+      "angle_hidden_part_name": "MKN",
+      "arc_name": "MN"
+    }
+  },
+  {
+    "id": 1600112,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Известно, что угол LKM равен 30°, а угол NLM равен 52°. Найди угол LKN.",
+    "answer": 82,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_mn.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "LKN",
+      "angle_known_part_name": "LKM",
+      "angle_known_part_val": 30,
+      "angle_alien_name": "NLM",
+      "angle_alien_val": 52,
+      "angle_hidden_part_name": "MKN",
+      "arc_name": "MN"
+    }
+  },
+  {
+    "id": 1600113,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол LKM равен 37°, угол NLM равен 45°. Найди угол LKN.",
+    "answer": 82,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_mn.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "LKN",
+      "angle_known_part_name": "LKM",
+      "angle_known_part_val": 37,
+      "angle_alien_name": "NLM",
+      "angle_alien_val": 45,
+      "angle_hidden_part_name": "MKN",
+      "arc_name": "MN"
+    }
+  },
+  {
+    "id": 1600114,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KLN равен 34°, угол NKM равен 44°. Найди угол KLM.",
+    "answer": 78,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_mn.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "KLM",
+      "angle_known_part_name": "KLN",
+      "angle_known_part_val": 34,
+      "angle_alien_name": "NKM",
+      "angle_alien_val": 44,
+      "angle_hidden_part_name": "MLN",
+      "arc_name": "MN"
+    }
+  },
+  {
+    "id": 1600115,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Известно, что угол KLN равен 29°, а угол NKM равен 38°. Найди угол KLM.",
+    "answer": 67,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_mn.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "KLM",
+      "angle_known_part_name": "KLN",
+      "angle_known_part_val": 29,
+      "angle_alien_name": "NKM",
+      "angle_alien_val": 38,
+      "angle_hidden_part_name": "MLN",
+      "arc_name": "MN"
+    }
+  },
+  {
+    "id": 1600116,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KLN равен 41°, угол NKM равен 32°. Найди угол KLM.",
+    "answer": 73,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_mn.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "KLM",
+      "angle_known_part_name": "KLN",
+      "angle_known_part_val": 41,
+      "angle_alien_name": "NKM",
+      "angle_alien_val": 32,
+      "angle_hidden_part_name": "MLN",
+      "arc_name": "MN"
+    }
+  },
+  {
+    "id": 1600117,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Известно, что угол KLN равен 25°, а угол NKM равен 55°. Найди угол KLM.",
+    "answer": 80,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_mn.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "KLM",
+      "angle_known_part_name": "KLN",
+      "angle_known_part_val": 25,
+      "angle_alien_name": "NKM",
+      "angle_alien_val": 55,
+      "angle_hidden_part_name": "MLN",
+      "arc_name": "MN"
+    }
+  },
+  {
+    "id": 1600118,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KLN равен 36°, угол NKM равен 47°. Найди угол KLM.",
+    "answer": 83,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_mn.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "KLM",
+      "angle_known_part_name": "KLN",
+      "angle_known_part_val": 36,
+      "angle_alien_name": "NKM",
+      "angle_alien_val": 47,
+      "angle_hidden_part_name": "MLN",
+      "arc_name": "MN"
+    }
+  },
+  {
+    "id": 1600119,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KMN равен 44°, угол NLM равен 68°. Найди угол KLM.",
+    "answer": 112,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kn.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "KLM",
+      "angle_known_part_name": "NLM",
+      "angle_known_part_val": 68,
+      "angle_alien_name": "KMN",
+      "angle_alien_val": 44,
+      "angle_hidden_part_name": "KLN",
+      "arc_name": "KN"
+    }
+  },
+  {
+    "id": 1600120,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Известно, что угол KMN равен 39°, а угол NLM равен 72°. Найди угол KLM.",
+    "answer": 111,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kn.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "KLM",
+      "angle_known_part_name": "NLM",
+      "angle_known_part_val": 72,
+      "angle_alien_name": "KMN",
+      "angle_alien_val": 39,
+      "angle_hidden_part_name": "KLN",
+      "arc_name": "KN"
+    }
+  },
+  {
+    "id": 1600121,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KMN равен 52°, угол NLM равен 55°. Найди угол KLM.",
+    "answer": 107,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kn.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "KLM",
+      "angle_known_part_name": "NLM",
+      "angle_known_part_val": 55,
+      "angle_alien_name": "KMN",
+      "angle_alien_val": 52,
+      "angle_hidden_part_name": "KLN",
+      "arc_name": "KN"
+    }
+  },
+  {
+    "id": 1600122,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Известно, что угол KMN равен 48°, а угол NLM равен 64°. Найди угол KLM.",
+    "answer": 112,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kn.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "KLM",
+      "angle_known_part_name": "NLM",
+      "angle_known_part_val": 64,
+      "angle_alien_name": "KMN",
+      "angle_alien_val": 48,
+      "angle_hidden_part_name": "KLN",
+      "arc_name": "KN"
+    }
+  },
+  {
+    "id": 1600123,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KMN равен 35°, угол NLM равен 86°. Найди угол KLM.",
+    "answer": 121,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kn.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "KLM",
+      "angle_known_part_name": "NLM",
+      "angle_known_part_val": 86,
+      "angle_alien_name": "KMN",
+      "angle_alien_val": 35,
+      "angle_hidden_part_name": "KLN",
+      "arc_name": "KN"
+    }
+  },
+  {
+    "id": 1600124,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KLN равен 32°, угол KML равен 44°. Найди угол LMN.",
+    "answer": 76,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kn.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "LMN",
+      "angle_known_part_name": "KML",
+      "angle_known_part_val": 44,
+      "angle_alien_name": "KLN",
+      "angle_alien_val": 32,
+      "angle_hidden_part_name": "KMN",
+      "arc_name": "KN"
+    }
+  },
+  {
+    "id": 1600125,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Известно, что угол KLN равен 28°, а угол KML равен 39°. Найди угол LMN.",
+    "answer": 67,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kn.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "LMN",
+      "angle_known_part_name": "KML",
+      "angle_known_part_val": 39,
+      "angle_alien_name": "KLN",
+      "angle_alien_val": 28,
+      "angle_hidden_part_name": "KMN",
+      "arc_name": "KN"
+    }
+  },
+  {
+    "id": 1600126,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KLN равен 36°, угол KML равен 48°. Найди угол LMN.",
+    "answer": 84,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kn.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "LMN",
+      "angle_known_part_name": "KML",
+      "angle_known_part_val": 48,
+      "angle_alien_name": "KLN",
+      "angle_alien_val": 36,
+      "angle_hidden_part_name": "KMN",
+      "arc_name": "KN"
+    }
+  },
+  {
+    "id": 1600127,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Известно, что угол KLN равен 41°, а угол KML равен 35°. Найди угол LMN.",
+    "answer": 76,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kn.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "LMN",
+      "angle_known_part_name": "KML",
+      "angle_known_part_val": 35,
+      "angle_alien_name": "KLN",
+      "angle_alien_val": 41,
+      "angle_hidden_part_name": "KMN",
+      "arc_name": "KN"
+    }
+  },
+  {
+    "id": 1600128,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "same_arc_angles",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KLN равен 25°, угол KML равен 53°. Найди угол LMN.",
+    "answer": 78,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kn.png",
+    "task_context": {
+      "narrative_type": "part_sum",
+      "angle_whole_name": "LMN",
+      "angle_known_part_name": "KML",
+      "angle_known_part_val": 53,
+      "angle_alien_name": "KLN",
+      "angle_alien_val": 25,
+      "angle_hidden_part_name": "KMN",
+      "arc_name": "KN"
+    }
+  },
+  {
+    "id": 1600129,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол BCD равен 84°, угол ADB равен 46°. Найди угол ACD.",
+    "answer": 38,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ab.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "ACD",
+      "angle_whole_name": "BCD",
+      "angle_whole_val": 84,
+      "angle_alien_name": "ADB",
+      "angle_alien_val": 46,
+      "angle_parasite_name": "ACB",
+      "arc_name": "AB"
+    }
+  },
+  {
+    "id": 1600130,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол BCD равен 75°, угол ADB равен 39°. Найди угол ACD.",
+    "answer": 36,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ab.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "ACD",
+      "angle_whole_name": "BCD",
+      "angle_whole_val": 75,
+      "angle_alien_name": "ADB",
+      "angle_alien_val": 39,
+      "angle_parasite_name": "ACB",
+      "arc_name": "AB"
+    }
+  },
+  {
+    "id": 1600131,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол BCD равен 68°, угол ADB равен 32°. Найди угол ACD.",
+    "answer": 36,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ab.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "ACD",
+      "angle_whole_name": "BCD",
+      "angle_whole_val": 68,
+      "angle_alien_name": "ADB",
+      "angle_alien_val": 32,
+      "angle_parasite_name": "ACB",
+      "arc_name": "AB"
+    }
+  },
+  {
+    "id": 1600132,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол BCD равен 79°, угол ADB равен 41°. Найди угол ACD.",
+    "answer": 38,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ab.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "ACD",
+      "angle_whole_name": "BCD",
+      "angle_whole_val": 79,
+      "angle_alien_name": "ADB",
+      "angle_alien_val": 41,
+      "angle_parasite_name": "ACB",
+      "arc_name": "AB"
+    }
+  },
+  {
+    "id": 1600133,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол BCD равен 81°, угол ADB равен 45°. Найди угол ACD.",
+    "answer": 36,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ab.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "ACD",
+      "angle_whole_name": "BCD",
+      "angle_whole_val": 81,
+      "angle_alien_name": "ADB",
+      "angle_alien_val": 45,
+      "angle_parasite_name": "ACB",
+      "arc_name": "AB"
+    }
+  },
+  {
+    "id": 1600134,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол CDA равен 86°, угол ACB равен 42°. Найди угол CDB.",
+    "answer": 44,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ab.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "CDB",
+      "angle_whole_name": "CDA",
+      "angle_whole_val": 86,
+      "angle_alien_name": "ACB",
+      "angle_alien_val": 42,
+      "angle_parasite_name": "BDA",
+      "arc_name": "AB"
+    }
+  },
+  {
+    "id": 1600135,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол CDA равен 72°, угол ACB равен 35°. Найди угол CDB.",
+    "answer": 37,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ab.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "CDB",
+      "angle_whole_name": "CDA",
+      "angle_whole_val": 72,
+      "angle_alien_name": "ACB",
+      "angle_alien_val": 35,
+      "angle_parasite_name": "BDA",
+      "arc_name": "AB"
+    }
+  },
+  {
+    "id": 1600136,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол CDA равен 69°, угол ACB равен 28°. Найди угол CDB.",
+    "answer": 41,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ab.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "CDB",
+      "angle_whole_name": "CDA",
+      "angle_whole_val": 69,
+      "angle_alien_name": "ACB",
+      "angle_alien_val": 28,
+      "angle_parasite_name": "BDA",
+      "arc_name": "AB"
+    }
+  },
+  {
+    "id": 1600137,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол CDA равен 83°, угол ACB равен 47°. Найди угол CDB.",
+    "answer": 36,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ab.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "CDB",
+      "angle_whole_name": "CDA",
+      "angle_whole_val": 83,
+      "angle_alien_name": "ACB",
+      "angle_alien_val": 47,
+      "angle_parasite_name": "BDA",
+      "arc_name": "AB"
+    }
+  },
+  {
+    "id": 1600138,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол CDA равен 77°, угол ACB равен 34°. Найди угол CDB.",
+    "answer": 43,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ab.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "CDB",
+      "angle_whole_name": "CDA",
+      "angle_whole_val": 77,
+      "angle_alien_name": "ACB",
+      "angle_alien_val": 34,
+      "angle_parasite_name": "BDA",
+      "arc_name": "AB"
+    }
+  },
+  {
+    "id": 1600139,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол DAB равен 114°, угол DBC равен 72°. Найди угол BAC.",
+    "answer": 42,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_cd.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "BAC",
+      "angle_whole_name": "DAB",
+      "angle_whole_val": 114,
+      "angle_alien_name": "DBC",
+      "angle_alien_val": 72,
+      "angle_parasite_name": "CAD",
+      "arc_name": "CD"
+    }
+  },
+  {
+    "id": 1600140,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол DAB равен 108°, угол DBC равен 65°. Найди угол BAC.",
+    "answer": 43,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_cd.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "BAC",
+      "angle_whole_name": "DAB",
+      "angle_whole_val": 108,
+      "angle_alien_name": "DBC",
+      "angle_alien_val": 65,
+      "angle_parasite_name": "CAD",
+      "arc_name": "CD"
+    }
+  },
+  {
+    "id": 1600141,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол DAB равен 121°, угол DBC равен 84°. Найди угол BAC.",
+    "answer": 37,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_cd.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "BAC",
+      "angle_whole_name": "DAB",
+      "angle_whole_val": 121,
+      "angle_alien_name": "DBC",
+      "angle_alien_val": 84,
+      "angle_parasite_name": "CAD",
+      "arc_name": "CD"
+    }
+  },
+  {
+    "id": 1600142,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол DAB равен 117°, угол DBC равен 79°. Найди угол BAC.",
+    "answer": 38,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_cd.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "BAC",
+      "angle_whole_name": "DAB",
+      "angle_whole_val": 117,
+      "angle_alien_name": "DBC",
+      "angle_alien_val": 79,
+      "angle_parasite_name": "CAD",
+      "arc_name": "CD"
+    }
+  },
+  {
+    "id": 1600143,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол DAB равен 105°, угол DBC равен 61°. Найди угол BAC.",
+    "answer": 44,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_cd.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "BAC",
+      "angle_whole_name": "DAB",
+      "angle_whole_val": 105,
+      "angle_alien_name": "DBC",
+      "angle_alien_val": 61,
+      "angle_parasite_name": "CAD",
+      "arc_name": "CD"
+    }
+  },
+  {
+    "id": 1600144,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол ADC равен 76°, угол ACB равен 41°. Найди угол BDC.",
+    "answer": 35,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ab.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "BDC",
+      "angle_whole_name": "ADC",
+      "angle_whole_val": 76,
+      "angle_alien_name": "ACB",
+      "angle_alien_val": 41,
+      "angle_parasite_name": "BDA",
+      "arc_name": "AB"
+    }
+  },
+  {
+    "id": 1600145,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол ADC равен 82°, угол ACB равен 48°. Найди угол BDC.",
+    "answer": 34,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ab.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "BDC",
+      "angle_whole_name": "ADC",
+      "angle_whole_val": 82,
+      "angle_alien_name": "ACB",
+      "angle_alien_val": 48,
+      "angle_parasite_name": "BDA",
+      "arc_name": "AB"
+    }
+  },
+  {
+    "id": 1600146,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол ADC равен 69°, угол ACB равен 33°. Найди угол BDC.",
+    "answer": 36,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ab.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "BDC",
+      "angle_whole_name": "ADC",
+      "angle_whole_val": 69,
+      "angle_alien_name": "ACB",
+      "angle_alien_val": 33,
+      "angle_parasite_name": "BDA",
+      "arc_name": "AB"
+    }
+  },
+  {
+    "id": 1600147,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол ADC равен 74°, угол ACB равен 45°. Найди угол BDC.",
+    "answer": 29,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ab.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "BDC",
+      "angle_whole_name": "ADC",
+      "angle_whole_val": 74,
+      "angle_alien_name": "ACB",
+      "angle_alien_val": 45,
+      "angle_parasite_name": "BDA",
+      "arc_name": "AB"
+    }
+  },
+  {
+    "id": 1600148,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол ADC равен 88°, угол ACB равен 52°. Найди угол BDC.",
+    "answer": 36,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ab.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "BDC",
+      "angle_whole_name": "ADC",
+      "angle_whole_val": 88,
+      "angle_alien_name": "ACB",
+      "angle_alien_val": 52,
+      "angle_parasite_name": "BDA",
+      "arc_name": "AB"
+    }
+  },
+  {
+    "id": 1600149,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол DAB равен 112°, угол CBD равен 44°. Найди угол CAB.",
+    "answer": 68,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_cd.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "CAB",
+      "angle_whole_name": "DAB",
+      "angle_whole_val": 112,
+      "angle_alien_name": "CBD",
+      "angle_alien_val": 44,
+      "angle_parasite_name": "CAD",
+      "arc_name": "CD"
+    }
+  },
+  {
+    "id": 1600150,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол DAB равен 125°, угол CBD равен 52°. Найди угол CAB.",
+    "answer": 73,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_cd.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "CAB",
+      "angle_whole_name": "DAB",
+      "angle_whole_val": 125,
+      "angle_alien_name": "CBD",
+      "angle_alien_val": 52,
+      "angle_parasite_name": "CAD",
+      "arc_name": "CD"
+    }
+  },
+  {
+    "id": 1600151,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол DAB равен 108°, угол CBD равен 39°. Найди угол CAB.",
+    "answer": 69,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_cd.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "CAB",
+      "angle_whole_name": "DAB",
+      "angle_whole_val": 108,
+      "angle_alien_name": "CBD",
+      "angle_alien_val": 39,
+      "angle_parasite_name": "CAD",
+      "arc_name": "CD"
+    }
+  },
+  {
+    "id": 1600152,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол DAB равен 119°, угол CBD равен 47°. Найди угол CAB.",
+    "answer": 72,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_cd.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "CAB",
+      "angle_whole_name": "DAB",
+      "angle_whole_val": 119,
+      "angle_alien_name": "CBD",
+      "angle_alien_val": 47,
+      "angle_parasite_name": "CAD",
+      "arc_name": "CD"
+    }
+  },
+  {
+    "id": 1600153,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол DAB равен 104°, угол CBD равен 35°. Найди угол CAB.",
+    "answer": 69,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_cd.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "CAB",
+      "angle_whole_name": "DAB",
+      "angle_whole_val": 104,
+      "angle_alien_name": "CBD",
+      "angle_alien_val": 35,
+      "angle_parasite_name": "CAD",
+      "arc_name": "CD"
+    }
+  },
+  {
+    "id": 1600154,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол ABC равен 115°, угол CAD равен 42°. Найди угол ABD.",
+    "answer": 73,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_cd.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "ABD",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 115,
+      "angle_alien_name": "CAD",
+      "angle_alien_val": 42,
+      "angle_parasite_name": "DBC",
+      "arc_name": "CD"
+    }
+  },
+  {
+    "id": 1600155,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол ABC равен 128°, угол CAD равен 55°. Найди угол ABD.",
+    "answer": 73,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_cd.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "ABD",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 128,
+      "angle_alien_name": "CAD",
+      "angle_alien_val": 55,
+      "angle_parasite_name": "DBC",
+      "arc_name": "CD"
+    }
+  },
+  {
+    "id": 1600156,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол ABC равен 109°, угол CAD равен 36°. Найди угол ABD.",
+    "answer": 73,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_cd.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "ABD",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 109,
+      "angle_alien_name": "CAD",
+      "angle_alien_val": 36,
+      "angle_parasite_name": "DBC",
+      "arc_name": "CD"
+    }
+  },
+  {
+    "id": 1600157,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол ABC равен 131°, угол CAD равен 64°. Найди угол ABD.",
+    "answer": 67,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_cd.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "ABD",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 131,
+      "angle_alien_name": "CAD",
+      "angle_alien_val": 64,
+      "angle_parasite_name": "DBC",
+      "arc_name": "CD"
+    }
+  },
+  {
+    "id": 1600158,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол ABC равен 114°, угол CAD равен 48°. Найди угол ABD.",
+    "answer": 66,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_cd.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "ABD",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 114,
+      "angle_alien_name": "CAD",
+      "angle_alien_val": 48,
+      "angle_parasite_name": "DBC",
+      "arc_name": "CD"
+    }
+  },
+  {
+    "id": 1600159,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол ABC равен 115°, угол ACD равен 42°. Найди угол DBC.",
+    "answer": 73,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ad.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "DBC",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 115,
+      "angle_alien_name": "ACD",
+      "angle_alien_val": 42,
+      "angle_parasite_name": "DBA",
+      "arc_name": "AD"
+    }
+  },
+  {
+    "id": 1600160,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол ABC равен 108°, угол ACD равен 36°. Найди угол DBC.",
+    "answer": 72,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ad.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "DBC",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 108,
+      "angle_alien_name": "ACD",
+      "angle_alien_val": 36,
+      "angle_parasite_name": "DBA",
+      "arc_name": "AD"
+    }
+  },
+  {
+    "id": 1600161,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол ABC равен 122°, угол ACD равен 54°. Найди угол DBC.",
+    "answer": 68,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ad.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "DBC",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 122,
+      "angle_alien_name": "ACD",
+      "angle_alien_val": 54,
+      "angle_parasite_name": "DBA",
+      "arc_name": "AD"
+    }
+  },
+  {
+    "id": 1600162,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол ABC равен 119°, угол ACD равен 47°. Найди угол DBC.",
+    "answer": 72,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ad.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "DBC",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 119,
+      "angle_alien_name": "ACD",
+      "angle_alien_val": 47,
+      "angle_parasite_name": "DBA",
+      "arc_name": "AD"
+    }
+  },
+  {
+    "id": 1600163,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол ABC равен 104°, угол ACD равен 31°. Найди угол DBC.",
+    "answer": 73,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ad.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "DBC",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 104,
+      "angle_alien_name": "ACD",
+      "angle_alien_val": 31,
+      "angle_parasite_name": "DBA",
+      "arc_name": "AD"
+    }
+  },
+  {
+    "id": 1600164,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол BCD равен 84°, угол ABD равен 41°. Найди угол ACB.",
+    "answer": 43,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ad.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "ACB",
+      "angle_whole_name": "BCD",
+      "angle_whole_val": 84,
+      "angle_alien_name": "ABD",
+      "angle_alien_val": 41,
+      "angle_parasite_name": "ACD",
+      "arc_name": "AD"
+    }
+  },
+  {
+    "id": 1600165,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол BCD равен 75°, угол ABD равен 39°. Найди угол ACB.",
+    "answer": 36,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ad.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "ACB",
+      "angle_whole_name": "BCD",
+      "angle_whole_val": 75,
+      "angle_alien_name": "ABD",
+      "angle_alien_val": 39,
+      "angle_parasite_name": "ACD",
+      "arc_name": "AD"
+    }
+  },
+  {
+    "id": 1600166,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол BCD равен 69°, угол ABD равен 28°. Найди угол ACB.",
+    "answer": 41,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ad.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "ACB",
+      "angle_whole_name": "BCD",
+      "angle_whole_val": 69,
+      "angle_alien_name": "ABD",
+      "angle_alien_val": 28,
+      "angle_parasite_name": "ACD",
+      "arc_name": "AD"
+    }
+  },
+  {
+    "id": 1600167,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Угол BCD равен 78°, угол ABD равен 35°. Найди угол ACB.",
+    "answer": 43,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ad.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "ACB",
+      "angle_whole_name": "BCD",
+      "angle_whole_val": 78,
+      "angle_alien_name": "ABD",
+      "angle_alien_val": 35,
+      "angle_parasite_name": "ACD",
+      "arc_name": "AD"
+    }
+  },
+  {
+    "id": 1600168,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник ABCD вписан в окружность. Угол BCD равен 82°, угол ABD равен 44°. Найди угол ACB.",
+    "answer": 38,
+    "image_file": "task_cyclic_quad_angles_abcd_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_abcd_diags_arc_ad.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "ACB",
+      "angle_whole_name": "BCD",
+      "angle_whole_val": 82,
+      "angle_alien_name": "ABD",
+      "angle_alien_val": 44,
+      "angle_parasite_name": "ACD",
+      "arc_name": "AD"
+    }
+  },
+  {
+    "id": 1600169,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KNM равен 84°, угол KML равен 42°. Найди угол LNM.",
+    "answer": 42,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kl.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "LNM",
+      "angle_whole_name": "KNM",
+      "angle_whole_val": 84,
+      "angle_alien_name": "KML",
+      "angle_alien_val": 42,
+      "angle_parasite_name": "LNK",
+      "arc_name": "KL"
+    }
+  },
+  {
+    "id": 1600170,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол KNM равен 75°, угол KML равен 38°. Найди угол LNM.",
+    "answer": 37,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kl.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "LNM",
+      "angle_whole_name": "KNM",
+      "angle_whole_val": 75,
+      "angle_alien_name": "KML",
+      "angle_alien_val": 38,
+      "angle_parasite_name": "LNK",
+      "arc_name": "KL"
+    }
+  },
+  {
+    "id": 1600171,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KNM равен 69°, угол KML равен 27°. Найди угол LNM.",
+    "answer": 42,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kl.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "LNM",
+      "angle_whole_name": "KNM",
+      "angle_whole_val": 69,
+      "angle_alien_name": "KML",
+      "angle_alien_val": 27,
+      "angle_parasite_name": "LNK",
+      "arc_name": "KL"
+    }
+  },
+  {
+    "id": 1600172,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол KNM равен 88°, угол KML равен 45°. Найди угол LNM.",
+    "answer": 43,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kl.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "LNM",
+      "angle_whole_name": "KNM",
+      "angle_whole_val": 88,
+      "angle_alien_name": "KML",
+      "angle_alien_val": 45,
+      "angle_parasite_name": "LNK",
+      "arc_name": "KL"
+    }
+  },
+  {
+    "id": 1600173,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KNM равен 72°, угол KML равен 31°. Найди угол LNM.",
+    "answer": 41,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kl.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "LNM",
+      "angle_whole_name": "KNM",
+      "angle_whole_val": 72,
+      "angle_alien_name": "KML",
+      "angle_alien_val": 31,
+      "angle_parasite_name": "LNK",
+      "arc_name": "KL"
+    }
+  },
+  {
+    "id": 1600174,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол LMN равен 79°, угол KNL равен 36°. Найди угол KMN.",
+    "answer": 43,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kl.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "KMN",
+      "angle_whole_name": "LMN",
+      "angle_whole_val": 79,
+      "angle_alien_name": "KNL",
+      "angle_alien_val": 36,
+      "angle_parasite_name": "KML",
+      "arc_name": "KL"
+    }
+  },
+  {
+    "id": 1600175,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол LMN равен 85°, угол KNL равен 44°. Найди угол KMN.",
+    "answer": 41,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kl.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "KMN",
+      "angle_whole_name": "LMN",
+      "angle_whole_val": 85,
+      "angle_alien_name": "KNL",
+      "angle_alien_val": 44,
+      "angle_parasite_name": "KML",
+      "arc_name": "KL"
+    }
+  },
+  {
+    "id": 1600176,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол LMN равен 66°, угол KNL равен 29°. Найди угол KMN.",
+    "answer": 37,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kl.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "KMN",
+      "angle_whole_name": "LMN",
+      "angle_whole_val": 66,
+      "angle_alien_name": "KNL",
+      "angle_alien_val": 29,
+      "angle_parasite_name": "KML",
+      "arc_name": "KL"
+    }
+  },
+  {
+    "id": 1600177,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол LMN равен 74°, угол KNL равен 33°. Найди угол KMN.",
+    "answer": 41,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kl.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "KMN",
+      "angle_whole_name": "LMN",
+      "angle_whole_val": 74,
+      "angle_alien_name": "KNL",
+      "angle_alien_val": 33,
+      "angle_parasite_name": "KML",
+      "arc_name": "KL"
+    }
+  },
+  {
+    "id": 1600178,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол LMN равен 81°, угол KNL равен 48°. Найди угол KMN.",
+    "answer": 33,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kl.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "KMN",
+      "angle_whole_name": "LMN",
+      "angle_whole_val": 81,
+      "angle_alien_name": "KNL",
+      "angle_alien_val": 48,
+      "angle_parasite_name": "KML",
+      "arc_name": "KL"
+    }
+  },
+  {
+    "id": 1600179,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KNM равен 74°, угол LKM равен 41°. Найди угол KNL.",
+    "answer": 33,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_lm.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "KNL",
+      "angle_whole_name": "KNM",
+      "angle_whole_val": 74,
+      "angle_alien_name": "LKM",
+      "angle_alien_val": 41,
+      "angle_parasite_name": "LNM",
+      "arc_name": "LM"
+    }
+  },
+  {
+    "id": 1600180,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол KNM равен 81°, угол LKM равен 35°. Найди угол KNL.",
+    "answer": 46,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_lm.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "KNL",
+      "angle_whole_name": "KNM",
+      "angle_whole_val": 81,
+      "angle_alien_name": "LKM",
+      "angle_alien_val": 35,
+      "angle_parasite_name": "LNM",
+      "arc_name": "LM"
+    }
+  },
+  {
+    "id": 1600181,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KNM равен 66°, угол LKM равен 24°. Найди угол KNL.",
+    "answer": 42,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_lm.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "KNL",
+      "angle_whole_name": "KNM",
+      "angle_whole_val": 66,
+      "angle_alien_name": "LKM",
+      "angle_alien_val": 24,
+      "angle_parasite_name": "LNM",
+      "arc_name": "LM"
+    }
+  },
+  {
+    "id": 1600182,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол KNM равен 77°, угол LKM равен 33°. Найди угол KNL.",
+    "answer": 44,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_lm.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "KNL",
+      "angle_whole_name": "KNM",
+      "angle_whole_val": 77,
+      "angle_alien_name": "LKM",
+      "angle_alien_val": 33,
+      "angle_parasite_name": "LNM",
+      "arc_name": "LM"
+    }
+  },
+  {
+    "id": 1600183,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KNM равен 85°, угол LKM равен 46°. Найди угол KNL.",
+    "answer": 39,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_lm.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "KNL",
+      "angle_whole_name": "KNM",
+      "angle_whole_val": 85,
+      "angle_alien_name": "LKM",
+      "angle_alien_val": 46,
+      "angle_parasite_name": "LNM",
+      "arc_name": "LM"
+    }
+  },
+  {
+    "id": 1600184,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол LKN равен 124°, угол LNM равен 36°. Найди угол NKM.",
+    "answer": 88,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_lm.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "NKM",
+      "angle_whole_name": "LKN",
+      "angle_whole_val": 124,
+      "angle_alien_name": "LNM",
+      "angle_alien_val": 36,
+      "angle_parasite_name": "MKL",
+      "arc_name": "LM"
+    }
+  },
+  {
+    "id": 1600185,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол LKN равен 136°, угол LNM равен 44°. Найди угол NKM.",
+    "answer": 92,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_lm.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "NKM",
+      "angle_whole_name": "LKN",
+      "angle_whole_val": 136,
+      "angle_alien_name": "LNM",
+      "angle_alien_val": 44,
+      "angle_parasite_name": "MKL",
+      "arc_name": "LM"
+    }
+  },
+  {
+    "id": 1600186,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол LKN равен 141°, угол LNM равен 29°. Найди угол NKM.",
+    "answer": 112,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_lm.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "NKM",
+      "angle_whole_name": "LKN",
+      "angle_whole_val": 141,
+      "angle_alien_name": "LNM",
+      "angle_alien_val": 29,
+      "angle_parasite_name": "MKL",
+      "arc_name": "LM"
+    }
+  },
+  {
+    "id": 1600187,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол LKN равен 118°, угол LNM равен 33°. Найди угол NKM.",
+    "answer": 85,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_lm.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "NKM",
+      "angle_whole_name": "LKN",
+      "angle_whole_val": 118,
+      "angle_alien_name": "LNM",
+      "angle_alien_val": 33,
+      "angle_parasite_name": "MKL",
+      "arc_name": "LM"
+    }
+  },
+  {
+    "id": 1600188,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол LKN равен 128°, угол LNM равен 48°. Найди угол NKM.",
+    "answer": 80,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_lm.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "NKM",
+      "angle_whole_name": "LKN",
+      "angle_whole_val": 128,
+      "angle_alien_name": "LNM",
+      "angle_alien_val": 48,
+      "angle_parasite_name": "MKL",
+      "arc_name": "LM"
+    }
+  },
+  {
+    "id": 1600189,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол LKN равен 127°, угол NLM равен 72°. Найди угол LKM.",
+    "answer": 55,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_mn.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "LKM",
+      "angle_whole_name": "LKN",
+      "angle_whole_val": 127,
+      "angle_alien_name": "NLM",
+      "angle_alien_val": 72,
+      "angle_parasite_name": "MKN",
+      "arc_name": "MN"
+    }
+  },
+  {
+    "id": 1600190,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол LKN равен 115°, угол NLM равен 64°. Найди угол LKM.",
+    "answer": 51,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_mn.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "LKM",
+      "angle_whole_name": "LKN",
+      "angle_whole_val": 115,
+      "angle_alien_name": "NLM",
+      "angle_alien_val": 64,
+      "angle_parasite_name": "MKN",
+      "arc_name": "MN"
+    }
+  },
+  {
+    "id": 1600191,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол LKN равен 132°, угол NLM равен 46°. Найди угол LKM.",
+    "answer": 86,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_mn.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "LKM",
+      "angle_whole_name": "LKN",
+      "angle_whole_val": 132,
+      "angle_alien_name": "NLM",
+      "angle_alien_val": 46,
+      "angle_parasite_name": "MKN",
+      "arc_name": "MN"
+    }
+  },
+  {
+    "id": 1600192,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол LKN равен 109°, угол NLM равен 22°. Найди угол LKM.",
+    "answer": 87,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_mn.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "LKM",
+      "angle_whole_name": "LKN",
+      "angle_whole_val": 109,
+      "angle_alien_name": "NLM",
+      "angle_alien_val": 22,
+      "angle_parasite_name": "MKN",
+      "arc_name": "MN"
+    }
+  },
+  {
+    "id": 1600193,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол LKN равен 146°, угол NLM равен 81°. Найди угол LKM.",
+    "answer": 65,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_mn.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "LKM",
+      "angle_whole_name": "LKN",
+      "angle_whole_val": 146,
+      "angle_alien_name": "NLM",
+      "angle_alien_val": 81,
+      "angle_parasite_name": "MKN",
+      "arc_name": "MN"
+    }
+  },
+  {
+    "id": 1600194,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KLM равен 118°, угол NKM равен 49°. Найди угол KLN.",
+    "answer": 69,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_mn.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "KLN",
+      "angle_whole_name": "KLM",
+      "angle_whole_val": 118,
+      "angle_alien_name": "NKM",
+      "angle_alien_val": 49,
+      "angle_parasite_name": "NLM",
+      "arc_name": "MN"
+    }
+  },
+  {
+    "id": 1600195,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол KLM равен 104°, угол NKM равен 36°. Найди угол KLN.",
+    "answer": 68,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_mn.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "KLN",
+      "angle_whole_name": "KLM",
+      "angle_whole_val": 104,
+      "angle_alien_name": "NKM",
+      "angle_alien_val": 36,
+      "angle_parasite_name": "NLM",
+      "arc_name": "MN"
+    }
+  },
+  {
+    "id": 1600196,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KLM равен 126°, угол NKM равен 28°. Найди угол KLN.",
+    "answer": 98,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_mn.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "KLN",
+      "angle_whole_name": "KLM",
+      "angle_whole_val": 126,
+      "angle_alien_name": "NKM",
+      "angle_alien_val": 28,
+      "angle_parasite_name": "NLM",
+      "arc_name": "MN"
+    }
+  },
+  {
+    "id": 1600197,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол KLM равен 130°, угол NKM равен 61°. Найди угол KLN.",
+    "answer": 69,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_mn.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "KLN",
+      "angle_whole_name": "KLM",
+      "angle_whole_val": 130,
+      "angle_alien_name": "NKM",
+      "angle_alien_val": 61,
+      "angle_parasite_name": "NLM",
+      "arc_name": "MN"
+    }
+  },
+  {
+    "id": 1600198,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KLM равен 119°, угол NKM равен 54°. Найди угол KLN.",
+    "answer": 65,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_mn.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "KLN",
+      "angle_whole_name": "KLM",
+      "angle_whole_val": 119,
+      "angle_alien_name": "NKM",
+      "angle_alien_val": 54,
+      "angle_parasite_name": "NLM",
+      "arc_name": "MN"
+    }
+  },
+  {
+    "id": 1600199,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KLM равен 115°, угол KMN равен 72°. Найди угол NLM.",
+    "answer": 43,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kn.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "NLM",
+      "angle_whole_name": "KLM",
+      "angle_whole_val": 115,
+      "angle_alien_name": "KMN",
+      "angle_alien_val": 72,
+      "angle_parasite_name": "NLK",
+      "arc_name": "KN"
+    }
+  },
+  {
+    "id": 1600200,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол KLM равен 108°, угол KMN равен 65°. Найди угол NLM.",
+    "answer": 43,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kn.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "NLM",
+      "angle_whole_name": "KLM",
+      "angle_whole_val": 108,
+      "angle_alien_name": "KMN",
+      "angle_alien_val": 65,
+      "angle_parasite_name": "NLK",
+      "arc_name": "KN"
+    }
+  },
+  {
+    "id": 1600201,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KLM равен 122°, угол KMN равен 78°. Найди угол NLM.",
+    "answer": 44,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kn.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "NLM",
+      "angle_whole_name": "KLM",
+      "angle_whole_val": 122,
+      "angle_alien_name": "KMN",
+      "angle_alien_val": 78,
+      "angle_parasite_name": "NLK",
+      "arc_name": "KN"
+    }
+  },
+  {
+    "id": 1600202,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол KLM равен 119°, угол KMN равен 81°. Найди угол NLM.",
+    "answer": 38,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kn.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "NLM",
+      "angle_whole_name": "KLM",
+      "angle_whole_val": 119,
+      "angle_alien_name": "KMN",
+      "angle_alien_val": 81,
+      "angle_parasite_name": "NLK",
+      "arc_name": "KN"
+    }
+  },
+  {
+    "id": 1600203,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол KLM равен 104°, угол KMN равен 59°. Найди угол NLM.",
+    "answer": 45,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kn.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "NLM",
+      "angle_whole_name": "KLM",
+      "angle_whole_val": 104,
+      "angle_alien_name": "KMN",
+      "angle_alien_val": 59,
+      "angle_parasite_name": "NLK",
+      "arc_name": "KN"
+    }
+  },
+  {
+    "id": 1600204,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол LMN равен 74°, угол KLN равен 38°. Найди угол KML.",
+    "answer": 36,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kn.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "KML",
+      "angle_whole_name": "LMN",
+      "angle_whole_val": 74,
+      "angle_alien_name": "KLN",
+      "angle_alien_val": 38,
+      "angle_parasite_name": "KMN",
+      "arc_name": "KN"
+    }
+  },
+  {
+    "id": 1600205,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол LMN равен 82°, угол KLN равен 44°. Найди угол KML.",
+    "answer": 38,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kn.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "KML",
+      "angle_whole_name": "LMN",
+      "angle_whole_val": 82,
+      "angle_alien_name": "KLN",
+      "angle_alien_val": 44,
+      "angle_parasite_name": "KMN",
+      "arc_name": "KN"
+    }
+  },
+  {
+    "id": 1600206,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол LMN равен 68°, угол KLN равен 33°. Найди угол KML.",
+    "answer": 35,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kn.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "KML",
+      "angle_whole_name": "LMN",
+      "angle_whole_val": 68,
+      "angle_alien_name": "KLN",
+      "angle_alien_val": 33,
+      "angle_parasite_name": "KMN",
+      "arc_name": "KN"
+    }
+  },
+  {
+    "id": 1600207,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "В окружность вписан четырёхугольник KLMN. Угол LMN равен 79°, угол KLN равен 41°. Найди угол KML.",
+    "answer": 38,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kn.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "KML",
+      "angle_whole_name": "LMN",
+      "angle_whole_val": 79,
+      "angle_alien_name": "KLN",
+      "angle_alien_val": 41,
+      "angle_parasite_name": "KMN",
+      "arc_name": "KN"
+    }
+  },
+  {
+    "id": 1600208,
+    "pattern": "cyclic_quad_angles",
+    "narrative": "find_diagonal_angle_abd",
+    "question_text": "Четырёхугольник KLMN вписан в окружность. Угол LMN равен 85°, угол KLN равен 49°. Найди угол KML.",
+    "answer": 36,
+    "image_file": "task_cyclic_quad_angles_klmn_diags.png",
+    "help_image_file": "help_cyclic_quad_angles_klmn_diags_arc_kn.png",
+    "task_context": {
+      "narrative_type": "part_diff",
+      "angle_target_name": "KML",
+      "angle_whole_name": "LMN",
+      "angle_whole_val": 85,
+      "angle_alien_name": "KLN",
+      "angle_alien_val": 49,
+      "angle_parasite_name": "KMN",
+      "arc_name": "KN"
+    }
+  }
+]
