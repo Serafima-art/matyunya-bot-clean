@@ -4,7 +4,7 @@
 from __future__ import annotations
 
 import logging
-from typing import Any, Dict, Optional
+from typing import Any, Dict
 
 logger = logging.getLogger(__name__)
 
@@ -15,11 +15,6 @@ async def solve(task_data: Dict[str, Any]) -> Dict[str, Any]:
 
     Вход: task_data (pattern, task_context, answer, id, ...).
     Выход: solution_core (по ГОСТ-2026), без анализа текста задачи.
-
-    Важно:
-    - Handler выбирает solver по ТЕМЕ (central_and_inscribed_angles).
-    - Этот solver внутри темы маршрутизирует по pattern.
-    - По pattern + task_context формируем facts и help_image (контракт).
     """
     pattern = task_data.get("pattern")
 
@@ -57,7 +52,6 @@ def _solve_cyclic_quad_angles(task_data: Dict[str, Any]) -> Dict[str, Any]:
     Важно:
     - НЕ формируем здесь текстовые куски (given_text/target_text).
     - Передаём факты (углы/дуги/части), humanizer сам собирает "Дано/Найти" и шаги.
-    - Формируем help_image по контракту (file + schema + params), без description.
     """
     context: Dict[str, Any] = task_data.get("task_context") or {}
     narrative_type = context.get("narrative_type")
@@ -71,18 +65,14 @@ def _solve_cyclic_quad_angles(task_data: Dict[str, Any]) -> Dict[str, Any]:
     }
 
     # Нормализация фактов под каждый narrative_type (без текста и без "угадываний").
-    # Поддерживаем и "старые" названия (opposite_sum/part_sum/part_diff),
-    # и "новые" (same_arc_angles/find_diagonal_angle_abd), чтобы не сломать БД/сырьё.
-    if narrative_type in ("opposite_sum", "same_arc_angles"):
+    if narrative_type == "opposite_sum":
         facts.update(
             angle_given_name=context.get("angle_given_name"),
             angle_given_val=context.get("angle_given_val"),
             angle_target_name=context.get("angle_target_name"),
-            arc_name=context.get("arc_name"),
-            vertices=context.get("vertices"),
         )
 
-    elif narrative_type in ("part_sum", "find_diagonal_angle_abd"):
+    elif narrative_type == "part_sum":
         facts.update(
             angle_whole_name=context.get("angle_whole_name"),
             angle_known_part_name=context.get("angle_known_part_name"),
@@ -91,8 +81,6 @@ def _solve_cyclic_quad_angles(task_data: Dict[str, Any]) -> Dict[str, Any]:
             angle_alien_name=context.get("angle_alien_name"),
             angle_alien_val=context.get("angle_alien_val"),
             arc_name=context.get("arc_name"),
-            vertices=context.get("vertices"),
-            diagonal_name=context.get("diagonal_name"),
         )
 
     elif narrative_type == "part_diff":
@@ -104,17 +92,12 @@ def _solve_cyclic_quad_angles(task_data: Dict[str, Any]) -> Dict[str, Any]:
             angle_alien_val=context.get("angle_alien_val"),
             angle_parasite_name=context.get("angle_parasite_name"),
             arc_name=context.get("arc_name"),
-            vertices=context.get("vertices"),
         )
 
     else:
         # Не ломаем пайплайн, но явно подсвечиваем проблему.
         logger.error("Unknown narrative_type for cyclic_quad_angles: %r", narrative_type)
         return _get_error_solution(task_data, reason=f"Unknown narrative_type: {narrative_type}")
-
-    # help_image по контракту: file + schema + params.
-    # ФАЙЛ берём строго из сырья (task_data/help_image_file), чтобы соответствовать конкретной картинке.
-    help_image = _build_help_image(task_data=task_data, context=context, pattern="cyclic_quad_angles")
 
     # Ключ "explanation_idea" НЕ обязан совпадать с narrative_type.
     # Сейчас делаем стабильный нейминг под humanizer: IDEA_<NARRATIVE_TYPE>.
@@ -130,66 +113,8 @@ def _solve_cyclic_quad_angles(task_data: Dict[str, Any]) -> Dict[str, Any]:
             "value_display": str(answer) if answer is not None else "",
             "unit": "°",
         },
-        "variables": facts,      # передаём факты, а не текст
-        "help_image": help_image,  # 👈 контракт help_image (без description)
+        "variables": facts,  # передаём факты, а не текст
         "hints": [],
-    }
-
-
-def _build_help_image(
-    *,
-    task_data: Dict[str, Any],
-    context: Dict[str, Any],
-    pattern: str,
-) -> Optional[Dict[str, Any]]:
-    """
-    Формирует help_image для solution_core по контракту:
-    {
-      "file": "string",
-      "schema": "string",
-      "params": { ... }
-    }
-
-    Важно:
-    - file берём из сырья (help_image_file), чтобы соответствовать конкретной картинке.
-    - schema/params формируем из pattern+narrative+контекстных фактов.
-    - Никакого description здесь не делаем.
-    """
-    help_image_file = task_data.get("help_image_file") or context.get("help_image_file")
-    if not help_image_file:
-        return None
-
-    narrative = context.get("narrative_type") or "unknown"
-    schema = f"{pattern}__{narrative}"
-
-    # params — только факты, никаких текстов
-    params: Dict[str, Any] = {
-        # базовые
-        "pattern": pattern,
-        "narrative_type": narrative,
-        "vertices": context.get("vertices"),  # ожидаем ["A","B","C","D"] или ["K","L","M","N"]
-        # дуги/углы
-        "arc_name": context.get("arc_name"),
-        "angle_given_name": context.get("angle_given_name"),
-        "angle_given_val": context.get("angle_given_val"),
-        "angle_target_name": context.get("angle_target_name"),
-        # части/доп.элементы (могут быть None — это нормально)
-        "angle_whole_name": context.get("angle_whole_name"),
-        "angle_whole_val": context.get("angle_whole_val"),
-        "angle_known_part_name": context.get("angle_known_part_name"),
-        "angle_known_part_val": context.get("angle_known_part_val"),
-        "angle_hidden_part_name": context.get("angle_hidden_part_name"),
-        "angle_alien_name": context.get("angle_alien_name"),
-        "angle_alien_val": context.get("angle_alien_val"),
-        "angle_parasite_name": context.get("angle_parasite_name"),
-        "diagonal_name": context.get("diagonal_name"),
-        "arc_marked": context.get("arc_marked"),
-    }
-
-    return {
-        "file": str(help_image_file),
-        "schema": schema,
-        "params": params,
     }
 
 
@@ -237,7 +162,6 @@ def _get_error_solution(task_data: Dict[str, Any], *, reason: str) -> Dict[str, 
             "unit": "°",
         },
         "variables": {"error_reason": reason},
-        "help_image": None,
         "hints": [],
     }
 
@@ -256,15 +180,13 @@ def _get_stub_solution(task_data: Dict[str, Any], pattern_name: str) -> Dict[str
             "unit": "°",
         },
         "variables": {"pattern": pattern_name},
-        "help_image": None,
         "hints": [],
     }
 
 
 # -----------------------------------------------------------------------------
-# Коротко про изменения:
-# 1) Добавлен help_image (file+schema+params) в solution_core (без description).
-# 2) file берётся строго из сырья (help_image_file), чтобы совпадал с показанной картинкой.
-# 3) Поддержаны алиасы narrative_type, чтобы не ломать БД/сырьё (same_arc_angles/find_diagonal_angle_abd).
-# 4) Архитектура сохранена: solver отдаёт факты, humanizer строит текст, handler показывает UI.
+# Почему эта версия лучше (коротко):
+# 1) Solver больше не "рисует текст" (given_text/target_text) — он отдаёт только факты.
+# 2) explanation_idea отделён от narrative_type (IDEA_*) — гибче для будущих идей/вариантов.
+# 3) Ошибки/заглушки возвращают единый формат solution_core — меньше шансов словить legacy-хаос.
 # -----------------------------------------------------------------------------

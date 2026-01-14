@@ -2,6 +2,10 @@
 
 import logging
 import random
+import importlib
+import pkgutil
+import matunya_bot_final.help_core.dialog_contexts as dialog_contexts
+
 from typing import Any, Dict, Iterable, List, Optional, Sequence, Awaitable, Callable
 
 from aiogram import Bot, F, Router
@@ -20,6 +24,7 @@ from matunya_bot_final.utils.message_manager import (
 )
 from uuid import uuid4
 from matunya_bot_final.gpt.phrases.ask_question_phrases import ASK_QUESTION_PHRASES
+from matunya_bot_final.gpt.phrases.thinking_phrases import THINKING_PHRASES
 
 
 logger = logging.getLogger(__name__)
@@ -120,7 +125,7 @@ async def handle_ask_question(callback: CallbackQuery, callback_data: TaskCallba
     await state.set_state(GPState.in_dialog)
 
     # Подбираем приветственную фразу для начала диалога
-    student_name = data.get("student_name", "дружок")
+    student_name = data.get("student_name", "друг")
     gender = data.get("gender", "neutral")
 
     glad_word = "рада" if gender == "female" else "рад"
@@ -246,6 +251,7 @@ async def handle_continue_gpt_dialog(callback: CallbackQuery, bot: Bot, state: F
 async def handle_gpt_dialog_message(message: Message, state: FSMContext, bot: Bot) -> None:
     chat_id = message.chat.id
 
+    # 0) Трекаем сообщение ученика (чтобы тоже чистилось)
     await track_existing_message(
         state=state,
         message_id=message.message_id,
@@ -255,26 +261,51 @@ async def handle_gpt_dialog_message(message: Message, state: FSMContext, bot: Bo
 
     data = await state.get_data()
 
+    # 1) Контекст диалога обязателен
     context = _pick_first(data, _DIALOG_CONTEXT_KEYS)
     if not context:
         logger.warning("GPState.in_dialog triggered without dialog context")
         await message.answer("Диалог ещё не запущен. Попробуй снова открыть помощь.")
         return
 
+    # 2) История
     history = _ensure_history(_pick_first(data, _HISTORY_KEYS))
 
+    # 3) Хендлер контекста
     handler = DIALOG_CONTEXT_HANDLERS.get(context)
     if not handler:
         logger.error("Unsupported dialog context '%s'", context)
         await message.answer("Пока не умею обсуждать эту подсказку.")
         return
 
+    # 4) System prompt
     system_prompt = await handler(data, history)
     if not system_prompt:
         await message.answer("Не удалось найти данные задачи. Попроси помощь ещё раз.")
         return
 
+    # ------------------------------------------------------------------
+    # 🔹 Показываем «Секундочку…» и ОБЯЗАТЕЛЬНО трекаем вручную,
+    # чтобы cleanup_messages_by_category точно его удалял.
+    # ------------------------------------------------------------------
+    thinking_text = random.choice(THINKING_PHRASES)
+    try:
+        thinking_msg = await bot.send_message(
+            chat_id=chat_id,
+            text=thinking_text,
+            reply_markup=None,
+        )
+        await track_existing_message(
+            state=state,
+            message_id=thinking_msg.message_id,
+            message_tag=_make_tag("gpt_thinking"),
+            category=_DIALOG_CATEGORY,
+        )
+    except Exception as exc:  # pragma: no cover
+        # Если не получилось показать "ожидание" — не ломаем диалог
+        logger.warning("Failed to send/track thinking message", exc_info=exc)
 
+    # 5) GPT-ответ
     try:
         reply_text, updated_history = await ask_gpt_with_history(
             user_prompt=message.text,
@@ -286,9 +317,11 @@ async def handle_gpt_dialog_message(message: Message, state: FSMContext, bot: Bo
         await message.answer("Не удалось получить ответ от GPT. Попробуй ещё раз позже.")
         return
 
+    # 6) Сохраняем историю
     history_updates = {key: updated_history for key in _HISTORY_KEYS}
     await state.update_data(**history_updates)
 
+    # 7) Отправляем ответ и трекаем (как раньше)
     sanitized_reply = sanitize_gpt_response(reply_text)
     await send_tracked_message(
         bot=bot,
@@ -299,12 +332,6 @@ async def handle_gpt_dialog_message(message: Message, state: FSMContext, bot: Bo
         message_tag=_make_tag(_ANSWER_TAG),
         category=_DIALOG_CATEGORY,
     )
-
-
-import importlib
-import pkgutil
-import matunya_bot_final.help_core.dialog_contexts as dialog_contexts
-
 
 __all__ = ["router"]
 

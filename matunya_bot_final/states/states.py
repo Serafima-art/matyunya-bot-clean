@@ -18,6 +18,7 @@ class TaskState(StatesGroup):
     waiting_for_answer_8 = State()
     waiting_for_answer_11 = State()
     waiting_for_answer_15 = State()
+    waiting_for_answer_16 = State()
     waiting_for_answer_20 = State()
     task_in_progress = State()
     task_completed = State()

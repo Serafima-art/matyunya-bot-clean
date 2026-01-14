@@ -167,3 +167,29 @@ narratives:
 narratives:
 - hypotenuse_half
 В треугольнике ABC известно, что AC = 12, BC = 35, угол C равен 90°. Найдите радиус описанной около этого треугольника окружности.
+
+
+
+адаптируй для 16 
+# 🟩 ТЕМА 1. Центральные и вписанные углы (central_and_inscribed_angles) 
+## Паттерн 1.1 cyclic_quad_angles 
+## Паттерн 1.2 central_inscribed 
+## Паттерн 1.3 radius_chord_angles 
+## Паттерн 1.4 arc_length_ratio 
+## Паттерн 1.5 diameter_right_triangle 
+## Паттерн 1.6 two_diameters_angles 
+
+# 🟨 ТЕМА 2. Касательная, хорда, секущая, радиус (circle_elements_relations) 
+## Паттерн 2.1 secant_power_of_point 
+## Паттерн 2.2 tangent_trapezoid_properties 
+## Паттерн 2.3 tangent_quad_sum 
+## Паттерн 2.4 tangent_arc_angle 
+## Паттерн 2.5 angle_tangency_center 
+## Паттерн 2.6 sector_area 
+## Паттерн 2.7 power_point 
+
+# 🟦 ТЕМА 3. Окружность, описанная вокруг многоугольника (circle_around_polygon) 
+## Паттерн 3.1 square_incircle_circumcircle 
+## Паттерн 3.2 eq_triangle_circles 
+## Паттерн 3.3 square_radius_midpoint 
+## Паттерн 3.4 right_triangle_circumradius
