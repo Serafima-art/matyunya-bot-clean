@@ -3758,5 +3758,1365 @@
       "angle_parasite_name": "KMN",
       "arc_name": "KN"
     }
+  },
+  {
+    "id": 1600209,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "В окружность с центром в точке O вписан треугольник ABC. Точки O и B лежат в одной полуплоскости относительно прямой AC. Найди угол ABC, если угол AOC равен 64°.",
+    "answer": 32,
+    "image_file": "task_central_inscribed_acute_inner_abc.png",
+    "help_image_file": "help_central_inscribed_acute_inner_abc.png",
+    "task_context": {
+      "narrative_type": "central_acute_inner_aoc_to_abc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 64,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 32,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600210,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "В окружность с центром в точке O вписан треугольник ABC. Точки O и B лежат в одной полуплоскости относительно прямой AC. Угол AOC равен 49°. Найди угол ABC.",
+    "answer": 24.5,
+    "image_file": "task_central_inscribed_acute_inner_abc.png",
+    "help_image_file": "help_central_inscribed_acute_inner_abc.png",
+    "task_context": {
+      "narrative_type": "central_acute_inner_aoc_to_abc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 49,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 24.5,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600211,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "Треугольник ABC вписан в окружность с центром в точке O. Точки O и B лежат в одной полуплоскости относительно прямой AC. Угол AOC равен 76°. Найди угол ABC.",
+    "answer": 38,
+    "image_file": "task_central_inscribed_acute_inner_abc.png",
+    "help_image_file": "help_central_inscribed_acute_inner_abc.png",
+    "task_context": {
+      "narrative_type": "central_acute_inner_aoc_to_abc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 76,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 38,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600212,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "Треугольник ABC вписан в окружность с центром в точке O. Найди угол ABC, если угол AOC равен 82°. Известно, что точки O и B лежат в одной полуплоскости относительно прямой AC.",
+    "answer": 41,
+    "image_file": "task_central_inscribed_acute_inner_abc.png",
+    "help_image_file": "help_central_inscribed_acute_inner_abc.png",
+    "task_context": {
+      "narrative_type": "central_acute_inner_aoc_to_abc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 82,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 41,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600213,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "Треугольник ABC вписан в окружность с центром в точке O. Точки O и B лежат по одну сторону от хорды AC. Угол AOC равен 54°. Найди угол ABC.",
+    "answer": 27,
+    "image_file": "task_central_inscribed_acute_inner_abc.png",
+    "help_image_file": "help_central_inscribed_acute_inner_abc.png",
+    "task_context": {
+      "narrative_type": "central_acute_inner_aoc_to_abc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 54,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 27,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600214,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "В окружность с центром в точке O вписан треугольник ABC. Угол AOC равен 45°. Точки O и B лежат в одной полуплоскости относительно прямой AC. Чему равен угол ABC?",
+    "answer": 22.5,
+    "image_file": "task_central_inscribed_acute_outer_abc.png",
+    "help_image_file": "help_central_inscribed_acute_outer_abc.png",
+    "task_context": {
+      "narrative_type": "central_acute_outer_aoc_to_abc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 45,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 22.5,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600215,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "Треугольник ABC вписан в окружность с центром в точке O. Найди угол ABC, если центральный угол AOC равен 30°, а точки O и B лежат в одной полуплоскости относительно прямой AC.",
+    "answer": 15,
+    "image_file": "task_central_inscribed_acute_outer_abc.png",
+    "help_image_file": "help_central_inscribed_acute_outer_abc.png",
+    "task_context": {
+      "narrative_type": "central_acute_outer_aoc_to_abc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 30,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 15,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600216,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "Треугольник ABC вписан в окружность с центром в точке O. Найди угол ABC, если центральный угол AOC равен 21°, а точки O и B лежат в одной полуплоскости относительно прямой AC.",
+    "answer": 10.5,
+    "image_file": "task_central_inscribed_acute_outer_abc.png",
+    "help_image_file": "help_central_inscribed_acute_outer_abc.png",
+    "task_context": {
+      "narrative_type": "central_acute_outer_aoc_to_abc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 21,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 10.5,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600217,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "В окружность с центром в точке O вписан треугольник ABC. Точки O и B лежат в одной полуплоскости относительно прямой AC. Найди угол ABC, если угол AOC равен 63°.",
+    "answer": 31.5,
+    "image_file": "task_central_inscribed_acute_outer_abc.png",
+    "help_image_file": "help_central_inscribed_acute_outer_abc.png",
+    "task_context": {
+      "narrative_type": "central_acute_outer_aoc_to_abc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 63,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 31.5,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600218,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "В окружность с центром в точке O вписан треугольник ABC. Точки O и B лежат в одной полуплоскости относительно прямой AC. Найди угол ABC, если угол AOC равен 49°.",
+    "answer": 24.5,
+    "image_file": "task_central_inscribed_acute_outer_abc.png",
+    "help_image_file": "help_central_inscribed_acute_outer_abc.png",
+    "task_context": {
+      "narrative_type": "central_acute_outer_aoc_to_abc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 49,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 24.5,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600219,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "Треугольник ABC вписан в окружность с центром в точке O. Точки O и B лежат в одной полуплоскости относительно прямой AC. Найди угол ABC, если угол AOC равен 114°.",
+    "answer": 57,
+    "image_file": "task_central_inscribed_obtuse_inner_abc.png",
+    "help_image_file": "help_central_inscribed_obtuse_inner_abc.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_inner_aoc_to_abc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 114,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 57,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600220,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "В окружность с центром в точке O вписан треугольник ABC. Точки O и B лежат в одной полуплоскости относительно прямой AC. Угол AOC равен 131°. Найди угол ABC.",
+    "answer": 65.5,
+    "image_file": "task_central_inscribed_obtuse_inner_abc.png",
+    "help_image_file": "help_central_inscribed_obtuse_inner_abc.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_inner_aoc_to_abc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 131,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 65.5,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600221,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "Треугольник ABC вписан в окружность. Точки O и B лежат в одной полуплоскости относительно прямой AC. Угол AOC равен 152°. Найди угол ABC.",
+    "answer": 76,
+    "image_file": "task_central_inscribed_obtuse_inner_abc.png",
+    "help_image_file": "help_central_inscribed_obtuse_inner_abc.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_inner_aoc_to_abc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 152,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 76,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600222,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "В окружность с центром в точке O вписан треугольник ABC. Точки O и B лежат в одной полуплоскости относительно прямой AC. Угол AOC равен 107°. Найди угол ABC.",
+    "answer": 53.5,
+    "image_file": "task_central_inscribed_obtuse_inner_abc.png",
+    "help_image_file": "help_central_inscribed_obtuse_inner_abc.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_inner_aoc_to_abc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 107,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 53.5,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600223,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "Треугольник ABC вписан в окружность с центром O. Точки O и B лежат по одну сторону от хорды AC. Угол AOC равен 144°. Найди угол ABC.",
+    "answer": 72,
+    "image_file": "task_central_inscribed_obtuse_inner_abc.png",
+    "help_image_file": "help_central_inscribed_obtuse_inner_abc.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_inner_aoc_to_abc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 144,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 72,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600224,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "Треугольник ABC вписан в окружность с центром O. Угол AOC равен 133°. Точки O и B лежат в одной полуплоскости относительно прямой AC. Чему равен угол ABC?",
+    "answer": 66.5,
+    "image_file": "task_central_inscribed_obtuse_outer_abc.png",
+    "help_image_file": "help_central_inscribed_obtuse_outer_abc.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_outer_aoc_to_abc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 133,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 66.5,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600225,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "В окружность вписан треугольник ABC. Угол AOC равен 121°. Точки O и B лежат в одной полуплоскости относительно прямой AC. Найди угол ABC.",
+    "answer": 60.5,
+    "image_file": "task_central_inscribed_obtuse_outer_abc.png",
+    "help_image_file": "help_central_inscribed_obtuse_outer_abc.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_outer_aoc_to_abc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 121,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 60.5,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600226,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "Треугольник ABC вписан в окружность с центром в точке O. Центральный угол AOC равен 165°. Найди вписанный угол ABC. Точки O и B лежат в одной полуплоскости относительно прямой AC.",
+    "answer": 82.5,
+    "image_file": "task_central_inscribed_obtuse_outer_abc.png",
+    "help_image_file": "help_central_inscribed_obtuse_outer_abc.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_outer_aoc_to_abc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 165,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 82.5,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600227,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "В окружность вписан треугольник ABC. Угол AOC равен 110°. Точки O и B лежат в одной полуплоскости относительно прямой AC. Найди угол ABC.",
+    "answer": 55,
+    "image_file": "task_central_inscribed_obtuse_outer_abc.png",
+    "help_image_file": "help_central_inscribed_obtuse_outer_abc.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_outer_aoc_to_abc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 110,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 55,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600228,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "В окружность вписан треугольник ABC. Угол AOC равен 113°. Точки O и B лежат в одной полуплоскости относительно прямой AC. Найди угол ABC.",
+    "answer": 56.5,
+    "image_file": "task_central_inscribed_obtuse_outer_abc.png",
+    "help_image_file": "help_central_inscribed_obtuse_outer_abc.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_outer_aoc_to_abc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 113,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 56.5,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600229,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "Треугольник DEF вписан в окружность с центром в точке O. Точки O и E лежат в одной полуплоскости относительно прямой DF. Найди угол DEF, если центральный угол DOF равен 58°.",
+    "answer": 29,
+    "image_file": "task_central_inscribed_acute_inner_def.png",
+    "help_image_file": "help_central_inscribed_acute_inner_def.png",
+    "task_context": {
+      "narrative_type": "central_acute_inner_dof_to_def",
+      "angle_central_name": "DOF",
+      "angle_central_val": 58,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 29,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600230,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "В окружность с центром в точке O вписан треугольник DEF. Точки O и E лежат в одной полуплоскости относительно прямой DF. Центральный угол DOF равен 71°. Найди угол DEF.",
+    "answer": 35.5,
+    "image_file": "task_central_inscribed_acute_inner_def.png",
+    "help_image_file": "help_central_inscribed_acute_inner_def.png",
+    "task_context": {
+      "narrative_type": "central_acute_inner_dof_to_def",
+      "angle_central_name": "DOF",
+      "angle_central_val": 71,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 35.5,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600231,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "В окружность с центром в точке O вписан треугольник DEF. Точки O и E лежат в одной полуплоскости относительно прямой DF. Центральный угол DOF равен 87°. Найди угол DEF.",
+    "answer": 43.5,
+    "image_file": "task_central_inscribed_acute_inner_def.png",
+    "help_image_file": "help_central_inscribed_acute_inner_def.png",
+    "task_context": {
+      "narrative_type": "central_acute_inner_dof_to_def",
+      "angle_central_name": "DOF",
+      "angle_central_val": 87,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 43.5,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600232,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "В окружность с центром в точке O вписан треугольник DEF. Точки O и E лежат в одной полуплоскости относительно прямой DF. Центральный угол DOF равен 39°. Найди угол DEF.",
+    "answer": 19.5,
+    "image_file": "task_central_inscribed_acute_inner_def.png",
+    "help_image_file": "help_central_inscribed_acute_inner_def.png",
+    "task_context": {
+      "narrative_type": "central_acute_inner_dof_to_def",
+      "angle_central_name": "DOF",
+      "angle_central_val": 39,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 19.5,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600233,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "Треугольник DEF вписан в окружность с центром в точке O. Точки O и E лежат в одной полуплоскости относительно прямой DF. Центральный угол DOF равен 60°. Найди угол DEF.",
+    "answer": 30,
+    "image_file": "task_central_inscribed_acute_inner_def.png",
+    "help_image_file": "help_central_inscribed_acute_inner_def.png",
+    "task_context": {
+      "narrative_type": "central_acute_inner_dof_to_def",
+      "angle_central_name": "DOF",
+      "angle_central_val": 60,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 30,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600234,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "В окружность с центром в точке O вписан треугольник DEF. Центральный угол DOF равен 73°. Точки O и E лежат в одной полуплоскости относительно прямой DF. Найди угол DEF.",
+    "answer": 36.5,
+    "image_file": "task_central_inscribed_acute_outer_def.png",
+    "help_image_file": "help_central_inscribed_acute_outer_def.png",
+    "task_context": {
+      "narrative_type": "central_acute_outer_dof_to_def",
+      "angle_central_name": "DOF",
+      "angle_central_val": 73,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 36.5,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600235,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "В окружность с центром в точке O вписан треугольник DEF. Центральный угол DOF равен 78°. Точки O и E лежат в одной полуплоскости относительно прямой DF. Найди угол DEF.",
+    "answer": 39,
+    "image_file": "task_central_inscribed_acute_outer_def.png",
+    "help_image_file": "help_central_inscribed_acute_outer_def.png",
+    "task_context": {
+      "narrative_type": "central_acute_outer_dof_to_def",
+      "angle_central_name": "DOF",
+      "angle_central_val": 78,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 39,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600236,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "Центральный угол DOF равен 37°. Найди вписанный угол DEF. Треугольник DEF вписан в окружность с центром в точке O. Точки O и E лежат в одной полуплоскости относительно прямой DF.",
+    "answer": 18.5,
+    "image_file": "task_central_inscribed_acute_outer_def.png",
+    "help_image_file": "help_central_inscribed_acute_outer_def.png",
+    "task_context": {
+      "narrative_type": "central_acute_outer_dof_to_def",
+      "angle_central_name": "DOF",
+      "angle_central_val": 37,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 18.5,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600237,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "В окружность с центром в точке O вписан треугольник DEF. Центральный угол DOF равен 89°. Точки O и E лежат в одной полуплоскости относительно прямой DF. Найди угол DEF.",
+    "answer": 44.5,
+    "image_file": "task_central_inscribed_acute_outer_def.png",
+    "help_image_file": "help_central_inscribed_acute_outer_def.png",
+    "task_context": {
+      "narrative_type": "central_acute_outer_dof_to_def",
+      "angle_central_name": "DOF",
+      "angle_central_val": 89,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 44.5,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600238,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "В окружность с центром в точке O вписан треугольник DEF. Центральный угол DOF равен 66°. Точки O и E лежат в одной полуплоскости относительно прямой DF. Найди угол DEF.",
+    "answer": 33,
+    "image_file": "task_central_inscribed_acute_outer_def.png",
+    "help_image_file": "help_central_inscribed_acute_outer_def.png",
+    "task_context": {
+      "narrative_type": "central_acute_outer_dof_to_def",
+      "angle_central_name": "DOF",
+      "angle_central_val": 66,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 33,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600239,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "Треугольник DEF вписан в окружность с центром в точке O. Точки O и E лежат в одной полуплоскости относительно прямой DF. Найди угол DEF, если угол DOF равен 118°.",
+    "answer": 59,
+    "image_file": "task_central_inscribed_obtuse_inner_def.png",
+    "help_image_file": "help_central_inscribed_obtuse_inner_def.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_inner_dof_to_def",
+      "angle_central_name": "DOF",
+      "angle_central_val": 118,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 59,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600240,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "В окружность с центром O вписан треугольник DEF. Точки O и E находятся в одной полуплоскости относительно прямой DF. Угол DOF равен 142°. Найди угол DEF.",
+    "answer": 71,
+    "image_file": "task_central_inscribed_obtuse_inner_def.png",
+    "help_image_file": "help_central_inscribed_obtuse_inner_def.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_inner_dof_to_def",
+      "angle_central_name": "DOF",
+      "angle_central_val": 142,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 71,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600241,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "В окружность с центром O вписан треугольник DEF. Точки O и E находятся в одной полуплоскости относительно прямой DF. Угол DOF равен 105°. Найди угол DEF.",
+    "answer": 52.5,
+    "image_file": "task_central_inscribed_obtuse_inner_def.png",
+    "help_image_file": "help_central_inscribed_obtuse_inner_def.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_inner_dof_to_def",
+      "angle_central_name": "DOF",
+      "angle_central_val": 105,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 52.5,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600242,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "В окружность с центром O вписан треугольник DEF. Точки O и E находятся в одной полуплоскости относительно прямой DF. Угол DOF равен 157°. Найди угол DEF.",
+    "answer": 78.5,
+    "image_file": "task_central_inscribed_obtuse_inner_def.png",
+    "help_image_file": "help_central_inscribed_obtuse_inner_def.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_inner_dof_to_def",
+      "angle_central_name": "DOF",
+      "angle_central_val": 157,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 78.5,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600243,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "Треугольник DEF вписан в окружность с центром O. Точки O и E лежат в одной полуплоскости относительно прямой DF. Угол DOF равен 125°. Найди угол DEF.",
+    "answer": 62.5,
+    "image_file": "task_central_inscribed_obtuse_inner_def.png",
+    "help_image_file": "help_central_inscribed_obtuse_inner_def.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_inner_dof_to_def",
+      "angle_central_name": "DOF",
+      "angle_central_val": 125,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 62.5,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600244,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "Центральный угол DOF равен 129°. Треугольник DEF вписан в окружность с центром в точке O. Точки O и E лежат в одной полуплоскости относительно прямой DF. Чему равен угол DEF?",
+    "answer": 64.5,
+    "image_file": "task_central_inscribed_obtuse_outer_def.png",
+    "help_image_file": "help_central_inscribed_obtuse_outer_def.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_outer_dof_to_def",
+      "angle_central_name": "DOF",
+      "angle_central_val": 129,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 64.5,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600245,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "Центральный угол DOF равен 132°. Треугольник DEF вписан в окружность с центром в точке O. Точки O и E лежат в одной полуплоскости относительно прямой DF. Чему равен угол DEF?",
+    "answer": 66,
+    "image_file": "task_central_inscribed_obtuse_outer_def.png",
+    "help_image_file": "help_central_inscribed_obtuse_outer_def.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_outer_dof_to_def",
+      "angle_central_name": "DOF",
+      "angle_central_val": 132,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 66,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600246,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "Треугольник DEF вписан в окружность с центром в точке O. Точки O и E лежат в одной полуплоскости относительно прямой DF. Центральный угол DOF равен 106°. Найди вписанный угол DEF.",
+    "answer": 53,
+    "image_file": "task_central_inscribed_obtuse_outer_def.png",
+    "help_image_file": "help_central_inscribed_obtuse_outer_def.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_outer_dof_to_def",
+      "angle_central_name": "DOF",
+      "angle_central_val": 106,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 53,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600247,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "В окружность с центром O вписан треугольник DEF. Угол DOF равен 149°. Точки O и E лежат в одной полуплоскости относительно DF. Найди угол DEF.",
+    "answer": 74.5,
+    "image_file": "task_central_inscribed_obtuse_outer_def.png",
+    "help_image_file": "help_central_inscribed_obtuse_outer_def.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_outer_dof_to_def",
+      "angle_central_name": "DOF",
+      "angle_central_val": 149,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 74.5,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600248,
+    "pattern": "central_inscribed",
+    "narrative": "find_inscribed_by_central",
+    "question_text": "Центральный угол DOF равен 147°. Треугольник DEF вписан в окружность с центром в точке O. Точки O и E лежат в одной полуплоскости относительно прямой DF. Чему равен угол DEF?",
+    "answer": 73.5,
+    "image_file": "task_central_inscribed_obtuse_outer_def.png",
+    "help_image_file": "help_central_inscribed_obtuse_outer_def.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_outer_dof_to_def",
+      "angle_central_name": "DOF",
+      "angle_central_val": 147,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 73.5,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600249,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "Треугольник ABC вписан в окружность с центром в точке O. Точки O и B лежат в одной полуплоскости относительно прямой AC. Вписанный угол ABC равен 32°. Найди центральный угол AOC.",
+    "answer": 64,
+    "image_file": "task_central_inscribed_acute_inner_abc.png",
+    "help_image_file": "help_central_inscribed_acute_inner_abc.png",
+    "task_context": {
+      "narrative_type": "central_acute_inner_abc_to_aoc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 64,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 32,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600250,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "В окружность с центром O вписан треугольник ABC. Найди величину угла AOC, если угол ABC равен 29°, а точки O и B лежат в одной полуплоскости относительно AC.",
+    "answer": 58,
+    "image_file": "task_central_inscribed_acute_inner_abc.png",
+    "help_image_file": "help_central_inscribed_acute_inner_abc.png",
+    "task_context": {
+      "narrative_type": "central_acute_inner_abc_to_aoc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 58,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 29,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600251,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "В окружность с центром O вписан треугольник ABC. Найди величину угла AOC, если угол ABC равен 41°, а точки O и B лежат в одной полуплоскости относительно AC.",
+    "answer": 82,
+    "image_file": "task_central_inscribed_acute_inner_abc.png",
+    "help_image_file": "help_central_inscribed_acute_inner_abc.png",
+    "task_context": {
+      "narrative_type": "central_acute_inner_abc_to_aoc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 82,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 41,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600252,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "Треугольник ABC вписан в окружность с центром в точке O. Найди центральный угол AOC, если вписанный угол ABC равен 18°. Известно, что точки O и B расположены в одной полуплоскости относительно прямой AC.",
+    "answer": 36,
+    "image_file": "task_central_inscribed_acute_inner_abc.png",
+    "help_image_file": "help_central_inscribed_acute_inner_abc.png",
+    "task_context": {
+      "narrative_type": "central_acute_inner_abc_to_aoc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 36,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 18,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600253,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "Треугольник ABC вписан в окружность. Угол ABC равен 23°, при этом центр O и точка B лежат по одну сторону от хорды AC. Определи угол AOC.",
+    "answer": 46,
+    "image_file": "task_central_inscribed_acute_inner_abc.png",
+    "help_image_file": "help_central_inscribed_acute_inner_abc.png",
+    "task_context": {
+      "narrative_type": "central_acute_inner_abc_to_aoc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 46,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 23,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600254,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "Вписанный угол ABC равен 15°. Точки O и B находятся в одной полуплоскости относительно AC. Чему равен центральный угол AOC?",
+    "answer": 30,
+    "image_file": "task_central_inscribed_acute_outer_abc.png",
+    "help_image_file": "help_central_inscribed_acute_outer_abc.png",
+    "task_context": {
+      "narrative_type": "central_acute_outer_abc_to_aoc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 30,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 15,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600255,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "Рассмотрим треугольник ABC, вписанный в окружность с центром O. Найди угол AOC, если угол ABC равен 35°, а точки O и B лежат в одной полуплоскости относительно прямой AC.",
+    "answer": 70,
+    "image_file": "task_central_inscribed_acute_outer_abc.png",
+    "help_image_file": "help_central_inscribed_acute_outer_abc.png",
+    "task_context": {
+      "narrative_type": "central_acute_outer_abc_to_aoc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 70,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 35,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600256,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "Треугольник ABC вписан в окружность с центром в точке O. Угол ABC равен 23,5°. Точки O и B лежат в одной полуплоскости относительно прямой AC. Найди угол AOC.",
+    "answer": 47,
+    "image_file": "task_central_inscribed_acute_outer_abc.png",
+    "help_image_file": "help_central_inscribed_acute_outer_abc.png",
+    "task_context": {
+      "narrative_type": "central_acute_outer_abc_to_aoc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 47,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 23.5,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600257,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "Чему равен угол AOC, если вписанный угол ABC равен 27,5°, а точки O и B лежат в одной полуплоскости относительно прямой AC?",
+    "answer": 55,
+    "image_file": "task_central_inscribed_acute_outer_abc.png",
+    "help_image_file": "help_central_inscribed_acute_outer_abc.png",
+    "task_context": {
+      "narrative_type": "central_acute_outer_abc_to_aoc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 55,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 27.5,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600258,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "В окружность с центром в точке O вписан треугольник ABC. Угол ABC равен 42,5°. Точки O и B находятся в одной полуплоскости относительно AC. Найди величину угла AOC.",
+    "answer": 85,
+    "image_file": "task_central_inscribed_acute_outer_abc.png",
+    "help_image_file": "help_central_inscribed_acute_outer_abc.png",
+    "task_context": {
+      "narrative_type": "central_acute_outer_abc_to_aoc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 85,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 42.5,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600259,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "Треугольник ABC вписан в окружность с центром в точке O. Точки O и B лежат в одной полуплоскости относительно прямой AC. Угол ABC равен 63°. Найди угол AOC.",
+    "answer": 126,
+    "image_file": "task_central_inscribed_obtuse_inner_abc.png",
+    "help_image_file": "help_central_inscribed_obtuse_inner_abc.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_inner_abc_to_aoc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 126,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 63,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600260,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "В окружность с центром O вписан треугольник ABC. Определи величину угла AOC, если угол ABC равен 58°, а точки O и B находятся по одну сторону от AC.",
+    "answer": 116,
+    "image_file": "task_central_inscribed_obtuse_inner_abc.png",
+    "help_image_file": "help_central_inscribed_obtuse_inner_abc.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_inner_abc_to_aoc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 116,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 58,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600261,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "Угол ABC треугольника ABC, вписанного в окружность с центром O, равен 74,5°. Точки O и B лежат в одной полуплоскости относительно AC. Найди угол AOC.",
+    "answer": 149,
+    "image_file": "task_central_inscribed_obtuse_inner_abc.png",
+    "help_image_file": "help_central_inscribed_obtuse_inner_abc.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_inner_abc_to_aoc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 149,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 74.5,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600262,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "В окружность с центром O вписан треугольник ABC. Найди центральный угол AOC, если угол ABC равен 78,5°, а точки O и B находятся в одной полуплоскости относительно прямой AC.",
+    "answer": 157,
+    "image_file": "task_central_inscribed_obtuse_inner_abc.png",
+    "help_image_file": "help_central_inscribed_obtuse_inner_abc.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_inner_abc_to_aoc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 157,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 78.5,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600263,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "Угол ABC треугольника ABC, вписанного в окружность с центром O, равен 52,5°. Точки O и B лежат в одной полуплоскости относительно AC. Найди угол AOC.",
+    "answer": 105,
+    "image_file": "task_central_inscribed_obtuse_inner_abc.png",
+    "help_image_file": "help_central_inscribed_obtuse_inner_abc.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_inner_abc_to_aoc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 105,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 52.5,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600264,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "Треугольник ABC вписан в окружность с центром в точке O. Точки O и B лежат в одной полуплоскости относительно прямой AC. Угол ABC равен 65°. Найди угол AOC.",
+    "answer": 130,
+    "image_file": "task_central_inscribed_obtuse_outer_abc.png",
+    "help_image_file": "help_central_inscribed_obtuse_outer_abc.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_outer_abc_to_aoc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 130,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 65,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600265,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "В окружность с центром O вписан треугольник ABC. Определи величину угла AOC, если угол ABC равен 51,5°, а точки O и B в одной полуплоскости относительно прямой AC.",
+    "answer": 103,
+    "image_file": "task_central_inscribed_obtuse_outer_abc.png",
+    "help_image_file": "help_central_inscribed_obtuse_outer_abc.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_outer_abc_to_aoc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 103,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 51.5,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600266,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "Треугольник ABC вписан в окружность с центром O. Угол ABC равен 86,5°. Точки O и B лежат в одной полуплоскости относительно AC. Найди величину угла AOC.",
+    "answer": 173,
+    "image_file": "task_central_inscribed_obtuse_outer_abc.png",
+    "help_image_file": "help_central_inscribed_obtuse_outer_abc.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_outer_abc_to_aoc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 173,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 86.5,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600267,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "В окружность с центром O вписан треугольник ABC. Определи величину угла AOC, если угол ABC равен 55,5°, а точки O и B в одной полуплоскости относительно прямой AC.",
+    "answer": 111,
+    "image_file": "task_central_inscribed_obtuse_outer_abc.png",
+    "help_image_file": "help_central_inscribed_obtuse_outer_abc.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_outer_abc_to_aoc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 111,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 55.5,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600268,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "В окружность с центром O вписан треугольник ABC. Определи величину угла AOC, если угол ABC равен 63,5°, а точки O и B в одной полуплоскости относительно прямой AC.",
+    "answer": 127,
+    "image_file": "task_central_inscribed_obtuse_outer_abc.png",
+    "help_image_file": "help_central_inscribed_obtuse_outer_abc.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_outer_abc_to_aoc",
+      "angle_central_name": "AOC",
+      "angle_central_val": 127,
+      "angle_inscribed_name": "ABC",
+      "angle_inscribed_val": 63.5,
+      "arc_name": "AC"
+    }
+  },
+  {
+    "id": 1600269,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "Треугольник DEF вписан в окружность с центром в точке O. Точки O и E лежат в одной полуплоскости относительно прямой DF. Угол DEF равен 25°. Найди угол DOF.",
+    "answer": 50,
+    "image_file": "task_central_inscribed_acute_inner_def.png",
+    "help_image_file": "help_central_inscribed_acute_inner_def.png",
+    "task_context": {
+      "narrative_type": "central_acute_inner_def_to_dof",
+      "angle_central_name": "DOF",
+      "angle_central_val": 50,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 25,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600270,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "В окружность с центром O вписан треугольник DEF. Определи величину угла DOF, если угол DEF равен 33,5°, а точки O и E находятся по одну сторону от DF.",
+    "answer": 67,
+    "image_file": "task_central_inscribed_acute_inner_def.png",
+    "help_image_file": "help_central_inscribed_acute_inner_def.png",
+    "task_context": {
+      "narrative_type": "central_acute_inner_def_to_dof",
+      "angle_central_name": "DOF",
+      "angle_central_val": 67,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 33.5,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600271,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "Угол DEF треугольника DEF, вписанного в окружность с центром O, равен 19°. Точки O и E лежат в одной полуплоскости относительно DF. Найди угол DOF.",
+    "answer": 38,
+    "image_file": "task_central_inscribed_acute_inner_def.png",
+    "help_image_file": "help_central_inscribed_acute_inner_def.png",
+    "task_context": {
+      "narrative_type": "central_acute_inner_def_to_dof",
+      "angle_central_name": "DOF",
+      "angle_central_val": 38,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 19,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600272,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "В окружность с центром в точке O вписан треугольник DEF. Найди угол DOF, если угол DEF равен 44,5°, а точки O и E находятся по одну сторону от DF.",
+    "answer": 89,
+    "image_file": "task_central_inscribed_acute_inner_def.png",
+    "help_image_file": "help_central_inscribed_acute_inner_def.png",
+    "task_context": {
+      "narrative_type": "central_acute_inner_def_to_dof",
+      "angle_central_name": "DOF",
+      "angle_central_val": 89,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 44.5,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600273,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "В окружность с центром в точке O вписан треугольник DEF. Найди угол DOF, если угол DEF равен 12,5°, а точки O и E находятся по одну сторону от DF.",
+    "answer": 25,
+    "image_file": "task_central_inscribed_acute_inner_def.png",
+    "help_image_file": "help_central_inscribed_acute_inner_def.png",
+    "task_context": {
+      "narrative_type": "central_acute_inner_def_to_dof",
+      "angle_central_name": "DOF",
+      "angle_central_val": 25,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 12.5,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600274,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "Треугольник DEF вписан в окружность с центром O. Угол DEF равен 37°. Точки O и E находятся в одной полуплоскости относительно DF. Найди центральный угол DOF.",
+    "answer": 74,
+    "image_file": "task_central_inscribed_acute_outer_def.png",
+    "help_image_file": "help_central_inscribed_acute_outer_def.png",
+    "task_context": {
+      "narrative_type": "central_acute_outer_def_to_dof",
+      "angle_central_name": "DOF",
+      "angle_central_val": 74,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 37,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600275,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "Угол DEF треугольника DEF, вписанного в окружность с центром O, равен 24,5°. Точки O и E лежат в одной полуплоскости относительно прямой DF. Найди угол DOF.",
+    "answer": 49,
+    "image_file": "task_central_inscribed_acute_outer_def.png",
+    "help_image_file": "help_central_inscribed_acute_outer_def.png",
+    "task_context": {
+      "narrative_type": "central_acute_outer_def_to_dof",
+      "angle_central_name": "DOF",
+      "angle_central_val": 49,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 24.5,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600276,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "Треугольник DEF вписан в окружность с центром в O. Угол DEF равен 17°. Точки O и E лежат по одну сторону от DF. Найди угол DOF.",
+    "answer": 34,
+    "image_file": "task_central_inscribed_acute_outer_def.png",
+    "help_image_file": "help_central_inscribed_acute_outer_def.png",
+    "task_context": {
+      "narrative_type": "central_acute_outer_def_to_dof",
+      "angle_central_name": "DOF",
+      "angle_central_val": 34,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 17,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600277,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "Треугольник DEF вписан в окружность с центром в O. Угол DEF равен 30,5°. Точки O и E лежат по одну сторону от DF. Найди угол DOF.",
+    "answer": 61,
+    "image_file": "task_central_inscribed_acute_outer_def.png",
+    "help_image_file": "help_central_inscribed_acute_outer_def.png",
+    "task_context": {
+      "narrative_type": "central_acute_outer_def_to_dof",
+      "angle_central_name": "DOF",
+      "angle_central_val": 61,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 30.5,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600278,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "Треугольник DEF вписан в окружность с центром O. Угол DEF равен 35,5°. Точки O и E находятся в одной полуплоскости относительно DF. Найди центральный угол DOF.",
+    "answer": 71,
+    "image_file": "task_central_inscribed_acute_outer_def.png",
+    "help_image_file": "help_central_inscribed_acute_outer_def.png",
+    "task_context": {
+      "narrative_type": "central_acute_outer_def_to_dof",
+      "angle_central_name": "DOF",
+      "angle_central_val": 71,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 35.5,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600279,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "Треугольник DEF вписан в окружность с центром в точке O. Точки O и E лежат в одной полуплоскости относительно прямой DF. Угол DEF равен 64,5°. Найди угол DOF.",
+    "answer": 129,
+    "image_file": "task_central_inscribed_obtuse_inner_def.png",
+    "help_image_file": "help_central_inscribed_obtuse_inner_def.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_inner_def_to_dof",
+      "angle_central_name": "DOF",
+      "angle_central_val": 129,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 64.5,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600280,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "В окружность с центром O вписан треугольник DEF. Определи величину угла DOF, если угол DEF равен 73°, а точки O и E находятся по одну сторону от DF.",
+    "answer": 146,
+    "image_file": "task_central_inscribed_obtuse_inner_def.png",
+    "help_image_file": "help_central_inscribed_obtuse_inner_def.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_inner_def_to_dof",
+      "angle_central_name": "DOF",
+      "angle_central_val": 146,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 73,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600281,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "Угол DEF треугольника DEF, вписанного в окружность с центром O, равен 56°. Точки O и E лежат в одной полуплоскости относительно DF. Найди угол DOF.",
+    "answer": 112,
+    "image_file": "task_central_inscribed_obtuse_inner_def.png",
+    "help_image_file": "help_central_inscribed_obtuse_inner_def.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_inner_def_to_dof",
+      "angle_central_name": "DOF",
+      "angle_central_val": 112,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 56,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600282,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "В окружность с центром в точке O вписан треугольник DEF. Найди угол DOF, если угол DEF равен 81,5°, а точки O и E находятся по одну сторону от DF.",
+    "answer": 163,
+    "image_file": "task_central_inscribed_obtuse_inner_def.png",
+    "help_image_file": "help_central_inscribed_obtuse_inner_def.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_inner_def_to_dof",
+      "angle_central_name": "DOF",
+      "angle_central_val": 163,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 81.5,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600283,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "В окружность с центром в точке O вписан треугольник DEF. Найди угол DOF, если угол DEF равен 67°, а точки O и E находятся по одну сторону от DF.",
+    "answer": 134,
+    "image_file": "task_central_inscribed_obtuse_inner_def.png",
+    "help_image_file": "help_central_inscribed_obtuse_inner_def.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_inner_def_to_dof",
+      "angle_central_name": "DOF",
+      "angle_central_val": 134,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 67,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600284,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "Треугольник DEF вписан в окружность с центром O. Угол DEF равен 59,5°. Точки O и E находятся в одной полуплоскости относительно DF. Найди центральный угол DOF.",
+    "answer": 119,
+    "image_file": "task_central_inscribed_obtuse_outer_def.png",
+    "help_image_file": "help_central_inscribed_obtuse_outer_def.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_outer_def_to_dof",
+      "angle_central_name": "DOF",
+      "angle_central_val": 119,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 59.5,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600285,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "Угол DEF треугольника DEF, вписанного в окружность с центром O, равен 88°. Точки O и E лежат в одной полуплоскости относительно прямой DF. Найди угол DOF.",
+    "answer": 176,
+    "image_file": "task_central_inscribed_obtuse_outer_def.png",
+    "help_image_file": "help_central_inscribed_obtuse_outer_def.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_outer_def_to_dof",
+      "angle_central_name": "DOF",
+      "angle_central_val": 176,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 88,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600286,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "Треугольник DEF вписан в окружность с центром в O. Угол DEF равен 52,5°. Точки O и E лежат по одну сторону от DF. Найди угол DOF.",
+    "answer": 105,
+    "image_file": "task_central_inscribed_obtuse_outer_def.png",
+    "help_image_file": "help_central_inscribed_obtuse_outer_def.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_outer_def_to_dof",
+      "angle_central_name": "DOF",
+      "angle_central_val": 105,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 52.5,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600287,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "Треугольник DEF вписан в окружность с центром в O. Угол DEF равен 76°. Точки O и E лежат по одну сторону от DF. Найди угол DOF.",
+    "answer": 152,
+    "image_file": "task_central_inscribed_obtuse_outer_def.png",
+    "help_image_file": "help_central_inscribed_obtuse_outer_def.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_outer_def_to_dof",
+      "angle_central_name": "DOF",
+      "angle_central_val": 152,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 76,
+      "arc_name": "DF"
+    }
+  },
+  {
+    "id": 1600288,
+    "pattern": "central_inscribed",
+    "narrative": "find_central_by_inscribed",
+    "question_text": "Треугольник DEF вписан в окружность с центром O. Угол DEF равен 61°. Точки O и E находятся в одной полуплоскости относительно DF. Найди центральный угол DOF.",
+    "answer": 122,
+    "image_file": "task_central_inscribed_obtuse_outer_def.png",
+    "help_image_file": "help_central_inscribed_obtuse_outer_def.png",
+    "task_context": {
+      "narrative_type": "central_obtuse_outer_def_to_dof",
+      "angle_central_name": "DOF",
+      "angle_central_val": 122,
+      "angle_inscribed_name": "DEF",
+      "angle_inscribed_val": 61,
+      "arc_name": "DF"
+    }
   }
 ]

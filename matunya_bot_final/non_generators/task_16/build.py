@@ -24,7 +24,7 @@ from matunya_bot_final.non_generators.task_16.validators.central_and_inscribed_a
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DEFINITIONS_DIR = os.path.join(BASE_DIR, "definitions")
 ASSETS_DIR = os.path.join(BASE_DIR, "assets")
-DATA_DIR = os.path.join(project_root, "matunya_bot_final", "data", "task_16")
+DATA_DIR = os.path.join(project_root, "matunya_bot_final", "data", "tasks_16")
 OUTPUT_FILE = os.path.join(DATA_DIR, "tasks_16.json")
 
 VALIDATOR_MAPPING = {

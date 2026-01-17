@@ -8,6 +8,46 @@ from typing import Any, Dict, Optional
 
 logger = logging.getLogger(__name__)
 
+# =========================================================================
+# CENTRAL_INSCRIBED: нормализация "картинко-нарративов" (16) -> (2)
+# =========================================================================
+_CENTRAL_INSCRIBED_NARRATIVE_MAP: Dict[str, str] = {
+    # центральный -> найти вписанный
+    "central_acute_inner_aoc_to_abc": "find_inscribed_by_central",
+    "central_acute_outer_aoc_to_abc": "find_inscribed_by_central",
+    "central_obtuse_inner_aoc_to_abc": "find_inscribed_by_central",
+    "central_obtuse_outer_aoc_to_abc": "find_inscribed_by_central",
+    "central_acute_inner_dof_to_def": "find_inscribed_by_central",
+    "central_acute_outer_dof_to_def": "find_inscribed_by_central",
+    "central_obtuse_inner_dof_to_def": "find_inscribed_by_central",
+    "central_obtuse_outer_dof_to_def": "find_inscribed_by_central",
+
+    # вписанный -> найти центральный
+    "central_acute_inner_abc_to_aoc": "find_central_by_inscribed",
+    "central_acute_outer_abc_to_aoc": "find_central_by_inscribed",
+    "central_obtuse_inner_abc_to_aoc": "find_central_by_inscribed",
+    "central_obtuse_outer_abc_to_aoc": "find_central_by_inscribed",
+    "central_acute_inner_def_to_dof": "find_central_by_inscribed",
+    "central_acute_outer_def_to_dof": "find_central_by_inscribed",
+    "central_obtuse_inner_def_to_dof": "find_central_by_inscribed",
+    "central_obtuse_outer_def_to_dof": "find_central_by_inscribed",
+}
+
+
+def _normalize_central_inscribed_narrative(raw: Any) -> Optional[str]:
+    """
+    Возвращает ТОЛЬКО один из двух обобщённых нарративов:
+      - find_inscribed_by_central
+      - find_central_by_inscribed
+    Принимает как уже-нормализованное значение, так и "сырой" (16 вариантов).
+    """
+    if not raw:
+        return None
+    s = str(raw).strip()
+    if s in ("find_inscribed_by_central", "find_central_by_inscribed"):
+        return s
+    return _CENTRAL_INSCRIBED_NARRATIVE_MAP.get(s)
+
 
 async def solve(task_data: Dict[str, Any]) -> Dict[str, Any]:
     """
@@ -192,13 +232,133 @@ def _build_help_image(
         "params": params,
     }
 
+# =========================================================================
+# ПАТТЕРН 1.2: central_inscribed  (НОВАЯ АРХИТЕКТУРА, facts-only)
+# =========================================================================
+
+def _solve_central_inscribed(task_data: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Решатель для паттерна central_inscribed.
+
+    Канон:
+    - facts-only
+    - 2 нарратива:
+      * find_inscribed_by_central  (дан центральный -> найти вписанный)
+      * find_central_by_inscribed  (дан вписанный -> найти центральный)
+
+    Важно:
+    - Мы НЕ анализируем текст.
+    - Но мы обязаны нормализовать факты, потому что сырьё/валидатор
+      иногда путает central/inscribed местами.
+    """
+
+    context: Dict[str, Any] = task_data.get("task_context") or {}
+    answer = task_data.get("answer")
+
+    narrative_general = _normalize_central_inscribed_narrative(context.get("narrative_type"))
+    if not narrative_general:
+        narrative_general = _normalize_central_inscribed_narrative(task_data.get("narrative"))
+
+    if narrative_general not in ("find_inscribed_by_central", "find_central_by_inscribed"):
+        logger.error("Unknown narrative for central_inscribed (expected 2): %r", narrative_general)
+        return _get_error_solution(
+            task_data,
+            reason=f"Unknown narrative for central_inscribed: {narrative_general}",
+        )
+
+    pair = _extract_ci_pair(context)
+
+    central_name = pair.get("central_name")
+    central_val = pair.get("central_val")
+    inscribed_name = pair.get("inscribed_name")
+    inscribed_val = pair.get("inscribed_val")
+    arc_name = pair.get("arc_name")
+    vertices = pair.get("vertices")
+
+    # --- (1) Чиним перепутанные пары central/inscribed ---
+    # Ожидаем: central содержит 'O', inscribed обычно без 'O'
+    central_looks_central = _is_central_angle_name(central_name)
+    inscribed_looks_central = _is_central_angle_name(inscribed_name)
+
+    # Если "central" не похож на центральный, а "inscribed" похож — значит перепутали.
+    if (not central_looks_central) and inscribed_looks_central:
+        central_name, inscribed_name = inscribed_name, central_name
+        central_val, inscribed_val = inscribed_val, central_val
+
+    # --- (2) Если дуги нет — восстанавливаем ---
+    if not arc_name:
+        # предпочтительно по центральному (он однозначнее)
+        arc_name = _arc_from_angle_name(central_name) or _arc_from_angle_name(inscribed_name)
+
+    # --- (3) Финальная проверка минимальных данных ---
+    if narrative_general == "find_inscribed_by_central":
+        if not central_name or central_val is None or not inscribed_name or not arc_name:
+            return _get_error_solution(
+                task_data,
+                reason="central_inscribed: missing facts for find_inscribed_by_central",
+            )
+
+    else:  # find_central_by_inscribed
+        if not inscribed_name or inscribed_val is None or not central_name or not arc_name:
+            return _get_error_solution(
+                task_data,
+                reason="central_inscribed: missing facts for find_central_by_inscribed",
+            )
+
+    # --- FACTS (контракт humanizer'а) ---
+    facts: Dict[str, Any] = {
+        "narrative_type": narrative_general,
+        "answer": answer,
+        "vertices": vertices,
+        "arc_name": arc_name,
+    }
+
+    # Нарратив 1: дан центральный -> найти вписанный
+    if narrative_general == "find_inscribed_by_central":
+        facts.update(
+            angle_given_name=central_name,
+            angle_given_val=central_val,
+            angle_target_name=inscribed_name,
+        )
+    # Нарратив 2: дан вписанный -> найти центральный
+    else:
+        facts.update(
+            angle_given_name=inscribed_name,
+            angle_given_val=inscribed_val,
+            angle_target_name=central_name,
+        )
+
+    # help_image: schema должен быть по ОБОБЩЕННОМУ нарративу
+    context_for_image = dict(context)
+    context_for_image.update(facts)
+    context_for_image["narrative_type"] = narrative_general
+
+    help_image = _build_help_image(
+        task_data=task_data,
+        context=context_for_image,
+        pattern="central_inscribed",
+    )
+
+    idea_key = f"IDEA_{narrative_general.upper()}"
+
+    return {
+        "question_id": str(task_data.get("id")),
+        "question_group": "GEOMETRY_16",
+        "explanation_idea": idea_key,
+        "calculation_steps": [],
+        "final_answer": {
+            "value_machine": answer,
+            "value_display": str(answer) if answer is not None else "",
+            "unit": "°",
+        },
+        "variables": facts,
+        "help_image": help_image,
+        "hints": [],
+    }
 
 # =========================================================================
 # ЗАГЛУШКИ ДЛЯ ОСТАЛЬНЫХ ПАТТЕРНОВ
 # =========================================================================
-
-def _solve_central_inscribed(task_data: Dict[str, Any]) -> Dict[str, Any]:
-    return _get_stub_solution(task_data, "central_inscribed")
 
 
 def _solve_radius_chord_angles(task_data: Dict[str, Any]) -> Dict[str, Any]:
@@ -258,6 +418,51 @@ def _get_stub_solution(task_data: Dict[str, Any], pattern_name: str) -> Dict[str
         "variables": {"pattern": pattern_name},
         "help_image": None,
         "hints": [],
+    }
+
+# =========================================================================
+# HELPERS
+# =========================================================================
+
+def _is_central_angle_name(name: Optional[str]) -> bool:
+    """
+    Эвристика: центральный угол имеет вершину в центре окружности,
+    обычно буква O присутствует в названии (AOC, DOF).
+    """
+    if not name:
+        return False
+    return "O" in str(name).upper()
+
+
+def _arc_from_angle_name(angle_name: Optional[str]) -> Optional[str]:
+    """
+    Восстановление дуги по названию угла:
+    - AOC -> AC
+    - ABC -> AC (дуга по сторонам, не включая вершину)
+    - DEF -> DF
+    - DOF -> DF
+    """
+    if not angle_name:
+        return None
+    s = str(angle_name).strip().upper()
+    if len(s) < 3:
+        return None
+    # берём 1-ю и 3-ю буквы
+    return f"{s[0]}{s[2]}"
+
+
+def _extract_ci_pair(context: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Достаём "как есть" из контекста. Поддерживаем несколько возможных ключей,
+    чтобы не зависеть от версии валидатора/сырья.
+    """
+    return {
+        "central_name": context.get("angle_central_name") or context.get("central_angle_name"),
+        "central_val": context.get("angle_central_val") or context.get("central_angle_val"),
+        "inscribed_name": context.get("angle_inscribed_name") or context.get("inscribed_angle_name"),
+        "inscribed_val": context.get("angle_inscribed_val") or context.get("inscribed_angle_val"),
+        "arc_name": context.get("arc_name"),
+        "vertices": context.get("vertices"),
     }
 
 

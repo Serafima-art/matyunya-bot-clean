@@ -10,8 +10,16 @@ class CentralAndInscribedAnglesValidator:
     """
 
     def __init__(self):
-        self.angle_regex = re.compile(r"(?:угол|∠)\s*([A-Z]{1,3})[^0-9=]*?(?:равен|=)\s*(\d+)", re.IGNORECASE)
-        self.find_regex = re.compile(r"(?:найди(?:те)?|чему\s+равен)\s*(?:угол|∠)?\s*([A-Z]{1,3})", re.IGNORECASE)
+        # ИСПРАВЛЕННАЯ РЕГУЛЯРКА:
+        # (?!(?:\bугол\b|∠)) — теперь мы игнорируем "угол" только если это ОТДЕЛЬНОЕ слово.
+        # Слова "треугольник", "многоугольник" больше не ломают поиск!
+
+        self.angle_regex = re.compile(
+            r"(?:угол|∠)\s*([A-Z]{1,3})(?:(?!(?:\bугол\b|∠)).)*?(?:равен|=)\s*(\d+(?:[.,]\d+)?)",
+            re.IGNORECASE | re.DOTALL
+        )
+
+        self.find_regex = re.compile(r"(?:найди(?:те)?|чему\s+равен|определи).*?(?:угол|∠)\s*([A-Z]{1,3})", re.IGNORECASE)
 
     def validate(self, task: Dict[str, Any]) -> Tuple[bool, List[str]]:
         errors = []
@@ -207,11 +215,175 @@ class CentralAndInscribedAnglesValidator:
         return len(errors) == 0, errors
 
     # =========================================================================
-    # ЗАГЛУШКИ ДЛЯ ОСТАЛЬНЫХ ПАТТЕРНОВ
+    # ПАТТЕРН 1.2: central_inscribed
     # =========================================================================
 
     def _validate_central_inscribed(self, task: Dict[str, Any]) -> Tuple[bool, List[str]]:
+        errors = []
+
+        text = task.get("question_text", "")
+        raw_narrative = task.get("narrative")
+        answer = task.get("answer")
+
+        # ------------------------------------------------------------------
+        # 1. Маппинг нарративов (16 → 2 логики)
+        # ------------------------------------------------------------------
+        NARRATIVE_MAP = {
+            # central → inscribed
+            "central_acute_inner_aoc_to_abc": "find_inscribed_by_central",
+            "central_acute_outer_aoc_to_abc": "find_inscribed_by_central",
+            "central_obtuse_inner_aoc_to_abc": "find_inscribed_by_central",
+            "central_obtuse_outer_aoc_to_abc": "find_inscribed_by_central",
+            "central_acute_inner_dof_to_def": "find_inscribed_by_central",
+            "central_acute_outer_dof_to_def": "find_inscribed_by_central",
+            "central_obtuse_inner_dof_to_def": "find_inscribed_by_central",
+            "central_obtuse_outer_dof_to_def": "find_inscribed_by_central",
+
+            # inscribed → central
+            "central_acute_inner_abc_to_aoc": "find_central_by_inscribed",
+            "central_acute_outer_abc_to_aoc": "find_central_by_inscribed",
+            "central_obtuse_inner_abc_to_aoc": "find_central_by_inscribed",
+            "central_obtuse_outer_abc_to_aoc": "find_central_by_inscribed",
+            "central_acute_inner_def_to_dof": "find_central_by_inscribed",
+            "central_acute_outer_def_to_dof": "find_central_by_inscribed",
+            "central_obtuse_inner_def_to_dof": "find_central_by_inscribed",
+            "central_obtuse_outer_def_to_dof": "find_central_by_inscribed",
+        }
+
+        logic_type = NARRATIVE_MAP.get(raw_narrative)
+        if not logic_type:
+            return False, [f"Неизвестный нарратив: {raw_narrative}"]
+
+        # ------------------------------------------------------------------
+        # 2. ИСКОМЫЙ угол — СТРОГО из raw_narrative (канон)
+        # ------------------------------------------------------------------
+        parts = raw_narrative.split("_")
+        target_angle_name = parts[-1].upper() # abc, aoc, def, dof
+
+        # ------------------------------------------------------------------
+        # 3. Парсим ИЗВЕСТНЫЙ угол (строго по логике нарратива)
+        # ------------------------------------------------------------------
+        angles_found = []
+        for m in self.angle_regex.finditer(text):
+            name = m.group(1).upper()
+            val_str = m.group(2).replace(',', '.')
+            try:
+                val = float(val_str)
+                if val.is_integer(): val = int(val)
+                angles_found.append((name, val))
+            except ValueError:
+                continue
+
+        if not angles_found:
+            return False, ["Не найдено ни одного угла с числовым значением"]
+
+        known_angle_name = None
+        known_angle_val = None
+
+        # Ищем первый подходящий угол
+        for name, val in angles_found:
+            # Если ищем вписанный -> нам нужен угол с 'O' (центральный)
+            if logic_type == "find_inscribed_by_central" and "O" in name:
+                known_angle_name = name
+                known_angle_val = val
+                break
+            # Если ищем центральный -> нам нужен угол БЕЗ 'O' (вписанный)
+            if logic_type == "find_central_by_inscribed" and "O" not in name:
+                known_angle_name = name
+                known_angle_val = val
+                break
+
+        if known_angle_name is None:
+            return False, [
+                f"Не удалось найти подходящий известный угол для логики '{logic_type}'. Кандидаты: {angles_found}"
+            ]
+
+        # ------------------------------------------------------------------
+        # 4. Защита от логических ошибок
+        # ------------------------------------------------------------------
+        if known_angle_name == target_angle_name:
+            return False, [
+                f"Ошибка: Известный и искомый углы совпадают ({known_angle_name}). Проверь текст задачи."
+            ]
+
+        # ------------------------------------------------------------------
+        # 5. Математика и Имена
+        # ------------------------------------------------------------------
+        if logic_type == "find_inscribed_by_central":
+            # Дано: Центр. Найти: Вписанный.
+            angle_central_name = known_angle_name
+            angle_central_val = known_angle_val
+            angle_inscribed_name = target_angle_name
+            angle_inscribed_val = angle_central_val / 2
+        else:
+            # Дано: Вписанный. Найти: Центр.
+            angle_inscribed_name = known_angle_name
+            angle_inscribed_val = known_angle_val
+            angle_central_name = target_angle_name
+            angle_central_val = angle_inscribed_val * 2
+
+        calc_answer = angle_inscribed_val if logic_type == "find_inscribed_by_central" else angle_central_val
+
+        # Форматирование ответа (int/float)
+        if isinstance(calc_answer, float) and calc_answer.is_integer():
+            calc_answer = int(calc_answer)
+
+        # Обновляем значения в переменных (если они были float, стали int)
+        if logic_type == "find_inscribed_by_central":
+             angle_inscribed_val = calc_answer
+        else:
+             angle_central_val = calc_answer
+
+        # ------------------------------------------------------------------
+        # 6. Дуга (по центральному углу приоритетно, так надежнее)
+        # ------------------------------------------------------------------
+        # Из AOC -> AC. Из DOF -> DF.
+        p1 = angle_central_name[0]
+        p2 = angle_central_name[2] # Третья буква
+        arc_name = "".join(sorted([p1, p2]))
+
+        # ------------------------------------------------------------------
+        # 7. Финальный task_context
+        # ------------------------------------------------------------------
+        # Определяем фигуру для картинки (abc или def)
+        # Надежнее всего смотреть на буквы в target_angle_name
+        is_abc = "A" in target_angle_name or "B" in target_angle_name or "C" in target_angle_name
+        figure = "abc" if is_abc else "def"
+
+        # Нарратив уже содержит тип геометрии (acute_inner и т.д.)
+        # parts = [central, acute, inner, ...]
+        geo_type = parts[1]
+        geo_loc = parts[2]
+
+        img_name = f"central_inscribed_{geo_type}_{geo_loc}_{figure}"
+
+        task["image_file"] = f"task_{img_name}.png"
+        task["help_image_file"] = f"help_{img_name}.png"
+
+        task["task_context"] = {
+            "narrative_type": raw_narrative, # Длинное имя для дебага
+            "angle_central_name": angle_central_name,
+            "angle_central_val": angle_central_val,
+            "angle_inscribed_name": angle_inscribed_name,
+            "angle_inscribed_val": angle_inscribed_val,
+            "arc_name": arc_name,
+        }
+
+        task["answer"] = calc_answer
+        task["narrative"] = logic_type # Короткое имя для Решателя
+
+        # ------------------------------------------------------------------
+        # 8. Проверка ответа
+        # ------------------------------------------------------------------
+        if answer is not None and int(answer) != -1:
+            if abs(float(answer) - float(calc_answer)) > 0.01:
+                return False, [f"Математическая ошибка: {answer} != {calc_answer}"]
+
         return True, []
+
+    # =========================================================================
+    # ЗАГЛУШКИ ДЛЯ ОСТАЛЬНЫХ ПАТТЕРНОВ
+    # =========================================================================
 
     def _validate_radius_chord_angles(self, task: Dict[str, Any]) -> Tuple[bool, List[str]]:
         return True, []

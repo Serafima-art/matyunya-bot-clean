@@ -19,10 +19,12 @@ ABC = 94°, CAD = 57° → найти ∠ABD
 
 ## Паттерн 1.2 central_inscribed
 narratives:
-- aob_to_acb
+- find_inscribed_by_central — (Дано: Центр, Найти: Вписанный)
 Треугольник ABC вписан в окружность с центром O.
 Точки O и C лежат в одной полуплоскости относительно прямой AB.
 Найти ∠ACB, если ∠AOB = 65°.
+
+- find_central_by_inscribed — (Дано: Вписанный, Найти: Центр)
 
 ## Паттерн 1.3 radius_chord_angles
 narratives:

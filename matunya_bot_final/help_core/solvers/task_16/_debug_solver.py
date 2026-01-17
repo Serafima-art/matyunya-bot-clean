@@ -84,7 +84,7 @@ logger = logging.getLogger(__name__)
 
 def load_db_tasks() -> list:
     try:
-        db_path = PROJECT_ROOT / "matunya_bot_final" / "data" / "task_16" / "tasks_16.json"
+        db_path = PROJECT_ROOT / "matunya_bot_final" / "data" / "tasks_16" / "tasks_16.json"
 
         if not db_path.exists():
             logger.error(f"❌ Файл БД не найден: {db_path}")
@@ -182,7 +182,11 @@ if __name__ == "__main__":
         # НАСТРОЙКИ ЗАПУСКА
         # =============================================================
 
-        TEST_PATTERN = "cyclic_quad_angles"
+        # -------------------------------------------------------------
+        # ТЕМА 1: Центральные и вписанные углы (central_and_inscribed_angles)
+        # -------------------------------------------------------------
+        # TEST_PATTERN = "cyclic_quad_angles"
+        TEST_PATTERN = "central_inscribed"
 
         # Сколько случайных задач брать ИЗ КАЖДОГО нарратива
         TEST_LIMIT_PER_NARRATIVE = 10
