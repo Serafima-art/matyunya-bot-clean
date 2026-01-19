@@ -356,13 +356,111 @@ def _solve_central_inscribed(task_data: Dict[str, Any]) -> Dict[str, Any]:
         "hints": [],
     }
 
+def _solve_radius_chord_angles(task_data: Dict[str, Any]) -> Dict[str, Any]:
+    context: Dict[str, Any] = task_data.get("task_context") or {}
+    answer = task_data.get("answer")
+    narrative_general = context.get("narrative_type") # (упрощено для краткости)
+
+    # Нормализуем нарратив, если он длинный (из старых запасов)
+    if "find_part" in narrative_general: narrative_general = "find_part_angle"
+    if "find_whole" in narrative_general: narrative_general = "find_whole_angle"
+
+    facts: Dict[str, Any] = {
+        "narrative_type": narrative_general,
+        "answer": answer,
+    }
+
+    # Общая логика для радиусов (AO = BO = CO)
+    # Берем буквы из angle_whole_name (например ABC)
+    whole_name = context.get("angle_whole_name") or context.get("angle_target_name") or "ABC"
+    p1, vertex, p3 = whole_name[0], whole_name[1], whole_name[2]
+    facts["radii_equality"] = f"O{p1} = O{vertex} = O{p3}"
+    facts["vertex"] = vertex
+
+    if narrative_general == "find_part_angle":
+        known = context.get("angle_known_part_name")
+        target = context.get("angle_target_name")
+
+        facts.update(
+            angle_whole_name=context.get("angle_whole_name"),
+            angle_whole_val=context.get("angle_whole_val"),
+            angle_known_part_name=known,
+            angle_known_part_val=context.get("angle_known_part_val"),
+            angle_target_name=target,
+
+            # Генерируем зеркальные имена для объяснения (OBA, OBC)
+            angle_known_base_name=_swap_letters(known),
+            angle_target_base_name=_swap_letters(target),
+
+            # Имена треугольников (AOB, BOC)
+            iso_tri_1=_swap_letters(known).replace("O", "") + "O" + vertex, # AOB (примерно) - упростим в humanizer если надо
+            # Проще передать просто "O"+буквы. Humanizer сам разберется или передадим готовые:
+            iso_tri_1_name=f"{known.replace('O','').replace(vertex,'')}O{vertex}",
+            iso_tri_2_name=f"{target.replace('O','').replace(vertex,'')}O{vertex}",
+        )
+
+    else:  # find_whole_angle
+        part1 = context.get("angle_part1_name")
+        part2 = context.get("angle_part2_name")
+
+        facts.update(
+            angle_part1_name=part1,
+            angle_part1_val=context.get("angle_part1_val"),
+            angle_part2_name=part2,
+            angle_part2_val=context.get("angle_part2_val"),
+            angle_target_name=context.get("angle_target_name"),
+
+            # Зеркальные имена
+            angle_part1_base_name=_swap_letters(part1),
+            angle_part2_base_name=_swap_letters(part2),
+
+            iso_tri_1_name=f"{part1.replace('O','').replace(vertex,'')}O{vertex}",
+            iso_tri_2_name=f"{part2.replace('O','').replace(vertex,'')}O{vertex}",
+        )
+
+    # Упаковка
+    idea_key = f"IDEA_{narrative_general.upper()}"
+    return {
+        "question_id": str(task_data.get("id")),
+        "question_group": "GEOMETRY_16",
+        "explanation_idea": idea_key,
+        "calculation_steps": [],
+        "final_answer": {
+            "value_machine": answer,
+            "value_display": str(answer),
+            "unit": "°",
+        },
+        "variables": facts,
+        "hints": [],
+    }
+
+
+# -------------------------------------------------------------------------
+# Нормализация narrative_type из сырья/валидатора -> общий нарратив
+# -------------------------------------------------------------------------
+
+def _normalize_radius_chord_narrative(raw: Optional[str]) -> Optional[str]:
+    if not raw:
+        return None
+
+    s = str(raw).strip()
+
+    # сырьевые narrative_type (как у тебя в JSON примерах)
+    if s.endswith("_find_part"):
+        return "find_part_angle"
+    if s.endswith("_find_whole"):
+        return "find_whole_angle"
+
+    # если вдруг уже общий
+    if s in ("find_part_angle", "find_whole_angle"):
+        return s
+
+    return None
+
+
 # =========================================================================
 # ЗАГЛУШКИ ДЛЯ ОСТАЛЬНЫХ ПАТТЕРНОВ
 # =========================================================================
-
-
-def _solve_radius_chord_angles(task_data: Dict[str, Any]) -> Dict[str, Any]:
-    return _get_stub_solution(task_data, "radius_chord_angles")
 
 
 def _solve_arc_length_ratio(task_data: Dict[str, Any]) -> Dict[str, Any]:
@@ -420,6 +518,17 @@ def _get_stub_solution(task_data: Dict[str, Any], pattern_name: str) -> Dict[str
         "hints": [],
     }
 
+def _other_base_angle(angle: str) -> str:
+    """
+    Возвращает второй равный угол в равнобедренном треугольнике.
+    Пример:
+    OAB -> OBA
+    OMN -> ONM
+    """
+    if not angle or len(angle) != 3:
+        return angle
+    return angle[0] + angle[2] + angle[1]
+
 # =========================================================================
 # HELPERS
 # =========================================================================
@@ -464,6 +573,16 @@ def _extract_ci_pair(context: Dict[str, Any]) -> Dict[str, Any]:
         "arc_name": context.get("arc_name"),
         "vertices": context.get("vertices"),
     }
+
+# =========================================================================
+# Вспомогательная функция для radius_chord_angles
+# =========================================================================
+
+def _swap_letters(angle_name: str) -> str:
+    """Меняет местами 2-ю и 3-ю буквы (OAB -> OBA)."""
+    if len(angle_name) == 3 and angle_name.startswith("O"):
+        return f"O{angle_name[2]}{angle_name[1]}"
+    return angle_name
 
 
 # -----------------------------------------------------------------------------

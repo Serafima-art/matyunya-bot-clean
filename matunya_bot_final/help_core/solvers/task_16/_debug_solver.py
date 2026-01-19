@@ -186,7 +186,8 @@ if __name__ == "__main__":
         # ТЕМА 1: Центральные и вписанные углы (central_and_inscribed_angles)
         # -------------------------------------------------------------
         # TEST_PATTERN = "cyclic_quad_angles"
-        TEST_PATTERN = "central_inscribed"
+        # TEST_PATTERN = "central_inscribed"
+        TEST_PATTERN = "radius_chord_angles"
 
         # Сколько случайных задач брать ИЗ КАЖДОГО нарратива
         TEST_LIMIT_PER_NARRATIVE = 10

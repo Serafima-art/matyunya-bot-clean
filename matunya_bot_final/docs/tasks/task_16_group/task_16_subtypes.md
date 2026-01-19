@@ -28,11 +28,13 @@ narratives:
 
 ## Паттерн 1.3 radius_chord_angles
 narratives:
-- abc_oab_to_bco
+- find_part_angle (Как на сканах)
 ∠ABC = 103°, ∠OAB = 24°. Найдите ∠BCO.
 ∠ABC = 50°, ∠OAB = 35°. Найдите ∠BCO.
 ∠ABC = 46°, ∠OAB = 28°. Найдите ∠BCO.
 ∠ABC = 76°, ∠OAB = 33°. Найдите ∠BCO.
+
+- find_whole_angle (Обратная задача)
 
 ## Паттерн 1.4 arc_length_ratio
 narratives:

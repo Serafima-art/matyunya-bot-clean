@@ -43,10 +43,25 @@ IDEA_TEMPLATES: Dict[str, str] = {
         "Центральный и вписанный углы опираются на одну и ту же дугу.\n"
         "В этом случае центральный угол <b>в 2 раза больше</b> вписанного."
     ),
+    # --- radius_chord_angles ---
+    "find_part_angle": (
+        "Радиус, проведённый из центра окружности к вершине угла, "
+        "разбивает этот угол на две части.\n"
+        "Каждая часть находится через равнобедренный треугольник, "
+        "а зная весь угол и одну часть, можно найти вторую."
+    ),
+    "find_whole_angle": (
+        "Искомый угол разбит радиусом на два маленьких угла.\n"
+        "Мы не знаем их сразу, но можем найти их через свойства "
+        "равнобедренных треугольников (ведь радиусы равны).\n"
+        "Затем просто сложим найденные части."
+    ),
 }
 
 STEP_TEMPLATES: Dict[str, str] = {
-    # --- cyclic_quad_angles ---
+    # ------------------------------------------------------------------
+    # cyclic_quad_angles
+    # ------------------------------------------------------------------
     "STEP_GIVEN_FIND": (
         "<b>Шаг 1.</b> Условие задачи.\n"
         "Дано: <b>{given_text}</b>.\n"
@@ -98,7 +113,10 @@ STEP_TEMPLATES: Dict[str, str] = {
         "{whole_val}° − {alien_val}° = {answer}°</b>"
     ),
 
-    # --- central_inscribed ---
+    # ------------------------------------------------------------------
+    # central_inscribed
+    # ------------------------------------------------------------------
+
     "STEP_CI_GIVEN_FIND": (
         "<b>Шаг 1.</b> Условие задачи.\n"
         "Дано: <b>{given_text}</b>.\n"
@@ -127,6 +145,64 @@ STEP_TEMPLATES: Dict[str, str] = {
         "<b>Шаг 3.</b> Вычислим неизвестный угол.\n"
         "➡️ <b>∠{target} = 2 · {given_val}° = {answer}°</b>"
     ),
+
+    # ------------------------------------------------------------------
+    # radius_chord_angles
+    # ------------------------------------------------------------------
+
+    "STEP_RADIUS_GIVEN_FIND": (
+        "<b>Шаг 1.</b> Условие задачи.\n"
+        "Дано: <b>{given_text}</b>.\n"
+        "Найти: <b>{target_text}</b>."
+    ),
+
+    "STEP_RADIUS_TRIANGLES": (
+        "<b>Шаг 2.</b> Соединим центр <b>O</b> с точкой <b>{vertex}</b>.\n"
+        "Мы получили два треугольника: <b>Δ{iso_tri_1}</b> и <b>Δ{iso_tri_2}</b>.\n"
+        "Так как их стороны — это радиусы окружности, то они равны\n"
+        "(<b>{radii_equality}</b>).\n"
+        "Значит, эти треугольники — <b>равнобедренные</b>."
+    ),
+
+    # --- find_part_angle ---
+    "STEP_RADIUS_WHOLE_SUM": (
+        "<b>Шаг 3.</b> Угол <b>∠{whole}</b> состоит из двух частей:\n"
+        "➡️ <b>∠{whole} = ∠{known_base_name} + ∠{target_base_name}</b>"
+    ),
+
+    "STEP_RADIUS_ISO_PROPS": (
+        "<b>Шаг 4.</b> В равнобедренном треугольнике углы при основании равны.\n"
+        "➡️ <b>∠{known_base_name} = ∠{known} = {known_val}°</b>\n"
+        "➡️ <b>∠{target_base_name} = ∠{target}</b> (это угол, который ищем)"
+    ),
+
+     "STEP_RADIUS_SUBSTITUTION": (
+        "<b>Шаг 5.</b> Заменим в формуле углы на им равные:\n"
+        "➡️ <b>∠{whole} = ∠{known} + ∠{target}</b>\n"
+        "Значит:\n"
+        "➡️ <b>∠{target} = ∠{whole} − ∠{known}</b>"
+    ),
+
+    "STEP_RADIUS_FINAL_CALC": (
+        "<b>Шаг 6.</b> Выполним вычисление.\n"
+        "➡️ <b>∠{target} = {whole_val}° − {known_val}° = {answer}°</b>"
+    ),
+
+    # --- find_whole_angle ---
+
+    "STEP_RADIUS_EQUAL_BASE_DOUBLE": (
+        "<b>Шаг 3.</b> В равнобедренных треугольниках углы при основании равны:\n"
+        "➡️ <b>∠{equal1_left} = ∠{equal1_right} = {equal1_val}°</b>\n"
+        "➡️ <b>∠{equal2_left} = ∠{equal2_right} = {equal2_val}°</b>"
+    ),
+
+    "STEP_RADIUS_SUM_CALC": (
+        "<b>Шаг 4.</b> Угол <b>∠{target}</b> состоит из суммы двух углов:\n"
+        "➡️ <b>∠{target} = ∠{part1_base_name} + ∠{part2_base_name}</b>\n\n"
+        "Заменим в формуле углы на им равные и вычислим:\n"
+        "➡️ <b>∠{target} = ∠{part1} + ∠{part2}</b>\n"
+        "➡️ <b>∠{target} = {part1_val}° + {part2_val}° = {answer}°</b>."
+    ),
 }
 
 TIPS_TEMPLATES: Dict[str, str] = {
@@ -138,6 +214,10 @@ TIPS_TEMPLATES: Dict[str, str] = {
         "это две пересекающиеся диагонали.\n"
         "Углы, которые «смотрят» на одну и ту же дугу окружности в таком бантике, всегда равны.\n"
     ),
+
+    # ------------------------------------------------------------------
+    # central_inscribed
+    # ------------------------------------------------------------------
     "central_inscribed_boss": (
         "🧠 Запомни:\n"
         "центральный угол (вершина в центре окружности) — это босс,\n"
@@ -149,6 +229,23 @@ TIPS_TEMPLATES: Dict[str, str] = {
         "ищем вписанный → делим на 2\n"
         "ищем центральный → умножаем на 2\n\n"
         "❗️В бланке ОГЭ в ответ записывай только число, без значка градусов."
+    ),
+    # ------------------------------------------------------------------
+    # radius_chord_angles
+    # ------------------------------------------------------------------
+    "radius_find_part_angle": (
+        "Если радиус соединяет центр окружности с вершиной угла,\n"
+        "то этот угол можно рассматривать как сумму двух частей.\n"
+        "Каждая часть находится через равнобедренный треугольник.\n\n"
+        "Зная весь угол и одну часть, вторую часть\n"
+        "находим вычитанием."
+    ),
+
+    "radius_find_whole_angle": (
+        "Радиус, проведённый из центра окружности к вершине угла,\n"
+        "делит этот угол на две части.\n\n"
+        "Чтобы найти весь угол,\n"
+        "нужно сложить эти две части."
     ),
 }
 
@@ -200,6 +297,30 @@ NARRATIVE_PROFILES: Dict[str, Dict[str, Any]] = {
         "steps": ["STEP_CI_GIVEN_FIND", "STEP_CI_RULE_DOUBLE", "STEP_CI_CALC_MUL"],
         "tips_key": "central_inscribed_boss",
         "required_fields": ["angle_given_name", "angle_given_val", "angle_target_name", "arc_name"],
+    },
+
+    # --- radius_chord_angles ---
+    "find_part_angle": {
+        "steps": [
+            "STEP_GIVEN_FIND",
+            "STEP_RADIUS_TRIANGLES", # Шаг 2
+            "STEP_RADIUS_WHOLE_SUM",
+            "STEP_RADIUS_ISO_PROPS",
+            "STEP_RADIUS_SUBSTITUTION",
+            "STEP_RADIUS_FINAL_CALC"
+        ],
+        # ВНИМАНИЕ: Исправлен ключ на тот, что есть в словаре TIPS_TEMPLATES
+        "tips_key": "radius_find_part_angle"
+    },
+
+    "find_whole_angle": {
+        "steps": [
+            "STEP_RADIUS_GIVEN_FIND",
+            "STEP_RADIUS_TRIANGLES",
+            "STEP_RADIUS_EQUAL_BASE_DOUBLE",
+            "STEP_RADIUS_SUM_CALC",
+        ],
+        "tips_key": "radius_find_whole_angle",
     },
 }
 
@@ -326,12 +447,145 @@ def _ctx_central_inscribed(raw_vars: Dict[str, Any]) -> Dict[str, Any]:
     return ctx
 
 
+def _ctx_radius_find_part(raw_vars: Dict[str, Any]) -> Dict[str, Any]:
+    ctx = _base_context(raw_vars)
+
+    known_name = raw_vars["angle_known_part_name"]  # OAB
+    target_name = raw_vars["angle_target_name"]      # BCO
+    whole_name = raw_vars["angle_whole_name"]        # ABC
+
+    # 1. Определяем Главную Вершину (середина целого угла)
+    # Если ABC, то B. Если MNK, то N.
+    vertex = whole_name[1] if len(whole_name) > 1 else "B"
+
+    # 2. Формируем строку равенства радиусов (OA = OB = OC)
+    p1, p2, p3 = whole_name[0], whole_name[1], whole_name[2]
+    radii_equality = f"O{p1} = O{p2} = O{p3}"
+
+    # 3. Функция для правильного имени угла при основании (O + Vertex + Other)
+    def make_base_name(angle_name, vert):
+        # Удаляем O и Vertex, остается третья буква
+        chars = list(angle_name)
+        if "O" in chars: chars.remove("O")
+        if vert in chars: chars.remove(vert)
+        other = chars[0] if chars else ""
+        return f"O{vert}{other}"
+
+    # 4. Генерируем правильные имена
+    known_base_name = make_base_name(known_name, vertex)   # OAB -> OBA
+    target_base_name = make_base_name(target_name, vertex) # BCO -> OBC
+
+    # 5. Имена треугольников (AOB, BOC)
+    # Берем "Other" из base_name (последняя буква)
+    iso_tri_1 = f"{known_base_name[-1]}O{vertex}"
+    iso_tri_2 = f"{target_base_name[-1]}O{vertex}"
+
+    ctx.update(
+        whole=whole_name,
+        whole_val=format_oge_number(raw_vars["angle_whole_val"]),
+
+        known_part=known_name, # Как в условии
+        known=known_name,
+        known_val=format_oge_number(raw_vars["angle_known_part_val"]),
+
+        target=target_name, # Как в условии
+        target_name=target_name,
+
+        # Сгенерированные ПРАВИЛЬНЫЕ имена для решения
+        known_base_name=known_base_name,
+        target_base_name=target_base_name,
+
+        iso_tri_1=iso_tri_1,
+        iso_tri_2=iso_tri_2,
+        vertex=vertex,
+        radii_equality=radii_equality,
+
+        given_text=(
+            f"∠{raw_vars['angle_whole_name']} = "
+            f"{format_oge_number(raw_vars['angle_whole_val'])}°, "
+            f"∠{raw_vars['angle_known_part_name']} = "
+            f"{format_oge_number(raw_vars['angle_known_part_val'])}°"
+        ),
+        target_text=f"∠{raw_vars['angle_target_name']}",
+    )
+    return ctx
+
+def _ctx_radius_find_whole(raw_vars: Dict[str, Any]) -> Dict[str, Any]:
+    ctx = _base_context(raw_vars)
+
+    part1 = raw_vars["angle_part1_name"] # OAB
+    part2 = raw_vars["angle_part2_name"] # BCO
+    target = raw_vars["angle_target_name"] # ABC
+
+    # 1. Вершина (B)
+    vertex = target[1] if len(target) > 1 else "B"
+
+    # 2. Радиусы
+    p1, p2, p3 = target[0], target[1], target[2]
+    radii_equality = f"O{p1} = O{p2} = O{p3}"
+
+    # 3. Функция-помощник (строит имя угла при вершине: O + Vertex + Other)
+    def make_base_name(angle_name, vert):
+        chars = list(angle_name)
+        if "O" in chars: chars.remove("O")
+        if vert in chars: chars.remove(vert)
+        other = chars[0] if chars else ""
+        return f"O{vert}{other}"
+
+    # 4. Генерируем имена
+    # part1 (OAB) -> base1 (OBA)
+    base1 = make_base_name(part1, vertex)
+    # part2 (BCO) -> base2 (OBC)
+    base2 = make_base_name(part2, vertex)
+
+    # Имена треугольников (AOB, BOC)
+    tri1_display = f"{base1[-1]}O{vertex}"
+    tri2_display = f"{base2[-1]}O{vertex}"
+
+    ctx.update(
+        part1=part1,
+        part1_val=format_oge_number(raw_vars["angle_part1_val"]),
+
+        part2=part2,
+        part2_val=format_oge_number(raw_vars["angle_part2_val"]),
+
+        target=target,
+
+        # Переменные для шагов
+        vertex=vertex,
+        radii_equality=radii_equality,
+        iso_tri_1=tri1_display,
+        iso_tri_2=tri2_display,
+
+        # Углы при основании (для формулы суммы)
+        part1_base_name=base1,
+        part2_base_name=base2,
+
+        # Для шага с равенством (Слева база = Справа известно)
+        equal1_left=base1,
+        equal1_right=part1,
+        equal1_val=format_oge_number(raw_vars["angle_part1_val"]),
+
+        equal2_left=base2,
+        equal2_right=part2,
+        equal2_val=format_oge_number(raw_vars["angle_part2_val"]),
+
+        given_text=(
+            f"∠{part1} = {format_oge_number(raw_vars['angle_part1_val'])}°, "
+            f"∠{part2} = {format_oge_number(raw_vars['angle_part2_val'])}°"
+        ),
+        target_text=f"∠{target}",
+    )
+    return ctx
+
 _CONTEXT_BUILDERS: Dict[str, Callable[[Dict[str, Any]], Dict[str, Any]]] = {
     "opposite_sum": _ctx_opposite_sum,
     "part_sum": _ctx_part_sum,
     "part_diff": _ctx_part_diff,
     "find_inscribed_by_central": _ctx_central_inscribed,
     "find_central_by_inscribed": _ctx_central_inscribed,
+    "find_part_angle": _ctx_radius_find_part,
+    "find_whole_angle": _ctx_radius_find_whole,
 }
 
 # =============================================================================
@@ -389,10 +643,17 @@ def humanize(solution_core: Dict[str, Any]) -> str:
 
     parts.append(f"\n🎯 Ответ: <b>{context.get('answer')}</b>.")
 
+    # Блок СОВЕТЫ (Универсальная логика)
     tips_key = profile.get("tips_key", "common")
-    tips_text = TIPS_TEMPLATES.get(tips_key, TIPS_TEMPLATES["common"])
-    if tips_key == "arc_hint":
-        tips_text = f"{TIPS_TEMPLATES['arc_hint']}\n{TIPS_TEMPLATES['common']}"
+
+    # Берем специфичный совет, если он есть, иначе общий
+    specific_tip = TIPS_TEMPLATES.get(tips_key, TIPS_TEMPLATES["common"])
+
+    # Если ключ не "common", значит это спец. совет -> добавляем к нему общий хвост
+    if tips_key != "common":
+        tips_text = f"{specific_tip}\n{TIPS_TEMPLATES['common']}"
+    else:
+        tips_text = specific_tip
 
     parts.append(f"\n\n✨ <b>Полезно знать</b>\n{tips_text}")
 

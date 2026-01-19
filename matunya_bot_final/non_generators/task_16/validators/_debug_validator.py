@@ -26,7 +26,7 @@ from typing import Optional, Dict, Any, List
 # НАСТРОЙКИ
 # ---------------------------------------------------------------------
 
-TARGET_PATTERN = "central_inscribed"
+TARGET_PATTERN = "radius_chord_angles"
 DEFINITIONS_FILE = "central_and_inscribed_angles.txt"
 OUTPUT_FILENAME = "debug_validator_output.txt"
 

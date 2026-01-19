@@ -382,11 +382,155 @@ class CentralAndInscribedAnglesValidator:
         return True, []
 
     # =========================================================================
-    # ЗАГЛУШКИ ДЛЯ ОСТАЛЬНЫХ ПАТТЕРНОВ
+    # ПАТТЕРН 1.3: radius_chord_angles
     # =========================================================================
 
     def _validate_radius_chord_angles(self, task: Dict[str, Any]) -> Tuple[bool, List[str]]:
-        return True, []
+        errors = []
+        text = task.get("question_text", "")
+        raw_narrative = task.get("narrative")
+        answer = task.get("answer")
+
+        # ------------------------------------------------------------------
+        # 1. Маппинг нарративов (8 длинных → 2 логических)
+        # ------------------------------------------------------------------
+        NARRATIVE_MAP = {
+            # --- Ищем ЧАСТЬ (вычитание) ---
+            "radius_chord_acute_abc_find_part": "find_part_angle",
+            "radius_chord_obtuse_abc_find_part": "find_part_angle",
+            "radius_chord_acute_mnk_find_part": "find_part_angle",
+            "radius_chord_obtuse_mnk_find_part": "find_part_angle",
+
+            # --- Ищем ЦЕЛОЕ (сложение) ---
+            "radius_chord_acute_abc_find_whole": "find_whole_angle",
+            "radius_chord_obtuse_abc_find_whole": "find_whole_angle",
+            "radius_chord_acute_mnk_find_whole": "find_whole_angle",
+            "radius_chord_obtuse_mnk_find_whole": "find_whole_angle",
+        }
+
+        logic_mode = NARRATIVE_MAP.get(raw_narrative)
+        if not logic_mode:
+            errors.append(f"Неизвестный или некорректный нарратив: {raw_narrative}")
+            return False, errors
+
+        # ------------------------------------------------------------------
+        # 2. Парсинг известных углов
+        # ------------------------------------------------------------------
+        angles_found = []
+        for m in self.angle_regex.finditer(text):
+            name = m.group(1).upper()
+            val_str = m.group(2).replace(',', '.')
+            try:
+                val = float(val_str)
+                if val.is_integer(): val = int(val)
+                angles_found.append((name, val))
+            except ValueError:
+                continue
+
+        if len(angles_found) != 2:
+            errors.append(f"Ожидалось 2 известных угла, найдено {len(angles_found)}: {angles_found}")
+            return False, errors
+
+        # 3. Парсинг искомого угла
+        target_match = self.find_regex.search(text)
+        target_name = target_match.group(1).upper() if target_match else "???"
+
+        try:
+            # 4. Выбор КАРТИНКИ (по частям длинного нарратива)
+            parts = raw_narrative.split("_")
+            # Ожидаем формат: radius_chord_[GEO]_[FIG]_[LOGIC]_[MODE]
+            # parts: [0]radius, [1]chord, [2]acute, [3]abc, ...
+
+            geo_type = parts[2]  # acute / obtuse
+            fig_type = parts[3]  # abc / mnk
+
+            img_name = f"radius_chord_{geo_type}_{fig_type}"
+            task_image = f"task_{img_name}.png"
+            help_image = f"help_{img_name}.png"
+
+            # 5. Логика распределения ролей (Целое vs Часть)
+            task_context = {}
+            calc_answer = 0
+
+            # Сортировка: угол С буквой 'O' -> Part, угол БЕЗ буквы 'O' -> Whole
+            parts_found = []
+            whole_found = []
+
+            for ang in angles_found:
+                if "O" in ang[0]:
+                    parts_found.append(ang)
+                else:
+                    whole_found.append(ang)
+
+            # --- ВЕТКА 1: ИЩЕМ ЧАСТЬ (Вычитание) ---
+            if logic_mode == "find_part_angle":
+                if len(whole_found) != 1 or len(parts_found) != 1:
+                    errors.append(f"Для find_part нужны 1 Целый угол и 1 Часть. Найдено: Whole={whole_found}, Parts={parts_found}")
+                    return False, errors
+
+                whole = whole_found[0]
+                known_part = parts_found[0]
+
+                calc_answer = whole[1] - known_part[1]
+
+                if calc_answer <= 0:
+                    errors.append(f"Ошибка: Отрицательный или нулевой ответ ({calc_answer}). Проверь числа.")
+
+                task_context = {
+                    "narrative_type": raw_narrative, # Длинное имя для отладки
+                    "angle_whole_name": whole[0],
+                    "angle_whole_val": whole[1],
+                    "angle_known_part_name": known_part[0],
+                    "angle_known_part_val": known_part[1],
+                    "angle_target_name": target_name,
+                    # fig_type нужен хьюмонайзеру, чтобы определить вершину B/N если имена сложные
+                    "fig_type": fig_type
+                }
+
+            # --- ВЕТКА 2: ИЩЕМ ЦЕЛОЕ (Сложение) ---
+            elif logic_mode == "find_whole_angle":
+                if len(parts_found) != 2:
+                    errors.append(f"Для find_whole нужны 2 Части (с буквой O). Найдено: {parts_found}")
+                    return False, errors
+
+                part1 = parts_found[0]
+                part2 = parts_found[1]
+
+                calc_answer = part1[1] + part2[1]
+
+                task_context = {
+                    "narrative_type": raw_narrative,
+                    "angle_part1_name": part1[0],
+                    "angle_part1_val": part1[1],
+                    "angle_part2_name": part2[0],
+                    "angle_part2_val": part2[1],
+                    "angle_target_name": target_name,
+                    # ДОБАВЛЕНО: Явное указание на Целое (для симметрии архитектуры)
+                    "angle_whole_name": target_name,
+                    "fig_type": fig_type
+                }
+
+            # 6. Проверка ответа
+            if answer is not None and int(answer) != -1:
+                if abs(float(calc_answer) - float(answer)) > 0.01:
+                    errors.append(f"Математическая ошибка: {calc_answer} != {answer}")
+
+            # 7. Финализация
+            task["image_file"] = task_image
+            task["help_image_file"] = help_image
+            task["task_context"] = task_context
+            task["narrative"] = logic_mode # Короткое имя для Решателя
+            task["answer"] = calc_answer
+
+        except Exception as e:
+            errors.append(f"Ошибка логики валидатора 1.3: {e}")
+            return False, errors
+
+        return True, errors
+
+    # =========================================================================
+    # ЗАГЛУШКИ ДЛЯ ОСТАЛЬНЫХ ПАТТЕРНОВ
+    # =========================================================================
 
     def _validate_arc_length_ratio(self, task: Dict[str, Any]) -> Tuple[bool, List[str]]:
         return True, []

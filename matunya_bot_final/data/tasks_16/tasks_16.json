@@ -5118,5 +5118,1545 @@
       "angle_inscribed_val": 61,
       "arc_name": "DF"
     }
+  },
+  {
+    "id": 1600289,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки A, B и C лежат на окружности с центром в точке O. ∠ABC=76°, ∠OAB=33°. Найди ∠BCO.",
+    "answer": 43,
+    "image_file": "task_radius_chord_acute_abc.png",
+    "help_image_file": "help_radius_chord_acute_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 76,
+      "angle_known_part_name": "OAB",
+      "angle_known_part_val": 33,
+      "angle_target_name": "BCO",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600290,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "На окружности с центром в точке O лежат точки A, B, C. Найди ∠BCO, если ∠ABC=66°, ∠OAB=41°.",
+    "answer": 25,
+    "image_file": "task_radius_chord_acute_abc.png",
+    "help_image_file": "help_radius_chord_acute_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 66,
+      "angle_known_part_name": "OAB",
+      "angle_known_part_val": 41,
+      "angle_target_name": "BCO",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600291,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки A, B и C лежат на окружности с центром в точке O. ∠ABC=68°, ∠OAB=25°. Найди ∠BCO.",
+    "answer": 43,
+    "image_file": "task_radius_chord_acute_abc.png",
+    "help_image_file": "help_radius_chord_acute_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 68,
+      "angle_known_part_name": "OAB",
+      "angle_known_part_val": 25,
+      "angle_target_name": "BCO",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600292,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "На окружности с центром в точке O лежат точки A, B, C. Найди ∠BCO, если ∠ABC=74°, ∠OAB=39°.",
+    "answer": 35,
+    "image_file": "task_radius_chord_acute_abc.png",
+    "help_image_file": "help_radius_chord_acute_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 74,
+      "angle_known_part_name": "OAB",
+      "angle_known_part_val": 39,
+      "angle_target_name": "BCO",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600293,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки A, B и C лежат на окружности с центром в точке O. ∠ABC=59°, ∠OAB=22°. Найди ∠BCO.",
+    "answer": 37,
+    "image_file": "task_radius_chord_acute_abc.png",
+    "help_image_file": "help_radius_chord_acute_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 59,
+      "angle_known_part_name": "OAB",
+      "angle_known_part_val": 22,
+      "angle_target_name": "BCO",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600294,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "На окружности с центром в точке O лежат точки A, B, C. Найди ∠BCO, если ∠ABC=58°, ∠OAB=28°.",
+    "answer": 30,
+    "image_file": "task_radius_chord_acute_abc.png",
+    "help_image_file": "help_radius_chord_acute_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 58,
+      "angle_known_part_name": "OAB",
+      "angle_known_part_val": 28,
+      "angle_target_name": "BCO",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600295,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки A, B и C лежат на окружности с центром в точке O. ∠ABC=63°, ∠OAB=29°. Найди ∠BCO.",
+    "answer": 34,
+    "image_file": "task_radius_chord_acute_abc.png",
+    "help_image_file": "help_radius_chord_acute_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 63,
+      "angle_known_part_name": "OAB",
+      "angle_known_part_val": 29,
+      "angle_target_name": "BCO",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600296,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки A, B и C лежат на окружности с центром в точке O. ∠ABC=73°, ∠BCO=43°. Найди ∠OAB.",
+    "answer": 30,
+    "image_file": "task_radius_chord_acute_abc.png",
+    "help_image_file": "help_radius_chord_acute_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 73,
+      "angle_known_part_name": "BCO",
+      "angle_known_part_val": 43,
+      "angle_target_name": "OAB",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600297,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "На окружности с центром в точке O лежат точки A, B, C. Найди ∠OAB, если ∠ABC=82°, ∠BCO=45°.",
+    "answer": 37,
+    "image_file": "task_radius_chord_acute_abc.png",
+    "help_image_file": "help_radius_chord_acute_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 82,
+      "angle_known_part_name": "BCO",
+      "angle_known_part_val": 45,
+      "angle_target_name": "OAB",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600298,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки A, B и C лежат на окружности с центром в точке O. ∠ABC=67°, ∠BCO=48°. Найди ∠OAB.",
+    "answer": 19,
+    "image_file": "task_radius_chord_acute_abc.png",
+    "help_image_file": "help_radius_chord_acute_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 67,
+      "angle_known_part_name": "BCO",
+      "angle_known_part_val": 48,
+      "angle_target_name": "OAB",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600299,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "На окружности с центром в точке O лежат точки A, B, C. Найди ∠OAB, если ∠ABC=71°, ∠BCO=35°.",
+    "answer": 36,
+    "image_file": "task_radius_chord_acute_abc.png",
+    "help_image_file": "help_radius_chord_acute_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 71,
+      "angle_known_part_name": "BCO",
+      "angle_known_part_val": 35,
+      "angle_target_name": "OAB",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600300,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки A, B и C лежат на окружности с центром в точке O. ∠ABC=61°, ∠BCO=37°. Найди ∠OAB.",
+    "answer": 24,
+    "image_file": "task_radius_chord_acute_abc.png",
+    "help_image_file": "help_radius_chord_acute_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 61,
+      "angle_known_part_name": "BCO",
+      "angle_known_part_val": 37,
+      "angle_target_name": "OAB",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600301,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "На окружности с центром в точке O лежат точки A, B, C. Найди ∠OAB, если ∠ABC=85°, ∠BCO=38°.",
+    "answer": 47,
+    "image_file": "task_radius_chord_acute_abc.png",
+    "help_image_file": "help_radius_chord_acute_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 85,
+      "angle_known_part_name": "BCO",
+      "angle_known_part_val": 38,
+      "angle_target_name": "OAB",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600302,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки A, B и C лежат на окружности с центром в точке O. ∠ABC=83°, ∠BCO=34°. Найди ∠OAB.",
+    "answer": 49,
+    "image_file": "task_radius_chord_acute_abc.png",
+    "help_image_file": "help_radius_chord_acute_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 83,
+      "angle_known_part_name": "BCO",
+      "angle_known_part_val": 34,
+      "angle_target_name": "OAB",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600303,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки A, B и C лежат на окружности с центром в точке O. ∠ABC=101°, ∠OAB=33°. Найди ∠BCO.",
+    "answer": 68,
+    "image_file": "task_radius_chord_obtuse_abc.png",
+    "help_image_file": "help_radius_chord_obtuse_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 101,
+      "angle_known_part_name": "OAB",
+      "angle_known_part_val": 33,
+      "angle_target_name": "BCO",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600304,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "На окружности с центром в точке O лежат точки A, B, C. Найди ∠BCO, если ∠ABC=122°, ∠OAB=41°.",
+    "answer": 81,
+    "image_file": "task_radius_chord_obtuse_abc.png",
+    "help_image_file": "help_radius_chord_obtuse_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 122,
+      "angle_known_part_name": "OAB",
+      "angle_known_part_val": 41,
+      "angle_target_name": "BCO",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600305,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки A, B и C лежат на окружности с центром в точке O. ∠ABC=96°, ∠OAB=25°. Найди ∠BCO.",
+    "answer": 71,
+    "image_file": "task_radius_chord_obtuse_abc.png",
+    "help_image_file": "help_radius_chord_obtuse_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 96,
+      "angle_known_part_name": "OAB",
+      "angle_known_part_val": 25,
+      "angle_target_name": "BCO",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600306,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "На окружности с центром в точке O лежат точки A, B, C. Найди ∠BCO, если ∠ABC=104°, ∠OAB=39°.",
+    "answer": 65,
+    "image_file": "task_radius_chord_obtuse_abc.png",
+    "help_image_file": "help_radius_chord_obtuse_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 104,
+      "angle_known_part_name": "OAB",
+      "angle_known_part_val": 39,
+      "angle_target_name": "BCO",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600307,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки A, B и C лежат на окружности с центром в точке O. ∠ABC=113°, ∠OAB=22°. Найди ∠BCO.",
+    "answer": 91,
+    "image_file": "task_radius_chord_obtuse_abc.png",
+    "help_image_file": "help_radius_chord_obtuse_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 113,
+      "angle_known_part_name": "OAB",
+      "angle_known_part_val": 22,
+      "angle_target_name": "BCO",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600308,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "На окружности с центром в точке O лежат точки A, B, C. Найди ∠BCO, если ∠ABC=111°, ∠OAB=28°.",
+    "answer": 83,
+    "image_file": "task_radius_chord_obtuse_abc.png",
+    "help_image_file": "help_radius_chord_obtuse_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 111,
+      "angle_known_part_name": "OAB",
+      "angle_known_part_val": 28,
+      "angle_target_name": "BCO",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600309,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки A, B и C лежат на окружности с центром в точке O. ∠ABC=100°, ∠OAB=29°. Найди ∠BCO.",
+    "answer": 71,
+    "image_file": "task_radius_chord_obtuse_abc.png",
+    "help_image_file": "help_radius_chord_obtuse_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 100,
+      "angle_known_part_name": "OAB",
+      "angle_known_part_val": 29,
+      "angle_target_name": "BCO",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600310,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки A, B и C лежат на окружности с центром в точке O. ∠ABC=112°, ∠BCO=43°. Найди ∠OAB.",
+    "answer": 69,
+    "image_file": "task_radius_chord_obtuse_abc.png",
+    "help_image_file": "help_radius_chord_obtuse_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 112,
+      "angle_known_part_name": "BCO",
+      "angle_known_part_val": 43,
+      "angle_target_name": "OAB",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600311,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "На окружности с центром в точке O лежат точки A, B, C. Найди ∠OAB, если ∠ABC=99°, ∠BCO=46°.",
+    "answer": 53,
+    "image_file": "task_radius_chord_obtuse_abc.png",
+    "help_image_file": "help_radius_chord_obtuse_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 99,
+      "angle_known_part_name": "BCO",
+      "angle_known_part_val": 46,
+      "angle_target_name": "OAB",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600312,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки A, B и C лежат на окружности с центром в точке O. ∠ABC=119°, ∠BCO=48°. Найди ∠OAB.",
+    "answer": 71,
+    "image_file": "task_radius_chord_obtuse_abc.png",
+    "help_image_file": "help_radius_chord_obtuse_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 119,
+      "angle_known_part_name": "BCO",
+      "angle_known_part_val": 48,
+      "angle_target_name": "OAB",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600313,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "На окружности с центром в точке O лежат точки A, B, C. Найди ∠OAB, если ∠ABC=124°, ∠BCO=45°.",
+    "answer": 79,
+    "image_file": "task_radius_chord_obtuse_abc.png",
+    "help_image_file": "help_radius_chord_obtuse_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 124,
+      "angle_known_part_name": "BCO",
+      "angle_known_part_val": 45,
+      "angle_target_name": "OAB",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600314,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки A, B и C лежат на окружности с центром в точке O. ∠ABC=131°, ∠BCO=44°. Найди ∠OAB.",
+    "answer": 87,
+    "image_file": "task_radius_chord_obtuse_abc.png",
+    "help_image_file": "help_radius_chord_obtuse_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 131,
+      "angle_known_part_name": "BCO",
+      "angle_known_part_val": 44,
+      "angle_target_name": "OAB",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600315,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "На окружности с центром в точке O лежат точки A, B, C. Найди ∠OAB, если ∠ABC=121°, ∠BCO=38°.",
+    "answer": 83,
+    "image_file": "task_radius_chord_obtuse_abc.png",
+    "help_image_file": "help_radius_chord_obtuse_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 121,
+      "angle_known_part_name": "BCO",
+      "angle_known_part_val": 38,
+      "angle_target_name": "OAB",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600316,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки A, B и C лежат на окружности с центром в точке O. ∠ABC=102°, ∠BCO=34°. Найди ∠OAB.",
+    "answer": 68,
+    "image_file": "task_radius_chord_obtuse_abc.png",
+    "help_image_file": "help_radius_chord_obtuse_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_abc_find_part",
+      "angle_whole_name": "ABC",
+      "angle_whole_val": 102,
+      "angle_known_part_name": "BCO",
+      "angle_known_part_val": 34,
+      "angle_target_name": "OAB",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600317,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки M, N и K лежат на окружности с центром в точке O. ∠MNK=72°, ∠OMN=30°. Найди ∠OKN.",
+    "answer": 42,
+    "image_file": "task_radius_chord_acute_mnk.png",
+    "help_image_file": "help_radius_chord_acute_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 72,
+      "angle_known_part_name": "OMN",
+      "angle_known_part_val": 30,
+      "angle_target_name": "OKN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600318,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "На окружности с центром в точке O лежат точки M, N, K. Найди ∠OKN, если ∠MNK=64°, ∠OMN=27°.",
+    "answer": 37,
+    "image_file": "task_radius_chord_acute_mnk.png",
+    "help_image_file": "help_radius_chord_acute_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 64,
+      "angle_known_part_name": "OMN",
+      "angle_known_part_val": 27,
+      "angle_target_name": "OKN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600319,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки M, N и K лежат на окружности с центром в точке O. ∠MNK=81°, ∠OMN=21°. Найди ∠OKN.",
+    "answer": 60,
+    "image_file": "task_radius_chord_acute_mnk.png",
+    "help_image_file": "help_radius_chord_acute_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 81,
+      "angle_known_part_name": "OMN",
+      "angle_known_part_val": 21,
+      "angle_target_name": "OKN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600320,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "На окружности с центром в точке O лежат точки M, N, K. Найди ∠OKN, если ∠MNK=57°, ∠OMN=24°.",
+    "answer": 33,
+    "image_file": "task_radius_chord_acute_mnk.png",
+    "help_image_file": "help_radius_chord_acute_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 57,
+      "angle_known_part_name": "OMN",
+      "angle_known_part_val": 24,
+      "angle_target_name": "OKN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600321,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки M, N и K лежат на окружности с центром в точке O. ∠MNK=70°, ∠OMN=36°. Найди ∠OKN.",
+    "answer": 34,
+    "image_file": "task_radius_chord_acute_mnk.png",
+    "help_image_file": "help_radius_chord_acute_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 70,
+      "angle_known_part_name": "OMN",
+      "angle_known_part_val": 36,
+      "angle_target_name": "OKN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600322,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "На окружности с центром в точке O лежат точки M, N, K. Найди ∠OKN, если ∠MNK=69°, ∠OMN=31°.",
+    "answer": 38,
+    "image_file": "task_radius_chord_acute_mnk.png",
+    "help_image_file": "help_radius_chord_acute_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 69,
+      "angle_known_part_name": "OMN",
+      "angle_known_part_val": 31,
+      "angle_target_name": "OKN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600323,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки M, N и K лежат на окружности с центром в точке O. ∠MNK=84°, ∠OMN=40°. Найди ∠OKN.",
+    "answer": 44,
+    "image_file": "task_radius_chord_acute_mnk.png",
+    "help_image_file": "help_radius_chord_acute_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 84,
+      "angle_known_part_name": "OMN",
+      "angle_known_part_val": 40,
+      "angle_target_name": "OKN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600324,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки M, N и K лежат на окружности с центром в точке O. ∠MNK=75°, ∠OKN=42°. Найди ∠OMN.",
+    "answer": 33,
+    "image_file": "task_radius_chord_acute_mnk.png",
+    "help_image_file": "help_radius_chord_acute_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 75,
+      "angle_known_part_name": "OKN",
+      "angle_known_part_val": 42,
+      "angle_target_name": "OMN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600325,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "На окружности с центром в точке O лежат точки M, N, K. Найди ∠OMN, если ∠MNK=65°, ∠OKN=46°.",
+    "answer": 19,
+    "image_file": "task_radius_chord_acute_mnk.png",
+    "help_image_file": "help_radius_chord_acute_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 65,
+      "angle_known_part_name": "OKN",
+      "angle_known_part_val": 46,
+      "angle_target_name": "OMN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600326,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки M, N и K лежат на окружности с центром в точке O. ∠MNK=80°, ∠OKN=39°. Найди ∠OMN.",
+    "answer": 41,
+    "image_file": "task_radius_chord_acute_mnk.png",
+    "help_image_file": "help_radius_chord_acute_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 80,
+      "angle_known_part_name": "OKN",
+      "angle_known_part_val": 39,
+      "angle_target_name": "OMN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600327,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "На окружности с центром в точке O лежат точки M, N, K. Найди ∠OMN, если ∠MNK=62°, ∠OKN=34°.",
+    "answer": 28,
+    "image_file": "task_radius_chord_acute_mnk.png",
+    "help_image_file": "help_radius_chord_acute_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 62,
+      "angle_known_part_name": "OKN",
+      "angle_known_part_val": 34,
+      "angle_target_name": "OMN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600328,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки M, N и K лежат на окружности с центром в точке O. ∠MNK=77°, ∠OKN=40°. Найди ∠OMN.",
+    "answer": 37,
+    "image_file": "task_radius_chord_acute_mnk.png",
+    "help_image_file": "help_radius_chord_acute_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 77,
+      "angle_known_part_name": "OKN",
+      "angle_known_part_val": 40,
+      "angle_target_name": "OMN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600329,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "На окружности с центром в точке O лежат точки M, N, K. Найди ∠OMN, если ∠MNK=86°, ∠OKN=38°.",
+    "answer": 48,
+    "image_file": "task_radius_chord_acute_mnk.png",
+    "help_image_file": "help_radius_chord_acute_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 86,
+      "angle_known_part_name": "OKN",
+      "angle_known_part_val": 38,
+      "angle_target_name": "OMN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600330,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки M, N и K лежат на окружности с центром в точке O. ∠MNK=78°, ∠OKN=55°. Найди ∠OMN.",
+    "answer": 23,
+    "image_file": "task_radius_chord_acute_mnk.png",
+    "help_image_file": "help_radius_chord_acute_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 78,
+      "angle_known_part_name": "OKN",
+      "angle_known_part_val": 55,
+      "angle_target_name": "OMN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600331,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки M, N и K лежат на окружности с центром в точке O. ∠MNK=129°, ∠OMN=40°. Найди ∠OKN.",
+    "answer": 89,
+    "image_file": "task_radius_chord_obtuse_mnk.png",
+    "help_image_file": "help_radius_chord_obtuse_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 129,
+      "angle_known_part_name": "OMN",
+      "angle_known_part_val": 40,
+      "angle_target_name": "OKN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600332,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "На окружности с центром в точке O лежат точки M, N, K. Найди ∠OKN, если ∠MNK=128°, ∠OMN=48°.",
+    "answer": 80,
+    "image_file": "task_radius_chord_obtuse_mnk.png",
+    "help_image_file": "help_radius_chord_obtuse_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 128,
+      "angle_known_part_name": "OMN",
+      "angle_known_part_val": 48,
+      "angle_target_name": "OKN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600333,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки M, N и K лежат на окружности с центром в точке O. ∠MNK=130°, ∠OMN=45°. Найди ∠OKN.",
+    "answer": 85,
+    "image_file": "task_radius_chord_obtuse_mnk.png",
+    "help_image_file": "help_radius_chord_obtuse_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 130,
+      "angle_known_part_name": "OMN",
+      "angle_known_part_val": 45,
+      "angle_target_name": "OKN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600334,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "На окружности с центром в точке O лежат точки M, N, K. Найди ∠OKN, если ∠MNK=127°, ∠OMN=51°.",
+    "answer": 76,
+    "image_file": "task_radius_chord_obtuse_mnk.png",
+    "help_image_file": "help_radius_chord_obtuse_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 127,
+      "angle_known_part_name": "OMN",
+      "angle_known_part_val": 51,
+      "angle_target_name": "OKN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600335,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки M, N и K лежат на окружности с центром в точке O. ∠MNK=134°, ∠OMN=56°. Найди ∠OKN.",
+    "answer": 78,
+    "image_file": "task_radius_chord_obtuse_mnk.png",
+    "help_image_file": "help_radius_chord_obtuse_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 134,
+      "angle_known_part_name": "OMN",
+      "angle_known_part_val": 56,
+      "angle_target_name": "OKN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600336,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "На окружности с центром в точке O лежат точки M, N, K. Найди ∠OKN, если ∠MNK=110°, ∠OMN=31°.",
+    "answer": 79,
+    "image_file": "task_radius_chord_obtuse_mnk.png",
+    "help_image_file": "help_radius_chord_obtuse_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 110,
+      "angle_known_part_name": "OMN",
+      "angle_known_part_val": 31,
+      "angle_target_name": "OKN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600337,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки M, N и K лежат на окружности с центром в точке O. ∠MNK=106°, ∠OMN=40°. Найди ∠OKN.",
+    "answer": 66,
+    "image_file": "task_radius_chord_obtuse_mnk.png",
+    "help_image_file": "help_radius_chord_obtuse_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 106,
+      "angle_known_part_name": "OMN",
+      "angle_known_part_val": 40,
+      "angle_target_name": "OKN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600338,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки M, N и K лежат на окружности с центром в точке O. ∠MNK=107°, ∠OKN=42°. Найди ∠OMN.",
+    "answer": 65,
+    "image_file": "task_radius_chord_obtuse_mnk.png",
+    "help_image_file": "help_radius_chord_obtuse_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 107,
+      "angle_known_part_name": "OKN",
+      "angle_known_part_val": 42,
+      "angle_target_name": "OMN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600339,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "На окружности с центром в точке O лежат точки M, N, K. Найди ∠OMN, если ∠MNK=125°, ∠OKN=41°.",
+    "answer": 84,
+    "image_file": "task_radius_chord_obtuse_mnk.png",
+    "help_image_file": "help_radius_chord_obtuse_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 125,
+      "angle_known_part_name": "OKN",
+      "angle_known_part_val": 41,
+      "angle_target_name": "OMN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600340,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки M, N и K лежат на окружности с центром в точке O. ∠MNK=101°, ∠OKN=35°. Найди ∠OMN.",
+    "answer": 66,
+    "image_file": "task_radius_chord_obtuse_mnk.png",
+    "help_image_file": "help_radius_chord_obtuse_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 101,
+      "angle_known_part_name": "OKN",
+      "angle_known_part_val": 35,
+      "angle_target_name": "OMN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600341,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "На окружности с центром в точке O лежат точки M, N, K. Найди ∠OMN, если ∠MNK=113°, ∠OKN=34°.",
+    "answer": 79,
+    "image_file": "task_radius_chord_obtuse_mnk.png",
+    "help_image_file": "help_radius_chord_obtuse_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 113,
+      "angle_known_part_name": "OKN",
+      "angle_known_part_val": 34,
+      "angle_target_name": "OMN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600342,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки M, N и K лежат на окружности с центром в точке O. ∠MNK=124°, ∠OKN=49°. Найди ∠OMN.",
+    "answer": 75,
+    "image_file": "task_radius_chord_obtuse_mnk.png",
+    "help_image_file": "help_radius_chord_obtuse_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 124,
+      "angle_known_part_name": "OKN",
+      "angle_known_part_val": 49,
+      "angle_target_name": "OMN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600343,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "На окружности с центром в точке O лежат точки M, N, K. Найди ∠OMN, если ∠MNK=102°, ∠OKN=38°.",
+    "answer": 64,
+    "image_file": "task_radius_chord_obtuse_mnk.png",
+    "help_image_file": "help_radius_chord_obtuse_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 102,
+      "angle_known_part_name": "OKN",
+      "angle_known_part_val": 38,
+      "angle_target_name": "OMN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600344,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_part_angle",
+    "question_text": "Точки M, N и K лежат на окружности с центром в точке O. ∠MNK=123°, ∠OKN=44°. Найди ∠OMN.",
+    "answer": 79,
+    "image_file": "task_radius_chord_obtuse_mnk.png",
+    "help_image_file": "help_radius_chord_obtuse_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_mnk_find_part",
+      "angle_whole_name": "MNK",
+      "angle_whole_val": 123,
+      "angle_known_part_name": "OKN",
+      "angle_known_part_val": 44,
+      "angle_target_name": "OMN",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600345,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "Точки A, B и C лежат на окружности с центром в точке O. ∠OAB=25°, ∠BCO=40°. Найди ∠ABC.",
+    "answer": 65,
+    "image_file": "task_radius_chord_acute_abc.png",
+    "help_image_file": "help_radius_chord_acute_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_abc_find_whole",
+      "angle_part1_name": "OAB",
+      "angle_part1_val": 25,
+      "angle_part2_name": "BCO",
+      "angle_part2_val": 40,
+      "angle_target_name": "ABC",
+      "angle_whole_name": "ABC",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600346,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "На окружности с центром в точке O лежат точки A, B, C. Найди ∠ABC, если ∠OAB=30°, ∠BCO=45°.",
+    "answer": 75,
+    "image_file": "task_radius_chord_acute_abc.png",
+    "help_image_file": "help_radius_chord_acute_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_abc_find_whole",
+      "angle_part1_name": "OAB",
+      "angle_part1_val": 30,
+      "angle_part2_name": "BCO",
+      "angle_part2_val": 45,
+      "angle_target_name": "ABC",
+      "angle_whole_name": "ABC",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600347,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "Точки A, B и C лежат на окружности с центром в точке O. ∠OAB=15°, ∠BCO=50°. Найди ∠ABC.",
+    "answer": 65,
+    "image_file": "task_radius_chord_acute_abc.png",
+    "help_image_file": "help_radius_chord_acute_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_abc_find_whole",
+      "angle_part1_name": "OAB",
+      "angle_part1_val": 15,
+      "angle_part2_name": "BCO",
+      "angle_part2_val": 50,
+      "angle_target_name": "ABC",
+      "angle_whole_name": "ABC",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600348,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "На окружности с центром в точке O лежат точки A, B, C. Найди ∠ABC, если ∠OAB=22°, ∠BCO=38°.",
+    "answer": 60,
+    "image_file": "task_radius_chord_acute_abc.png",
+    "help_image_file": "help_radius_chord_acute_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_abc_find_whole",
+      "angle_part1_name": "OAB",
+      "angle_part1_val": 22,
+      "angle_part2_name": "BCO",
+      "angle_part2_val": 38,
+      "angle_target_name": "ABC",
+      "angle_whole_name": "ABC",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600349,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "Точки A, B и C лежат на окружности с центром в точке O. ∠OAB=31°, ∠BCO=44°. Найди ∠ABC.",
+    "answer": 75,
+    "image_file": "task_radius_chord_acute_abc.png",
+    "help_image_file": "help_radius_chord_acute_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_abc_find_whole",
+      "angle_part1_name": "OAB",
+      "angle_part1_val": 31,
+      "angle_part2_name": "BCO",
+      "angle_part2_val": 44,
+      "angle_target_name": "ABC",
+      "angle_whole_name": "ABC",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600350,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "На окружности с центром в точке O лежат точки A, B, C. Найди ∠ABC, если ∠OAB=18°, ∠BCO=52°.",
+    "answer": 70,
+    "image_file": "task_radius_chord_acute_abc.png",
+    "help_image_file": "help_radius_chord_acute_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_abc_find_whole",
+      "angle_part1_name": "OAB",
+      "angle_part1_val": 18,
+      "angle_part2_name": "BCO",
+      "angle_part2_val": 52,
+      "angle_target_name": "ABC",
+      "angle_whole_name": "ABC",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600351,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "Точки A, B и C лежат на окружности с центром в точке O. ∠OAB=33°, ∠BCO=47°. Найди ∠ABC.",
+    "answer": 80,
+    "image_file": "task_radius_chord_acute_abc.png",
+    "help_image_file": "help_radius_chord_acute_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_abc_find_whole",
+      "angle_part1_name": "OAB",
+      "angle_part1_val": 33,
+      "angle_part2_name": "BCO",
+      "angle_part2_val": 47,
+      "angle_target_name": "ABC",
+      "angle_whole_name": "ABC",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600352,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "Точки A, B и C лежат на окружности с центром в точке O. ∠OAB=55°, ∠BCO=48°. Найди ∠ABC.",
+    "answer": 103,
+    "image_file": "task_radius_chord_obtuse_abc.png",
+    "help_image_file": "help_radius_chord_obtuse_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_abc_find_whole",
+      "angle_part1_name": "OAB",
+      "angle_part1_val": 55,
+      "angle_part2_name": "BCO",
+      "angle_part2_val": 48,
+      "angle_target_name": "ABC",
+      "angle_whole_name": "ABC",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600353,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "На окружности с центром в точке O лежат точки A, B, C. Найди ∠ABC, если ∠OAB=60°, ∠BCO=50°.",
+    "answer": 110,
+    "image_file": "task_radius_chord_obtuse_abc.png",
+    "help_image_file": "help_radius_chord_obtuse_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_abc_find_whole",
+      "angle_part1_name": "OAB",
+      "angle_part1_val": 60,
+      "angle_part2_name": "BCO",
+      "angle_part2_val": 50,
+      "angle_target_name": "ABC",
+      "angle_whole_name": "ABC",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600354,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "Точки A, B и C лежат на окружности с центром в точке O. ∠OAB=45°, ∠BCO=55°. Найди ∠ABC.",
+    "answer": 100,
+    "image_file": "task_radius_chord_obtuse_abc.png",
+    "help_image_file": "help_radius_chord_obtuse_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_abc_find_whole",
+      "angle_part1_name": "OAB",
+      "angle_part1_val": 45,
+      "angle_part2_name": "BCO",
+      "angle_part2_val": 55,
+      "angle_target_name": "ABC",
+      "angle_whole_name": "ABC",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600355,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "На окружности с центром в точке O лежат точки A, B, C. Найди ∠ABC, если ∠OAB=70°, ∠BCO=42°.",
+    "answer": 112,
+    "image_file": "task_radius_chord_obtuse_abc.png",
+    "help_image_file": "help_radius_chord_obtuse_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_abc_find_whole",
+      "angle_part1_name": "OAB",
+      "angle_part1_val": 70,
+      "angle_part2_name": "BCO",
+      "angle_part2_val": 42,
+      "angle_target_name": "ABC",
+      "angle_whole_name": "ABC",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600356,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "Точки A, B и C лежат на окружности с центром в точке O. ∠OAB=35°, ∠BCO=66°. Найди ∠ABC.",
+    "answer": 101,
+    "image_file": "task_radius_chord_obtuse_abc.png",
+    "help_image_file": "help_radius_chord_obtuse_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_abc_find_whole",
+      "angle_part1_name": "OAB",
+      "angle_part1_val": 35,
+      "angle_part2_name": "BCO",
+      "angle_part2_val": 66,
+      "angle_target_name": "ABC",
+      "angle_whole_name": "ABC",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600357,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "На окружности с центром в точке O лежат точки A, B, C. Найди ∠ABC, если ∠OAB=58°, ∠BCO=64°.",
+    "answer": 122,
+    "image_file": "task_radius_chord_obtuse_abc.png",
+    "help_image_file": "help_radius_chord_obtuse_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_abc_find_whole",
+      "angle_part1_name": "OAB",
+      "angle_part1_val": 58,
+      "angle_part2_name": "BCO",
+      "angle_part2_val": 64,
+      "angle_target_name": "ABC",
+      "angle_whole_name": "ABC",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600358,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "Точки A, B и C лежат на окружности с центром в точке O. ∠OAB=49°, ∠BCO=75°. Найди ∠ABC.",
+    "answer": 124,
+    "image_file": "task_radius_chord_obtuse_abc.png",
+    "help_image_file": "help_radius_chord_obtuse_abc.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_abc_find_whole",
+      "angle_part1_name": "OAB",
+      "angle_part1_val": 49,
+      "angle_part2_name": "BCO",
+      "angle_part2_val": 75,
+      "angle_target_name": "ABC",
+      "angle_whole_name": "ABC",
+      "fig_type": "abc"
+    }
+  },
+  {
+    "id": 1600359,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "Точки M, N и K лежат на окружности с центром в точке O. ∠OMN=20°, ∠OKN=35°. Найди ∠MNK.",
+    "answer": 55,
+    "image_file": "task_radius_chord_acute_mnk.png",
+    "help_image_file": "help_radius_chord_acute_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_mnk_find_whole",
+      "angle_part1_name": "OMN",
+      "angle_part1_val": 20,
+      "angle_part2_name": "OKN",
+      "angle_part2_val": 35,
+      "angle_target_name": "MNK",
+      "angle_whole_name": "MNK",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600360,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "На окружности с центром в точке O лежат точки M, N, K. Найди ∠MNK, если ∠OMN=40°, ∠OKN=42°.",
+    "answer": 82,
+    "image_file": "task_radius_chord_acute_mnk.png",
+    "help_image_file": "help_radius_chord_acute_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_mnk_find_whole",
+      "angle_part1_name": "OMN",
+      "angle_part1_val": 40,
+      "angle_part2_name": "OKN",
+      "angle_part2_val": 42,
+      "angle_target_name": "MNK",
+      "angle_whole_name": "MNK",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600361,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "Точки M, N и K лежат на окружности с центром в точке O. ∠OMN=15°, ∠OKN=25°. Найди ∠MNK.",
+    "answer": 40,
+    "image_file": "task_radius_chord_acute_mnk.png",
+    "help_image_file": "help_radius_chord_acute_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_mnk_find_whole",
+      "angle_part1_name": "OMN",
+      "angle_part1_val": 15,
+      "angle_part2_name": "OKN",
+      "angle_part2_val": 25,
+      "angle_target_name": "MNK",
+      "angle_whole_name": "MNK",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600362,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "На окружности с центром в точке O лежат точки M, N, K. Найди ∠MNK, если ∠OMN=33°, ∠OKN=37°.",
+    "answer": 70,
+    "image_file": "task_radius_chord_acute_mnk.png",
+    "help_image_file": "help_radius_chord_acute_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_mnk_find_whole",
+      "angle_part1_name": "OMN",
+      "angle_part1_val": 33,
+      "angle_part2_name": "OKN",
+      "angle_part2_val": 37,
+      "angle_target_name": "MNK",
+      "angle_whole_name": "MNK",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600363,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "Точки M, N и K лежат на окружности с центром в точке O. ∠OMN=28°, ∠OKN=48°. Найди ∠MNK.",
+    "answer": 76,
+    "image_file": "task_radius_chord_acute_mnk.png",
+    "help_image_file": "help_radius_chord_acute_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_mnk_find_whole",
+      "angle_part1_name": "OMN",
+      "angle_part1_val": 28,
+      "angle_part2_name": "OKN",
+      "angle_part2_val": 48,
+      "angle_target_name": "MNK",
+      "angle_whole_name": "MNK",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600364,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "На окружности с центром в точке O лежат точки M, N, K. Найди ∠MNK, если ∠OMN=19°, ∠OKN=51°.",
+    "answer": 70,
+    "image_file": "task_radius_chord_acute_mnk.png",
+    "help_image_file": "help_radius_chord_acute_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_mnk_find_whole",
+      "angle_part1_name": "OMN",
+      "angle_part1_val": 19,
+      "angle_part2_name": "OKN",
+      "angle_part2_val": 51,
+      "angle_target_name": "MNK",
+      "angle_whole_name": "MNK",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600365,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "Точки M, N и K лежат на окружности с центром в точке O. ∠OMN=36°, ∠OKN=44°. Найди ∠MNK.",
+    "answer": 80,
+    "image_file": "task_radius_chord_acute_mnk.png",
+    "help_image_file": "help_radius_chord_acute_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_acute_mnk_find_whole",
+      "angle_part1_name": "OMN",
+      "angle_part1_val": 36,
+      "angle_part2_name": "OKN",
+      "angle_part2_val": 44,
+      "angle_target_name": "MNK",
+      "angle_whole_name": "MNK",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600366,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "Точки M, N и K лежат на окружности с центром в точке O. ∠OMN=55°, ∠OKN=65°. Найди ∠MNK.",
+    "answer": 120,
+    "image_file": "task_radius_chord_obtuse_mnk.png",
+    "help_image_file": "help_radius_chord_obtuse_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_mnk_find_whole",
+      "angle_part1_name": "OMN",
+      "angle_part1_val": 55,
+      "angle_part2_name": "OKN",
+      "angle_part2_val": 65,
+      "angle_target_name": "MNK",
+      "angle_whole_name": "MNK",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600367,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "На окружности с центром в точке O лежат точки M, N, K. Найди ∠MNK, если ∠OMN=48°, ∠OKN=53°.",
+    "answer": 101,
+    "image_file": "task_radius_chord_obtuse_mnk.png",
+    "help_image_file": "help_radius_chord_obtuse_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_mnk_find_whole",
+      "angle_part1_name": "OMN",
+      "angle_part1_val": 48,
+      "angle_part2_name": "OKN",
+      "angle_part2_val": 53,
+      "angle_target_name": "MNK",
+      "angle_whole_name": "MNK",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600368,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "Точки M, N и K лежат на окружности с центром в точке O. ∠OMN=72°, ∠OKN=39°. Найди ∠MNK.",
+    "answer": 111,
+    "image_file": "task_radius_chord_obtuse_mnk.png",
+    "help_image_file": "help_radius_chord_obtuse_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_mnk_find_whole",
+      "angle_part1_name": "OMN",
+      "angle_part1_val": 72,
+      "angle_part2_name": "OKN",
+      "angle_part2_val": 39,
+      "angle_target_name": "MNK",
+      "angle_whole_name": "MNK",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600369,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "На окружности с центром в точке O лежат точки M, N, K. Найди ∠MNK, если ∠OMN=61°, ∠OKN=59°.",
+    "answer": 120,
+    "image_file": "task_radius_chord_obtuse_mnk.png",
+    "help_image_file": "help_radius_chord_obtuse_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_mnk_find_whole",
+      "angle_part1_name": "OMN",
+      "angle_part1_val": 61,
+      "angle_part2_name": "OKN",
+      "angle_part2_val": 59,
+      "angle_target_name": "MNK",
+      "angle_whole_name": "MNK",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600370,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "Точки M, N и K лежат на окружности с центром в точке O. ∠OMN=45°, ∠OKN=55°. Найди ∠MNK.",
+    "answer": 100,
+    "image_file": "task_radius_chord_obtuse_mnk.png",
+    "help_image_file": "help_radius_chord_obtuse_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_mnk_find_whole",
+      "angle_part1_name": "OMN",
+      "angle_part1_val": 45,
+      "angle_part2_name": "OKN",
+      "angle_part2_val": 55,
+      "angle_target_name": "MNK",
+      "angle_whole_name": "MNK",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600371,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "На окружности с центром в точке O лежат точки M, N, K. Найди ∠MNK, если ∠OMN=50°, ∠OKN=71°.",
+    "answer": 121,
+    "image_file": "task_radius_chord_obtuse_mnk.png",
+    "help_image_file": "help_radius_chord_obtuse_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_mnk_find_whole",
+      "angle_part1_name": "OMN",
+      "angle_part1_val": 50,
+      "angle_part2_name": "OKN",
+      "angle_part2_val": 71,
+      "angle_target_name": "MNK",
+      "angle_whole_name": "MNK",
+      "fig_type": "mnk"
+    }
+  },
+  {
+    "id": 1600372,
+    "pattern": "radius_chord_angles",
+    "narrative": "find_whole_angle",
+    "question_text": "Точки M, N и K лежат на окружности с центром в точке O. ∠OMN=66°, ∠OKN=48°. Найди ∠MNK.",
+    "answer": 114,
+    "image_file": "task_radius_chord_obtuse_mnk.png",
+    "help_image_file": "help_radius_chord_obtuse_mnk.png",
+    "task_context": {
+      "narrative_type": "radius_chord_obtuse_mnk_find_whole",
+      "angle_part1_name": "OMN",
+      "angle_part1_val": 66,
+      "angle_part2_name": "OKN",
+      "angle_part2_val": 48,
+      "angle_target_name": "MNK",
+      "angle_whole_name": "MNK",
+      "fig_type": "mnk"
+    }
   }
 ]
