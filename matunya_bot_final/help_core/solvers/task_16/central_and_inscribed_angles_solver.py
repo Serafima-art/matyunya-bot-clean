@@ -356,6 +356,10 @@ def _solve_central_inscribed(task_data: Dict[str, Any]) -> Dict[str, Any]:
         "hints": [],
     }
 
+# =========================================================================
+# ПАТТЕРН 1.3: radius_chord_angles
+# =========================================================================
+
 def _solve_radius_chord_angles(task_data: Dict[str, Any]) -> Dict[str, Any]:
     context: Dict[str, Any] = task_data.get("task_context") or {}
     answer = task_data.get("answer")
@@ -457,15 +461,59 @@ def _normalize_radius_chord_narrative(raw: Optional[str]) -> Optional[str]:
 
     return None
 
+# =========================================================================
+# ПАТТЕРН 1.4: arc_length_ratio
+# =========================================================================
+
+def _solve_arc_length_ratio(task_data: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Паттерн 1.4: arc_length_ratio
+    Нарратив: small_to_large_arc
+    Канон: facts-only, без вычислений в humanizer.
+    """
+    context: Dict[str, Any] = task_data.get("task_context") or {}
+    answer = task_data.get("answer")
+
+    raw_narrative = context.get("narrative_type") or ""
+
+    # Нормализация narrative_type -> канон humanizer'а
+    # arc_length_ratio_small_to_large_arc_acute / obtuse -> small_to_large_arc
+    if "small_to_large_arc" in raw_narrative:
+        narrative_type = "small_to_large_arc"
+    else:
+        narrative_type = raw_narrative
+
+    facts: Dict[str, Any] = {
+        "narrative_type": narrative_type,
+        "answer": answer,
+
+        # факты для пропорции
+        "arc_name": context.get("arc_name"),
+        "small_arc_length": context.get("small_arc_length"),
+        "small_arc_angle": context.get("small_arc_angle"),
+        "large_arc_angle": context.get("large_arc_angle"),
+    }
+
+    idea_key = "IDEA_ARC_LENGTH_RATIO"
+
+    return {
+        "question_id": str(task_data.get("id")),
+        "question_group": "GEOMETRY_16",
+        "explanation_idea": idea_key,
+        "calculation_steps": [],
+        "final_answer": {
+            "value_machine": answer,
+            "value_display": str(answer) if answer is not None else "",
+            "unit": "",
+        },
+        "variables": facts,
+        "help_image": None,  # по канону
+        "hints": [],
+    }
 
 # =========================================================================
 # ЗАГЛУШКИ ДЛЯ ОСТАЛЬНЫХ ПАТТЕРНОВ
 # =========================================================================
-
-
-def _solve_arc_length_ratio(task_data: Dict[str, Any]) -> Dict[str, Any]:
-    return _get_stub_solution(task_data, "arc_length_ratio")
-
 
 def _solve_diameter_right_triangle(task_data: Dict[str, Any]) -> Dict[str, Any]:
     return _get_stub_solution(task_data, "diameter_right_triangle")

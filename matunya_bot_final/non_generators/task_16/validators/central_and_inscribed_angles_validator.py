@@ -529,11 +529,95 @@ class CentralAndInscribedAnglesValidator:
         return True, errors
 
     # =========================================================================
-    # ЗАГЛУШКИ ДЛЯ ОСТАЛЬНЫХ ПАТТЕРНОВ
+    # ПАТТЕРН 1.4: arc_length_ratio
     # =========================================================================
 
     def _validate_arc_length_ratio(self, task: Dict[str, Any]) -> Tuple[bool, List[str]]:
-        return True, []
+        errors = []
+        text = task.get("question_text", "")
+        narrative = task.get("narrative")
+        answer = task.get("answer")
+
+        # 1. Парсинг (Локальные Regex)
+        # Ищем угол: "∠DOF=21"
+        match_angle = re.search(r"∠\s*([A-Z])([A-Z])([A-Z])\s*=\s*(\d+)", text)
+        # Ищем длину: "равна 35"
+        match_len = re.search(r"равна\s+(\d+)", text)
+
+        if not match_angle or not match_len:
+            errors.append("Не удалось распарсить угол (∠...=) или длину дуги (равна X).")
+            return False, errors
+
+        # Извлекаем точки: D, O, F из ∠DOF
+        point_1 = match_angle.group(1) # D
+        center = match_angle.group(2)  # O
+        point_2 = match_angle.group(3) # F
+
+        angle_val = int(match_angle.group(4))
+        len_val = int(match_len.group(1))
+
+        final_calc_answer = None
+        task_context = {}
+        task_image = None
+        help_image = None # ⚠️ ВАЖНО: null, а не пустая строка
+
+        try:
+            if narrative == "small_to_large_arc":
+                # Логическая проверка
+                if angle_val <= 0 or angle_val >= 360:
+                    errors.append(f"Некорректный угол: {angle_val}")
+                    return False, errors
+
+                # Математика
+                large_arc_angle = 360 - angle_val
+
+                # Расчет ответа
+                val_float = len_val * (large_arc_angle / angle_val)
+
+                if abs(val_float - round(val_float)) > 1e-9:
+                    errors.append(f"Ответ не целый: {val_float}")
+                    return False, errors
+
+                final_calc_answer = int(round(val_float))
+
+                # Картинка и Тип
+                suffix = "acute" if angle_val < 90 else "obtuse"
+                task_image = f"task_arc_length_ratio_{suffix}.png"
+
+                # ⚠️ ВАЖНО: Чистый контекст без лишнего мусора
+                task_context = {
+                    "narrative_type": f"arc_length_ratio_{narrative}_{suffix}", # уточнение типа для аналитики
+                    "center": center,
+                    "arc_name": f"{point_1}{point_2}", # DF
+                    "small_arc_length": len_val,
+                    "small_arc_angle": angle_val,
+                    "large_arc_angle": large_arc_angle
+                }
+
+            else:
+                errors.append(f"Неизвестный нарратив: {narrative}")
+                return False, errors
+
+            # Проверка ответа
+            if answer is not None and str(answer).strip() != "" and int(answer) != -1:
+                if final_calc_answer != int(answer):
+                    errors.append(f"Математическая ошибка: Расчет {final_calc_answer} != Вход {answer}")
+
+            task["answer"] = final_calc_answer
+
+        except Exception as e:
+            errors.append(f"Exception: {str(e)}")
+            return False, errors
+
+        task["image_file"] = task_image
+        task["help_image_file"] = help_image # Теперь здесь точно None
+        task["task_context"] = task_context
+
+        return len(errors) == 0, errors
+
+    # =========================================================================
+    # ЗАГЛУШКИ ДЛЯ ОСТАЛЬНЫХ ПАТТЕРНОВ
+    # =========================================================================
 
     def _validate_two_diameters_angles(self, task: Dict[str, Any]) -> Tuple[bool, List[str]]:
         return True, []

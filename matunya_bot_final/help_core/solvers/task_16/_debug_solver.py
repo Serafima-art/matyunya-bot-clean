@@ -187,7 +187,8 @@ if __name__ == "__main__":
         # -------------------------------------------------------------
         # TEST_PATTERN = "cyclic_quad_angles"
         # TEST_PATTERN = "central_inscribed"
-        TEST_PATTERN = "radius_chord_angles"
+        # TEST_PATTERN = "radius_chord_angles"
+        TEST_PATTERN = "arc_length_ratio"
 
         # Сколько случайных задач брать ИЗ КАЖДОГО нарратива
         TEST_LIMIT_PER_NARRATIVE = 10
