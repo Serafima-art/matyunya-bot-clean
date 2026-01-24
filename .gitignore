@@ -19,3 +19,10 @@ __pycache__/
 .DS_Store
 .idea/
 .vscode/
+
+# Debug outputs
+debug_solver_16_output.txt
+debug_validator_output.txt
+
+# Local helpers
+python/
