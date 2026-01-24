@@ -1,0 +1,206 @@
+## Паттерн 2.1 secant_similarity
+
+# -------------------------------------------------------------------------
+# ГРУППА 1: abcd_find_small (Ищем BC)
+# Дано: AD (большая), BF, DF.
+# Формула: BC = AD * (BF / DF)
+# images: task_secant_similarity_abcd.png
+# -------------------------------------------------------------------------
+# narrative: abcd_find_small
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 8, DF = 24, AD = 18.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 5, DF = 15, AD = 12.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 6, DF = 12, AD = 10.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 4, DF = 16, AD = 20.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 10, DF = 25, AD = 15.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 7, DF = 21, AD = 24.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 9, DF = 18, AD = 14.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 12, DF = 36, AD = 21.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 3, DF = 12, AD = 16.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 15, DF = 20, AD = 16.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 8, DF = 12, AD = 9.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 6, DF = 18, AD = 27.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 14, DF = 28, AD = 22.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 5, DF = 10, AD = 18.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 10, DF = 30, AD = 33.
+
+# -------------------------------------------------------------------------
+# ГРУППА 2: abcd_find_large (Ищем AD)
+# Дано: BC (маленькая), BF, DF.
+# Формула: AD = BC * (DF / BF)
+# images: task_secant_similarity_abcd.png
+# -------------------------------------------------------------------------
+# narrative: abcd_find_large
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 8, DF = 24, BC = 6.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 5, DF = 15, BC = 4.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 6, DF = 12, BC = 7.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 4, DF = 16, BC = 5.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 10, DF = 25, BC = 8.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 7, DF = 21, BC = 9.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 9, DF = 18, BC = 11.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 12, DF = 36, BC = 10.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 3, DF = 12, BC = 4.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 15, DF = 20, BC = 12.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 8, DF = 12, BC = 10.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 6, DF = 18, BC = 5.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 14, DF = 28, BC = 13.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 5, DF = 10, BC = 6.
+secant_similarity|В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 10, DF = 30, BC = 12.
+
+# -------------------------------------------------------------------------
+# ГРУППА 3: prst_find_small (Ищем RS)
+# Дано: PT (большая), UR, UT.
+# Формула: RS = PT * (UR / UT)
+# task_secant_similarity_prst.png
+# -------------------------------------------------------------------------
+# narrative: prst_find_small
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 6, UT = 18, PT = 15.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 4, UT = 12, PT = 21.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 8, UT = 16, PT = 20.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 5, UT = 20, PT = 24.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 10, UT = 25, PT = 30.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 7, UT = 21, PT = 27.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 9, UT = 18, PT = 22.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 12, UT = 36, PT = 33.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 3, UT = 15, PT = 25.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 15, UT = 20, PT = 28.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 8, UT = 12, PT = 18.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 6, UT = 24, PT = 32.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 14, UT = 28, PT = 26.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 5, UT = 15, PT = 12.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 11, UT = 22, PT = 30.
+
+# -------------------------------------------------------------------------
+# ГРУППА 4: prst_find_large (Ищем PT)
+# Дано: RS (маленькая), UR, UT.
+# Формула: PT = RS * (UT / UR)
+# task_secant_similarity_prst.png
+# -------------------------------------------------------------------------
+# narrative: prst_find_large
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 6, UT = 18, RS = 5.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 4, UT = 12, RS = 7.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 8, UT = 16, RS = 9.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 5, UT = 20, RS = 6.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 10, UT = 25, RS = 12.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 7, UT = 21, RS = 8.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 9, UT = 18, RS = 11.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 12, UT = 36, RS = 10.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 3, UT = 15, RS = 5.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 15, UT = 20, RS = 21.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 8, UT = 12, RS = 12.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 6, UT = 24, RS = 8.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 14, UT = 28, RS = 13.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 5, UT = 15, RS = 4.
+secant_similarity|В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 11, UT = 33, RS = 9.
+
+## Паттерн 2.2 tangent_trapezoid_properties
+
+# narrative: inradius_find_height (image: task_inradius_find_height.png)
+tangent_trapezoid_properties|В равнобедренную трапецию ABCD вписана окружность с радиусом r = 6. Найди высоту h трапеции.
+tangent_trapezoid_properties|В равнобедренную трапецию ABCD вписана окружность с радиусом r = 7. Найди высоту h трапеции.
+tangent_trapezoid_properties|В равнобедренную трапецию ABCD вписана окружность с радиусом r = 8. Найди высоту h трапеции.
+tangent_trapezoid_properties|В равнобедренную трапецию ABCD вписана окружность с радиусом r = 9. Найди высоту h трапеции.
+tangent_trapezoid_properties|В равнобедренную трапецию ABCD вписана окружность с радиусом r = 10. Найди высоту h трапеции.
+
+tangent_trapezoid_properties|В равнобедренную трапецию ABCD вписана окружность с радиусом r = 11. Найди высоту h трапеции.
+tangent_trapezoid_properties|В равнобедренную трапецию ABCD вписана окружность с радиусом r = 12. Найди высоту h трапеции.
+tangent_trapezoid_properties|В равнобедренную трапецию ABCD вписана окружность с радиусом r = 13. Найди высоту h трапеции.
+tangent_trapezoid_properties|В равнобедренную трапецию ABCD вписана окружность с радиусом r = 14. Найди высоту h трапеции.
+tangent_trapezoid_properties|В равнобедренную трапецию ABCD вписана окружность с радиусом r = 15. Найди высоту h трапеции.
+
+tangent_trapezoid_properties|В равнобедренную трапецию ABCD вписана окружность с радиусом r = 16. Найди высоту h трапеции.
+tangent_trapezoid_properties|В равнобедренную трапецию ABCD вписана окружность с радиусом r = 18. Найди высоту h трапеции.
+tangent_trapezoid_properties|В равнобедренную трапецию ABCD вписана окружность с радиусом r = 20. Найди высоту h трапеции.
+tangent_trapezoid_properties|В равнобедренную трапецию ABCD вписана окружность с радиусом r = 22. Найди высоту h трапеции.
+tangent_trapezoid_properties|В равнобедренную трапецию ABCD вписана окружность с радиусом r = 24. Найди высоту h трапеции.
+
+tangent_trapezoid_properties|В равнобедренную трапецию ABCD вписана окружность с радиусом r = 25. Найди высоту h трапеции.
+tangent_trapezoid_properties|В равнобедренную трапецию ABCD вписана окружность с радиусом r = 27. Найди высоту h трапеции.
+tangent_trapezoid_properties|В равнобедренную трапецию ABCD вписана окружность с радиусом r = 30. Найди высоту h трапеции.
+tangent_trapezoid_properties|В равнобедренную трапецию ABCD вписана окружность с радиусом r = 36. Найди высоту h трапеции.
+tangent_trapezoid_properties|В равнобедренную трапецию ABCD вписана окружность с радиусом r = 54. Найди высоту h трапеции.
+
+##narratives: tangent_trapezoid_find_midline (разделён архитектурно на два нарратива)
+# narrative: tangent_trapezoid_find_midline_via_sides (image: task_tangent_trapezoid_find_midline.png)
+## известны боковые стороны (KL и MN)
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 11, а MN = 15.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 8, а MN = 14.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 9, а MN = 13.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 12, а MN = 18.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 7, а MN = 17.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 10, а MN = 16.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 6, а MN = 12.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 15, а MN = 21.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 14, а MN = 20.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 9, а MN = 19.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 13, а MN = 17.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 16, а MN = 22.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 5, а MN = 11.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 18, а MN = 24.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 12, а MN = 14.
+
+# narrative: tangent_trapezoid_find_midline_via_bases (image: task_tangent_trapezoid_find_midline.png)
+##известны основания (LM и KN)
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 8, а KN = 18.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 10, а KN = 22.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 12, а KN = 20.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 7, а KN = 17.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 9, а KN = 15.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 11, а KN = 25.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 14, а KN = 26.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 6, а KN = 16.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 13, а KN = 19.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 15, а KN = 27.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 16, а KN = 24.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 5, а KN = 21.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 18, а KN = 30.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 9, а KN = 23.
+tangent_trapezoid_properties|Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 12, а KN = 28.
+
+# narrative: tangent_trapezoid_find_base
+##Найди CD
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 12, AB = 5, BC = 7. Найди CD.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 18, AB = 9, BC = 11. Найди CD.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 20, AB = 8, BC = 14. Найди CD.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 15, AB = 6, BC = 9. Найди CD.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 22, AB = 10, BC = 12. Найди CD.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 16, AB = 7, BC = 13. Найди CD.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 14, AB = 5, BC = 9. Найди CD.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 26, AB = 11, BC = 15. Найди CD.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 24, AB = 9, BC = 13. Найди CD.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 19, AB = 8, BC = 11. Найди CD.
+
+##Найди AB
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 14, CD = 6, BC = 10. Найди AB.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 18, CD = 7, BC = 11. Найди AB.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 20, CD = 9, BC = 13. Найди AB.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 16, CD = 8, BC = 12. Найди AB.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 22, CD = 10, BC = 14. Найди AB.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 15, CD = 5, BC = 9. Найди AB.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 24, CD = 11, BC = 15. Найди AB.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 26, CD = 12, BC = 16. Найди AB.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 19, CD = 7, BC = 11. Найди AB.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 21, CD = 9, BC = 13. Найди AB.
+
+##Найди AD
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AB = 6, CD = 10, BC = 12. Найди AD.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AB = 8, CD = 14, BC = 16. Найди AD.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AB = 7, CD = 13, BC = 15. Найди AD.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AB = 9, CD = 11, BC = 14. Найди AD.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AB = 10, CD = 16, BC = 18. Найди AD.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AB = 5, CD = 9, BC = 11. Найди AD.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AB = 11, CD = 17, BC = 19. Найди AD.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AB = 12, CD = 18, BC = 20. Найди AD.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AB = 8, CD = 12, BC = 14. Найди AD.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AB = 9, CD = 15, BC = 17. Найди AD.
+
+##Найди BC
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 15, AB = 8, CD = 12. Найди BC.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 18, AB = 10, CD = 14. Найди BC.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 20, AB = 11, CD = 15. Найди BC.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 14, AB = 9, CD = 10. Найди BC.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 24, AB = 13, CD = 17. Найди BC.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 26, AB = 14, CD = 18. Найди BC.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 12, AB = 8, CD = 9. Найди BC.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 16, AB = 10, CD = 12. Найди BC.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 21, AB = 12, CD = 15. Найди BC.
+tangent_trapezoid_properties|Окружность вписана в трапецию ABCD. AD = 28, AB = 15, CD = 19. Найди BC.

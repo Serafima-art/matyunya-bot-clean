@@ -43,6 +43,8 @@ class CentralAndInscribedAnglesValidator:
             is_valid, errors = self._validate_radius_chord_angles(task)
         elif pattern == "arc_length_ratio":
             is_valid, errors = self._validate_arc_length_ratio(task)
+        elif pattern == "diameter_right_triangle":
+            is_valid, errors = self._validate_diameter_right_triangle(task)
         elif pattern == "two_diameters_angles":
             is_valid, errors = self._validate_two_diameters_angles(task)
         else:
@@ -615,12 +617,267 @@ class CentralAndInscribedAnglesValidator:
 
         return len(errors) == 0, errors
 
+
     # =========================================================================
-    # ЗАГЛУШКИ ДЛЯ ОСТАЛЬНЫХ ПАТТЕРНОВ
+    # ПАТТЕРН 1.5: diameter_right_triangle
+    # =========================================================================
+
+    def _validate_diameter_right_triangle(self, task: Dict[str, Any]) -> Tuple[bool, List[str]]:
+        errors = []
+        text = task.get("question_text", "")
+        narrative = task.get("narrative")
+        answer = task.get("answer")
+
+        # 1. Парсинг (Regex)
+
+        # Ищем сторону, на которой лежит центр (Гипотенуза): "лежит на стороне AC"
+        match_hypot = re.search(r"на стороне\s+([A-Z]{2})", text)
+
+        # Ищем радиус: "Радиус OA равен 5" или "Радиус окружности равен 13"
+        # Группы: 1=(OA|окружности), 2=Значение (может быть float 25.5)
+        match_radius = re.search(r"Радиус\s+([A-Z]{2}|окружности).*?равен\s+(\d+(?:\.\d+)?)", text)
+
+        # Ищем вопрос и условие: "Найдите AB, если BC = 24"
+        # Группы: 1=Найти(AB), 2=Дано(BC), 3=Значение
+        match_query = re.search(r"Найди(?:те)?\s+([A-Z]{2}).*?если\s+([A-Z]{2})\s*=\s*(\d+)", text)
+
+        if not (match_hypot and match_radius and match_query):
+            errors.append("Не удалось распарсить условие (сторона, радиус или вопрос).")
+            return False, errors
+
+        # Извлекаем данные из Regex
+        diameter_side = match_hypot.group(1) # Например, AC
+
+        radius_name_raw = match_radius.group(1)
+        radius_val = float(match_radius.group(2)) # 13.0 или 25.5
+
+        target_leg = match_query.group(1) # AB
+        known_leg = match_query.group(2)  # BC
+        known_leg_val = int(match_query.group(3)) # 24
+
+        # Определяем точку радиуса для контекста
+        # Если "OA" -> берем "A". Если "окружности" -> берем первую букву диаметра (fallback)
+        if len(radius_name_raw) == 2 and "O" in radius_name_raw:
+             radius_point = radius_name_raw.replace("O", "")
+        else:
+             radius_point = diameter_side[0]
+
+        # Определяем вершину прямого угла
+        # Это та буква треугольника, которой нет в названии диаметра.
+        # (Если диаметр AC, а треугольник ABC, то вершина B).
+        all_points = set(diameter_side + known_leg + target_leg)
+        right_angle_vertex = list(all_points - set(diameter_side))
+        right_angle_vertex = right_angle_vertex[0] if right_angle_vertex else "B"
+
+        triangle_name = "".join(sorted(list(all_points))) # ABC
+
+        final_calc_answer = None
+        task_context = {}
+
+        try:
+            if narrative == "center_on_side":
+                # Математика: b = sqrt((2R)^2 - a^2)
+                diameter_val = 2 * radius_val
+
+                # Геометрическая проверка (Гипотенуза > Катета)
+                if diameter_val <= known_leg_val:
+                    errors.append(f"Геометрическая ошибка: Диаметр ({diameter_val}) <= Катета ({known_leg_val})")
+                    return False, errors
+
+                hyp_sq = diameter_val ** 2
+                leg_sq = known_leg_val ** 2
+
+                res_sq = hyp_sq - leg_sq
+                res = res_sq ** 0.5
+
+                # Проверка на целочисленность (ОГЭ)
+                if abs(res - round(res)) > 1e-9:
+                    errors.append(f"Ответ не целый: {res}. Проверь входные данные (Пифагоровы тройки).")
+                    return False, errors
+
+                final_calc_answer = int(round(res))
+
+                # Сборка эталонного контекста
+                task_context = {
+                    "narrative_type": "center_on_side",
+
+                    "triangle": triangle_name,
+                    "center": "O",
+                    "diameter_side": diameter_side,
+
+                    "radius_point": radius_point,
+                    "radius_value": int(radius_val) if radius_val.is_integer() else radius_val,
+
+                    "right_angle_vertex": right_angle_vertex,
+
+                    "known_leg_name": known_leg,
+                    "known_leg_value": known_leg_val,
+
+                    "target_leg_name": target_leg
+                }
+            else:
+                errors.append(f"Неизвестный нарратив: {narrative}")
+                return False, errors
+
+            # Сверка ответа с входными данными
+            if answer is not None and str(answer).strip() != "" and int(answer) != -1:
+                if final_calc_answer != int(answer):
+                    errors.append(f"Математическая ошибка: Расчет {final_calc_answer} != Вход {answer}")
+
+            task["answer"] = final_calc_answer
+
+        except Exception as e:
+            errors.append(f"Exception: {str(e)}")
+            return False, errors
+
+        task["image_file"] = "task_diameter_right_triangle.png"
+        task["help_image_file"] = "help_diameter_right_triangle.png" # Здесь картинка-помощь НУЖНА (с квадратиком угла)
+        task["task_context"] = task_context
+
+        return len(errors) == 0, errors
+
+    # =========================================================================
+    # ПАТТЕРН 1.6: two_diameters_angles
     # =========================================================================
 
     def _validate_two_diameters_angles(self, task: Dict[str, Any]) -> Tuple[bool, List[str]]:
-        return True, []
+        errors = []
+        text = task.get("question_text", "")
+        narrative = task.get("narrative")
+        answer = task.get("answer")
+
+        # 1. Парсинг
+        match_diams = re.search(r"([A-Z]{2})\s+и\s+([A-Z]{2}).*?диаметры", text)
+        match_given = re.search(r"угол\s+([A-Z]{3})\s*=\s*(\d+)", text)
+        match_target = re.search(r"Найди.*?угол\s+([A-Z]{3})", text)
+
+        if not (match_diams and match_given and match_target):
+            errors.append("Не удалось распарсить условие (диаметры, углы).")
+            return False, errors
+
+        d1, d2 = match_diams.group(1), match_diams.group(2)
+        given_angle_name = match_given.group(1)
+        given_val = int(match_given.group(2))
+        target_angle_name = match_target.group(1)
+
+        # Строим карту соответствия точек для поиска вертикальных углов
+        # MK и LN -> {M:K, K:M, L:N, N:L}
+        point_map = {}
+        for d in [d1, d2]:
+            p1, p2 = d[0], d[1]
+            point_map[p1] = p2
+            point_map[p2] = p1
+
+        final_calc_answer = None
+        task_context = {}
+        central_angle_val_for_image = 0
+
+        try:
+            # === Сценарий 1: find_inscribed (Дано KON -> Найти LMO) ===
+            if narrative == "find_inscribed":
+                if given_val % 2 != 0:
+                    errors.append(f"Угол {given_val} нечетный, ответ будет дробным.")
+                    return False, errors
+
+                # Математика
+                res = (180 - given_val) / 2
+                final_calc_answer = int(res)
+                central_angle_val_for_image = given_val
+
+                # Определяем вертикальный угол для KON
+                # KON -> p1=K, center=O, p3=N -> map[K]=M, map[N]=L -> MOL (LOM)
+                p1, center, p3 = list(given_angle_name)
+                v1 = point_map.get(p1)
+                v3 = point_map.get(p3)
+
+                if not v1 or not v3:
+                    errors.append("Ошибка определения вертикального угла (буквы не совпадают с диаметрами).")
+                    return False, errors
+
+                # Нормализуем имя (сортируем края), чтобы LOM и MOL были одним и тем же
+                vertical_angle_name = f"{min(v1, v3)}{center}{max(v1, v3)}" # LOM
+
+                # Треугольник строится на вертикальном угле
+                triangle_name = vertical_angle_name
+
+                task_context = {
+                    "narrative_type": narrative,
+                    "center": center,
+                    "diameters": [d1, d2],
+
+                    "central_angle_name": given_angle_name, # KON
+                    "central_angle_value": given_val,
+
+                    "vertical_pair": [given_angle_name, vertical_angle_name], # [KON, LOM]
+
+                    "triangle_name": triangle_name, # LOM
+                    "isosceles_sides": [f"{center}{v1}", f"{center}{v3}"], # OL, OM
+
+                    "target_angle_name": target_angle_name
+                }
+
+            # === Сценарий 2: find_central (Дано LMO -> Найти KON) ===
+            elif narrative == "find_central":
+                # Математика
+                res = 180 - (2 * given_val)
+                if res <= 0:
+                    errors.append(f"Геометрическая ошибка: угол <= 0")
+                    return False, errors
+
+                final_calc_answer = int(res)
+                central_angle_val_for_image = res
+
+                # В этом сценарии known (LMO) - это угол основания.
+                # Нам нужно найти вершину треугольника.
+                # LMO -> треугольник LOM. Вершина O. Угол LOM.
+                p1, p2, p3 = list(given_angle_name) # L, M, O
+                points = {p1, p2, p3}
+                center = "O" if "O" in points else "O"
+                base_points = sorted(list(points - {center})) # [L, M]
+
+                triangle_vertex_angle = f"{base_points[0]}{center}{base_points[1]}" # LOM
+
+                # Искомый угол (KON) - вертикальный к LOM
+                target_vertical_name = target_angle_name # KON
+
+                task_context = {
+                    "narrative_type": narrative,
+                    "center": center,
+                    "diameters": [d1, d2],
+
+                    "base_angle_name": given_angle_name, # LMO
+                    "base_angle_value": given_val,
+
+                    "triangle_name": triangle_vertex_angle, # LOM
+                    "isosceles_sides": [f"{center}{base_points[0]}", f"{center}{base_points[1]}"],
+
+                    "vertical_pair": [triangle_vertex_angle, target_vertical_name], # [LOM, KON]
+                    "target_angle_name": target_angle_name # KON
+                    # central_angle_value УБРАН (Солвер сам посчитает)
+                }
+
+            else:
+                errors.append(f"Неизвестный нарратив: {narrative}")
+                return False, errors
+
+            # Сверка ответа
+            if answer is not None and int(answer) != -1:
+                if final_calc_answer != int(answer):
+                    errors.append(f"Математическая ошибка: {final_calc_answer} != {answer}")
+
+            task["answer"] = final_calc_answer
+
+            # Выбор картинки
+            suffix = "acute" if central_angle_val_for_image < 90 else "obtuse"
+            task["image_file"] = f"task_two_diameters_angles_{suffix}.png"
+            task["help_image_file"] = f"help_two_diameters_angles_{suffix}.png"
+
+        except Exception as e:
+            errors.append(f"Exception: {str(e)}")
+            return False, errors
+
+        task["task_context"] = task_context
+        return len(errors) == 0, errors
 
     # =========================================================================
     # ВСПОМОГАТЕЛЬНЫЕ МЕТОДЫ (HELPERS)

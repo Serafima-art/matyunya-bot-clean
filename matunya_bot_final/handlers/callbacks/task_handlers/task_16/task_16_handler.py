@@ -58,7 +58,7 @@ THEMES_16: dict[str, dict] = {
     "circle_elements_relations": {
         "title": "Касательная, хорда, секущая, радиус",
         "patterns": (
-            "secant_power_of_point",
+            "secant_similarity",
             "tangent_trapezoid_properties",
             "tangent_quad_sum",
             "tangent_arc_angle",

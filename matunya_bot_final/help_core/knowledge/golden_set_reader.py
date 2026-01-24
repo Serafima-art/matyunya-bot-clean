@@ -32,10 +32,17 @@ def _load_sheet() -> Optional[gspread.Worksheet]:
         )
         return None
 
-    creds_info = json.loads(credentials_json)
-    client = gspread.service_account_from_dict(creds_info)
-    spreadsheet = client.open_by_url(sheet_url)
-    return spreadsheet.sheet1
+    try:
+        creds_info = json.loads(credentials_json)
+        client = gspread.service_account_from_dict(creds_info)
+        spreadsheet = client.open_by_url(sheet_url)
+        return spreadsheet.sheet1
+
+    except Exception as e:
+        logger.warning(
+            f"[GoldenSet] Недоступен (работаем без него): {e.__class__.__name__}"
+        )
+        return None
 
 
 def _fetch_golden_set_sync(subtype: str, task_type: Optional[int]) -> List[str]:

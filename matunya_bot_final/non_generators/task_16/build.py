@@ -20,6 +20,10 @@ from matunya_bot_final.non_generators.task_16.validators.central_and_inscribed_a
     CentralAndInscribedAnglesValidator,
 )
 
+from matunya_bot_final.non_generators.task_16.validators.circle_elements_relations_validator import (
+        CircleElementsRelationsValidator,
+)
+
 # --- КОНФИГУРАЦИЯ ПУТЕЙ ---
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DEFINITIONS_DIR = os.path.join(BASE_DIR, "definitions")
@@ -29,6 +33,7 @@ OUTPUT_FILE = os.path.join(DATA_DIR, "tasks_16.json")
 
 VALIDATOR_MAPPING = {
     "central_and_inscribed_angles.txt": CentralAndInscribedAnglesValidator,
+    "circle_elements_relations.txt": CircleElementsRelationsValidator,
 }
 
 START_ID = 1600000

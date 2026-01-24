@@ -26,8 +26,8 @@ from typing import Optional, Dict, Any, List
 # НАСТРОЙКИ
 # ---------------------------------------------------------------------
 
-TARGET_PATTERN = "arc_length_ratio"
-DEFINITIONS_FILE = "central_and_inscribed_angles.txt"
+TARGET_PATTERN = "tangent_trapezoid_properties"
+DEFINITIONS_FILE = "circle_elements_relations.txt"
 OUTPUT_FILENAME = "debug_validator_output.txt"
 
 # ---------------------------------------------------------------------
@@ -52,14 +52,14 @@ if str(source_root) not in sys.path:
 
 try:
     # Пробуем импорт через полный путь (рекомендуемый)
-    from matunya_bot_final.non_generators.task_16.validators.central_and_inscribed_angles_validator import (
-        CentralAndInscribedAnglesValidator,
+    from matunya_bot_final.non_generators.task_16.validators.circle_elements_relations_validator import (
+        CircleElementsRelationsValidator,
     )
 except ImportError:
     try:
         # Пробуем импорт напрямую (если запущен изнутри папки)
-        from non_generators.task_16.validators.central_and_inscribed_angles_validator import (
-            CentralAndInscribedAnglesValidator,
+        from non_generators.task_16.validators.circle_elements_relations_validator import (
+            CircleElementsRelationsValidator,
         )
     except ImportError as e:
         print(f"🔴 Ошибка импорта валидатора: {e}")
@@ -158,7 +158,7 @@ def run_test() -> None:
 
     print(f"✅ Загружено задач: {len(tasks)}")
 
-    validator = CentralAndInscribedAnglesValidator()
+    validator = CircleElementsRelationsValidator()
 
     # --- Прогоняем ВСЕ задачи этого паттерна ---
     for i, raw_data in enumerate(tasks, start=1):

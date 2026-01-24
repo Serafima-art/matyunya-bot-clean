@@ -7168,5 +7168,4635 @@
       "small_arc_angle": 105,
       "large_arc_angle": 255
     }
+  },
+  {
+    "id": 1600403,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OA равен 5. Найди AB, если BC = 8.",
+    "answer": 6,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "A",
+      "radius_value": 5,
+      "right_angle_vertex": "B",
+      "known_leg_name": "BC",
+      "known_leg_value": 8,
+      "target_leg_name": "AB"
+    }
+  },
+  {
+    "id": 1600404,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OC равен 13. Найди AB, если BC = 24.",
+    "answer": 10,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "C",
+      "radius_value": 13,
+      "right_angle_vertex": "B",
+      "known_leg_name": "BC",
+      "known_leg_value": 24,
+      "target_leg_name": "AB"
+    }
+  },
+  {
+    "id": 1600405,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OA равен 17. Найди AB, если BC = 30.",
+    "answer": 16,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "A",
+      "radius_value": 17,
+      "right_angle_vertex": "B",
+      "known_leg_name": "BC",
+      "known_leg_value": 30,
+      "target_leg_name": "AB"
+    }
+  },
+  {
+    "id": 1600406,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OC равен 10. Найди AB, если BC = 12.",
+    "answer": 16,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "C",
+      "radius_value": 10,
+      "right_angle_vertex": "B",
+      "known_leg_name": "BC",
+      "known_leg_value": 12,
+      "target_leg_name": "AB"
+    }
+  },
+  {
+    "id": 1600407,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OA равен 15. Найди AB, если BC = 18.",
+    "answer": 24,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "A",
+      "radius_value": 15,
+      "right_angle_vertex": "B",
+      "known_leg_name": "BC",
+      "known_leg_value": 18,
+      "target_leg_name": "AB"
+    }
+  },
+  {
+    "id": 1600408,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OC равен 25.5. Найди AB, если BC = 45.",
+    "answer": 24,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "C",
+      "radius_value": 25.5,
+      "right_angle_vertex": "B",
+      "known_leg_name": "BC",
+      "known_leg_value": 45,
+      "target_leg_name": "AB"
+    }
+  },
+  {
+    "id": 1600409,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OA равен 25. Найди AB, если BC = 48.",
+    "answer": 14,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "A",
+      "radius_value": 25,
+      "right_angle_vertex": "B",
+      "known_leg_name": "BC",
+      "known_leg_value": 48,
+      "target_leg_name": "AB"
+    }
+  },
+  {
+    "id": 1600410,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OC равен 29. Найди AB, если BC = 42.",
+    "answer": 40,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "C",
+      "radius_value": 29,
+      "right_angle_vertex": "B",
+      "known_leg_name": "BC",
+      "known_leg_value": 42,
+      "target_leg_name": "AB"
+    }
+  },
+  {
+    "id": 1600411,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OA равен 41. Найди AB, если BC = 80.",
+    "answer": 18,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "A",
+      "radius_value": 41,
+      "right_angle_vertex": "B",
+      "known_leg_name": "BC",
+      "known_leg_value": 80,
+      "target_leg_name": "AB"
+    }
+  },
+  {
+    "id": 1600412,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OC равен 20. Найди AB, если BC = 32.",
+    "answer": 24,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "C",
+      "radius_value": 20,
+      "right_angle_vertex": "B",
+      "known_leg_name": "BC",
+      "known_leg_value": 32,
+      "target_leg_name": "AB"
+    }
+  },
+  {
+    "id": 1600413,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OA равен 7.5. Найди AB, если BC = 12.",
+    "answer": 9,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "A",
+      "radius_value": 7.5,
+      "right_angle_vertex": "B",
+      "known_leg_name": "BC",
+      "known_leg_value": 12,
+      "target_leg_name": "AB"
+    }
+  },
+  {
+    "id": 1600414,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OC равен 25. Найди AB, если BC = 40.",
+    "answer": 30,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "C",
+      "radius_value": 25,
+      "right_angle_vertex": "B",
+      "known_leg_name": "BC",
+      "known_leg_value": 40,
+      "target_leg_name": "AB"
+    }
+  },
+  {
+    "id": 1600415,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OA равен 34. Найди AB, если BC = 60.",
+    "answer": 32,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "A",
+      "radius_value": 34,
+      "right_angle_vertex": "B",
+      "known_leg_name": "BC",
+      "known_leg_value": 60,
+      "target_leg_name": "AB"
+    }
+  },
+  {
+    "id": 1600416,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OC равен 26. Найди AB, если BC = 20.",
+    "answer": 48,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "C",
+      "radius_value": 26,
+      "right_angle_vertex": "B",
+      "known_leg_name": "BC",
+      "known_leg_value": 20,
+      "target_leg_name": "AB"
+    }
+  },
+  {
+    "id": 1600417,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OA равен 13. Найди AB, если BC = 10.",
+    "answer": 24,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "A",
+      "radius_value": 13,
+      "right_angle_vertex": "B",
+      "known_leg_name": "BC",
+      "known_leg_value": 10,
+      "target_leg_name": "AB"
+    }
+  },
+  {
+    "id": 1600418,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OC равен 5. Найди BC, если AB = 6.",
+    "answer": 8,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "C",
+      "radius_value": 5,
+      "right_angle_vertex": "B",
+      "known_leg_name": "AB",
+      "known_leg_value": 6,
+      "target_leg_name": "BC"
+    }
+  },
+  {
+    "id": 1600419,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OA равен 13. Найди BC, если AB = 10.",
+    "answer": 24,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "A",
+      "radius_value": 13,
+      "right_angle_vertex": "B",
+      "known_leg_name": "AB",
+      "known_leg_value": 10,
+      "target_leg_name": "BC"
+    }
+  },
+  {
+    "id": 1600420,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OC равен 17. Найди BC, если AB = 16.",
+    "answer": 30,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "C",
+      "radius_value": 17,
+      "right_angle_vertex": "B",
+      "known_leg_name": "AB",
+      "known_leg_value": 16,
+      "target_leg_name": "BC"
+    }
+  },
+  {
+    "id": 1600421,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OA равен 20. Найди BC, если AB = 24.",
+    "answer": 32,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "A",
+      "radius_value": 20,
+      "right_angle_vertex": "B",
+      "known_leg_name": "AB",
+      "known_leg_value": 24,
+      "target_leg_name": "BC"
+    }
+  },
+  {
+    "id": 1600422,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OC равен 25. Найди BC, если AB = 14.",
+    "answer": 48,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "C",
+      "radius_value": 25,
+      "right_angle_vertex": "B",
+      "known_leg_name": "AB",
+      "known_leg_value": 14,
+      "target_leg_name": "BC"
+    }
+  },
+  {
+    "id": 1600423,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OA равен 25.5. Найди BC, если AB = 24.",
+    "answer": 45,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "A",
+      "radius_value": 25.5,
+      "right_angle_vertex": "B",
+      "known_leg_name": "AB",
+      "known_leg_value": 24,
+      "target_leg_name": "BC"
+    }
+  },
+  {
+    "id": 1600424,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OC равен 15. Найди BC, если AB = 24.",
+    "answer": 18,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "C",
+      "radius_value": 15,
+      "right_angle_vertex": "B",
+      "known_leg_name": "AB",
+      "known_leg_value": 24,
+      "target_leg_name": "BC"
+    }
+  },
+  {
+    "id": 1600425,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OA равен 10. Найди BC, если AB = 16.",
+    "answer": 12,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "A",
+      "radius_value": 10,
+      "right_angle_vertex": "B",
+      "known_leg_name": "AB",
+      "known_leg_value": 16,
+      "target_leg_name": "BC"
+    }
+  },
+  {
+    "id": 1600426,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OC равен 29. Найди BC, если AB = 40.",
+    "answer": 42,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "C",
+      "radius_value": 29,
+      "right_angle_vertex": "B",
+      "known_leg_name": "AB",
+      "known_leg_value": 40,
+      "target_leg_name": "BC"
+    }
+  },
+  {
+    "id": 1600427,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OA равен 14.5. Найди BC, если AB = 20.",
+    "answer": 21,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "A",
+      "radius_value": 14.5,
+      "right_angle_vertex": "B",
+      "known_leg_name": "AB",
+      "known_leg_value": 20,
+      "target_leg_name": "BC"
+    }
+  },
+  {
+    "id": 1600428,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OC равен 12.5. Найди BC, если AB = 15.",
+    "answer": 20,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "C",
+      "radius_value": 12.5,
+      "right_angle_vertex": "B",
+      "known_leg_name": "AB",
+      "known_leg_value": 15,
+      "target_leg_name": "BC"
+    }
+  },
+  {
+    "id": 1600429,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OA равен 6.5. Найди BC, если AB = 5.",
+    "answer": 12,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "A",
+      "radius_value": 6.5,
+      "right_angle_vertex": "B",
+      "known_leg_name": "AB",
+      "known_leg_value": 5,
+      "target_leg_name": "BC"
+    }
+  },
+  {
+    "id": 1600430,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OC равен 17. Найди BC, если AB = 30.",
+    "answer": 16,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "C",
+      "radius_value": 17,
+      "right_angle_vertex": "B",
+      "known_leg_name": "AB",
+      "known_leg_value": 30,
+      "target_leg_name": "BC"
+    }
+  },
+  {
+    "id": 1600431,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OA равен 25. Найди BC, если AB = 30.",
+    "answer": 40,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "A",
+      "radius_value": 25,
+      "right_angle_vertex": "B",
+      "known_leg_name": "AB",
+      "known_leg_value": 30,
+      "target_leg_name": "BC"
+    }
+  },
+  {
+    "id": 1600432,
+    "pattern": "diameter_right_triangle",
+    "narrative": "center_on_side",
+    "question_text": "Окружность описана около треугольника ABC. Центр окружности O лежит на стороне AC. Радиус OC равен 37. Найди BC, если AB = 24.",
+    "answer": 70,
+    "image_file": "task_diameter_right_triangle.png",
+    "help_image_file": "help_diameter_right_triangle.png",
+    "task_context": {
+      "narrative_type": "center_on_side",
+      "triangle": "ABC",
+      "center": "O",
+      "diameter_side": "AC",
+      "radius_point": "C",
+      "radius_value": 37,
+      "right_angle_vertex": "B",
+      "known_leg_name": "AB",
+      "known_leg_value": 24,
+      "target_leg_name": "BC"
+    }
+  },
+  {
+    "id": 1600433,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_inscribed",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол MLO, если угол KON = 44° . Ответ дай в градусах.",
+    "answer": 68,
+    "image_file": "task_two_diameters_angles_acute.png",
+    "help_image_file": "help_two_diameters_angles_acute.png",
+    "task_context": {
+      "narrative_type": "find_inscribed",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "central_angle_name": "KON",
+      "central_angle_value": 44,
+      "vertical_pair": [
+        "KON",
+        "LOM"
+      ],
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OM",
+        "OL"
+      ],
+      "target_angle_name": "MLO"
+    }
+  },
+  {
+    "id": 1600434,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_inscribed",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол LMO, если угол KON = 50° . Ответ дай в градусах.",
+    "answer": 65,
+    "image_file": "task_two_diameters_angles_acute.png",
+    "help_image_file": "help_two_diameters_angles_acute.png",
+    "task_context": {
+      "narrative_type": "find_inscribed",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "central_angle_name": "KON",
+      "central_angle_value": 50,
+      "vertical_pair": [
+        "KON",
+        "LOM"
+      ],
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OM",
+        "OL"
+      ],
+      "target_angle_name": "LMO"
+    }
+  },
+  {
+    "id": 1600435,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_inscribed",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол LMO, если угол KON = 62° . Ответ дай в градусах.",
+    "answer": 59,
+    "image_file": "task_two_diameters_angles_acute.png",
+    "help_image_file": "help_two_diameters_angles_acute.png",
+    "task_context": {
+      "narrative_type": "find_inscribed",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "central_angle_name": "KON",
+      "central_angle_value": 62,
+      "vertical_pair": [
+        "KON",
+        "LOM"
+      ],
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OM",
+        "OL"
+      ],
+      "target_angle_name": "LMO"
+    }
+  },
+  {
+    "id": 1600436,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_inscribed",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол MLO, если угол KON = 80° . Ответ дай в градусах.",
+    "answer": 50,
+    "image_file": "task_two_diameters_angles_acute.png",
+    "help_image_file": "help_two_diameters_angles_acute.png",
+    "task_context": {
+      "narrative_type": "find_inscribed",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "central_angle_name": "KON",
+      "central_angle_value": 80,
+      "vertical_pair": [
+        "KON",
+        "LOM"
+      ],
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OM",
+        "OL"
+      ],
+      "target_angle_name": "MLO"
+    }
+  },
+  {
+    "id": 1600437,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_inscribed",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол LMO, если угол KON = 38° . Ответ дай в градусах.",
+    "answer": 71,
+    "image_file": "task_two_diameters_angles_acute.png",
+    "help_image_file": "help_two_diameters_angles_acute.png",
+    "task_context": {
+      "narrative_type": "find_inscribed",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "central_angle_name": "KON",
+      "central_angle_value": 38,
+      "vertical_pair": [
+        "KON",
+        "LOM"
+      ],
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OM",
+        "OL"
+      ],
+      "target_angle_name": "LMO"
+    }
+  },
+  {
+    "id": 1600438,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_inscribed",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол LMO, если угол KON = 76° . Ответ дай в градусах.",
+    "answer": 52,
+    "image_file": "task_two_diameters_angles_acute.png",
+    "help_image_file": "help_two_diameters_angles_acute.png",
+    "task_context": {
+      "narrative_type": "find_inscribed",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "central_angle_name": "KON",
+      "central_angle_value": 76,
+      "vertical_pair": [
+        "KON",
+        "LOM"
+      ],
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OM",
+        "OL"
+      ],
+      "target_angle_name": "LMO"
+    }
+  },
+  {
+    "id": 1600439,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_inscribed",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол MLO, если угол KON = 88° . Ответ дай в градусах.",
+    "answer": 46,
+    "image_file": "task_two_diameters_angles_acute.png",
+    "help_image_file": "help_two_diameters_angles_acute.png",
+    "task_context": {
+      "narrative_type": "find_inscribed",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "central_angle_name": "KON",
+      "central_angle_value": 88,
+      "vertical_pair": [
+        "KON",
+        "LOM"
+      ],
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OM",
+        "OL"
+      ],
+      "target_angle_name": "MLO"
+    }
+  },
+  {
+    "id": 1600440,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_inscribed",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол LMO, если угол KON = 92° . Ответ дай в градусах.",
+    "answer": 44,
+    "image_file": "task_two_diameters_angles_obtuse.png",
+    "help_image_file": "help_two_diameters_angles_obtuse.png",
+    "task_context": {
+      "narrative_type": "find_inscribed",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "central_angle_name": "KON",
+      "central_angle_value": 92,
+      "vertical_pair": [
+        "KON",
+        "LOM"
+      ],
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OM",
+        "OL"
+      ],
+      "target_angle_name": "LMO"
+    }
+  },
+  {
+    "id": 1600441,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_inscribed",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол LMO, если угол KON = 110° . Ответ дай в градусах.",
+    "answer": 35,
+    "image_file": "task_two_diameters_angles_obtuse.png",
+    "help_image_file": "help_two_diameters_angles_obtuse.png",
+    "task_context": {
+      "narrative_type": "find_inscribed",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "central_angle_name": "KON",
+      "central_angle_value": 110,
+      "vertical_pair": [
+        "KON",
+        "LOM"
+      ],
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OM",
+        "OL"
+      ],
+      "target_angle_name": "LMO"
+    }
+  },
+  {
+    "id": 1600442,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_inscribed",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол LMO, если угол KON = 134° . Ответ дай в градусах.",
+    "answer": 23,
+    "image_file": "task_two_diameters_angles_obtuse.png",
+    "help_image_file": "help_two_diameters_angles_obtuse.png",
+    "task_context": {
+      "narrative_type": "find_inscribed",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "central_angle_name": "KON",
+      "central_angle_value": 134,
+      "vertical_pair": [
+        "KON",
+        "LOM"
+      ],
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OM",
+        "OL"
+      ],
+      "target_angle_name": "LMO"
+    }
+  },
+  {
+    "id": 1600443,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_inscribed",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол MLO, если угол KON = 150° . Ответ дай в градусах.",
+    "answer": 15,
+    "image_file": "task_two_diameters_angles_obtuse.png",
+    "help_image_file": "help_two_diameters_angles_obtuse.png",
+    "task_context": {
+      "narrative_type": "find_inscribed",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "central_angle_name": "KON",
+      "central_angle_value": 150,
+      "vertical_pair": [
+        "KON",
+        "LOM"
+      ],
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OM",
+        "OL"
+      ],
+      "target_angle_name": "MLO"
+    }
+  },
+  {
+    "id": 1600444,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_inscribed",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол LMO, если угол KON = 108° . Ответ дай в градусах.",
+    "answer": 36,
+    "image_file": "task_two_diameters_angles_obtuse.png",
+    "help_image_file": "help_two_diameters_angles_obtuse.png",
+    "task_context": {
+      "narrative_type": "find_inscribed",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "central_angle_name": "KON",
+      "central_angle_value": 108,
+      "vertical_pair": [
+        "KON",
+        "LOM"
+      ],
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OM",
+        "OL"
+      ],
+      "target_angle_name": "LMO"
+    }
+  },
+  {
+    "id": 1600445,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_inscribed",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол MLO, если угол KON = 122° . Ответ дай в градусах.",
+    "answer": 29,
+    "image_file": "task_two_diameters_angles_obtuse.png",
+    "help_image_file": "help_two_diameters_angles_obtuse.png",
+    "task_context": {
+      "narrative_type": "find_inscribed",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "central_angle_name": "KON",
+      "central_angle_value": 122,
+      "vertical_pair": [
+        "KON",
+        "LOM"
+      ],
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OM",
+        "OL"
+      ],
+      "target_angle_name": "MLO"
+    }
+  },
+  {
+    "id": 1600446,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_inscribed",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол LMO, если угол KON = 146° . Ответ дай в градусах.",
+    "answer": 17,
+    "image_file": "task_two_diameters_angles_obtuse.png",
+    "help_image_file": "help_two_diameters_angles_obtuse.png",
+    "task_context": {
+      "narrative_type": "find_inscribed",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "central_angle_name": "KON",
+      "central_angle_value": 146,
+      "vertical_pair": [
+        "KON",
+        "LOM"
+      ],
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OM",
+        "OL"
+      ],
+      "target_angle_name": "LMO"
+    }
+  },
+  {
+    "id": 1600447,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_inscribed",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол MLO, если угол KON = 98° . Ответ дай в градусах.",
+    "answer": 41,
+    "image_file": "task_two_diameters_angles_obtuse.png",
+    "help_image_file": "help_two_diameters_angles_obtuse.png",
+    "task_context": {
+      "narrative_type": "find_inscribed",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "central_angle_name": "KON",
+      "central_angle_value": 98,
+      "vertical_pair": [
+        "KON",
+        "LOM"
+      ],
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OM",
+        "OL"
+      ],
+      "target_angle_name": "MLO"
+    }
+  },
+  {
+    "id": 1600448,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_central",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол KON, если угол LMO = 23° . Ответ дай в градусах.",
+    "answer": 134,
+    "image_file": "task_two_diameters_angles_obtuse.png",
+    "help_image_file": "help_two_diameters_angles_obtuse.png",
+    "task_context": {
+      "narrative_type": "find_central",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "base_angle_name": "LMO",
+      "base_angle_value": 23,
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OL",
+        "OM"
+      ],
+      "vertical_pair": [
+        "LOM",
+        "KON"
+      ],
+      "target_angle_name": "KON"
+    }
+  },
+  {
+    "id": 1600449,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_central",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол KON, если угол LMO = 30° . Ответ дай в градусах.",
+    "answer": 120,
+    "image_file": "task_two_diameters_angles_obtuse.png",
+    "help_image_file": "help_two_diameters_angles_obtuse.png",
+    "task_context": {
+      "narrative_type": "find_central",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "base_angle_name": "LMO",
+      "base_angle_value": 30,
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OL",
+        "OM"
+      ],
+      "vertical_pair": [
+        "LOM",
+        "KON"
+      ],
+      "target_angle_name": "KON"
+    }
+  },
+  {
+    "id": 1600450,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_central",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол KON, если угол MLO = 14° . Ответ дай в градусах.",
+    "answer": 152,
+    "image_file": "task_two_diameters_angles_obtuse.png",
+    "help_image_file": "help_two_diameters_angles_obtuse.png",
+    "task_context": {
+      "narrative_type": "find_central",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "base_angle_name": "MLO",
+      "base_angle_value": 14,
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OL",
+        "OM"
+      ],
+      "vertical_pair": [
+        "LOM",
+        "KON"
+      ],
+      "target_angle_name": "KON"
+    }
+  },
+  {
+    "id": 1600451,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_central",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол KON, если угол LMO = 40° . Ответ дай в градусах.",
+    "answer": 100,
+    "image_file": "task_two_diameters_angles_obtuse.png",
+    "help_image_file": "help_two_diameters_angles_obtuse.png",
+    "task_context": {
+      "narrative_type": "find_central",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "base_angle_name": "LMO",
+      "base_angle_value": 40,
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OL",
+        "OM"
+      ],
+      "vertical_pair": [
+        "LOM",
+        "KON"
+      ],
+      "target_angle_name": "KON"
+    }
+  },
+  {
+    "id": 1600452,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_central",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол KON, если угол LMO = 19° . Ответ дай в градусах.",
+    "answer": 142,
+    "image_file": "task_two_diameters_angles_obtuse.png",
+    "help_image_file": "help_two_diameters_angles_obtuse.png",
+    "task_context": {
+      "narrative_type": "find_central",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "base_angle_name": "LMO",
+      "base_angle_value": 19,
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OL",
+        "OM"
+      ],
+      "vertical_pair": [
+        "LOM",
+        "KON"
+      ],
+      "target_angle_name": "KON"
+    }
+  },
+  {
+    "id": 1600453,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_central",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол KON, если угол MLO = 35° . Ответ дай в градусах.",
+    "answer": 110,
+    "image_file": "task_two_diameters_angles_obtuse.png",
+    "help_image_file": "help_two_diameters_angles_obtuse.png",
+    "task_context": {
+      "narrative_type": "find_central",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "base_angle_name": "MLO",
+      "base_angle_value": 35,
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OL",
+        "OM"
+      ],
+      "vertical_pair": [
+        "LOM",
+        "KON"
+      ],
+      "target_angle_name": "KON"
+    }
+  },
+  {
+    "id": 1600454,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_central",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол KON, если угол LMO = 26° . Ответ дай в градусах.",
+    "answer": 128,
+    "image_file": "task_two_diameters_angles_obtuse.png",
+    "help_image_file": "help_two_diameters_angles_obtuse.png",
+    "task_context": {
+      "narrative_type": "find_central",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "base_angle_name": "LMO",
+      "base_angle_value": 26,
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OL",
+        "OM"
+      ],
+      "vertical_pair": [
+        "LOM",
+        "KON"
+      ],
+      "target_angle_name": "KON"
+    }
+  },
+  {
+    "id": 1600455,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_central",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол KON, если угол MLO = 44° . Ответ дай в градусах.",
+    "answer": 92,
+    "image_file": "task_two_diameters_angles_obtuse.png",
+    "help_image_file": "help_two_diameters_angles_obtuse.png",
+    "task_context": {
+      "narrative_type": "find_central",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "base_angle_name": "MLO",
+      "base_angle_value": 44,
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OL",
+        "OM"
+      ],
+      "vertical_pair": [
+        "LOM",
+        "KON"
+      ],
+      "target_angle_name": "KON"
+    }
+  },
+  {
+    "id": 1600456,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_central",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол KON, если угол MLO = 50° . Ответ дай в градусах.",
+    "answer": 80,
+    "image_file": "task_two_diameters_angles_acute.png",
+    "help_image_file": "help_two_diameters_angles_acute.png",
+    "task_context": {
+      "narrative_type": "find_central",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "base_angle_name": "MLO",
+      "base_angle_value": 50,
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OL",
+        "OM"
+      ],
+      "vertical_pair": [
+        "LOM",
+        "KON"
+      ],
+      "target_angle_name": "KON"
+    }
+  },
+  {
+    "id": 1600457,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_central",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол KON, если угол LMO = 65° . Ответ дай в градусах.",
+    "answer": 50,
+    "image_file": "task_two_diameters_angles_acute.png",
+    "help_image_file": "help_two_diameters_angles_acute.png",
+    "task_context": {
+      "narrative_type": "find_central",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "base_angle_name": "LMO",
+      "base_angle_value": 65,
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OL",
+        "OM"
+      ],
+      "vertical_pair": [
+        "LOM",
+        "KON"
+      ],
+      "target_angle_name": "KON"
+    }
+  },
+  {
+    "id": 1600458,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_central",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол KON, если угол LMO = 48° . Ответ дай в градусах.",
+    "answer": 84,
+    "image_file": "task_two_diameters_angles_acute.png",
+    "help_image_file": "help_two_diameters_angles_acute.png",
+    "task_context": {
+      "narrative_type": "find_central",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "base_angle_name": "LMO",
+      "base_angle_value": 48,
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OL",
+        "OM"
+      ],
+      "vertical_pair": [
+        "LOM",
+        "KON"
+      ],
+      "target_angle_name": "KON"
+    }
+  },
+  {
+    "id": 1600459,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_central",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол KON, если угол MLO = 56° . Ответ дай в градусах.",
+    "answer": 68,
+    "image_file": "task_two_diameters_angles_acute.png",
+    "help_image_file": "help_two_diameters_angles_acute.png",
+    "task_context": {
+      "narrative_type": "find_central",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "base_angle_name": "MLO",
+      "base_angle_value": 56,
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OL",
+        "OM"
+      ],
+      "vertical_pair": [
+        "LOM",
+        "KON"
+      ],
+      "target_angle_name": "KON"
+    }
+  },
+  {
+    "id": 1600460,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_central",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол KON, если угол LMO = 70° . Ответ дай в градусах.",
+    "answer": 40,
+    "image_file": "task_two_diameters_angles_acute.png",
+    "help_image_file": "help_two_diameters_angles_acute.png",
+    "task_context": {
+      "narrative_type": "find_central",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "base_angle_name": "LMO",
+      "base_angle_value": 70,
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OL",
+        "OM"
+      ],
+      "vertical_pair": [
+        "LOM",
+        "KON"
+      ],
+      "target_angle_name": "KON"
+    }
+  },
+  {
+    "id": 1600461,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_central",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол KON, если угол MLO = 53° . Ответ дай в градусах.",
+    "answer": 74,
+    "image_file": "task_two_diameters_angles_acute.png",
+    "help_image_file": "help_two_diameters_angles_acute.png",
+    "task_context": {
+      "narrative_type": "find_central",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "base_angle_name": "MLO",
+      "base_angle_value": 53,
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OL",
+        "OM"
+      ],
+      "vertical_pair": [
+        "LOM",
+        "KON"
+      ],
+      "target_angle_name": "KON"
+    }
+  },
+  {
+    "id": 1600462,
+    "pattern": "two_diameters_angles",
+    "narrative": "find_central",
+    "question_text": "MK и LN - диаметры окружности с центром в точке О. Найди угол KON, если угол LMO = 61° . Ответ дай в градусах.",
+    "answer": 58,
+    "image_file": "task_two_diameters_angles_acute.png",
+    "help_image_file": "help_two_diameters_angles_acute.png",
+    "task_context": {
+      "narrative_type": "find_central",
+      "center": "O",
+      "diameters": [
+        "MK",
+        "LN"
+      ],
+      "base_angle_name": "LMO",
+      "base_angle_value": 61,
+      "triangle_name": "LOM",
+      "isosceles_sides": [
+        "OL",
+        "OM"
+      ],
+      "vertical_pair": [
+        "LOM",
+        "KON"
+      ],
+      "target_angle_name": "KON"
+    }
+  },
+  {
+    "id": 1600463,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_small",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 8, DF = 24, AD = 18.",
+    "answer": 6,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_small",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 8,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 24,
+      "base_known_name": "AD",
+      "base_known_val": 18,
+      "base_target_name": "BC"
+    }
+  },
+  {
+    "id": 1600464,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_small",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 5, DF = 15, AD = 12.",
+    "answer": 4,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_small",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 5,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 15,
+      "base_known_name": "AD",
+      "base_known_val": 12,
+      "base_target_name": "BC"
+    }
+  },
+  {
+    "id": 1600465,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_small",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 6, DF = 12, AD = 10.",
+    "answer": 5,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_small",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 6,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 12,
+      "base_known_name": "AD",
+      "base_known_val": 10,
+      "base_target_name": "BC"
+    }
+  },
+  {
+    "id": 1600466,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_small",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 4, DF = 16, AD = 20.",
+    "answer": 5,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_small",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 4,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 16,
+      "base_known_name": "AD",
+      "base_known_val": 20,
+      "base_target_name": "BC"
+    }
+  },
+  {
+    "id": 1600467,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_small",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 10, DF = 25, AD = 15.",
+    "answer": 6,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_small",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 10,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 25,
+      "base_known_name": "AD",
+      "base_known_val": 15,
+      "base_target_name": "BC"
+    }
+  },
+  {
+    "id": 1600468,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_small",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 7, DF = 21, AD = 24.",
+    "answer": 8,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_small",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 7,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 21,
+      "base_known_name": "AD",
+      "base_known_val": 24,
+      "base_target_name": "BC"
+    }
+  },
+  {
+    "id": 1600469,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_small",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 9, DF = 18, AD = 14.",
+    "answer": 7,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_small",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 9,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 18,
+      "base_known_name": "AD",
+      "base_known_val": 14,
+      "base_target_name": "BC"
+    }
+  },
+  {
+    "id": 1600470,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_small",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 12, DF = 36, AD = 21.",
+    "answer": 7,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_small",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 12,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 36,
+      "base_known_name": "AD",
+      "base_known_val": 21,
+      "base_target_name": "BC"
+    }
+  },
+  {
+    "id": 1600471,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_small",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 3, DF = 12, AD = 16.",
+    "answer": 4,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_small",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 3,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 12,
+      "base_known_name": "AD",
+      "base_known_val": 16,
+      "base_target_name": "BC"
+    }
+  },
+  {
+    "id": 1600472,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_small",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 15, DF = 20, AD = 16.",
+    "answer": 12,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_small",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 15,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 20,
+      "base_known_name": "AD",
+      "base_known_val": 16,
+      "base_target_name": "BC"
+    }
+  },
+  {
+    "id": 1600473,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_small",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 8, DF = 12, AD = 9.",
+    "answer": 6,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_small",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 8,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 12,
+      "base_known_name": "AD",
+      "base_known_val": 9,
+      "base_target_name": "BC"
+    }
+  },
+  {
+    "id": 1600474,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_small",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 6, DF = 18, AD = 27.",
+    "answer": 9,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_small",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 6,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 18,
+      "base_known_name": "AD",
+      "base_known_val": 27,
+      "base_target_name": "BC"
+    }
+  },
+  {
+    "id": 1600475,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_small",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 14, DF = 28, AD = 22.",
+    "answer": 11,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_small",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 14,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 28,
+      "base_known_name": "AD",
+      "base_known_val": 22,
+      "base_target_name": "BC"
+    }
+  },
+  {
+    "id": 1600476,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_small",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 5, DF = 10, AD = 18.",
+    "answer": 9,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_small",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 5,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 10,
+      "base_known_name": "AD",
+      "base_known_val": 18,
+      "base_target_name": "BC"
+    }
+  },
+  {
+    "id": 1600477,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_small",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 10, DF = 30, AD = 33.",
+    "answer": 11,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_small",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 10,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 30,
+      "base_known_name": "AD",
+      "base_known_val": 33,
+      "base_target_name": "BC"
+    }
+  },
+  {
+    "id": 1600478,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_large",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 8, DF = 24, BC = 6.",
+    "answer": 18,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_large",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 8,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 24,
+      "base_known_name": "BC",
+      "base_known_val": 6,
+      "base_target_name": "AD"
+    }
+  },
+  {
+    "id": 1600479,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_large",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 5, DF = 15, BC = 4.",
+    "answer": 12,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_large",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 5,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 15,
+      "base_known_name": "BC",
+      "base_known_val": 4,
+      "base_target_name": "AD"
+    }
+  },
+  {
+    "id": 1600480,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_large",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 6, DF = 12, BC = 7.",
+    "answer": 14,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_large",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 6,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 12,
+      "base_known_name": "BC",
+      "base_known_val": 7,
+      "base_target_name": "AD"
+    }
+  },
+  {
+    "id": 1600481,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_large",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 4, DF = 16, BC = 5.",
+    "answer": 20,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_large",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 4,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 16,
+      "base_known_name": "BC",
+      "base_known_val": 5,
+      "base_target_name": "AD"
+    }
+  },
+  {
+    "id": 1600482,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_large",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 10, DF = 25, BC = 8.",
+    "answer": 20,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_large",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 10,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 25,
+      "base_known_name": "BC",
+      "base_known_val": 8,
+      "base_target_name": "AD"
+    }
+  },
+  {
+    "id": 1600483,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_large",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 7, DF = 21, BC = 9.",
+    "answer": 27,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_large",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 7,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 21,
+      "base_known_name": "BC",
+      "base_known_val": 9,
+      "base_target_name": "AD"
+    }
+  },
+  {
+    "id": 1600484,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_large",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 9, DF = 18, BC = 11.",
+    "answer": 22,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_large",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 9,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 18,
+      "base_known_name": "BC",
+      "base_known_val": 11,
+      "base_target_name": "AD"
+    }
+  },
+  {
+    "id": 1600485,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_large",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 12, DF = 36, BC = 10.",
+    "answer": 30,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_large",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 12,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 36,
+      "base_known_name": "BC",
+      "base_known_val": 10,
+      "base_target_name": "AD"
+    }
+  },
+  {
+    "id": 1600486,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_large",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 3, DF = 12, BC = 4.",
+    "answer": 16,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_large",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 3,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 12,
+      "base_known_name": "BC",
+      "base_known_val": 4,
+      "base_target_name": "AD"
+    }
+  },
+  {
+    "id": 1600487,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_large",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 15, DF = 20, BC = 12.",
+    "answer": 16,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_large",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 15,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 20,
+      "base_known_name": "BC",
+      "base_known_val": 12,
+      "base_target_name": "AD"
+    }
+  },
+  {
+    "id": 1600488,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_large",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 8, DF = 12, BC = 10.",
+    "answer": 15,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_large",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 8,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 12,
+      "base_known_name": "BC",
+      "base_known_val": 10,
+      "base_target_name": "AD"
+    }
+  },
+  {
+    "id": 1600489,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_large",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 6, DF = 18, BC = 5.",
+    "answer": 15,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_large",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 6,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 18,
+      "base_known_name": "BC",
+      "base_known_val": 5,
+      "base_target_name": "AD"
+    }
+  },
+  {
+    "id": 1600490,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_large",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 14, DF = 28, BC = 13.",
+    "answer": 26,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_large",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 14,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 28,
+      "base_known_name": "BC",
+      "base_known_val": 13,
+      "base_target_name": "AD"
+    }
+  },
+  {
+    "id": 1600491,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_large",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 5, DF = 10, BC = 6.",
+    "answer": 12,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_large",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 5,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 10,
+      "base_known_name": "BC",
+      "base_known_val": 6,
+      "base_target_name": "AD"
+    }
+  },
+  {
+    "id": 1600492,
+    "pattern": "secant_similarity",
+    "narrative": "abcd_find_large",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 10, DF = 30, BC = 12.",
+    "answer": 36,
+    "image_file": "task_secant_similarity_abcd.png",
+    "help_image_file": "help_secant_similarity_abcd.png",
+    "task_context": {
+      "intersection_point": "F",
+      "common_vertex": "F",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "FBC",
+      "triangle_large_name": "FDA",
+      "vertex_angle_small": "B",
+      "vertex_angle_large": "D",
+      "narrative_type": "abcd_find_large",
+      "secant_segment_short_name": "BF",
+      "secant_segment_short_val": 10,
+      "secant_segment_long_name": "DF",
+      "secant_segment_long_val": 30,
+      "base_known_name": "BC",
+      "base_known_val": 12,
+      "base_target_name": "AD"
+    }
+  },
+  {
+    "id": 1600493,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_small",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 6, UT = 18, PT = 15.",
+    "answer": 5,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_small",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 6,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 18,
+      "base_known_name": "PT",
+      "base_known_val": 15,
+      "base_target_name": "RS"
+    }
+  },
+  {
+    "id": 1600494,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_small",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 4, UT = 12, PT = 21.",
+    "answer": 7,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_small",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 4,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 12,
+      "base_known_name": "PT",
+      "base_known_val": 21,
+      "base_target_name": "RS"
+    }
+  },
+  {
+    "id": 1600495,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_small",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 8, UT = 16, PT = 20.",
+    "answer": 10,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_small",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 8,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 16,
+      "base_known_name": "PT",
+      "base_known_val": 20,
+      "base_target_name": "RS"
+    }
+  },
+  {
+    "id": 1600496,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_small",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 5, UT = 20, PT = 24.",
+    "answer": 6,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_small",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 5,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 20,
+      "base_known_name": "PT",
+      "base_known_val": 24,
+      "base_target_name": "RS"
+    }
+  },
+  {
+    "id": 1600497,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_small",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 10, UT = 25, PT = 30.",
+    "answer": 12,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_small",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 10,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 25,
+      "base_known_name": "PT",
+      "base_known_val": 30,
+      "base_target_name": "RS"
+    }
+  },
+  {
+    "id": 1600498,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_small",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 7, UT = 21, PT = 27.",
+    "answer": 9,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_small",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 7,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 21,
+      "base_known_name": "PT",
+      "base_known_val": 27,
+      "base_target_name": "RS"
+    }
+  },
+  {
+    "id": 1600499,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_small",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 9, UT = 18, PT = 22.",
+    "answer": 11,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_small",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 9,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 18,
+      "base_known_name": "PT",
+      "base_known_val": 22,
+      "base_target_name": "RS"
+    }
+  },
+  {
+    "id": 1600500,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_small",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 12, UT = 36, PT = 33.",
+    "answer": 11,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_small",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 12,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 36,
+      "base_known_name": "PT",
+      "base_known_val": 33,
+      "base_target_name": "RS"
+    }
+  },
+  {
+    "id": 1600501,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_small",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 3, UT = 15, PT = 25.",
+    "answer": 5,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_small",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 3,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 15,
+      "base_known_name": "PT",
+      "base_known_val": 25,
+      "base_target_name": "RS"
+    }
+  },
+  {
+    "id": 1600502,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_small",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 15, UT = 20, PT = 28.",
+    "answer": 21,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_small",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 15,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 20,
+      "base_known_name": "PT",
+      "base_known_val": 28,
+      "base_target_name": "RS"
+    }
+  },
+  {
+    "id": 1600503,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_small",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 8, UT = 12, PT = 18.",
+    "answer": 12,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_small",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 8,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 12,
+      "base_known_name": "PT",
+      "base_known_val": 18,
+      "base_target_name": "RS"
+    }
+  },
+  {
+    "id": 1600504,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_small",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 6, UT = 24, PT = 32.",
+    "answer": 8,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_small",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 6,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 24,
+      "base_known_name": "PT",
+      "base_known_val": 32,
+      "base_target_name": "RS"
+    }
+  },
+  {
+    "id": 1600505,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_small",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 14, UT = 28, PT = 26.",
+    "answer": 13,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_small",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 14,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 28,
+      "base_known_name": "PT",
+      "base_known_val": 26,
+      "base_target_name": "RS"
+    }
+  },
+  {
+    "id": 1600506,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_small",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 5, UT = 15, PT = 12.",
+    "answer": 4,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_small",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 5,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 15,
+      "base_known_name": "PT",
+      "base_known_val": 12,
+      "base_target_name": "RS"
+    }
+  },
+  {
+    "id": 1600507,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_small",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 11, UT = 22, PT = 30.",
+    "answer": 15,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_small",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 11,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 22,
+      "base_known_name": "PT",
+      "base_known_val": 30,
+      "base_target_name": "RS"
+    }
+  },
+  {
+    "id": 1600508,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_large",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 6, UT = 18, RS = 5.",
+    "answer": 15,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_large",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 6,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 18,
+      "base_known_name": "RS",
+      "base_known_val": 5,
+      "base_target_name": "PT"
+    }
+  },
+  {
+    "id": 1600509,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_large",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 4, UT = 12, RS = 7.",
+    "answer": 21,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_large",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 4,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 12,
+      "base_known_name": "RS",
+      "base_known_val": 7,
+      "base_target_name": "PT"
+    }
+  },
+  {
+    "id": 1600510,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_large",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 8, UT = 16, RS = 9.",
+    "answer": 18,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_large",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 8,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 16,
+      "base_known_name": "RS",
+      "base_known_val": 9,
+      "base_target_name": "PT"
+    }
+  },
+  {
+    "id": 1600511,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_large",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 5, UT = 20, RS = 6.",
+    "answer": 24,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_large",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 5,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 20,
+      "base_known_name": "RS",
+      "base_known_val": 6,
+      "base_target_name": "PT"
+    }
+  },
+  {
+    "id": 1600512,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_large",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 10, UT = 25, RS = 12.",
+    "answer": 30,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_large",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 10,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 25,
+      "base_known_name": "RS",
+      "base_known_val": 12,
+      "base_target_name": "PT"
+    }
+  },
+  {
+    "id": 1600513,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_large",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 7, UT = 21, RS = 8.",
+    "answer": 24,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_large",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 7,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 21,
+      "base_known_name": "RS",
+      "base_known_val": 8,
+      "base_target_name": "PT"
+    }
+  },
+  {
+    "id": 1600514,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_large",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 9, UT = 18, RS = 11.",
+    "answer": 22,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_large",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 9,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 18,
+      "base_known_name": "RS",
+      "base_known_val": 11,
+      "base_target_name": "PT"
+    }
+  },
+  {
+    "id": 1600515,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_large",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 12, UT = 36, RS = 10.",
+    "answer": 30,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_large",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 12,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 36,
+      "base_known_name": "RS",
+      "base_known_val": 10,
+      "base_target_name": "PT"
+    }
+  },
+  {
+    "id": 1600516,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_large",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 3, UT = 15, RS = 5.",
+    "answer": 25,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_large",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 3,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 15,
+      "base_known_name": "RS",
+      "base_known_val": 5,
+      "base_target_name": "PT"
+    }
+  },
+  {
+    "id": 1600517,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_large",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 15, UT = 20, RS = 21.",
+    "answer": 28,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_large",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 15,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 20,
+      "base_known_name": "RS",
+      "base_known_val": 21,
+      "base_target_name": "PT"
+    }
+  },
+  {
+    "id": 1600518,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_large",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 8, UT = 12, RS = 12.",
+    "answer": 18,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_large",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 8,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 12,
+      "base_known_name": "RS",
+      "base_known_val": 12,
+      "base_target_name": "PT"
+    }
+  },
+  {
+    "id": 1600519,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_large",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 6, UT = 24, RS = 8.",
+    "answer": 32,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_large",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 6,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 24,
+      "base_known_name": "RS",
+      "base_known_val": 8,
+      "base_target_name": "PT"
+    }
+  },
+  {
+    "id": 1600520,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_large",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 14, UT = 28, RS = 13.",
+    "answer": 26,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_large",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 14,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 28,
+      "base_known_name": "RS",
+      "base_known_val": 13,
+      "base_target_name": "PT"
+    }
+  },
+  {
+    "id": 1600521,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_large",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 5, UT = 15, RS = 4.",
+    "answer": 12,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_large",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 5,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 15,
+      "base_known_name": "RS",
+      "base_known_val": 4,
+      "base_target_name": "PT"
+    }
+  },
+  {
+    "id": 1600522,
+    "pattern": "secant_similarity",
+    "narrative": "prst_find_large",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 11, UT = 33, RS = 9.",
+    "answer": 27,
+    "image_file": "task_secant_similarity_prst.png",
+    "help_image_file": "help_secant_similarity_prst.png",
+    "task_context": {
+      "intersection_point": "U",
+      "common_vertex": "U",
+      "angle_equality_reason": "cyclic_quadrilateral_180",
+      "triangle_small_name": "URS",
+      "triangle_large_name": "UTP",
+      "vertex_angle_small": "R",
+      "vertex_angle_large": "T",
+      "narrative_type": "prst_find_large",
+      "secant_segment_short_name": "UR",
+      "secant_segment_short_val": 11,
+      "secant_segment_long_name": "UT",
+      "secant_segment_long_val": 33,
+      "base_known_name": "RS",
+      "base_known_val": 9,
+      "base_target_name": "PT"
+    }
+  },
+  {
+    "id": 1600523,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "inradius_find_height",
+    "question_text": "В равнобедренную трапецию ABCD вписана окружность с радиусом r = 6. Найди высоту h трапеции.",
+    "answer": 12,
+    "image_file": "task_inradius_find_height.png",
+    "help_image_file": "help_inradius_find_height.png",
+    "task_context": {
+      "narrative": "inradius_find_height",
+      "radius_name": "r",
+      "radius_value": 6,
+      "height_name": "h"
+    }
+  },
+  {
+    "id": 1600524,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "inradius_find_height",
+    "question_text": "В равнобедренную трапецию ABCD вписана окружность с радиусом r = 7. Найди высоту h трапеции.",
+    "answer": 14,
+    "image_file": "task_inradius_find_height.png",
+    "help_image_file": "help_inradius_find_height.png",
+    "task_context": {
+      "narrative": "inradius_find_height",
+      "radius_name": "r",
+      "radius_value": 7,
+      "height_name": "h"
+    }
+  },
+  {
+    "id": 1600525,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "inradius_find_height",
+    "question_text": "В равнобедренную трапецию ABCD вписана окружность с радиусом r = 8. Найди высоту h трапеции.",
+    "answer": 16,
+    "image_file": "task_inradius_find_height.png",
+    "help_image_file": "help_inradius_find_height.png",
+    "task_context": {
+      "narrative": "inradius_find_height",
+      "radius_name": "r",
+      "radius_value": 8,
+      "height_name": "h"
+    }
+  },
+  {
+    "id": 1600526,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "inradius_find_height",
+    "question_text": "В равнобедренную трапецию ABCD вписана окружность с радиусом r = 9. Найди высоту h трапеции.",
+    "answer": 18,
+    "image_file": "task_inradius_find_height.png",
+    "help_image_file": "help_inradius_find_height.png",
+    "task_context": {
+      "narrative": "inradius_find_height",
+      "radius_name": "r",
+      "radius_value": 9,
+      "height_name": "h"
+    }
+  },
+  {
+    "id": 1600527,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "inradius_find_height",
+    "question_text": "В равнобедренную трапецию ABCD вписана окружность с радиусом r = 10. Найди высоту h трапеции.",
+    "answer": 20,
+    "image_file": "task_inradius_find_height.png",
+    "help_image_file": "help_inradius_find_height.png",
+    "task_context": {
+      "narrative": "inradius_find_height",
+      "radius_name": "r",
+      "radius_value": 10,
+      "height_name": "h"
+    }
+  },
+  {
+    "id": 1600528,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "inradius_find_height",
+    "question_text": "В равнобедренную трапецию ABCD вписана окружность с радиусом r = 11. Найди высоту h трапеции.",
+    "answer": 22,
+    "image_file": "task_inradius_find_height.png",
+    "help_image_file": "help_inradius_find_height.png",
+    "task_context": {
+      "narrative": "inradius_find_height",
+      "radius_name": "r",
+      "radius_value": 11,
+      "height_name": "h"
+    }
+  },
+  {
+    "id": 1600529,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "inradius_find_height",
+    "question_text": "В равнобедренную трапецию ABCD вписана окружность с радиусом r = 12. Найди высоту h трапеции.",
+    "answer": 24,
+    "image_file": "task_inradius_find_height.png",
+    "help_image_file": "help_inradius_find_height.png",
+    "task_context": {
+      "narrative": "inradius_find_height",
+      "radius_name": "r",
+      "radius_value": 12,
+      "height_name": "h"
+    }
+  },
+  {
+    "id": 1600530,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "inradius_find_height",
+    "question_text": "В равнобедренную трапецию ABCD вписана окружность с радиусом r = 13. Найди высоту h трапеции.",
+    "answer": 26,
+    "image_file": "task_inradius_find_height.png",
+    "help_image_file": "help_inradius_find_height.png",
+    "task_context": {
+      "narrative": "inradius_find_height",
+      "radius_name": "r",
+      "radius_value": 13,
+      "height_name": "h"
+    }
+  },
+  {
+    "id": 1600531,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "inradius_find_height",
+    "question_text": "В равнобедренную трапецию ABCD вписана окружность с радиусом r = 14. Найди высоту h трапеции.",
+    "answer": 28,
+    "image_file": "task_inradius_find_height.png",
+    "help_image_file": "help_inradius_find_height.png",
+    "task_context": {
+      "narrative": "inradius_find_height",
+      "radius_name": "r",
+      "radius_value": 14,
+      "height_name": "h"
+    }
+  },
+  {
+    "id": 1600532,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "inradius_find_height",
+    "question_text": "В равнобедренную трапецию ABCD вписана окружность с радиусом r = 15. Найди высоту h трапеции.",
+    "answer": 30,
+    "image_file": "task_inradius_find_height.png",
+    "help_image_file": "help_inradius_find_height.png",
+    "task_context": {
+      "narrative": "inradius_find_height",
+      "radius_name": "r",
+      "radius_value": 15,
+      "height_name": "h"
+    }
+  },
+  {
+    "id": 1600533,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "inradius_find_height",
+    "question_text": "В равнобедренную трапецию ABCD вписана окружность с радиусом r = 16. Найди высоту h трапеции.",
+    "answer": 32,
+    "image_file": "task_inradius_find_height.png",
+    "help_image_file": "help_inradius_find_height.png",
+    "task_context": {
+      "narrative": "inradius_find_height",
+      "radius_name": "r",
+      "radius_value": 16,
+      "height_name": "h"
+    }
+  },
+  {
+    "id": 1600534,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "inradius_find_height",
+    "question_text": "В равнобедренную трапецию ABCD вписана окружность с радиусом r = 18. Найди высоту h трапеции.",
+    "answer": 36,
+    "image_file": "task_inradius_find_height.png",
+    "help_image_file": "help_inradius_find_height.png",
+    "task_context": {
+      "narrative": "inradius_find_height",
+      "radius_name": "r",
+      "radius_value": 18,
+      "height_name": "h"
+    }
+  },
+  {
+    "id": 1600535,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "inradius_find_height",
+    "question_text": "В равнобедренную трапецию ABCD вписана окружность с радиусом r = 20. Найди высоту h трапеции.",
+    "answer": 40,
+    "image_file": "task_inradius_find_height.png",
+    "help_image_file": "help_inradius_find_height.png",
+    "task_context": {
+      "narrative": "inradius_find_height",
+      "radius_name": "r",
+      "radius_value": 20,
+      "height_name": "h"
+    }
+  },
+  {
+    "id": 1600536,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "inradius_find_height",
+    "question_text": "В равнобедренную трапецию ABCD вписана окружность с радиусом r = 22. Найди высоту h трапеции.",
+    "answer": 44,
+    "image_file": "task_inradius_find_height.png",
+    "help_image_file": "help_inradius_find_height.png",
+    "task_context": {
+      "narrative": "inradius_find_height",
+      "radius_name": "r",
+      "radius_value": 22,
+      "height_name": "h"
+    }
+  },
+  {
+    "id": 1600537,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "inradius_find_height",
+    "question_text": "В равнобедренную трапецию ABCD вписана окружность с радиусом r = 24. Найди высоту h трапеции.",
+    "answer": 48,
+    "image_file": "task_inradius_find_height.png",
+    "help_image_file": "help_inradius_find_height.png",
+    "task_context": {
+      "narrative": "inradius_find_height",
+      "radius_name": "r",
+      "radius_value": 24,
+      "height_name": "h"
+    }
+  },
+  {
+    "id": 1600538,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "inradius_find_height",
+    "question_text": "В равнобедренную трапецию ABCD вписана окружность с радиусом r = 25. Найди высоту h трапеции.",
+    "answer": 50,
+    "image_file": "task_inradius_find_height.png",
+    "help_image_file": "help_inradius_find_height.png",
+    "task_context": {
+      "narrative": "inradius_find_height",
+      "radius_name": "r",
+      "radius_value": 25,
+      "height_name": "h"
+    }
+  },
+  {
+    "id": 1600539,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "inradius_find_height",
+    "question_text": "В равнобедренную трапецию ABCD вписана окружность с радиусом r = 27. Найди высоту h трапеции.",
+    "answer": 54,
+    "image_file": "task_inradius_find_height.png",
+    "help_image_file": "help_inradius_find_height.png",
+    "task_context": {
+      "narrative": "inradius_find_height",
+      "radius_name": "r",
+      "radius_value": 27,
+      "height_name": "h"
+    }
+  },
+  {
+    "id": 1600540,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "inradius_find_height",
+    "question_text": "В равнобедренную трапецию ABCD вписана окружность с радиусом r = 30. Найди высоту h трапеции.",
+    "answer": 60,
+    "image_file": "task_inradius_find_height.png",
+    "help_image_file": "help_inradius_find_height.png",
+    "task_context": {
+      "narrative": "inradius_find_height",
+      "radius_name": "r",
+      "radius_value": 30,
+      "height_name": "h"
+    }
+  },
+  {
+    "id": 1600541,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "inradius_find_height",
+    "question_text": "В равнобедренную трапецию ABCD вписана окружность с радиусом r = 36. Найди высоту h трапеции.",
+    "answer": 72,
+    "image_file": "task_inradius_find_height.png",
+    "help_image_file": "help_inradius_find_height.png",
+    "task_context": {
+      "narrative": "inradius_find_height",
+      "radius_name": "r",
+      "radius_value": 36,
+      "height_name": "h"
+    }
+  },
+  {
+    "id": 1600542,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "inradius_find_height",
+    "question_text": "В равнобедренную трапецию ABCD вписана окружность с радиусом r = 54. Найди высоту h трапеции.",
+    "answer": 108,
+    "image_file": "task_inradius_find_height.png",
+    "help_image_file": "help_inradius_find_height.png",
+    "task_context": {
+      "narrative": "inradius_find_height",
+      "radius_name": "r",
+      "radius_value": 54,
+      "height_name": "h"
+    }
+  },
+  {
+    "id": 1600543,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_sides",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 11, а MN = 15.",
+    "answer": 13,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_sides",
+      "side_1_name": "KL",
+      "side_1_val": 11,
+      "side_2_name": "MN",
+      "side_2_val": 15,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600544,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_sides",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 8, а MN = 14.",
+    "answer": 11,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_sides",
+      "side_1_name": "KL",
+      "side_1_val": 8,
+      "side_2_name": "MN",
+      "side_2_val": 14,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600545,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_sides",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 9, а MN = 13.",
+    "answer": 11,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_sides",
+      "side_1_name": "KL",
+      "side_1_val": 9,
+      "side_2_name": "MN",
+      "side_2_val": 13,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600546,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_sides",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 12, а MN = 18.",
+    "answer": 15,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_sides",
+      "side_1_name": "KL",
+      "side_1_val": 12,
+      "side_2_name": "MN",
+      "side_2_val": 18,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600547,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_sides",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 7, а MN = 17.",
+    "answer": 12,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_sides",
+      "side_1_name": "KL",
+      "side_1_val": 7,
+      "side_2_name": "MN",
+      "side_2_val": 17,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600548,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_sides",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 10, а MN = 16.",
+    "answer": 13,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_sides",
+      "side_1_name": "KL",
+      "side_1_val": 10,
+      "side_2_name": "MN",
+      "side_2_val": 16,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600549,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_sides",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 6, а MN = 12.",
+    "answer": 9,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_sides",
+      "side_1_name": "KL",
+      "side_1_val": 6,
+      "side_2_name": "MN",
+      "side_2_val": 12,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600550,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_sides",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 15, а MN = 21.",
+    "answer": 18,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_sides",
+      "side_1_name": "KL",
+      "side_1_val": 15,
+      "side_2_name": "MN",
+      "side_2_val": 21,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600551,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_sides",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 14, а MN = 20.",
+    "answer": 17,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_sides",
+      "side_1_name": "KL",
+      "side_1_val": 14,
+      "side_2_name": "MN",
+      "side_2_val": 20,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600552,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_sides",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 9, а MN = 19.",
+    "answer": 14,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_sides",
+      "side_1_name": "KL",
+      "side_1_val": 9,
+      "side_2_name": "MN",
+      "side_2_val": 19,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600553,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_sides",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 13, а MN = 17.",
+    "answer": 15,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_sides",
+      "side_1_name": "KL",
+      "side_1_val": 13,
+      "side_2_name": "MN",
+      "side_2_val": 17,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600554,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_sides",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 16, а MN = 22.",
+    "answer": 19,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_sides",
+      "side_1_name": "KL",
+      "side_1_val": 16,
+      "side_2_name": "MN",
+      "side_2_val": 22,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600555,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_sides",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 5, а MN = 11.",
+    "answer": 8,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_sides",
+      "side_1_name": "KL",
+      "side_1_val": 5,
+      "side_2_name": "MN",
+      "side_2_val": 11,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600556,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_sides",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 18, а MN = 24.",
+    "answer": 21,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_sides",
+      "side_1_name": "KL",
+      "side_1_val": 18,
+      "side_2_name": "MN",
+      "side_2_val": 24,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600557,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_sides",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если KL = 12, а MN = 14.",
+    "answer": 13,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_sides",
+      "side_1_name": "KL",
+      "side_1_val": 12,
+      "side_2_name": "MN",
+      "side_2_val": 14,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600558,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_bases",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 8, а KN = 18.",
+    "answer": 13,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_bases",
+      "base_1_name": "KN",
+      "base_1_val": 18,
+      "base_2_name": "LM",
+      "base_2_val": 8,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600559,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_bases",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 10, а KN = 22.",
+    "answer": 16,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_bases",
+      "base_1_name": "KN",
+      "base_1_val": 22,
+      "base_2_name": "LM",
+      "base_2_val": 10,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600560,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_bases",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 12, а KN = 20.",
+    "answer": 16,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_bases",
+      "base_1_name": "KN",
+      "base_1_val": 20,
+      "base_2_name": "LM",
+      "base_2_val": 12,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600561,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_bases",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 7, а KN = 17.",
+    "answer": 12,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_bases",
+      "base_1_name": "KN",
+      "base_1_val": 17,
+      "base_2_name": "LM",
+      "base_2_val": 7,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600562,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_bases",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 9, а KN = 15.",
+    "answer": 12,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_bases",
+      "base_1_name": "KN",
+      "base_1_val": 15,
+      "base_2_name": "LM",
+      "base_2_val": 9,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600563,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_bases",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 11, а KN = 25.",
+    "answer": 18,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_bases",
+      "base_1_name": "KN",
+      "base_1_val": 25,
+      "base_2_name": "LM",
+      "base_2_val": 11,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600564,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_bases",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 14, а KN = 26.",
+    "answer": 20,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_bases",
+      "base_1_name": "KN",
+      "base_1_val": 26,
+      "base_2_name": "LM",
+      "base_2_val": 14,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600565,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_bases",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 6, а KN = 16.",
+    "answer": 11,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_bases",
+      "base_1_name": "KN",
+      "base_1_val": 16,
+      "base_2_name": "LM",
+      "base_2_val": 6,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600566,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_bases",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 13, а KN = 19.",
+    "answer": 16,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_bases",
+      "base_1_name": "KN",
+      "base_1_val": 19,
+      "base_2_name": "LM",
+      "base_2_val": 13,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600567,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_bases",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 15, а KN = 27.",
+    "answer": 21,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_bases",
+      "base_1_name": "KN",
+      "base_1_val": 27,
+      "base_2_name": "LM",
+      "base_2_val": 15,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600568,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_bases",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 16, а KN = 24.",
+    "answer": 20,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_bases",
+      "base_1_name": "KN",
+      "base_1_val": 24,
+      "base_2_name": "LM",
+      "base_2_val": 16,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600569,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_bases",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 5, а KN = 21.",
+    "answer": 13,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_bases",
+      "base_1_name": "KN",
+      "base_1_val": 21,
+      "base_2_name": "LM",
+      "base_2_val": 5,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600570,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_bases",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 18, а KN = 30.",
+    "answer": 24,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_bases",
+      "base_1_name": "KN",
+      "base_1_val": 30,
+      "base_2_name": "LM",
+      "base_2_val": 18,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600571,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_bases",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 9, а KN = 23.",
+    "answer": 16,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_bases",
+      "base_1_name": "KN",
+      "base_1_val": 23,
+      "base_2_name": "LM",
+      "base_2_val": 9,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600572,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_midline_via_bases",
+    "question_text": "Трапеция KLMN с основаниями LM и KN описана около окружности. Найди среднюю линию трапеции PR, если LM = 12, а KN = 28.",
+    "answer": 20,
+    "image_file": "task_tangent_trapezoid_find_midline.png",
+    "help_image_file": "help_tangent_trapezoid_find_midline.png",
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_midline_via_bases",
+      "base_1_name": "KN",
+      "base_1_val": 28,
+      "base_2_name": "LM",
+      "base_2_val": 12,
+      "midline_name": "PR"
+    }
+  },
+  {
+    "id": 1600573,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 12, AB = 5, BC = 7. Найди CD.",
+    "answer": 14,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AD",
+      "side_known_1_val": 12,
+      "side_known_2_name": "BC",
+      "side_known_2_val": 7,
+      "side_known_3_name": "AB",
+      "side_known_3_val": 5,
+      "side_target_name": "CD"
+    }
+  },
+  {
+    "id": 1600574,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 18, AB = 9, BC = 11. Найди CD.",
+    "answer": 20,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AD",
+      "side_known_1_val": 18,
+      "side_known_2_name": "BC",
+      "side_known_2_val": 11,
+      "side_known_3_name": "AB",
+      "side_known_3_val": 9,
+      "side_target_name": "CD"
+    }
+  },
+  {
+    "id": 1600575,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 20, AB = 8, BC = 14. Найди CD.",
+    "answer": 26,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AD",
+      "side_known_1_val": 20,
+      "side_known_2_name": "BC",
+      "side_known_2_val": 14,
+      "side_known_3_name": "AB",
+      "side_known_3_val": 8,
+      "side_target_name": "CD"
+    }
+  },
+  {
+    "id": 1600576,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 15, AB = 6, BC = 9. Найди CD.",
+    "answer": 18,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AD",
+      "side_known_1_val": 15,
+      "side_known_2_name": "BC",
+      "side_known_2_val": 9,
+      "side_known_3_name": "AB",
+      "side_known_3_val": 6,
+      "side_target_name": "CD"
+    }
+  },
+  {
+    "id": 1600577,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 22, AB = 10, BC = 12. Найди CD.",
+    "answer": 24,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AD",
+      "side_known_1_val": 22,
+      "side_known_2_name": "BC",
+      "side_known_2_val": 12,
+      "side_known_3_name": "AB",
+      "side_known_3_val": 10,
+      "side_target_name": "CD"
+    }
+  },
+  {
+    "id": 1600578,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 16, AB = 7, BC = 13. Найди CD.",
+    "answer": 22,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AD",
+      "side_known_1_val": 16,
+      "side_known_2_name": "BC",
+      "side_known_2_val": 13,
+      "side_known_3_name": "AB",
+      "side_known_3_val": 7,
+      "side_target_name": "CD"
+    }
+  },
+  {
+    "id": 1600579,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 14, AB = 5, BC = 9. Найди CD.",
+    "answer": 18,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AD",
+      "side_known_1_val": 14,
+      "side_known_2_name": "BC",
+      "side_known_2_val": 9,
+      "side_known_3_name": "AB",
+      "side_known_3_val": 5,
+      "side_target_name": "CD"
+    }
+  },
+  {
+    "id": 1600580,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 26, AB = 11, BC = 15. Найди CD.",
+    "answer": 30,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AD",
+      "side_known_1_val": 26,
+      "side_known_2_name": "BC",
+      "side_known_2_val": 15,
+      "side_known_3_name": "AB",
+      "side_known_3_val": 11,
+      "side_target_name": "CD"
+    }
+  },
+  {
+    "id": 1600581,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 24, AB = 9, BC = 13. Найди CD.",
+    "answer": 28,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AD",
+      "side_known_1_val": 24,
+      "side_known_2_name": "BC",
+      "side_known_2_val": 13,
+      "side_known_3_name": "AB",
+      "side_known_3_val": 9,
+      "side_target_name": "CD"
+    }
+  },
+  {
+    "id": 1600582,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 19, AB = 8, BC = 11. Найди CD.",
+    "answer": 22,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AD",
+      "side_known_1_val": 19,
+      "side_known_2_name": "BC",
+      "side_known_2_val": 11,
+      "side_known_3_name": "AB",
+      "side_known_3_val": 8,
+      "side_target_name": "CD"
+    }
+  },
+  {
+    "id": 1600583,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 14, CD = 6, BC = 10. Найди AB.",
+    "answer": 18,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AD",
+      "side_known_1_val": 14,
+      "side_known_2_name": "BC",
+      "side_known_2_val": 10,
+      "side_known_3_name": "CD",
+      "side_known_3_val": 6,
+      "side_target_name": "AB"
+    }
+  },
+  {
+    "id": 1600584,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 18, CD = 7, BC = 11. Найди AB.",
+    "answer": 22,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AD",
+      "side_known_1_val": 18,
+      "side_known_2_name": "BC",
+      "side_known_2_val": 11,
+      "side_known_3_name": "CD",
+      "side_known_3_val": 7,
+      "side_target_name": "AB"
+    }
+  },
+  {
+    "id": 1600585,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 20, CD = 9, BC = 13. Найди AB.",
+    "answer": 24,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AD",
+      "side_known_1_val": 20,
+      "side_known_2_name": "BC",
+      "side_known_2_val": 13,
+      "side_known_3_name": "CD",
+      "side_known_3_val": 9,
+      "side_target_name": "AB"
+    }
+  },
+  {
+    "id": 1600586,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 16, CD = 8, BC = 12. Найди AB.",
+    "answer": 20,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AD",
+      "side_known_1_val": 16,
+      "side_known_2_name": "BC",
+      "side_known_2_val": 12,
+      "side_known_3_name": "CD",
+      "side_known_3_val": 8,
+      "side_target_name": "AB"
+    }
+  },
+  {
+    "id": 1600587,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 22, CD = 10, BC = 14. Найди AB.",
+    "answer": 26,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AD",
+      "side_known_1_val": 22,
+      "side_known_2_name": "BC",
+      "side_known_2_val": 14,
+      "side_known_3_name": "CD",
+      "side_known_3_val": 10,
+      "side_target_name": "AB"
+    }
+  },
+  {
+    "id": 1600588,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 15, CD = 5, BC = 9. Найди AB.",
+    "answer": 19,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AD",
+      "side_known_1_val": 15,
+      "side_known_2_name": "BC",
+      "side_known_2_val": 9,
+      "side_known_3_name": "CD",
+      "side_known_3_val": 5,
+      "side_target_name": "AB"
+    }
+  },
+  {
+    "id": 1600589,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 24, CD = 11, BC = 15. Найди AB.",
+    "answer": 28,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AD",
+      "side_known_1_val": 24,
+      "side_known_2_name": "BC",
+      "side_known_2_val": 15,
+      "side_known_3_name": "CD",
+      "side_known_3_val": 11,
+      "side_target_name": "AB"
+    }
+  },
+  {
+    "id": 1600590,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 26, CD = 12, BC = 16. Найди AB.",
+    "answer": 30,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AD",
+      "side_known_1_val": 26,
+      "side_known_2_name": "BC",
+      "side_known_2_val": 16,
+      "side_known_3_name": "CD",
+      "side_known_3_val": 12,
+      "side_target_name": "AB"
+    }
+  },
+  {
+    "id": 1600591,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 19, CD = 7, BC = 11. Найди AB.",
+    "answer": 23,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AD",
+      "side_known_1_val": 19,
+      "side_known_2_name": "BC",
+      "side_known_2_val": 11,
+      "side_known_3_name": "CD",
+      "side_known_3_val": 7,
+      "side_target_name": "AB"
+    }
+  },
+  {
+    "id": 1600592,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 21, CD = 9, BC = 13. Найди AB.",
+    "answer": 25,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AD",
+      "side_known_1_val": 21,
+      "side_known_2_name": "BC",
+      "side_known_2_val": 13,
+      "side_known_3_name": "CD",
+      "side_known_3_val": 9,
+      "side_target_name": "AB"
+    }
+  },
+  {
+    "id": 1600593,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AB = 6, CD = 10, BC = 12. Найди AD.",
+    "answer": 4,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AB",
+      "side_known_1_val": 6,
+      "side_known_2_name": "CD",
+      "side_known_2_val": 10,
+      "side_known_3_name": "BC",
+      "side_known_3_val": 12,
+      "side_target_name": "AD"
+    }
+  },
+  {
+    "id": 1600594,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AB = 8, CD = 14, BC = 16. Найди AD.",
+    "answer": 6,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AB",
+      "side_known_1_val": 8,
+      "side_known_2_name": "CD",
+      "side_known_2_val": 14,
+      "side_known_3_name": "BC",
+      "side_known_3_val": 16,
+      "side_target_name": "AD"
+    }
+  },
+  {
+    "id": 1600595,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AB = 7, CD = 13, BC = 15. Найди AD.",
+    "answer": 5,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AB",
+      "side_known_1_val": 7,
+      "side_known_2_name": "CD",
+      "side_known_2_val": 13,
+      "side_known_3_name": "BC",
+      "side_known_3_val": 15,
+      "side_target_name": "AD"
+    }
+  },
+  {
+    "id": 1600596,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AB = 9, CD = 11, BC = 14. Найди AD.",
+    "answer": 6,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AB",
+      "side_known_1_val": 9,
+      "side_known_2_name": "CD",
+      "side_known_2_val": 11,
+      "side_known_3_name": "BC",
+      "side_known_3_val": 14,
+      "side_target_name": "AD"
+    }
+  },
+  {
+    "id": 1600597,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AB = 10, CD = 16, BC = 18. Найди AD.",
+    "answer": 8,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AB",
+      "side_known_1_val": 10,
+      "side_known_2_name": "CD",
+      "side_known_2_val": 16,
+      "side_known_3_name": "BC",
+      "side_known_3_val": 18,
+      "side_target_name": "AD"
+    }
+  },
+  {
+    "id": 1600598,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AB = 5, CD = 9, BC = 11. Найди AD.",
+    "answer": 3,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AB",
+      "side_known_1_val": 5,
+      "side_known_2_name": "CD",
+      "side_known_2_val": 9,
+      "side_known_3_name": "BC",
+      "side_known_3_val": 11,
+      "side_target_name": "AD"
+    }
+  },
+  {
+    "id": 1600599,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AB = 11, CD = 17, BC = 19. Найди AD.",
+    "answer": 9,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AB",
+      "side_known_1_val": 11,
+      "side_known_2_name": "CD",
+      "side_known_2_val": 17,
+      "side_known_3_name": "BC",
+      "side_known_3_val": 19,
+      "side_target_name": "AD"
+    }
+  },
+  {
+    "id": 1600600,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AB = 12, CD = 18, BC = 20. Найди AD.",
+    "answer": 10,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AB",
+      "side_known_1_val": 12,
+      "side_known_2_name": "CD",
+      "side_known_2_val": 18,
+      "side_known_3_name": "BC",
+      "side_known_3_val": 20,
+      "side_target_name": "AD"
+    }
+  },
+  {
+    "id": 1600601,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AB = 8, CD = 12, BC = 14. Найди AD.",
+    "answer": 6,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AB",
+      "side_known_1_val": 8,
+      "side_known_2_name": "CD",
+      "side_known_2_val": 12,
+      "side_known_3_name": "BC",
+      "side_known_3_val": 14,
+      "side_target_name": "AD"
+    }
+  },
+  {
+    "id": 1600602,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AB = 9, CD = 15, BC = 17. Найди AD.",
+    "answer": 7,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AB",
+      "side_known_1_val": 9,
+      "side_known_2_name": "CD",
+      "side_known_2_val": 15,
+      "side_known_3_name": "BC",
+      "side_known_3_val": 17,
+      "side_target_name": "AD"
+    }
+  },
+  {
+    "id": 1600603,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 15, AB = 8, CD = 12. Найди BC.",
+    "answer": 5,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AB",
+      "side_known_1_val": 8,
+      "side_known_2_name": "CD",
+      "side_known_2_val": 12,
+      "side_known_3_name": "AD",
+      "side_known_3_val": 15,
+      "side_target_name": "BC"
+    }
+  },
+  {
+    "id": 1600604,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 18, AB = 10, CD = 14. Найди BC.",
+    "answer": 6,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AB",
+      "side_known_1_val": 10,
+      "side_known_2_name": "CD",
+      "side_known_2_val": 14,
+      "side_known_3_name": "AD",
+      "side_known_3_val": 18,
+      "side_target_name": "BC"
+    }
+  },
+  {
+    "id": 1600605,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 20, AB = 11, CD = 15. Найди BC.",
+    "answer": 6,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AB",
+      "side_known_1_val": 11,
+      "side_known_2_name": "CD",
+      "side_known_2_val": 15,
+      "side_known_3_name": "AD",
+      "side_known_3_val": 20,
+      "side_target_name": "BC"
+    }
+  },
+  {
+    "id": 1600606,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 14, AB = 9, CD = 10. Найди BC.",
+    "answer": 5,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AB",
+      "side_known_1_val": 9,
+      "side_known_2_name": "CD",
+      "side_known_2_val": 10,
+      "side_known_3_name": "AD",
+      "side_known_3_val": 14,
+      "side_target_name": "BC"
+    }
+  },
+  {
+    "id": 1600607,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 24, AB = 13, CD = 17. Найди BC.",
+    "answer": 6,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AB",
+      "side_known_1_val": 13,
+      "side_known_2_name": "CD",
+      "side_known_2_val": 17,
+      "side_known_3_name": "AD",
+      "side_known_3_val": 24,
+      "side_target_name": "BC"
+    }
+  },
+  {
+    "id": 1600608,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 26, AB = 14, CD = 18. Найди BC.",
+    "answer": 6,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AB",
+      "side_known_1_val": 14,
+      "side_known_2_name": "CD",
+      "side_known_2_val": 18,
+      "side_known_3_name": "AD",
+      "side_known_3_val": 26,
+      "side_target_name": "BC"
+    }
+  },
+  {
+    "id": 1600609,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 12, AB = 8, CD = 9. Найди BC.",
+    "answer": 5,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AB",
+      "side_known_1_val": 8,
+      "side_known_2_name": "CD",
+      "side_known_2_val": 9,
+      "side_known_3_name": "AD",
+      "side_known_3_val": 12,
+      "side_target_name": "BC"
+    }
+  },
+  {
+    "id": 1600610,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 16, AB = 10, CD = 12. Найди BC.",
+    "answer": 6,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AB",
+      "side_known_1_val": 10,
+      "side_known_2_name": "CD",
+      "side_known_2_val": 12,
+      "side_known_3_name": "AD",
+      "side_known_3_val": 16,
+      "side_target_name": "BC"
+    }
+  },
+  {
+    "id": 1600611,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 21, AB = 12, CD = 15. Найди BC.",
+    "answer": 6,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AB",
+      "side_known_1_val": 12,
+      "side_known_2_name": "CD",
+      "side_known_2_val": 15,
+      "side_known_3_name": "AD",
+      "side_known_3_val": 21,
+      "side_target_name": "BC"
+    }
+  },
+  {
+    "id": 1600612,
+    "pattern": "tangent_trapezoid_properties",
+    "narrative": "tangent_trapezoid_find_base",
+    "question_text": "Окружность вписана в трапецию ABCD. AD = 28, AB = 15, CD = 19. Найди BC.",
+    "answer": 6,
+    "image_file": "task_tangent_trapezoid_find_base.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_trapezoid_find_base",
+      "side_known_1_name": "AB",
+      "side_known_1_val": 15,
+      "side_known_2_name": "CD",
+      "side_known_2_val": 19,
+      "side_known_3_name": "AD",
+      "side_known_3_val": 28,
+      "side_target_name": "BC"
+    }
   }
 ]

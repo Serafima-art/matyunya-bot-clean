@@ -29,6 +29,7 @@ if str(PROJECT_ROOT) not in sys.path:
 # =============================================================
 # Импорт Решателя темы
 from matunya_bot_final.help_core.solvers.task_16.central_and_inscribed_angles_solver import solve
+from matunya_bot_final.help_core.solvers.task_16.circle_elements_relations_solver import solve
 
 # Импорт Хьюмонайзера (ЖЕСТКИЙ ИМПОРТ, ЧТОБЫ ВИДЕТЬ ОШИБКИ)
 from matunya_bot_final.help_core.humanizers.template_humanizers.task_16_humanizer import humanize
@@ -183,12 +184,20 @@ if __name__ == "__main__":
         # =============================================================
 
         # -------------------------------------------------------------
-        # ТЕМА 1: Центральные и вписанные углы (central_and_inscribed_angles)
+        # 🟩 ТЕМА 1: Центральные и вписанные углы (central_and_inscribed_angles)
         # -------------------------------------------------------------
         # TEST_PATTERN = "cyclic_quad_angles"
         # TEST_PATTERN = "central_inscribed"
         # TEST_PATTERN = "radius_chord_angles"
-        TEST_PATTERN = "arc_length_ratio"
+        # TEST_PATTERN = "arc_length_ratio"
+        # TEST_PATTERN = "diameter_right_triangle"
+        # TEST_PATTERN = "two_diameters_angles"
+
+        # -------------------------------------------------------------
+        # 🟨 ТЕМА 2. Касательная, хорда, секущая, радиус (circle_elements_relations)
+        # -------------------------------------------------------------
+        # TEST_PATTERN = "secant_similarity"
+        TEST_PATTERN = "tangent_trapezoid_properties"
 
         # Сколько случайных задач брать ИЗ КАЖДОГО нарратива
         TEST_LIMIT_PER_NARRATIVE = 10

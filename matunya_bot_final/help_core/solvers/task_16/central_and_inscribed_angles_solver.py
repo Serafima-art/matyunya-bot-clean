@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import logging
+import math
 from typing import Any, Dict, Optional
 
 logger = logging.getLogger(__name__)
@@ -469,29 +470,72 @@ def _solve_arc_length_ratio(task_data: Dict[str, Any]) -> Dict[str, Any]:
     """
     Паттерн 1.4: arc_length_ratio
     Нарратив: small_to_large_arc
-    Канон: facts-only, без вычислений в humanizer.
+    FIX: Используем \n вместо <br> для корректного отображения в Telegram.
     """
+    import math
+
     context: Dict[str, Any] = task_data.get("task_context") or {}
     answer = task_data.get("answer")
 
     raw_narrative = context.get("narrative_type") or ""
-
-    # Нормализация narrative_type -> канон humanizer'а
-    # arc_length_ratio_small_to_large_arc_acute / obtuse -> small_to_large_arc
     if "small_to_large_arc" in raw_narrative:
         narrative_type = "small_to_large_arc"
     else:
         narrative_type = raw_narrative
 
-    facts: Dict[str, Any] = {
-        "narrative_type": narrative_type,
-        "answer": answer,
+    len_small = context.get("small_arc_length")
+    angle_small = context.get("small_arc_angle")
+    angle_large = context.get("large_arc_angle")
 
-        # факты для пропорции
+    reduce_steps = []
+
+    # --- сокращение углов ---
+    gcd_angles = math.gcd(angle_large, angle_small)
+    num = angle_large
+    den = angle_small
+
+    if gcd_angles > 1:
+        reduce_steps.append({
+            "by": gcd_angles,
+            "before": f"{len_small} · {angle_large}/{angle_small}",
+            "after": f"{len_small} · {angle_large // gcd_angles}/{angle_small // gcd_angles}"
+        })
+        num //= gcd_angles
+        den //= gcd_angles
+
+    # --- сокращение длины и знаменателя ---
+    if den > 1:
+        gcd_len = math.gcd(len_small, den)
+        if gcd_len > 1:
+            reduce_steps.append({
+                "by": gcd_len,
+                "before": f"{len_small} · {num}/{den}",
+                "after": f"{len_small // gcd_len} · {num}"
+            })
+            len_small //= gcd_len
+
+    # вычисляем ответ, если он не пришёл
+    if answer is None:
+        answer = (context["small_arc_length"] * context["large_arc_angle"]) // context["small_arc_angle"]
+
+    calc = {
+        "small_len": context.get("small_arc_length"),
+        "small_angle": angle_small,
+        "large_angle": angle_large,
+        "reduce_steps": reduce_steps,
+        "final": answer
+    }
+
+    facts = {
+        "narrative_type": narrative_type,
         "arc_name": context.get("arc_name"),
+
         "small_arc_length": context.get("small_arc_length"),
         "small_arc_angle": context.get("small_arc_angle"),
         "large_arc_angle": context.get("large_arc_angle"),
+
+        "answer": answer,          # ← ВОТ ЭТО КРИТИЧНО
+        "calc": calc,
     }
 
     idea_key = "IDEA_ARC_LENGTH_RATIO"
@@ -507,21 +551,186 @@ def _solve_arc_length_ratio(task_data: Dict[str, Any]) -> Dict[str, Any]:
             "unit": "",
         },
         "variables": facts,
-        "help_image": None,  # по канону
+        "help_image": None,
         "hints": [],
     }
 
 # =========================================================================
-# ЗАГЛУШКИ ДЛЯ ОСТАЛЬНЫХ ПАТТЕРНОВ
+# ПАТТЕРН 1.5: diameter_right_triangle
 # =========================================================================
 
 def _solve_diameter_right_triangle(task_data: Dict[str, Any]) -> Dict[str, Any]:
-    return _get_stub_solution(task_data, "diameter_right_triangle")
+    """
+    Паттерн 1.5: diameter_right_triangle
+    Нарратив: center_on_side
+    """
 
+    context: Dict[str, Any] = task_data.get("task_context", {}) or {}
+    answer = task_data.get("answer")
+
+    # --- факты из контекста (контракт валидатора) ---
+    diameter_side = context.get("diameter_side")            # "AC"
+    radius_point = context.get("radius_point")              # "A" или "C"
+    radius_value = context.get("radius_value")              # R (int/float)
+    right_angle_vertex = context.get("right_angle_vertex")  # "B"
+
+    known_leg_name = context.get("known_leg_name")          # "AB" или "BC"
+    known_leg_value = context.get("known_leg_value")        # число
+    target_leg_name = context.get("target_leg_name")        # "AB" или "BC"
+
+    if radius_value is None or known_leg_value is None:
+        return _get_error_solution(task_data, reason="diameter_right_triangle: missing radius_value/known_leg_value")
+
+    # --- вычисляем диаметр (гипотенузу) ---
+    diameter_value = 2 * float(radius_value)
+    hypotenuse = diameter_value  # алиас по смыслу
+
+    # --- Пифагор: target^2 = hyp^2 - known^2 ---
+    target_sq = hypotenuse ** 2 - float(known_leg_value) ** 2
+    if target_sq < 0:
+        return _get_error_solution(task_data, reason="diameter_right_triangle: negative under sqrt")
+
+    target_val = math.sqrt(target_sq)
+
+    # если получилось "почти целое" — приводим к int (красивый ответ)
+    if abs(target_val - round(target_val)) < 1e-9:
+        target_val = int(round(target_val))
+
+    # если answer не пришёл из БД — берём вычисленный
+    if answer is None:
+        answer = target_val
+
+    # --- FACTS для humanizer (важно: ключи, которые он ждёт) ---
+    facts = {
+        "narrative_type": "center_on_side",
+
+        "radius_point": radius_point,      # ✅ ОБЯЗАТЕЛЬНО
+        "radius_value": radius_value,
+
+        "diameter_side": diameter_side,
+        "diameter_value": diameter_value,
+
+        "right_angle_vertex": right_angle_vertex,
+
+        "known_leg_name": known_leg_name,
+        "known_leg_value": known_leg_value,
+        "target_leg_name": target_leg_name,
+
+        "hypotenuse": hypotenuse,
+        "hypotenuse_sq": hypotenuse ** 2,
+        "known_leg_sq": known_leg_value ** 2,
+        "target_leg_sq": target_sq,
+
+        "answer": answer,
+    }
+
+    # help_image по контракту (добавляем file)
+    help_image_file = task_data.get("help_image_file") or context.get("help_image_file")
+    help_image = None
+    if help_image_file:
+        help_image = {
+            "file": str(help_image_file),
+            "schema": "diameter_right_triangle__center_on_side",
+            "params": {
+                "triangle": context.get("triangle"),
+                "center": context.get("center"),
+                "diameter_side": diameter_side,
+                "right_angle_vertex": right_angle_vertex,
+            }
+        }
+
+    return {
+        "question_id": str(task_data.get("id")),
+        "question_group": "GEOMETRY_16",
+        "explanation_idea": "IDEA_DIAMETER_RIGHT_TRIANGLE",
+        "calculation_steps": [],
+        "final_answer": {
+            "value_machine": answer,
+            "value_display": str(answer) if answer is not None else "",
+            "unit": "",
+        },
+        "variables": facts,
+        "help_image": help_image,
+        "hints": [],
+    }
+
+# =========================================================================
+# ПАТТЕРН 1.6: two_diameters_angles
+# =========================================================================
 
 def _solve_two_diameters_angles(task_data: Dict[str, Any]) -> Dict[str, Any]:
-    return _get_stub_solution(task_data, "two_diameters_angles")
+    """
+    Паттерн 1.6: two_diameters_angles
+    Нарративы:
+      - find_inscribed
+      - find_central
+    """
 
+    context: Dict[str, Any] = task_data.get("task_context") or {}
+    answer = task_data.get("answer")
+
+    narrative = context.get("narrative_type")
+
+    if narrative not in ("find_inscribed", "find_central"):
+        return _get_error_solution(
+            task_data,
+            reason=f"two_diameters_angles: unknown narrative '{narrative}'"
+        )
+
+    # --- базовые факты ---
+    facts = {
+        "narrative_type": narrative,
+        "center": context.get("center"),
+        "diameters": context.get("diameters"),
+        "triangle_name": context.get("triangle_name"),
+        "isosceles_sides": context.get("isosceles_sides"),
+        "vertical_pair": context.get("vertical_pair"),
+        "answer": answer,
+    }
+
+    # --- find_inscribed ---
+    if narrative == "find_inscribed":
+        facts.update(
+            central_angle_name=context.get("central_angle_name"),
+            central_angle_value=context.get("central_angle_value"),
+            target_angle_name=context.get("target_angle_name"),
+        )
+
+    # --- find_central ---
+    else:
+        facts.update(
+            base_angle_name=context.get("base_angle_name"),
+            base_angle_value=context.get("base_angle_value"),
+            target_angle_name=context.get("target_angle_name"),
+        )
+
+    help_image_file = task_data.get("help_image_file") or context.get("help_image_file")
+    help_image = None
+    if help_image_file:
+        help_image = {
+            "file": str(help_image_file),
+            "schema": f"two_diameters_angles__{narrative}",
+            "params": {
+                "diameters": context.get("diameters"),
+                "center": context.get("center"),
+                "triangle": context.get("triangle_name"),
+            }
+        }
+
+    return {
+        "question_id": str(task_data.get("id")),
+        "question_group": "GEOMETRY_16",
+        "explanation_idea": f"IDEA_TWO_DIAMETERS_{narrative.upper()}",
+        "calculation_steps": [],
+        "final_answer": {
+            "value_machine": answer,
+            "value_display": str(answer) if answer is not None else "",
+            "unit": "°",
+        },
+        "variables": facts,
+        "help_image": help_image,
+        "hints": [],
+    }
 
 # =========================================================================
 # УТИЛИТЫ
