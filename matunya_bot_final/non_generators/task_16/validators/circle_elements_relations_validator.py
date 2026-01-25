@@ -487,11 +487,120 @@ class CircleElementsRelationsValidator:
         return len(errors) == 0, errors
 
     # =========================================================================
-    # ЗАГЛУШКИ ДЛЯ БУДУЩИХ ПАТТЕРНОВ (2.2 - 2.7)
+    # ПАТТЕРН 2.3: tangent_quad_sum
     # =========================================================================
 
     def _validate_tangent_quad_sum(self, task: Dict[str, Any]) -> Tuple[bool, List[str]]:
-        return False, ["Pattern 2.3 not implemented yet"]
+        errors = []
+        text = task.get("question_text", "")
+        narrative = task.get("narrative")
+        answer = task.get("answer")
+
+        # 1. Парсим Искомую сторону (Найди AD)
+        match_target = re.search(r"Найди(?:те)?\s+([A-Z]{2})", text)
+        if not match_target:
+            errors.append("Не найдена искомая сторона (Regex: Найди XX).")
+            return False, errors
+
+        target_name = "".join(sorted(match_target.group(1))) # Сортируем буквы (AD)
+
+        # 2. Парсим Известные стороны
+        found_vars = {}
+        for m in self.segment_regex.finditer(text):
+            key = "".join(sorted(m.group(1).upper()))
+            val = float(m.group(2).replace(',', '.'))
+            if val.is_integer(): val = int(val)
+            found_vars[key] = val
+
+        # Удаляем искомую из найденных (на случай, если она случайно попала в regex)
+        if target_name in found_vars:
+            del found_vars[target_name]
+
+        if len(found_vars) != 3:
+            errors.append(f"Нужно ровно 3 известные стороны, найдено {len(found_vars)}: {found_vars}")
+            return False, errors
+
+        # 3. Геометрическая логика
+        # В описанном 4-угольнике противоположные стороны НЕ ИМЕЮТ общих букв.
+        # Смежные стороны ИМЕЮТ общую букву (вершину).
+        # Нам нужно найти ПАРУ к Целевой стороне (это та, у которой нет общих букв).
+
+        target_letters = set(target_name)
+
+        partner_name = None
+        partner_val = 0
+        complete_pair = [] # [(name, val), (name, val)]
+
+        for name, val in found_vars.items():
+            # Пересечение множеств букв
+            if not set(name).intersection(target_letters):
+                # Нет общих букв -> Это противоположная сторона (Партнер)
+                partner_name = name
+                partner_val = val
+            else:
+                # Есть общая буква -> Это смежная сторона (часть Полной пары)
+                complete_pair.append((name, val))
+
+        if not partner_name or len(complete_pair) != 2:
+            errors.append(f"Не удалось определить пары сторон для {target_name}. Проверь буквы.")
+            return False, errors
+
+        # 4. Расчет
+        # Сумма полной пары = Сумма неполной пары
+        sum_complete = complete_pair[0][1] + complete_pair[1][1]
+
+        # Target + Partner = Sum_Complete
+        # Target = Sum_Complete - Partner
+        calc_res = sum_complete - partner_val
+
+        if calc_res <= 0:
+            errors.append(f"Геометрическая ошибка: сторона <= 0 ({calc_res}).")
+            return False, errors
+
+        # 5. Сборка контекста по утвержденному JSON
+        task_context = {
+            "narrative_type": "find_missing_side",
+            "figure_type": "tangent_quadrilateral",
+
+            # Левая часть (Полная пара - смежные с целевой)
+            # Хотя методически это "Противоположная пара", но для уравнения:
+            # L1 + L2 = R1 + x
+            "sum_left_1_name": complete_pair[0][0],
+            "sum_left_1_val": complete_pair[0][1],
+            "sum_left_2_name": complete_pair[1][0],
+            "sum_left_2_val": complete_pair[1][1],
+
+            # Правая часть (Неполная пара)
+            "sum_right_1_name": partner_name,
+            "sum_right_1_val": partner_val,
+            "sum_right_2_name": target_name,
+            "sum_right_2_val": None, # Это мы ищем
+
+            "target_side_name": target_name
+        }
+
+        # Финализация ответа
+        final_calc_answer = calc_res
+        if isinstance(final_calc_answer, float) and final_calc_answer.is_integer():
+            final_calc_answer = int(final_calc_answer)
+
+        # Проверка с ответом в файле
+        if answer is not None and str(answer).strip() != "" and int(answer) != -1:
+            if abs(float(final_calc_answer) - float(answer)) > 0.01:
+                errors.append(f"Математическая ошибка: {final_calc_answer} != {answer}")
+
+        # Итог
+        task["answer"] = final_calc_answer
+        task["image_file"] = "task_tangent_quad_sum.png"
+        task["help_image_file"] = "help_tangent_quad_sum.png"
+        task["task_context"] = task_context
+
+        return True, errors
+
+    # =========================================================================
+    # ЗАГЛУШКИ ДЛЯ БУДУЩИХ ПАТТЕРНОВ (2.2 - 2.7)
+    # =========================================================================
+
 
     def _validate_tangent_arc_angle(self, task: Dict[str, Any]) -> Tuple[bool, List[str]]:
         return False, ["Pattern 2.4 not implemented yet"]

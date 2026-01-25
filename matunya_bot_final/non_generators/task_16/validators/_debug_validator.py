@@ -26,7 +26,7 @@ from typing import Optional, Dict, Any, List
 # НАСТРОЙКИ
 # ---------------------------------------------------------------------
 
-TARGET_PATTERN = "tangent_trapezoid_properties"
+TARGET_PATTERN = "tangent_quad_sum" # Паттерн, который отлаживаем
 DEFINITIONS_FILE = "circle_elements_relations.txt"
 OUTPUT_FILENAME = "debug_validator_output.txt"
 

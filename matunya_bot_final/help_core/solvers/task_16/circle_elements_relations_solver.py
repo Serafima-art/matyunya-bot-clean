@@ -430,21 +430,132 @@ def _solve_tangent_trapezoid_properties(task_data: Dict[str, Any]) -> Dict[str, 
         "hints": [],
     }
 
-# =========================================================================
+# =============================================================================
 # ПАТТЕРН 2.3: tangent_quad_sum
-# =========================================================================
+# =============================================================================
 
 def _solve_tangent_quad_sum(task_data: Dict[str, Any]) -> Dict[str, Any]:
     """
     Паттерн 2.3: tangent_quad_sum
 
     Канон:
-    - четырёхугольник
-    - сумма противоположных сторон
-    - касательная
+    - четырёхугольник, описанный около окружности
+    - суммы противоположных сторон равны
+    - solver отдаёт ТОЛЬКО facts
     """
-    return _get_stub_solution(task_data, "tangent_quad_sum")
 
+    context: Dict[str, Any] = task_data.get("task_context") or {}
+    narrative = (task_data.get("narrative") or "").strip().lower()
+    narrative_type = context.get("narrative_type")
+    answer = task_data.get("answer")
+
+    # ------------------------------------------------------------------
+    # facts — источник правды для humanizer
+    # ------------------------------------------------------------------
+    facts: Dict[str, Any] = {
+        "narrative": narrative,
+        "narrative_type": narrative_type,
+        "answer": answer,
+    }
+
+    explanation_idea = "IDEA_ERROR"
+
+    # ------------------------------------------------------------------
+    # find_missing_side (единственный нарратив паттерна)
+    # ------------------------------------------------------------------
+    if narrative == "find_missing_side":
+        left_a_name = context.get("sum_left_1_name")
+        left_a_val = context.get("sum_left_1_val")
+
+        left_b_name = context.get("sum_left_2_name")
+        left_b_val = context.get("sum_left_2_val")
+
+        right_1_name = context.get("sum_right_1_name")
+        right_1_val = context.get("sum_right_1_val")
+
+        right_2_name = context.get("sum_right_2_name")
+        right_2_val = context.get("sum_right_2_val")
+
+        # вычисляем сумму левой пары
+        sum_left = left_a_val + left_b_val
+
+        # определяем известную и искомую сторону справа
+        if right_1_val is None and right_2_val is not None:
+            side_known_name = right_2_name
+            side_known_val = right_2_val
+            side_target_name = right_1_name
+
+        elif right_2_val is None and right_1_val is not None:
+            side_known_name = right_1_name
+            side_known_val = right_1_val
+            side_target_name = right_2_name
+
+        else:
+            facts["error_reason"] = (
+                "tangent_quad_sum: должна быть ровно одна неизвестная сторона"
+            )
+            explanation_idea = "IDEA_ERROR"
+
+        facts.update({
+            "side_a_name": left_a_name,
+            "side_a_val": left_a_val,
+
+            "side_b_name": left_b_name,
+            "side_b_val": left_b_val,
+
+            "side_known_name": side_known_name,
+            "side_known_val": side_known_val,
+
+            "side_target_name": side_target_name,
+
+            "sum_left": sum_left,
+        })
+
+        explanation_idea = "IDEA_TANGENT_QUAD_SUM"
+
+    else:
+        facts["error_reason"] = f"Unknown narrative: {narrative or '<empty>'}"
+
+    # ------------------------------------------------------------------
+    # help_image (по стандартному контракту)
+    # ------------------------------------------------------------------
+    help_image_file = task_data.get("help_image_file")
+    help_image = None
+
+    if help_image_file:
+        help_image = {
+            "file": str(help_image_file),
+            "schema": "tangent_quad_sum",
+            "params": {
+                "figure": "quadrilateral",
+                "left_sides": [
+                    context.get("sum_left_1_name"),
+                    context.get("sum_left_2_name"),
+                ],
+                "right_sides": [
+                    context.get("sum_right_1_name"),
+                    context.get("sum_right_2_name"),
+                ],
+            },
+        }
+
+    # ------------------------------------------------------------------
+    # solution_core (КАНОН)
+    # ------------------------------------------------------------------
+    return {
+        "question_id": str(task_data.get("id")),
+        "question_group": "GEOMETRY_16",
+        "explanation_idea": explanation_idea,
+        "calculation_steps": [],
+        "final_answer": {
+            "value_machine": answer,
+            "value_display": str(answer) if answer is not None else "",
+            "unit": "",
+        },
+        "variables": facts,
+        "help_image": help_image,
+        "hints": [],
+    }
 
 # =========================================================================
 # ПАТТЕРН 2.4: tangent_arc_angle

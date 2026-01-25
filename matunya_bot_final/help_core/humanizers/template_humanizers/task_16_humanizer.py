@@ -121,6 +121,14 @@ IDEA_TEMPLATES: Dict[str, str] = {
         "то суммы его противоположных сторон равны.\n"
         "Это свойство позволяет найти неизвестную сторону."
     ),
+
+    # --- 2.3 tangent_quad_sum ---
+    "tangent_quad_sum": (
+        "Если четырёхугольник описан около окружности, \n"
+        "то работает правило равновесия:\n"
+        "<b>Суммы противоположных сторон равны.</b> \n\n"
+        "Верх + Низ = Лево + Право"
+    )
 }
 
 STEP_TEMPLATES: Dict[str, str] = {
@@ -551,6 +559,35 @@ STEP_TEMPLATES: Dict[str, str] = {
         "➡️ <b>{side_target_name} = ({side_known_1_val} + {side_known_2_val}) − "
         "{side_known_3_val} = {known_sum} − {side_known_3_val} = {answer}</b>"
     ),
+
+    # ------------------------------------------------------------------
+    # 2.3 tangent_quad_sum
+    # ------------------------------------------------------------------
+    "STEP_TANGENT_QUAD_GIVEN": (
+        "<b>Шаг 1.</b> Условие задачи.\n"
+        "Дано: <b>описанный четырёхугольник, "
+        "{side_a_name} = {side_a_val}, "
+        "{side_b_name} = {side_b_val}, "
+        "{side_known_name} = {side_known_val}</b>.\n"
+        "Найти: <b>{side_target_name}</b>."
+    ),
+
+    "STEP_TANGENT_QUAD_PROPERTY": (
+        "<b>Шаг 2.</b> Используем свойство описанного четырёхугольника.\n"
+        "Суммы противоположных сторон равны:\n"
+        "➡️ <b>{side_a_name} + {side_b_name} = "
+        "{side_known_name} + {side_target_name}</b>\n\n"
+        "👉 Следовательно:\n"
+        "➡️ <b>{side_target_name} = "
+        "({side_a_name} + {side_b_name}) − {side_known_name}</b>"
+    ),
+
+    "STEP_TANGENT_QUAD_CALC": (
+        "<b>Шаг 3.</b> Подставим числа.\n"
+        "➡️ <b>{side_target_name} = "
+        "({side_a_val} + {side_b_val}) − {side_known_val} = "
+        "{sum_left} − {side_known_val} = {answer}</b>"
+    )
 }
 
 TIPS_TEMPLATES: Dict[str, str] = {
@@ -684,6 +721,17 @@ TIPS_TEMPLATES: Dict[str, str] = {
         "когда известны три остальные."
     ),
 
+    # ------------------------------------------------------------------
+    # 2.3 tangent_quad_sum
+    # ------------------------------------------------------------------
+    "tangent_quad_sum": (
+        "Всё решается в уме!\n"
+        "Правило простое: \n\n"
+        "<b>Верх + Низ = Лево + Право</b>.\n\n"
+        "Запоминалка:\n"
+        "Сложи <b>две известные противоположные стороны</b> \n"
+        "и <b>вычти третью</b> — известную сторону из пары с искомой."
+    ),
 }
 
 # =============================================================================
@@ -1028,7 +1076,29 @@ NARRATIVE_PROFILES: Dict[str, Dict[str, Any]] = {
             "side_known_3_name", "side_known_3_val",
             "side_target_name",
         ],
-    }
+    },
+
+    # --- 2.3 tangent_quad_sum ---
+    "find_missing_side": {
+        "steps": [
+            "STEP_TANGENT_QUAD_GIVEN",
+            "STEP_TANGENT_QUAD_PROPERTY",
+            "STEP_TANGENT_QUAD_CALC",
+        ],
+        "idea_key": "tangent_quad_sum",
+        "tips_key": "tangent_quad_sum",
+        "required_fields": [
+            "side_a_name",
+            "side_a_val",
+            "side_b_name",
+            "side_b_val",
+            "side_known_name",
+            "side_known_val",
+            "side_target_name",
+            "answer",
+            "sum_left",
+        ],
+    },
 }
 
 # =============================================================================
@@ -1565,6 +1635,29 @@ def _ctx_tangent_trapezoid_find_base(raw_vars: Dict[str, Any]) -> Dict[str, Any]
 
     return ctx
 
+def _ctx_find_missing_side(raw_vars: Dict[str, Any]) -> Dict[str, Any]:
+    ctx = _base_context(raw_vars)
+
+    ctx.update(
+        side_a_name=raw_vars["side_a_name"],
+        side_a_val=format_oge_number(raw_vars["side_a_val"]),
+
+        side_b_name=raw_vars["side_b_name"],
+        side_b_val=format_oge_number(raw_vars["side_b_val"]),
+
+        side_known_name=raw_vars["side_known_name"],
+        side_known_val=format_oge_number(raw_vars["side_known_val"]),
+
+        side_target_name=raw_vars["side_target_name"],
+
+        sum_left=format_oge_number(raw_vars["sum_left"]),
+
+        # answer уже в base_context, но продублируем явное форматирование
+        answer=format_oge_number(raw_vars.get("answer")),
+    )
+
+    return ctx
+
 _CONTEXT_BUILDERS: Dict[str, Callable[[Dict[str, Any]], Dict[str, Any]]] = {
     "opposite_sum": _ctx_opposite_sum,
     "part_sum": _ctx_part_sum,
@@ -1585,6 +1678,7 @@ _CONTEXT_BUILDERS: Dict[str, Callable[[Dict[str, Any]], Dict[str, Any]]] = {
     "tangent_trapezoid_find_midline_via_sides": _ctx_tangent_trapezoid_find_midline_via_sides,
     "tangent_trapezoid_find_midline_via_bases": _ctx_tangent_trapezoid_find_midline_via_bases,
     "tangent_trapezoid_find_base": _ctx_tangent_trapezoid_find_base,
+    "find_missing_side": _ctx_find_missing_side
 }
 
 # =============================================================================
