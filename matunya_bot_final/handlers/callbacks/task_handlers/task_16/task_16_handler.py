@@ -82,20 +82,53 @@ THEMES_ORDER: tuple[str, ...] = tuple(THEMES_16.keys())
 
 
 # -----------------------------------------------------------------------------
-# Утилита выбора задания
+# Утилита выбора задания (Task 16)
 # -----------------------------------------------------------------------------
-def _pick_task_for_theme_16(tasks: Iterable[dict], theme_key: str) -> dict | None:
+def _pick_task_for_theme_16(
+    tasks: Iterable[dict],
+    theme_key: str,
+    exclude_pattern: str | None = None,
+) -> dict | None:
+    """
+    Выбирает задание из указанной темы Task 16.
+
+    Правила:
+    1. Берём только задания из паттернов выбранной темы.
+    2. При наличии exclude_pattern — стараемся выбрать задание
+       с ДРУГИМ паттерном (чтобы «Другое задание» было реально другим).
+    3. Если после исключения паттерна вариантов не осталось —
+       разрешаем повтор текущего паттерна (fallback).
+    """
+
     items = list(tasks)
     if not items:
         return None
 
+    # Разрешённые паттерны темы
     allowed_patterns = set(THEMES_16[theme_key]["patterns"])
-    pool = [t for t in items if t.get("pattern") in allowed_patterns]
 
-    if not pool:
+    # 1) Базовый пул по теме
+    themed_pool = [
+        t for t in items
+        if t.get("pattern") in allowed_patterns
+    ]
+
+    if not themed_pool:
         return None
 
-    return random.choice(pool)
+    # 2) Пул без текущего паттерна (если он передан)
+    if exclude_pattern:
+        filtered_pool = [
+            t for t in themed_pool
+            if t.get("pattern") != exclude_pattern
+        ]
+
+        # Если удалось исключить текущий паттерн — используем этот пул
+        if filtered_pool:
+            return random.choice(filtered_pool)
+
+    # 3) Fallback: если паттерн один или исключать нечего
+    return random.choice(themed_pool)
 
 
 # -----------------------------------------------------------------------------
@@ -192,7 +225,15 @@ async def task_16_open_selected(
         return
 
     # 3) Выбираем задание
-    task_data = _pick_task_for_theme_16(tasks, theme_key)
+    state_data = await state.get_data()
+    current_task = state_data.get("task_16_data", {})
+    current_pattern = current_task.get("pattern")
+
+    task_data = _pick_task_for_theme_16(
+        tasks,
+        theme_key,
+        exclude_pattern=current_pattern,
+    )
     if not task_data:
         await bot.send_message(chat_id, "Не удалось подобрать задание.")
         return

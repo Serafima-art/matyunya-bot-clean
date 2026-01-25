@@ -6,6 +6,8 @@ from __future__ import annotations
 import logging
 from typing import Any, Dict, Optional
 
+from matplotlib.style import context
+
 logger = logging.getLogger(__name__)
 
 # =========================================================================
@@ -89,6 +91,22 @@ def _solve_secant_similarity(task_data: Dict[str, Any]) -> Dict[str, Any]:
     if narrative_type not in allowed:
         narrative_type = "unknown"
 
+    # -------------------------------------------------
+    # Формулы для шага 2 (канон через 180°)
+    # -------------------------------------------------
+    if narrative_type.startswith("abcd_"):
+        cyclic_angles_sum_1 = "∠ABC"
+        cyclic_angles_sum_2 = "∠ADC"
+        linear_angles_sum = "∠FBC"   # смежный с ∠ABC
+    elif narrative_type.startswith("prst_"):
+        cyclic_angles_sum_1 = "∠PRS"
+        cyclic_angles_sum_2 = "∠PTS"
+        linear_angles_sum = "∠URS"   # смежный с ∠PRS
+    else:
+        cyclic_angles_sum_1 = ""
+        cyclic_angles_sum_2 = ""
+        linear_angles_sum = ""
+
     # -----------------------------
     # 2) ПРОПОРЦИЯ (источник правды)
     # -----------------------------
@@ -98,28 +116,44 @@ def _solve_secant_similarity(task_data: Dict[str, Any]) -> Dict[str, Any]:
     #
     # Чтобы humanizer не гадал, задаём явную "схему" и сразу нужные дроби:
     # ratio_left_num / ratio_left_den / ratio_right_num / ratio_right_den
-    ratio_left_num = context.get("secant_segment_short_name")
-    ratio_left_den = context.get("secant_segment_long_name")
+    ratio_left_num = context.get("secant_segment_short_name") or ""
+    ratio_left_den = context.get("secant_segment_long_name") or ""
+
+    # 🔥 ЧИСЛОВЫЕ значения для шага 4
+    ratio_right_num_val = None
+    ratio_right_den_val = None
 
     if narrative_type.endswith("find_small"):
-        ratio_right_num = context.get("base_target_name")
-        ratio_right_den = context.get("base_known_name")
+        # short/long = target/known
+        ratio_right_num = context.get("base_target_name")   # RS / BC
+        ratio_right_den = context.get("base_known_name")    # PT / AD
         ratio_mode = "SHORT_LONG_EQ_TARGET_KNOWN"
 
         base_small_name = context.get("base_target_name")
         base_large_name = context.get("base_known_name")
 
+        # ⬇️ числовое известно в знаменателе
+        ratio_right_den_val = context.get("base_known_val")
+
     elif narrative_type.endswith("find_large"):
-        ratio_right_num = context.get("base_known_name")
-        ratio_right_den = context.get("base_target_name")
+        # short/long = known/target
+        ratio_right_num = context.get("base_known_name")    # BC / RS
+        ratio_right_den = context.get("base_target_name")   # AD / PT
         ratio_mode = "SHORT_LONG_EQ_KNOWN_TARGET"
 
         base_small_name = context.get("base_known_name")
         base_large_name = context.get("base_target_name")
 
+        # ⬇️ числовое известно в числителе
+        ratio_right_num_val = context.get("base_known_val")
+
     else:
-        base_small_name = None
-        base_large_name = None
+        ratio_right_num = ""
+        ratio_right_den = ""
+        ratio_mode = "UNKNOWN"
+
+        base_small_name = ""
+        base_large_name = ""
 
     # -----------------------------
     # 3) FACTS ONLY
@@ -129,34 +163,48 @@ def _solve_secant_similarity(task_data: Dict[str, Any]) -> Dict[str, Any]:
         "answer": answer,
 
         # Геометрические якоря
-        "intersection_point": context.get("intersection_point"),  # F / U
-        "common_vertex": context.get("common_vertex"),            # F / U
+        "intersection_point": context.get("intersection_point"),
+        "common_vertex": context.get("common_vertex"),
 
-        # Подобные треугольники (имена для вывода в шагах)
-        "triangle_small_name": context.get("triangle_small_name"),  # FBC / URS
-        "triangle_large_name": context.get("triangle_large_name"),  # FDA / UTP
+        # Подобные треугольники
+        "triangle_small_name": context.get("triangle_small_name"),
+        "triangle_large_name": context.get("triangle_large_name"),
 
-        # Равные углы (для текста шага 2)
-        "vertex_angle_small": context.get("vertex_angle_small"),  # B / R
-        "vertex_angle_large": context.get("vertex_angle_large"),  # D / T
+        # Равные углы
+        "vertex_angle_small": context.get("vertex_angle_small"),
+        "vertex_angle_large": context.get("vertex_angle_large"),
 
-        # Секущие (имя и значение короткого/длинного отрезка)
-        "secant_segment_short_name": context.get("secant_segment_short_name"),  # BF / UR
+        # Вписанный четырёхугольник
+        "cyclic_quad_name": (
+            "ABCD" if narrative_type.startswith("abcd_")
+            else "PRST" if narrative_type.startswith("prst_")
+            else ""
+        ),
+
+        # 🔥 Формулы для шага 2
+        "cyclic_angles_sum_1": cyclic_angles_sum_1,
+        "cyclic_angles_sum_2": cyclic_angles_sum_2,
+        "linear_angles_sum": linear_angles_sum,
+
+        # Секущие
+        "secant_segment_short_name": context.get("secant_segment_short_name"),
         "secant_segment_short_val": context.get("secant_segment_short_val"),
-        "secant_segment_long_name": context.get("secant_segment_long_name"),    # DF / UT
+        "secant_segment_long_name": context.get("secant_segment_long_name"),
         "secant_segment_long_val": context.get("secant_segment_long_val"),
 
-        # Основания (что известно и что ищем)
-        "base_known_name": context.get("base_known_name"),    # AD / RS
+        # Основания
+        "base_known_name": context.get("base_known_name"),
         "base_known_val": context.get("base_known_val"),
-        "base_target_name": context.get("base_target_name"),  # BC / PT
+        "base_target_name": context.get("base_target_name"),
 
-        # Пропорция (явно, чтобы humanizer не гадал)
+        # Пропорция
         "ratio_mode": ratio_mode,
         "ratio_left_num": ratio_left_num,
         "ratio_left_den": ratio_left_den,
         "ratio_right_num": ratio_right_num,
         "ratio_right_den": ratio_right_den,
+        "ratio_right_num_val": ratio_right_num_val,
+        "ratio_right_den_val": ratio_right_den_val,
 
         "base_small_name": base_small_name,
         "base_large_name": base_large_name,
@@ -300,6 +348,70 @@ def _solve_tangent_trapezoid_properties(task_data: Dict[str, Any]) -> Dict[str, 
     else:
         facts["error_reason"] = f"Unknown narrative: {narrative or '<empty>'}"
 
+    # -----------------------------
+    # 5) help_image (по стандартному контракту)
+    # -----------------------------
+    help_image_file = task_data.get("help_image_file")
+    help_image: Optional[Dict[str, Any]] = None
+
+    if help_image_file:
+        params: Dict[str, Any] = {}
+
+        # --- 2.2.1 inradius_find_height ---
+        if narrative == "inradius_find_height":
+            params = {
+                "figure": "trapezoid",
+                "inradius": context.get("radius_name"),
+                "height": context.get("height_name"),
+            }
+
+        # --- 2.2.2 midline via sides ---
+        elif narrative == "tangent_trapezoid_find_midline_via_sides":
+            params = {
+                "figure": "trapezoid",
+                "vertices": context.get("vertices"),        # KLMN
+                "bases": [
+                    context.get("base_1_name"),
+                    context.get("base_2_name"),
+                ],
+                "legs": [
+                    context.get("side_1_name"),
+                    context.get("side_2_name"),
+                ],
+                "midline": context.get("midline_name"),     # PR
+            }
+
+        # --- 2.2.3 midline via bases ---
+        elif narrative == "tangent_trapezoid_find_midline_via_bases":
+            params = {
+                "figure": "trapezoid",
+                "vertices": context.get("vertices"),
+                "bases": [
+                    context.get("base_1_name"),
+                    context.get("base_2_name"),
+                ],
+                "midline": context.get("midline_name"),
+            }
+
+        # --- 2.2.4 find base ---
+        elif narrative == "tangent_trapezoid_find_base":
+            params = {
+                "figure": "trapezoid",
+                "vertices": context.get("vertices"),
+                "known_sides": [
+                    context.get("side_known_1_name"),
+                    context.get("side_known_2_name"),
+                    context.get("side_known_3_name"),
+                ],
+                "target_side": context.get("side_target_name"),
+            }
+
+        help_image = {
+            "file": str(help_image_file),
+            "schema": f"tangent_trapezoid__{narrative}",
+            "params": params,
+        }
+
     # -------------------------------------------------------------------------
     # solution_core (канон)
     # -------------------------------------------------------------------------
@@ -314,18 +426,9 @@ def _solve_tangent_trapezoid_properties(task_data: Dict[str, Any]) -> Dict[str, 
             "unit": "",
         },
         "variables": facts,
-        "help_image": (
-            {
-                "file": str(task_data.get("help_image_file")),
-                "schema": narrative,  # важно: совпадает с humanizer narrative_key
-                "params": {},
-            }
-            if task_data.get("help_image_file")
-            else None
-        ),
+        "help_image": help_image,
         "hints": [],
     }
-
 
 # =========================================================================
 # ПАТТЕРН 2.3: tangent_quad_sum

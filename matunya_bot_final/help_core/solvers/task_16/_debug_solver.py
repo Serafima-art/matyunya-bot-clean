@@ -196,8 +196,8 @@ if __name__ == "__main__":
         # -------------------------------------------------------------
         # 🟨 ТЕМА 2. Касательная, хорда, секущая, радиус (circle_elements_relations)
         # -------------------------------------------------------------
-        # TEST_PATTERN = "secant_similarity"
-        TEST_PATTERN = "tangent_trapezoid_properties"
+        TEST_PATTERN = "secant_similarity"
+        # TEST_PATTERN = "tangent_trapezoid_properties"
 
         # Сколько случайных задач брать ИЗ КАЖДОГО нарратива
         TEST_LIMIT_PER_NARRATIVE = 10

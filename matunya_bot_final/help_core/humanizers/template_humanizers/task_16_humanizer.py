@@ -425,12 +425,16 @@ STEP_TEMPLATES: Dict[str, str] = {
     "STEP_SECANT_SIMILARITY": (
         "<b>Шаг 2.</b> Докажем, что треугольники "
         "<b>Δ{triangle_small_name}</b> и <b>Δ{triangle_large_name}</b> подобны.\n"
-        "У них есть <b>общий угол {common_vertex}</b>.\n"
-        "Найдём равные углы при вершинах {vertex_angle_small} и {vertex_angle_large}:\n"
-        "• Четырёхугольник вписан в окружность, поэтому сумма противолежащих углов равна 180°.\n"
-        "• Смежные углы тоже дают 180°.\n"
-        "Значит, <b>∠{vertex_angle_small} = ∠{vertex_angle_large}</b>.\n"
-        "➡️ <b>Вывод:</b> треугольники подобны по двум углам."
+        "1) У них есть <b>общий угол {common_vertex}</b>.\n\n"
+        "2) Найдём равные углы при вершинах {vertex_angle_small} и {vertex_angle_large}:\n\n"
+        "• Четырёхугольник <b>{cyclic_quad_name}</b> вписан в окружность, поэтому\n"
+        "  сумма противоположных углов равна 180°.\n"
+        "➡️ <b>{cyclic_angles_sum_1} + {cyclic_angles_sum_2} = 180°</b>\n\n"
+        "• Углы {cyclic_angles_sum_1} и {linear_angles_sum} — смежные, их сумма тоже 180°:\n"
+        "➡️ <b>{cyclic_angles_sum_1} + {linear_angles_sum} = 180°</b>\n\n"
+        "👉 Следовательно, <b>{linear_angles_sum} = {cyclic_angles_sum_2}</b>.\n\n"
+        "<b>Вывод:</b> треугольники подобны по двум углам \n"
+        "({common_vertex} — общий, ∠{vertex_angle_small} малого Δ = ∠{vertex_angle_large} большого Δ)."
     ),
     "STEP_SECANT_RATIO": (
         "<b>Шаг 3.</b> Составим пропорцию.\n"
@@ -438,13 +442,25 @@ STEP_TEMPLATES: Dict[str, str] = {
         "относится к <b>длинному отрезку другой секущей</b> так же,\n"
         "как <b>малое основание</b> относится к <b>большому</b>:\n\n"
         "➡️ <b>{secant_segment_short_name}/{secant_segment_long_name} = {base_small_name}/{base_large_name}</b>\n\n"
-        "💡 <i>Лайфхак:</i> <b>в числителях — всё маленькое, в знаменателях — всё большое</b>."
+        "💡 <i>Лайфхак:</i> <b>в числителях — всё от малого Δ, \n"
+        "в знаменателях — всё от большого Δ</b>."
     ),
-    "STEP_SECANT_CALC": (
+    "STEP_SECANT_CALC_SMALL": (
         "<b>Шаг 4.</b> Подставим числа и вычислим ответ.\n"
         "➡️ <b>{secant_segment_short_val}/{secant_segment_long_val} = "
-        "{base_target_name}/{base_known_val}</b>\n"
-        "➡️ <b>{base_target_name} = {answer}</b>"
+        "{ratio_right_num}/{ratio_right_den_val}</b>\n"
+        "➡️ <b>{ratio_right_num} = "
+        "({secant_segment_short_val} · {ratio_right_den_val}) / "
+        "{secant_segment_long_val} = {answer}</b>"
+    ),
+
+    "STEP_SECANT_CALC_LARGE": (
+        "<b>Шаг 4.</b> Подставим числа и вычислим ответ.\n"
+        "➡️ <b>{secant_segment_short_val}/{secant_segment_long_val} = "
+        "{ratio_right_num_val}/{ratio_right_den}</b>\n"
+        "➡️ <b>{ratio_right_den} = "
+        "({secant_segment_long_val} · {ratio_right_num_val}) / "
+        "{secant_segment_short_val} = {answer}</b>"
     ),
 
     # ------------------------------------------------------------------
@@ -810,7 +826,7 @@ NARRATIVE_PROFILES: Dict[str, Dict[str, Any]] = {
             "STEP_SECANT_GIVEN_FIND",
             "STEP_SECANT_SIMILARITY",
             "STEP_SECANT_RATIO",
-            "STEP_SECANT_CALC",
+            "STEP_SECANT_CALC_SMALL",
         ],
         "tips_key": "secant_similarity",
         "required_fields": [
@@ -822,6 +838,12 @@ NARRATIVE_PROFILES: Dict[str, Dict[str, Any]] = {
 
             "vertex_angle_small",
             "vertex_angle_large",
+
+            # 🔥 НОВОЕ — для Шага 2 (канон через формулы)
+            "cyclic_quad_name",
+            "cyclic_angles_sum_1",
+            "cyclic_angles_sum_2",
+            "linear_angles_sum",
 
             "secant_segment_short_name",
             "secant_segment_short_val",
@@ -842,7 +864,7 @@ NARRATIVE_PROFILES: Dict[str, Dict[str, Any]] = {
             "STEP_SECANT_GIVEN_FIND",
             "STEP_SECANT_SIMILARITY",
             "STEP_SECANT_RATIO",
-            "STEP_SECANT_CALC",
+            "STEP_SECANT_CALC_LARGE",
         ],
         "tips_key": "secant_similarity",
         "required_fields": [
@@ -854,6 +876,12 @@ NARRATIVE_PROFILES: Dict[str, Dict[str, Any]] = {
 
             "vertex_angle_small",
             "vertex_angle_large",
+
+            # 🔥 НОВОЕ — для Шага 2 (канон через формулы)
+            "cyclic_quad_name",
+            "cyclic_angles_sum_1",
+            "cyclic_angles_sum_2",
+            "linear_angles_sum",
 
             "secant_segment_short_name",
             "secant_segment_short_val",
@@ -874,7 +902,7 @@ NARRATIVE_PROFILES: Dict[str, Dict[str, Any]] = {
             "STEP_SECANT_GIVEN_FIND",
             "STEP_SECANT_SIMILARITY",
             "STEP_SECANT_RATIO",
-            "STEP_SECANT_CALC",
+            "STEP_SECANT_CALC_SMALL",
         ],
         "tips_key": "secant_similarity",
         "required_fields": [
@@ -886,6 +914,12 @@ NARRATIVE_PROFILES: Dict[str, Dict[str, Any]] = {
 
             "vertex_angle_small",
             "vertex_angle_large",
+
+            # 🔥 НОВОЕ — для Шага 2 (канон через формулы)
+            "cyclic_quad_name",
+            "cyclic_angles_sum_1",
+            "cyclic_angles_sum_2",
+            "linear_angles_sum",
 
             "secant_segment_short_name",
             "secant_segment_short_val",
@@ -906,7 +940,7 @@ NARRATIVE_PROFILES: Dict[str, Dict[str, Any]] = {
             "STEP_SECANT_GIVEN_FIND",
             "STEP_SECANT_SIMILARITY",
             "STEP_SECANT_RATIO",
-            "STEP_SECANT_CALC",
+            "STEP_SECANT_CALC_LARGE",
         ],
         "tips_key": "secant_similarity",
         "required_fields": [
@@ -918,6 +952,12 @@ NARRATIVE_PROFILES: Dict[str, Dict[str, Any]] = {
 
             "vertex_angle_small",
             "vertex_angle_large",
+
+            # 🔥 НОВОЕ — для Шага 2 (канон через формулы)
+            "cyclic_quad_name",
+            "cyclic_angles_sum_1",
+            "cyclic_angles_sum_2",
+            "linear_angles_sum",
 
             "secant_segment_short_name",
             "secant_segment_short_val",
