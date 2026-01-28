@@ -818,13 +818,45 @@ def _solve_sector_area(task_data: Dict[str, Any]) -> Dict[str, Any]:
 def _solve_power_point(task_data: Dict[str, Any]) -> Dict[str, Any]:
     """
     Паттерн 2.7: power_point
-
-    Канон:
-    - степень точки
-    - касательная–секущая / секущая–секущая
+    Нарратив: find_tangent_length
     """
-    return _get_stub_solution(task_data, "power_point")
 
+    context: Dict[str, Any] = task_data.get("task_context") or {}
+    narrative = context.get("narrative")
+    answer = task_data.get("answer")
+
+    if narrative != "find_tangent_length":
+        return _get_error_solution(
+            task_data,
+            reason=f"power_point: unknown narrative '{narrative}'"
+        )
+
+    facts = {
+        "narrative": narrative,
+
+        "external_segment_value": context.get("external_segment_value"),
+        "internal_segment_value": context.get("internal_segment_value"),
+        "whole_secant_value": context.get("whole_secant_value"),
+
+        "tangent_square_value": context.get("tangent_square_value"),
+        "tangent_value": context.get("tangent_value"),
+
+        "answer": answer,
+    }
+
+    return {
+        "question_id": str(task_data.get("id")),
+        "question_group": "GEOMETRY_16",
+        "explanation_idea": "IDEA_POWER_POINT",
+        "calculation_steps": [],
+        "final_answer": {
+            "value_machine": answer,
+            "value_display": str(answer),
+            "unit": "",
+        },
+        "variables": facts,
+        "hints": [],
+    }
 
 # =========================================================================
 # ОБЩИЕ ЗАГЛУШКИ И ОШИБКИ

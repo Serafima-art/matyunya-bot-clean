@@ -974,11 +974,133 @@ class CircleElementsRelationsValidator:
 
         return len(errors) == 0, errors
 
-
     # =========================================================================
-    # ЗАГЛУШКИ ДЛЯ БУДУЩИХ ПАТТЕРНОВ
+    # ПАТТЕРН 2.7: power_point
     # =========================================================================
-
 
     def _validate_power_point(self, task: Dict[str, Any]) -> Tuple[bool, List[str]]:
-        return False, ["Pattern 2.7 not implemented yet"]
+        errors = []
+        text = task.get("question_text", "")
+        narrative = task.get("narrative")
+        answer = task.get("answer")
+
+        # 1. Парсинг Внешней точки (C)
+        # "Точка C лежит вне окружности"
+        match_ext = re.search(r"Точка\s+([A-Z])\s+лежит", text)
+        if not match_ext:
+            errors.append("Не найдена внешняя точка (Regex: Точка X лежит).")
+            return False, errors
+        ext_point = match_ext.group(1)
+
+        # 2. Парсинг Касательной (CN) - Искомое
+        # "Найди CN"
+        match_target = re.search(r"Найди(?:те)?\s+([A-Z]{2})", text)
+        if not match_target:
+            errors.append("Не найдена искомая касательная (Regex: Найди XX).")
+            return False, errors
+
+        # Сортируем буквы искомой, но нам важен порядок для контекста
+        # Если внешняя C, а ищем CN, то C - начало, N - точка касания
+        raw_target = match_target.group(1)
+        tangent_name = raw_target
+        tangent_point = raw_target.replace(ext_point, "") # Если CN, то N
+
+        # 3. Парсинг известных отрезков
+        found_vars = {}
+        for m in self.segment_regex.finditer(text):
+            key = "".join(sorted(m.group(1).upper()))
+            val = float(m.group(2).replace(',', '.'))
+            if val.is_integer(): val = int(val)
+            found_vars[key] = val
+
+        # Удаляем искомую из найденных (если попала)
+        target_key_sorted = "".join(sorted(tangent_name))
+        if target_key_sorted in found_vars:
+            del found_vars[target_key_sorted]
+
+        if len(found_vars) != 2:
+            errors.append(f"Ожидалось 2 известных отрезка, найдено {len(found_vars)}: {found_vars}")
+            return False, errors
+
+        # 4. Логика разделения отрезков (Внешний vs Внутренний)
+        # Внешний отрезок секущей ОБЯЗАН содержать внешнюю точку (ext_point)
+        # Внутренний отрезок НЕ содержит внешнюю точку
+
+        ext_segment_name = None
+        ext_segment_val = 0
+        int_segment_name = None
+        int_segment_val = 0
+
+        for name, val in found_vars.items():
+            if ext_point in name:
+                ext_segment_name = name
+                ext_segment_val = val
+            else:
+                int_segment_name = name
+                int_segment_val = val
+
+        if not ext_segment_name or not int_segment_name:
+            errors.append(f"Не удалось определить внешний/внутренний отрезки. Внешняя точка: {ext_point}, Отрезки: {found_vars}")
+            return False, errors
+
+        # Определяем точки B и A (ближняя и дальняя)
+        # Внешний отрезок (CB) -> B это secant_near_point
+        secant_near_point = ext_segment_name.replace(ext_point, "")
+        # Внутренний отрезок (BA) -> A это secant_far_point (та буква, что не B)
+        secant_far_point = int_segment_name.replace(secant_near_point, "")
+
+        # Полное имя секущей (CA)
+        secant_name = f"{ext_point}{secant_far_point}"
+
+        # 5. Математика
+        # Tangent^2 = External * Whole
+        # Whole = External + Internal
+        whole_secant_val = ext_segment_val + int_segment_val
+        tangent_sq_val = ext_segment_val * whole_secant_val
+
+        res = tangent_sq_val ** 0.5
+
+        # Проверка на целочисленность корня
+        if abs(res - round(res)) > 1e-9:
+            errors.append(f"Корень не извлекается нацело: sqrt({tangent_sq_val}) = {res}")
+            return False, errors
+
+        final_calc_answer = int(round(res))
+
+        # 6. Сверка с ответом
+        if answer is not None and str(answer).strip() != "" and int(answer) != -1:
+            if final_calc_answer != int(answer):
+                errors.append(f"Математическая ошибка: {final_calc_answer} != {answer}")
+
+        # 7. Формирование контекста
+        task_context = {
+            "narrative": "find_tangent_length",
+
+            # Точки
+            "external_point": ext_point,
+            "tangent_point": tangent_point,
+            "secant_near_point": secant_near_point,
+            "secant_far_point": secant_far_point,
+
+            # Имена линий
+            "tangent_name": tangent_name,
+            "secant_name": secant_name,
+
+            # Отрезки (исходные)
+            "external_segment_name": ext_segment_name,
+            "external_segment_value": ext_segment_val,
+            "internal_segment_name": int_segment_name,
+            "internal_segment_value": int_segment_val,
+
+            # Вычисленные (для шагов)
+            "whole_secant_value": whole_secant_val,
+            "tangent_square_value": tangent_sq_val,
+            "tangent_value": final_calc_answer
+        }
+
+        task["answer"] = final_calc_answer
+        task["image_file"] = "task_power_point.png"
+        task["help_image_file"] = None # Картинки помощи нет
+        task["task_context"] = task_context
+
+        return True, errors

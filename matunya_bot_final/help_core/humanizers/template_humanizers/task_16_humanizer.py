@@ -162,6 +162,14 @@ IDEA_TEMPLATES: Dict[str, str] = {
         "Ищешь площадь круга: \n"
         "👉 умножь <b>площадь сектора</b> на дробь <b>360 / Угол</b>."
     ),
+
+    # --- 2.7 power_point ---
+    "power_point": (
+        "Здесь работает <b>теорема о касательной и секущей</b>.\n"
+        "Квадрат длины касательной равен произведению \n"
+        "<b>внешней части</b> секущей на <b>всю длину</b> секущей.\n\n"
+        "<b>CN² = CB · CA</b>"
+    ),
 }
 
 STEP_TEMPLATES: Dict[str, str] = {
@@ -763,6 +771,36 @@ STEP_TEMPLATES: Dict[str, str] = {
         "<i>Объединим сокращаемые числа в одну дробь.</i>\n"
         "➡️ <b>S круга = {sector_area}/{reduced_den} · {reduced_num} = {answer}</b>"
     ),
+
+    # ------------------------------------------------------------------
+    # 2.7 power_point
+    # ------------------------------------------------------------------
+    "STEP_PP_GIVEN": (
+        "<b>Шаг 1.</b> Условие задачи.\n"
+        "Дано: <b>CB = {external_segment_value}</b>, "
+        "<b>BA = {internal_segment_value}</b>.\n"
+        "Найти: <b>CN</b>."
+    ),
+
+    "STEP_PP_FIND_WHOLE_SECANT": (
+        "<b>Шаг 2.</b> Найдём длину всей секущей.\n"
+        "Секущая состоит из внешнего и внутреннего отрезков:\n"
+        "➡️ <b>CA = CB + BA = {external_segment_value} + {internal_segment_value} = {whole_secant_value}</b>"
+    ),
+
+    "STEP_PP_EQUATION": (
+        "<b>Шаг 3.</b> Составим уравнение.\n"
+        "По теореме о касательной и секущей:\n"
+        "➡️ <b>CN² = CB · CA</b>\n"
+        "Подставим значения:\n"
+        "➡️ <b>CN² = {external_segment_value} · {whole_secant_value} = {tangent_square_value}</b>"
+    ),
+
+    "STEP_PP_SQRT": (
+        "<b>Шаг 4.</b> Найдём длину касательной.\n"
+        "Извлечём квадратный корень:\n"
+        "➡️ <b>CN = √{tangent_square_value} = {tangent_value}</b>"
+    ),
 }
 
 TIPS_TEMPLATES: Dict[str, str] = {
@@ -954,6 +992,17 @@ TIPS_TEMPLATES: Dict[str, str] = {
     "find_disk_area": (
         "Чтобы найти площадь круга по площади сектора, \n"
         "нужно умножить площадь сектора на дробь: <b>360 / Угол</b>."
+    ),
+
+    # ------------------------------------------------------------------
+    # 2.7 power_point
+    # ------------------------------------------------------------------
+    "power_point": (
+        "🛑 <b>Осторожно, ловушка!</b>\n"
+        "Самая частая ошибка — умножать CB на BA. Это неверно!\n\n"
+        "Всегда умножай внешний «хвостик» на <b>ВСЮ❗️ длинную палку</b> целиком.\n"
+        "Правило:\n\n"
+        "<b>(Длина касательной)² = (Внешний отрезок секущей) · (Весь отрезок секущей)</b>."
     ),
 }
 
@@ -1472,33 +1521,54 @@ NARRATIVE_PROFILES: Dict[str, Dict[str, Any]] = {
         ],
     },
 
-        "find_sector_area": {
-            "steps": [
-                "STEP_SA_GIVEN_FIND_SECTOR",
-                "STEP_SA_FORMULA_SECTOR",
-                "STEP_SA_CALC_SECTOR",
-            ],
-            "tips_key": "sector_area",
-            "required_fields": [
-                "angle_value",
-                "circle_area",
-                "answer",
-            ],
-        },
+    "find_sector_area": {
+        "steps": [
+            "STEP_SA_GIVEN_FIND_SECTOR",
+            "STEP_SA_FORMULA_SECTOR",
+            "STEP_SA_CALC_SECTOR",
+        ],
+        "tips_key": "sector_area",
+        "required_fields": [
+            "angle_value",
+            "circle_area",
+            "answer",
+        ],
+    },
 
-        "find_disk_area": {
-            "steps": [
-                "STEP_SA_GIVEN_FIND_CIRCLE",
-                "STEP_SA_FORMULA_CIRCLE",
-                "STEP_SA_CALC_CIRCLE",
-            ],
-            "tips_key": "sector_area",
-            "required_fields": [
-                "angle_value",
-                "sector_area",
-                "answer",
-            ],
-        },
+    "find_disk_area": {
+        "steps": [
+            "STEP_SA_GIVEN_FIND_CIRCLE",
+            "STEP_SA_FORMULA_CIRCLE",
+            "STEP_SA_CALC_CIRCLE",
+        ],
+        "tips_key": "sector_area",
+        "required_fields": [
+            "angle_value",
+            "sector_area",
+            "answer",
+        ],
+    },
+
+    # --- 2.7 power_point ---
+
+    "find_tangent_length": {
+        "idea_key": "power_point",
+        "steps": [
+            "STEP_PP_GIVEN",
+            "STEP_PP_FIND_WHOLE_SECANT",
+            "STEP_PP_EQUATION",
+            "STEP_PP_SQRT",
+        ],
+        "tips_key": "power_point",
+        "required_fields": [
+            "external_segment_value",
+            "internal_segment_value",
+            "whole_secant_value",
+            "tangent_square_value",
+            "tangent_value",
+            "answer",
+        ],
+    },
 }
 
 # =============================================================================
@@ -2249,6 +2319,20 @@ def _ctx_find_disk_area(raw_vars: Dict[str, Any]) -> Dict[str, Any]:
 
     return ctx
 
+def _ctx_find_tangent_length(raw_vars: Dict[str, Any]) -> Dict[str, Any]:
+    ctx = _base_context(raw_vars)
+
+    ctx.update(
+        external_segment_value=format_oge_number(raw_vars["external_segment_value"]),
+        internal_segment_value=format_oge_number(raw_vars["internal_segment_value"]),
+        whole_secant_value=format_oge_number(raw_vars["whole_secant_value"]),
+        tangent_square_value=format_oge_number(raw_vars["tangent_square_value"]),
+        tangent_value=format_oge_number(raw_vars["tangent_value"]),
+        answer=format_oge_number(raw_vars["answer"]),
+    )
+
+    return ctx
+
 _CONTEXT_BUILDERS: Dict[str, Callable[[Dict[str, Any]], Dict[str, Any]]] = {
     "opposite_sum": _ctx_opposite_sum,
     "part_sum": _ctx_part_sum,
@@ -2283,6 +2367,7 @@ _CONTEXT_BUILDERS: Dict[str, Callable[[Dict[str, Any]], Dict[str, Any]]] = {
     "find_disk_area": _ctx_find_disk_area,              # старый
     "find_disk_area_short": _ctx_find_disk_area,
     "find_disk_area_general": _ctx_find_disk_area,
+    "find_tangent_length": _ctx_find_tangent_length,
 }
 
 # =============================================================================

@@ -26,7 +26,7 @@ from typing import Optional, Dict, Any, List
 # НАСТРОЙКИ
 # ---------------------------------------------------------------------
 
-TARGET_PATTERN = "sector_area" # Паттерн, который отлаживаем
+TARGET_PATTERN = "power_point" # Паттерн, который отлаживаем
 DEFINITIONS_FILE = "circle_elements_relations.txt"
 OUTPUT_FILENAME = "debug_validator_output.txt"
 
