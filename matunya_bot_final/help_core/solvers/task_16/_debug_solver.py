@@ -198,7 +198,11 @@ if __name__ == "__main__":
         # -------------------------------------------------------------
         # TEST_PATTERN = "secant_similarity"
         # TEST_PATTERN = "tangent_trapezoid_properties"
-        TEST_PATTERN = "tangent_quad_sum"
+        # TEST_PATTERN = "tangent_quad_sum"
+        # TEST_PATTERN = "tangent_arc_angle"
+        # TEST_PATTERN = "angle_tangency_center"
+        TEST_PATTERN = "sector_area"
+
 
         # Сколько случайных задач брать ИЗ КАЖДОГО нарратива
         TEST_LIMIT_PER_NARRATIVE = 10

@@ -598,18 +598,387 @@ class CircleElementsRelationsValidator:
         return True, errors
 
     # =========================================================================
-    # ЗАГЛУШКИ ДЛЯ БУДУЩИХ ПАТТЕРНОВ (2.2 - 2.7)
+    # ПАТТЕРН 2.4: tangent_arc_angle
     # =========================================================================
 
-
     def _validate_tangent_arc_angle(self, task: Dict[str, Any]) -> Tuple[bool, List[str]]:
-        return False, ["Pattern 2.4 not implemented yet"]
+        errors = []
+        text = task.get("question_text", "")
+        narrative = task.get("narrative")
+        answer = task.get("answer")
+
+        # Регулярки (локальные для этого метода)
+        # "дуга AB равна 68"
+        regex_arc = re.search(r"дуга\s+([A-Z]{2})\s+(?:равна|составляет)\s+(\d+(?:[.,]\d+)?)", text, re.IGNORECASE)
+        # "угол ABC равен 34" or "угол ABC острый" (нам нужно значение)
+        regex_angle_val = re.search(r"угол\s+([A-Z]{3})\s+равен\s+(\d+(?:[.,]\d+)?)", text, re.IGNORECASE)
+        # Для поиска имени угла, если значение не дано (в прямой задаче)
+        regex_angle_name = re.search(r"угол\s+([A-Z]{3})", text, re.IGNORECASE)
+
+        final_calc_answer = None
+        task_context = {}
+        arc_val_for_image = 0 # Чтобы выбрать small/large
+
+        try:
+            # -----------------------------------------------------------------
+            # 1. arc_to_tangent_angle (Дана Дуга -> Найти Угол)
+            # -----------------------------------------------------------------
+            if narrative == "arc_to_tangent_angle":
+                if not regex_arc:
+                    errors.append("Не найдена величина дуги (дуга XX равна Y).")
+                    return False, errors
+
+                arc_name = "".join(sorted(regex_arc.group(1).upper()))
+                arc_val = float(regex_arc.group(2).replace(',', '.'))
+                if arc_val.is_integer(): arc_val = int(arc_val)
+
+                # Ищем имя искомого угла (обычно ABC)
+                angle_name = regex_angle_name.group(1).upper() if regex_angle_name else "ABC"
+
+                # Точка касания - обычно средняя буква угла (B в ABC) или общая с дугой
+                tangent_point = angle_name[1] if len(angle_name) == 3 else arc_name[1]
+
+                # Математика: Угол = Дуга / 2
+                res = arc_val / 2
+                final_calc_answer = res
+
+                arc_val_for_image = arc_val
+
+                task_context = {
+                    "narrative": narrative,
+                    "arc_name": arc_name,
+                    "arc_value": arc_val,
+                    "angle_name": angle_name,
+                    "tangent_point": tangent_point,
+                    "chord_name": arc_name # Хорда стягивает дугу
+                }
+
+            # -----------------------------------------------------------------
+            # 2. tangent_angle_to_arc (Дан Угол -> Найти Дугу)
+            # -----------------------------------------------------------------
+            elif narrative == "tangent_angle_to_arc":
+                if not regex_angle_val:
+                    errors.append("Не найдена величина угла (угол XXX равен Y).")
+                    return False, errors
+
+                angle_name = regex_angle_val.group(1).upper()
+                angle_val = float(regex_angle_val.group(2).replace(',', '.'))
+                if angle_val.is_integer(): angle_val = int(angle_val)
+
+                # Ищем имя искомой дуги
+                match_target_arc = re.search(r"дуги\s+([A-Z]{2})", text, re.IGNORECASE)
+                arc_name = "".join(sorted(match_target_arc.group(1).upper())) if match_target_arc else "AB"
+
+                tangent_point = angle_name[1]
+
+                # Математика: Дуга = Угол * 2
+                res = angle_val * 2
+                final_calc_answer = res
+
+                arc_val_for_image = res # Вычисленная дуга
+
+                task_context = {
+                    "narrative": narrative,
+                    "angle_name": angle_name,
+                    "angle_value": angle_val,
+                    "arc_name": arc_name,
+                    "tangent_point": tangent_point
+                }
+
+            else:
+                errors.append(f"Неизвестный нарратив: {narrative}")
+                return False, errors
+
+            # Финализация ответа
+            if isinstance(final_calc_answer, float):
+                if final_calc_answer.is_integer():
+                    final_calc_answer = int(final_calc_answer)
+                elif abs(final_calc_answer - round(final_calc_answer)) < 1e-9:
+                     final_calc_answer = int(round(final_calc_answer))
+
+            # Проверка
+            if answer is not None and str(answer).strip() != "" and int(answer) != -1:
+                if abs(float(final_calc_answer) - float(answer)) > 0.01:
+                    errors.append(f"Математическая ошибка: {final_calc_answer} != {answer}")
+
+            # Выбор картинки (Small < 90, Large >= 90)
+            suffix = "small" if arc_val_for_image < 90 else "large"
+
+            task["answer"] = final_calc_answer
+            task["image_file"] = f"task_tangent_arc_{suffix}.png"
+            task["help_image_file"] = None # Помощи нет
+            task["task_context"] = task_context
+
+        except Exception as e:
+            errors.append(f"Exception: {str(e)}")
+            return False, errors
+
+        return len(errors) == 0, errors
+
+    # =========================================================================
+    # ПАТТЕРН 2.5: angle_tangency_center
+    # =========================================================================
 
     def _validate_angle_tangency_center(self, task: Dict[str, Any]) -> Tuple[bool, List[str]]:
-        return False, ["Pattern 2.5 not implemented yet"]
+        errors = []
+        text = task.get("question_text", "")
+        narrative = task.get("narrative")
+        answer = task.get("answer")
+
+        # 1. Парсинг геометрии
+        # "В угол C..." или "Найди угол E..."
+        match_vertex = re.search(r"(?:В|Найди)\s+угол\s+([A-Z])", text, re.IGNORECASE)
+        # "в точках A и B" или "D и F"
+        match_points = re.search(r"точках\s+([A-Z])\s+и\s+([A-Z])", text, re.IGNORECASE)
+        # "Точка O — центр"
+        match_center = re.search(r"Точка\s+([A-Z])\s+[-—]\s+центр", text, re.IGNORECASE) or \
+                       re.search(r"центром\s+(?:в\s+точке\s+)?([A-Z])", text, re.IGNORECASE)
+
+        if not (match_vertex and match_points):
+            errors.append("Не удалось распарсить геометрию (Вершину или Точки касания).")
+            return False, errors
+
+        vertex = match_vertex.group(1).upper()
+        p1 = match_points.group(1).upper()
+        p2 = match_points.group(2).upper()
+        # Центр по умолчанию O, если не найден
+        center = match_center.group(1).upper() if match_center else "O"
+
+        # Сортируем точки касания для порядка (A, B)
+        p1, p2 = sorted([p1, p2])
+
+        # Формируем полные имена (3 буквы)
+        # Угол вершины: P1-Vertex-P2 (например, ACB)
+        corner_full_name = f"{p1}{vertex}{p2}"
+        # Центральный угол: P1-Center-P2 (например, AOB)
+        central_full_name = f"{p1}{center}{p2}"
+
+        final_calc_answer = None
+        task_context = {}
+        corner_val_for_image = 0 # Для выбора картинки
+
+        try:
+            # -----------------------------------------------------------------
+            # 1. find_center_angle (Дано C -> Найти AOB)
+            # -----------------------------------------------------------------
+            if narrative == "find_center_angle":
+                # Ищем значение угла вершины (рядом с именем вершины)
+                # "В угол C величиной 77°" или "угол C равен 44"
+                regex_val = re.search(rf"угол\s+{vertex}.*?(?:величиной|равен)\s+(\d+)", text, re.IGNORECASE)
+
+                if not regex_val:
+                    errors.append(f"Не найдено значение угла {vertex}.")
+                    return False, errors
+
+                corner_val = int(regex_val.group(1))
+
+                # Математика: Center = 180 - Corner
+                res = 180 - corner_val
+                final_calc_answer = res
+
+                corner_val_for_image = corner_val
+
+                task_context = {
+                    "narrative": narrative,
+
+                    "vertex_point": vertex,
+                    "center": center,
+                    "touch_point_1": p1,
+                    "touch_point_2": p2,
+
+                    "tangent_1": f"{vertex}{p1}",
+                    "tangent_2": f"{vertex}{p2}",
+
+                    "corner_angle_name": vertex, # В тексте обычно одна буква
+                    "corner_angle_full_name": corner_full_name, # ACB
+                    "corner_angle_value": corner_val,
+
+                    "central_angle_name": central_full_name, # AOB
+                    "central_angle_value": res
+                }
+
+            # -----------------------------------------------------------------
+            # 2. find_corner_angle (Дано AOB -> Найти C)
+            # -----------------------------------------------------------------
+            elif narrative == "find_corner_angle":
+                # Ищем значение центрального угла
+                # "угол AOB равен 103"
+                regex_val = re.search(rf"угол\s+{central_full_name}\s+равен\s+(\d+)", text, re.IGNORECASE)
+
+                if not regex_val:
+                    # Попробуем найти просто "угол ... равен X", если имя сложное
+                    regex_val = re.search(r"равен\s+(\d+)", text)
+
+                if not regex_val:
+                    errors.append(f"Не найдено значение центрального угла {central_full_name}.")
+                    return False, errors
+
+                central_val = int(regex_val.group(1))
+
+                # Математика: Corner = 180 - Center
+                res = 180 - central_val
+                final_calc_answer = res
+
+                corner_val_for_image = res # Это наш ответ
+
+                task_context = {
+                    "narrative": narrative,
+
+                    "vertex_point": vertex,
+                    "center": center,
+                    "touch_point_1": p1,
+                    "touch_point_2": p2,
+
+                    "tangent_1": f"{vertex}{p1}",
+                    "tangent_2": f"{vertex}{p2}",
+
+                    "corner_angle_name": vertex,
+                    "corner_angle_full_name": corner_full_name,
+                    "corner_angle_value": res,
+
+                    "central_angle_name": central_full_name,
+                    "central_angle_value": central_val
+                }
+
+            else:
+                errors.append(f"Неизвестный нарратив: {narrative}")
+                return False, errors
+
+            # Проверка ответа
+            if answer is not None and str(answer).strip() != "" and int(answer) != -1:
+                if abs(float(final_calc_answer) - float(answer)) > 0.01:
+                    errors.append(f"Математическая ошибка: {final_calc_answer} != {answer}")
+
+            # Выбор картинки: Острый или Тупой угол при вершине (C)
+            # Acute < 90, Obtuse > 90
+            suffix = "acute" if corner_val_for_image < 90 else "obtuse"
+
+            task["answer"] = final_calc_answer
+            task["image_file"] = f"task_angle_tangency_{suffix}.png"
+            # Для обоих случаев одна и та же логика помощи, но картинки разные
+            task["help_image_file"] = f"help_angle_tangency_{suffix}.png"
+            # (Хотя ты просила help_angle_tangency.png одну,
+            #  лучше иметь help_..._acute и help_..._obtuse, если они отличаются.
+            #  Если картинка помощи одна универсальная — оставь так).
+            #  Если нужно под каждый тип: f"help_angle_tangency_{suffix}.png"
+
+            task["task_context"] = task_context
+
+        except Exception as e:
+            errors.append(f"Exception: {str(e)}")
+            return False, errors
+
+        return len(errors) == 0, errors
+
+    # =========================================================================
+    # ПАТТЕРН 2.6: sector_area
+    # =========================================================================
 
     def _validate_sector_area(self, task: Dict[str, Any]) -> Tuple[bool, List[str]]:
-        return False, ["Pattern 2.6 not implemented yet"]
+        errors = []
+        text = task.get("question_text", "")
+        narrative = task.get("narrative")
+        answer = task.get("answer")
+
+        # 1. Парсинг Угла (всегда известен)
+        # "Центральный угол круга равен 30°"
+        match_angle = re.search(r"угол\s+.*?равен\s+(\d+)", text, re.IGNORECASE)
+        if not match_angle:
+            errors.append("Не найден угол (угол ... равен X).")
+            return False, errors
+
+        angle_val = int(match_angle.group(1))
+
+        final_calc_answer = None
+        task_context = {}
+
+        # Выбор картинки (Acute < 90, Obtuse >= 90)
+        suffix = "acute" if angle_val < 90 else "obtuse"
+        task_image = f"task_sector_area_{suffix}.png"
+
+        try:
+            # -----------------------------------------------------------------
+            # 1. find_sector_area (Дана S_круга -> Найти S_сектора)
+            # -----------------------------------------------------------------
+            if narrative == "find_sector_area":
+                # Ищем площадь всего круга
+                # "площадь всего круга равна 144"
+                match_circle = re.search(r"площадь\s+всего\s+круга\s+равна\s+(\d+)", text, re.IGNORECASE)
+                if not match_circle:
+                    errors.append("Не найдена площадь круга.")
+                    return False, errors
+
+                s_circle = int(match_circle.group(1))
+
+                # Математика: S_sec = S_circ * (angle / 360)
+                res = s_circle * (angle_val / 360)
+                final_calc_answer = res
+
+                task_context = {
+                    "narrative": narrative,
+                    "angle_value": angle_val,
+                    "circle_area": s_circle,
+                    "sector_area": int(res) if res.is_integer() else res # Искомое
+                }
+
+            # -----------------------------------------------------------------
+            # 2. find_disk_area (Дана S_сектора -> Найти S_круга)
+            # -----------------------------------------------------------------
+            elif narrative == "find_disk_area":
+                # Ищем площадь сектора
+                # Было: r"площадь\s+(?:его\s+)?сектора\s+.*?\s+равна\s+(\d+)" (Ошибка)
+                # Стало: r"площадь\s+(?:его\s+)?сектора.*?\s+равна\s+(\d+)"
+                # (убрали лишнее требование пробелов, .*? съест всё что угодно или ничего)
+                match_sector = re.search(r"площадь\s+(?:его\s+)?сектора.*?\s+равна\s+(\d+)", text, re.IGNORECASE)
+
+                if not match_sector:
+                    errors.append("Не найдена площадь сектора.")
+                    return False, errors
+
+                s_sector = int(match_sector.group(1))
+
+                # Математика: S_circ = S_sec * (360 / angle)
+                res = s_sector * (360 / angle_val)
+                final_calc_answer = res
+
+                task_context = {
+                    "narrative": narrative,
+                    "angle_value": angle_val,
+                    "circle_area": int(res) if res.is_integer() else res,
+                    "sector_area": s_sector
+                }
+
+            else:
+                errors.append(f"Неизвестный нарратив: {narrative}")
+                return False, errors
+
+            # Финализация и проверка ответа
+            if isinstance(final_calc_answer, float):
+                if final_calc_answer.is_integer():
+                    final_calc_answer = int(final_calc_answer)
+                elif abs(final_calc_answer - round(final_calc_answer)) < 1e-9:
+                     final_calc_answer = int(round(final_calc_answer))
+
+            if answer is not None and str(answer).strip() != "" and int(answer) != -1:
+                if abs(float(final_calc_answer) - float(answer)) > 0.01:
+                    errors.append(f"Математическая ошибка: {final_calc_answer} != {answer}")
+
+            task["answer"] = final_calc_answer
+            task["image_file"] = task_image
+            task["help_image_file"] = None # Помощи нет, как договаривались
+            task["task_context"] = task_context
+
+        except Exception as e:
+            errors.append(f"Exception: {str(e)}")
+            return False, errors
+
+        return len(errors) == 0, errors
+
+
+    # =========================================================================
+    # ЗАГЛУШКИ ДЛЯ БУДУЩИХ ПАТТЕРНОВ
+    # =========================================================================
+
 
     def _validate_power_point(self, task: Dict[str, Any]) -> Tuple[bool, List[str]]:
         return False, ["Pattern 2.7 not implemented yet"]

@@ -8673,7 +8673,7 @@
     "id": 1600463,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_small",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 8, DF = 24, AD = 18.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди BC, если BF = 8, DF = 24, AD = 18.",
     "answer": 6,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -8699,7 +8699,7 @@
     "id": 1600464,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_small",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 5, DF = 15, AD = 12.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди BC, если BF = 5, DF = 15, AD = 12.",
     "answer": 4,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -8725,7 +8725,7 @@
     "id": 1600465,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_small",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 6, DF = 12, AD = 10.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди BC, если BF = 6, DF = 12, AD = 10.",
     "answer": 5,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -8751,7 +8751,7 @@
     "id": 1600466,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_small",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 4, DF = 16, AD = 20.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди BC, если BF = 4, DF = 16, AD = 20.",
     "answer": 5,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -8777,7 +8777,7 @@
     "id": 1600467,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_small",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 10, DF = 25, AD = 15.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди BC, если BF = 10, DF = 25, AD = 15.",
     "answer": 6,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -8803,7 +8803,7 @@
     "id": 1600468,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_small",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 7, DF = 21, AD = 24.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди BC, если BF = 7, DF = 21, AD = 24.",
     "answer": 8,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -8829,7 +8829,7 @@
     "id": 1600469,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_small",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 9, DF = 18, AD = 14.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди BC, если BF = 9, DF = 18, AD = 14.",
     "answer": 7,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -8855,7 +8855,7 @@
     "id": 1600470,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_small",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 12, DF = 36, AD = 21.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди BC, если BF = 12, DF = 36, AD = 21.",
     "answer": 7,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -8881,7 +8881,7 @@
     "id": 1600471,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_small",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 3, DF = 12, AD = 16.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди BC, если BF = 3, DF = 12, AD = 16.",
     "answer": 4,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -8907,7 +8907,7 @@
     "id": 1600472,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_small",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 15, DF = 20, AD = 16.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди BC, если BF = 15, DF = 20, AD = 16.",
     "answer": 12,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -8933,7 +8933,7 @@
     "id": 1600473,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_small",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 8, DF = 12, AD = 9.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди BC, если BF = 8, DF = 12, AD = 9.",
     "answer": 6,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -8959,7 +8959,7 @@
     "id": 1600474,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_small",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 6, DF = 18, AD = 27.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди BC, если BF = 6, DF = 18, AD = 27.",
     "answer": 9,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -8985,7 +8985,7 @@
     "id": 1600475,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_small",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 14, DF = 28, AD = 22.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди BC, если BF = 14, DF = 28, AD = 22.",
     "answer": 11,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -9011,7 +9011,7 @@
     "id": 1600476,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_small",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 5, DF = 10, AD = 18.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди BC, если BF = 5, DF = 10, AD = 18.",
     "answer": 9,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -9037,7 +9037,7 @@
     "id": 1600477,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_small",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите BC, если BF = 10, DF = 30, AD = 33.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди BC, если BF = 10, DF = 30, AD = 33.",
     "answer": 11,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -9063,7 +9063,7 @@
     "id": 1600478,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_large",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 8, DF = 24, BC = 6.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди AD, если BF = 8, DF = 24, BC = 6.",
     "answer": 18,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -9089,7 +9089,7 @@
     "id": 1600479,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_large",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 5, DF = 15, BC = 4.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди AD, если BF = 5, DF = 15, BC = 4.",
     "answer": 12,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -9115,7 +9115,7 @@
     "id": 1600480,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_large",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 6, DF = 12, BC = 7.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди AD, если BF = 6, DF = 12, BC = 7.",
     "answer": 14,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -9141,7 +9141,7 @@
     "id": 1600481,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_large",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 4, DF = 16, BC = 5.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди AD, если BF = 4, DF = 16, BC = 5.",
     "answer": 20,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -9167,7 +9167,7 @@
     "id": 1600482,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_large",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 10, DF = 25, BC = 8.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди AD, если BF = 10, DF = 25, BC = 8.",
     "answer": 20,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -9193,7 +9193,7 @@
     "id": 1600483,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_large",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 7, DF = 21, BC = 9.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди AD, если BF = 7, DF = 21, BC = 9.",
     "answer": 27,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -9219,7 +9219,7 @@
     "id": 1600484,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_large",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 9, DF = 18, BC = 11.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди AD, если BF = 9, DF = 18, BC = 11.",
     "answer": 22,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -9245,7 +9245,7 @@
     "id": 1600485,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_large",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 12, DF = 36, BC = 10.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди AD, если BF = 12, DF = 36, BC = 10.",
     "answer": 30,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -9271,7 +9271,7 @@
     "id": 1600486,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_large",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 3, DF = 12, BC = 4.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди AD, если BF = 3, DF = 12, BC = 4.",
     "answer": 16,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -9297,7 +9297,7 @@
     "id": 1600487,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_large",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 15, DF = 20, BC = 12.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди AD, если BF = 15, DF = 20, BC = 12.",
     "answer": 16,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -9323,7 +9323,7 @@
     "id": 1600488,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_large",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 8, DF = 12, BC = 10.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди AD, если BF = 8, DF = 12, BC = 10.",
     "answer": 15,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -9349,7 +9349,7 @@
     "id": 1600489,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_large",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 6, DF = 18, BC = 5.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди AD, если BF = 6, DF = 18, BC = 5.",
     "answer": 15,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -9375,7 +9375,7 @@
     "id": 1600490,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_large",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 14, DF = 28, BC = 13.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди AD, если BF = 14, DF = 28, BC = 13.",
     "answer": 26,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -9401,7 +9401,7 @@
     "id": 1600491,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_large",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 5, DF = 10, BC = 6.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди AD, если BF = 5, DF = 10, BC = 6.",
     "answer": 12,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -9427,7 +9427,7 @@
     "id": 1600492,
     "pattern": "secant_similarity",
     "narrative": "abcd_find_large",
-    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найдите AD, если BF = 10, DF = 30, BC = 12.",
+    "question_text": "В окружность вписан четырёхугольник ABCD. Прямые AB и CD пересекаются в точке F. Найди AD, если BF = 10, DF = 30, BC = 12.",
     "answer": 36,
     "image_file": "task_secant_similarity_abcd.png",
     "help_image_file": "help_secant_similarity_abcd.png",
@@ -9453,7 +9453,7 @@
     "id": 1600493,
     "pattern": "secant_similarity",
     "narrative": "prst_find_small",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 6, UT = 18, PT = 15.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди RS, если UR = 6, UT = 18, PT = 15.",
     "answer": 5,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -9479,7 +9479,7 @@
     "id": 1600494,
     "pattern": "secant_similarity",
     "narrative": "prst_find_small",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 4, UT = 12, PT = 21.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди RS, если UR = 4, UT = 12, PT = 21.",
     "answer": 7,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -9505,7 +9505,7 @@
     "id": 1600495,
     "pattern": "secant_similarity",
     "narrative": "prst_find_small",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 8, UT = 16, PT = 20.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди RS, если UR = 8, UT = 16, PT = 20.",
     "answer": 10,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -9531,7 +9531,7 @@
     "id": 1600496,
     "pattern": "secant_similarity",
     "narrative": "prst_find_small",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 5, UT = 20, PT = 24.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди RS, если UR = 5, UT = 20, PT = 24.",
     "answer": 6,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -9557,7 +9557,7 @@
     "id": 1600497,
     "pattern": "secant_similarity",
     "narrative": "prst_find_small",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 10, UT = 25, PT = 30.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди RS, если UR = 10, UT = 25, PT = 30.",
     "answer": 12,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -9583,7 +9583,7 @@
     "id": 1600498,
     "pattern": "secant_similarity",
     "narrative": "prst_find_small",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 7, UT = 21, PT = 27.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди RS, если UR = 7, UT = 21, PT = 27.",
     "answer": 9,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -9609,7 +9609,7 @@
     "id": 1600499,
     "pattern": "secant_similarity",
     "narrative": "prst_find_small",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 9, UT = 18, PT = 22.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди RS, если UR = 9, UT = 18, PT = 22.",
     "answer": 11,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -9635,7 +9635,7 @@
     "id": 1600500,
     "pattern": "secant_similarity",
     "narrative": "prst_find_small",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 12, UT = 36, PT = 33.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди RS, если UR = 12, UT = 36, PT = 33.",
     "answer": 11,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -9661,7 +9661,7 @@
     "id": 1600501,
     "pattern": "secant_similarity",
     "narrative": "prst_find_small",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 3, UT = 15, PT = 25.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди RS, если UR = 3, UT = 15, PT = 25.",
     "answer": 5,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -9687,7 +9687,7 @@
     "id": 1600502,
     "pattern": "secant_similarity",
     "narrative": "prst_find_small",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 15, UT = 20, PT = 28.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди RS, если UR = 15, UT = 20, PT = 28.",
     "answer": 21,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -9713,7 +9713,7 @@
     "id": 1600503,
     "pattern": "secant_similarity",
     "narrative": "prst_find_small",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 8, UT = 12, PT = 18.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди RS, если UR = 8, UT = 12, PT = 18.",
     "answer": 12,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -9739,7 +9739,7 @@
     "id": 1600504,
     "pattern": "secant_similarity",
     "narrative": "prst_find_small",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 6, UT = 24, PT = 32.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди RS, если UR = 6, UT = 24, PT = 32.",
     "answer": 8,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -9765,7 +9765,7 @@
     "id": 1600505,
     "pattern": "secant_similarity",
     "narrative": "prst_find_small",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 14, UT = 28, PT = 26.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди RS, если UR = 14, UT = 28, PT = 26.",
     "answer": 13,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -9791,7 +9791,7 @@
     "id": 1600506,
     "pattern": "secant_similarity",
     "narrative": "prst_find_small",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 5, UT = 15, PT = 12.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди RS, если UR = 5, UT = 15, PT = 12.",
     "answer": 4,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -9817,7 +9817,7 @@
     "id": 1600507,
     "pattern": "secant_similarity",
     "narrative": "prst_find_small",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите RS, если UR = 11, UT = 22, PT = 30.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди RS, если UR = 11, UT = 22, PT = 30.",
     "answer": 15,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -9843,7 +9843,7 @@
     "id": 1600508,
     "pattern": "secant_similarity",
     "narrative": "prst_find_large",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 6, UT = 18, RS = 5.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди PT, если UR = 6, UT = 18, RS = 5.",
     "answer": 15,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -9869,7 +9869,7 @@
     "id": 1600509,
     "pattern": "secant_similarity",
     "narrative": "prst_find_large",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 4, UT = 12, RS = 7.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди PT, если UR = 4, UT = 12, RS = 7.",
     "answer": 21,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -9895,7 +9895,7 @@
     "id": 1600510,
     "pattern": "secant_similarity",
     "narrative": "prst_find_large",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 8, UT = 16, RS = 9.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди PT, если UR = 8, UT = 16, RS = 9.",
     "answer": 18,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -9921,7 +9921,7 @@
     "id": 1600511,
     "pattern": "secant_similarity",
     "narrative": "prst_find_large",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 5, UT = 20, RS = 6.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди PT, если UR = 5, UT = 20, RS = 6.",
     "answer": 24,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -9947,7 +9947,7 @@
     "id": 1600512,
     "pattern": "secant_similarity",
     "narrative": "prst_find_large",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 10, UT = 25, RS = 12.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди PT, если UR = 10, UT = 25, RS = 12.",
     "answer": 30,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -9973,7 +9973,7 @@
     "id": 1600513,
     "pattern": "secant_similarity",
     "narrative": "prst_find_large",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 7, UT = 21, RS = 8.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди PT, если UR = 7, UT = 21, RS = 8.",
     "answer": 24,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -9999,7 +9999,7 @@
     "id": 1600514,
     "pattern": "secant_similarity",
     "narrative": "prst_find_large",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 9, UT = 18, RS = 11.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди PT, если UR = 9, UT = 18, RS = 11.",
     "answer": 22,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -10025,7 +10025,7 @@
     "id": 1600515,
     "pattern": "secant_similarity",
     "narrative": "prst_find_large",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 12, UT = 36, RS = 10.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди PT, если UR = 12, UT = 36, RS = 10.",
     "answer": 30,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -10051,7 +10051,7 @@
     "id": 1600516,
     "pattern": "secant_similarity",
     "narrative": "prst_find_large",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 3, UT = 15, RS = 5.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди PT, если UR = 3, UT = 15, RS = 5.",
     "answer": 25,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -10077,7 +10077,7 @@
     "id": 1600517,
     "pattern": "secant_similarity",
     "narrative": "prst_find_large",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 15, UT = 20, RS = 21.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди PT, если UR = 15, UT = 20, RS = 21.",
     "answer": 28,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -10103,7 +10103,7 @@
     "id": 1600518,
     "pattern": "secant_similarity",
     "narrative": "prst_find_large",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 8, UT = 12, RS = 12.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди PT, если UR = 8, UT = 12, RS = 12.",
     "answer": 18,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -10129,7 +10129,7 @@
     "id": 1600519,
     "pattern": "secant_similarity",
     "narrative": "prst_find_large",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 6, UT = 24, RS = 8.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди PT, если UR = 6, UT = 24, RS = 8.",
     "answer": 32,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -10155,7 +10155,7 @@
     "id": 1600520,
     "pattern": "secant_similarity",
     "narrative": "prst_find_large",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 14, UT = 28, RS = 13.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди PT, если UR = 14, UT = 28, RS = 13.",
     "answer": 26,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -10181,7 +10181,7 @@
     "id": 1600521,
     "pattern": "secant_similarity",
     "narrative": "prst_find_large",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 5, UT = 15, RS = 4.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди PT, если UR = 5, UT = 15, RS = 4.",
     "answer": 12,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -10207,7 +10207,7 @@
     "id": 1600522,
     "pattern": "secant_similarity",
     "narrative": "prst_find_large",
-    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найдите PT, если UR = 11, UT = 33, RS = 9.",
+    "question_text": "В окружность вписан четырёхугольник PRST. Прямые PR и TS пересекаются в точке U. Найди PT, если UR = 11, UT = 33, RS = 9.",
     "answer": 27,
     "image_file": "task_secant_similarity_prst.png",
     "help_image_file": "help_secant_similarity_prst.png",
@@ -12677,6 +12677,2976 @@
       "sum_right_2_name": "CD",
       "sum_right_2_val": null,
       "target_side_name": "CD"
+    }
+  },
+  {
+    "id": 1600653,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки A и B. Меньшая дуга AB равна 26°. Прямая BC является касательной к окружности в точке B. Угол ABC острый. Найди величину угла ABC. Ответ дай в градусах.",
+    "answer": 13,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "AB",
+      "arc_value": 26,
+      "angle_name": "ABC",
+      "tangent_point": "B",
+      "chord_name": "AB"
+    }
+  },
+  {
+    "id": 1600654,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки A и B. Меньшая дуга AB равна 42°. Прямая BC является касательной к окружности в точке B. Угол ABC острый. Найди величину угла ABC. Ответ дай в градусах.",
+    "answer": 21,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "AB",
+      "arc_value": 42,
+      "angle_name": "ABC",
+      "tangent_point": "B",
+      "chord_name": "AB"
+    }
+  },
+  {
+    "id": 1600655,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки A и B. Меньшая дуга AB равна 68°. Прямая BC является касательной к окружности в точке B. Угол ABC острый. Найди величину угла ABC. Ответ дай в градусах.",
+    "answer": 34,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "AB",
+      "arc_value": 68,
+      "angle_name": "ABC",
+      "tangent_point": "B",
+      "chord_name": "AB"
+    }
+  },
+  {
+    "id": 1600656,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки A и B. Меньшая дуга AB равна 14°. Прямая BC является касательной к окружности в точке B. Угол ABC острый. Найди величину угла ABC. Ответ дай в градусах.",
+    "answer": 7,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "AB",
+      "arc_value": 14,
+      "angle_name": "ABC",
+      "tangent_point": "B",
+      "chord_name": "AB"
+    }
+  },
+  {
+    "id": 1600657,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки A и B. Меньшая дуга AB равна 88°. Прямая BC является касательной к окружности в точке B. Угол ABC острый. Найди величину угла ABC. Ответ дай в градусах.",
+    "answer": 44,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "AB",
+      "arc_value": 88,
+      "angle_name": "ABC",
+      "tangent_point": "B",
+      "chord_name": "AB"
+    }
+  },
+  {
+    "id": 1600658,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки A и B. Меньшая дуга AB равна 34°. Прямая BC является касательной к окружности в точке B. Угол ABC острый. Найди величину угла ABC. Ответ дай в градусах.",
+    "answer": 17,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "AB",
+      "arc_value": 34,
+      "angle_name": "ABC",
+      "tangent_point": "B",
+      "chord_name": "AB"
+    }
+  },
+  {
+    "id": 1600659,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки A и B. Меньшая дуга AB равна 56°. Прямая BC является касательной к окружности в точке B. Угол ABC острый. Найди величину угла ABC. Ответ дай в градусах.",
+    "answer": 28,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "AB",
+      "arc_value": 56,
+      "angle_name": "ABC",
+      "tangent_point": "B",
+      "chord_name": "AB"
+    }
+  },
+  {
+    "id": 1600660,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки A и B. Меньшая дуга AB равна 72°. Прямая BC является касательной к окружности в точке B. Угол ABC острый. Найди величину угла ABC. Ответ дай в градусах.",
+    "answer": 36,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "AB",
+      "arc_value": 72,
+      "angle_name": "ABC",
+      "tangent_point": "B",
+      "chord_name": "AB"
+    }
+  },
+  {
+    "id": 1600661,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки A и B. Меньшая дуга AB равна 20°. Прямая BC является касательной к окружности в точке B. Угол ABC острый. Найди величину угла ABC. Ответ дай в градусах.",
+    "answer": 10,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "AB",
+      "arc_value": 20,
+      "angle_name": "ABC",
+      "tangent_point": "B",
+      "chord_name": "AB"
+    }
+  },
+  {
+    "id": 1600662,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки A и B. Меньшая дуга AB равна 48°. Прямая BC является касательной к окружности в точке B. Угол ABC острый. Найди величину угла ABC. Ответ дай в градусах.",
+    "answer": 24,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "AB",
+      "arc_value": 48,
+      "angle_name": "ABC",
+      "tangent_point": "B",
+      "chord_name": "AB"
+    }
+  },
+  {
+    "id": 1600663,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки A и B. Меньшая дуга AB равна 64°. Прямая BC является касательной к окружности в точке B. Угол ABC острый. Найди величину угла ABC. Ответ дай в градусах.",
+    "answer": 32,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "AB",
+      "arc_value": 64,
+      "angle_name": "ABC",
+      "tangent_point": "B",
+      "chord_name": "AB"
+    }
+  },
+  {
+    "id": 1600664,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки A и B. Меньшая дуга AB равна 82°. Прямая BC является касательной к окружности в точке B. Угол ABC острый. Найди величину угла ABC. Ответ дай в градусах.",
+    "answer": 41,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "AB",
+      "arc_value": 82,
+      "angle_name": "ABC",
+      "tangent_point": "B",
+      "chord_name": "AB"
+    }
+  },
+  {
+    "id": 1600665,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки A и B. Меньшая дуга AB равна 18°. Прямая BC является касательной к окружности в точке B. Угол ABC острый. Найди величину угла ABC. Ответ дай в градусах.",
+    "answer": 9,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "AB",
+      "arc_value": 18,
+      "angle_name": "ABC",
+      "tangent_point": "B",
+      "chord_name": "AB"
+    }
+  },
+  {
+    "id": 1600666,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки A и B. Меньшая дуга AB равна 38°. Прямая BC является касательной к окружности в точке B. Угол ABC острый. Найди величину угла ABC. Ответ дай в градусах.",
+    "answer": 19,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "AB",
+      "arc_value": 38,
+      "angle_name": "ABC",
+      "tangent_point": "B",
+      "chord_name": "AB"
+    }
+  },
+  {
+    "id": 1600667,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки A и B. Меньшая дуга AB равна 52°. Прямая BC является касательной к окружности в точке B. Угол ABC острый. Найди величину угла ABC. Ответ дай в градусах.",
+    "answer": 26,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "AB",
+      "arc_value": 52,
+      "angle_name": "ABC",
+      "tangent_point": "B",
+      "chord_name": "AB"
+    }
+  },
+  {
+    "id": 1600668,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки K и L. Меньшая дуга KL равна 152°. Прямая LM является касательной к окружности в точке L. Угол KLM острый. Найди величину угла KLM. Ответ дай в градусах.",
+    "answer": 76,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "KL",
+      "arc_value": 152,
+      "angle_name": "KLM",
+      "tangent_point": "L",
+      "chord_name": "KL"
+    }
+  },
+  {
+    "id": 1600669,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки K и L. Меньшая дуга KL равна 134°. Прямая LM является касательной к окружности в точке L. Угол KLM острый. Найди величину угла KLM. Ответ дай в градусах.",
+    "answer": 67,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "KL",
+      "arc_value": 134,
+      "angle_name": "KLM",
+      "tangent_point": "L",
+      "chord_name": "KL"
+    }
+  },
+  {
+    "id": 1600670,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки K и L. Меньшая дуга KL равна 110°. Прямая LM является касательной к окружности в точке L. Угол KLM острый. Найди величину угла KLM. Ответ дай в градусах.",
+    "answer": 55,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "KL",
+      "arc_value": 110,
+      "angle_name": "KLM",
+      "tangent_point": "L",
+      "chord_name": "KL"
+    }
+  },
+  {
+    "id": 1600671,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки K и L. Меньшая дуга KL равна 178°. Прямая LM является касательной к окружности в точке L. Угол KLM острый. Найди величину угла KLM. Ответ дай в градусах.",
+    "answer": 89,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "KL",
+      "arc_value": 178,
+      "angle_name": "KLM",
+      "tangent_point": "L",
+      "chord_name": "KL"
+    }
+  },
+  {
+    "id": 1600672,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки K и L. Меньшая дуга KL равна 92°. Прямая LM является касательной к окружности в точке L. Угол KLM острый. Найди величину угла KLM. Ответ дай в градусах.",
+    "answer": 46,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "KL",
+      "arc_value": 92,
+      "angle_name": "KLM",
+      "tangent_point": "L",
+      "chord_name": "KL"
+    }
+  },
+  {
+    "id": 1600673,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки K и L. Меньшая дуга KL равна 120°. Прямая LM является касательной к окружности в точке L. Угол KLM острый. Найди величину угла KLM. Ответ дай в градусах.",
+    "answer": 60,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "KL",
+      "arc_value": 120,
+      "angle_name": "KLM",
+      "tangent_point": "L",
+      "chord_name": "KL"
+    }
+  },
+  {
+    "id": 1600674,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки K и L. Меньшая дуга KL равна 146°. Прямая LM является касательной к окружности в точке L. Угол KLM острый. Найди величину угла KLM. Ответ дай в градусах.",
+    "answer": 73,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "KL",
+      "arc_value": 146,
+      "angle_name": "KLM",
+      "tangent_point": "L",
+      "chord_name": "KL"
+    }
+  },
+  {
+    "id": 1600675,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки K и L. Меньшая дуга KL равна 164°. Прямая LM является касательной к окружности в точке L. Угол KLM острый. Найди величину угла KLM. Ответ дай в градусах.",
+    "answer": 82,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "KL",
+      "arc_value": 164,
+      "angle_name": "KLM",
+      "tangent_point": "L",
+      "chord_name": "KL"
+    }
+  },
+  {
+    "id": 1600676,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки K и L. Меньшая дуга KL равна 100°. Прямая LM является касательной к окружности в точке L. Угол KLM острый. Найди величину угла KLM. Ответ дай в градусах.",
+    "answer": 50,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "KL",
+      "arc_value": 100,
+      "angle_name": "KLM",
+      "tangent_point": "L",
+      "chord_name": "KL"
+    }
+  },
+  {
+    "id": 1600677,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки K и L. Меньшая дуга KL равна 170°. Прямая LM является касательной к окружности в точке L. Угол KLM острый. Найди величину угла KLM. Ответ дай в градусах.",
+    "answer": 85,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "KL",
+      "arc_value": 170,
+      "angle_name": "KLM",
+      "tangent_point": "L",
+      "chord_name": "KL"
+    }
+  },
+  {
+    "id": 1600678,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки K и L. Меньшая дуга KL равна 128°. Прямая LM является касательной к окружности в точке L. Угол KLM острый. Найди величину угла KLM. Ответ дай в градусах.",
+    "answer": 64,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "KL",
+      "arc_value": 128,
+      "angle_name": "KLM",
+      "tangent_point": "L",
+      "chord_name": "KL"
+    }
+  },
+  {
+    "id": 1600679,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки K и L. Меньшая дуга KL равна 140°. Прямая LM является касательной к окружности в точке L. Угол KLM острый. Найди величину угла KLM. Ответ дай в градусах.",
+    "answer": 70,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "KL",
+      "arc_value": 140,
+      "angle_name": "KLM",
+      "tangent_point": "L",
+      "chord_name": "KL"
+    }
+  },
+  {
+    "id": 1600680,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки K и L. Меньшая дуга KL равна 156°. Прямая LM является касательной к окружности в точке L. Угол KLM острый. Найди величину угла KLM. Ответ дай в градусах.",
+    "answer": 78,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "KL",
+      "arc_value": 156,
+      "angle_name": "KLM",
+      "tangent_point": "L",
+      "chord_name": "KL"
+    }
+  },
+  {
+    "id": 1600681,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки K и L. Меньшая дуга KL равна 96°. Прямая LM является касательной к окружности в точке L. Угол KLM острый. Найди величину угла KLM. Ответ дай в градусах.",
+    "answer": 48,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "KL",
+      "arc_value": 96,
+      "angle_name": "KLM",
+      "tangent_point": "L",
+      "chord_name": "KL"
+    }
+  },
+  {
+    "id": 1600682,
+    "pattern": "tangent_arc_angle",
+    "narrative": "arc_to_tangent_angle",
+    "question_text": "На окружности отмечены точки K и L. Меньшая дуга KL равна 174°. Прямая LM является касательной к окружности в точке L. Угол KLM острый. Найди величину угла KLM. Ответ дай в градусах.",
+    "answer": 87,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "arc_to_tangent_angle",
+      "arc_name": "KL",
+      "arc_value": 174,
+      "angle_name": "KLM",
+      "tangent_point": "L",
+      "chord_name": "KL"
+    }
+  },
+  {
+    "id": 1600683,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая BC является касательной к окружности в точке B. Найди градусную меру меньшей дуги AB, если угол ABC равен 34°.",
+    "answer": 68,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "ABC",
+      "angle_value": 34,
+      "arc_name": "AB",
+      "tangent_point": "B"
+    }
+  },
+  {
+    "id": 1600684,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая BC является касательной к окружности в точке B. Найди градусную меру меньшей дуги AB, если угол ABC равен 21°.",
+    "answer": 42,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "ABC",
+      "angle_value": 21,
+      "arc_name": "AB",
+      "tangent_point": "B"
+    }
+  },
+  {
+    "id": 1600685,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая BC является касательной к окружности в точке B. Найди градусную меру меньшей дуги AB, если угол ABC равен 13°.",
+    "answer": 26,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "ABC",
+      "angle_value": 13,
+      "arc_name": "AB",
+      "tangent_point": "B"
+    }
+  },
+  {
+    "id": 1600686,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая BC является касательной к окружности в точке B. Найди градусную меру меньшей дуги AB, если угол ABC равен 44°.",
+    "answer": 88,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "ABC",
+      "angle_value": 44,
+      "arc_name": "AB",
+      "tangent_point": "B"
+    }
+  },
+  {
+    "id": 1600687,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая BC является касательной к окружности в точке B. Найди градусную меру меньшей дуги AB, если угол ABC равен 17°.",
+    "answer": 34,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "ABC",
+      "angle_value": 17,
+      "arc_name": "AB",
+      "tangent_point": "B"
+    }
+  },
+  {
+    "id": 1600688,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая BC является касательной к окружности в точке B. Найди градусную меру меньшей дуги AB, если угол ABC равен 28°.",
+    "answer": 56,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "ABC",
+      "angle_value": 28,
+      "arc_name": "AB",
+      "tangent_point": "B"
+    }
+  },
+  {
+    "id": 1600689,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая BC является касательной к окружности в точке B. Найди градусную меру меньшей дуги AB, если угол ABC равен 36°.",
+    "answer": 72,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "ABC",
+      "angle_value": 36,
+      "arc_name": "AB",
+      "tangent_point": "B"
+    }
+  },
+  {
+    "id": 1600690,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая BC является касательной к окружности в точке B. Найди градусную меру меньшей дуги AB, если угол ABC равен 10°.",
+    "answer": 20,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "ABC",
+      "angle_value": 10,
+      "arc_name": "AB",
+      "tangent_point": "B"
+    }
+  },
+  {
+    "id": 1600691,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая BC является касательной к окружности в точке B. Найди градусную меру меньшей дуги AB, если угол ABC равен 24°.",
+    "answer": 48,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "ABC",
+      "angle_value": 24,
+      "arc_name": "AB",
+      "tangent_point": "B"
+    }
+  },
+  {
+    "id": 1600692,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая BC является касательной к окружности в точке B. Найди градусную меру меньшей дуги AB, если угол ABC равен 32°.",
+    "answer": 64,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "ABC",
+      "angle_value": 32,
+      "arc_name": "AB",
+      "tangent_point": "B"
+    }
+  },
+  {
+    "id": 1600693,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая BC является касательной к окружности в точке B. Найди градусную меру меньшей дуги AB, если угол ABC равен 41°.",
+    "answer": 82,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "ABC",
+      "angle_value": 41,
+      "arc_name": "AB",
+      "tangent_point": "B"
+    }
+  },
+  {
+    "id": 1600694,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая BC является касательной к окружности в точке B. Найди градусную меру меньшей дуги AB, если угол ABC равен 9°.",
+    "answer": 18,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "ABC",
+      "angle_value": 9,
+      "arc_name": "AB",
+      "tangent_point": "B"
+    }
+  },
+  {
+    "id": 1600695,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая BC является касательной к окружности в точке B. Найди градусную меру меньшей дуги AB, если угол ABC равен 19°.",
+    "answer": 38,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "ABC",
+      "angle_value": 19,
+      "arc_name": "AB",
+      "tangent_point": "B"
+    }
+  },
+  {
+    "id": 1600696,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая BC является касательной к окружности в точке B. Найди градусную меру меньшей дуги AB, если угол ABC равен 26°.",
+    "answer": 52,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "ABC",
+      "angle_value": 26,
+      "arc_name": "AB",
+      "tangent_point": "B"
+    }
+  },
+  {
+    "id": 1600697,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая BC является касательной к окружности в точке B. Найди градусную меру меньшей дуги AB, если угол ABC равен 30°.",
+    "answer": 60,
+    "image_file": "task_tangent_arc_small.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "ABC",
+      "angle_value": 30,
+      "arc_name": "AB",
+      "tangent_point": "B"
+    }
+  },
+  {
+    "id": 1600698,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая LM является касательной к окружности в точке L. Найди градусную меру меньшей дуги KL, если угол KLM равен 76°.",
+    "answer": 152,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "KLM",
+      "angle_value": 76,
+      "arc_name": "KL",
+      "tangent_point": "L"
+    }
+  },
+  {
+    "id": 1600699,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая LM является касательной к окружности в точке L. Найди градусную меру меньшей дуги KL, если угол KLM равен 67°.",
+    "answer": 134,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "KLM",
+      "angle_value": 67,
+      "arc_name": "KL",
+      "tangent_point": "L"
+    }
+  },
+  {
+    "id": 1600700,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая LM является касательной к окружности в точке L. Найди градусную меру меньшей дуги KL, если угол KLM равен 55°.",
+    "answer": 110,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "KLM",
+      "angle_value": 55,
+      "arc_name": "KL",
+      "tangent_point": "L"
+    }
+  },
+  {
+    "id": 1600701,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая LM является касательной к окружности в точке L. Найди градусную меру меньшей дуги KL, если угол KLM равен 89°.",
+    "answer": 178,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "KLM",
+      "angle_value": 89,
+      "arc_name": "KL",
+      "tangent_point": "L"
+    }
+  },
+  {
+    "id": 1600702,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая LM является касательной к окружности в точке L. Найди градусную меру меньшей дуги KL, если угол KLM равен 46°.",
+    "answer": 92,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "KLM",
+      "angle_value": 46,
+      "arc_name": "KL",
+      "tangent_point": "L"
+    }
+  },
+  {
+    "id": 1600703,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая LM является касательной к окружности в точке L. Найди градусную меру меньшей дуги KL, если угол KLM равен 60°.",
+    "answer": 120,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "KLM",
+      "angle_value": 60,
+      "arc_name": "KL",
+      "tangent_point": "L"
+    }
+  },
+  {
+    "id": 1600704,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая LM является касательной к окружности в точке L. Найди градусную меру меньшей дуги KL, если угол KLM равен 73°.",
+    "answer": 146,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "KLM",
+      "angle_value": 73,
+      "arc_name": "KL",
+      "tangent_point": "L"
+    }
+  },
+  {
+    "id": 1600705,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая LM является касательной к окружности в точке L. Найди градусную меру меньшей дуги KL, если угол KLM равен 82°.",
+    "answer": 164,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "KLM",
+      "angle_value": 82,
+      "arc_name": "KL",
+      "tangent_point": "L"
+    }
+  },
+  {
+    "id": 1600706,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая LM является касательной к окружности в точке L. Найди градусную меру меньшей дуги KL, если угол KLM равен 50°.",
+    "answer": 100,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "KLM",
+      "angle_value": 50,
+      "arc_name": "KL",
+      "tangent_point": "L"
+    }
+  },
+  {
+    "id": 1600707,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая LM является касательной к окружности в точке L. Найди градусную меру меньшей дуги KL, если угол KLM равен 85°.",
+    "answer": 170,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "KLM",
+      "angle_value": 85,
+      "arc_name": "KL",
+      "tangent_point": "L"
+    }
+  },
+  {
+    "id": 1600708,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая LM является касательной к окружности в точке L. Найди градусную меру меньшей дуги KL, если угол KLM равен 64°.",
+    "answer": 128,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "KLM",
+      "angle_value": 64,
+      "arc_name": "KL",
+      "tangent_point": "L"
+    }
+  },
+  {
+    "id": 1600709,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая LM является касательной к окружности в точке L. Найди градусную меру меньшей дуги KL, если угол KLM равен 70°.",
+    "answer": 140,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "KLM",
+      "angle_value": 70,
+      "arc_name": "KL",
+      "tangent_point": "L"
+    }
+  },
+  {
+    "id": 1600710,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая LM является касательной к окружности в точке L. Найди градусную меру меньшей дуги KL, если угол KLM равен 78°.",
+    "answer": 156,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "KLM",
+      "angle_value": 78,
+      "arc_name": "KL",
+      "tangent_point": "L"
+    }
+  },
+  {
+    "id": 1600711,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая LM является касательной к окружности в точке L. Найди градусную меру меньшей дуги KL, если угол KLM равен 48°.",
+    "answer": 96,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "KLM",
+      "angle_value": 48,
+      "arc_name": "KL",
+      "tangent_point": "L"
+    }
+  },
+  {
+    "id": 1600712,
+    "pattern": "tangent_arc_angle",
+    "narrative": "tangent_angle_to_arc",
+    "question_text": "Прямая LM является касательной к окружности в точке L. Найди градусную меру меньшей дуги KL, если угол KLM равен 87°.",
+    "answer": 174,
+    "image_file": "task_tangent_arc_large.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "tangent_angle_to_arc",
+      "angle_name": "KLM",
+      "angle_value": 87,
+      "arc_name": "KL",
+      "tangent_point": "L"
+    }
+  },
+  {
+    "id": 1600713,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол AOC, если угол B равен 44°. Ответ дай в градусах.",
+    "answer": 136,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 44,
+      "central_angle_name": "AOC",
+      "central_angle_value": 136
+    }
+  },
+  {
+    "id": 1600714,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол AOC, если угол B равен 50°. Ответ дай в градусах.",
+    "answer": 130,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 50,
+      "central_angle_name": "AOC",
+      "central_angle_value": 130
+    }
+  },
+  {
+    "id": 1600715,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол AOC, если угол B равен 62°. Ответ дай в градусах.",
+    "answer": 118,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 62,
+      "central_angle_name": "AOC",
+      "central_angle_value": 118
+    }
+  },
+  {
+    "id": 1600716,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол AOC, если угол B равен 80°. Ответ дай в градусах.",
+    "answer": 100,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 80,
+      "central_angle_name": "AOC",
+      "central_angle_value": 100
+    }
+  },
+  {
+    "id": 1600717,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол AOC, если угол B равен 38°. Ответ дай в градусах.",
+    "answer": 142,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 38,
+      "central_angle_name": "AOC",
+      "central_angle_value": 142
+    }
+  },
+  {
+    "id": 1600718,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол AOC, если угол B равен 76°. Ответ дай в градусах.",
+    "answer": 104,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 76,
+      "central_angle_name": "AOC",
+      "central_angle_value": 104
+    }
+  },
+  {
+    "id": 1600719,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол AOC, если угол B равен 88°. Ответ дай в градусах.",
+    "answer": 92,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 88,
+      "central_angle_name": "AOC",
+      "central_angle_value": 92
+    }
+  },
+  {
+    "id": 1600720,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол AOC, если угол B равен 24°. Ответ дай в градусах.",
+    "answer": 156,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 24,
+      "central_angle_name": "AOC",
+      "central_angle_value": 156
+    }
+  },
+  {
+    "id": 1600721,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол AOC, если угол B равен 55°. Ответ дай в градусах.",
+    "answer": 125,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 55,
+      "central_angle_name": "AOC",
+      "central_angle_value": 125
+    }
+  },
+  {
+    "id": 1600722,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол AOC, если угол B равен 72°. Ответ дай в градусах.",
+    "answer": 108,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 72,
+      "central_angle_name": "AOC",
+      "central_angle_value": 108
+    }
+  },
+  {
+    "id": 1600723,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол AOC, если угол B равен 33°. Ответ дай в градусах.",
+    "answer": 147,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 33,
+      "central_angle_name": "AOC",
+      "central_angle_value": 147
+    }
+  },
+  {
+    "id": 1600724,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол AOC, если угол B равен 48°. Ответ дай в градусах.",
+    "answer": 132,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 48,
+      "central_angle_name": "AOC",
+      "central_angle_value": 132
+    }
+  },
+  {
+    "id": 1600725,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол AOC, если угол B равен 15°. Ответ дай в градусах.",
+    "answer": 165,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 15,
+      "central_angle_name": "AOC",
+      "central_angle_value": 165
+    }
+  },
+  {
+    "id": 1600726,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол AOC, если угол B равен 65°. Ответ дай в градусах.",
+    "answer": 115,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 65,
+      "central_angle_name": "AOC",
+      "central_angle_value": 115
+    }
+  },
+  {
+    "id": 1600727,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол AOC, если угол B равен 20°. Ответ дай в градусах.",
+    "answer": 160,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 20,
+      "central_angle_name": "AOC",
+      "central_angle_value": 160
+    }
+  },
+  {
+    "id": 1600728,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол DOF, если угол E равен 92°. Ответ дай в градусах.",
+    "answer": 88,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 92,
+      "central_angle_name": "DOF",
+      "central_angle_value": 88
+    }
+  },
+  {
+    "id": 1600729,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол DOF, если угол E равен 110°. Ответ дай в градусах.",
+    "answer": 70,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 110,
+      "central_angle_name": "DOF",
+      "central_angle_value": 70
+    }
+  },
+  {
+    "id": 1600730,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол DOF, если угол E равен 134°. Ответ дай в градусах.",
+    "answer": 46,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 134,
+      "central_angle_name": "DOF",
+      "central_angle_value": 46
+    }
+  },
+  {
+    "id": 1600731,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол DOF, если угол E равен 150°. Ответ дай в градусах.",
+    "answer": 30,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 150,
+      "central_angle_name": "DOF",
+      "central_angle_value": 30
+    }
+  },
+  {
+    "id": 1600732,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол DOF, если угол E равен 108°. Ответ дай в градусах.",
+    "answer": 72,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 108,
+      "central_angle_name": "DOF",
+      "central_angle_value": 72
+    }
+  },
+  {
+    "id": 1600733,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол DOF, если угол E равен 122°. Ответ дай в градусах.",
+    "answer": 58,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 122,
+      "central_angle_name": "DOF",
+      "central_angle_value": 58
+    }
+  },
+  {
+    "id": 1600734,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол DOF, если угол E равен 146°. Ответ дай в градусах.",
+    "answer": 34,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 146,
+      "central_angle_name": "DOF",
+      "central_angle_value": 34
+    }
+  },
+  {
+    "id": 1600735,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол DOF, если угол E равен 98°. Ответ дай в градусах.",
+    "answer": 82,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 98,
+      "central_angle_name": "DOF",
+      "central_angle_value": 82
+    }
+  },
+  {
+    "id": 1600736,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол DOF, если угол E равен 160°. Ответ дай в градусах.",
+    "answer": 20,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 160,
+      "central_angle_name": "DOF",
+      "central_angle_value": 20
+    }
+  },
+  {
+    "id": 1600737,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол DOF, если угол E равен 115°. Ответ дай в градусах.",
+    "answer": 65,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 115,
+      "central_angle_name": "DOF",
+      "central_angle_value": 65
+    }
+  },
+  {
+    "id": 1600738,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол DOF, если угол E равен 130°. Ответ дай в градусах.",
+    "answer": 50,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 130,
+      "central_angle_name": "DOF",
+      "central_angle_value": 50
+    }
+  },
+  {
+    "id": 1600739,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол DOF, если угол E равен 105°. Ответ дай в градусах.",
+    "answer": 75,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 105,
+      "central_angle_name": "DOF",
+      "central_angle_value": 75
+    }
+  },
+  {
+    "id": 1600740,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол DOF, если угол E равен 140°. Ответ дай в градусах.",
+    "answer": 40,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 140,
+      "central_angle_name": "DOF",
+      "central_angle_value": 40
+    }
+  },
+  {
+    "id": 1600741,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол DOF, если угол E равен 125°. Ответ дай в градусах.",
+    "answer": 55,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 125,
+      "central_angle_name": "DOF",
+      "central_angle_value": 55
+    }
+  },
+  {
+    "id": 1600742,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_center_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол DOF, если угол E равен 155°. Ответ дай в градусах.",
+    "answer": 25,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_center_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 155,
+      "central_angle_name": "DOF",
+      "central_angle_value": 25
+    }
+  },
+  {
+    "id": 1600743,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол B, если угол AOC равен 136°. Ответ дай в градусах.",
+    "answer": 44,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 44,
+      "central_angle_name": "AOC",
+      "central_angle_value": 136
+    }
+  },
+  {
+    "id": 1600744,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол B, если угол AOC равен 130°. Ответ дай в градусах.",
+    "answer": 50,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 50,
+      "central_angle_name": "AOC",
+      "central_angle_value": 130
+    }
+  },
+  {
+    "id": 1600745,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол B, если угол AOC равен 118°. Ответ дай в градусах.",
+    "answer": 62,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 62,
+      "central_angle_name": "AOC",
+      "central_angle_value": 118
+    }
+  },
+  {
+    "id": 1600746,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол B, если угол AOC равен 100°. Ответ дай в градусах.",
+    "answer": 80,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 80,
+      "central_angle_name": "AOC",
+      "central_angle_value": 100
+    }
+  },
+  {
+    "id": 1600747,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол B, если угол AOC равен 142°. Ответ дай в градусах.",
+    "answer": 38,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 38,
+      "central_angle_name": "AOC",
+      "central_angle_value": 142
+    }
+  },
+  {
+    "id": 1600748,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол B, если угол AOC равен 104°. Ответ дай в градусах.",
+    "answer": 76,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 76,
+      "central_angle_name": "AOC",
+      "central_angle_value": 104
+    }
+  },
+  {
+    "id": 1600749,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол B, если угол AOC равен 92°. Ответ дай в градусах.",
+    "answer": 88,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 88,
+      "central_angle_name": "AOC",
+      "central_angle_value": 92
+    }
+  },
+  {
+    "id": 1600750,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол B, если угол AOC равен 156°. Ответ дай в градусах.",
+    "answer": 24,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 24,
+      "central_angle_name": "AOC",
+      "central_angle_value": 156
+    }
+  },
+  {
+    "id": 1600751,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол B, если угол AOC равен 125°. Ответ дай в градусах.",
+    "answer": 55,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 55,
+      "central_angle_name": "AOC",
+      "central_angle_value": 125
+    }
+  },
+  {
+    "id": 1600752,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол B, если угол AOC равен 108°. Ответ дай в градусах.",
+    "answer": 72,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 72,
+      "central_angle_name": "AOC",
+      "central_angle_value": 108
+    }
+  },
+  {
+    "id": 1600753,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол B, если угол AOC равен 147°. Ответ дай в градусах.",
+    "answer": 33,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 33,
+      "central_angle_name": "AOC",
+      "central_angle_value": 147
+    }
+  },
+  {
+    "id": 1600754,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол B, если угол AOC равен 132°. Ответ дай в градусах.",
+    "answer": 48,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 48,
+      "central_angle_name": "AOC",
+      "central_angle_value": 132
+    }
+  },
+  {
+    "id": 1600755,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол B, если угол AOC равен 165°. Ответ дай в градусах.",
+    "answer": 15,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 15,
+      "central_angle_name": "AOC",
+      "central_angle_value": 165
+    }
+  },
+  {
+    "id": 1600756,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол B, если угол AOC равен 115°. Ответ дай в градусах.",
+    "answer": 65,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 65,
+      "central_angle_name": "AOC",
+      "central_angle_value": 115
+    }
+  },
+  {
+    "id": 1600757,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол B так, что стороны угла касаются окружности в точках A и C. Найди угол B, если угол AOC равен 160°. Ответ дай в градусах.",
+    "answer": 20,
+    "image_file": "task_angle_tangency_acute.png",
+    "help_image_file": "help_angle_tangency_acute.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "B",
+      "center": "O",
+      "touch_point_1": "A",
+      "touch_point_2": "C",
+      "tangent_1": "BA",
+      "tangent_2": "BC",
+      "corner_angle_name": "B",
+      "corner_angle_full_name": "ABC",
+      "corner_angle_value": 20,
+      "central_angle_name": "AOC",
+      "central_angle_value": 160
+    }
+  },
+  {
+    "id": 1600758,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол E, если угол DOF равен 88°. Ответ дай в градусах.",
+    "answer": 92,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 92,
+      "central_angle_name": "DOF",
+      "central_angle_value": 88
+    }
+  },
+  {
+    "id": 1600759,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол E, если угол DOF равен 70°. Ответ дай в градусах.",
+    "answer": 110,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 110,
+      "central_angle_name": "DOF",
+      "central_angle_value": 70
+    }
+  },
+  {
+    "id": 1600760,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол E, если угол DOF равен 46°. Ответ дай в градусах.",
+    "answer": 134,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 134,
+      "central_angle_name": "DOF",
+      "central_angle_value": 46
+    }
+  },
+  {
+    "id": 1600761,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол E, если угол DOF равен 30°. Ответ дай в градусах.",
+    "answer": 150,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 150,
+      "central_angle_name": "DOF",
+      "central_angle_value": 30
+    }
+  },
+  {
+    "id": 1600762,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол E, если угол DOF равен 72°. Ответ дай в градусах.",
+    "answer": 108,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 108,
+      "central_angle_name": "DOF",
+      "central_angle_value": 72
+    }
+  },
+  {
+    "id": 1600763,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол E, если угол DOF равен 58°. Ответ дай в градусах.",
+    "answer": 122,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 122,
+      "central_angle_name": "DOF",
+      "central_angle_value": 58
+    }
+  },
+  {
+    "id": 1600764,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол E, если угол DOF равен 34°. Ответ дай в градусах.",
+    "answer": 146,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 146,
+      "central_angle_name": "DOF",
+      "central_angle_value": 34
+    }
+  },
+  {
+    "id": 1600765,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол E, если угол DOF равен 82°. Ответ дай в градусах.",
+    "answer": 98,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 98,
+      "central_angle_name": "DOF",
+      "central_angle_value": 82
+    }
+  },
+  {
+    "id": 1600766,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол E, если угол DOF равен 20°. Ответ дай в градусах.",
+    "answer": 160,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 160,
+      "central_angle_name": "DOF",
+      "central_angle_value": 20
+    }
+  },
+  {
+    "id": 1600767,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол E, если угол DOF равен 65°. Ответ дай в градусах.",
+    "answer": 115,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 115,
+      "central_angle_name": "DOF",
+      "central_angle_value": 65
+    }
+  },
+  {
+    "id": 1600768,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол E, если угол DOF равен 50°. Ответ дай в градусах.",
+    "answer": 130,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 130,
+      "central_angle_name": "DOF",
+      "central_angle_value": 50
+    }
+  },
+  {
+    "id": 1600769,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол E, если угол DOF равен 75°. Ответ дай в градусах.",
+    "answer": 105,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 105,
+      "central_angle_name": "DOF",
+      "central_angle_value": 75
+    }
+  },
+  {
+    "id": 1600770,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол E, если угол DOF равен 40°. Ответ дай в градусах.",
+    "answer": 140,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 140,
+      "central_angle_name": "DOF",
+      "central_angle_value": 40
+    }
+  },
+  {
+    "id": 1600771,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол E, если угол DOF равен 55°. Ответ дай в градусах.",
+    "answer": 125,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 125,
+      "central_angle_name": "DOF",
+      "central_angle_value": 55
+    }
+  },
+  {
+    "id": 1600772,
+    "pattern": "angle_tangency_center",
+    "narrative": "find_corner_angle",
+    "question_text": "Окружность с центром в точке O вписана в угол E так, что стороны угла касаются окружности в точках D и F. Найди угол E, если угол DOF равен 25°. Ответ дай в градусах.",
+    "answer": 155,
+    "image_file": "task_angle_tangency_obtuse.png",
+    "help_image_file": "help_angle_tangency_obtuse.png",
+    "task_context": {
+      "narrative": "find_corner_angle",
+      "vertex_point": "E",
+      "center": "O",
+      "touch_point_1": "D",
+      "touch_point_2": "F",
+      "tangent_1": "ED",
+      "tangent_2": "EF",
+      "corner_angle_name": "E",
+      "corner_angle_full_name": "DEF",
+      "corner_angle_value": 155,
+      "central_angle_name": "DOF",
+      "central_angle_value": 25
+    }
+  },
+  {
+    "id": 1600773,
+    "pattern": "sector_area",
+    "narrative": "find_sector_area",
+    "question_text": "Центральный угол круга равен 30°. Найди площадь сектора круга, если площадь всего круга равна 144.",
+    "answer": 12,
+    "image_file": "task_sector_area_acute.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_sector_area",
+      "angle_value": 30,
+      "circle_area": 144,
+      "sector_area": 12
+    }
+  },
+  {
+    "id": 1600774,
+    "pattern": "sector_area",
+    "narrative": "find_sector_area",
+    "question_text": "Центральный угол круга равен 45°. Найди площадь сектора круга, если площадь всего круга равна 80.",
+    "answer": 10,
+    "image_file": "task_sector_area_acute.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_sector_area",
+      "angle_value": 45,
+      "circle_area": 80,
+      "sector_area": 10
+    }
+  },
+  {
+    "id": 1600775,
+    "pattern": "sector_area",
+    "narrative": "find_sector_area",
+    "question_text": "Центральный угол круга равен 60°. Найди площадь сектора круга, если площадь всего круга равна 42.",
+    "answer": 7,
+    "image_file": "task_sector_area_acute.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_sector_area",
+      "angle_value": 60,
+      "circle_area": 42,
+      "sector_area": 7
+    }
+  },
+  {
+    "id": 1600776,
+    "pattern": "sector_area",
+    "narrative": "find_sector_area",
+    "question_text": "Центральный угол круга равен 72°. Найди площадь сектора круга, если площадь всего круга равна 25.",
+    "answer": 5,
+    "image_file": "task_sector_area_acute.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_sector_area",
+      "angle_value": 72,
+      "circle_area": 25,
+      "sector_area": 5
+    }
+  },
+  {
+    "id": 1600777,
+    "pattern": "sector_area",
+    "narrative": "find_sector_area",
+    "question_text": "Центральный угол круга равен 36°. Найди площадь сектора круга, если площадь всего круга равна 90.",
+    "answer": 9,
+    "image_file": "task_sector_area_acute.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_sector_area",
+      "angle_value": 36,
+      "circle_area": 90,
+      "sector_area": 9
+    }
+  },
+  {
+    "id": 1600778,
+    "pattern": "sector_area",
+    "narrative": "find_sector_area",
+    "question_text": "Центральный угол круга равен 18°. Найди площадь сектора круга, если площадь всего круга равна 100.",
+    "answer": 5,
+    "image_file": "task_sector_area_acute.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_sector_area",
+      "angle_value": 18,
+      "circle_area": 100,
+      "sector_area": 5
+    }
+  },
+  {
+    "id": 1600779,
+    "pattern": "sector_area",
+    "narrative": "find_sector_area",
+    "question_text": "Центральный угол круга равен 90°. Найди площадь сектора круга, если площадь всего круга равна 64.",
+    "answer": 16,
+    "image_file": "task_sector_area_obtuse.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_sector_area",
+      "angle_value": 90,
+      "circle_area": 64,
+      "sector_area": 16
+    }
+  },
+  {
+    "id": 1600780,
+    "pattern": "sector_area",
+    "narrative": "find_sector_area",
+    "question_text": "Центральный угол круга равен 12°. Найди площадь сектора круга, если площадь всего круга равна 120.",
+    "answer": 4,
+    "image_file": "task_sector_area_acute.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_sector_area",
+      "angle_value": 12,
+      "circle_area": 120,
+      "sector_area": 4
+    }
+  },
+  {
+    "id": 1600781,
+    "pattern": "sector_area",
+    "narrative": "find_sector_area",
+    "question_text": "Центральный угол круга равен 15°. Найди площадь сектора круга, если площадь всего круга равна 48.",
+    "answer": 2,
+    "image_file": "task_sector_area_acute.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_sector_area",
+      "angle_value": 15,
+      "circle_area": 48,
+      "sector_area": 2
+    }
+  },
+  {
+    "id": 1600782,
+    "pattern": "sector_area",
+    "narrative": "find_sector_area",
+    "question_text": "Центральный угол круга равен 20°. Найди площадь сектора круга, если площадь всего круга равна 54.",
+    "answer": 3,
+    "image_file": "task_sector_area_acute.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_sector_area",
+      "angle_value": 20,
+      "circle_area": 54,
+      "sector_area": 3
+    }
+  },
+  {
+    "id": 1600783,
+    "pattern": "sector_area",
+    "narrative": "find_sector_area",
+    "question_text": "Центральный угол круга равен 120°. Найди площадь сектора круга, если площадь всего круга равна 69.",
+    "answer": 23,
+    "image_file": "task_sector_area_obtuse.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_sector_area",
+      "angle_value": 120,
+      "circle_area": 69,
+      "sector_area": 23
+    }
+  },
+  {
+    "id": 1600784,
+    "pattern": "sector_area",
+    "narrative": "find_sector_area",
+    "question_text": "Центральный угол круга равен 150°. Найди площадь сектора круга, если площадь всего круга равна 72.",
+    "answer": 30,
+    "image_file": "task_sector_area_obtuse.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_sector_area",
+      "angle_value": 150,
+      "circle_area": 72,
+      "sector_area": 30
+    }
+  },
+  {
+    "id": 1600785,
+    "pattern": "sector_area",
+    "narrative": "find_sector_area",
+    "question_text": "Центральный угол круга равен 135°. Найди площадь сектора круга, если площадь всего круга равна 88.",
+    "answer": 33,
+    "image_file": "task_sector_area_obtuse.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_sector_area",
+      "angle_value": 135,
+      "circle_area": 88,
+      "sector_area": 33
+    }
+  },
+  {
+    "id": 1600786,
+    "pattern": "sector_area",
+    "narrative": "find_sector_area",
+    "question_text": "Центральный угол круга равен 100°. Найди площадь сектора круга, если площадь всего круга равна 36.",
+    "answer": 10,
+    "image_file": "task_sector_area_obtuse.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_sector_area",
+      "angle_value": 100,
+      "circle_area": 36,
+      "sector_area": 10
+    }
+  },
+  {
+    "id": 1600787,
+    "pattern": "sector_area",
+    "narrative": "find_sector_area",
+    "question_text": "Центральный угол круга равен 144°. Найди площадь сектора круга, если площадь всего круга равна 20.",
+    "answer": 8,
+    "image_file": "task_sector_area_obtuse.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_sector_area",
+      "angle_value": 144,
+      "circle_area": 20,
+      "sector_area": 8
+    }
+  },
+  {
+    "id": 1600788,
+    "pattern": "sector_area",
+    "narrative": "find_sector_area",
+    "question_text": "Центральный угол круга равен 108°. Найди площадь сектора круга, если площадь всего круга равна 40.",
+    "answer": 12,
+    "image_file": "task_sector_area_obtuse.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_sector_area",
+      "angle_value": 108,
+      "circle_area": 40,
+      "sector_area": 12
+    }
+  },
+  {
+    "id": 1600789,
+    "pattern": "sector_area",
+    "narrative": "find_sector_area",
+    "question_text": "Центральный угол круга равен 160°. Найди площадь сектора круга, если площадь всего круга равна 27.",
+    "answer": 12,
+    "image_file": "task_sector_area_obtuse.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_sector_area",
+      "angle_value": 160,
+      "circle_area": 27,
+      "sector_area": 12
+    }
+  },
+  {
+    "id": 1600790,
+    "pattern": "sector_area",
+    "narrative": "find_sector_area",
+    "question_text": "Центральный угол круга равен 150°. Найди площадь сектора круга, если площадь всего круга равна 48.",
+    "answer": 20,
+    "image_file": "task_sector_area_obtuse.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_sector_area",
+      "angle_value": 150,
+      "circle_area": 48,
+      "sector_area": 20
+    }
+  },
+  {
+    "id": 1600791,
+    "pattern": "sector_area",
+    "narrative": "find_sector_area",
+    "question_text": "Центральный угол круга равен 135°. Найди площадь сектора круга, если площадь всего круга равна 32.",
+    "answer": 12,
+    "image_file": "task_sector_area_obtuse.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_sector_area",
+      "angle_value": 135,
+      "circle_area": 32,
+      "sector_area": 12
+    }
+  },
+  {
+    "id": 1600792,
+    "pattern": "sector_area",
+    "narrative": "find_sector_area",
+    "question_text": "Центральный угол круга равен 120°. Найди площадь сектора круга, если площадь всего круга равна 66.",
+    "answer": 22,
+    "image_file": "task_sector_area_obtuse.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_sector_area",
+      "angle_value": 120,
+      "circle_area": 66,
+      "sector_area": 22
+    }
+  },
+  {
+    "id": 1600793,
+    "pattern": "sector_area",
+    "narrative": "find_disk_area",
+    "question_text": "Центральный угол круга равен 30°. Найди площадь всего круга, если площадь его сектора равна 12.",
+    "answer": 144,
+    "image_file": "task_sector_area_acute.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_disk_area",
+      "angle_value": 30,
+      "circle_area": 144,
+      "sector_area": 12
+    }
+  },
+  {
+    "id": 1600794,
+    "pattern": "sector_area",
+    "narrative": "find_disk_area",
+    "question_text": "Центральный угол круга равен 45°. Найди площадь всего круга, если площадь его сектора равна 8.",
+    "answer": 64,
+    "image_file": "task_sector_area_acute.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_disk_area",
+      "angle_value": 45,
+      "circle_area": 64,
+      "sector_area": 8
+    }
+  },
+  {
+    "id": 1600795,
+    "pattern": "sector_area",
+    "narrative": "find_disk_area",
+    "question_text": "Центральный угол круга равен 60°. Найди площадь всего круга, если площадь его сектора равна 5.",
+    "answer": 30,
+    "image_file": "task_sector_area_acute.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_disk_area",
+      "angle_value": 60,
+      "circle_area": 30,
+      "sector_area": 5
+    }
+  },
+  {
+    "id": 1600796,
+    "pattern": "sector_area",
+    "narrative": "find_disk_area",
+    "question_text": "Центральный угол круга равен 90°. Найди площадь всего круга, если площадь его сектора равна 15.",
+    "answer": 60,
+    "image_file": "task_sector_area_obtuse.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_disk_area",
+      "angle_value": 90,
+      "circle_area": 60,
+      "sector_area": 15
+    }
+  },
+  {
+    "id": 1600797,
+    "pattern": "sector_area",
+    "narrative": "find_disk_area",
+    "question_text": "Центральный угол круга равен 36°. Найди площадь всего круга, если площадь его сектора равна 9.",
+    "answer": 90,
+    "image_file": "task_sector_area_acute.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_disk_area",
+      "angle_value": 36,
+      "circle_area": 90,
+      "sector_area": 9
+    }
+  },
+  {
+    "id": 1600798,
+    "pattern": "sector_area",
+    "narrative": "find_disk_area",
+    "question_text": "Центральный угол круга равен 18°. Найди площадь всего круга, если площадь его сектора равна 2.",
+    "answer": 40,
+    "image_file": "task_sector_area_acute.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_disk_area",
+      "angle_value": 18,
+      "circle_area": 40,
+      "sector_area": 2
+    }
+  },
+  {
+    "id": 1600799,
+    "pattern": "sector_area",
+    "narrative": "find_disk_area",
+    "question_text": "Центральный угол круга равен 72°. Найди площадь всего круга, если площадь его сектора равна 6.",
+    "answer": 30,
+    "image_file": "task_sector_area_acute.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_disk_area",
+      "angle_value": 72,
+      "circle_area": 30,
+      "sector_area": 6
+    }
+  },
+  {
+    "id": 1600800,
+    "pattern": "sector_area",
+    "narrative": "find_disk_area",
+    "question_text": "Центральный угол круга равен 12°. Найди площадь всего круга, если площадь его сектора равна 3.",
+    "answer": 90,
+    "image_file": "task_sector_area_acute.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_disk_area",
+      "angle_value": 12,
+      "circle_area": 90,
+      "sector_area": 3
+    }
+  },
+  {
+    "id": 1600801,
+    "pattern": "sector_area",
+    "narrative": "find_disk_area",
+    "question_text": "Центральный угол круга равен 15°. Найди площадь всего круга, если площадь его сектора равна 4.",
+    "answer": 96,
+    "image_file": "task_sector_area_acute.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_disk_area",
+      "angle_value": 15,
+      "circle_area": 96,
+      "sector_area": 4
+    }
+  },
+  {
+    "id": 1600802,
+    "pattern": "sector_area",
+    "narrative": "find_disk_area",
+    "question_text": "Центральный угол круга равен 20°. Найди площадь всего круга, если площадь его сектора равна 7.",
+    "answer": 126,
+    "image_file": "task_sector_area_acute.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_disk_area",
+      "angle_value": 20,
+      "circle_area": 126,
+      "sector_area": 7
+    }
+  },
+  {
+    "id": 1600803,
+    "pattern": "sector_area",
+    "narrative": "find_disk_area",
+    "question_text": "Центральный угол круга равен 120°. Найди площадь всего круга, если площадь его сектора равна 23.",
+    "answer": 69,
+    "image_file": "task_sector_area_obtuse.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_disk_area",
+      "angle_value": 120,
+      "circle_area": 69,
+      "sector_area": 23
+    }
+  },
+  {
+    "id": 1600804,
+    "pattern": "sector_area",
+    "narrative": "find_disk_area",
+    "question_text": "Центральный угол круга равен 150°. Найди площадь всего круга, если площадь его сектора равна 35.",
+    "answer": 84,
+    "image_file": "task_sector_area_obtuse.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_disk_area",
+      "angle_value": 150,
+      "circle_area": 84,
+      "sector_area": 35
+    }
+  },
+  {
+    "id": 1600805,
+    "pattern": "sector_area",
+    "narrative": "find_disk_area",
+    "question_text": "Центральный угол круга равен 135°. Найди площадь всего круга, если площадь его сектора равна 33.",
+    "answer": 88,
+    "image_file": "task_sector_area_obtuse.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_disk_area",
+      "angle_value": 135,
+      "circle_area": 88,
+      "sector_area": 33
+    }
+  },
+  {
+    "id": 1600806,
+    "pattern": "sector_area",
+    "narrative": "find_disk_area",
+    "question_text": "Центральный угол круга равен 100°. Найди площадь всего круга, если площадь его сектора равна 10.",
+    "answer": 36,
+    "image_file": "task_sector_area_obtuse.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_disk_area",
+      "angle_value": 100,
+      "circle_area": 36,
+      "sector_area": 10
+    }
+  },
+  {
+    "id": 1600807,
+    "pattern": "sector_area",
+    "narrative": "find_disk_area",
+    "question_text": "Центральный угол круга равен 144°. Найди площадь всего круга, если площадь его сектора равна 16.",
+    "answer": 40,
+    "image_file": "task_sector_area_obtuse.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_disk_area",
+      "angle_value": 144,
+      "circle_area": 40,
+      "sector_area": 16
+    }
+  },
+  {
+    "id": 1600808,
+    "pattern": "sector_area",
+    "narrative": "find_disk_area",
+    "question_text": "Центральный угол круга равен 108°. Найди площадь всего круга, если площадь его сектора равна 9.",
+    "answer": 30,
+    "image_file": "task_sector_area_obtuse.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_disk_area",
+      "angle_value": 108,
+      "circle_area": 30,
+      "sector_area": 9
+    }
+  },
+  {
+    "id": 1600809,
+    "pattern": "sector_area",
+    "narrative": "find_disk_area",
+    "question_text": "Центральный угол круга равен 144°. Найди площадь всего круга, если площадь его сектора равна 22.",
+    "answer": 55,
+    "image_file": "task_sector_area_obtuse.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_disk_area",
+      "angle_value": 144,
+      "circle_area": 55,
+      "sector_area": 22
+    }
+  },
+  {
+    "id": 1600810,
+    "pattern": "sector_area",
+    "narrative": "find_disk_area",
+    "question_text": "Центральный угол круга равен 120°. Найди площадь всего круга, если площадь его сектора равна 19.",
+    "answer": 57,
+    "image_file": "task_sector_area_obtuse.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_disk_area",
+      "angle_value": 120,
+      "circle_area": 57,
+      "sector_area": 19
+    }
+  },
+  {
+    "id": 1600811,
+    "pattern": "sector_area",
+    "narrative": "find_disk_area",
+    "question_text": "Центральный угол круга равен 150°. Найди площадь всего круга, если площадь его сектора равна 10.",
+    "answer": 24,
+    "image_file": "task_sector_area_obtuse.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_disk_area",
+      "angle_value": 150,
+      "circle_area": 24,
+      "sector_area": 10
+    }
+  },
+  {
+    "id": 1600812,
+    "pattern": "sector_area",
+    "narrative": "find_disk_area",
+    "question_text": "Центральный угол круга равен 135°. Найди площадь всего круга, если площадь его сектора равна 9.",
+    "answer": 24,
+    "image_file": "task_sector_area_obtuse.png",
+    "help_image_file": null,
+    "task_context": {
+      "narrative": "find_disk_area",
+      "angle_value": 135,
+      "circle_area": 24,
+      "sector_area": 9
     }
   }
 ]

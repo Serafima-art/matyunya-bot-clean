@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import logging
+import math
 from typing import Any, Dict, Optional
 
 from matplotlib.style import context
@@ -561,15 +562,76 @@ def _solve_tangent_quad_sum(task_data: Dict[str, Any]) -> Dict[str, Any]:
 # ПАТТЕРН 2.4: tangent_arc_angle
 # =========================================================================
 
-def _solve_tangent_arc_angle(task_data: Dict[str, Any]) -> Dict[str, Any]:
+def _solve_tangent_arc_angle (task_data: Dict[str, Any]) -> Dict[str, Any]:
     """
     Паттерн 2.4: tangent_arc_angle
 
-    Канон:
-    - угол между касательной и хордой
+    Нарративы:
+      - arc_to_tangent_angle
+      - tangent_angle_to_arc
     """
-    return _get_stub_solution(task_data, "tangent_arc_angle")
 
+    context: Dict[str, Any] = task_data.get("task_context") or {}
+    answer = task_data.get("answer")
+
+    narrative = context.get("narrative")
+
+    if narrative not in ("arc_to_tangent_angle", "tangent_angle_to_arc"):
+        return _get_error_solution(
+            task_data,
+            reason=f"tangent_arc_angle: unknown narrative '{narrative}'"
+        )
+
+    # --- базовые facts ---
+    facts = {
+        "narrative": narrative,
+        "answer": answer,
+        "tangent_point": context.get("tangent_point"),
+        "arc_name": context.get("arc_name"),
+    }
+
+    # --- arc → angle ---
+    if narrative == "arc_to_tangent_angle":
+        facts.update(
+            arc_value=context.get("arc_value"),
+            angle_name=context.get("angle_name"),
+            chord_name=context.get("chord_name"),
+        )
+
+    # --- angle → arc ---
+    else:
+        facts.update(
+            angle_name=context.get("angle_name"),
+            angle_value=context.get("angle_value"),
+        )
+
+    help_image_file = task_data.get("help_image_file")
+    help_image = None
+
+    if help_image_file:
+        help_image = {
+            "file": str(help_image_file),
+            "schema": f"tangent_arc_angle__{narrative}",
+            "params": {
+                "arc": context.get("arc_name"),
+                "tangent_point": context.get("tangent_point"),
+            }
+        }
+
+    return {
+        "question_id": str(task_data.get("id")),
+        "question_group": "GEOMETRY_16",
+        "explanation_idea": f"IDEA_TANGENT_ARC_ANGLE_{narrative.upper()}",
+        "calculation_steps": [],
+        "final_answer": {
+            "value_machine": answer,
+            "value_display": str(answer) if answer is not None else "",
+            "unit": "°",
+        },
+        "variables": facts,
+        "help_image": help_image,
+        "hints": [],
+    }
 
 # =========================================================================
 # ПАТТЕРН 2.5: angle_tangency_center
@@ -579,12 +641,76 @@ def _solve_angle_tangency_center(task_data: Dict[str, Any]) -> Dict[str, Any]:
     """
     Паттерн 2.5: angle_tangency_center
 
-    Канон:
-    - радиус перпендикулярен касательной
-    - угол при точке касания
+    Нарративы:
+      - find_center_angle
+      - find_corner_angle
     """
-    return _get_stub_solution(task_data, "angle_tangency_center")
 
+    context: Dict[str, Any] = task_data.get("task_context") or {}
+    answer = task_data.get("answer")
+
+    narrative = context.get("narrative")
+
+    if narrative not in ("find_center_angle", "find_corner_angle"):
+        return _get_error_solution(
+            task_data,
+            reason=f"angle_tangency_center: unknown narrative '{narrative}'"
+        )
+
+    # --- базовые facts (общие для обоих нарративов) ---
+    facts = {
+        "narrative": narrative,
+        "answer": answer,
+        "vertex_point": context.get("vertex_point"),
+        "center": context.get("center"),
+        "touch_point_1": context.get("touch_point_1"),
+        "touch_point_2": context.get("touch_point_2"),
+        "tangent_1": context.get("tangent_1"),
+        "tangent_2": context.get("tangent_2"),
+        "corner_angle_name": context.get("corner_angle_name"),
+        "central_angle_name": context.get("central_angle_name"),
+    }
+
+    # --- что именно дано ---
+    if narrative == "find_center_angle":
+        facts.update(
+            corner_angle_value=context.get("corner_angle_value"),
+        )
+    else:  # find_corner_angle
+        facts.update(
+            central_angle_value=context.get("central_angle_value"),
+        )
+
+    # --- help_image ---
+    help_image_file = task_data.get("help_image_file")
+    help_image = None
+
+    if help_image_file:
+        help_image = {
+            "file": str(help_image_file),
+            "schema": f"angle_tangency_center__{narrative}",
+            "params": {
+                "vertex": context.get("vertex_point"),
+                "center": context.get("center"),
+                "touch_1": context.get("touch_point_1"),
+                "touch_2": context.get("touch_point_2"),
+            }
+        }
+
+    return {
+        "question_id": str(task_data.get("id")),
+        "question_group": "GEOMETRY_16",
+        "explanation_idea": "angle_tangency_center",
+        "calculation_steps": [],
+        "final_answer": {
+            "value_machine": answer,
+            "value_display": str(answer) if answer is not None else "",
+            "unit": "°",
+        },
+        "variables": facts,
+        "help_image": help_image,
+        "hints": [],
+    }
 
 # =========================================================================
 # ПАТТЕРН 2.6: sector_area
@@ -593,13 +719,97 @@ def _solve_angle_tangency_center(task_data: Dict[str, Any]) -> Dict[str, Any]:
 def _solve_sector_area(task_data: Dict[str, Any]) -> Dict[str, Any]:
     """
     Паттерн 2.6: sector_area
-
-    Канон:
-    - площадь сектора
-    - пропорция по центральному углу
     """
-    return _get_stub_solution(task_data, "sector_area")
 
+    context = task_data.get("task_context") or {}
+    answer = task_data.get("answer")
+
+    base_narrative = context.get("narrative")
+    angle = context.get("angle_value")
+
+    if base_narrative not in ("find_sector_area", "find_disk_area"):
+        return _get_error_solution(
+            task_data,
+            reason=f"sector_area: unknown narrative '{base_narrative}'"
+        )
+
+    # --------------------------------------------------
+    # find_sector_area
+    # --------------------------------------------------
+    if base_narrative == "find_sector_area":
+        circle_area = context.get("circle_area")
+
+        raw_num = angle
+        raw_den = 360
+        g = math.gcd(raw_num, raw_den)
+
+        reduced_num = raw_num // g
+        reduced_den = raw_den // g
+
+        narrative = (
+            "find_sector_area_short"
+            if reduced_num == 1 or reduced_den == 1
+            else "find_sector_area_general"
+        )
+
+        facts = {
+            "narrative": narrative,
+            "angle_value": angle,
+            "circle_area": circle_area,
+
+            "fraction_num": raw_num,
+            "fraction_den": raw_den,
+            "reduced_num": reduced_num,
+            "reduced_den": reduced_den,
+
+            "answer": answer,
+        }
+
+    # --------------------------------------------------
+    # find_disk_area
+    # --------------------------------------------------
+    else:
+        sector_area = context.get("sector_area")
+
+        raw_num = 360
+        raw_den = angle
+        g = math.gcd(raw_num, raw_den)
+
+        reduced_num = raw_num // g
+        reduced_den = raw_den // g
+
+        narrative = (
+            "find_disk_area_short"
+            if reduced_num == 1 or reduced_den == 1
+            else "find_disk_area_general"
+        )
+
+        facts = {
+            "narrative": narrative,
+            "angle_value": angle,
+            "sector_area": sector_area,
+
+            "fraction_num": raw_num,
+            "fraction_den": raw_den,
+            "reduced_num": reduced_num,
+            "reduced_den": reduced_den,
+
+            "answer": answer,
+        }
+
+    return {
+        "question_id": str(task_data.get("id")),
+        "question_group": "GEOMETRY_16",
+        "explanation_idea": "IDEA_SECTOR_AREA",
+        "calculation_steps": [],
+        "final_answer": {
+            "value_machine": answer,
+            "value_display": str(answer),
+            "unit": "",
+        },
+        "variables": facts,
+        "hints": [],
+    }
 
 # =========================================================================
 # ПАТТЕРН 2.7: power_point
