@@ -28,7 +28,7 @@ if str(PROJECT_ROOT) not in sys.path:
 # ИМПОРТЫ ПРОЕКТА
 # =============================================================
 # Импорт Решателя темы
-from matunya_bot_final.help_core.solvers.task_16.central_and_inscribed_angles_solver import solve
+#from matunya_bot_final.help_core.solvers.task_16.central_and_inscribed_angles_solver import solve
 from matunya_bot_final.help_core.solvers.task_16.circle_elements_relations_solver import solve
 
 # Импорт Хьюмонайзера (ЖЕСТКИЙ ИМПОРТ, ЧТОБЫ ВИДЕТЬ ОШИБКИ)

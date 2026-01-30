@@ -10,6 +10,7 @@ Patterns:
 """
 
 from typing import Dict, Any, Callable, Optional
+import math
 
 from matunya_bot_final.utils.number_formatter import format_oge_number
 
@@ -128,7 +129,46 @@ IDEA_TEMPLATES: Dict[str, str] = {
         "то работает правило равновесия:\n"
         "<b>Суммы противоположных сторон равны.</b> \n\n"
         "Верх + Низ = Лево + Право"
-    )
+    ),
+
+    # --- 2.4 tangent_arc_angle ---
+    "arc_to_tangent_angle": (
+        "Работает важное правило геометрии:\n"
+        "<b>Угол между касательной и хордой равен половине дуги</b>, "
+        "которую этот угол «обнимает»."
+    ),
+
+    "tangent_angle_to_arc": (
+        "Дуга, на которую опирается угол между касательной и хордой, "
+        "всегда <b>в 2 раза больше</b> этого угла."
+    ),
+
+    # --- 2.5 angle_tangency_center ---
+    "angle_tangency_center": (
+        "Радиус, проведённый в точку касания, всегда перпендикулярен касательной.\n"
+        "Значит, в рассматриваемом четырёхугольнике \n"
+        "<b>два угла — прямые, и каждый из них равен 90°</b>.\n"
+        "Сумма всех углов четырёхугольника <b>всегда❗️ равна 360°</b>.\n"
+        "Зная три угла, легко найти четвёртый."
+    ),
+
+     # --- 2.6 sector_area ---
+    "sector_area": (
+        "Площадь сектора — это часть площади всего круга.\n"
+        "Легко считать по формулам: \n\n"
+        "Ищешь площадь сектора: \n"
+        "👉 умножь <b>площадь круга</b> на дробь <b>Угол / 360</b>.\n\n"
+        "Ищешь площадь круга: \n"
+        "👉 умножь <b>площадь сектора</b> на дробь <b>360 / Угол</b>."
+    ),
+
+    # --- 2.7 power_point ---
+    "power_point": (
+        "Здесь работает <b>теорема о касательной и секущей</b>.\n"
+        "Квадрат длины касательной равен произведению \n"
+        "<b>внешней части</b> секущей на <b>всю длину</b> секущей.\n\n"
+        "<b>CN² = CB · CA</b>"
+    ),
 }
 
 STEP_TEMPLATES: Dict[str, str] = {
@@ -587,7 +627,179 @@ STEP_TEMPLATES: Dict[str, str] = {
         "➡️ <b>{side_target_name} = "
         "({side_a_val} + {side_b_val}) − {side_known_val} = "
         "{sum_left} − {side_known_val} = {answer}</b>"
-    )
+    ),
+
+    # ------------------------------------------------------------------
+    # 2.4 tangent_arc_angle
+    # ------------------------------------------------------------------
+
+    # --- arc_to_tangent_angle ---
+    "STEP_TA_GIVEN_FIND_ARC": (
+        "<b>Шаг 1.</b> Условие задачи.\n"
+        "Дано: <b>касательная в точке {tangent_point}, дуга {arc_name} = {arc_value}°</b>.\n"
+        "Найти: <b>∠{angle_name}</b>."
+    ),
+
+    "STEP_TA_RULE_HALF": (
+        "<b>Шаг 2.</b> Используем правило.\n"
+        "Угол между касательной и хордой равен половине дуги:\n"
+        "➡️ <b>∠{angle_name} = {arc_name} : 2</b>"
+    ),
+
+    "STEP_TA_CALC_HALF": (
+        "<b>Шаг 3.</b> Выполним вычисление.\n"
+        "➡️ <b>∠{angle_name} = {arc_value}° : 2 = {answer}°</b>"
+    ),
+
+    # --- tangent_angle_to_arc ---
+    "STEP_TA_GIVEN_FIND_ANGLE": (
+        "<b>Шаг 1.</b> Условие задачи.\n"
+        "Дано: <b>касательная в точке {tangent_point}, ∠{angle_name} = {angle_value}°</b>.\n"
+        "Найти: <b>дугу {arc_name}</b>."
+    ),
+
+    "STEP_TA_RULE_DOUBLE": (
+        "<b>Шаг 2.</b> Используем правило.\n"
+        "Дуга в 2 раза больше угла между касательной и хордой:\n"
+        "➡️ <b>{arc_name} = 2 · ∠{angle_name}</b>"
+    ),
+
+    "STEP_TA_CALC_DOUBLE": (
+        "<b>Шаг 3.</b> Выполним вычисление.\n"
+        "➡️ <b>{arc_name} = 2 · {angle_value}° = {answer}°</b>"
+    ),
+
+    # ------------------------------------------------------------------
+    # 2.5 angle_tangency_center
+    # ------------------------------------------------------------------
+    # --- find_center_angle ---
+    "STEP_CENTER_ANGLE_GIVEN_FIND": (
+        "<b>Шаг 1.</b> Условие задачи.\n"
+        "Дано: касательные из точки <b>{vertex_point}</b>, "
+        "<b>∠{corner_angle_name} = {corner_angle_value}°</b>, центр <b>{center}</b>.\n"
+        "Найти: <b>∠{central_angle_name}</b>."
+    ),
+
+    "STEP_ATC_RIGHT_ANGLES": (
+        "<b>Шаг 2.</b> Радиусы, проведённые в точки касания, перпендикулярны касательным:\n"
+        "➡️ <b>O{touch_point_1} ⟂ {tangent_1}</b> и <b>O{touch_point_2} ⟂ {tangent_2}</b>.\n\n"
+        "Значит, в четырёхугольнике два угла — прямые,\n"
+        "и <b>каждый из них равен 90°</b>."
+    ),
+
+    "STEP_ATC_RULE_180": (
+        "<b>Шаг 3.</b> Сумма всех углов четырёхугольника равна <b>360°</b>.\n"
+        "Так как два угла уже по 90°, на оставшиеся два приходится <b>180°</b>:\n"
+        "➡️ <b>∠{corner_angle_name} + ∠{central_angle_name} = 180°</b>."
+    ),
+
+    # --- вычисление центрального угла ---
+    "STEP_ATC_CALC_CENTER": (
+        "<b>Шаг 4.</b> Найдём искомый угол:\n"
+        "➡️ <b>∠{central_angle_name} = 180° − ∠{corner_angle_name} "
+        "= 180° − {corner_angle_value}° = {answer}°</b>"
+    ),
+
+    # --- find_corner_angle ---
+    "STEP_ATC_GIVEN_FIND_CORNER": (
+        "<b>Шаг 1.</b> Дано: касательные из точки <b>{vertex_point}</b>, "
+        "<b>∠{central_angle_name} = {central_angle_value}°</b>, центр <b>{center}</b>.\n"
+        "Найти: <b>∠{corner_angle_name}</b>."
+    ),
+    # --- вычисление угла между касательными ---
+    "STEP_ATC_CALC_CORNER": (
+        "<b>Шаг 4.</b> Найдём искомый угол:\n"
+        "➡️ <b>∠{corner_angle_name} = 180° − ∠{central_angle_name} "
+        "= 180° − {central_angle_value}° = {answer}°</b>"
+    ),
+
+    # ------------------------------------------------------------------
+    # 2.6 sector_area
+    # ------------------------------------------------------------------
+
+    # --- find_sector_area ---
+    "STEP_SA_GIVEN_FIND_SECTOR": (
+        "<b>Шаг 1.</b> Условие задачи.\n"
+        "Дано: <b>S круга = {circle_area}</b>, "
+        "<b>α = {angle_value}°</b>.\n"
+        "Найти: <b>S сектора</b>."
+    ),
+
+    "STEP_SA_FORMULA_SECTOR": (
+        "<b>Шаг 2.</b> Используем формулу площади сектора:\n"
+        "➡️ <b>S сектора = S круга · (α / 360)</b>"
+    ),
+
+    "STEP_SA_CALC_SECTOR_SHORT": (
+        "<b>Шаг 3.</b> Вычислим:\n"
+        "➡️ <b>S сектора = {circle_area} · ({fraction_num} / {fraction_den})</b>\n"
+        "➡️ <b>S сектора = {circle_area} · {reduced_num}/{reduced_den} = {answer}</b>"
+    ),
+
+    "STEP_SA_CALC_SECTOR_GENERAL": (
+        "<b>Шаг 3.</b> Вычислим:\n"
+        "➡️ <b>S сектора = {circle_area} · ({fraction_num} / {fraction_den})</b>\n"
+        "➡️ <b>S сектора = {circle_area} · {reduced_num}/{reduced_den}</b>\n\n"
+        "<i>Объединим сокращаемые числа в одну дробь.</i>\n"
+        "➡️ <b>S сектора = {circle_area}/{reduced_den} · {reduced_num} = {answer}</b>"
+    ),
+
+    # --- find_disk_area ---
+    "STEP_SA_GIVEN_FIND_CIRCLE": (
+        "<b>Шаг 1.</b> Условие задачи.\n"
+        "Дано: <b>S сектора = {sector_area}</b>, "
+        "<b>α = {angle_value}°</b>.\n"
+        "Найти: <b>S круга</b>."
+    ),
+
+    "STEP_SA_FORMULA_CIRCLE": (
+        "<b>Шаг 2.</b> Выразим площадь круга:\n"
+        "➡️ <b>S круга = S сектора · (360 / α)</b>"
+    ),
+
+    "STEP_SA_CALC_CIRCLE_SHORT": (
+        "<b>Шаг 3.</b> Вычислим:\n"
+        "➡️ <b>S круга = {sector_area} · ({fraction_num} / {fraction_den})</b>\n"
+        "➡️ <b>S круга = {sector_area} · {reduced_num}/{reduced_den} = {answer}</b>"
+    ),
+
+    "STEP_SA_CALC_CIRCLE_GENERAL": (
+        "<b>Шаг 3.</b> Вычислим:\n"
+        "➡️ <b>S круга = {sector_area} · ({fraction_num} / {fraction_den})</b>\n"
+        "➡️ <b>S круга = {sector_area} · {reduced_num}/{reduced_den}</b>\n\n"
+        "<i>Объединим сокращаемые числа в одну дробь.</i>\n"
+        "➡️ <b>S круга = {sector_area}/{reduced_den} · {reduced_num} = {answer}</b>"
+    ),
+
+    # ------------------------------------------------------------------
+    # 2.7 power_point
+    # ------------------------------------------------------------------
+    "STEP_PP_GIVEN": (
+        "<b>Шаг 1.</b> Условие задачи.\n"
+        "Дано: <b>CB = {external_segment_value}</b>, "
+        "<b>BA = {internal_segment_value}</b>.\n"
+        "Найти: <b>CN</b>."
+    ),
+
+    "STEP_PP_FIND_WHOLE_SECANT": (
+        "<b>Шаг 2.</b> Найдём длину всей секущей.\n"
+        "Секущая состоит из внешнего и внутреннего отрезков:\n"
+        "➡️ <b>CA = CB + BA = {external_segment_value} + {internal_segment_value} = {whole_secant_value}</b>"
+    ),
+
+    "STEP_PP_EQUATION": (
+        "<b>Шаг 3.</b> Составим уравнение.\n"
+        "По теореме о касательной и секущей:\n"
+        "➡️ <b>CN² = CB · CA</b>\n"
+        "Подставим значения:\n"
+        "➡️ <b>CN² = {external_segment_value} · {whole_secant_value} = {tangent_square_value}</b>"
+    ),
+
+    "STEP_PP_SQRT": (
+        "<b>Шаг 4.</b> Найдём длину касательной.\n"
+        "Извлечём квадратный корень:\n"
+        "➡️ <b>CN = √{tangent_square_value} = {tangent_value}</b>"
+    ),
 }
 
 TIPS_TEMPLATES: Dict[str, str] = {
@@ -732,6 +944,65 @@ TIPS_TEMPLATES: Dict[str, str] = {
         "Сложи <b>две известные противоположные стороны</b> \n"
         "и <b>вычти третью</b> — известную сторону из пары с искомой."
     ),
+
+    # ------------------------------------------------------------------
+    # 2.4 tangent_arc_angle
+    # ------------------------------------------------------------------
+    # --- arc_to_tangent_angle ---
+    "arc_to_tangent_angle": (
+        "Это свойство легко запомнить по аналогии с <b>вписанным углом</b>.\n"
+        "Вписанный угол тоже равен половине дуги.\n"
+        "Представь, что вершина угла просто 'съехала' по окружности до точки касания — \n"
+        "формула осталась той же!\n\n"
+        "❗️В бланке ОГЭ в ответ записывай только число, без значка градусов."
+    ),
+
+    # --- tangent_angle_to_arc ---
+    "tangent_angle_to_arc": (
+        "Чтобы не перепутать, что на что делить или умножать, запомни визуально:\n"
+        "<b>Дуга всегда больше, чем острый угол.</b>\n"
+        "Поэтому:\n\n"
+        "• Ищешь угол 👉 делишь дугу на 2.\n"
+        "• Ищешь дугу 👉 умножаешь угол на 2.\n\n"
+        "❗️В бланке ОГЭ в ответ записывай только число, без значка градусов."
+    ),
+
+    # ------------------------------------------------------------------
+    # 2.5 angle_tangency_center
+    # ------------------------------------------------------------------
+    "angle_tangency_center": (
+        "Запомни картинку «воздушный змей» и правило для таких задач: \n"
+        "<b>угол между касательными</b> и <b>центральный угол</b> в сумме всегда дают <b>180°</b>.\n\n"
+        "Поэтому, чтобы найти один из них, \n"
+        "достаточно <b>вычесть известный угол из 180</b>.\n\n"
+        "❗️Важно: В бланке ОГЭ в ответ записывай только число без значка градусов."
+    ),
+
+    # ------------------------------------------------------------------
+    # 2.6 sector_area
+    # ------------------------------------------------------------------
+    # --- find_sector_area ---
+    "find_sector_area": (
+        "Тебе не нужно знать радиус или число Пи, чтобы решить эту задачу!\n"
+        "Просто умножь площадь круга на дробь <b>Угол / 360</b>."
+    ),
+
+    # --- find_disk_area ---
+    "find_disk_area": (
+        "Чтобы найти площадь круга по площади сектора, \n"
+        "нужно умножить площадь сектора на дробь <b>360 / Угол</b>."
+    ),
+
+    # ------------------------------------------------------------------
+    # 2.7 power_point
+    # ------------------------------------------------------------------
+    "power_point": (
+        "🛑 <b>Осторожно, ловушка!</b>\n"
+        "Самая частая ошибка — умножать CB на BA. Это неверно!\n\n"
+        "Всегда умножай внешний «хвостик» на <b>ВСЮ❗️ длинную палку</b> целиком.\n"
+        "Правило:\n\n"
+        "<b>(Длина касательной)² = (Внешний отрезок секущей) · (Весь отрезок секущей)</b>."
+    ),
 }
 
 # =============================================================================
@@ -855,7 +1126,7 @@ NARRATIVE_PROFILES: Dict[str, Dict[str, Any]] = {
             "STEP_TDA_INS_3",
             "STEP_TDA_INS_4",
         ],
-        "tips_key": "two_diameters",
+        "tips_key": "two_diameters_find_inscribed",
     },
     "find_central": {
         "steps": [
@@ -864,7 +1135,7 @@ NARRATIVE_PROFILES: Dict[str, Dict[str, Any]] = {
             "STEP_TDA_CEN_3",
             "STEP_TDA_CEN_4",
         ],
-        "tips_key": "two_diameters",
+        "tips_key": "two_diameters_find_central",
     },
 
     # --- 2.1 secant_similarity ---
@@ -1097,6 +1368,204 @@ NARRATIVE_PROFILES: Dict[str, Dict[str, Any]] = {
             "side_target_name",
             "answer",
             "sum_left",
+        ],
+    },
+
+    # --- 2.4 tangent_arc_angle ---
+    "arc_to_tangent_angle": {
+        "steps": [
+            "STEP_TA_GIVEN_FIND_ARC",
+            "STEP_TA_RULE_HALF",
+            "STEP_TA_CALC_HALF",
+        ],
+        "tips_key": "arc_to_tangent_angle",
+        "required_fields": [
+            "arc_name",
+            "arc_value",
+            "angle_name",
+            "tangent_point",
+            "answer",
+        ],
+    },
+
+    "tangent_angle_to_arc": {
+        "steps": [
+            "STEP_TA_GIVEN_FIND_ANGLE",
+            "STEP_TA_RULE_DOUBLE",
+            "STEP_TA_CALC_DOUBLE",
+        ],
+        "tips_key": "tangent_angle_to_arc",
+        "required_fields": [
+            "angle_name",
+            "angle_value",
+            "arc_name",
+            "tangent_point",
+            "answer",
+        ],
+    },
+
+    # --- 2.5 angle_tangency_center ---
+    "find_center_angle": {
+        "idea_key": "angle_tangency_center",
+        "steps": [
+            "STEP_CENTER_ANGLE_GIVEN_FIND",
+            "STEP_ATC_RIGHT_ANGLES",
+            "STEP_ATC_RULE_180",
+            "STEP_ATC_CALC_CENTER",   # ✅
+        ],
+        "tips_key": "angle_tangency_center",
+        "required_fields": [
+            "vertex_point",
+            "center",
+            "touch_point_1",
+            "touch_point_2",
+            "tangent_1",
+            "tangent_2",
+            "corner_angle_name",
+            "corner_angle_value",
+            "central_angle_name",
+            "answer",
+        ],
+    },
+
+    "find_corner_angle": {
+        "idea_key": "angle_tangency_center",
+        "steps": [
+            "STEP_ATC_GIVEN_FIND_CORNER",
+            "STEP_ATC_RIGHT_ANGLES",
+            "STEP_ATC_RULE_180",
+            "STEP_ATC_CALC_CORNER",   # ✅
+        ],
+        "tips_key": "angle_tangency_center",
+        "required_fields": [
+            "vertex_point",
+            "center",
+            "touch_point_1",
+            "touch_point_2",
+            "tangent_1",
+            "tangent_2",
+            "corner_angle_name",
+            "central_angle_name",
+            "central_angle_value",
+            "answer",
+        ],
+    },
+
+    # --- 2.6 sector_area ---
+    # =========================
+    # SECTOR — короткий вариант
+    # =========================
+    "find_sector_area_short": {
+        "steps": [
+            "STEP_SA_GIVEN_FIND_SECTOR",
+            "STEP_SA_FORMULA_SECTOR",
+            "STEP_SA_CALC_SECTOR_SHORT",
+        ],
+        "tips_key": "find_sector_area",
+        "required_fields": [
+            "angle_value",
+            "circle_area",
+            "answer",
+        ],
+    },
+
+    # =========================
+    # SECTOR — общий вариант
+    # =========================
+    "find_sector_area_general": {
+        "steps": [
+            "STEP_SA_GIVEN_FIND_SECTOR",
+            "STEP_SA_FORMULA_SECTOR",
+            "STEP_SA_CALC_SECTOR_GENERAL",
+        ],
+        "tips_key": "find_sector_area",
+        "required_fields": [
+            "angle_value",
+            "circle_area",
+            "answer",
+        ],
+    },
+
+    # =========================
+    # CIRCLE — короткий вариант
+    # =========================
+    "find_disk_area_short": {
+        "steps": [
+            "STEP_SA_GIVEN_FIND_CIRCLE",
+            "STEP_SA_FORMULA_CIRCLE",
+            "STEP_SA_CALC_CIRCLE_SHORT",
+        ],
+        "tips_key": "find_disk_area",
+        "required_fields": [
+            "angle_value",
+            "sector_area",
+            "answer",
+        ],
+    },
+
+    # =========================
+    # CIRCLE — общий вариант
+    # =========================
+    "find_disk_area_general": {
+        "steps": [
+            "STEP_SA_GIVEN_FIND_CIRCLE",
+            "STEP_SA_FORMULA_CIRCLE",
+            "STEP_SA_CALC_CIRCLE_GENERAL",
+        ],
+        "tips_key": "find_disk_area",
+        "required_fields": [
+            "angle_value",
+            "sector_area",
+            "answer",
+        ],
+    },
+
+    "find_sector_area": {
+        "steps": [
+            "STEP_SA_GIVEN_FIND_SECTOR",
+            "STEP_SA_FORMULA_SECTOR",
+            "STEP_SA_CALC_SECTOR",
+        ],
+        "tips_key": "find_sector_area",
+        "required_fields": [
+            "angle_value",
+            "circle_area",
+            "answer",
+        ],
+    },
+
+    "find_disk_area": {
+        "steps": [
+            "STEP_SA_GIVEN_FIND_CIRCLE",
+            "STEP_SA_FORMULA_CIRCLE",
+            "STEP_SA_CALC_CIRCLE",
+        ],
+        "tips_key": "find_disk_area",
+        "required_fields": [
+            "angle_value",
+            "sector_area",
+            "answer",
+        ],
+    },
+
+    # --- 2.7 power_point ---
+
+    "find_tangent_length": {
+        "idea_key": "power_point",
+        "steps": [
+            "STEP_PP_GIVEN",
+            "STEP_PP_FIND_WHOLE_SECANT",
+            "STEP_PP_EQUATION",
+            "STEP_PP_SQRT",
+        ],
+        "tips_key": "power_point",
+        "required_fields": [
+            "external_segment_value",
+            "internal_segment_value",
+            "whole_secant_value",
+            "tangent_square_value",
+            "tangent_value",
+            "answer",
         ],
     },
 }
@@ -1658,6 +2127,134 @@ def _ctx_find_missing_side(raw_vars: Dict[str, Any]) -> Dict[str, Any]:
 
     return ctx
 
+def _ctx_arc_to_tangent_angle(raw_vars: Dict[str, Any]) -> Dict[str, Any]:
+    ctx = _base_context(raw_vars)
+
+    ctx.update(
+        arc_name=raw_vars["arc_name"],
+        arc_value=format_oge_number(raw_vars["arc_value"]),
+        angle_name=raw_vars["angle_name"],
+        tangent_point=raw_vars["tangent_point"],
+    )
+    return ctx
+
+
+def _ctx_tangent_angle_to_arc(raw_vars: Dict[str, Any]) -> Dict[str, Any]:
+    ctx = _base_context(raw_vars)
+
+    ctx.update(
+        angle_name=raw_vars["angle_name"],
+        angle_value=format_oge_number(raw_vars["angle_value"]),
+        arc_name=raw_vars["arc_name"],
+        tangent_point=raw_vars["tangent_point"],
+    )
+    return ctx
+
+def _ctx_find_center_angle(raw_vars: Dict[str, Any]) -> Dict[str, Any]:
+    ctx = _base_context(raw_vars)
+
+    ctx.update(
+        vertex_point=raw_vars["vertex_point"],
+        center=raw_vars["center"],
+        touch_point_1=raw_vars["touch_point_1"],
+        touch_point_2=raw_vars["touch_point_2"],
+        tangent_1=raw_vars["tangent_1"],
+        tangent_2=raw_vars["tangent_2"],
+        corner_angle_name=raw_vars["corner_angle_name"],
+        corner_angle_value=format_oge_number(raw_vars["corner_angle_value"]),
+        central_angle_name=raw_vars["central_angle_name"],
+    )
+    return ctx
+
+def _ctx_find_corner_angle(raw_vars: Dict[str, Any]) -> Dict[str, Any]:
+    ctx = _base_context(raw_vars)
+
+    ctx.update(
+        vertex_point=raw_vars["vertex_point"],
+        center=raw_vars["center"],
+        touch_point_1=raw_vars["touch_point_1"],
+        touch_point_2=raw_vars["touch_point_2"],
+        tangent_1=raw_vars["tangent_1"],
+        tangent_2=raw_vars["tangent_2"],
+        corner_angle_name=raw_vars["corner_angle_name"],
+        central_angle_name=raw_vars["central_angle_name"],
+        central_angle_value=format_oge_number(raw_vars["central_angle_value"]),
+    )
+    return ctx
+
+def _ctx_find_sector_area(raw_vars: Dict[str, Any]) -> Dict[str, Any]:
+    ctx = _base_context(raw_vars)
+
+    angle = raw_vars["angle_value"]
+    circle_area = raw_vars["circle_area"]
+
+    num = angle
+    den = 360
+    g = math.gcd(num, den)
+
+    ctx.update(
+        # исходные данные
+        angle_value=format_oge_number(angle),
+        circle_area=format_oge_number(circle_area),
+
+        # дробь ДО сокращения (для шага вида 360 / α или α / 360)
+        fraction_num=num,
+        fraction_den=den,
+
+        # дробь ПОСЛЕ сокращения (для методического шага)
+        reduced_num=num // g,
+        reduced_den=den // g,
+
+        # финальный ответ
+        answer=format_oge_number(raw_vars["answer"]),
+    )
+
+    return ctx
+
+
+def _ctx_find_disk_area(raw_vars: Dict[str, Any]) -> Dict[str, Any]:
+    ctx = _base_context(raw_vars)
+
+    angle = raw_vars["angle_value"]
+    sector_area = raw_vars["sector_area"]
+
+    num = 360
+    den = angle
+    g = math.gcd(num, den)
+
+    ctx.update(
+        # исходные данные
+        angle_value=format_oge_number(angle),
+        sector_area=format_oge_number(sector_area),
+
+        # дробь ДО сокращения
+        fraction_num=num,
+        fraction_den=den,
+
+        # дробь ПОСЛЕ сокращения
+        reduced_num=num // g,
+        reduced_den=den // g,
+
+        # финальный ответ
+        answer=format_oge_number(raw_vars["answer"]),
+    )
+
+    return ctx
+
+def _ctx_find_tangent_length(raw_vars: Dict[str, Any]) -> Dict[str, Any]:
+    ctx = _base_context(raw_vars)
+
+    ctx.update(
+        external_segment_value=format_oge_number(raw_vars["external_segment_value"]),
+        internal_segment_value=format_oge_number(raw_vars["internal_segment_value"]),
+        whole_secant_value=format_oge_number(raw_vars["whole_secant_value"]),
+        tangent_square_value=format_oge_number(raw_vars["tangent_square_value"]),
+        tangent_value=format_oge_number(raw_vars["tangent_value"]),
+        answer=format_oge_number(raw_vars["answer"]),
+    )
+
+    return ctx
+
 _CONTEXT_BUILDERS: Dict[str, Callable[[Dict[str, Any]], Dict[str, Any]]] = {
     "opposite_sum": _ctx_opposite_sum,
     "part_sum": _ctx_part_sum,
@@ -1678,7 +2275,23 @@ _CONTEXT_BUILDERS: Dict[str, Callable[[Dict[str, Any]], Dict[str, Any]]] = {
     "tangent_trapezoid_find_midline_via_sides": _ctx_tangent_trapezoid_find_midline_via_sides,
     "tangent_trapezoid_find_midline_via_bases": _ctx_tangent_trapezoid_find_midline_via_bases,
     "tangent_trapezoid_find_base": _ctx_tangent_trapezoid_find_base,
-    "find_missing_side": _ctx_find_missing_side
+    "find_missing_side": _ctx_find_missing_side,
+    "arc_to_tangent_angle": _ctx_arc_to_tangent_angle,
+    "tangent_angle_to_arc": _ctx_tangent_angle_to_arc,
+    "find_center_angle": _ctx_find_center_angle,
+    "find_corner_angle": _ctx_find_corner_angle,
+
+    # --- sector area ---
+    "find_sector_area": _ctx_find_sector_area,          # старый (можно оставить)
+    "find_sector_area_short": _ctx_find_sector_area,
+    "find_sector_area_general": _ctx_find_sector_area,
+
+    # --- disk area ---
+    "find_disk_area": _ctx_find_disk_area,              # старый
+    "find_disk_area_short": _ctx_find_disk_area,
+    "find_disk_area_general": _ctx_find_disk_area,
+
+    "find_tangent_length": _ctx_find_tangent_length,
 }
 
 # =============================================================================

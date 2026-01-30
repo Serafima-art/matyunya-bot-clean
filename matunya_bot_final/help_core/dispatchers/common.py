@@ -8,6 +8,8 @@ from aiogram import Bot
 from aiogram.fsm.context import FSMContext
 from aiogram.types import CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton
 
+from matunya_bot_final.keyboards.navigation.emergency import emergency_nav_kb
+
 from matunya_bot_final.core.callbacks.tasks_callback import TaskCallback
 from matunya_bot_final.help_core.humanizers.solution_humanizer import humanize_solution
 from matunya_bot_final.utils.message_manager import (
@@ -409,18 +411,19 @@ async def send_solver_not_found_message(callback: CallbackQuery, bot: Bot, task_
 
 async def send_solution_error(callback: CallbackQuery, bot: Bot, error_message: str) -> None:
     """
-    Отправляет сообщение об ошибке при генерации решения.
+    Отправляет сообщение об ошибке при генерации решения + аварийные кнопки.
     """
     error_text = (
         f"😔 <b>Ошибка генерации решения</b>\n\n"
         f"{error_message}\n\n"
-        f"💡 Попробуй еще раз или нажми «🆘 Помощь» позже."
+        f"💡 Выбери другое задание или вернись в меню."
     )
 
     try:
         await callback.message.edit_text(
             error_text,
-            parse_mode="HTML"
+            parse_mode="HTML",
+            reply_markup=emergency_nav_kb()
         )
     except Exception as e:
         logger.error(f"Ошибка отправки сообщения об ошибке: {e}")

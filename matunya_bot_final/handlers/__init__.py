@@ -3,6 +3,8 @@
 
 from matunya_bot_final.handlers.start import router as start_router
 from matunya_bot_final.handlers.callbacks.navigation.main_menu_callbacks import router as main_menu_router
+from matunya_bot_final.handlers.callbacks.navigation.restore_task_keyboard import router as restore_task_keyboard_router
+
 from matunya_bot_final.handlers.parts_handlers import router as parts_router
 from matunya_bot_final.handlers.callbacks.dialogs.gpt_dialog_control_handler import router as gpt_dialog_control_router
 
@@ -29,7 +31,6 @@ from matunya_bot_final.handlers.callbacks.task_handlers.task_16.task_16_handler 
 from matunya_bot_final.handlers.message_handlers.task_16_answer_handler import router as task_16_answer_router
 from matunya_bot_final.handlers.callbacks.task_handlers.task_20.task_20_handler import router as task_20_router
 
-from matunya_bot_final.handlers._legacy.user_answer_handler import router as legacy_answer_router
 from matunya_bot_final.help_core.dispatchers.help_handler import (
     solution_router as help_solution_router,
 )
@@ -38,6 +39,7 @@ routers = [
     # Core navigation and menu entry points.
     start_router,
     main_menu_router,
+    restore_task_keyboard_router,
     parts_router,
 
     # Help flow for tasks 1-5 (legacy architecture still in use).
@@ -70,7 +72,4 @@ routers = [
     task_16_answer_router,
 
     task_20_router,
-
-    # Legacy fallbacks to be migrated later.
-    legacy_answer_router,
 ]
