@@ -28,8 +28,8 @@ if str(PROJECT_ROOT) not in sys.path:
 # ИМПОРТЫ ПРОЕКТА
 # =============================================================
 # Импорт Решателя темы
-#from matunya_bot_final.help_core.solvers.task_16.central_and_inscribed_angles_solver import solve
-from matunya_bot_final.help_core.solvers.task_16.circle_elements_relations_solver import solve
+from matunya_bot_final.help_core.solvers.task_16.central_and_inscribed_angles_solver import solve
+#from matunya_bot_final.help_core.solvers.task_16.circle_elements_relations_solver import solve
 
 # Импорт Хьюмонайзера (ЖЕСТКИЙ ИМПОРТ, ЧТОБЫ ВИДЕТЬ ОШИБКИ)
 from matunya_bot_final.help_core.humanizers.template_humanizers.task_16_humanizer import humanize
@@ -186,7 +186,7 @@ if __name__ == "__main__":
         # -------------------------------------------------------------
         # 🟩 ТЕМА 1: Центральные и вписанные углы (central_and_inscribed_angles)
         # -------------------------------------------------------------
-        # TEST_PATTERN = "cyclic_quad_angles"
+        TEST_PATTERN = "cyclic_quad_angles"
         # TEST_PATTERN = "central_inscribed"
         # TEST_PATTERN = "radius_chord_angles"
         # TEST_PATTERN = "arc_length_ratio"
@@ -202,7 +202,7 @@ if __name__ == "__main__":
         # TEST_PATTERN = "tangent_arc_angle"
         # TEST_PATTERN = "angle_tangency_center"
         # TEST_PATTERN = "sector_area"
-        TEST_PATTERN = "power_point"
+        # TEST_PATTERN = "power_point"
 
 
         # Сколько случайных задач брать ИЗ КАЖДОГО нарратива

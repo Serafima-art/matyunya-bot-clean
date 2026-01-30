@@ -807,10 +807,26 @@ TIPS_TEMPLATES: Dict[str, str] = {
     # ------------------------------------------------------------------
     # 1.1 cyclic_quad_angles
     # ------------------------------------------------------------------
-    "arc_hint": (
+    "find_opposite_angle": (
+        "Это правило — самый простой способ проверить, "
+        "можно ли вообще описать окружность вокруг четырёхугольника.\n"
+        "Если сумма противоположных углов не 180°, \n"
+        "то окружность описать вокруг четырёхугольника нельзя!\n\n"
+        "❗️В бланке ОГЭ в ответ записывай только число, без значка градусов."
+    ),
+
+    "same_arc_angles": (
         "Посмотри на чертёж и найди фигуру, похожую на «бантик» (или «бабочку») — "
         "это две пересекающиеся диагонали.\n"
         "Углы, которые «смотрят» на одну и ту же дугу окружности в таком бантике, всегда равны.\n\n"
+        "❗️В бланке ОГЭ в ответ записывай только число, без значка градусов."
+    ),
+
+    "find_diagonal_angle_abd": (
+        "Если диагональ делит большой угол на части, "
+        "и одна часть этого большого угла равна «чужому» вписанному углу,\n"
+        "то нужный угол всегда находится вычитанием.\n\n"
+        "Искомый угол = Большой угол - «чужой» угол \n\n"
         "❗️В бланке ОГЭ в ответ записывай только число, без значка градусов."
     ),
 
@@ -1013,12 +1029,12 @@ NARRATIVE_PROFILES: Dict[str, Dict[str, Any]] = {
     # --- 1.1 cyclic_quad_angles ---
     "opposite_sum": {
         "steps": ["STEP_GIVEN_FIND", "STEP_OPPOSITE_RULE", "STEP_OPPOSITE_CALC"],
-        "tips_key": "common",
+        "tips_key": "find_opposite_angle",
         "required_fields": ["angle_given_name", "angle_given_val", "angle_target_name"],
     },
     "part_sum": {
         "steps": ["STEP_GIVEN_FIND", "STEP_SPLIT_ANGLE", "STEP_EQUAL_ARC", "STEP_SUM_CALC"],
-        "tips_key": "arc_hint",
+        "tips_key": "same_arc_angles",
         "required_fields": [
             "angle_whole_name",
             "angle_known_part_name",
@@ -1031,7 +1047,7 @@ NARRATIVE_PROFILES: Dict[str, Dict[str, Any]] = {
     },
     "part_diff": {
         "steps": ["STEP_GIVEN_FIND", "STEP_EQUAL_ARC_SIMPLE", "STEP_WHOLE_COMPOSITION", "STEP_DIFF_CALC"],
-        "tips_key": "arc_hint",
+        "tips_key": "find_diagonal_angle_abd",
         "required_fields": [
             "angle_target_name",
             "angle_whole_name",
