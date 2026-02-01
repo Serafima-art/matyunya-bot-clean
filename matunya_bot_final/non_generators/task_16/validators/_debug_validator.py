@@ -26,8 +26,8 @@ from typing import Optional, Dict, Any, List
 # НАСТРОЙКИ
 # ---------------------------------------------------------------------
 
-TARGET_PATTERN = "power_point" # Паттерн, который отлаживаем
-DEFINITIONS_FILE = "circle_elements_relations.txt"
+TARGET_PATTERN = "square_incircle_circumcircle" # Паттерн, который отлаживаем
+DEFINITIONS_FILE = "circle_around_polygon.txt"
 OUTPUT_FILENAME = "debug_validator_output.txt"
 
 # ---------------------------------------------------------------------
@@ -52,14 +52,14 @@ if str(source_root) not in sys.path:
 
 try:
     # Пробуем импорт через полный путь (рекомендуемый)
-    from matunya_bot_final.non_generators.task_16.validators.circle_elements_relations_validator import (
-        CircleElementsRelationsValidator,
+    from matunya_bot_final.non_generators.task_16.validators.circle_around_polygon_validator import (
+        CircleAroundPolygonValidator,
     )
 except ImportError:
     try:
         # Пробуем импорт напрямую (если запущен изнутри папки)
-        from non_generators.task_16.validators.circle_elements_relations_validator import (
-            CircleElementsRelationsValidator,
+        from non_generators.task_16.validators.circle_around_polygon_validator import (
+            CircleAroundPolygonValidator,
         )
     except ImportError as e:
         print(f"🔴 Ошибка импорта валидатора: {e}")
@@ -158,7 +158,7 @@ def run_test() -> None:
 
     print(f"✅ Загружено задач: {len(tasks)}")
 
-    validator = CircleElementsRelationsValidator()
+    validator = CircleAroundPolygonValidator()
 
     # --- Прогоняем ВСЕ задачи этого паттерна ---
     for i, raw_data in enumerate(tasks, start=1):

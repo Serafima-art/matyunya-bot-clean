@@ -28,8 +28,9 @@ if str(PROJECT_ROOT) not in sys.path:
 # ИМПОРТЫ ПРОЕКТА
 # =============================================================
 # Импорт Решателя темы
-from matunya_bot_final.help_core.solvers.task_16.central_and_inscribed_angles_solver import solve
+#from matunya_bot_final.help_core.solvers.task_16.central_and_inscribed_angles_solver import solve
 #from matunya_bot_final.help_core.solvers.task_16.circle_elements_relations_solver import solve
+from matunya_bot_final.help_core.solvers.task_16.circle_around_polygon_solver import solve
 
 # Импорт Хьюмонайзера (ЖЕСТКИЙ ИМПОРТ, ЧТОБЫ ВИДЕТЬ ОШИБКИ)
 from matunya_bot_final.help_core.humanizers.template_humanizers.task_16_humanizer import humanize
@@ -203,6 +204,14 @@ if __name__ == "__main__":
         # TEST_PATTERN = "angle_tangency_center"
         # TEST_PATTERN = "sector_area"
         # TEST_PATTERN = "power_point"
+
+        # -------------------------------------------------------------
+        # 🟨 ТЕМА 3. Касательная, хорда, секущая, радиус (circle_around_polygon)
+        # -------------------------------------------------------------
+        TEST_PATTERN = "square_incircle_circumcircle"
+        # TEST_PATTERN = "eq_triangle_circles"
+        # TEST_PATTERN = "square_radius_midpoint"
+        # TEST_PATTERN = "right_triangle_circumradius"
 
 
         # Сколько случайных задач брать ИЗ КАЖДОГО нарратива
