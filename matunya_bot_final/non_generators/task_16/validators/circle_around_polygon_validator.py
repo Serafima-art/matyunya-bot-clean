@@ -256,7 +256,223 @@ class CircleAroundPolygonValidator:
     # ПАТТЕРН 3.2: eq_triangle_circles
     # =========================================================================
     def _validate_eq_triangle_circles(self, task: Dict[str, Any]) -> Tuple[bool, List[str]]:
-        return False, ["Pattern 3.2 not implemented yet"]
+        errors = []
+        text = task.get("question_text", "")
+        narrative = task.get("narrative")
+        answer = task.get("answer")
+
+        # 1. Парсинг значения с корнем (12√3 или просто √3)
+        match_val = re.search(r"(\d*)\s*[√v]3", text)
+        if not match_val:
+            errors.append("Не найдено значение с корнем (X√3).")
+            return False, errors
+
+        raw_coeff_str = match_val.group(1)
+        coeff = int(raw_coeff_str) if raw_coeff_str else 1
+        raw_val_str = f"{coeff}√3" if coeff > 1 else "√3"
+
+        final_calc_answer = None
+        task_context = {}
+
+        base_context = {
+            "figure": "equilateral_triangle",
+            "narrative": narrative,
+            "geometry_facts": {"triangle_type": "equilateral"}
+        }
+
+        task_image = "task_eq_triangle_circumcircle.png"
+        help_image = "help_eq_triangle_circumcircle.png"
+
+        try:
+            # --- ГРУППА 1: Диаметр описанной (D <-> a) ---
+            if narrative == "circum_diameter_to_side":
+                # D = coeff*√3. R = D/2. a = R*√3.
+                # a = (coeff*√3 / 2) * √3 = coeff * 3 / 2
+                res = (coeff * 3) / 2
+
+                # Приведение к int ДО записи в контекст
+                if isinstance(res, float) and res.is_integer():
+                    res = int(res)
+
+                final_calc_answer = res
+
+                task_context = {
+                    **base_context,
+                    "given": {
+                        "element_type": "circumcircle_diameter",
+                        "symbol": "D",
+                        "value_str": raw_val_str,
+                        "coeff": coeff
+                    },
+                    "target": {
+                        "element_type": "side",
+                        "symbol": "a",
+                        "value": final_calc_answer # Теперь здесь int (если число целое)
+                    },
+                    "relations": {
+                        "radius_from_diameter": "R = D : 2",
+                        "side_from_radius": "a = R · √3"
+                    }
+                    # radius_val удален
+                }
+
+            elif narrative == "side_to_circum_diameter":
+                # a = coeff*√3. D = 2 * (a/√3) = 2 * coeff
+                res = coeff * 2
+                # coeff - int, значит res - int, но для надежности оставим проверку
+                if isinstance(res, float) and res.is_integer():
+                    res = int(res)
+                final_calc_answer = res
+
+                task_context = {
+                    **base_context,
+                    "given": {
+                        "element_type": "side",
+                        "symbol": "a",
+                        "value_str": raw_val_str,
+                        "coeff": coeff
+                    },
+                    "target": {
+                        "element_type": "circumcircle_diameter",
+                        "symbol": "D",
+                        "value": final_calc_answer
+                    },
+                    "relations": {
+                        "radius_relation": "R = a : √3",
+                        "diameter_relation": "D = 2 · R"
+                    }
+                }
+
+            # --- ГРУППА 2: Радиус описанной (R <-> a) ---
+            elif narrative == "circum_radius_to_side":
+                # R = coeff*√3. a = R*√3 = coeff*3
+                res = coeff * 3
+                if isinstance(res, float) and res.is_integer():
+                    res = int(res)
+                final_calc_answer = res
+
+                task_context = {
+                    **base_context,
+                    "given": {
+                        "element_type": "circumcircle_radius",
+                        "symbol": "R",
+                        "value_str": raw_val_str,
+                        "coeff": coeff
+                    },
+                    "target": {
+                        "element_type": "side",
+                        "symbol": "a",
+                        "value": final_calc_answer
+                    },
+                    "relations": {
+                        "side_relation": "a = R · √3"
+                    }
+                }
+
+            elif narrative == "side_to_circum_radius":
+                # a = coeff*√3. R = a/√3 = coeff
+                res = coeff
+                if isinstance(res, float) and res.is_integer():
+                    res = int(res)
+                final_calc_answer = res
+
+                task_context = {
+                    **base_context,
+                    "given": {
+                        "element_type": "side",
+                        "symbol": "a",
+                        "value_str": raw_val_str,
+                        "coeff": coeff
+                    },
+                    "target": {
+                        "element_type": "circumcircle_radius",
+                        "symbol": "R",
+                        "value": final_calc_answer
+                    },
+                    "relations": {
+                        "radius_relation": "R = a : √3"
+                    }
+                }
+
+            # --- ГРУППА 3: Радиус вписанной (r <-> a) ---
+            elif narrative == "inradius_to_side":
+                task_image = "task_eq_triangle_incircle.png"
+                help_image = "help_eq_triangle_incircle.png"
+
+                # r = coeff*√3. a = 6r / √3 = 6*coeff
+                res = coeff * 6
+                if isinstance(res, float) and res.is_integer():
+                    res = int(res)
+                final_calc_answer = res
+
+                task_context = {
+                    **base_context,
+                    "given": {
+                        "element_type": "incircle_radius",
+                        "symbol": "r",
+                        "value_str": raw_val_str,
+                        "coeff": coeff
+                    },
+                    "target": {
+                        "element_type": "side",
+                        "symbol": "a",
+                        "value": final_calc_answer
+                    },
+                    "relations": {
+                        "side_relation": "a = 6r / √3"
+                    }
+                }
+
+            elif narrative == "side_to_inradius":
+                task_image = "task_eq_triangle_incircle.png"
+                help_image = "help_eq_triangle_incircle.png"
+
+                # a = coeff*√3. r = a√3 / 6 = coeff*3 / 6 = coeff / 2
+                res = coeff / 2
+
+                # Здесь может быть дробь (например, 0.5), но если целое (1.0), то станет int(1)
+                if isinstance(res, float) and res.is_integer():
+                    res = int(res)
+
+                final_calc_answer = res
+
+                task_context = {
+                    **base_context,
+                    "given": {
+                        "element_type": "side",
+                        "symbol": "a",
+                        "value_str": raw_val_str,
+                        "coeff": coeff
+                    },
+                    "target": {
+                        "element_type": "incircle_radius",
+                        "symbol": "r",
+                        "value": final_calc_answer
+                    },
+                    "relations": {
+                        "radius_relation": "r = a√3 / 6"
+                    }
+                }
+
+            else:
+                errors.append(f"Неизвестный нарратив: {narrative}")
+                return False, errors
+
+            # Финальная проверка с ответом из файла
+            if answer is not None and str(answer).strip() != "" and int(answer) != -1:
+                if abs(float(final_calc_answer) - float(answer)) > 0.01:
+                    errors.append(f"Математическая ошибка: {final_calc_answer} != {answer}")
+
+            task["answer"] = final_calc_answer
+            task["image_file"] = task_image
+            task["help_image_file"] = help_image
+            task["task_context"] = task_context
+
+        except Exception as e:
+            errors.append(f"Exception: {str(e)}")
+            return False, errors
+
+        return len(errors) == 0, errors
 
     # =========================================================================
     # ПАТТЕРН 3.3: square_radius_midpoint

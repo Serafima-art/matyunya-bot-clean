@@ -196,12 +196,158 @@ def _solve_square_incircle_circumcircle(task_data: Dict[str, Any]) -> Dict[str, 
     }
 
 
+# =========================================================================
+# ПАТТЕРН 3.2: eq_triangle_circles
+# =========================================================================
+
 def _solve_eq_triangle_circles(task_data: Dict[str, Any]) -> Dict[str, Any]:
     """
     Паттерн 3.2: eq_triangle_circles
-    """
-    return _not_implemented_stub(task_data, pattern="eq_triangle_circles")
 
+    Канон (ВАЖНО):
+    - facts-only
+    - solver формирует единый контракт facts для humanizer
+    - выравниваем given/target (в target добавляем value_str)
+    - вводим variables["derived"] для промежуточных величин,
+      которые используются в шагах, но не являются ни given, ни target.
+    """
+
+    context: Dict[str, Any] = task_data.get("task_context") or {}
+    narrative = (context.get("narrative") or task_data.get("narrative") or "").strip()
+    answer = task_data.get("answer")
+
+    allowed = (
+        "circum_diameter_to_side",
+        "side_to_circum_diameter",
+        "circum_radius_to_side",
+        "side_to_circum_radius",
+        "inradius_to_side",
+        "side_to_inradius",
+    )
+    if narrative not in allowed:
+        return _build_error_solution_core(
+            task_data=task_data,
+            error_message=f"eq_triangle_circles: unknown narrative '{narrative}'",
+        )
+
+    given = context.get("given")
+    target = context.get("target")
+    if not isinstance(given, dict) or not isinstance(target, dict):
+        return _build_error_solution_core(
+            task_data=task_data,
+            error_message=f"eq_triangle_circles: missing given/target for '{narrative}'",
+        )
+
+    # ------------------------------------------------------------------
+    # NORMALIZE given/target: делаем единый контракт (value_str в target обязателен)
+    # ------------------------------------------------------------------
+
+    norm_given = dict(given)
+    norm_target = dict(target)
+
+    # given.value_str должен быть строкой (в БД так и есть), но подстрахуемся
+    if norm_given.get("value_str") is None and norm_given.get("value") is not None:
+        norm_given["value_str"] = str(norm_given["value"])
+
+    # target.value_str в БД отсутствует — добавляем (как строку)
+    if norm_target.get("value_str") is None and norm_target.get("value") is not None:
+        norm_target["value_str"] = str(norm_target["value"])
+
+    # ------------------------------------------------------------------
+    # DERIVED: промежуточные величины, которые нужны в шагах humanizer
+    # (и только они; без вычислений в humanizer!)
+    # ------------------------------------------------------------------
+
+    derived: Dict[str, Any] = {}
+
+    def _put_derived(symbol: str, element_type: str, value: Any, value_str: str) -> None:
+        derived[symbol] = {
+            "element_type": element_type,
+            "symbol": symbol,
+            "value": value,
+            "value_str": value_str,
+        }
+
+    g_type = norm_given.get("element_type")
+    g_coeff = norm_given.get("coeff")  # в БД это целое (коэффициент при √3 или "чистое" число)
+    g_value_str = norm_given.get("value_str")
+
+    # 1) circum_diameter_to_side: в шагах нужен R (R = D : 2), далее a = R·√3
+    if narrative == "circum_diameter_to_side":
+        # ожидаем D = k√3 (k = coeff), тогда R = (k/2)√3
+        if g_type == "circumcircle_diameter" and isinstance(g_coeff, int):
+            if g_coeff % 2 == 0:
+                r_coeff = g_coeff // 2
+                r_str = f"{r_coeff}√3" if r_coeff != 1 else "√3"
+            else:
+                # редкий случай (если когда-то появится нечетный coeff)
+                r_str = f"({g_coeff}/2)√3"
+            _put_derived("R", "circumcircle_radius", None, r_str)
+
+    # 2) side_to_circum_diameter: в шагах нужен R (R = a : √3), потом D = 2R
+    elif narrative == "side_to_circum_diameter":
+        # ожидаем a = k√3 (k = coeff), тогда R = k
+        if g_type == "side" and isinstance(g_coeff, int):
+            _put_derived("R", "circumcircle_radius", g_coeff, str(g_coeff))
+
+    # Остальные нарративы решаются прямой формулой в шагах (без промежуточного R),
+    # поэтому derived не заполняем.
+
+    # ------------------------------------------------------------------
+    # RELATIONS: берём строго из БД (если есть), иначе — подставляем канон по narrative
+    # ------------------------------------------------------------------
+
+    relations = context.get("relations") or {}
+
+    if not relations:
+        # безопасная подстраховка, если где-то в данных relations пустые
+        if narrative == "circum_diameter_to_side":
+            relations = {
+                "radius_from_diameter": "R = D : 2",
+                "side_from_radius": "a = R · √3",
+            }
+        elif narrative == "side_to_circum_diameter":
+            relations = {
+                "radius_relation": "R = a : √3",
+                "diameter_relation": "D = 2 · R",
+            }
+        elif narrative == "circum_radius_to_side":
+            relations = {"side_relation": "a = R · √3"}
+        elif narrative == "side_to_circum_radius":
+            relations = {"radius_relation": "R = a : √3"}
+        elif narrative == "inradius_to_side":
+            relations = {"side_relation": "a = 6r / √3"}
+        elif narrative == "side_to_inradius":
+            relations = {"radius_relation": "r = a√3 / 6"}
+
+    # ------------------------------------------------------------------
+    # FACTS (variables): единый контракт для humanizer
+    # ------------------------------------------------------------------
+
+    facts: Dict[str, Any] = {
+        "figure": "equilateral_triangle",
+        "narrative": narrative,  # humanizer читает это поле
+        "answer": answer,
+
+        "geometry_facts": context.get("geometry_facts") or {"triangle_type": "equilateral"},
+        "given": norm_given,
+        "target": norm_target,
+        "relations": relations,
+        "derived": derived,  # ⬅️ ключевой слой для устранения None/TypeError
+    }
+
+    # ------------------------------------------------------------------
+    # solution_core (канон через helper)
+    # ------------------------------------------------------------------
+
+    return _build_solution_core(
+        task_data=task_data,
+        explanation_idea=f"IDEA_{narrative.upper()}",
+        final_answer=answer if answer is not None else "",
+        variables=facts,
+        help_image=_extract_help_image(task_data),
+        hints=[],
+    )
 
 def _solve_square_radius_midpoint(task_data: Dict[str, Any]) -> Dict[str, Any]:
     """

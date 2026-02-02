@@ -208,8 +208,8 @@ if __name__ == "__main__":
         # -------------------------------------------------------------
         # 🟨 ТЕМА 3. Касательная, хорда, секущая, радиус (circle_around_polygon)
         # -------------------------------------------------------------
-        TEST_PATTERN = "square_incircle_circumcircle"
-        # TEST_PATTERN = "eq_triangle_circles"
+        # TEST_PATTERN = "square_incircle_circumcircle"
+        TEST_PATTERN = "eq_triangle_circles"
         # TEST_PATTERN = "square_radius_midpoint"
         # TEST_PATTERN = "right_triangle_circumradius"
 

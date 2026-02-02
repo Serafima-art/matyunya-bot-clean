@@ -26,7 +26,7 @@ from typing import Optional, Dict, Any, List
 # НАСТРОЙКИ
 # ---------------------------------------------------------------------
 
-TARGET_PATTERN = "square_incircle_circumcircle" # Паттерн, который отлаживаем
+TARGET_PATTERN = "eq_triangle_circles" # Паттерн, который отлаживаем
 DEFINITIONS_FILE = "circle_around_polygon.txt"
 OUTPUT_FILENAME = "debug_validator_output.txt"
 
