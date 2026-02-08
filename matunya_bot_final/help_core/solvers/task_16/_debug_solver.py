@@ -187,7 +187,7 @@ if __name__ == "__main__":
         # -------------------------------------------------------------
         # 🟩 ТЕМА 1: Центральные и вписанные углы (central_and_inscribed_angles)
         # -------------------------------------------------------------
-        TEST_PATTERN = "cyclic_quad_angles"
+        # TEST_PATTERN = "cyclic_quad_angles"
         # TEST_PATTERN = "central_inscribed"
         # TEST_PATTERN = "radius_chord_angles"
         # TEST_PATTERN = "arc_length_ratio"
@@ -209,9 +209,9 @@ if __name__ == "__main__":
         # 🟨 ТЕМА 3. Касательная, хорда, секущая, радиус (circle_around_polygon)
         # -------------------------------------------------------------
         # TEST_PATTERN = "square_incircle_circumcircle"
-        TEST_PATTERN = "eq_triangle_circles"
+        # TEST_PATTERN = "eq_triangle_circles"
         # TEST_PATTERN = "square_radius_midpoint"
-        # TEST_PATTERN = "right_triangle_circumradius"
+        TEST_PATTERN = "right_triangle_circumradius"
 
 
         # Сколько случайных задач брать ИЗ КАЖДОГО нарратива

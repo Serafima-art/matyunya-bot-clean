@@ -478,10 +478,301 @@ class CircleAroundPolygonValidator:
     # ПАТТЕРН 3.3: square_radius_midpoint
     # =========================================================================
     def _validate_square_radius_midpoint(self, task: Dict[str, Any]) -> Tuple[bool, List[str]]:
-        return False, ["Pattern 3.3 not implemented yet"]
+        errors = []
+        text = task.get("question_text", "")
+        narrative = task.get("narrative")
+        answer = task.get("answer")
+
+        # 1. Парсинг геометрии
+        match_side_name = re.search(r"сторон[ыа]\s+([A-Z]{2})", text, re.IGNORECASE)
+        match_center = re.search(r"(?:Точка|точке)\s+([A-Z])", text, re.IGNORECASE)
+        match_vertex = re.search(r"вершину\s+([A-Z])", text, re.IGNORECASE)
+
+        if not (match_side_name and match_center and match_vertex):
+            errors.append("Не удалось распарсить геометрию (сторона, центр или вершина).")
+            return False, errors
+
+        midpoint_side = match_side_name.group(1).upper()
+        circle_center = match_center.group(1).upper()
+        point_on_circle = match_vertex.group(1).upper()
+
+        # 2. Парсинг чисел
+        match_root = re.search(r"(\d*)\s*[√v]5", text)
+        match_int = re.search(r"равен\s+(\d+)(?!\s*[√v])", text)
+
+        final_calc_answer = None
+        task_context = {}
+
+        base_context = {
+            "figure": "square",
+            "narrative": narrative,
+            "geometry_facts": {
+                "midpoint_side": midpoint_side,
+                "circle_center": circle_center,
+                "point_on_circle": point_on_circle
+            }
+        }
+
+        try:
+            # -----------------------------------------------------------------
+            # Сценарий 1: midpoint_side_to_area (Дано R -> Найти S)
+            # -----------------------------------------------------------------
+            if narrative == "midpoint_side_to_area":
+                if "KL" in midpoint_side or "KN" in midpoint_side or "LM" in midpoint_side or "MN" in midpoint_side:
+                     task_image = "task_square_radius_midpoint_klmn.png"
+                     help_image = "help_square_radius_midpoint_klmn.png"
+                else:
+                     task_image = "task_square_radius_midpoint_prst.png"
+                     help_image = "help_square_radius_midpoint_prst.png"
+
+                if match_root:
+                    raw_coeff_str = match_root.group(1)
+                    coeff = int(raw_coeff_str) if raw_coeff_str else 1
+                    r_val_str = f"{coeff}√5" if coeff > 1 else "√5"
+                    r_sq = (coeff ** 2) * 5
+                elif match_int:
+                    val = int(match_int.group(1))
+                    r_val_str = str(val)
+                    r_sq = val ** 2
+                else:
+                    errors.append("Не найдено значение радиуса.")
+                    return False, errors
+
+                area = (4 * r_sq) / 5
+
+                if abs(area - round(area)) > 1e-9:
+                    errors.append(f"Площадь не целая: {area}")
+                    return False, errors
+
+                final_calc_answer = int(area)
+
+                task_context = {
+                    **base_context,
+                    "given": {
+                        "element_type": "circle_radius",
+                        "symbol": "R",
+                        "value_str": r_val_str
+                    },
+                    "target": {
+                        "element_type": "square_area",
+                        "symbol": "S",
+                        "value": final_calc_answer
+                    },
+                    "relations": {
+                        "area_relation": "S = 4R² / 5"
+                    }
+                }
+
+            # -----------------------------------------------------------------
+            # Сценарий 2: midpoint_side_to_radius (Дано a -> Найти R)
+            # -----------------------------------------------------------------
+            elif narrative == "midpoint_side_to_radius":
+                task_image = "task_square_radius_midpoint_abcd.png"
+                help_image = "help_square_radius_midpoint_abcd.png"
+
+                if not match_root:
+                    errors.append("В этом типе задач ожидается сторона с корнем (X√5).")
+                    return False, errors
+
+                raw_coeff_str = match_root.group(1)
+                coeff = int(raw_coeff_str) if raw_coeff_str else 1
+                a_val_str = f"{coeff}√5" if coeff > 1 else "√5"
+
+                # Вычисляем половину стороны
+                half_coeff = coeff // 2
+                half_val_str = f"{half_coeff}√5" if half_coeff > 1 else "√5"
+
+                # Вычисляем квадраты для подробного объяснения (Шаг 4)
+                a_num_sq = coeff ** 2      # Квадрат коэффициента стороны
+                half_a_num_sq = half_coeff ** 2  # Квадрат коэффициента половины
+
+                # Итоговое подкоренное выражение R^2 = (coeff^2 * 5) + (half^2 * 5)
+                # Это чисто математически то же самое, что (coeff*5)/2 в финале, но через сумму квадратов
+                calc_r2_val = (a_num_sq * 5) + (half_a_num_sq * 5)
+
+                # R = корень из R^2
+                res = calc_r2_val ** 0.5
+
+                if abs(res - round(res)) > 1e-9:
+                    errors.append(f"Радиус не целый: {res}")
+                    return False, errors
+
+                final_calc_answer = int(res)
+
+                task_context = {
+                    **base_context,
+                    # ✅ Добавлено поле R^2 для итогового корня
+                    "calc_r2": str(calc_r2_val),
+
+                    "given": {
+                        "element_type": "side",
+                        "symbol": "a",
+                        "value_str": a_val_str,
+                        "coeff": coeff,
+                        "half_value_str": half_val_str,
+
+                        # ✅ Добавлены строковые поля для развернутого решения
+                        "a_num": str(coeff),
+                        "half_a_num": str(half_coeff),
+                        "a_num_sq": str(a_num_sq),
+                        "half_a_num_sq": str(half_a_num_sq)
+                    },
+                    "target": {
+                        "element_type": "circle_radius",
+                        "symbol": "R",
+                        "value": final_calc_answer
+                    },
+                    "relations": {
+                        "radius_relation": "R = a√5 / 2"
+                    }
+                }
+
+            else:
+                errors.append(f"Неизвестный нарратив: {narrative}")
+                return False, errors
+
+            # Проверка ответа
+            if answer is not None and str(answer).strip() != "" and int(answer) != -1:
+                if abs(float(final_calc_answer) - float(answer)) > 0.01:
+                    errors.append(f"Математическая ошибка: {final_calc_answer} != {answer}")
+
+            task["answer"] = final_calc_answer
+            task["image_file"] = task_image
+            task["help_image_file"] = help_image
+            task["task_context"] = task_context
+
+        except Exception as e:
+            errors.append(f"Exception: {str(e)}")
+            return False, errors
+
+        return len(errors) == 0, errors
 
     # =========================================================================
     # ПАТТЕРН 3.4: right_triangle_circumradius
     # =========================================================================
     def _validate_right_triangle_circumradius(self, task: Dict[str, Any]) -> Tuple[bool, List[str]]:
-        return False, ["Pattern 3.4 not implemented yet"]
+        errors = []
+        text = task.get("question_text", "")
+        narrative = task.get("narrative")
+        answer = task.get("answer")
+
+        # 1. Парсинг отрезков (BC=6, BD=8)
+        found_vars = {}
+        for m in self.value_regex.finditer(text):
+            # Группа 1: Имя (BC), Группа 2: Значение (6)
+            raw_key = m.group(1).upper().strip()
+            # Игнорируем "R", "r", "D" если они вдруг попадутся (хотя regex ловит 1-2 буквы)
+            if len(raw_key) == 2:
+                key = "".join(sorted(raw_key)) # Сортируем буквы BC
+                val = float(m.group(2).replace(',', '.'))
+                if val.is_integer(): val = int(val)
+                found_vars[key] = val
+
+        final_calc_answer = None
+        task_context = {}
+
+        task_image = "task_right_triangle_circum.png"
+        help_image = "help_right_triangle_circum.png"
+
+        try:
+            if narrative == "hypotenuse_half":
+                # Ожидаем 2 катета. Проверяем, что их 2.
+                if len(found_vars) != 2:
+                    errors.append(f"Ожидалось 2 катета, найдено: {found_vars}")
+                    return False, errors
+
+                legs = list(found_vars.items()) # [('BC', 6), ('BD', 8)]
+                leg1_name, leg1_val = legs[0]
+                leg2_name, leg2_val = legs[1]
+
+                # 2. Геометрическая проверка: есть ли общая вершина (прямой угол)?
+                # BC и BD -> общая B.
+                s1 = set(leg1_name)
+                s2 = set(leg2_name)
+                common = s1.intersection(s2)
+
+                if len(common) != 1:
+                    errors.append(f"Катеты {leg1_name} и {leg2_name} не имеют общей вершины.")
+                    return False, errors
+
+                right_angle_vertex = list(common)[0]
+
+                # Гипотенуза - оставшиеся буквы
+                p1 = list(s1 - common)[0]
+                p2 = list(s2 - common)[0]
+                hypotenuse_name = "".join(sorted([p1, p2]))
+
+                # 3. Математика: Пифагор
+                # c^2 = a^2 + b^2
+                hyp_sq = leg1_val**2 + leg2_val**2
+                hyp_val = hyp_sq ** 0.5
+
+                # Радиус = Гипотенуза / 2
+                res = hyp_val / 2
+
+                # Проверка на адекватность чисел (ОГЭ обычно целые или .5)
+                # Если гипотенуза не извлекается (напр sqrt(20)), это плохо для этого типа задач
+                if abs(hyp_val - round(hyp_val)) > 1e-9:
+                     # Можно допустить корни, но в наших задачах (3,4,5) все красиво.
+                     # Если что, здесь можно добавить warning.
+                     pass
+                else:
+                    hyp_val = int(hyp_val)
+
+                final_calc_answer = res
+
+                # Формируем контекст
+                task_context = {
+                    "figure": "right_triangle",
+                    "narrative": narrative,
+
+                    "geometry_facts": {
+                        "right_angle_vertex": right_angle_vertex,
+                        "legs": [leg1_name, leg2_name],
+                        "hypotenuse": hypotenuse_name
+                    },
+
+                    "given": {
+                        "element_type": "legs",
+                        "symbols": [leg1_name, leg2_name],
+                        "values": [leg1_val, leg2_val]
+                    },
+
+                    # Вычисленные данные для красивого решения
+                    "hypotenuse_sq_val": hyp_sq, # 100
+                    "hypotenuse_val": hyp_val,   # 10
+
+                    "target": {
+                        "element_type": "circumradius",
+                        "symbol": "R",
+                        "value": int(res) if res.is_integer() else res
+                    },
+
+                    "relations": {
+                        "pythagoras": f"{hypotenuse_name}² = {leg1_name}² + {leg2_name}²",
+                        "circumradius_rule": f"R = {hypotenuse_name} / 2"
+                    }
+                }
+
+            else:
+                errors.append(f"Неизвестный нарратив: {narrative}")
+                return False, errors
+
+            # Финализация ответа
+            if isinstance(final_calc_answer, float) and final_calc_answer.is_integer():
+                final_calc_answer = int(final_calc_answer)
+
+            if answer is not None and str(answer).strip() != "" and int(answer) != -1:
+                if abs(float(final_calc_answer) - float(answer)) > 0.01:
+                    errors.append(f"Математическая ошибка: {final_calc_answer} != {answer}")
+
+            task["answer"] = final_calc_answer
+            task["image_file"] = task_image
+            task["help_image_file"] = help_image
+            task["task_context"] = task_context
+
+        except Exception as e:
+            errors.append(f"Exception: {str(e)}")
+            return False, errors
+
+        return len(errors) == 0, errors

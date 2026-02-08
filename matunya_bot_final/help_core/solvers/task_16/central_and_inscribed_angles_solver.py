@@ -364,7 +364,7 @@ def _solve_central_inscribed(task_data: Dict[str, Any]) -> Dict[str, Any]:
 def _solve_radius_chord_angles(task_data: Dict[str, Any]) -> Dict[str, Any]:
     context: Dict[str, Any] = task_data.get("task_context") or {}
     answer = task_data.get("answer")
-    narrative_general = context.get("narrative_type") # (упрощено для краткости)
+    narrative_general = context.get("narrative_type") or "" # (упрощено для краткости)
 
     # Нормализуем нарратив, если он длинный (из старых запасов)
     if "find_part" in narrative_general: narrative_general = "find_part_angle"
@@ -425,6 +425,28 @@ def _solve_radius_chord_angles(task_data: Dict[str, Any]) -> Dict[str, Any]:
 
     # Упаковка
     idea_key = f"IDEA_{narrative_general.upper()}"
+
+    # ------------------------------------------------------------------
+    # help_image (КАНОН задания 16)
+    # ------------------------------------------------------------------
+    help_image = None
+    help_image_file = task_data.get("help_image_file")
+
+    if help_image_file:
+        # определяем острый / тупой случай
+        angle_type = context.get("angle_type")  # "acute" / "obtuse" — уже есть в БД
+        help_image = {
+            "file": str(help_image_file),
+            "schema": f"radius_chord_angles__{narrative_general}__{angle_type}",
+            "params": {
+                "figure": "circle",
+                "center": "O",
+                "vertex": facts.get("vertex"),
+                "narrative": narrative_general,
+                "angle_type": angle_type,
+            },
+        }
+
     return {
         "question_id": str(task_data.get("id")),
         "question_group": "GEOMETRY_16",
@@ -436,6 +458,7 @@ def _solve_radius_chord_angles(task_data: Dict[str, Any]) -> Dict[str, Any]:
             "unit": "°",
         },
         "variables": facts,
+        "help_image": help_image,
         "hints": [],
     }
 

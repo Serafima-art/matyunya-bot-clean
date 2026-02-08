@@ -250,6 +250,32 @@ IDEA_TEMPLATES: Dict[str, str] = {
         "связан со стороной треугольника формулой:\n"
         "❗ r = a√3 / 6."
     ),
+
+    # --- 3.3 square_radius_midpoint ---
+    "midpoint_side_to_area": (
+        "Рассмотрим прямоугольный треугольник, который образован:\n"
+        "1. Стороной квадрата (катет <b>a</b>).\n"
+        "2. Половиной стороны (катет <b>a/2</b>).\n"
+        "3. Радиусом окружности (гипотенуза <b>R</b>).\n\n"
+        "По теореме Пифагора выразим сторону через радиус,\n"
+        "а затем найдём площадь квадрата <b>S = a²</b>."
+    ),
+
+    "midpoint_side_to_radius": (
+        "Радиус R — это гипотенуза прямоугольного треугольника \n"
+        "с катетами a и a/2.\n"
+        "По теореме Пифагора:\n"
+        "👉 R² = a² + (a/2)²"
+    ),
+
+    # --- 3.4 right_triangle_circumradius ---
+    "hypotenuse_half": (
+        "Главное свойство прямоугольного треугольника:\n"
+        "<b>центр описанной окружности лежит на середине гипотенузы</b>.\n\n"
+        "Значит, радиус равен половине гипотенузы.\n"
+        "Сначала найдём гипотенузу по теореме Пифагора, "
+        "а затем разделим её на 2."
+    ),
 }
 
 STEP_TEMPLATES: Dict[str, str] = {
@@ -1011,6 +1037,95 @@ STEP_TEMPLATES: Dict[str, str] = {
         "➡️ <b>r = ({a} · √3) / 6 = {answer}</b>"
     ),
 
+    # ------------------------------------------------------------------
+    # 3.3 square_radius_midpoint
+    # ------------------------------------------------------------------
+
+    # --- midpoint_side_to_area ---
+    "STEP_SRM_GIVEN_FIND_AREA": (
+        "<b>Шаг 1.</b> Условие задачи.\n"
+        "Дано: <b>радиус R = {given_text}</b>.\n"
+        "Найти: <b>площадь {target_text}</b>."
+    ),
+
+    "STEP_SRM_PYTHAGOR_AREA": (
+        "<b>Шаг 2.</b> Пусть сторона квадрата равна <b>a</b>.\n"
+        "Тогда половина стороны равна <b>a/2</b>.\n\n"
+        "По теореме Пифагора:\n"
+        "➡️ <b>a² + (a/2)² = R²</b>\n"
+        "➡️ <b>a² + a²/4 = R²</b>\n\n"
+        "Чтобы избавиться от дроби, умножим всё уравнение на <b>4</b>:\n"
+        "➡️ <b>4a² + a² = 4R²</b>\n"
+        "➡️ <b>5a² = 4R²</b>"
+    ),
+
+    "STEP_SRM_AREA_FORMULA": (
+        "<b>Шаг 3.</b> Площадь квадрата равна <b>S = a²</b>.\n"
+        "Заменим в предыдущем уравнении <b>a²</b> на <b>S</b>:\n"
+        "➡️ <b>5 · S = 4 · R²</b>\n"
+        "Выведем формулу площади:\n"
+        "➡️ <b>S = (4 · R²) : 5</b>\n"
+    ),
+
+    "STEP_SRM_AREA_CALC": (
+        "<b>Шаг 4.</b> Вычислим ответ.\n"
+        "➡️ <b>S = 4 · {radius_sq} : 5 = {answer}</b>"
+    ),
+
+    # --- midpoint_side_to_radius ---
+    "STEP_SRM_GIVEN_FIND_RADIUS": (
+        "<b>Шаг 1.</b> Условие задачи.\n"
+        "Дано: <b>сторона a = {given_text}</b>.\n"
+        "Найти: <b>радиус {target_text}</b>."
+    ),
+
+    "STEP_SRM_HALF_SIDE_EXPLAIN": (
+        "<b>Шаг 2.</b> Найдем катеты прямоугольного треугольника\n"
+        "➡️ <b>Первый катет a = {given_text}</b>\n"
+        "➡️ <b>Второй катет a/2 = {given_text} / 2 = {half_given_text}</b>,\n"
+        "так как точка O — середина стороны квадрата по условию задачи."
+    ),
+
+    "STEP_SRM_RADIUS_SETUP": (
+        "<b>Шаг 3.</b> По теореме Пифагора:\n"
+        "➡️ <b>R² = a² + (a/2)²</b>"
+    ),
+
+    "STEP_SRM_RADIUS_CALC": (
+        "<b>Шаг 4.</b> Подставим значения и вычислим:\n"
+        "➡️ <b>R² = ({a_num}√5)² + ({half_given_text})² = "
+        "{a_num_sq} · 5 + {half_a_num_sq} · 5 = {calc_r2}</b>\n\n"
+        "По таблице квадратов вычисляем корень:\n"
+        "➡️ <b>R = √{calc_r2} = {answer}</b>"
+    ),
+
+    # ------------------------------------------------------------------
+    # 3.4 right_triangle_circumradius
+    # ------------------------------------------------------------------
+
+    # --- hypotenuse_half ---
+
+    "STEP_RTC_GIVEN_FIND": (
+        "<b>Шаг 1.</b> Условие задачи.\n"
+        "Дано: <b>{given_text}</b>.\n"
+        "Найти: <b>радиус {target_text}</b>."
+    ),
+
+    "STEP_RTC_PYTHAGORAS": (
+        "<b>Шаг 2.</b> Найдём гипотенузу CD по теореме Пифагора.\n"
+        "➡️ CD² = {leg1_sym}² + {leg2_sym}²\n"
+        "➡️ CD² = {leg1}² + {leg2}² = {leg1_sq} + {leg2_sq} = {hyp_sq}\n"
+        "➡️ <b>CD = √{hyp_sq} = {hyp}</b>"
+    ),
+
+    "STEP_RTC_RADIUS": (
+        "<b>Шаг 3.</b> Найдём радиус.\n"
+        "Радиус описанной окружности равен половине гипотенузы:\n"
+        "➡️ <b>R = CD : 2</b>\n"
+        "➡️ <b>R = {hyp} : 2 = {answer}</b>"
+    ),
+
+
 }
 
 TIPS_TEMPLATES: Dict[str, str] = {
@@ -1305,6 +1420,32 @@ TIPS_TEMPLATES: Dict[str, str] = {
         "👉 <b>r = a√3 / 6</b>\n\n"
         "Из неё легко выразить сторону треугольника:\n"
         "👉 <b>a = 6r / √3</b>"
+    ),
+
+    # ------------------------------------------------------------------
+    # 3.3 square_radius_midpoint
+    # ------------------------------------------------------------------
+
+    "midpoint_side_to_area": (
+        "Запомни для этой задачи супер-короткую формулу:\n"
+        "площадь квадрата составляет <b>4/5</b> от квадрата радиуса.\n\n"
+        "📌 <b>S = 4R²/5 = 4/5 · R² = 0,8 · R²</b>"
+    ),
+    "midpoint_side_to_radius": (
+        "❗️ Не забудь: при возведении в квадрат выражения с корнем\n"
+        "нужно возводить в квадрат <b>каждый множитель</b>.\n\n"
+        "👉 <b>(a√b)² = a² · (√b)² = a² · b</b>"
+    ),
+
+    # ------------------------------------------------------------------
+    # 3.4 right_triangle_circumradius
+    # ------------------------------------------------------------------
+
+    "hypotenuse_half": (
+        "Если в задаче <b>уже дана гипотенуза</b>, "
+        "теорему Пифагора применять не нужно.\n"
+        "Просто раздели гипотенузу пополам:\n"
+        "<b>R = Гипотенуза : 2</b>"
     ),
 }
 
@@ -1975,6 +2116,41 @@ NARRATIVE_PROFILES: Dict[str, Dict[str, Any]] = {
         ],
         "tips_key": "side_to_inradius",
     },
+
+    # --- 3.3 square_radius_midpoint ---
+
+    "midpoint_side_to_area": {
+        "idea_key": "midpoint_side_to_area",
+        "steps": [
+            "STEP_SRM_GIVEN_FIND_AREA",
+            "STEP_SRM_PYTHAGOR_AREA",
+            "STEP_SRM_AREA_FORMULA",
+            "STEP_SRM_AREA_CALC",
+        ],
+        "tips_key": "midpoint_side_to_area",
+    },
+
+    "midpoint_side_to_radius": {
+        "idea_key": "midpoint_side_to_radius",
+        "steps": [
+            "STEP_SRM_GIVEN_FIND_RADIUS",
+            "STEP_SRM_HALF_SIDE_EXPLAIN",
+            "STEP_SRM_RADIUS_SETUP",
+            "STEP_SRM_RADIUS_CALC",
+        ],
+        "tips_key": "midpoint_side_to_radius",
+    },
+
+    # --- 3.4 right_triangle_circumradius ---
+    "hypotenuse_half": {
+        "idea_key": "hypotenuse_half",
+        "steps": [
+            "STEP_RTC_GIVEN_FIND",
+            "STEP_RTC_PYTHAGORAS",
+            "STEP_RTC_RADIUS",
+        ],
+        "tips_key": "hypotenuse_half",
+    },
 }
 
 # =============================================================================
@@ -1998,6 +2174,19 @@ def render_arc_length_calc(calc: dict) -> str:
 
     lines.append(f"\n➡️ <b>x = {calc['final']}</b>")
     return "\n\n".join(lines)
+
+def _fmt_square(expr: str) -> str:
+    """
+    Корректно оформляет квадрат выражения:
+    - 7√5 -> (7√5)²
+    - 35  -> 35²
+    """
+    if not expr:
+        return ""
+    expr = str(expr).strip()
+    if "√" in expr:
+        return f"({expr})²"
+    return f"{expr}²"
 
 # =============================================================================
 # 4. КОНТЕКСТ-БИЛДЕРЫ (facts -> context) — без legacy-логики
@@ -2817,6 +3006,71 @@ def _ctx_eq_triangle_circles(raw_vars: Dict[str, Any]) -> Dict[str, Any]:
 
     return ctx
 
+def _ctx_square_radius_midpoint(variables: Dict[str, Any]) -> Dict[str, Any]:
+    given = variables["given"]
+    target = variables["target"]
+    geometry = variables.get("geometry_facts", {})
+    narrative = variables.get("narrative")
+
+    ctx = {
+        # --- базовые ---
+        "given_text": given.get("value_str"),
+        "target_text": target.get("symbol"),
+        "answer": variables.get("answer"),
+
+        "radius_sq": _fmt_square(given.get("value_str")),
+
+        # --- ВСЕГДА СУЩЕСТВУЮТ (даже если пусто) ---
+        "half_given_text": given.get("half_value_str") or "",
+        "a_num": given.get("a_num") or "",
+        "half_a_num": given.get("half_a_num") or "",
+        "a_num_sq": given.get("a_num_sq") or "",
+        "half_a_num_sq": given.get("half_a_num_sq") or "",
+        "calc_r2": variables.get("calc_r2") or "",
+
+        # --- геометрия ---
+        "midpoint_side": geometry.get("midpoint_side"),
+        "circle_center": geometry.get("circle_center"),
+        "point_on_circle": geometry.get("point_on_circle"),
+    }
+
+    # --- только для area ---
+    if narrative == "midpoint_side_to_area":
+        ctx["radius_sq_text"] = _fmt_square(given.get("value_str"))
+
+    return ctx
+
+def _ctx_right_triangle_circumradius(variables: Dict[str, Any]) -> Dict[str, Any]:
+    given = variables["given"]
+    target = variables["target"]
+    geometry = variables.get("geometry_facts", {})
+
+    leg1_sym, leg2_sym = given["symbols"]   # "BC", "BD"
+    leg1_val, leg2_val = given["values"]    # 7, 24
+
+    return {
+        # --- Шаг 1 ---
+        "given_text": f"катеты {leg1_sym} = {leg1_val}, {leg2_sym} = {leg2_val}",
+        "target_text": target.get("symbol", "R"),
+        "answer": target.get("value"),
+
+        # --- Шаг 2 (Пифагор) ---
+        "leg1_sym": leg1_sym,
+        "leg2_sym": leg2_sym,
+        "leg1": leg1_val,
+        "leg2": leg2_val,
+        "leg1_sq": leg1_val ** 2,
+        "leg2_sq": leg2_val ** 2,
+
+        # --- гипотенуза ---
+        "hyp_sq": variables.get("hypotenuse_sq_val"),
+        "hyp": variables.get("hypotenuse_val"),
+
+        # --- геометрия ---
+        "right_angle_vertex": geometry.get("right_angle_vertex"),
+        "hypotenuse": geometry.get("hypotenuse"),
+    }
+
 _CONTEXT_BUILDERS: Dict[str, Callable[[Dict[str, Any]], Dict[str, Any]]] = {
     "opposite_sum": _ctx_opposite_sum,
     "part_sum": _ctx_part_sum,
@@ -2865,6 +3119,15 @@ _CONTEXT_BUILDERS: Dict[str, Callable[[Dict[str, Any]], Dict[str, Any]]] = {
     "side_to_circum_radius": _ctx_eq_triangle_circles,
     "inradius_to_side": _ctx_eq_triangle_circles,
     "side_to_inradius": _ctx_eq_triangle_circles,
+
+    # --- 3.3 square_radius_midpoint ---
+    "midpoint_side_to_area": _ctx_square_radius_midpoint,
+    "midpoint_side_to_radius": _ctx_square_radius_midpoint,
+
+    "radius_sq": _fmt_square,
+
+    # --- 3.4 right_triangle_circumradius ---
+    "hypotenuse_half": _ctx_right_triangle_circumradius,
 }
 
 # =============================================================================

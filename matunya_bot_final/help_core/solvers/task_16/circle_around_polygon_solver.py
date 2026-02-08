@@ -337,6 +337,21 @@ def _solve_eq_triangle_circles(task_data: Dict[str, Any]) -> Dict[str, Any]:
     }
 
     # ------------------------------------------------------------------
+    # help_image (КАНОН задания 16)
+    # ------------------------------------------------------------------
+    help_image = None
+    help_image_file = task_data.get("help_image_file")
+    if help_image_file:
+        help_image = {
+            "file": str(help_image_file),
+            "schema": f"eq_triangle_circles__{narrative}",
+            "params": {
+                "figure": "equilateral_triangle",
+                "narrative": narrative,
+            },
+        }
+
+    # ------------------------------------------------------------------
     # solution_core (канон через helper)
     # ------------------------------------------------------------------
 
@@ -345,22 +360,208 @@ def _solve_eq_triangle_circles(task_data: Dict[str, Any]) -> Dict[str, Any]:
         explanation_idea=f"IDEA_{narrative.upper()}",
         final_answer=answer if answer is not None else "",
         variables=facts,
-        help_image=_extract_help_image(task_data),
+        help_image=help_image,
         hints=[],
     )
+
+# =========================================================================
+# ПАТТЕРН 3.3: square_radius_midpoint
+# =========================================================================
 
 def _solve_square_radius_midpoint(task_data: Dict[str, Any]) -> Dict[str, Any]:
     """
     Паттерн 3.3: square_radius_midpoint
-    """
-    return _not_implemented_stub(task_data, pattern="square_radius_midpoint")
 
+    Поддерживаемые нарративы:
+      - midpoint_side_to_area
+      - midpoint_side_to_radius
+
+    Канон:
+    - facts-only
+    - solver НЕ считает
+    - solver синхронизирован с валидатором и БД
+    """
+
+    context: Dict[str, Any] = task_data.get("task_context") or {}
+    answer = task_data.get("answer")
+
+    narrative = (
+        context.get("narrative")
+        or task_data.get("narrative")
+        or ""
+    ).strip()
+
+    if narrative not in (
+        "midpoint_side_to_area",
+        "midpoint_side_to_radius",
+    ):
+        return _build_error_solution_core(
+            task_data=task_data,
+            error_message=f"square_radius_midpoint: unknown narrative '{narrative}'",
+        )
+
+    # ------------------------------------------------------------------
+    # FACTS — единый контракт для humanizer
+    # ------------------------------------------------------------------
+
+    given = context.get("given")
+    target = context.get("target")
+    geometry_facts = context.get("geometry_facts")
+
+    if not given or not target or not geometry_facts:
+        return _build_error_solution_core(
+            task_data=task_data,
+            error_message="square_radius_midpoint: missing given/target/geometry_facts",
+        )
+
+    facts: Dict[str, Any] = {
+        "figure": "square",
+        "narrative": narrative,          # ⬅️ humanizer читает ЭТО
+        "answer": answer,
+
+        # обязательные блоки
+        "given": given,
+        "target": target,
+        "geometry_facts": geometry_facts,
+
+        "calc_r2": context.get("calc_r2"),
+    }
+
+    # --- relations строго по narrative ---
+    if narrative == "midpoint_side_to_area":
+        facts["relations"] = {
+            "area_relation": "S = 4R² / 5",
+        }
+
+    elif narrative == "midpoint_side_to_radius":
+        facts["relations"] = {
+            "radius_relation": "R = a√5 / 2",
+        }
+
+    # ------------------------------------------------------------------
+    # help_image (канон задания 16)
+    # ------------------------------------------------------------------
+
+    help_image = None
+    help_image_file = task_data.get("help_image_file")
+    if help_image_file:
+        help_image = {
+            "file": str(help_image_file),
+            "schema": f"square_radius_midpoint__{narrative}",
+            "params": {
+                "figure": "square",
+                "circle": "circumference",
+                "center_point": "O",
+                "narrative": narrative,
+                "midpoint_side": geometry_facts.get("midpoint_side"),
+            },
+        }
+
+    # ------------------------------------------------------------------
+    # solution_core
+    # ------------------------------------------------------------------
+
+    idea_key = f"IDEA_{narrative.upper()}"
+
+    return {
+        "question_id": str(task_data.get("id")),
+        "question_group": "GEOMETRY_16",
+        "explanation_idea": idea_key,
+        "calculation_steps": [],
+        "final_answer": {
+            "value_machine": answer,
+            "value_display": str(answer) if answer is not None else "",
+            "unit": "",
+        },
+        "variables": facts,
+        "help_image": help_image,
+        "hints": [],
+    }
+
+# =========================================================================
+# ПАТТЕРН 3.4: right_triangle_circumradius
+# =========================================================================
 
 def _solve_right_triangle_circumradius(task_data: Dict[str, Any]) -> Dict[str, Any]:
     """
     Паттерн 3.4: right_triangle_circumradius
+    Нарратив: hypotenuse_half
+
+    Канон:
+    - facts-only
+    - без вычислений
+    - solver не знает математику, только собирает данные
     """
-    return _not_implemented_stub(task_data, pattern="right_triangle_circumradius")
+
+    context = task_data.get("task_context") or {}
+    answer = task_data.get("answer")
+
+    narrative = (
+        context.get("narrative")
+        or task_data.get("narrative")
+        or ""
+    ).strip()
+
+    if narrative != "hypotenuse_half":
+        return _build_error_solution_core(
+            task_data=task_data,
+            error_message=f"right_triangle_circumradius: unknown narrative '{narrative}'",
+        )
+
+    given = context.get("given")
+    target = context.get("target")
+    geometry_facts = context.get("geometry_facts")
+
+    if not given or not target:
+        return _build_error_solution_core(
+            task_data=task_data,
+            error_message="right_triangle_circumradius: missing given/target",
+        )
+
+    facts = {
+        "figure": "right_triangle",
+        "narrative": narrative,
+        "answer": answer,
+
+        "given": given,
+        "target": target,
+        "geometry_facts": geometry_facts,
+
+        "hypotenuse_sq_val": context.get("hypotenuse_sq_val"),
+        "hypotenuse_val": context.get("hypotenuse_val"),
+
+        "relations": context.get("relations"),
+    }
+
+    help_image = None
+    help_image_file = task_data.get("help_image_file")
+    if help_image_file:
+        help_image = {
+            "file": str(help_image_file),
+            "schema": "right_triangle_circumradius__hypotenuse_half",
+            "params": {
+                "figure": "right_triangle",
+                "narrative": "hypotenuse_half",
+
+                # ключевая идея картинки
+                "circumcenter_position": "midpoint_of_hypotenuse",
+            },
+        }
+
+    return {
+        "question_id": str(task_data.get("id")),
+        "question_group": "GEOMETRY_16",
+        "explanation_idea": "IDEA_HYPOTENUSE_HALF",
+        "calculation_steps": [],
+        "final_answer": {
+            "value_machine": answer,
+            "value_display": str(answer),
+            "unit": "",
+        },
+        "variables": facts,
+        "help_image": help_image,
+        "hints": [],
+    }
 
 
 # -----------------------------
