@@ -343,7 +343,7 @@ async def send_task_16(
         text=final_text,
         reply_markup=keyboard,
         message_tag="task_16_main_text",
-        category="task_statement",
+        category="tasks",
         parse_mode="HTML",
     )
 
