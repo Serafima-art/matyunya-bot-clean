@@ -34,6 +34,7 @@ def load_all_tasks():
 
     # Список наших «складов»
     task_files = {
+        "1_5_paper": DATA_DIR / "tasks_1_5" / "paper" / "tasks_1_5_paper.json",
         "6": DATA_DIR / "tasks_6" / "tasks_6.json",
         "7": DATA_DIR / "tasks_7" / "tasks_7.json",
         "8": DATA_DIR / "tasks_8" / "tasks_8.json",

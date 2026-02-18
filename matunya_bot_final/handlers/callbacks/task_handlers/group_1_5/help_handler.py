@@ -46,7 +46,7 @@ async def handle_group_1_5_ask_gpt(
         return
 
     question_num = callback_data.question_num or data.get("current_task_index", 0) + 1
-    student_name = data.get("student_name") or "наш герой"
+    student_name = data.get("student_name") or "мой друг"
     gender = data.get("gender") or data.get("student_gender") or "neutral"
 
     if gender == "male":

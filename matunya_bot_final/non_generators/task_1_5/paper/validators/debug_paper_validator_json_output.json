@@ -1,0 +1,2543 @@
+[
+  {
+    "id": "paper_2026_var_01",
+    "image_file": "task_paper_formats.png",
+    "table_context": {
+      "table_order": [
+        "A1",
+        "A3",
+        "A0",
+        "A2"
+      ],
+      "formats_data": {
+        "A0": {
+          "length_mm": 1189,
+          "width_mm": 841
+        },
+        "A1": {
+          "length_mm": 841,
+          "width_mm": 594
+        },
+        "A2": {
+          "length_mm": 594,
+          "width_mm": 420
+        },
+        "A3": {
+          "length_mm": 420,
+          "width_mm": 297
+        },
+        "A4": {
+          "length_mm": 297,
+          "width_mm": 210
+        },
+        "A5": {
+          "length_mm": 210,
+          "width_mm": 148
+        },
+        "A6": {
+          "length_mm": 148,
+          "width_mm": 105
+        },
+        "A7": {
+          "length_mm": 105,
+          "width_mm": 74
+        }
+      }
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "paper_format_match",
+        "narrative": "match_formats_to_rows",
+        "input_data": {
+          "columns_order": [
+            "A0",
+            "A3",
+            "A2",
+            "A1"
+          ]
+        },
+        "solution_data": {
+          "row_to_format_mapping": {
+            "1": "A1",
+            "2": "A3",
+            "3": "A0",
+            "4": "A2"
+          },
+          "answer_sequence": "3241"
+        },
+        "answer": "3241"
+      },
+      {
+        "q_number": 2,
+        "pattern": "paper_split",
+        "narrative": "count_subformats",
+        "input_data": {
+          "from_format": "A0",
+          "to_format": "A3"
+        },
+        "solution_data": {
+          "index_difference": 3,
+          "power_value": 8
+        },
+        "answer": 8
+      },
+      {
+        "q_number": 3,
+        "pattern": "paper_dimensions",
+        "narrative": "find_width",
+        "input_data": {
+          "format": "A3"
+        },
+        "solution_data": {
+          "length_mm": 420,
+          "width_mm": 297,
+          "selected_value": 297
+        },
+        "answer": 297
+      },
+      {
+        "q_number": 4,
+        "pattern": "paper_area",
+        "narrative": "area_with_rounding_10",
+        "input_data": {
+          "format": "A3"
+        },
+        "solution_data": {
+          "area_raw": 1247.4,
+          "rounded_area": 1250
+        },
+        "answer": 1250
+      },
+      {
+        "q_number": 5,
+        "pattern": "paper_pack_weight",
+        "narrative": "pack_weight",
+        "input_data": {
+          "format": "A3",
+          "sheet_count": 400,
+          "density_g_per_m2": 125
+        },
+        "solution_data": {
+          "index_difference": 3,
+          "sheet_area_factor": 8,
+          "weight_one_sheet": 15.625,
+          "total_weight": 6250
+        },
+        "answer": 6250
+      }
+    ]
+  },
+  {
+    "id": "paper_2026_var_02",
+    "image_file": "task_paper_formats.png",
+    "table_context": {
+      "table_order": [
+        "A7",
+        "A4",
+        "A5",
+        "A6"
+      ],
+      "formats_data": {
+        "A0": {
+          "length_mm": 1189,
+          "width_mm": 841
+        },
+        "A1": {
+          "length_mm": 841,
+          "width_mm": 594
+        },
+        "A2": {
+          "length_mm": 594,
+          "width_mm": 420
+        },
+        "A3": {
+          "length_mm": 420,
+          "width_mm": 297
+        },
+        "A4": {
+          "length_mm": 297,
+          "width_mm": 210
+        },
+        "A5": {
+          "length_mm": 210,
+          "width_mm": 148
+        },
+        "A6": {
+          "length_mm": 148,
+          "width_mm": 105
+        },
+        "A7": {
+          "length_mm": 105,
+          "width_mm": 74
+        }
+      }
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "paper_format_match",
+        "narrative": "match_formats_to_rows",
+        "input_data": {
+          "columns_order": [
+            "A4",
+            "A7",
+            "A6",
+            "A5"
+          ]
+        },
+        "solution_data": {
+          "row_to_format_mapping": {
+            "1": "A7",
+            "2": "A4",
+            "3": "A5",
+            "4": "A6"
+          },
+          "answer_sequence": "2143"
+        },
+        "answer": "2143"
+      },
+      {
+        "q_number": 2,
+        "pattern": "paper_split",
+        "narrative": "count_subformats",
+        "input_data": {
+          "from_format": "A4",
+          "to_format": "A7"
+        },
+        "solution_data": {
+          "index_difference": 3,
+          "power_value": 8
+        },
+        "answer": 8
+      },
+      {
+        "q_number": 3,
+        "pattern": "paper_dimensions",
+        "narrative": "find_length",
+        "input_data": {
+          "format": "A5"
+        },
+        "solution_data": {
+          "length_mm": 210,
+          "width_mm": 148,
+          "selected_value": 210
+        },
+        "answer": 210
+      },
+      {
+        "q_number": 4,
+        "pattern": "paper_area",
+        "narrative": "area_with_rounding_10",
+        "input_data": {
+          "format": "A7"
+        },
+        "solution_data": {
+          "area_raw": 77.7,
+          "rounded_area": 80
+        },
+        "answer": 80
+      },
+      {
+        "q_number": 5,
+        "pattern": "paper_font_scaling",
+        "narrative": "font_scaling",
+        "input_data": {
+          "from_format": "A6",
+          "to_format": "A4",
+          "original_font": 11
+        },
+        "solution_data": {
+          "step_count": 2,
+          "rounded_font": 22
+        },
+        "answer": 22
+      }
+    ]
+  },
+  {
+    "id": "paper_2026_var_03",
+    "image_file": "task_paper_formats.png",
+    "table_context": {
+      "table_order": [
+        "A0",
+        "A6",
+        "A4",
+        "A2"
+      ],
+      "formats_data": {
+        "A0": {
+          "length_mm": 1189,
+          "width_mm": 841
+        },
+        "A1": {
+          "length_mm": 841,
+          "width_mm": 594
+        },
+        "A2": {
+          "length_mm": 594,
+          "width_mm": 420
+        },
+        "A3": {
+          "length_mm": 420,
+          "width_mm": 297
+        },
+        "A4": {
+          "length_mm": 297,
+          "width_mm": 210
+        },
+        "A5": {
+          "length_mm": 210,
+          "width_mm": 148
+        },
+        "A6": {
+          "length_mm": 148,
+          "width_mm": 105
+        },
+        "A7": {
+          "length_mm": 105,
+          "width_mm": 74
+        }
+      }
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "paper_format_match",
+        "narrative": "match_formats_to_rows",
+        "input_data": {
+          "columns_order": [
+            "A0",
+            "A2",
+            "A4",
+            "A6"
+          ]
+        },
+        "solution_data": {
+          "row_to_format_mapping": {
+            "1": "A0",
+            "2": "A6",
+            "3": "A4",
+            "4": "A2"
+          },
+          "answer_sequence": "1432"
+        },
+        "answer": "1432"
+      },
+      {
+        "q_number": 2,
+        "pattern": "paper_split",
+        "narrative": "count_subformats",
+        "input_data": {
+          "from_format": "A4",
+          "to_format": "A6"
+        },
+        "solution_data": {
+          "index_difference": 2,
+          "power_value": 4
+        },
+        "answer": 4
+      },
+      {
+        "q_number": 3,
+        "pattern": "paper_dimensions",
+        "narrative": "find_side",
+        "input_data": {
+          "format": "A2"
+        },
+        "solution_data": {
+          "length_mm": 594,
+          "width_mm": 420,
+          "selected_value": 594
+        },
+        "answer": 594
+      },
+      {
+        "q_number": 4,
+        "pattern": "paper_area",
+        "narrative": "area_with_rounding_5",
+        "input_data": {
+          "format": "A4"
+        },
+        "solution_data": {
+          "area_raw": 623.7,
+          "rounded_area": 625
+        },
+        "answer": 625
+      },
+      {
+        "q_number": 5,
+        "pattern": "paper_pack_weight",
+        "narrative": "pack_weight",
+        "input_data": {
+          "format": "A6",
+          "sheet_count": 200,
+          "density_g_per_m2": 250
+        },
+        "solution_data": {
+          "index_difference": 6,
+          "sheet_area_factor": 64,
+          "weight_one_sheet": 3.906,
+          "total_weight": 781
+        },
+        "answer": 781
+      }
+    ]
+  },
+  {
+    "id": "paper_2026_var_04",
+    "image_file": "task_paper_formats.png",
+    "table_context": {
+      "table_order": [
+        "A5",
+        "A3",
+        "A7",
+        "A1"
+      ],
+      "formats_data": {
+        "A0": {
+          "length_mm": 1189,
+          "width_mm": 841
+        },
+        "A1": {
+          "length_mm": 841,
+          "width_mm": 594
+        },
+        "A2": {
+          "length_mm": 594,
+          "width_mm": 420
+        },
+        "A3": {
+          "length_mm": 420,
+          "width_mm": 297
+        },
+        "A4": {
+          "length_mm": 297,
+          "width_mm": 210
+        },
+        "A5": {
+          "length_mm": 210,
+          "width_mm": 148
+        },
+        "A6": {
+          "length_mm": 148,
+          "width_mm": 105
+        },
+        "A7": {
+          "length_mm": 105,
+          "width_mm": 74
+        }
+      }
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "paper_format_match",
+        "narrative": "match_formats_to_rows",
+        "input_data": {
+          "columns_order": [
+            "A7",
+            "A5",
+            "A1",
+            "A3"
+          ]
+        },
+        "solution_data": {
+          "row_to_format_mapping": {
+            "1": "A5",
+            "2": "A3",
+            "3": "A7",
+            "4": "A1"
+          },
+          "answer_sequence": "3142"
+        },
+        "answer": "3142"
+      },
+      {
+        "q_number": 2,
+        "pattern": "paper_split",
+        "narrative": "count_subformats",
+        "input_data": {
+          "from_format": "A1",
+          "to_format": "A3"
+        },
+        "solution_data": {
+          "index_difference": 2,
+          "power_value": 4
+        },
+        "answer": 4
+      },
+      {
+        "q_number": 3,
+        "pattern": "paper_dimensions",
+        "narrative": "find_side",
+        "input_data": {
+          "format": "A7"
+        },
+        "solution_data": {
+          "length_mm": 105,
+          "width_mm": 74,
+          "selected_value": 105
+        },
+        "answer": 105
+      },
+      {
+        "q_number": 4,
+        "pattern": "paper_area",
+        "narrative": "area_basic",
+        "input_data": {
+          "format": "A5"
+        },
+        "solution_data": {
+          "length_cm": 21.0,
+          "width_cm": 14.8,
+          "area": 310.8
+        },
+        "answer": 310.8
+      },
+      {
+        "q_number": 5,
+        "pattern": "paper_font_scaling",
+        "narrative": "font_scaling",
+        "input_data": {
+          "from_format": "A3",
+          "to_format": "A5",
+          "original_font": 14
+        },
+        "solution_data": {
+          "step_count": 2,
+          "rounded_font": 7
+        },
+        "answer": 7
+      }
+    ]
+  },
+  {
+    "id": "paper_2026_var_05",
+    "image_file": "task_paper_formats.png",
+    "table_context": {
+      "table_order": [
+        "A3",
+        "A4",
+        "A0",
+        "A7"
+      ],
+      "formats_data": {
+        "A0": {
+          "length_mm": 1189,
+          "width_mm": 841
+        },
+        "A1": {
+          "length_mm": 841,
+          "width_mm": 594
+        },
+        "A2": {
+          "length_mm": 594,
+          "width_mm": 420
+        },
+        "A3": {
+          "length_mm": 420,
+          "width_mm": 297
+        },
+        "A4": {
+          "length_mm": 297,
+          "width_mm": 210
+        },
+        "A5": {
+          "length_mm": 210,
+          "width_mm": 148
+        },
+        "A6": {
+          "length_mm": 148,
+          "width_mm": 105
+        },
+        "A7": {
+          "length_mm": 105,
+          "width_mm": 74
+        }
+      }
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "paper_format_match",
+        "narrative": "match_formats_to_rows",
+        "input_data": {
+          "columns_order": [
+            "A0",
+            "A3",
+            "A4",
+            "A7"
+          ]
+        },
+        "solution_data": {
+          "row_to_format_mapping": {
+            "1": "A3",
+            "2": "A4",
+            "3": "A0",
+            "4": "A7"
+          },
+          "answer_sequence": "3124"
+        },
+        "answer": "3124"
+      },
+      {
+        "q_number": 2,
+        "pattern": "paper_split",
+        "narrative": "count_subformats",
+        "input_data": {
+          "from_format": "A3",
+          "to_format": "A7"
+        },
+        "solution_data": {
+          "index_difference": 4,
+          "power_value": 16
+        },
+        "answer": 16
+      },
+      {
+        "q_number": 3,
+        "pattern": "paper_dimensions",
+        "narrative": "find_ratio",
+        "input_data": {
+          "format": "A0",
+          "ratio_type": "greater_to_smaller"
+        },
+        "solution_data": {
+          "rounded_ratio": 1.4
+        },
+        "answer": 1.4
+      },
+      {
+        "q_number": 4,
+        "pattern": "paper_area",
+        "narrative": "area_with_rounding_10",
+        "input_data": {
+          "format": "A4"
+        },
+        "solution_data": {
+          "area_raw": 623.7,
+          "rounded_area": 620
+        },
+        "answer": 620
+      },
+      {
+        "q_number": 5,
+        "pattern": "paper_pack_weight",
+        "narrative": "pack_weight",
+        "input_data": {
+          "format": "A4",
+          "sheet_count": 250,
+          "density_g_per_m2": 400
+        },
+        "solution_data": {
+          "index_difference": 4,
+          "sheet_area_factor": 16,
+          "weight_one_sheet": 25.0,
+          "total_weight": 6250
+        },
+        "answer": 6250
+      }
+    ]
+  },
+  {
+    "id": "paper_2026_var_06",
+    "image_file": "task_paper_formats.png",
+    "table_context": {
+      "table_order": [
+        "A2",
+        "A6",
+        "A5",
+        "A1"
+      ],
+      "formats_data": {
+        "A0": {
+          "length_mm": 1189,
+          "width_mm": 841
+        },
+        "A1": {
+          "length_mm": 841,
+          "width_mm": 594
+        },
+        "A2": {
+          "length_mm": 594,
+          "width_mm": 420
+        },
+        "A3": {
+          "length_mm": 420,
+          "width_mm": 297
+        },
+        "A4": {
+          "length_mm": 297,
+          "width_mm": 210
+        },
+        "A5": {
+          "length_mm": 210,
+          "width_mm": 148
+        },
+        "A6": {
+          "length_mm": 148,
+          "width_mm": 105
+        },
+        "A7": {
+          "length_mm": 105,
+          "width_mm": 74
+        }
+      }
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "paper_format_match",
+        "narrative": "match_formats_to_rows",
+        "input_data": {
+          "columns_order": [
+            "A1",
+            "A2",
+            "A5",
+            "A6"
+          ]
+        },
+        "solution_data": {
+          "row_to_format_mapping": {
+            "1": "A2",
+            "2": "A6",
+            "3": "A5",
+            "4": "A1"
+          },
+          "answer_sequence": "4132"
+        },
+        "answer": "4132"
+      },
+      {
+        "q_number": 2,
+        "pattern": "paper_split",
+        "narrative": "count_subformats",
+        "input_data": {
+          "from_format": "A2",
+          "to_format": "A6"
+        },
+        "solution_data": {
+          "index_difference": 4,
+          "power_value": 16
+        },
+        "answer": 16
+      },
+      {
+        "q_number": 3,
+        "pattern": "paper_dimensions",
+        "narrative": "find_diagonal_ratio",
+        "input_data": {
+          "format": "A1"
+        },
+        "solution_data": {
+          "rounded_ratio": 1.7
+        },
+        "answer": 1.7
+      },
+      {
+        "q_number": 4,
+        "pattern": "paper_area",
+        "narrative": "area_with_rounding_5",
+        "input_data": {
+          "format": "A5"
+        },
+        "solution_data": {
+          "area_raw": 310.8,
+          "rounded_area": 310
+        },
+        "answer": 310
+      },
+      {
+        "q_number": 5,
+        "pattern": "paper_font_scaling",
+        "narrative": "font_scaling",
+        "input_data": {
+          "from_format": "A5",
+          "to_format": "A1",
+          "original_font": 10
+        },
+        "solution_data": {
+          "step_count": 4,
+          "rounded_font": 40
+        },
+        "answer": 40
+      }
+    ]
+  },
+  {
+    "id": "paper_2026_var_07",
+    "image_file": "task_paper_formats.png",
+    "table_context": {
+      "table_order": [
+        "A7",
+        "A2",
+        "A5",
+        "A6"
+      ],
+      "formats_data": {
+        "A0": {
+          "length_mm": 1189,
+          "width_mm": 841
+        },
+        "A1": {
+          "length_mm": 841,
+          "width_mm": 594
+        },
+        "A2": {
+          "length_mm": 594,
+          "width_mm": 420
+        },
+        "A3": {
+          "length_mm": 420,
+          "width_mm": 297
+        },
+        "A4": {
+          "length_mm": 297,
+          "width_mm": 210
+        },
+        "A5": {
+          "length_mm": 210,
+          "width_mm": 148
+        },
+        "A6": {
+          "length_mm": 148,
+          "width_mm": 105
+        },
+        "A7": {
+          "length_mm": 105,
+          "width_mm": 74
+        }
+      }
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "paper_format_match",
+        "narrative": "match_formats_to_rows",
+        "input_data": {
+          "columns_order": [
+            "A7",
+            "A5",
+            "A2",
+            "A6"
+          ]
+        },
+        "solution_data": {
+          "row_to_format_mapping": {
+            "1": "A7",
+            "2": "A2",
+            "3": "A5",
+            "4": "A6"
+          },
+          "answer_sequence": "1324"
+        },
+        "answer": "1324"
+      },
+      {
+        "q_number": 2,
+        "pattern": "paper_split",
+        "narrative": "count_subformats",
+        "input_data": {
+          "from_format": "A2",
+          "to_format": "A5"
+        },
+        "solution_data": {
+          "index_difference": 3,
+          "power_value": 8
+        },
+        "answer": 8
+      },
+      {
+        "q_number": 3,
+        "pattern": "paper_dimensions",
+        "narrative": "find_diagonal_ratio",
+        "input_data": {
+          "format": "A6"
+        },
+        "solution_data": {
+          "rounded_ratio": 1.2
+        },
+        "answer": 1.2
+      },
+      {
+        "q_number": 4,
+        "pattern": "paper_area",
+        "narrative": "area_with_rounding_10",
+        "input_data": {
+          "format": "A6"
+        },
+        "solution_data": {
+          "area_raw": 155.4,
+          "rounded_area": 160
+        },
+        "answer": 160
+      },
+      {
+        "q_number": 5,
+        "pattern": "paper_pack_weight",
+        "narrative": "pack_weight",
+        "input_data": {
+          "format": "A5",
+          "sheet_count": 400,
+          "density_g_per_m2": 125
+        },
+        "solution_data": {
+          "index_difference": 5,
+          "sheet_area_factor": 32,
+          "weight_one_sheet": 3.906,
+          "total_weight": 1562
+        },
+        "answer": 1562
+      }
+    ]
+  },
+  {
+    "id": "paper_2026_var_08",
+    "image_file": "task_paper_formats.png",
+    "table_context": {
+      "table_order": [
+        "A3",
+        "A1",
+        "A4",
+        "A2"
+      ],
+      "formats_data": {
+        "A0": {
+          "length_mm": 1189,
+          "width_mm": 841
+        },
+        "A1": {
+          "length_mm": 841,
+          "width_mm": 594
+        },
+        "A2": {
+          "length_mm": 594,
+          "width_mm": 420
+        },
+        "A3": {
+          "length_mm": 420,
+          "width_mm": 297
+        },
+        "A4": {
+          "length_mm": 297,
+          "width_mm": 210
+        },
+        "A5": {
+          "length_mm": 210,
+          "width_mm": 148
+        },
+        "A6": {
+          "length_mm": 148,
+          "width_mm": 105
+        },
+        "A7": {
+          "length_mm": 105,
+          "width_mm": 74
+        }
+      }
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "paper_format_match",
+        "narrative": "match_formats_to_rows",
+        "input_data": {
+          "columns_order": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ]
+        },
+        "solution_data": {
+          "row_to_format_mapping": {
+            "1": "A3",
+            "2": "A1",
+            "3": "A4",
+            "4": "A2"
+          },
+          "answer_sequence": "2413"
+        },
+        "answer": "2413"
+      },
+      {
+        "q_number": 2,
+        "pattern": "paper_split",
+        "narrative": "count_subformats",
+        "input_data": {
+          "from_format": "A1",
+          "to_format": "A4"
+        },
+        "solution_data": {
+          "index_difference": 3,
+          "power_value": 8
+        },
+        "answer": 8
+      },
+      {
+        "q_number": 3,
+        "pattern": "paper_dimensions",
+        "narrative": "find_with_rounding",
+        "input_data": {
+          "format": "A3"
+        },
+        "solution_data": {
+          "original_value": 420,
+          "rounded_value": 420
+        },
+        "answer": 420
+      },
+      {
+        "q_number": 4,
+        "pattern": "paper_area",
+        "narrative": "area_with_rounding_5",
+        "input_data": {
+          "format": "A4"
+        },
+        "solution_data": {
+          "area_raw": 623.7,
+          "rounded_area": 625
+        },
+        "answer": 625
+      },
+      {
+        "q_number": 5,
+        "pattern": "paper_font_scaling",
+        "narrative": "font_scaling",
+        "input_data": {
+          "from_format": "A4",
+          "to_format": "A3",
+          "original_font": 12
+        },
+        "solution_data": {
+          "step_count": 1,
+          "rounded_font": 17
+        },
+        "answer": 17
+      }
+    ]
+  },
+  {
+    "id": "paper_2026_var_09",
+    "image_file": "task_paper_formats.png",
+    "table_context": {
+      "table_order": [
+        "A2",
+        "A7",
+        "A3",
+        "A6"
+      ],
+      "formats_data": {
+        "A0": {
+          "length_mm": 1189,
+          "width_mm": 841
+        },
+        "A1": {
+          "length_mm": 841,
+          "width_mm": 594
+        },
+        "A2": {
+          "length_mm": 594,
+          "width_mm": 420
+        },
+        "A3": {
+          "length_mm": 420,
+          "width_mm": 297
+        },
+        "A4": {
+          "length_mm": 297,
+          "width_mm": 210
+        },
+        "A5": {
+          "length_mm": 210,
+          "width_mm": 148
+        },
+        "A6": {
+          "length_mm": 148,
+          "width_mm": 105
+        },
+        "A7": {
+          "length_mm": 105,
+          "width_mm": 74
+        }
+      }
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "paper_format_match",
+        "narrative": "match_formats_to_rows",
+        "input_data": {
+          "columns_order": [
+            "A2",
+            "A3",
+            "A6",
+            "A7"
+          ]
+        },
+        "solution_data": {
+          "row_to_format_mapping": {
+            "1": "A2",
+            "2": "A7",
+            "3": "A3",
+            "4": "A6"
+          },
+          "answer_sequence": "1342"
+        },
+        "answer": "1342"
+      },
+      {
+        "q_number": 2,
+        "pattern": "paper_split",
+        "narrative": "count_subformats",
+        "input_data": {
+          "from_format": "A3",
+          "to_format": "A7"
+        },
+        "solution_data": {
+          "index_difference": 4,
+          "power_value": 16
+        },
+        "answer": 16
+      },
+      {
+        "q_number": 3,
+        "pattern": "paper_dimensions",
+        "narrative": "find_with_rounding",
+        "input_data": {
+          "format": "A2"
+        },
+        "solution_data": {
+          "original_value": 594,
+          "rounded_value": 595
+        },
+        "answer": 595
+      },
+      {
+        "q_number": 4,
+        "pattern": "paper_area",
+        "narrative": "area_with_rounding_10",
+        "input_data": {
+          "format": "A6"
+        },
+        "solution_data": {
+          "area_raw": 155.4,
+          "rounded_area": 160
+        },
+        "answer": 160
+      },
+      {
+        "q_number": 5,
+        "pattern": "paper_pack_weight",
+        "narrative": "pack_weight",
+        "input_data": {
+          "format": "A2",
+          "sheet_count": 100,
+          "density_g_per_m2": 250
+        },
+        "solution_data": {
+          "index_difference": 2,
+          "sheet_area_factor": 4,
+          "weight_one_sheet": 62.5,
+          "total_weight": 6250
+        },
+        "answer": 6250
+      }
+    ]
+  },
+  {
+    "id": "paper_2026_var_10",
+    "image_file": "task_paper_formats.png",
+    "table_context": {
+      "table_order": [
+        "A1",
+        "A4",
+        "A0",
+        "A5"
+      ],
+      "formats_data": {
+        "A0": {
+          "length_mm": 1189,
+          "width_mm": 841
+        },
+        "A1": {
+          "length_mm": 841,
+          "width_mm": 594
+        },
+        "A2": {
+          "length_mm": 594,
+          "width_mm": 420
+        },
+        "A3": {
+          "length_mm": 420,
+          "width_mm": 297
+        },
+        "A4": {
+          "length_mm": 297,
+          "width_mm": 210
+        },
+        "A5": {
+          "length_mm": 210,
+          "width_mm": 148
+        },
+        "A6": {
+          "length_mm": 148,
+          "width_mm": 105
+        },
+        "A7": {
+          "length_mm": 105,
+          "width_mm": 74
+        }
+      }
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "paper_format_match",
+        "narrative": "match_formats_to_rows",
+        "input_data": {
+          "columns_order": [
+            "A0",
+            "A5",
+            "A4",
+            "A1"
+          ]
+        },
+        "solution_data": {
+          "row_to_format_mapping": {
+            "1": "A1",
+            "2": "A4",
+            "3": "A0",
+            "4": "A5"
+          },
+          "answer_sequence": "3421"
+        },
+        "answer": "3421"
+      },
+      {
+        "q_number": 2,
+        "pattern": "paper_split",
+        "narrative": "count_subformats",
+        "input_data": {
+          "from_format": "A0",
+          "to_format": "A5"
+        },
+        "solution_data": {
+          "index_difference": 5,
+          "power_value": 32
+        },
+        "answer": 32
+      },
+      {
+        "q_number": 3,
+        "pattern": "paper_dimensions",
+        "narrative": "find_with_rounding",
+        "input_data": {
+          "format": "A1"
+        },
+        "solution_data": {
+          "original_value": 841,
+          "rounded_value": 840
+        },
+        "answer": 840
+      },
+      {
+        "q_number": 4,
+        "pattern": "paper_area",
+        "narrative": "area_with_rounding_10",
+        "input_data": {
+          "format": "A4"
+        },
+        "solution_data": {
+          "area_raw": 623.7,
+          "rounded_area": 620
+        },
+        "answer": 620
+      },
+      {
+        "q_number": 5,
+        "pattern": "paper_font_scaling",
+        "narrative": "font_scaling",
+        "input_data": {
+          "from_format": "A5",
+          "to_format": "A4",
+          "original_font": 12
+        },
+        "solution_data": {
+          "step_count": 1,
+          "rounded_font": 17
+        },
+        "answer": 17
+      }
+    ]
+  },
+  {
+    "id": "paper_2026_var_11",
+    "image_file": "task_paper_formats.png",
+    "table_context": {
+      "table_order": [
+        "A2",
+        "A4",
+        "A5",
+        "A7"
+      ],
+      "formats_data": {
+        "A0": {
+          "length_mm": 1189,
+          "width_mm": 841
+        },
+        "A1": {
+          "length_mm": 841,
+          "width_mm": 594
+        },
+        "A2": {
+          "length_mm": 594,
+          "width_mm": 420
+        },
+        "A3": {
+          "length_mm": 420,
+          "width_mm": 297
+        },
+        "A4": {
+          "length_mm": 297,
+          "width_mm": 210
+        },
+        "A5": {
+          "length_mm": 210,
+          "width_mm": 148
+        },
+        "A6": {
+          "length_mm": 148,
+          "width_mm": 105
+        },
+        "A7": {
+          "length_mm": 105,
+          "width_mm": 74
+        }
+      }
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "paper_format_match",
+        "narrative": "match_formats_to_rows",
+        "input_data": {
+          "columns_order": [
+            "A4",
+            "A7",
+            "A2",
+            "A5"
+          ]
+        },
+        "solution_data": {
+          "row_to_format_mapping": {
+            "1": "A2",
+            "2": "A4",
+            "3": "A5",
+            "4": "A7"
+          },
+          "answer_sequence": "2413"
+        },
+        "answer": "2413"
+      },
+      {
+        "q_number": 2,
+        "pattern": "paper_split",
+        "narrative": "count_subformats",
+        "input_data": {
+          "from_format": "A4",
+          "to_format": "A7"
+        },
+        "solution_data": {
+          "index_difference": 3,
+          "power_value": 8
+        },
+        "answer": 8
+      },
+      {
+        "q_number": 3,
+        "pattern": "paper_dimensions",
+        "narrative": "find_ratio",
+        "input_data": {
+          "format": "A2",
+          "ratio_type": "greater_to_smaller"
+        },
+        "solution_data": {
+          "rounded_ratio": 1.4
+        },
+        "answer": 1.4
+      },
+      {
+        "q_number": 4,
+        "pattern": "paper_area",
+        "narrative": "area_with_rounding_5",
+        "input_data": {
+          "format": "A5"
+        },
+        "solution_data": {
+          "area_raw": 310.8,
+          "rounded_area": 310
+        },
+        "answer": 310
+      },
+      {
+        "q_number": 5,
+        "pattern": "paper_pack_weight",
+        "narrative": "pack_weight",
+        "input_data": {
+          "format": "A7",
+          "sheet_count": 1000,
+          "density_g_per_m2": 100
+        },
+        "solution_data": {
+          "index_difference": 7,
+          "sheet_area_factor": 128,
+          "weight_one_sheet": 0.781,
+          "total_weight": 781
+        },
+        "answer": 781
+      }
+    ]
+  },
+  {
+    "id": "paper_2026_var_12",
+    "image_file": "task_paper_formats.png",
+    "table_context": {
+      "table_order": [
+        "A1",
+        "A3",
+        "A6",
+        "A7"
+      ],
+      "formats_data": {
+        "A0": {
+          "length_mm": 1189,
+          "width_mm": 841
+        },
+        "A1": {
+          "length_mm": 841,
+          "width_mm": 594
+        },
+        "A2": {
+          "length_mm": 594,
+          "width_mm": 420
+        },
+        "A3": {
+          "length_mm": 420,
+          "width_mm": 297
+        },
+        "A4": {
+          "length_mm": 297,
+          "width_mm": 210
+        },
+        "A5": {
+          "length_mm": 210,
+          "width_mm": 148
+        },
+        "A6": {
+          "length_mm": 148,
+          "width_mm": 105
+        },
+        "A7": {
+          "length_mm": 105,
+          "width_mm": 74
+        }
+      }
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "paper_format_match",
+        "narrative": "match_formats_to_rows",
+        "input_data": {
+          "columns_order": [
+            "A3",
+            "A7",
+            "A6",
+            "A1"
+          ]
+        },
+        "solution_data": {
+          "row_to_format_mapping": {
+            "1": "A1",
+            "2": "A3",
+            "3": "A6",
+            "4": "A7"
+          },
+          "answer_sequence": "2431"
+        },
+        "answer": "2431"
+      },
+      {
+        "q_number": 2,
+        "pattern": "paper_split",
+        "narrative": "count_subformats",
+        "input_data": {
+          "from_format": "A3",
+          "to_format": "A7"
+        },
+        "solution_data": {
+          "index_difference": 4,
+          "power_value": 16
+        },
+        "answer": 16
+      },
+      {
+        "q_number": 3,
+        "pattern": "paper_dimensions",
+        "narrative": "find_ratio",
+        "input_data": {
+          "format": "A1",
+          "ratio_type": "greater_to_smaller"
+        },
+        "solution_data": {
+          "rounded_ratio": 1.4
+        },
+        "answer": 1.4
+      },
+      {
+        "q_number": 4,
+        "pattern": "paper_area",
+        "narrative": "area_with_rounding_10",
+        "input_data": {
+          "format": "A6"
+        },
+        "solution_data": {
+          "area_raw": 155.4,
+          "rounded_area": 160
+        },
+        "answer": 160
+      },
+      {
+        "q_number": 5,
+        "pattern": "paper_font_scaling",
+        "narrative": "font_scaling",
+        "input_data": {
+          "from_format": "A6",
+          "to_format": "A3",
+          "original_font": 10
+        },
+        "solution_data": {
+          "step_count": 3,
+          "rounded_font": 28
+        },
+        "answer": 28
+      }
+    ]
+  },
+  {
+    "id": "paper_2026_var_13",
+    "image_file": "task_paper_formats.png",
+    "table_context": {
+      "table_order": [
+        "A6",
+        "A2",
+        "A3",
+        "A5"
+      ],
+      "formats_data": {
+        "A0": {
+          "length_mm": 1189,
+          "width_mm": 841
+        },
+        "A1": {
+          "length_mm": 841,
+          "width_mm": 594
+        },
+        "A2": {
+          "length_mm": 594,
+          "width_mm": 420
+        },
+        "A3": {
+          "length_mm": 420,
+          "width_mm": 297
+        },
+        "A4": {
+          "length_mm": 297,
+          "width_mm": 210
+        },
+        "A5": {
+          "length_mm": 210,
+          "width_mm": 148
+        },
+        "A6": {
+          "length_mm": 148,
+          "width_mm": 105
+        },
+        "A7": {
+          "length_mm": 105,
+          "width_mm": 74
+        }
+      }
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "paper_format_match",
+        "narrative": "match_formats_to_rows",
+        "input_data": {
+          "columns_order": [
+            "A5",
+            "A6",
+            "A2",
+            "A3"
+          ]
+        },
+        "solution_data": {
+          "row_to_format_mapping": {
+            "1": "A6",
+            "2": "A2",
+            "3": "A3",
+            "4": "A5"
+          },
+          "answer_sequence": "4123"
+        },
+        "answer": "4123"
+      },
+      {
+        "q_number": 2,
+        "pattern": "paper_split",
+        "narrative": "count_subformats",
+        "input_data": {
+          "from_format": "A3",
+          "to_format": "A5"
+        },
+        "solution_data": {
+          "index_difference": 2,
+          "power_value": 4
+        },
+        "answer": 4
+      },
+      {
+        "q_number": 3,
+        "pattern": "paper_dimensions",
+        "narrative": "find_diagonal_ratio",
+        "input_data": {
+          "format": "A3"
+        },
+        "solution_data": {
+          "rounded_ratio": 1.7
+        },
+        "answer": 1.7
+      },
+      {
+        "q_number": 4,
+        "pattern": "paper_area",
+        "narrative": "area_basic",
+        "input_data": {
+          "format": "A6"
+        },
+        "solution_data": {
+          "length_cm": 14.8,
+          "width_cm": 10.5,
+          "area": 155.4
+        },
+        "answer": 155.4
+      },
+      {
+        "q_number": 5,
+        "pattern": "paper_pack_weight",
+        "narrative": "pack_weight",
+        "input_data": {
+          "format": "A5",
+          "sheet_count": 800,
+          "density_g_per_m2": 125
+        },
+        "solution_data": {
+          "index_difference": 5,
+          "sheet_area_factor": 32,
+          "weight_one_sheet": 3.906,
+          "total_weight": 3125
+        },
+        "answer": 3125
+      }
+    ]
+  },
+  {
+    "id": "paper_2026_var_14",
+    "image_file": "task_paper_formats.png",
+    "table_context": {
+      "table_order": [
+        "A1",
+        "A4",
+        "A6",
+        "A7"
+      ],
+      "formats_data": {
+        "A0": {
+          "length_mm": 1189,
+          "width_mm": 841
+        },
+        "A1": {
+          "length_mm": 841,
+          "width_mm": 594
+        },
+        "A2": {
+          "length_mm": 594,
+          "width_mm": 420
+        },
+        "A3": {
+          "length_mm": 420,
+          "width_mm": 297
+        },
+        "A4": {
+          "length_mm": 297,
+          "width_mm": 210
+        },
+        "A5": {
+          "length_mm": 210,
+          "width_mm": 148
+        },
+        "A6": {
+          "length_mm": 148,
+          "width_mm": 105
+        },
+        "A7": {
+          "length_mm": 105,
+          "width_mm": 74
+        }
+      }
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "paper_format_match",
+        "narrative": "match_formats_to_rows",
+        "input_data": {
+          "columns_order": [
+            "A4",
+            "A6",
+            "A1",
+            "A7"
+          ]
+        },
+        "solution_data": {
+          "row_to_format_mapping": {
+            "1": "A1",
+            "2": "A4",
+            "3": "A6",
+            "4": "A7"
+          },
+          "answer_sequence": "2314"
+        },
+        "answer": "2314"
+      },
+      {
+        "q_number": 2,
+        "pattern": "paper_split",
+        "narrative": "count_subformats",
+        "input_data": {
+          "from_format": "A1",
+          "to_format": "A6"
+        },
+        "solution_data": {
+          "index_difference": 5,
+          "power_value": 32
+        },
+        "answer": 32
+      },
+      {
+        "q_number": 3,
+        "pattern": "paper_dimensions",
+        "narrative": "find_with_rounding",
+        "input_data": {
+          "format": "A7"
+        },
+        "solution_data": {
+          "original_value": 105,
+          "rounded_value": 100
+        },
+        "answer": 100
+      },
+      {
+        "q_number": 4,
+        "pattern": "paper_area",
+        "narrative": "area_with_rounding_10",
+        "input_data": {
+          "format": "A4"
+        },
+        "solution_data": {
+          "area_raw": 623.7,
+          "rounded_area": 620
+        },
+        "answer": 620
+      },
+      {
+        "q_number": 5,
+        "pattern": "paper_font_scaling",
+        "narrative": "font_scaling",
+        "input_data": {
+          "from_format": "A6",
+          "to_format": "A7",
+          "original_font": 9
+        },
+        "solution_data": {
+          "step_count": 1,
+          "rounded_font": 6
+        },
+        "answer": 6
+      }
+    ]
+  },
+  {
+    "id": "paper_2026_var_15",
+    "image_file": "task_paper_formats.png",
+    "table_context": {
+      "table_order": [
+        "A0",
+        "A3",
+        "A5",
+        "A6"
+      ],
+      "formats_data": {
+        "A0": {
+          "length_mm": 1189,
+          "width_mm": 841
+        },
+        "A1": {
+          "length_mm": 841,
+          "width_mm": 594
+        },
+        "A2": {
+          "length_mm": 594,
+          "width_mm": 420
+        },
+        "A3": {
+          "length_mm": 420,
+          "width_mm": 297
+        },
+        "A4": {
+          "length_mm": 297,
+          "width_mm": 210
+        },
+        "A5": {
+          "length_mm": 210,
+          "width_mm": 148
+        },
+        "A6": {
+          "length_mm": 148,
+          "width_mm": 105
+        },
+        "A7": {
+          "length_mm": 105,
+          "width_mm": 74
+        }
+      }
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "paper_format_match",
+        "narrative": "match_formats_to_rows",
+        "input_data": {
+          "columns_order": [
+            "A6",
+            "A0",
+            "A3",
+            "A5"
+          ]
+        },
+        "solution_data": {
+          "row_to_format_mapping": {
+            "1": "A0",
+            "2": "A3",
+            "3": "A5",
+            "4": "A6"
+          },
+          "answer_sequence": "4123"
+        },
+        "answer": "4123"
+      },
+      {
+        "q_number": 2,
+        "pattern": "paper_split",
+        "narrative": "count_subformats",
+        "input_data": {
+          "from_format": "A0",
+          "to_format": "A3"
+        },
+        "solution_data": {
+          "index_difference": 3,
+          "power_value": 8
+        },
+        "answer": 8
+      },
+      {
+        "q_number": 3,
+        "pattern": "paper_dimensions",
+        "narrative": "find_with_rounding",
+        "input_data": {
+          "format": "A0"
+        },
+        "solution_data": {
+          "original_value": 1189,
+          "rounded_value": 1190
+        },
+        "answer": 1190
+      },
+      {
+        "q_number": 4,
+        "pattern": "paper_area",
+        "narrative": "area_with_rounding_5",
+        "input_data": {
+          "format": "A3"
+        },
+        "solution_data": {
+          "area_raw": 1247.4,
+          "rounded_area": 1245
+        },
+        "answer": 1245
+      },
+      {
+        "q_number": 5,
+        "pattern": "paper_font_scaling",
+        "narrative": "font_scaling",
+        "input_data": {
+          "from_format": "A6",
+          "to_format": "A3",
+          "original_font": 10
+        },
+        "solution_data": {
+          "step_count": 3,
+          "rounded_font": 28
+        },
+        "answer": 28
+      }
+    ]
+  },
+  {
+    "id": "paper_2026_var_16",
+    "image_file": "task_paper_formats.png",
+    "table_context": {
+      "table_order": [
+        "A2",
+        "A4",
+        "A6",
+        "A7"
+      ],
+      "formats_data": {
+        "A0": {
+          "length_mm": 1189,
+          "width_mm": 841
+        },
+        "A1": {
+          "length_mm": 841,
+          "width_mm": 594
+        },
+        "A2": {
+          "length_mm": 594,
+          "width_mm": 420
+        },
+        "A3": {
+          "length_mm": 420,
+          "width_mm": 297
+        },
+        "A4": {
+          "length_mm": 297,
+          "width_mm": 210
+        },
+        "A5": {
+          "length_mm": 210,
+          "width_mm": 148
+        },
+        "A6": {
+          "length_mm": 148,
+          "width_mm": 105
+        },
+        "A7": {
+          "length_mm": 105,
+          "width_mm": 74
+        }
+      }
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "paper_format_match",
+        "narrative": "match_formats_to_rows",
+        "input_data": {
+          "columns_order": [
+            "A2",
+            "A7",
+            "A4",
+            "A6"
+          ]
+        },
+        "solution_data": {
+          "row_to_format_mapping": {
+            "1": "A2",
+            "2": "A4",
+            "3": "A6",
+            "4": "A7"
+          },
+          "answer_sequence": "1423"
+        },
+        "answer": "1423"
+      },
+      {
+        "q_number": 2,
+        "pattern": "paper_split",
+        "narrative": "count_subformats",
+        "input_data": {
+          "from_format": "A4",
+          "to_format": "A7"
+        },
+        "solution_data": {
+          "index_difference": 3,
+          "power_value": 8
+        },
+        "answer": 8
+      },
+      {
+        "q_number": 3,
+        "pattern": "paper_dimensions",
+        "narrative": "find_with_rounding",
+        "input_data": {
+          "format": "A6"
+        },
+        "solution_data": {
+          "original_value": 148,
+          "rounded_value": 150
+        },
+        "answer": 150
+      },
+      {
+        "q_number": 4,
+        "pattern": "paper_area",
+        "narrative": "area_with_rounding_10",
+        "input_data": {
+          "format": "A4"
+        },
+        "solution_data": {
+          "area_raw": 623.7,
+          "rounded_area": 620
+        },
+        "answer": 620
+      },
+      {
+        "q_number": 5,
+        "pattern": "paper_pack_weight",
+        "narrative": "pack_weight",
+        "input_data": {
+          "format": "A6",
+          "sheet_count": 400,
+          "density_g_per_m2": 125
+        },
+        "solution_data": {
+          "index_difference": 6,
+          "sheet_area_factor": 64,
+          "weight_one_sheet": 1.953,
+          "total_weight": 781
+        },
+        "answer": 781
+      }
+    ]
+  },
+  {
+    "id": "paper_2026_var_17",
+    "image_file": "task_paper_formats.png",
+    "table_context": {
+      "table_order": [
+        "A1",
+        "A2",
+        "A4",
+        "A7"
+      ],
+      "formats_data": {
+        "A0": {
+          "length_mm": 1189,
+          "width_mm": 841
+        },
+        "A1": {
+          "length_mm": 841,
+          "width_mm": 594
+        },
+        "A2": {
+          "length_mm": 594,
+          "width_mm": 420
+        },
+        "A3": {
+          "length_mm": 420,
+          "width_mm": 297
+        },
+        "A4": {
+          "length_mm": 297,
+          "width_mm": 210
+        },
+        "A5": {
+          "length_mm": 210,
+          "width_mm": 148
+        },
+        "A6": {
+          "length_mm": 148,
+          "width_mm": 105
+        },
+        "A7": {
+          "length_mm": 105,
+          "width_mm": 74
+        }
+      }
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "paper_format_match",
+        "narrative": "match_formats_to_rows",
+        "input_data": {
+          "columns_order": [
+            "A7",
+            "A1",
+            "A4",
+            "A2"
+          ]
+        },
+        "solution_data": {
+          "row_to_format_mapping": {
+            "1": "A1",
+            "2": "A2",
+            "3": "A4",
+            "4": "A7"
+          },
+          "answer_sequence": "4132"
+        },
+        "answer": "4132"
+      },
+      {
+        "q_number": 2,
+        "pattern": "paper_split",
+        "narrative": "count_subformats",
+        "input_data": {
+          "from_format": "A1",
+          "to_format": "A4"
+        },
+        "solution_data": {
+          "index_difference": 3,
+          "power_value": 8
+        },
+        "answer": 8
+      },
+      {
+        "q_number": 3,
+        "pattern": "paper_dimensions",
+        "narrative": "find_with_rounding",
+        "input_data": {
+          "format": "A2"
+        },
+        "solution_data": {
+          "original_value": 594,
+          "rounded_value": 590
+        },
+        "answer": 590
+      },
+      {
+        "q_number": 4,
+        "pattern": "paper_area",
+        "narrative": "area_with_rounding_5",
+        "input_data": {
+          "format": "A7"
+        },
+        "solution_data": {
+          "area_raw": 77.7,
+          "rounded_area": 80
+        },
+        "answer": 80
+      },
+      {
+        "q_number": 5,
+        "pattern": "paper_pack_weight",
+        "narrative": "pack_weight",
+        "input_data": {
+          "format": "A2",
+          "sheet_count": 100,
+          "density_g_per_m2": 250
+        },
+        "solution_data": {
+          "index_difference": 2,
+          "sheet_area_factor": 4,
+          "weight_one_sheet": 62.5,
+          "total_weight": 6250
+        },
+        "answer": 6250
+      }
+    ]
+  },
+  {
+    "id": "paper_2026_var_18",
+    "image_file": "task_paper_formats.png",
+    "table_context": {
+      "table_order": [
+        "A3",
+        "A1",
+        "A6",
+        "A7"
+      ],
+      "formats_data": {
+        "A0": {
+          "length_mm": 1189,
+          "width_mm": 841
+        },
+        "A1": {
+          "length_mm": 841,
+          "width_mm": 594
+        },
+        "A2": {
+          "length_mm": 594,
+          "width_mm": 420
+        },
+        "A3": {
+          "length_mm": 420,
+          "width_mm": 297
+        },
+        "A4": {
+          "length_mm": 297,
+          "width_mm": 210
+        },
+        "A5": {
+          "length_mm": 210,
+          "width_mm": 148
+        },
+        "A6": {
+          "length_mm": 148,
+          "width_mm": 105
+        },
+        "A7": {
+          "length_mm": 105,
+          "width_mm": 74
+        }
+      }
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "paper_format_match",
+        "narrative": "match_formats_to_rows",
+        "input_data": {
+          "columns_order": [
+            "A7",
+            "A1",
+            "A6",
+            "A3"
+          ]
+        },
+        "solution_data": {
+          "row_to_format_mapping": {
+            "1": "A3",
+            "2": "A1",
+            "3": "A6",
+            "4": "A7"
+          },
+          "answer_sequence": "4231"
+        },
+        "answer": "4231"
+      },
+      {
+        "q_number": 2,
+        "pattern": "paper_split",
+        "narrative": "count_subformats",
+        "input_data": {
+          "from_format": "A3",
+          "to_format": "A7"
+        },
+        "solution_data": {
+          "index_difference": 4,
+          "power_value": 16
+        },
+        "answer": 16
+      },
+      {
+        "q_number": 3,
+        "pattern": "paper_dimensions",
+        "narrative": "find_ratio",
+        "input_data": {
+          "format": "A3",
+          "ratio_type": "greater_to_smaller"
+        },
+        "solution_data": {
+          "rounded_ratio": 1.4
+        },
+        "answer": 1.4
+      },
+      {
+        "q_number": 4,
+        "pattern": "paper_area",
+        "narrative": "area_with_rounding_10",
+        "input_data": {
+          "format": "A6"
+        },
+        "solution_data": {
+          "area_raw": 155.4,
+          "rounded_area": 160
+        },
+        "answer": 160
+      },
+      {
+        "q_number": 5,
+        "pattern": "paper_font_scaling",
+        "narrative": "font_scaling",
+        "input_data": {
+          "from_format": "A1",
+          "to_format": "A3",
+          "original_font": 30
+        },
+        "solution_data": {
+          "step_count": 2,
+          "rounded_font": 15
+        },
+        "answer": 15
+      }
+    ]
+  },
+  {
+    "id": "paper_2026_var_19",
+    "image_file": "task_paper_formats.png",
+    "table_context": {
+      "table_order": [
+        "A3",
+        "A4",
+        "A5",
+        "A6"
+      ],
+      "formats_data": {
+        "A0": {
+          "length_mm": 1189,
+          "width_mm": 841
+        },
+        "A1": {
+          "length_mm": 841,
+          "width_mm": 594
+        },
+        "A2": {
+          "length_mm": 594,
+          "width_mm": 420
+        },
+        "A3": {
+          "length_mm": 420,
+          "width_mm": 297
+        },
+        "A4": {
+          "length_mm": 297,
+          "width_mm": 210
+        },
+        "A5": {
+          "length_mm": 210,
+          "width_mm": 148
+        },
+        "A6": {
+          "length_mm": 148,
+          "width_mm": 105
+        },
+        "A7": {
+          "length_mm": 105,
+          "width_mm": 74
+        }
+      }
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "paper_format_match",
+        "narrative": "match_formats_to_rows",
+        "input_data": {
+          "columns_order": [
+            "A4",
+            "A5",
+            "A6",
+            "A3"
+          ]
+        },
+        "solution_data": {
+          "row_to_format_mapping": {
+            "1": "A3",
+            "2": "A4",
+            "3": "A5",
+            "4": "A6"
+          },
+          "answer_sequence": "2341"
+        },
+        "answer": "2341"
+      },
+      {
+        "q_number": 2,
+        "pattern": "paper_split",
+        "narrative": "count_subformats",
+        "input_data": {
+          "from_format": "A3",
+          "to_format": "A5"
+        },
+        "solution_data": {
+          "index_difference": 2,
+          "power_value": 4
+        },
+        "answer": 4
+      },
+      {
+        "q_number": 3,
+        "pattern": "paper_dimensions",
+        "narrative": "find_ratio",
+        "input_data": {
+          "format": "A4",
+          "ratio_type": "greater_to_smaller"
+        },
+        "solution_data": {
+          "rounded_ratio": 1.4
+        },
+        "answer": 1.4
+      },
+      {
+        "q_number": 4,
+        "pattern": "paper_area",
+        "narrative": "area_basic",
+        "input_data": {
+          "format": "A5"
+        },
+        "solution_data": {
+          "length_cm": 21.0,
+          "width_cm": 14.8,
+          "area": 310.8
+        },
+        "answer": 310.8
+      },
+      {
+        "q_number": 5,
+        "pattern": "paper_font_scaling",
+        "narrative": "font_scaling",
+        "input_data": {
+          "from_format": "A3",
+          "to_format": "A6",
+          "original_font": 28
+        },
+        "solution_data": {
+          "step_count": 3,
+          "rounded_font": 10
+        },
+        "answer": 10
+      }
+    ]
+  },
+  {
+    "id": "paper_2026_var_20",
+    "image_file": "task_paper_formats.png",
+    "table_context": {
+      "table_order": [
+        "A2",
+        "A5",
+        "A4",
+        "A3"
+      ],
+      "formats_data": {
+        "A0": {
+          "length_mm": 1189,
+          "width_mm": 841
+        },
+        "A1": {
+          "length_mm": 841,
+          "width_mm": 594
+        },
+        "A2": {
+          "length_mm": 594,
+          "width_mm": 420
+        },
+        "A3": {
+          "length_mm": 420,
+          "width_mm": 297
+        },
+        "A4": {
+          "length_mm": 297,
+          "width_mm": 210
+        },
+        "A5": {
+          "length_mm": 210,
+          "width_mm": 148
+        },
+        "A6": {
+          "length_mm": 148,
+          "width_mm": 105
+        },
+        "A7": {
+          "length_mm": 105,
+          "width_mm": 74
+        }
+      }
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "paper_format_match",
+        "narrative": "match_formats_to_rows",
+        "input_data": {
+          "columns_order": [
+            "A3",
+            "A5",
+            "A4",
+            "A2"
+          ]
+        },
+        "solution_data": {
+          "row_to_format_mapping": {
+            "1": "A2",
+            "2": "A5",
+            "3": "A4",
+            "4": "A3"
+          },
+          "answer_sequence": "4231"
+        },
+        "answer": "4231"
+      },
+      {
+        "q_number": 2,
+        "pattern": "paper_split",
+        "narrative": "count_subformats",
+        "input_data": {
+          "from_format": "A2",
+          "to_format": "A5"
+        },
+        "solution_data": {
+          "index_difference": 3,
+          "power_value": 8
+        },
+        "answer": 8
+      },
+      {
+        "q_number": 3,
+        "pattern": "paper_dimensions",
+        "narrative": "find_diagonal_ratio",
+        "input_data": {
+          "format": "A4"
+        },
+        "solution_data": {
+          "rounded_ratio": 1.2
+        },
+        "answer": 1.2
+      },
+      {
+        "q_number": 4,
+        "pattern": "paper_area",
+        "narrative": "area_with_rounding_10",
+        "input_data": {
+          "format": "A3"
+        },
+        "solution_data": {
+          "area_raw": 1247.4,
+          "rounded_area": 1250
+        },
+        "answer": 1250
+      },
+      {
+        "q_number": 5,
+        "pattern": "paper_font_scaling",
+        "narrative": "font_scaling",
+        "input_data": {
+          "from_format": "A5",
+          "to_format": "A2",
+          "original_font": 10
+        },
+        "solution_data": {
+          "step_count": 3,
+          "rounded_font": 28
+        },
+        "answer": 28
+      }
+    ]
+  }
+]
