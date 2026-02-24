@@ -22,7 +22,7 @@ solution_router = Router(name="help_dispatcher")
 # Ключ — номер задания, значение — полный путь к функции handle_task_X_help
 # ==============================================================
 
-GROUP_1_5_HANDLER_PATH = "matunya_bot_final.help_core.dispatchers.task_1_5.handle_group_1_5_help.handle_group_1_5_help"
+GROUP_1_5_HANDLER_PATH = "matunya_bot_final.help_core.dispatchers.task_1_5.help_handler_1_5.handle_task_1_5_help"
 
 HELP_ROUTERS = {
     # --- Готовые обработчики ---

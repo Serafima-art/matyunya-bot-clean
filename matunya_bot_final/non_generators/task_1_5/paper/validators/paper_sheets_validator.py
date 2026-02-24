@@ -66,12 +66,14 @@ class PaperSheetsValidator:
         if not variant_id or not table_order:
             return False, {}, ["Не найден VARIANT_CODE или TABLE_ORDER"]
 
+        formats_data = self._build_formats_data()
+
         container: Dict[str, Any] = {
             "id": variant_id,
             "image_file": image_file,
             "table_context": {
                 "table_order": table_order,
-                "formats_data": self._build_formats_data(),
+                "formats_data": formats_data,
             },
             "questions": [],
         }
@@ -84,7 +86,7 @@ class PaperSheetsValidator:
                 continue
 
             try:
-                question = self._build_question(q_num, q_data, table_order)
+                question = self._build_question(q_num, q_data, table_order, formats_data)
                 container["questions"].append(question)
             except Exception as e:
                 errors.append(f"Ошибка в Q{q_num}: {str(e)}")
@@ -95,19 +97,26 @@ class PaperSheetsValidator:
     # QUESTION BUILDER
     # ================================================================
 
-    def _build_question(self, q_number: int, q_data: Dict[str, Any], table_order: List[str]) -> Dict[str, Any]:
+    def _build_question(
+        self,
+        q_number: int,
+        q_data: Dict[str, Any],
+        table_order: List[str],
+        formats_data: Dict[str, Any],
+    ) -> Dict[str, Any]:
+
         pattern = q_data.get("PATTERN")
         narrative = q_data.get("NARRATIVE")
         text = (q_data.get("TEXT") or "").strip()
 
         if pattern == "paper_format_match":
-            return self._build_q1(q_number, q_data, table_order)
+            return self._build_q1(q_number, q_data, table_order, text)
 
         if pattern == "paper_split":
             return self._build_q2(q_number, text)
 
         if pattern == "paper_dimensions":
-            return self._build_q3(q_number, narrative, text)
+            return self._build_q3(q_number, narrative, text, table_order, formats_data)
 
         if pattern == "paper_area":
             return self._build_q4(q_number, narrative, text)
@@ -121,7 +130,14 @@ class PaperSheetsValidator:
     # Q1 — paper_format_match
     # ================================================================
 
-    def _build_q1(self, q_number: int, q_data: Dict[str, Any], table_order: List[str]) -> Dict[str, Any]:
+    def _build_q1(
+        self,
+        q_number: int,
+        q_data: Dict[str, Any],
+        table_order: List[str],
+        text: str
+    ) -> Dict[str, Any]:
+
         raw_cols = q_data.get("COLUMNS", "")
         if not raw_cols:
             raise ValueError("Q1: не найдено поле COLUMNS")
@@ -150,6 +166,7 @@ class PaperSheetsValidator:
             "q_number": q_number,
             "pattern": "paper_format_match",
             "narrative": "match_formats_to_rows",
+            "question_text": text,
             "input_data": {"columns_order": columns},
             "solution_data": {
                 "row_to_format_mapping": mapping,
@@ -186,6 +203,7 @@ class PaperSheetsValidator:
             "q_number": q_number,
             "pattern": "paper_split",
             "narrative": "count_subformats",
+            "question_text": text,
             "input_data": {"from_format": fmt_from, "to_format": fmt_to},
             "solution_data": {
                 "index_difference": index_difference,
@@ -195,127 +213,208 @@ class PaperSheetsValidator:
         }
 
     # ================================================================
-    # Q3 — paper_dimensions
+    # Q3 — paper_dimensions (Новая логика)
     # ================================================================
 
-    def _build_q3(self, q_number: int, narrative: str, text: str) -> Dict[str, Any]:
-        fmt = self._extract_format(text, err_prefix="Q3")
-        length_mm, width_mm = self.PAPER_SIZES[fmt]
-        greater = max(length_mm, width_mm)
-        smaller = min(length_mm, width_mm)
+    def _build_q3(
+        self,
+        q_number: int,
+        narrative: str,
+        text: str,
+        table_order: List[str],
+        formats_data: Dict[str, Dict[str, int]],
+    ) -> Dict[str, Any]:
 
-        # 1) find_ratio: в эталоне это "просто 1,4", без raw
+        fmt = self._extract_format(text, err_prefix="Q3")
+
+        if fmt not in formats_data:
+            raise ValueError(f"Q3: формат {fmt} отсутствует в formats_data")
+
+        # ------------------------------------------------------------
+        # find_ratio — без изменений (источник истины: formats_data)
+        # ------------------------------------------------------------
         if narrative == "find_ratio":
+            length_mm = formats_data[fmt]["length_mm"]
+            width_mm = formats_data[fmt]["width_mm"]
+
             greater = max(length_mm, width_mm)
             smaller = min(length_mm, width_mm)
 
-            # Определяем порядок деления
-            if "больш" in text.lower():
-                division_order = "делим бо́льшую сторону на ме́ньшую"
-                division_expression = f"{greater} ÷ {smaller}"
-                raw_ratio = greater / smaller
-            else:
-                division_order = "делим ме́ньшую сторону на бо́льшую"
-                division_expression = f"{smaller} ÷ {greater}"
-                raw_ratio = smaller / greater
-
+            raw_ratio = (greater / smaller) if ("больш" in text.lower()) else (smaller / greater)
             rounded_ratio = self._round_to_1(raw_ratio)
 
             return {
                 "q_number": q_number,
                 "pattern": "paper_dimensions",
                 "narrative": "find_ratio",
+                "question_text": text,
                 "input_data": {"format": fmt},
                 "solution_data": {
-                    "division_order": division_order,
-                    "division_expression": division_expression,
-                    "raw_ratio": round(raw_ratio, 2),
+                    "format": fmt,
                     "rounded_ratio": rounded_ratio,
                 },
                 "answer": rounded_ratio,
             }
 
-        # 2) find_diagonal_ratio: тоже только округлённый результат
+        # ------------------------------------------------------------
+        # find_diagonal_ratio — без изменений (источник истины: formats_data)
+        # ------------------------------------------------------------
         if narrative == "find_diagonal_ratio":
+            length_mm = formats_data[fmt]["length_mm"]
+            width_mm = formats_data[fmt]["width_mm"]
+
             diagonal = math.sqrt(length_mm ** 2 + width_mm ** 2)
 
-            if "больш" in text.lower():
-                side_type = "большей"
-                ratio = diagonal / greater
-            else:
-                side_type = "меньшей"
-                ratio = diagonal / smaller
-
+            ratio = diagonal / max(length_mm, width_mm) if ("больш" in text.lower()) else diagonal / min(length_mm, width_mm)
             rounded_ratio = self._round_to_1(ratio)
 
             return {
                 "q_number": q_number,
                 "pattern": "paper_dimensions",
                 "narrative": "find_diagonal_ratio",
-                "input_data": {
-                    "format": fmt,
-                    "side_type": side_type,
-                },
+                "question_text": text,
+                "input_data": {"format": fmt},
                 "solution_data": {
+                    "format": fmt,
                     "rounded_ratio": rounded_ratio,
                 },
                 "answer": rounded_ratio,
             }
 
-        # 3) линейные размеры (+ rounding-нарратив)
-        if narrative in ("find_width", "find_length", "find_side", "find_smaller_side", "find_with_rounding"):
-            if narrative in ("find_width", "find_smaller_side"):
-                selected = smaller
+        # ------------------------------------------------------------
+        # find_length / find_width — новая логика (двусторонний reference)
+        # ------------------------------------------------------------
+        if narrative in ("find_length", "find_width"):
+            target_length = formats_data[fmt]["length_mm"]
+            target_width = formats_data[fmt]["width_mm"]
+
+            target_index = int(fmt[1:])  # A0 -> 0, A7 -> 7
+
+            reference_format: Optional[str] = None
+            strategy = "primary"
+
+            # ---------- выбор reference_format ----------
+            target_index = int(fmt[1:])
+            reference_format = None
+            strategy = "primary"
+
+            if narrative == "find_width":
+                # PRIMARY: ищем соседний вверх (ref_index == target_index - 1)
+                candidates = [
+                    f for f in table_order
+                    if int(f[1:]) == target_index - 1
+                ]
+                if candidates:
+                    reference_format = candidates[0]
+                else:
+                    # FALLBACK: ищем соседний вниз (ref_index == target_index + 1)
+                    strategy = "fallback"
+                    candidates = [
+                        f for f in table_order
+                        if int(f[1:]) == target_index + 1
+                    ]
+                    if not candidates:
+                        raise ValueError(
+                            f"Q3: для {fmt} нет соседнего формата (разница должна быть 1)"
+                        )
+                    reference_format = candidates[0]
+
+            elif narrative == "find_length":
+                # PRIMARY: ищем соседний вниз (ref_index == target_index + 1)
+                candidates = [
+                    f for f in table_order
+                    if int(f[1:]) == target_index + 1
+                ]
+                if candidates:
+                    reference_format = candidates[0]
+                else:
+                    # FALLBACK: ищем соседний вверх (ref_index == target_index - 1)
+                    strategy = "fallback"
+                    candidates = [
+                        f for f in table_order
+                        if int(f[1:]) == target_index - 1
+                    ]
+                    if not candidates:
+                        raise ValueError(
+                            f"Q3: для {fmt} нет соседнего формата (разница должна быть 1)"
+                        )
+                    reference_format = candidates[0]
+
+            if reference_format is None:
+                raise ValueError(f"Q3: reference_format не определён для {fmt}")
+
+            ref_length = formats_data[reference_format]["length_mm"]
+            ref_width = formats_data[reference_format]["width_mm"]
+
+            # ---------- операция + raw_result (для объяснения) ----------
+
+            format_order = ["A0","A1","A2","A3","A4","A5","A6","A7"]
+
+            target_idx = format_order.index(fmt)
+            ref_idx = format_order.index(reference_format)
+
+            moving_to_smaller = target_idx > ref_idx
+            moving_to_larger = target_idx < ref_idx
+
+
+            if narrative == "find_width":
+                target_value = target_width
+
+                if moving_to_smaller:
+                    # width_new = length_old / 2
+                    raw_result = ref_length / 2
+                    operation = "divide_by_2"
+                    value_used = "length"
+                else:
+                    # width_new = length_old
+                    raw_result = ref_length
+                    operation = "take_ref_length"
+                    value_used = "length"
+
+            else:  # find_length
+                target_value = target_length
+
+                if moving_to_larger:
+                    # length_new = width_old * 2
+                    raw_result = ref_width * 2
+                    operation = "multiply_by_2"
+                    value_used = "width"
+                else:
+                    # length_new = width_old
+                    raw_result = ref_width
+                    operation = "take_ref_width"
+                    value_used = "width"
+
+            # ---------- округление (округляем стандартное target_value) ----------
+            rounding_to = self._extract_rounding_to(text)
+
+            if rounding_to is not None:
+                answer = int(self._round_to_multiple(target_value, rounding_to))
+                rounding_block = {"mode": "nearest", "multiple_of": int(rounding_to)}
             else:
-                selected = greater
-
-            if narrative == "find_with_rounding":
-                rounding_to = self._extract_rounding_to(text)
-                if rounding_to is None:
-                    raise ValueError("Q3 find_with_rounding: не найдено, до чего округлять (5 или 10)")
-
-                original_value = int(selected)
-                rounded_value = int(self._round_to_multiple(original_value, rounding_to))
-
-                # ближайшие кратные rounding_to снизу/сверху
-                lower_value = (original_value // rounding_to) * rounding_to
-                upper_value = lower_value if lower_value == original_value else lower_value + rounding_to
-
-                # что округляем: длину или ширину (по тому, что выбрали)
-                side_name = "длина" if selected == greater else "ширина"
-
-                return {
-                    "q_number": q_number,
-                    "pattern": "paper_dimensions",
-                    "narrative": "find_with_rounding",
-                    "input_data": {"format": fmt},
-                    "solution_data": {
-                        "format": fmt,
-                        "row_number": self.PAPER_ORDER.index(fmt) + 1,  # как ты решила
-                        "side_name": side_name,
-                        "round_base": int(rounding_to),
-                        "original_value": int(original_value),
-                        "lower_value": int(lower_value),
-                        "upper_value": int(upper_value),
-                        "rounded_value": int(rounded_value),
-                    },
-                    "answer": int(rounded_value),
-                }
+                answer = int(target_value)
+                rounding_block = None
 
             return {
                 "q_number": q_number,
                 "pattern": "paper_dimensions",
                 "narrative": narrative,
+                "question_text": text,
                 "input_data": {"format": fmt},
                 "solution_data": {
-                    "format": fmt,
-                    "row_number": int(fmt[1:]),
-                    "length_mm": int(length_mm),
-                    "width_mm": int(width_mm),
-                    "selected_value": int(selected),
-                    "other_value": int(smaller if selected == greater else greater),
+                    "target_format": fmt,
+                    "reference_format": reference_format,
+                    "reference_length_mm": int(ref_length),
+                    "reference_width_mm": int(ref_width),
+                    "target_length_mm": int(target_length),
+                    "target_width_mm": int(target_width),
+                    "operation": operation,
+                    "value_used": value_used,
+                    "raw_result": float(raw_result),
+                    "rounding": rounding_block,
+                    "answer": int(answer),
                 },
-                "answer": int(selected),
+                "answer": int(answer),
             }
 
         raise ValueError("Неизвестный нарратив Q3")
@@ -340,6 +439,7 @@ class PaperSheetsValidator:
                 "q_number": q_number,
                 "pattern": "paper_area",
                 "narrative": "area_basic",
+                "question_text": text,
                 "input_data": {"format": fmt},
                 "solution_data": {
                     "length_cm": self._pretty_float(length_cm, 1),
@@ -358,6 +458,7 @@ class PaperSheetsValidator:
                 "q_number": q_number,
                 "pattern": "paper_area",
                 "narrative": narrative,
+                "question_text": text,
                 "input_data": {"format": fmt},
                 "solution_data": {
                     "area_raw": area_raw,
@@ -392,6 +493,7 @@ class PaperSheetsValidator:
                 "q_number": q_number,
                 "pattern": "paper_pack_weight",
                 "narrative": "pack_weight",
+                "question_text": text,
                 "input_data": {
                     "format": fmt,
                     "sheet_count": sheet_count,
@@ -440,6 +542,7 @@ class PaperSheetsValidator:
                 "q_number": q_number,
                 "pattern": "paper_font_scaling",
                 "narrative": "font_scaling",
+                "question_text": text,
                 "input_data": {
                     "from_format": fmt_from,
                     "to_format": fmt_to,
@@ -479,6 +582,8 @@ class PaperSheetsValidator:
             return 10
         if "кратного 5" in low or "кратного пяти" in low:
             return 5
+        if "до ближайшего числа" in text.lower() or "до ближайшего целого" in text.lower():
+            return 1
         # fallback: если просто встречается "10" или "5" — но это риск.
         # Оставим только явные формулировки.
         return None
@@ -490,8 +595,11 @@ class PaperSheetsValidator:
         return int(m.group(1))
 
     def _round_to_multiple(self, value: float, multiple: int) -> int:
-        # округление до ближайшего кратного multiple, как в школе (0.5 вверх)
-        return int(round(value / multiple) * multiple)
+        """
+        Школьное округление до ближайшего кратного multiple.
+        0.5 всегда округляется вверх.
+        """
+        return int((value + multiple / 2) // multiple * multiple)
 
     def _round_to_1(self, value: float) -> float:
         return float(f"{value:.1f}")

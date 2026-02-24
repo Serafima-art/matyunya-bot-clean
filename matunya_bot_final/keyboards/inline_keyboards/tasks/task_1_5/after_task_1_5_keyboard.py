@@ -90,14 +90,12 @@ def compose_hint_block(use_combined_prob: float = 0.55) -> str:
 # ──────────────────────────────────────────────────────────────────────────────
 
 def build_overview_keyboard(tasks_count: int, subtype_key: str, solved_indices: list | None = None) -> InlineKeyboardMarkup:
-    """Обзорная клавиатура с отображением решённых заданий."""
-
     if solved_indices is None:
         solved_indices = []
 
     kb = InlineKeyboardBuilder()
 
-    # Кнопки номеров заданий
+    # Кнопки номеров
     for i in range(tasks_count):
         button_text = f"✅ {i + 1}" if i in solved_indices else str(i + 1)
         kb.button(
@@ -109,29 +107,24 @@ def build_overview_keyboard(tasks_count: int, subtype_key: str, solved_indices: 
             ).pack(),
         )
 
-    # Дополнительные инструменты
+    # 💫 Назад в карусель
     kb.button(
-        text="🔄 Другое задание",
+        text="💫 Назад",
         callback_data=TaskCallback(
-            action="1-5_select_subtype",
-            subtype_key=subtype_key,
+            action="show_task_1_5_carousel",
         ).pack(),
-    )
-    kb.button(
-        text="↩️ Другой подтип",
-        callback_data=TaskCallback(action="show_task_1_5_carousel").pack(),
     )
 
     # Главное меню
     for row in main_only_kb().inline_keyboard:
         kb.row(*row)
 
-    kb.adjust(tasks_count, 2, 1)
+    kb.adjust(tasks_count, 2)
+
     return kb.as_markup()
 
 
 def build_focused_keyboard(current_question: int, total_questions: int, subtype_key: str) -> InlineKeyboardMarkup:
-    """Клавиатура для конкретного задания в серии 1–5."""
 
     specific_subtype_key = f"{subtype_key}_q{current_question}"
     builder = InlineKeyboardBuilder()
@@ -145,6 +138,7 @@ def build_focused_keyboard(current_question: int, total_questions: int, subtype_
             task_type=current_question,
         ).pack(),
     )
+
     builder.button(
         text="📚 Теория",
         callback_data=TaskCallback(
@@ -154,10 +148,11 @@ def build_focused_keyboard(current_question: int, total_questions: int, subtype_
         ).pack(),
     )
 
+    # 🔄 Возврат к пульту 1–5
     builder.button(
-        text="💫 Назад",
+        text="🔄 Другое задание",
         callback_data=TaskCallback(
-            action="1-5_tires_back_to_overview",
+            action="1-5_back_to_overview",
             subtype_key=subtype_key,
         ).pack(),
     )

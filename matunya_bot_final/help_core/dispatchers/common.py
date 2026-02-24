@@ -4,18 +4,22 @@ import logging
 import traceback
 from typing import Any, Dict, Optional
 
+from pathlib import Path
+
 from aiogram import Bot
 from aiogram.fsm.context import FSMContext
+from aiogram.types import FSInputFile
 from aiogram.types import CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton
 
-from matunya_bot_final.keyboards.navigation.emergency import emergency_nav_kb
+from matunya_bot_final.utils.message_manager import (
+    send_tracked_photo,
+    send_tracked_message,
+    cleanup_messages_by_category,
+)
 
+from matunya_bot_final.keyboards.navigation.emergency import emergency_nav_kb
 from matunya_bot_final.core.callbacks.tasks_callback import TaskCallback
 from matunya_bot_final.help_core.humanizers.solution_humanizer import humanize_solution
-from matunya_bot_final.utils.message_manager import (
-    cleanup_messages_by_category,
-    send_tracked_message,
-)
 from matunya_bot_final.keyboards.inline_keyboards.help_core_keyboard import create_solution_keyboard
 from matunya_bot_final.utils.text_formatters import sanitize_gpt_response
 
@@ -143,65 +147,78 @@ async def call_dynamic_solver(
 ) -> Optional[Dict[str, Any]]:
     """
     Динамически подтягивает модуль решателя и возвращает его результат.
-    """
 
+    Правила:
+    - Для группы 1–5 (non-generators: paper, ovens, apartments...) путь:
+      matunya_bot_final.help_core.solvers.task_1_5.<subtype>.<subtype>_solver
+      и допускается функция solve_<subtype>() (например solve_paper), если нет solve().
+    - Для остальных заданий путь:
+      matunya_bot_final.help_core.solvers.task_<task_type>.<task_subtype>_solver
+      и ожидается solve().
+    - TIRES сейчас не обслуживаем (не ломаем общий механизм).
+    """
     try:
         # ==========================================================
-        # 🔧 СПЕЦ-ЛОГИКА ДЛЯ ГРУППЫ 1–5 (tires)
+        # 🔧 СПЕЦ-ЛОГИКА ДЛЯ ГРУППЫ 1–5 (non-generators)
         # ==========================================================
-        if task_subtype.startswith("tires"):
-            if task_subtype == "tires":
-                question_index = task_data.get("index")
-            else:
-                try:
-                    question_index = int(task_subtype.rsplit("_q", 1)[1]) - 1
-                except (ValueError, IndexError):
-                    question_index = None
-
-            if question_index is None:
-                logger.critical(
-                    "🚨 FSM CONTRACT BROKEN: tires-help вызван без index.\n"
-                    f"task_subtype={task_subtype!r}, task_data_keys={list(task_data.keys())}\n"
-                    "Ожидается: state['index'] установлен при показе фокусного задания."
-                )
-                return None
-
-
+        if task_type == "1_5" and task_subtype:
             solver_module_path = (
-                f"matunya_bot_final.help_core.solvers."
-                f"task_1_5.tires.tires_q{question_index + 1}_solver"
+                "matunya_bot_final.help_core.solvers."
+                f"task_1_5.{task_subtype}.{task_subtype}_solver"
             )
+
+        # ==========================================================
+        # 🔧 TIRES (временно не обслуживаем)
+        # ==========================================================
+        elif task_subtype.startswith("tires"):
+            return None
 
         # ==========================================================
         # 🔧 ОБЩАЯ ЛОГИКА ДЛЯ ВСЕХ ОСТАЛЬНЫХ ЗАДАНИЙ
         # ==========================================================
         else:
             solver_module_path = (
-                f"matunya_bot_final.help_core.solvers."
+                "matunya_bot_final.help_core.solvers."
                 f"task_{task_type}.{task_subtype}_solver"
             )
 
-        logger.info(f"🔍 Загружаем решатель: {solver_module_path}")
+        logger.info("🔍 Загружаем решатель: %s", solver_module_path)
 
         solver_module = importlib.import_module(solver_module_path)
 
-        if not hasattr(solver_module, "solve"):
-            logger.error(f"❌ Модуль {solver_module_path} не содержит функцию solve()")
+        # ----------------------------------------------------------
+        # 1) Пытаемся найти solve()
+        # ----------------------------------------------------------
+        solve_function = getattr(solver_module, "solve", None)
+
+        # ----------------------------------------------------------
+        # 2) Для 1–5 допускаем solve_<subtype>() (например solve_paper)
+        # ----------------------------------------------------------
+        if solve_function is None and task_type == "1_5":
+            solve_function = getattr(solver_module, f"solve_{task_subtype}", None)
+
+        if solve_function is None:
+            logger.error(
+                "❌ Модуль %s не содержит solve() или solve_%s()",
+                solver_module_path,
+                task_subtype,
+            )
             return None
 
-        solve_function = solver_module.solve
-
+        # ----------------------------------------------------------
+        # 3) Вызываем solve
+        # ----------------------------------------------------------
         if inspect.iscoroutinefunction(solve_function):
             return await solve_function(task_data)
         else:
             return solve_function(task_data)
 
     except ModuleNotFoundError as e:
-        logger.warning(f"❌ Решатель не найден: {solver_module_path} — {e}")
+        logger.warning("❌ Решатель не найден: %s — %s", solver_module_path, e)
         return None
 
     except Exception as e:
-        logger.error(f"❌ Ошибка выполнения решателя {solver_module_path}: {e}")
+        logger.error("❌ Ошибка выполнения решателя %s: %s", solver_module_path, e)
         logger.error(traceback.format_exc())
         return None
 
@@ -328,12 +345,49 @@ async def send_processing_message(callback: CallbackQuery, bot: Bot, state: FSMC
         return None
 
 
-async def send_solution_result(callback: CallbackQuery, bot: Bot, state: FSMContext,
-                               solution_text: str, task_type: int, task_subtype: str) -> None:
+async def send_solution_result(
+    callback: CallbackQuery,
+    bot: Bot,
+    state: FSMContext,
+    solution_text: str,
+    task_type: int,
+    task_subtype: str
+) -> None:
     """
     Отправляет готовое решение пользователю.
+    Универсально поддерживает help_image (если передан через state).
     """
+
     try:
+        state_data = await state.get_data()
+        help_image = state_data.get("help_image")
+
+        # --------------------------------------------------
+        # 1️⃣ Если есть help_image — отправляем фото
+        # --------------------------------------------------
+        if help_image and isinstance(help_image, dict):
+            file_path = help_image.get("file")
+            caption = help_image.get("caption")
+            category = "solution_result"
+
+            if file_path:
+                logger.info(f"HELP IMAGE PATH: {file_path}")
+
+                photo = FSInputFile(file_path)
+
+                await send_tracked_photo(
+                    bot=bot,
+                    chat_id=callback.message.chat.id,
+                    state=state,
+                    photo=photo,
+                    message_tag=f"help_image_{task_subtype}",
+                    caption=caption,
+                    category=category,
+                )
+
+        # --------------------------------------------------
+        # 2️⃣ Отправляем текст решения
+        # --------------------------------------------------
         solution_keyboard = create_solution_keyboard(task_subtype, task_type)
 
         await send_tracked_message(
@@ -345,6 +399,12 @@ async def send_solution_result(callback: CallbackQuery, bot: Bot, state: FSMCont
             category="solution_result",
             message_tag=f"solution_{task_subtype}"
         )
+
+        # --------------------------------------------------
+        # 3️⃣ Чистим help_image из state
+        # --------------------------------------------------
+        if help_image:
+            await state.update_data(help_image=None)
 
     except Exception as e:
         logger.error(f"Ошибка отправки решения: {e}")

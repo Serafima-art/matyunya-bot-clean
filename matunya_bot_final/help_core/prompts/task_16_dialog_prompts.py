@@ -19,6 +19,8 @@ from matunya_bot_final.gpt.prompts.behavior_protocols import (
     DIALOG_HISTORY_PROTOCOL,
 )
 
+from matunya_bot_final.gpt.prompts.dialog_prompt import MATYUNYA_DIALOG_STYLE
+
 
 def get_task_16_dialog_prompt(
     task_data: Dict[str, Any],
@@ -190,6 +192,7 @@ def get_task_16_dialog_prompt(
     # ------------------------------------------------------------------
     return dedent(
         f"""
+{MATYUNYA_DIALOG_STYLE}
 {BASE_CHATTER_PERSONA}
 {TASK_FOCUS_PROTOCOL}
 {DIALOG_HISTORY_PROTOCOL}

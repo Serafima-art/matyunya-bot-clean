@@ -7,16 +7,16 @@
 ✅ Статус: ВАЛИДНО
    🔹 Q1 [match_formats_to_rows]: Ответ = 3241
    🔹 Q2 [count_subformats]: Ответ = 8
-   🔹 Q3 [find_width]: Ответ = 297
+   🔹 Q3 [find_width]: Ответ = 210
    🔹 Q4 [area_with_rounding_10]: Ответ = 1250
-   🔹 Q5 [pack_weight]: Ответ = 6250
+   🔹 Q5 [pack_weight]: Ответ = 6400
 
 📂 ВАРИАНТ: paper_2026_var_02
 ----------------------------------------
 ✅ Статус: ВАЛИДНО
    🔹 Q1 [match_formats_to_rows]: Ответ = 2143
    🔹 Q2 [count_subformats]: Ответ = 8
-   🔹 Q3 [find_length]: Ответ = 210
+   🔹 Q3 [find_width]: Ответ = 300
    🔹 Q4 [area_with_rounding_10]: Ответ = 80
    🔹 Q5 [font_scaling]: Ответ = 22
 
@@ -25,16 +25,16 @@
 ✅ Статус: ВАЛИДНО
    🔹 Q1 [match_formats_to_rows]: Ответ = 1432
    🔹 Q2 [count_subformats]: Ответ = 4
-   🔹 Q3 [find_side]: Ответ = 594
+   🔹 Q3 [find_length]: Ответ = 210
    🔹 Q4 [area_with_rounding_5]: Ответ = 625
-   🔹 Q5 [pack_weight]: Ответ = 781
+   🔹 Q5 [pack_weight]: Ответ = 800
 
 📂 ВАРИАНТ: paper_2026_var_04
 ----------------------------------------
 ✅ Статус: ВАЛИДНО
    🔹 Q1 [match_formats_to_rows]: Ответ = 3142
    🔹 Q2 [count_subformats]: Ответ = 4
-   🔹 Q3 [find_side]: Ответ = 105
+   🔹 Q3 [find_width]: Ответ = 841
    🔹 Q4 [area_basic]: Ответ = 310.8
    🔹 Q5 [font_scaling]: Ответ = 7
 
@@ -63,14 +63,14 @@
    🔹 Q2 [count_subformats]: Ответ = 8
    🔹 Q3 [find_diagonal_ratio]: Ответ = 1.2
    🔹 Q4 [area_with_rounding_10]: Ответ = 160
-   🔹 Q5 [pack_weight]: Ответ = 1562
+   🔹 Q5 [pack_weight]: Ответ = 2000
 
 📂 ВАРИАНТ: paper_2026_var_08
 ----------------------------------------
 ✅ Статус: ВАЛИДНО
    🔹 Q1 [match_formats_to_rows]: Ответ = 2413
    🔹 Q2 [count_subformats]: Ответ = 8
-   🔹 Q3 [find_with_rounding]: Ответ = 420
+   🔹 Q3 [find_length]: Ответ = 210
    🔹 Q4 [area_with_rounding_5]: Ответ = 625
    🔹 Q5 [font_scaling]: Ответ = 17
 
@@ -79,7 +79,7 @@
 ✅ Статус: ВАЛИДНО
    🔹 Q1 [match_formats_to_rows]: Ответ = 1342
    🔹 Q2 [count_subformats]: Ответ = 16
-   🔹 Q3 [find_with_rounding]: Ответ = 595
+   🔹 Q3 [find_width]: Ответ = 150
    🔹 Q4 [area_with_rounding_10]: Ответ = 160
    🔹 Q5 [pack_weight]: Ответ = 6250
 
@@ -88,7 +88,7 @@
 ✅ Статус: ВАЛИДНО
    🔹 Q1 [match_formats_to_rows]: Ответ = 3421
    🔹 Q2 [count_subformats]: Ответ = 32
-   🔹 Q3 [find_with_rounding]: Ответ = 840
+   🔹 Q3 [find_length]: Ответ = 595
    🔹 Q4 [area_with_rounding_10]: Ответ = 620
    🔹 Q5 [font_scaling]: Ответ = 17
 
@@ -99,7 +99,7 @@
    🔹 Q2 [count_subformats]: Ответ = 8
    🔹 Q3 [find_ratio]: Ответ = 1.4
    🔹 Q4 [area_with_rounding_5]: Ответ = 310
-   🔹 Q5 [pack_weight]: Ответ = 781
+   🔹 Q5 [pack_weight]: Ответ = 1000
 
 📂 ВАРИАНТ: paper_2026_var_12
 ----------------------------------------
@@ -117,14 +117,14 @@
    🔹 Q2 [count_subformats]: Ответ = 4
    🔹 Q3 [find_diagonal_ratio]: Ответ = 1.7
    🔹 Q4 [area_basic]: Ответ = 155.4
-   🔹 Q5 [pack_weight]: Ответ = 3125
+   🔹 Q5 [pack_weight]: Ответ = 2400
 
 📂 ВАРИАНТ: paper_2026_var_14
 ----------------------------------------
 ✅ Статус: ВАЛИДНО
    🔹 Q1 [match_formats_to_rows]: Ответ = 2314
    🔹 Q2 [count_subformats]: Ответ = 32
-   🔹 Q3 [find_with_rounding]: Ответ = 100
+   🔹 Q3 [find_length]: Ответ = 420
    🔹 Q4 [area_with_rounding_10]: Ответ = 620
    🔹 Q5 [font_scaling]: Ответ = 6
 
@@ -133,7 +133,7 @@
 ✅ Статус: ВАЛИДНО
    🔹 Q1 [match_formats_to_rows]: Ответ = 4123
    🔹 Q2 [count_subformats]: Ответ = 8
-   🔹 Q3 [find_with_rounding]: Ответ = 1190
+   🔹 Q3 [find_width]: Ответ = 595
    🔹 Q4 [area_with_rounding_5]: Ответ = 1245
    🔹 Q5 [font_scaling]: Ответ = 28
 
@@ -142,16 +142,16 @@
 ✅ Статус: ВАЛИДНО
    🔹 Q1 [match_formats_to_rows]: Ответ = 1423
    🔹 Q2 [count_subformats]: Ответ = 8
-   🔹 Q3 [find_with_rounding]: Ответ = 150
+   🔹 Q3 [find_length]: Ответ = 420
    🔹 Q4 [area_with_rounding_10]: Ответ = 620
-   🔹 Q5 [pack_weight]: Ответ = 781
+   🔹 Q5 [pack_weight]: Ответ = 1200
 
 📂 ВАРИАНТ: paper_2026_var_17
 ----------------------------------------
 ✅ Статус: ВАЛИДНО
    🔹 Q1 [match_formats_to_rows]: Ответ = 4132
    🔹 Q2 [count_subformats]: Ответ = 8
-   🔹 Q3 [find_with_rounding]: Ответ = 590
+   🔹 Q3 [find_width]: Ответ = 150
    🔹 Q4 [area_with_rounding_5]: Ответ = 80
    🔹 Q5 [pack_weight]: Ответ = 6250
 
@@ -160,7 +160,7 @@
 ✅ Статус: ВАЛИДНО
    🔹 Q1 [match_formats_to_rows]: Ответ = 4231
    🔹 Q2 [count_subformats]: Ответ = 16
-   🔹 Q3 [find_ratio]: Ответ = 1.4
+   🔹 Q3 [find_ratio]: Ответ = 0.7
    🔹 Q4 [area_with_rounding_10]: Ответ = 160
    🔹 Q5 [font_scaling]: Ответ = 15
 

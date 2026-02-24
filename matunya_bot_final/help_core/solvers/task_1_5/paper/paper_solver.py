@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import math
+from pathlib import Path
 
 from typing import Any, Dict
 
@@ -99,6 +100,7 @@ def solve_paper(task_context: Dict[str, Any]) -> Dict[str, Any]:
                 "transition_chain": transition_chain,
                 "doubling_chain": doubling_chain,
                 "sup_power": to_superscript(index_difference),
+                "power_value": int(base_variables.get("power_value", 2 ** index_difference)),
             }
         )
 
@@ -109,8 +111,8 @@ def solve_paper(task_context: Dict[str, Any]) -> Dict[str, Any]:
     if pattern == "paper_dimensions":
 
         fmt = task["input_data"]["format"]
+        solution_data = task["solution_data"]
 
-        # получаем размеры из variant.table_context
         table_context = variant["table_context"]
         formats_data = table_context["formats_data"]
 
@@ -120,63 +122,152 @@ def solve_paper(task_context: Dict[str, Any]) -> Dict[str, Any]:
         greater = max(length_mm, width_mm)
         smaller = min(length_mm, width_mm)
 
-        row_number = list(formats_data.keys()).index(fmt) + 1
+        # -------------------------------------------------
+        # 1️⃣ find_length
+        # -------------------------------------------------
+        if narrative == "find_length":
 
+            rounding = solution_data.get("rounding")
 
-        # ---------------------------
-        # find_length / find_width
-        # ---------------------------
-        if narrative in ("find_length", "find_width"):
+            raw_result = float(solution_data["raw_result"])
+            operation = solution_data.get("operation")
 
-            selected = greater if narrative == "find_length" else smaller
+            reference_format = solution_data["reference_format"]
+            ref_width = int(solution_data["reference_width_mm"])
+            ref_length = int(solution_data["reference_length_mm"])
+
+            # определяем направление перехода по индексам форматов
+            format_order = ["A0","A1","A2","A3","A4","A5","A6","A7"]
+            target_idx = format_order.index(fmt)
+            ref_idx = format_order.index(reference_format)
+
+            moving_to_larger = target_idx < ref_idx
+
+            # текст формулы / вычисления — ТОЛЬКО по operation
+            if operation == "multiply_by_2":
+                direction_word = "бо́льший"
+                rule_word = "удвоения соответствующей стороны"
+                formula_line = f"Длина {fmt} = 2 · Ширина {reference_format}"
+                calc_line = f"Длина {fmt} = 2 · {ref_width} = {raw_result}"
+            elif operation == "take_ref_width":
+                direction_word = "бо́льший" if moving_to_larger else "меньший"
+                rule_word = "соответствия сторон"
+                formula_line = f"Длина {fmt} = Ширина {reference_format}"
+                calc_line = f"Длина {fmt} = {ref_width}"
+            else:
+                # safety: чтобы не падало, даже если операция неожиданная
+                direction_word = ""
+                rule_word = ""
+                formula_line = ""
+                calc_line = ""
+
+            # округление (границы нужны только если rounding есть)
+            lower_bound = None
+            upper_bound = None
+            multiple_of = None
+
+            if rounding:
+                multiple_of = int(rounding["multiple_of"])
+                lower_bound = int((raw_result // multiple_of) * multiple_of)
+                upper_bound = int(lower_bound + multiple_of)
 
             variables.update({
-                "format": fmt,
-                "row_number": row_number,
-                "length_mm": length_mm,
-                "width_mm": width_mm,
-                "selected_value": selected,
+                "target_format": solution_data["target_format"],
+                "reference_format": reference_format,
+                "reference_width_mm": ref_width,
+                "reference_length_mm": ref_length,
+
+                "operation": operation,
+                "direction_word": direction_word,
+                "rule_word": rule_word,
+                "formula_line": formula_line,
+                "calc_line": calc_line,
+
+                "raw_result": raw_result,
+                "rounding": rounding,
+                "multiple_of": multiple_of,
+                "lower_bound": lower_bound,
+                "upper_bound": upper_bound,
+                "answer": int(solution_data["answer"]),
             })
 
+        # -------------------------------------------------
+        # 2️⃣ find_width
+        # -------------------------------------------------
+        if narrative == "find_width":
 
-        # ---------------------------
-        # find_side
-        # ---------------------------
-        if narrative == "find_side":
+            rounding = solution_data.get("rounding")
 
-            length = variables["length_mm"]
-            width = variables["width_mm"]
-            selected = variables["selected_value"]
+            raw_result = float(solution_data["raw_result"])
+            operation = solution_data.get("operation")
 
-            # определяем вторую сторону
-            if selected == length:
-                other_value = width
+            reference_format = solution_data["reference_format"]
+            ref_length = int(solution_data["reference_length_mm"])
+            ref_width = int(solution_data["reference_width_mm"])
+
+            # определяем направление перехода по индексам форматов
+            format_order = ["A0","A1","A2","A3","A4","A5","A6","A7"]
+            target_idx = format_order.index(fmt)
+            ref_idx = format_order.index(reference_format)
+
+            moving_to_larger = target_idx < ref_idx
+
+            # текст формулы / вычисления — ТОЛЬКО по operation
+            if operation == "divide_by_2":
+                direction_word = "меньший" if not moving_to_larger else "бо́льший"
+                rule_word = "разрезания"
+                formula_line = f"Ширина {fmt} = Длина {reference_format} : 2"
+                calc_line = f"Ширина {fmt} = {ref_length} : 2 = {raw_result}"
+            elif operation == "take_ref_length":
+                direction_word = "бо́льший" if moving_to_larger else "меньший"
+                rule_word = "соответствия сторон"
+                formula_line = f"Ширина {fmt} = Длина {reference_format}"
+                calc_line = f"Ширина {fmt} = {ref_length}"
             else:
-                other_value = length
+                direction_word = ""
+                rule_word = ""
+                formula_line = ""
+                calc_line = ""
 
-            # формируем корректное сравнение
-            if selected > other_value:
-                comparison_expression = f"{selected} больше {other_value}"
-            else:
-                comparison_expression = f"{selected} меньше {other_value}"
+            # округление (границы нужны только если rounding есть)
+            lower_bound = None
+            upper_bound = None
+            multiple_of = None
+
+            if rounding:
+                multiple_of = int(rounding["multiple_of"])
+                lower_bound = int((raw_result // multiple_of) * multiple_of)
+                upper_bound = int(lower_bound + multiple_of)
 
             variables.update({
-                "other_value": other_value,
-                "comparison_expression": comparison_expression,
+                "target_format": solution_data["target_format"],
+                "reference_format": reference_format,
+                "reference_length_mm": ref_length,
+                "reference_width_mm": ref_width,
+
+                "operation": operation,
+                "direction_word": direction_word,
+                "rule_word": rule_word,
+                "formula_line": formula_line,
+                "calc_line": calc_line,
+
+                "raw_result": raw_result,
+                "rounding": rounding,
+                "multiple_of": multiple_of,
+                "lower_bound": lower_bound,
+                "upper_bound": upper_bound,
+                "answer": int(solution_data["answer"]),
             })
 
-
         # ---------------------------
-        # find_ratio
+        # 3️⃣ find_ratio (НЕ ТРОГАЕМ)
         # ---------------------------
         if narrative == "find_ratio":
 
-            rounded_ratio = base_variables["rounded_ratio"]
+            rounded_ratio = solution_data["rounded_ratio"]
 
             division_order = "делим бо́льшую сторону на ме́ньшую"
-
             division_expression = f"{greater} ÷ {smaller}"
-
             raw_ratio = round(greater / smaller, 2)
 
             variables.update({
@@ -186,54 +277,19 @@ def solve_paper(task_context: Dict[str, Any]) -> Dict[str, Any]:
                 "rounded_ratio": rounded_ratio,
             })
 
-
         # ---------------------------
-        # find_diagonal_ratio
+        # 4️⃣ find_diagonal_ratio (НЕ ТРОГАЕМ)
         # ---------------------------
         if narrative == "find_diagonal_ratio":
 
-            ratio = base_variables["rounded_ratio"]
+            text = (task.get("original_text") or task.get("question_text") or "").lower()
+            side_type = "большей" if "больш" in text else "меньшей"
 
-            text = task.get("original_text", "").lower()
-
-            if "больш" in text:
-                side_type = "большей"
-            else:
-                side_type = "меньшей"
+            ratio = solution_data["rounded_ratio"]
 
             variables.update({
                 "side_type": side_type,
                 "ratio_value": ratio,
-            })
-
-
-        # ---------------------------
-        # find_with_rounding (Q3)
-        # ---------------------------
-        if narrative == "find_with_rounding":
-
-            original_value = int(variables["original_value"])
-            rounded_value = int(variables["rounded_value"])
-            round_base = int(variables["round_base"])
-
-            exact_multiple = (original_value % round_base == 0)
-
-            if exact_multiple:
-                lower_value = original_value
-                upper_value = original_value
-                is_middle = False
-            else:
-                lower_value = (original_value // round_base) * round_base
-                upper_value = lower_value + round_base
-
-                # ровно ли посередине
-                is_middle = abs(original_value - lower_value) == abs(original_value - upper_value)
-
-            variables.update({
-                "exact_multiple": exact_multiple,
-                "is_middle": is_middle,
-                "lower_value": int(lower_value),
-                "upper_value": int(upper_value),
             })
 
     # =========================================================
@@ -495,4 +551,60 @@ def solve_paper(task_context: Dict[str, Any]) -> Dict[str, Any]:
         "final_answer": task["answer"],
     }
 
-    return solution_core
+    # ---------------------------------------------------------
+    # help_image по контракту
+    # ---------------------------------------------------------
+
+    help_image_file = task.get("help_image_file")
+    help_image = None
+
+    if help_image_file:
+        sd = task.get("solution_data") or {}
+
+        target = sd.get("target_format")
+        reference = sd.get("reference_format")
+        operation = sd.get("operation")
+
+        # 🔹 Добавляем абсолютный путь
+        assets_dir = (
+            Path(__file__).resolve().parents[4]
+            / "non_generators"
+            / "task_1_5"
+            / "paper"
+            / "assets"
+        )
+
+        full_path = assets_dir / help_image_file
+
+        # Определяем текст операции для GPT
+        if operation == "divide_by_2":
+            operation_text = "меньший формат получается делением большего пополам"
+        elif operation == "multiply_by_2":
+            operation_text = "больший формат получается удвоением соответствующей стороны"
+        elif operation in ("take_ref_length", "take_ref_width"):
+            operation_text = "соответствующие стороны форматов совпадают по длине"
+        else:
+            operation_text = "форматы связаны стандартным правилом серии A"
+
+        help_image = {
+            "file": str(full_path),   # ← вот это главное изменение
+            "schema": "paper_pair",
+            "params": {
+                "target_format": target,
+                "reference_format": reference,
+                "operation": operation,
+            },
+            "description_for_gpt": (
+                f"На изображении показана схема форматов бумаги серии A для пары "
+                f"{reference} → {target}. "
+                f"В серии A каждый следующий формат получается делением предыдущего "
+                f"листа пополам по длинной стороне. "
+                f"В данной задаче используется правило: {operation_text}. "
+                f"На схеме указаны длина и ширина каждого формата."
+            )
+        }
+
+    return {
+        "solution_core": solution_core,
+        "help_image": help_image,
+    }

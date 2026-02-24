@@ -124,18 +124,55 @@ def _build_db(
                 errors.append(f"{tag} {e}")
             continue
 
+        # ---------------------------------------------------------
+        # Обрабатываем вопросы варианта
+        # ---------------------------------------------------------
+        for q in container.get("questions", []):
+            q_number = q.get("q_number")
+
+            # skill_source_id
+            if q_number:
+                q["skill_source_id"] = f"paper_q{q_number}"
+
+            # -----------------------------------------------------
+            # help_image_file (только для Q3)
+            # -----------------------------------------------------
+            if q_number == 3:
+                solution_data = q.get("solution_data", {})
+                target_format = solution_data.get("target_format")
+                reference_format = solution_data.get("reference_format")
+
+                if target_format and reference_format:
+                    format_order = ["A0","A1","A2","A3","A4","A5","A6","A7"]
+                    idx1 = format_order.index(target_format)
+                    idx2 = format_order.index(reference_format)
+
+                    larger = format_order[min(idx1, idx2)]
+                    smaller = format_order[max(idx1, idx2)]
+
+                    q["help_image_file"] = (
+                        f"help_paper_pair_{larger}_{smaller}.png"
+                    )
+                else:
+                    q["help_image_file"] = None
+            else:
+                q["help_image_file"] = None
+
+        # ВАЖНО: добавляем вариант в итоговую БД
         built.append(container)
 
+        # При необходимости пишем отдельный файл варианта
         if write_variants:
             vid = container["id"]
             _write_json(out_dir / "variants" / f"{vid}.json", container)
 
-    # один общий файл-база
+    # -------------------------------------------------------------
+    # Записываем общую БД
+    # -------------------------------------------------------------
     db_path = out_dir / "tasks_1_5_paper.json"
     _write_json(db_path, built)
 
     return built, errors
-
 
 # -----------------------------------------------------------------------------
 # CLI

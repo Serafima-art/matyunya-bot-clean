@@ -1,17 +1,38 @@
 # matunya_bot_final\help_core\humanizers\template_humanizers\task_1_5\paper_humanizer.pyу
 
+import re
+
 from typing import Dict, Any, Callable
 
 from matunya_bot_final.utils.display import format_number
 
 def _format_numeric_values(context: dict) -> dict:
     formatted = {}
+
     for k, v in context.items():
-        if isinstance(v, (int, float)):
+
+        # bool не трогаем
+        if isinstance(v, bool):
+            formatted[k] = v
+
+        # если число — форматируем напрямую
+        elif isinstance(v, (int, float)):
             formatted[k] = format_number(v)
+
+        # если строка — аккуратно форматируем числа внутри неё
+        elif isinstance(v, str):
+            # ищем числа вида 123.45 или 420.0
+            def replace_number(match):
+                return format_number(match.group())
+
+            new_v = re.sub(r"\d+\.\d+", replace_number, v)
+            formatted[k] = new_v
+
         else:
             formatted[k] = v
+
     return formatted
+
 
 # =============================================================================
 # 1. ШАБЛОНЫ ТЕКСТОВ (TEMPLATES) — НЕ МЕНЯЕМ ФОРМУЛИРОВКИ
@@ -48,19 +69,11 @@ IDEA_TEMPLATES: Dict[str, str] = {
     ## Паттерн paper_dimensions
     # ------------------------------------------------------------------
 
-    "find_length":
-        "В предыдущем задании мы определили, "
-        "какому номеру листа соответствует нужный формат.\n\n"
-        "Поэтому значение длины находим в таблице.",
-
-    "find_width":
-        "В предыдущем задании мы определили, "
-        "какому номеру листа соответствует нужный формат.\n\n"
-        "Поэтому значение ширины находим в таблице.",
-
-    "find_side":
-        "Нужно взять из таблицы значения длины и ширины для данного формата "
-        "и выбрать ме́ньшее или бо́льшее число — в зависимости от условия.",
+    "find_length/width":
+        "Если нужного формата нет в таблице, "
+        "мы вычислим его через <b>соседний формат</b>.\n\n"
+        "❗️ Чем меньше номер формата, тем больше лист.\n\n"
+        "Форматы серии A получают, разрезая предыдущий лист пополам.",
 
     "find_ratio":
         "У всех форматов серии A одинаковое соотношение сторон.\n\n"
@@ -74,12 +87,6 @@ IDEA_TEMPLATES: Dict[str, str] = {
         "Оно всегда одинаковое:\n\n"
         "🔹 диагональ к ме́ньшей стороне ≈ <b>1,7</b>\n"
         "🔹 диагональ к бо́льшей стороне ≈ <b>1,2</b>",
-
-    "find_with_rounding":
-        "Сначала находим числовое значение длины или ширины в таблице.\n"
-        "Затем округляем его до ближайшего числа,\n"
-        "которое делится на указанное в условии число \n"
-        "(например, на 10 или на 5).\n",
 
     # ------------------------------------------------------------------
     # 🟪 ВОПРОС 4 (Прикладная задача: площадь листа)
@@ -173,7 +180,7 @@ STEP_TEMPLATES: Dict[str, str] = {
         "<b>Шаг 1.</b> Находим разницу номеров форматов.\n"
         "Больший лист — {from_format}, меньший — {to_format}.\n\n"
         "➡️ <b>{to_index} − {from_index} = {index_difference}</b>\n\n"
-        "Значит, нужно сделать {index_difference} перехода.\n\n"
+        "Значит, нужно сделать {index_difference} {transition_word}.\n\n"
         "➡️ <b>{transition_chain}</b>"
     ),
 
@@ -190,36 +197,50 @@ STEP_TEMPLATES: Dict[str, str] = {
     # ------------------------------------------------------------------
 
     # --- 1️⃣ find_length ---
-    "STEP_DIM_LENGTH": (
-        "<b>Шаг 1.</b> Из задания 1 известно,\n"
-        "что формату <b>{format}</b> соответствует лист <b>№{row_number}</b>.\n\n"
-        "В таблице для этого номера указано:\n"
-        "➡️ <b>Длина — {selected_value} мм</b>"
+    "STEP_DIM_LENGTH_1": (
+        "<b>Шаг 1.</b> Выберем <b>соседний формат</b>, который есть в таблице\n"
+        "и выпишем нужную сторону — <b>ширину</b> этого формата.\n"
+        "➡️ <b>Ширина {reference_format} = {reference_width_mm} мм</b>"
+    ),
+    "STEP_DIM_LENGTH_2": (
+        "<b>Шаг 2.</b> Если нам нужен <b>{direction_word}</b> формат, используем правило <b>{rule_word}</b>:\n"
+        "➡️ <b>{formula_line}</b>"
+    ),
+    "STEP_DIM_LENGTH_3": (
+        "<b>Шаг 3.</b> Выполним вычисление.\n"
+        "➡️ <b>{calc_line}</b>"
+    ),
+    "STEP_DIM_LENGTH_4_ROUND": (
+        "<b>Шаг 4.</b> Округляем <b>{raw_result}</b> до ближайшего числа, кратного <b>{multiple_of}</b>.\n\n"
+        "Ближайшие кратные <b>{multiple_of}</b> числа:\n"
+        "➡️ <b>{lower_bound} и {upper_bound}</b>\n\n"
+        "<b>{raw_result}</b> ближе к <b>{answer}</b>.\n\n"
+        "➡️ <b>{raw_result} → {answer}</b>"
     ),
 
     # --- 2️⃣ find_width ---
-    "STEP_DIM_WIDTH": (
-        "<b>Шаг 1.</b> Из задания 1 известно,\n"
-        "что формату <b>{format}</b> соответствует лист <b>№{row_number}</b>.\n\n"
-        "В таблице для этого номера указано:\n"
-        "➡️ <b>Ширина — {selected_value} мм</b>"
+    "STEP_DIM_WIDTH_1": (
+        "<b>Шаг 1.</b> Выберем <b>соседний формат</b>, который есть в таблице\n"
+        "и выпишем нужную сторону — <b>длину</b> этого формата.\n"
+        "➡️ <b>Длина {reference_format} = {reference_length_mm} мм</b>"
+    ),
+    "STEP_DIM_WIDTH_2": (
+        "<b>Шаг 2.</b> Если нам нужен <b>{direction_word}</b> формат, используем правило <b>{rule_word}</b>:\n"
+        "➡️ <b>{formula_line}</b>"
+    ),
+    "STEP_DIM_WIDTH_3": (
+        "<b>Шаг 3.</b> Выполним вычисление.\n"
+        "➡️ <b>{calc_line}</b>"
+    ),
+    "STEP_DIM_WIDTH_4_ROUND": (
+        "<b>Шаг 4.</b> Округляем <b>{raw_result}</b> до ближайшего числа, кратного <b>{multiple_of}</b>.\n\n"
+        "Ближайшие кратные <b>{multiple_of}</b> числа:\n"
+        "➡️ <b>{lower_bound} и {upper_bound}</b>\n\n"
+        "<b>{raw_result}</b> ближе к <b>{answer}</b>.\n\n"
+        "➡️ <b>{raw_result} → {answer}</b>"
     ),
 
-    # --- 3️⃣ find_side ---
-    "STEP_DIM_SIDE_GIVEN": (
-        "<b>Шаг 1.</b> По заданию 1 мы определили,\n"
-        "что формату <b>{format}</b> соответствует лист №<b>{row_number}</b>.\n\n"
-        "В таблице указано:\n"
-        "➡️ Длина — {length_mm} мм\n"
-        "➡️ Ширина — {width_mm} мм"
-    ),
-
-    "STEP_DIM_SIDE_COMPARE": (
-        "<b>Шаг 2.</b>\n"
-        "➡️ <b>{comparison_expression}</b>"
-    ),
-
-    # --- 4️⃣ find_ratio ---
+    # --- 3️⃣ find_ratio ---
     "STEP_RATIO_ORDER": (
         "<b>Шаг 1.</b> Определяем, что требует задача:\n\n"
         "🔹 {division_order}"
@@ -231,7 +252,7 @@ STEP_TEMPLATES: Dict[str, str] = {
         "Округляем до десятых и получаем <b>{rounded_ratio}</b>"
     ),
 
-    # --- 5️⃣ find_diagonal_ratio ---
+    # --- 4️⃣ find_diagonal_ratio ---
     "STEP_DIAG_ORDER": (
         "<b>Шаг 1.</b> Определяем, какую сторону нужно взять по условию:\n"
         "➡️ <b>{side_type}</b>"
@@ -240,38 +261,6 @@ STEP_TEMPLATES: Dict[str, str] = {
     "STEP_DIAG_RATIO": (
         "<b>Шаг 2.</b> Используем постоянное соотношение:\n\n"
         "➡️ диагональ к {side_type} стороне = <b>{ratio_value}</b>"
-    ),
-
-    # --- 6️⃣ find_with_rounding ---
-    "STEP_ROUND_GIVEN": (
-        "<b>Шаг 1.</b> Из задания 1 известно,\n"
-        "что формату <b>{format}</b> соответствует лист <b>№{row_number}</b>.\n\n"
-        "В таблице для этого номера указано:\n"
-        "➡️ <b>{side_name} — {original_value} мм</b>"
-    ),
-
-    "STEP_ROUND_PROCESS_MIDDLE": (
-        "<b>Шаг 2.</b> Округляем <b>{original_value}</b> до ближайшего числа, кратного <b>{round_base}</b>.\n\n"
-        "Ближайшие кратные <b>{round_base}</b> числа:\n"
-        "➡️ <b>{lower_value} и {upper_value}</b>\n\n"
-        "<b>{original_value}</b> находится ровно посередине.\n"
-        "По правилу округления число <b>5</b> округляем в большую сторону.\n\n"
-        "➡️ <b>{original_value} → {rounded_value}</b>"
-    ),
-
-    "STEP_ROUND_PROCESS_NORMAL": (
-        "<b>Шаг 2.</b> Округляем <b>{original_value}</b> до ближайшего числа, кратного <b>{round_base}</b>.\n\n"
-        "Ближайшие кратные <b>{round_base}</b> числа:\n"
-        "➡️ <b>{lower_value} и {upper_value}</b>\n\n"
-        "<b>{original_value}</b> ближе к <b>{rounded_value}</b>.\n\n"
-        "➡️ <b>{original_value} → {rounded_value}</b>"
-    ),
-
-    "STEP_ROUND_PROCESS_EXACT": (
-        "<b>Шаг 2.</b> Проверяем кратность <b>{round_base}</b>.\n\n"
-        "<b>{original_value}</b> уже делится на <b>{round_base}</b> без остатка.\n"
-        "➡️ <b>Округление не требуется</b>\n\n"
-        "➡️ <b>{original_value} → {rounded_value}</b>"
     ),
 
     # ------------------------------------------------------------------
@@ -354,13 +343,13 @@ STEP_TEMPLATES: Dict[str, str] = {
         "Следовательно,\n\n"
         "➡️ <b>Количество листов = 2{sup_power}</b>\n"
         "➡️ <b>2{sup_power} = {sheet_count}</b>\n\n"
-        "Значит, из одного листа {from_format} получается {sheet_count} листа {to_format}."
+        "Значит, из одного листа {from_format} получается <b>{sheet_count}</b> {sheet_word} {to_format}."
     ),
 
     "STEP_PACK_SINGLE_WEIGHT": (
         "<b>Шаг 2.</b> Находим массу одного листа {to_format}.\n\n"
         "Масса 1 м² бумаги равна {mass_per_m2} г.\n\n"
-        "➡️ <b>масса одного листа = {mass_per_m2} ÷ {sheet_count} = {single_weight} г</b>"
+        "➡️ <b>масса одного листа = {mass_per_m2} : {sheet_count} = {single_weight} г</b>"
     ),
 
     "STEP_PACK_TOTAL": (
@@ -432,7 +421,7 @@ TIPS_TEMPLATES: Dict[str, str] = {
     # ------------------------------------------------------------------
 
     "count_subformats": (
-        "📌 Количество листов = 2 в степни (номер меньшего формата − номер большего формата).\n"
+        "📌 Количество листов = 2 в степени (номер меньшего формата − номер большего формата).\n"
         "📌 При увеличении формата количество листов уменьшается в 2 раза на каждом шаге.\n"
         "📌 Переходы можно считать «по стрелочкам» или сразу через степень двойки."
     ),
@@ -442,21 +431,17 @@ TIPS_TEMPLATES: Dict[str, str] = {
     ## Паттерн paper_dimensions
     # ------------------------------------------------------------------
 
-    "find_length": (
-        "📌 Длина — это бо́льшая сторона прямоугольного листа.\n"
-        "Сначала находим соответствие формата в таблице,\n"
-        "затем выбираем нужную сторону."
+    "find_length/width": (
+        "📌 Длина — бо́льшая сторона листа, ширина — ме́ньшая.\n"
+        "📌 Форматы серии A получают делением листа пополам.\n"
+        "📌 Округление выполняем строго по условию задачи."
     ),
 
     "find_width": (
-        "📌 Ширина — это ме́ньшая сторона прямоугольного листа.\n"
-        "Сначала находим соответствие формата в таблице,\n"
-        "затем выбираем нужную сторону."
-    ),
-
-    "find_side": (
-        "📌 Бо́льшая сторона — это большее число.\n"
-        "📌 Ме́ньшая сторона — это меньшее число."
+        "📌 <b>Ширина</b> — это всегда ме́ньшая сторона листа.\n"
+        "📌 Каждый следующий формат получают, если предыдущий лист разрезать пополам.\n"
+        "📌 При таком переходе одна сторона делится на 2, а стороны меняются местами.\n\n"
+        "📌 Округление выполняем только так, как указано в условии."
     ),
 
     "find_ratio": (
@@ -472,13 +457,6 @@ TIPS_TEMPLATES: Dict[str, str] = {
         "достаточно знать это постоянное соотношение:\n\n"
         "👉 Диагональ к ме́ньшей стороне ≈ 1,7.\n"
         "👉 Диагональ к бо́льшей стороне ≈ 1,2."
-    ),
-
-    "find_with_rounding": (
-        "📌 Кратные 10 — это числа, которые оканчиваются на 0.\n"
-        "📌 Кратные 5 — это числа, которые оканчиваются на 0 или 5.\n"
-        "📌 Если последняя цифра меньше 5 — округляем вниз.\n"
-        "📌 Если 5 или больше — округляем вверх."
     ),
 
     # ------------------------------------------------------------------
@@ -541,7 +519,7 @@ TIPS_TEMPLATES: Dict[str, str] = {
         "🔹 Разница 3 формата:\n"
         "   (A7 ↔ A4) → умножаем шрифт на 2,8 (это (√2)³ или 2 · 1,4)\n"
         "   (A4 ↔ A7) → делим на 2,8 (или умножаем на 0,35)\n\n"
-        "📌 <b>Главное правило:</b>Степень у √2 всегда равна количеству шагов перехода между форматами.\n\n"
+        "📌 <b>Главное правило:</b> Степень у √2 всегда равна количеству шагов перехода между форматами.\n\n"
         "❗ ВАЖНО: Округление выполняем только в самом конце вычислений!"
     ),
 }
@@ -605,45 +583,46 @@ NARRATIVE_PROFILES: Dict[str, Dict[str, Any]] = {
     # Q3 — paper_dimensions
     # ===============================
     "find_length": {
-        "idea_key": "find_length",
+        "idea_key": "find_length/width",
         "steps": [
-            "STEP_DIM_LENGTH",
+            "STEP_DIM_LENGTH_1",
+            "STEP_DIM_LENGTH_2",
+            "STEP_DIM_LENGTH_3",
+            "STEP_DIM_LENGTH_4_ROUND",
         ],
-        "tips_key": "find_length",
+        "tips_key": "find_length/width",
         "required_fields": [
-            "format",
-            "row_number",
-            "selected_value",
+            "target_format",
+            "reference_format",
+            "reference_width_mm",
+            "raw_result",
+            "answer",
+            "rounding",
+            "multiple_of",
+            "lower_bound",
+            "upper_bound",
         ],
     },
 
     "find_width": {
-        "idea_key": "find_width",
+        "idea_key": "find_length/width",
         "steps": [
-            "STEP_DIM_WIDTH",
+            "STEP_DIM_WIDTH_1",
+            "STEP_DIM_WIDTH_2",
+            "STEP_DIM_WIDTH_3",
+            "STEP_DIM_WIDTH_4_ROUND",
         ],
-        "tips_key": "find_width",
+        "tips_key": "find_length/width",
         "required_fields": [
-            "format",
-            "row_number",
-            "selected_value",
-        ],
-    },
-
-    "find_side": {
-        "idea_key": "find_side",
-        "steps": [
-            "STEP_DIM_SIDE_GIVEN",
-            "STEP_DIM_SIDE_COMPARE",
-        ],
-        "tips_key": "find_side",
-        "required_fields": [
-            "format",
-            "row_number",
-            "length_mm",
-            "width_mm",
-            "selected_value",
-            "other_value",
+            "target_format",
+            "reference_format",
+            "reference_length_mm",
+            "raw_result",
+            "answer",
+            "rounding",
+            "multiple_of",
+            "lower_bound",
+            "upper_bound",
         ],
     },
 
@@ -672,25 +651,6 @@ NARRATIVE_PROFILES: Dict[str, Dict[str, Any]] = {
         "required_fields": [
             "side_type",
             "ratio_value",
-        ],
-    },
-
-    "find_with_rounding": {
-        "idea_key": "find_with_rounding",
-        "steps": [
-            "STEP_ROUND_GIVEN",
-            "STEP_ROUND_PROCESS",
-        ],
-        "tips_key": "find_with_rounding",
-        "required_fields": [
-            "format",
-            "row_number",
-            "side_name",
-            "original_value",
-            "round_base",
-            "lower_value",
-            "upper_value",
-            "rounded_value",
         ],
     },
 
@@ -817,23 +777,39 @@ def _render_block(title: str, text: str) -> str:
     return f"{title}\n{text}"
 
 
+# =========================================================
+# 4. ЛОКАЛЬНЫЕ УТИЛИТЫ (только для блока 1–5)
+# =========================================================
+
+def _pluralize_sheet(count: int) -> str:
+    """
+    Склонение слова 'лист' по количеству.
+    Используется только в pack_weight.
+    """
+    if 11 <= count % 100 <= 14:
+        return "листов"
+    if count % 10 == 1:
+        return "лист"
+    if 2 <= count % 10 <= 4:
+        return "листа"
+    return "листов"
+
+def _pluralize_transition(n: int) -> str:
+    if 11 <= n % 100 <= 14:
+        return "переходов"
+    if n % 10 == 1:
+        return "переход"
+    if 2 <= n % 10 <= 4:
+        return "перехода"
+    return "переходов"
+
+
 # =============================================================================
-# 4. КОНТЕКСТ-БИЛДЕРЫ (facts -> context)
+# 5. КОНТЕКСТ-БИЛДЕРЫ (facts -> context)
 # =============================================================================
 
 def _default_context_builder(variables: Dict[str, Any]) -> Dict[str, Any]:
     return variables
-
-def _rounding_context_builder(variables: Dict[str, Any]) -> Dict[str, Any]:
-    context = variables.copy()
-
-    original = context["original_value"]
-    base = context["round_base"]
-
-    # флаг: число уже кратно
-    context["exact_multiple"] = (original % base == 0)
-
-    return context
 
 def _font_scaling_context_builder(variables: Dict[str, Any]) -> Dict[str, Any]:
     context = variables.copy()
@@ -855,18 +831,43 @@ def _font_scaling_context_builder(variables: Dict[str, Any]) -> Dict[str, Any]:
     return context
 
 
+def _pack_weight_context_builder(variables: Dict[str, Any]) -> Dict[str, Any]:
+    context = variables.copy()
+
+    sheet_count = context.get("sheet_count", 0)
+    context["sheet_word"] = _pluralize_sheet(sheet_count)
+
+    return context
+
+def _count_subformats_context_builder(variables: Dict[str, Any]) -> Dict[str, Any]:
+    context = variables.copy()
+
+    context["transition_word"] = _pluralize_transition(context["index_difference"])
+
+    return context
+
+# =========================================================
+# 6. CONTEXT BUILDERS
+# =========================================================
+
 _CONTEXT_BUILDERS: Dict[str, Callable[[Dict[str, Any]], Dict[str, Any]]] = {
     key: _default_context_builder for key in NARRATIVE_PROFILES.keys()
 }
 
-# 🔵 Переопределяем для find_with_rounding
-_CONTEXT_BUILDERS["find_with_rounding"] = _rounding_context_builder
+# 🔵 Специальная логика округления
+#_CONTEXT_BUILDERS["find_with_rounding"] = _rounding_context_builder
 
-# 🔵 Для font_scaling
+# 🔵 Масштабирование шрифта
 _CONTEXT_BUILDERS["font_scaling"] = _font_scaling_context_builder
 
+# 🔵 Вес пачки бумаги
+_CONTEXT_BUILDERS["pack_weight"] = _pack_weight_context_builder
+
+_CONTEXT_BUILDERS["count_subformats"] = _count_subformats_context_builder
+
+
 # =============================================================================
-# 5. ГЛАВНАЯ ФУНКЦИЯ (humanize)
+# 7. ГЛАВНАЯ ФУНКЦИЯ (humanize)
 # =============================================================================
 
 def humanize(solution_core: Dict[str, Any]) -> str:
@@ -880,31 +881,29 @@ def humanize(solution_core: Dict[str, Any]) -> str:
     # чтобы он прошёл через numeric formatter
     variables["final_answer"] = solution_core["final_answer"]
 
-    # Теперь прогоняем через форматтер чисел
-    context = _format_numeric_values(variables)
-
     profile = NARRATIVE_PROFILES[narrative]
 
-    required_fields = profile["required_fields"]
-    for field in required_fields:
-        if field not in variables:
-            raise KeyError(f"Missing required field: {field}")
-
-    # 💎 ДОПОЛНИТЕЛЬНАЯ ПРОВЕРКА ДЛЯ ПОДРОБНОГО font_scaling
-    if narrative == "font_scaling" and not variables.get("is_exact", True):
-        for f in ("sqrt2_approx", "coef_approx", "scaled_intermediate"):
-            if f not in variables or variables[f] is None:
-                raise KeyError(f"Missing required field: {f}")
-
-    # 1️⃣ Строим контекст
+    # 1️⃣ Строим контекст (facts -> context)
     builder = _CONTEXT_BUILDERS.get(narrative, _default_context_builder)
     context = builder(variables)
 
-    # 2️⃣ Форматируем числа
+    # 2️⃣ Форматируем числа (для вывода)
     context = _format_numeric_values(context)
 
-    # 3️⃣ Рендерим шаги
-    profile = NARRATIVE_PROFILES[narrative]
+    # ✅ Проверка required_fields делается ПОСЛЕ builder (важно!)
+    required_fields = profile["required_fields"]
+    for field in required_fields:
+        if field not in context:
+            raise KeyError(f"Missing required field: {field}")
+
+    # 💎 ДОПОЛНИТЕЛЬНАЯ ПРОВЕРКА ДЛЯ ПОДРОБНОГО font_scaling
+    # (в подробном режиме должны быть числа для строки вида: 12 · 1,41 = 16,92)
+    if narrative == "font_scaling" and not variables.get("is_exact", True):
+        for f in ("coef_approx", "scaled_intermediate"):
+            if f not in variables or variables[f] is None:
+                raise KeyError(f"Missing required field: {f}")
+
+    # 3️⃣ Рендерим блоки
     parts = []
 
     # IDEA
@@ -916,20 +915,24 @@ def humanize(solution_core: Dict[str, Any]) -> str:
     # STEPS
     step_texts = []
 
-    # 💎 Берём флаги строго из solver-контракта
-    is_exact = variables.get("is_exact", False)
-    needs_rounding = variables.get("needs_rounding", False)
+    # 💎 Флаги берём из solver-контракта (variables), но использовать будем в context
+    is_exact = bool(variables.get("is_exact", False))
+    needs_rounding = bool(variables.get("needs_rounding", False))
 
     for step_key in profile["steps"]:
 
-        original_step_key = step_key  # сохраняем исходный ключ
+        original_step_key = step_key  # для чистоты логики
+
+        # 🔵 Условие для find_length / find_width
+        if narrative in ("find_length", "find_width") and step_key.endswith("_ROUND") and not context.get("rounding"):
+            continue
 
         # 💎 Для font_scaling: если НЕ точный случай — используем подробный шаблон
-        if original_step_key == "STEP_FONT_SCALE" and not is_exact:
+        if narrative == "font_scaling" and original_step_key == "STEP_FONT_SCALE" and not is_exact:
             step_key = "STEP_FONT_SCALE_DETAILED"
 
         # 💎 Если округление не требуется — шаг 3 не показываем
-        if original_step_key == "STEP_FONT_ROUND" and not needs_rounding:
+        if narrative == "font_scaling" and original_step_key == "STEP_FONT_ROUND" and not needs_rounding:
             continue
 
         # 🔵 Специальная логика для find_with_rounding (оставляем как есть)

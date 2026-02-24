@@ -25,6 +25,8 @@ from matunya_bot_final.help_core.humanizers.template_humanizers.task_8_humanizer
     KNOWLEDGE_TEMPLATES
 )
 
+from matunya_bot_final.gpt.prompts.dialog_prompt import MATYUNYA_DIALOG_STYLE
+
 
 def get_task_8_dialog_prompt(
     task_data: Dict[str, Any],
@@ -101,6 +103,7 @@ def get_task_8_dialog_prompt(
 
     # 4. ФИНАЛЬНЫЙ ПРОМПТ
     return dedent(f"""
+    {MATYUNYA_DIALOG_STYLE}
     {BASE_CHATTER_PERSONA}
     {TASK_FOCUS_PROTOCOL}
     {DIALOG_HISTORY_PROTOCOL}

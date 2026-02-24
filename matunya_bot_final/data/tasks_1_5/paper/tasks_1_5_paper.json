@@ -49,6 +49,7 @@
         "q_number": 1,
         "pattern": "paper_format_match",
         "narrative": "match_formats_to_rows",
+        "question_text": "Установи соответствие между форматами бумаги и номерами листов по данным таблицы. В ответ запиши последовательность четырёх цифр без пробелов.",
         "input_data": {
           "columns_order": [
             "A0",
@@ -66,12 +67,15 @@
           },
           "answer_sequence": "3241"
         },
-        "answer": "3241"
+        "answer": "3241",
+        "skill_source_id": "paper_q1",
+        "help_image_file": null
       },
       {
         "q_number": 2,
         "pattern": "paper_split",
         "narrative": "count_subformats",
+        "question_text": "Сколько листов формата A3 можно получить из одного листа формата A0?",
         "input_data": {
           "from_format": "A0",
           "to_format": "A3"
@@ -80,29 +84,40 @@
           "index_difference": 3,
           "power_value": 8
         },
-        "answer": 8
+        "answer": 8,
+        "skill_source_id": "paper_q2",
+        "help_image_file": null
       },
       {
         "q_number": 3,
         "pattern": "paper_dimensions",
         "narrative": "find_width",
+        "question_text": "Определи ширину листа бумаги формата A4. Ответ запиши в миллиметрах.",
         "input_data": {
-          "format": "A3"
+          "format": "A4"
         },
         "solution_data": {
-          "format": "A3",
-          "row_number": 3,
-          "length_mm": 420,
-          "width_mm": 297,
-          "selected_value": 297,
-          "other_value": 420
+          "target_format": "A4",
+          "reference_format": "A3",
+          "reference_length_mm": 420,
+          "reference_width_mm": 297,
+          "target_length_mm": 297,
+          "target_width_mm": 210,
+          "operation": "divide_by_2",
+          "value_used": "length",
+          "raw_result": 210.0,
+          "rounding": null,
+          "answer": 210
         },
-        "answer": 297
+        "answer": 210,
+        "skill_source_id": "paper_q3",
+        "help_image_file": "help_paper_pair_A3_A4.png"
       },
       {
         "q_number": 4,
         "pattern": "paper_area",
         "narrative": "area_with_rounding_10",
+        "question_text": "Определи площадь листа бумаги формата A3. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего числа, кратного 10.",
         "input_data": {
           "format": "A3"
         },
@@ -110,24 +125,29 @@
           "area_raw": 1247.4,
           "rounded_area": 1250
         },
-        "answer": 1250
+        "answer": 1250,
+        "skill_source_id": "paper_q4",
+        "help_image_file": null
       },
       {
         "q_number": 5,
         "pattern": "paper_pack_weight",
         "narrative": "pack_weight",
+        "question_text": "В пачке 400 листов бумаги формата A3. Известно, что масса одного квадратного метра бумаги равна 128 грамм. Вычисли массу пачки. Ответ запиши в граммах.",
         "input_data": {
           "format": "A3",
           "sheet_count": 400,
-          "density_g_per_m2": 125
+          "density_g_per_m2": 128
         },
         "solution_data": {
           "index_difference": 3,
           "sheet_area_factor": 8,
-          "weight_one_sheet": 15.625,
-          "total_weight": 6250
+          "weight_one_sheet": 16.0,
+          "total_weight": 6400
         },
-        "answer": 6250
+        "answer": 6400,
+        "skill_source_id": "paper_q5",
+        "help_image_file": null
       }
     ]
   },
@@ -181,6 +201,7 @@
         "q_number": 1,
         "pattern": "paper_format_match",
         "narrative": "match_formats_to_rows",
+        "question_text": "Установи соответствие между форматами бумаги и номерами листов по данным таблицы. В ответ запиши последовательность четырёх цифр без пробелов.",
         "input_data": {
           "columns_order": [
             "A4",
@@ -198,12 +219,15 @@
           },
           "answer_sequence": "2143"
         },
-        "answer": "2143"
+        "answer": "2143",
+        "skill_source_id": "paper_q1",
+        "help_image_file": null
       },
       {
         "q_number": 2,
         "pattern": "paper_split",
         "narrative": "count_subformats",
+        "question_text": "Сколько листов формата A7 можно получить из одного листа формата A4?",
         "input_data": {
           "from_format": "A4",
           "to_format": "A7"
@@ -212,29 +236,43 @@
           "index_difference": 3,
           "power_value": 8
         },
-        "answer": 8
+        "answer": 8,
+        "skill_source_id": "paper_q2",
+        "help_image_file": null
       },
       {
         "q_number": 3,
         "pattern": "paper_dimensions",
-        "narrative": "find_length",
+        "narrative": "find_width",
+        "question_text": "Определи ширину листа бумаги формата A3. Ответ запиши в миллиметрах, округлив до ближайшего числа, кратного 10.",
         "input_data": {
-          "format": "A5"
+          "format": "A3"
         },
         "solution_data": {
-          "format": "A5",
-          "row_number": 5,
-          "length_mm": 210,
-          "width_mm": 148,
-          "selected_value": 210,
-          "other_value": 148
+          "target_format": "A3",
+          "reference_format": "A4",
+          "reference_length_mm": 297,
+          "reference_width_mm": 210,
+          "target_length_mm": 420,
+          "target_width_mm": 297,
+          "operation": "take_ref_length",
+          "value_used": "length",
+          "raw_result": 297.0,
+          "rounding": {
+            "mode": "nearest",
+            "multiple_of": 10
+          },
+          "answer": 300
         },
-        "answer": 210
+        "answer": 300,
+        "skill_source_id": "paper_q3",
+        "help_image_file": "help_paper_pair_A3_A4.png"
       },
       {
         "q_number": 4,
         "pattern": "paper_area",
         "narrative": "area_with_rounding_10",
+        "question_text": "Определи площадь листа бумаги формата A7. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего числа, кратного 10.",
         "input_data": {
           "format": "A7"
         },
@@ -242,12 +280,15 @@
           "area_raw": 77.7,
           "rounded_area": 80
         },
-        "answer": 80
+        "answer": 80,
+        "skill_source_id": "paper_q4",
+        "help_image_file": null
       },
       {
         "q_number": 5,
         "pattern": "paper_font_scaling",
         "narrative": "font_scaling",
+        "question_text": "Размер шрифта измеряется в пунктах. Один пункт равен 1/72 дюйма (0,3528 мм). Текст, напечатанный шрифтом высоты 11 пунктов на листе формата A6, требуется разместить на листе формата A4 с сохранением пропорций. Определи, какой размер шрифта (в пунктах) нужно использовать. Округли полученный результат до целого числа и запиши ответ.",
         "input_data": {
           "from_format": "A6",
           "to_format": "A4",
@@ -257,7 +298,9 @@
           "step_count": 2,
           "rounded_font": 22
         },
-        "answer": 22
+        "answer": 22,
+        "skill_source_id": "paper_q5",
+        "help_image_file": null
       }
     ]
   },
@@ -311,6 +354,7 @@
         "q_number": 1,
         "pattern": "paper_format_match",
         "narrative": "match_formats_to_rows",
+        "question_text": "Установи соответствие между форматами бумаги и номерами листов по данным таблицы. В ответ запиши последовательность четырёх цифр без пробелов.",
         "input_data": {
           "columns_order": [
             "A0",
@@ -328,12 +372,15 @@
           },
           "answer_sequence": "1432"
         },
-        "answer": "1432"
+        "answer": "1432",
+        "skill_source_id": "paper_q1",
+        "help_image_file": null
       },
       {
         "q_number": 2,
         "pattern": "paper_split",
         "narrative": "count_subformats",
+        "question_text": "Сколько листов формата A6 можно получить из одного листа формата A4?",
         "input_data": {
           "from_format": "A4",
           "to_format": "A6"
@@ -342,29 +389,40 @@
           "index_difference": 2,
           "power_value": 4
         },
-        "answer": 4
+        "answer": 4,
+        "skill_source_id": "paper_q2",
+        "help_image_file": null
       },
       {
         "q_number": 3,
         "pattern": "paper_dimensions",
-        "narrative": "find_side",
+        "narrative": "find_length",
+        "question_text": "Определи длину бо́льшей стороны листа бумаги формата A5. Ответ запиши в миллиметрах.",
         "input_data": {
-          "format": "A2"
+          "format": "A5"
         },
         "solution_data": {
-          "format": "A2",
-          "row_number": 2,
-          "length_mm": 594,
-          "width_mm": 420,
-          "selected_value": 594,
-          "other_value": 420
+          "target_format": "A5",
+          "reference_format": "A6",
+          "reference_length_mm": 148,
+          "reference_width_mm": 105,
+          "target_length_mm": 210,
+          "target_width_mm": 148,
+          "operation": "multiply_by_2",
+          "value_used": "width",
+          "raw_result": 210.0,
+          "rounding": null,
+          "answer": 210
         },
-        "answer": 594
+        "answer": 210,
+        "skill_source_id": "paper_q3",
+        "help_image_file": "help_paper_pair_A5_A6.png"
       },
       {
         "q_number": 4,
         "pattern": "paper_area",
         "narrative": "area_with_rounding_5",
+        "question_text": "Определи площадь листа бумаги формата A4. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего числа, кратного 5.",
         "input_data": {
           "format": "A4"
         },
@@ -372,24 +430,29 @@
           "area_raw": 623.7,
           "rounded_area": 625
         },
-        "answer": 625
+        "answer": 625,
+        "skill_source_id": "paper_q4",
+        "help_image_file": null
       },
       {
         "q_number": 5,
         "pattern": "paper_pack_weight",
         "narrative": "pack_weight",
+        "question_text": "В пачке 200 листов бумаги формата A6. Известно, что масса одного квадратного метра бумаги равна 256 грамм. Вычисли массу пачки. Ответ запиши в граммах.",
         "input_data": {
           "format": "A6",
           "sheet_count": 200,
-          "density_g_per_m2": 250
+          "density_g_per_m2": 256
         },
         "solution_data": {
           "index_difference": 6,
           "sheet_area_factor": 64,
-          "weight_one_sheet": 3.906,
-          "total_weight": 781
+          "weight_one_sheet": 4.0,
+          "total_weight": 800
         },
-        "answer": 781
+        "answer": 800,
+        "skill_source_id": "paper_q5",
+        "help_image_file": null
       }
     ]
   },
@@ -443,6 +506,7 @@
         "q_number": 1,
         "pattern": "paper_format_match",
         "narrative": "match_formats_to_rows",
+        "question_text": "Установи соответствие между форматами бумаги и номерами листов по данным таблицы. В ответ запиши последовательность четырёх цифр без пробелов.",
         "input_data": {
           "columns_order": [
             "A7",
@@ -460,12 +524,15 @@
           },
           "answer_sequence": "3142"
         },
-        "answer": "3142"
+        "answer": "3142",
+        "skill_source_id": "paper_q1",
+        "help_image_file": null
       },
       {
         "q_number": 2,
         "pattern": "paper_split",
         "narrative": "count_subformats",
+        "question_text": "Сколько листов формата A3 можно получить из одного листа формата A1?",
         "input_data": {
           "from_format": "A1",
           "to_format": "A3"
@@ -474,29 +541,40 @@
           "index_difference": 2,
           "power_value": 4
         },
-        "answer": 4
+        "answer": 4,
+        "skill_source_id": "paper_q2",
+        "help_image_file": null
       },
       {
         "q_number": 3,
         "pattern": "paper_dimensions",
-        "narrative": "find_side",
+        "narrative": "find_width",
+        "question_text": "Определи длину ме́ньшей стороны листа бумаги формата A0. Ответ запиши в миллиметрах.",
         "input_data": {
-          "format": "A7"
+          "format": "A0"
         },
         "solution_data": {
-          "format": "A7",
-          "row_number": 7,
-          "length_mm": 105,
-          "width_mm": 74,
-          "selected_value": 105,
-          "other_value": 74
+          "target_format": "A0",
+          "reference_format": "A1",
+          "reference_length_mm": 841,
+          "reference_width_mm": 594,
+          "target_length_mm": 1189,
+          "target_width_mm": 841,
+          "operation": "take_ref_length",
+          "value_used": "length",
+          "raw_result": 841.0,
+          "rounding": null,
+          "answer": 841
         },
-        "answer": 105
+        "answer": 841,
+        "skill_source_id": "paper_q3",
+        "help_image_file": "help_paper_pair_A0_A1.png"
       },
       {
         "q_number": 4,
         "pattern": "paper_area",
         "narrative": "area_basic",
+        "question_text": "Определи площадь листа бумаги формата A5. Ответ запиши в квадратных сантиметрах.",
         "input_data": {
           "format": "A5"
         },
@@ -505,12 +583,15 @@
           "width_cm": 14.8,
           "area": 310.8
         },
-        "answer": 310.8
+        "answer": 310.8,
+        "skill_source_id": "paper_q4",
+        "help_image_file": null
       },
       {
         "q_number": 5,
         "pattern": "paper_font_scaling",
         "narrative": "font_scaling",
+        "question_text": "Размер шрифта измеряется в пунктах. Один пункт равен 1/72 дюйма (0,3528 мм). Текст, напечатанный шрифтом высоты 14 пунктов на листе формата A3, требуется разместить на листе формата A5 с сохранением пропорций. Определи, какой размер шрифта (в пунктах) нужно использовать. Округли полученный результат до целого числа и запиши ответ.",
         "input_data": {
           "from_format": "A3",
           "to_format": "A5",
@@ -520,7 +601,9 @@
           "step_count": 2,
           "rounded_font": 7
         },
-        "answer": 7
+        "answer": 7,
+        "skill_source_id": "paper_q5",
+        "help_image_file": null
       }
     ]
   },
@@ -574,6 +657,7 @@
         "q_number": 1,
         "pattern": "paper_format_match",
         "narrative": "match_formats_to_rows",
+        "question_text": "Установи соответствие между форматами бумаги и номерами листов по данным таблицы. В ответ запиши последовательность четырёх цифр без пробелов.",
         "input_data": {
           "columns_order": [
             "A0",
@@ -591,12 +675,15 @@
           },
           "answer_sequence": "3124"
         },
-        "answer": "3124"
+        "answer": "3124",
+        "skill_source_id": "paper_q1",
+        "help_image_file": null
       },
       {
         "q_number": 2,
         "pattern": "paper_split",
         "narrative": "count_subformats",
+        "question_text": "Сколько листов формата A7 можно получить из одного листа формата A3?",
         "input_data": {
           "from_format": "A3",
           "to_format": "A7"
@@ -605,27 +692,31 @@
           "index_difference": 4,
           "power_value": 16
         },
-        "answer": 16
+        "answer": 16,
+        "skill_source_id": "paper_q2",
+        "help_image_file": null
       },
       {
         "q_number": 3,
         "pattern": "paper_dimensions",
         "narrative": "find_ratio",
+        "question_text": "Найди отношение большей стороны листа формата A0 к его меньшей стороне. Ответ округли до десятых.",
         "input_data": {
           "format": "A0"
         },
         "solution_data": {
-          "division_order": "делим бо́льшую сторону на ме́ньшую",
-          "division_expression": "1189 ÷ 841",
-          "raw_ratio": 1.41,
+          "format": "A0",
           "rounded_ratio": 1.4
         },
-        "answer": 1.4
+        "answer": 1.4,
+        "skill_source_id": "paper_q3",
+        "help_image_file": null
       },
       {
         "q_number": 4,
         "pattern": "paper_area",
         "narrative": "area_with_rounding_10",
+        "question_text": "Определи площадь листа бумаги формата A4. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 10.",
         "input_data": {
           "format": "A4"
         },
@@ -633,12 +724,15 @@
           "area_raw": 623.7,
           "rounded_area": 620
         },
-        "answer": 620
+        "answer": 620,
+        "skill_source_id": "paper_q4",
+        "help_image_file": null
       },
       {
         "q_number": 5,
         "pattern": "paper_pack_weight",
         "narrative": "pack_weight",
+        "question_text": "В пачке 250 листов бумаги формата A4. Известно, что масса одного квадратного метра бумаги равна 400 грамм. Вычисли массу пачки. Ответ запиши в граммах.",
         "input_data": {
           "format": "A4",
           "sheet_count": 250,
@@ -650,7 +744,9 @@
           "weight_one_sheet": 25.0,
           "total_weight": 6250
         },
-        "answer": 6250
+        "answer": 6250,
+        "skill_source_id": "paper_q5",
+        "help_image_file": null
       }
     ]
   },
@@ -704,6 +800,7 @@
         "q_number": 1,
         "pattern": "paper_format_match",
         "narrative": "match_formats_to_rows",
+        "question_text": "Установи соответствие между форматами бумаги и номерами листов по данным таблицы. В ответ запиши последовательность четырёх цифр без пробелов.",
         "input_data": {
           "columns_order": [
             "A1",
@@ -721,12 +818,15 @@
           },
           "answer_sequence": "4132"
         },
-        "answer": "4132"
+        "answer": "4132",
+        "skill_source_id": "paper_q1",
+        "help_image_file": null
       },
       {
         "q_number": 2,
         "pattern": "paper_split",
         "narrative": "count_subformats",
+        "question_text": "Сколько листов формата A6 можно получить из одного листа формата A2?",
         "input_data": {
           "from_format": "A2",
           "to_format": "A6"
@@ -735,25 +835,31 @@
           "index_difference": 4,
           "power_value": 16
         },
-        "answer": 16
+        "answer": 16,
+        "skill_source_id": "paper_q2",
+        "help_image_file": null
       },
       {
         "q_number": 3,
         "pattern": "paper_dimensions",
         "narrative": "find_diagonal_ratio",
+        "question_text": "Вычисли отношение длины диагонали листа бумаги формата A1 к его меньшей стороне. Ответ округли до десятых.",
         "input_data": {
-          "format": "A1",
-          "side_type": "меньшей"
+          "format": "A1"
         },
         "solution_data": {
+          "format": "A1",
           "rounded_ratio": 1.7
         },
-        "answer": 1.7
+        "answer": 1.7,
+        "skill_source_id": "paper_q3",
+        "help_image_file": null
       },
       {
         "q_number": 4,
         "pattern": "paper_area",
         "narrative": "area_with_rounding_5",
+        "question_text": "Определи площадь листа бумаги формата A5. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 5.",
         "input_data": {
           "format": "A5"
         },
@@ -761,12 +867,15 @@
           "area_raw": 310.8,
           "rounded_area": 310
         },
-        "answer": 310
+        "answer": 310,
+        "skill_source_id": "paper_q4",
+        "help_image_file": null
       },
       {
         "q_number": 5,
         "pattern": "paper_font_scaling",
         "narrative": "font_scaling",
+        "question_text": "Размер шрифта измеряется в пунктах. Один пункт равен 1/72 дюйма (0,3528 мм). Текст, напечатанный шрифтом высоты 10 пунктов на листе формата A5, требуется разместить на листе формата A1 с сохранением пропорций. Определи, какой размер шрифта (в пунктах) нужно использовать. Округли полученный результат до целого числа и запиши ответ.",
         "input_data": {
           "from_format": "A5",
           "to_format": "A1",
@@ -776,7 +885,9 @@
           "step_count": 4,
           "rounded_font": 40
         },
-        "answer": 40
+        "answer": 40,
+        "skill_source_id": "paper_q5",
+        "help_image_file": null
       }
     ]
   },
@@ -830,6 +941,7 @@
         "q_number": 1,
         "pattern": "paper_format_match",
         "narrative": "match_formats_to_rows",
+        "question_text": "Установи соответствие между форматами бумаги и номерами листов по данным таблицы. В ответ запиши последовательность четырёх цифр без пробелов.",
         "input_data": {
           "columns_order": [
             "A7",
@@ -847,12 +959,15 @@
           },
           "answer_sequence": "1324"
         },
-        "answer": "1324"
+        "answer": "1324",
+        "skill_source_id": "paper_q1",
+        "help_image_file": null
       },
       {
         "q_number": 2,
         "pattern": "paper_split",
         "narrative": "count_subformats",
+        "question_text": "Сколько листов формата A5 можно получить из одного листа формата A2?",
         "input_data": {
           "from_format": "A2",
           "to_format": "A5"
@@ -861,25 +976,31 @@
           "index_difference": 3,
           "power_value": 8
         },
-        "answer": 8
+        "answer": 8,
+        "skill_source_id": "paper_q2",
+        "help_image_file": null
       },
       {
         "q_number": 3,
         "pattern": "paper_dimensions",
         "narrative": "find_diagonal_ratio",
+        "question_text": "Вычисли отношение длины диагонали листа бумаги формата A6 к его большей стороне. Ответ округли до десятых.",
         "input_data": {
-          "format": "A6",
-          "side_type": "большей"
+          "format": "A6"
         },
         "solution_data": {
+          "format": "A6",
           "rounded_ratio": 1.2
         },
-        "answer": 1.2
+        "answer": 1.2,
+        "skill_source_id": "paper_q3",
+        "help_image_file": null
       },
       {
         "q_number": 4,
         "pattern": "paper_area",
         "narrative": "area_with_rounding_10",
+        "question_text": "Определи площадь листа бумаги формата A6. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 10.",
         "input_data": {
           "format": "A6"
         },
@@ -887,24 +1008,29 @@
           "area_raw": 155.4,
           "rounded_area": 160
         },
-        "answer": 160
+        "answer": 160,
+        "skill_source_id": "paper_q4",
+        "help_image_file": null
       },
       {
         "q_number": 5,
         "pattern": "paper_pack_weight",
         "narrative": "pack_weight",
+        "question_text": "В пачке 400 листов бумаги формата A5. Известно, что масса одного квадратного метра бумаги равна 160 грамм. Вычисли массу пачки. Ответ запиши в граммах.",
         "input_data": {
           "format": "A5",
           "sheet_count": 400,
-          "density_g_per_m2": 125
+          "density_g_per_m2": 160
         },
         "solution_data": {
           "index_difference": 5,
           "sheet_area_factor": 32,
-          "weight_one_sheet": 3.906,
-          "total_weight": 1562
+          "weight_one_sheet": 5.0,
+          "total_weight": 2000
         },
-        "answer": 1562
+        "answer": 2000,
+        "skill_source_id": "paper_q5",
+        "help_image_file": null
       }
     ]
   },
@@ -958,6 +1084,7 @@
         "q_number": 1,
         "pattern": "paper_format_match",
         "narrative": "match_formats_to_rows",
+        "question_text": "Установи соответствие между форматами бумаги и номерами листов по данным таблицы. В ответ запиши последовательность четырёх цифр без пробелов.",
         "input_data": {
           "columns_order": [
             "A1",
@@ -975,12 +1102,15 @@
           },
           "answer_sequence": "2413"
         },
-        "answer": "2413"
+        "answer": "2413",
+        "skill_source_id": "paper_q1",
+        "help_image_file": null
       },
       {
         "q_number": 2,
         "pattern": "paper_split",
         "narrative": "count_subformats",
+        "question_text": "Сколько листов формата A4 можно получить из одного листа формата A1?",
         "input_data": {
           "from_format": "A1",
           "to_format": "A4"
@@ -989,31 +1119,40 @@
           "index_difference": 3,
           "power_value": 8
         },
-        "answer": 8
+        "answer": 8,
+        "skill_source_id": "paper_q2",
+        "help_image_file": null
       },
       {
         "q_number": 3,
         "pattern": "paper_dimensions",
-        "narrative": "find_with_rounding",
+        "narrative": "find_length",
+        "question_text": "Определи длину листа бумаги формата A5. Ответ запиши в миллиметрах.",
         "input_data": {
-          "format": "A3"
+          "format": "A5"
         },
         "solution_data": {
-          "format": "A3",
-          "row_number": 4,
-          "side_name": "длина",
-          "round_base": 10,
-          "original_value": 420,
-          "lower_value": 420,
-          "upper_value": 420,
-          "rounded_value": 420
+          "target_format": "A5",
+          "reference_format": "A4",
+          "reference_length_mm": 297,
+          "reference_width_mm": 210,
+          "target_length_mm": 210,
+          "target_width_mm": 148,
+          "operation": "take_ref_width",
+          "value_used": "width",
+          "raw_result": 210.0,
+          "rounding": null,
+          "answer": 210
         },
-        "answer": 420
+        "answer": 210,
+        "skill_source_id": "paper_q3",
+        "help_image_file": "help_paper_pair_A4_A5.png"
       },
       {
         "q_number": 4,
         "pattern": "paper_area",
         "narrative": "area_with_rounding_5",
+        "question_text": "Определи площадь листа бумаги формата A4. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 5.",
         "input_data": {
           "format": "A4"
         },
@@ -1021,12 +1160,15 @@
           "area_raw": 623.7,
           "rounded_area": 625
         },
-        "answer": 625
+        "answer": 625,
+        "skill_source_id": "paper_q4",
+        "help_image_file": null
       },
       {
         "q_number": 5,
         "pattern": "paper_font_scaling",
         "narrative": "font_scaling",
+        "question_text": "Размер шрифта измеряется в пунктах. Один пункт равен 1/72 дюйма (0,3528 мм). Текст, напечатанный шрифтом высоты 12 пунктов на листе формата A4, требуется разместить на листе формата A3 с сохранением пропорций. Определи, какой размер шрифта (в пунктах) нужно использовать. Округли полученный результат до целого числа и запиши ответ.",
         "input_data": {
           "from_format": "A4",
           "to_format": "A3",
@@ -1036,7 +1178,9 @@
           "step_count": 1,
           "rounded_font": 17
         },
-        "answer": 17
+        "answer": 17,
+        "skill_source_id": "paper_q5",
+        "help_image_file": null
       }
     ]
   },
@@ -1090,6 +1234,7 @@
         "q_number": 1,
         "pattern": "paper_format_match",
         "narrative": "match_formats_to_rows",
+        "question_text": "Установи соответствие между форматами бумаги и номерами листов по данным таблицы. В ответ запиши последовательность четырёх цифр без пробелов.",
         "input_data": {
           "columns_order": [
             "A2",
@@ -1107,12 +1252,15 @@
           },
           "answer_sequence": "1342"
         },
-        "answer": "1342"
+        "answer": "1342",
+        "skill_source_id": "paper_q1",
+        "help_image_file": null
       },
       {
         "q_number": 2,
         "pattern": "paper_split",
         "narrative": "count_subformats",
+        "question_text": "Сколько листов формата A7 можно получить из одного листа формата A3?",
         "input_data": {
           "from_format": "A3",
           "to_format": "A7"
@@ -1121,31 +1269,43 @@
           "index_difference": 4,
           "power_value": 16
         },
-        "answer": 16
+        "answer": 16,
+        "skill_source_id": "paper_q2",
+        "help_image_file": null
       },
       {
         "q_number": 3,
         "pattern": "paper_dimensions",
-        "narrative": "find_with_rounding",
+        "narrative": "find_width",
+        "question_text": "Определи ширину листа бумаги формата A5. Ответ запиши в миллиметрах, округлив до ближайшего числа, кратного 5.",
         "input_data": {
-          "format": "A2"
+          "format": "A5"
         },
         "solution_data": {
-          "format": "A2",
-          "row_number": 3,
-          "side_name": "длина",
-          "round_base": 5,
-          "original_value": 594,
-          "lower_value": 590,
-          "upper_value": 595,
-          "rounded_value": 595
+          "target_format": "A5",
+          "reference_format": "A6",
+          "reference_length_mm": 148,
+          "reference_width_mm": 105,
+          "target_length_mm": 210,
+          "target_width_mm": 148,
+          "operation": "take_ref_length",
+          "value_used": "length",
+          "raw_result": 148.0,
+          "rounding": {
+            "mode": "nearest",
+            "multiple_of": 5
+          },
+          "answer": 150
         },
-        "answer": 595
+        "answer": 150,
+        "skill_source_id": "paper_q3",
+        "help_image_file": "help_paper_pair_A5_A6.png"
       },
       {
         "q_number": 4,
         "pattern": "paper_area",
         "narrative": "area_with_rounding_10",
+        "question_text": "Определи площадь листа бумаги формата A6. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 10.",
         "input_data": {
           "format": "A6"
         },
@@ -1153,12 +1313,15 @@
           "area_raw": 155.4,
           "rounded_area": 160
         },
-        "answer": 160
+        "answer": 160,
+        "skill_source_id": "paper_q4",
+        "help_image_file": null
       },
       {
         "q_number": 5,
         "pattern": "paper_pack_weight",
         "narrative": "pack_weight",
+        "question_text": "В пачке 100 листов бумаги формата A2. Известно, что масса одного квадратного метра бумаги равна 250 грамм. Вычисли массу пачки. Ответ запиши в граммах.",
         "input_data": {
           "format": "A2",
           "sheet_count": 100,
@@ -1170,7 +1333,9 @@
           "weight_one_sheet": 62.5,
           "total_weight": 6250
         },
-        "answer": 6250
+        "answer": 6250,
+        "skill_source_id": "paper_q5",
+        "help_image_file": null
       }
     ]
   },
@@ -1224,6 +1389,7 @@
         "q_number": 1,
         "pattern": "paper_format_match",
         "narrative": "match_formats_to_rows",
+        "question_text": "Установи соответствие между форматами бумаги и номерами листов по данным таблицы. В ответ запиши последовательность четырёх цифр без пробелов.",
         "input_data": {
           "columns_order": [
             "A0",
@@ -1241,12 +1407,15 @@
           },
           "answer_sequence": "3421"
         },
-        "answer": "3421"
+        "answer": "3421",
+        "skill_source_id": "paper_q1",
+        "help_image_file": null
       },
       {
         "q_number": 2,
         "pattern": "paper_split",
         "narrative": "count_subformats",
+        "question_text": "Сколько листов формата A5 можно получить из одного листа формата A0?",
         "input_data": {
           "from_format": "A0",
           "to_format": "A5"
@@ -1255,31 +1424,43 @@
           "index_difference": 5,
           "power_value": 32
         },
-        "answer": 32
+        "answer": 32,
+        "skill_source_id": "paper_q2",
+        "help_image_file": null
       },
       {
         "q_number": 3,
         "pattern": "paper_dimensions",
-        "narrative": "find_with_rounding",
+        "narrative": "find_length",
+        "question_text": "Определи длину листа бумаги формата A2. Ответ запиши в миллиметрах, округлив до ближайшего числа, кратного 5.",
         "input_data": {
-          "format": "A1"
+          "format": "A2"
         },
         "solution_data": {
-          "format": "A1",
-          "row_number": 2,
-          "side_name": "длина",
-          "round_base": 5,
-          "original_value": 841,
-          "lower_value": 840,
-          "upper_value": 845,
-          "rounded_value": 840
+          "target_format": "A2",
+          "reference_format": "A1",
+          "reference_length_mm": 841,
+          "reference_width_mm": 594,
+          "target_length_mm": 594,
+          "target_width_mm": 420,
+          "operation": "take_ref_width",
+          "value_used": "width",
+          "raw_result": 594.0,
+          "rounding": {
+            "mode": "nearest",
+            "multiple_of": 5
+          },
+          "answer": 595
         },
-        "answer": 840
+        "answer": 595,
+        "skill_source_id": "paper_q3",
+        "help_image_file": "help_paper_pair_A1_A2.png"
       },
       {
         "q_number": 4,
         "pattern": "paper_area",
         "narrative": "area_with_rounding_10",
+        "question_text": "Определи площадь листа бумаги формата A4. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 10.",
         "input_data": {
           "format": "A4"
         },
@@ -1287,12 +1468,15 @@
           "area_raw": 623.7,
           "rounded_area": 620
         },
-        "answer": 620
+        "answer": 620,
+        "skill_source_id": "paper_q4",
+        "help_image_file": null
       },
       {
         "q_number": 5,
         "pattern": "paper_font_scaling",
         "narrative": "font_scaling",
+        "question_text": "Размер шрифта измеряется в пунктах. Один пункт равен 1/72 дюйма (0,3528 мм). Текст, напечатанный шрифтом высоты 12 пунктов на листе формата A5, требуется разместить на листе формата A4 с сохранением пропорций. Определи, какой размер шрифта (в пунктах) нужно использовать. Округли полученный результат до целого числа и запиши ответ.",
         "input_data": {
           "from_format": "A5",
           "to_format": "A4",
@@ -1302,7 +1486,9 @@
           "step_count": 1,
           "rounded_font": 17
         },
-        "answer": 17
+        "answer": 17,
+        "skill_source_id": "paper_q5",
+        "help_image_file": null
       }
     ]
   },
@@ -1356,6 +1542,7 @@
         "q_number": 1,
         "pattern": "paper_format_match",
         "narrative": "match_formats_to_rows",
+        "question_text": "Установи соответствие между форматами бумаги и номерами листов по данным таблицы. В ответ запиши последовательность четырёх цифр без пробелов.",
         "input_data": {
           "columns_order": [
             "A4",
@@ -1373,12 +1560,15 @@
           },
           "answer_sequence": "2413"
         },
-        "answer": "2413"
+        "answer": "2413",
+        "skill_source_id": "paper_q1",
+        "help_image_file": null
       },
       {
         "q_number": 2,
         "pattern": "paper_split",
         "narrative": "count_subformats",
+        "question_text": "Сколько листов формата A7 можно получить из одного листа формата A4?",
         "input_data": {
           "from_format": "A4",
           "to_format": "A7"
@@ -1387,27 +1577,31 @@
           "index_difference": 3,
           "power_value": 8
         },
-        "answer": 8
+        "answer": 8,
+        "skill_source_id": "paper_q2",
+        "help_image_file": null
       },
       {
         "q_number": 3,
         "pattern": "paper_dimensions",
         "narrative": "find_ratio",
+        "question_text": "Найди отношение большей стороны листа формата A2 к его меньшей стороне. Ответ округли до десятых.",
         "input_data": {
           "format": "A2"
         },
         "solution_data": {
-          "division_order": "делим бо́льшую сторону на ме́ньшую",
-          "division_expression": "594 ÷ 420",
-          "raw_ratio": 1.41,
+          "format": "A2",
           "rounded_ratio": 1.4
         },
-        "answer": 1.4
+        "answer": 1.4,
+        "skill_source_id": "paper_q3",
+        "help_image_file": null
       },
       {
         "q_number": 4,
         "pattern": "paper_area",
         "narrative": "area_with_rounding_5",
+        "question_text": "Определи площадь листа бумаги формата A5. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 5.",
         "input_data": {
           "format": "A5"
         },
@@ -1415,24 +1609,29 @@
           "area_raw": 310.8,
           "rounded_area": 310
         },
-        "answer": 310
+        "answer": 310,
+        "skill_source_id": "paper_q4",
+        "help_image_file": null
       },
       {
         "q_number": 5,
         "pattern": "paper_pack_weight",
         "narrative": "pack_weight",
+        "question_text": "В пачке 1000 листов бумаги формата A7. Известно, что масса одного квадратного метра бумаги равна 128 грамм. Вычисли массу пачки. Ответ запиши в граммах.",
         "input_data": {
           "format": "A7",
           "sheet_count": 1000,
-          "density_g_per_m2": 100
+          "density_g_per_m2": 128
         },
         "solution_data": {
           "index_difference": 7,
           "sheet_area_factor": 128,
-          "weight_one_sheet": 0.781,
-          "total_weight": 781
+          "weight_one_sheet": 1.0,
+          "total_weight": 1000
         },
-        "answer": 781
+        "answer": 1000,
+        "skill_source_id": "paper_q5",
+        "help_image_file": null
       }
     ]
   },
@@ -1486,6 +1685,7 @@
         "q_number": 1,
         "pattern": "paper_format_match",
         "narrative": "match_formats_to_rows",
+        "question_text": "Установи соответствие между форматами бумаги и номерами листов по данным таблицы. В ответ запиши последовательность четырёх цифр без пробелов.",
         "input_data": {
           "columns_order": [
             "A3",
@@ -1503,12 +1703,15 @@
           },
           "answer_sequence": "2431"
         },
-        "answer": "2431"
+        "answer": "2431",
+        "skill_source_id": "paper_q1",
+        "help_image_file": null
       },
       {
         "q_number": 2,
         "pattern": "paper_split",
         "narrative": "count_subformats",
+        "question_text": "Сколько листов формата A7 можно получить из одного листа формата A3?",
         "input_data": {
           "from_format": "A3",
           "to_format": "A7"
@@ -1517,27 +1720,31 @@
           "index_difference": 4,
           "power_value": 16
         },
-        "answer": 16
+        "answer": 16,
+        "skill_source_id": "paper_q2",
+        "help_image_file": null
       },
       {
         "q_number": 3,
         "pattern": "paper_dimensions",
         "narrative": "find_ratio",
+        "question_text": "Найди отношение меньшей стороны листа формата A1 к его большей стороне. Ответ округли до десятых.",
         "input_data": {
           "format": "A1"
         },
         "solution_data": {
-          "division_order": "делим бо́льшую сторону на ме́ньшую",
-          "division_expression": "841 ÷ 594",
-          "raw_ratio": 1.42,
+          "format": "A1",
           "rounded_ratio": 1.4
         },
-        "answer": 1.4
+        "answer": 1.4,
+        "skill_source_id": "paper_q3",
+        "help_image_file": null
       },
       {
         "q_number": 4,
         "pattern": "paper_area",
         "narrative": "area_with_rounding_10",
+        "question_text": "Определи площадь листа бумаги формата A6. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 10.",
         "input_data": {
           "format": "A6"
         },
@@ -1545,12 +1752,15 @@
           "area_raw": 155.4,
           "rounded_area": 160
         },
-        "answer": 160
+        "answer": 160,
+        "skill_source_id": "paper_q4",
+        "help_image_file": null
       },
       {
         "q_number": 5,
         "pattern": "paper_font_scaling",
         "narrative": "font_scaling",
+        "question_text": "Размер шрифта измеряется в пунктах. Один пункт равен 1/72 дюйма (0,3528 мм). Текст, напечатанный шрифтом высоты 10 пунктов на листе формата A6, требуется разместить на листе формата A3 с сохранением пропорций. Определи, какой размер шрифта (в пунктах) нужно использовать. Округли полученный результат до целого числа и запиши ответ.",
         "input_data": {
           "from_format": "A6",
           "to_format": "A3",
@@ -1560,7 +1770,9 @@
           "step_count": 3,
           "rounded_font": 28
         },
-        "answer": 28
+        "answer": 28,
+        "skill_source_id": "paper_q5",
+        "help_image_file": null
       }
     ]
   },
@@ -1614,6 +1826,7 @@
         "q_number": 1,
         "pattern": "paper_format_match",
         "narrative": "match_formats_to_rows",
+        "question_text": "Установи соответствие между форматами бумаги и номерами листов по данным таблицы. В ответ запиши последовательность четырёх цифр без пробелов.",
         "input_data": {
           "columns_order": [
             "A5",
@@ -1631,12 +1844,15 @@
           },
           "answer_sequence": "4123"
         },
-        "answer": "4123"
+        "answer": "4123",
+        "skill_source_id": "paper_q1",
+        "help_image_file": null
       },
       {
         "q_number": 2,
         "pattern": "paper_split",
         "narrative": "count_subformats",
+        "question_text": "Сколько листов формата A5 можно получить из одного листа формата A3?",
         "input_data": {
           "from_format": "A3",
           "to_format": "A5"
@@ -1645,25 +1861,31 @@
           "index_difference": 2,
           "power_value": 4
         },
-        "answer": 4
+        "answer": 4,
+        "skill_source_id": "paper_q2",
+        "help_image_file": null
       },
       {
         "q_number": 3,
         "pattern": "paper_dimensions",
         "narrative": "find_diagonal_ratio",
+        "question_text": "Вычисли отношение длины диагонали листа бумаги формата A3 к его меньшей стороне. Ответ округли до десятых.",
         "input_data": {
-          "format": "A3",
-          "side_type": "меньшей"
+          "format": "A3"
         },
         "solution_data": {
+          "format": "A3",
           "rounded_ratio": 1.7
         },
-        "answer": 1.7
+        "answer": 1.7,
+        "skill_source_id": "paper_q3",
+        "help_image_file": null
       },
       {
         "q_number": 4,
         "pattern": "paper_area",
         "narrative": "area_basic",
+        "question_text": "Определи площадь листа бумаги формата A6. Ответ запиши в квадратных сантиметрах.",
         "input_data": {
           "format": "A6"
         },
@@ -1672,24 +1894,29 @@
           "width_cm": 10.5,
           "area": 155.4
         },
-        "answer": 155.4
+        "answer": 155.4,
+        "skill_source_id": "paper_q4",
+        "help_image_file": null
       },
       {
         "q_number": 5,
         "pattern": "paper_pack_weight",
         "narrative": "pack_weight",
+        "question_text": "В пачке 800 листов бумаги формата A5. Известно, что масса одного квадратного метра бумаги равна 96 грамм. Вычисли массу пачки. Ответ запиши в граммах.",
         "input_data": {
           "format": "A5",
           "sheet_count": 800,
-          "density_g_per_m2": 125
+          "density_g_per_m2": 96
         },
         "solution_data": {
           "index_difference": 5,
           "sheet_area_factor": 32,
-          "weight_one_sheet": 3.906,
-          "total_weight": 3125
+          "weight_one_sheet": 3.0,
+          "total_weight": 2400
         },
-        "answer": 3125
+        "answer": 2400,
+        "skill_source_id": "paper_q5",
+        "help_image_file": null
       }
     ]
   },
@@ -1743,6 +1970,7 @@
         "q_number": 1,
         "pattern": "paper_format_match",
         "narrative": "match_formats_to_rows",
+        "question_text": "Установи соответствие между форматами бумаги и номерами листов по данным таблицы. В ответ запиши последовательность четырёх цифр без пробелов.",
         "input_data": {
           "columns_order": [
             "A4",
@@ -1760,12 +1988,15 @@
           },
           "answer_sequence": "2314"
         },
-        "answer": "2314"
+        "answer": "2314",
+        "skill_source_id": "paper_q1",
+        "help_image_file": null
       },
       {
         "q_number": 2,
         "pattern": "paper_split",
         "narrative": "count_subformats",
+        "question_text": "Сколько листов формата A6 можно получить из одного листа формата A1?",
         "input_data": {
           "from_format": "A1",
           "to_format": "A6"
@@ -1774,31 +2005,43 @@
           "index_difference": 5,
           "power_value": 32
         },
-        "answer": 32
+        "answer": 32,
+        "skill_source_id": "paper_q2",
+        "help_image_file": null
       },
       {
         "q_number": 3,
         "pattern": "paper_dimensions",
-        "narrative": "find_with_rounding",
+        "narrative": "find_length",
+        "question_text": "Определи длину листа бумаги формата A3. Ответ запиши в миллиметрах, округлив до ближайшего числа, кратного 10.",
         "input_data": {
-          "format": "A7"
+          "format": "A3"
         },
         "solution_data": {
-          "format": "A7",
-          "row_number": 8,
-          "side_name": "длина",
-          "round_base": 10,
-          "original_value": 105,
-          "lower_value": 100,
-          "upper_value": 110,
-          "rounded_value": 100
+          "target_format": "A3",
+          "reference_format": "A4",
+          "reference_length_mm": 297,
+          "reference_width_mm": 210,
+          "target_length_mm": 420,
+          "target_width_mm": 297,
+          "operation": "multiply_by_2",
+          "value_used": "width",
+          "raw_result": 420.0,
+          "rounding": {
+            "mode": "nearest",
+            "multiple_of": 10
+          },
+          "answer": 420
         },
-        "answer": 100
+        "answer": 420,
+        "skill_source_id": "paper_q3",
+        "help_image_file": "help_paper_pair_A3_A4.png"
       },
       {
         "q_number": 4,
         "pattern": "paper_area",
         "narrative": "area_with_rounding_10",
+        "question_text": "Определи площадь листа бумаги формата A4. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 10.",
         "input_data": {
           "format": "A4"
         },
@@ -1806,12 +2049,15 @@
           "area_raw": 623.7,
           "rounded_area": 620
         },
-        "answer": 620
+        "answer": 620,
+        "skill_source_id": "paper_q4",
+        "help_image_file": null
       },
       {
         "q_number": 5,
         "pattern": "paper_font_scaling",
         "narrative": "font_scaling",
+        "question_text": "Размер шрифта измеряется в пунктах. Один пункт равен 1/72 дюйма (0,3528 мм). Текст, напечатанный шрифтом высоты 9 пунктов на листе формата A6, требуется разместить на листе формата A7 с сохранением пропорций. Определи, какой размер шрифта (в пунктах) нужно использовать. Округли полученный результат до целого числа и запиши ответ.",
         "input_data": {
           "from_format": "A6",
           "to_format": "A7",
@@ -1821,7 +2067,9 @@
           "step_count": 1,
           "rounded_font": 6
         },
-        "answer": 6
+        "answer": 6,
+        "skill_source_id": "paper_q5",
+        "help_image_file": null
       }
     ]
   },
@@ -1875,6 +2123,7 @@
         "q_number": 1,
         "pattern": "paper_format_match",
         "narrative": "match_formats_to_rows",
+        "question_text": "Установи соответствие между форматами бумаги и номерами листов по данным таблицы. В ответ запиши последовательность четырёх цифр без пробелов.",
         "input_data": {
           "columns_order": [
             "A6",
@@ -1892,12 +2141,15 @@
           },
           "answer_sequence": "4123"
         },
-        "answer": "4123"
+        "answer": "4123",
+        "skill_source_id": "paper_q1",
+        "help_image_file": null
       },
       {
         "q_number": 2,
         "pattern": "paper_split",
         "narrative": "count_subformats",
+        "question_text": "Сколько листов формата A3 можно получить из одного листа формата A0?",
         "input_data": {
           "from_format": "A0",
           "to_format": "A3"
@@ -1906,31 +2158,43 @@
           "index_difference": 3,
           "power_value": 8
         },
-        "answer": 8
+        "answer": 8,
+        "skill_source_id": "paper_q2",
+        "help_image_file": null
       },
       {
         "q_number": 3,
         "pattern": "paper_dimensions",
-        "narrative": "find_with_rounding",
+        "narrative": "find_width",
+        "question_text": "Определи ширину листа бумаги формата A1. Ответ запиши в миллиметрах, округлив до ближайшего числа, кратного 5.",
         "input_data": {
-          "format": "A0"
+          "format": "A1"
         },
         "solution_data": {
-          "format": "A0",
-          "row_number": 1,
-          "side_name": "длина",
-          "round_base": 5,
-          "original_value": 1189,
-          "lower_value": 1185,
-          "upper_value": 1190,
-          "rounded_value": 1190
+          "target_format": "A1",
+          "reference_format": "A0",
+          "reference_length_mm": 1189,
+          "reference_width_mm": 841,
+          "target_length_mm": 841,
+          "target_width_mm": 594,
+          "operation": "divide_by_2",
+          "value_used": "length",
+          "raw_result": 594.5,
+          "rounding": {
+            "mode": "nearest",
+            "multiple_of": 5
+          },
+          "answer": 595
         },
-        "answer": 1190
+        "answer": 595,
+        "skill_source_id": "paper_q3",
+        "help_image_file": "help_paper_pair_A0_A1.png"
       },
       {
         "q_number": 4,
         "pattern": "paper_area",
         "narrative": "area_with_rounding_5",
+        "question_text": "Определи площадь листа бумаги формата A3. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 5.",
         "input_data": {
           "format": "A3"
         },
@@ -1938,12 +2202,15 @@
           "area_raw": 1247.4,
           "rounded_area": 1245
         },
-        "answer": 1245
+        "answer": 1245,
+        "skill_source_id": "paper_q4",
+        "help_image_file": null
       },
       {
         "q_number": 5,
         "pattern": "paper_font_scaling",
         "narrative": "font_scaling",
+        "question_text": "Размер шрифта измеряется в пунктах. Один пункт равен 1/72 дюйма (0,3528 мм). Текст, напечатанный шрифтом высоты 10 пунктов на листе формата A6, требуется разместить на листе формата A3 с сохранением пропорций. Определи, какой размер шрифта (в пунктах) нужно использовать. Округли полученный результат до целого числа и запиши ответ.",
         "input_data": {
           "from_format": "A6",
           "to_format": "A3",
@@ -1953,7 +2220,9 @@
           "step_count": 3,
           "rounded_font": 28
         },
-        "answer": 28
+        "answer": 28,
+        "skill_source_id": "paper_q5",
+        "help_image_file": null
       }
     ]
   },
@@ -2007,6 +2276,7 @@
         "q_number": 1,
         "pattern": "paper_format_match",
         "narrative": "match_formats_to_rows",
+        "question_text": "Установи соответствие между форматами бумаги и номерами листов по данным таблицы. В ответ запиши последовательность четырёх цифр без пробелов.",
         "input_data": {
           "columns_order": [
             "A2",
@@ -2024,12 +2294,15 @@
           },
           "answer_sequence": "1423"
         },
-        "answer": "1423"
+        "answer": "1423",
+        "skill_source_id": "paper_q1",
+        "help_image_file": null
       },
       {
         "q_number": 2,
         "pattern": "paper_split",
         "narrative": "count_subformats",
+        "question_text": "Сколько листов формата A7 можно получить из одного листа формата A4?",
         "input_data": {
           "from_format": "A4",
           "to_format": "A7"
@@ -2038,31 +2311,43 @@
           "index_difference": 3,
           "power_value": 8
         },
-        "answer": 8
+        "answer": 8,
+        "skill_source_id": "paper_q2",
+        "help_image_file": null
       },
       {
         "q_number": 3,
         "pattern": "paper_dimensions",
-        "narrative": "find_with_rounding",
+        "narrative": "find_length",
+        "question_text": "Определи длину листа бумаги формата A3. Ответ запиши в миллиметрах, округлив до ближайшего числа, кратного 10.",
         "input_data": {
-          "format": "A6"
+          "format": "A3"
         },
         "solution_data": {
-          "format": "A6",
-          "row_number": 7,
-          "side_name": "длина",
-          "round_base": 5,
-          "original_value": 148,
-          "lower_value": 145,
-          "upper_value": 150,
-          "rounded_value": 150
+          "target_format": "A3",
+          "reference_format": "A4",
+          "reference_length_mm": 297,
+          "reference_width_mm": 210,
+          "target_length_mm": 420,
+          "target_width_mm": 297,
+          "operation": "multiply_by_2",
+          "value_used": "width",
+          "raw_result": 420.0,
+          "rounding": {
+            "mode": "nearest",
+            "multiple_of": 10
+          },
+          "answer": 420
         },
-        "answer": 150
+        "answer": 420,
+        "skill_source_id": "paper_q3",
+        "help_image_file": "help_paper_pair_A3_A4.png"
       },
       {
         "q_number": 4,
         "pattern": "paper_area",
         "narrative": "area_with_rounding_10",
+        "question_text": "Определи площадь листа бумаги формата A4. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 10.",
         "input_data": {
           "format": "A4"
         },
@@ -2070,24 +2355,29 @@
           "area_raw": 623.7,
           "rounded_area": 620
         },
-        "answer": 620
+        "answer": 620,
+        "skill_source_id": "paper_q4",
+        "help_image_file": null
       },
       {
         "q_number": 5,
         "pattern": "paper_pack_weight",
         "narrative": "pack_weight",
+        "question_text": "В пачке 400 листов бумаги формата A6. Известно, что масса одного квадратного метра бумаги равна 192 грамм. Вычисли массу пачки. Ответ запиши в граммах.",
         "input_data": {
           "format": "A6",
           "sheet_count": 400,
-          "density_g_per_m2": 125
+          "density_g_per_m2": 192
         },
         "solution_data": {
           "index_difference": 6,
           "sheet_area_factor": 64,
-          "weight_one_sheet": 1.953,
-          "total_weight": 781
+          "weight_one_sheet": 3.0,
+          "total_weight": 1200
         },
-        "answer": 781
+        "answer": 1200,
+        "skill_source_id": "paper_q5",
+        "help_image_file": null
       }
     ]
   },
@@ -2141,6 +2431,7 @@
         "q_number": 1,
         "pattern": "paper_format_match",
         "narrative": "match_formats_to_rows",
+        "question_text": "Установи соответствие между форматами бумаги и номерами листов по данным таблицы. В ответ запиши последовательность четырёх цифр без пробелов.",
         "input_data": {
           "columns_order": [
             "A7",
@@ -2158,12 +2449,15 @@
           },
           "answer_sequence": "4132"
         },
-        "answer": "4132"
+        "answer": "4132",
+        "skill_source_id": "paper_q1",
+        "help_image_file": null
       },
       {
         "q_number": 2,
         "pattern": "paper_split",
         "narrative": "count_subformats",
+        "question_text": "Сколько листов формата A4 можно получить из одного листа формата A1?",
         "input_data": {
           "from_format": "A1",
           "to_format": "A4"
@@ -2172,31 +2466,43 @@
           "index_difference": 3,
           "power_value": 8
         },
-        "answer": 8
+        "answer": 8,
+        "skill_source_id": "paper_q2",
+        "help_image_file": null
       },
       {
         "q_number": 3,
         "pattern": "paper_dimensions",
-        "narrative": "find_with_rounding",
+        "narrative": "find_width",
+        "question_text": "Определи ширину листа бумаги формата A5. Ответ запиши в миллиметрах, округлив до ближайшего числа, кратного 10.",
         "input_data": {
-          "format": "A2"
+          "format": "A5"
         },
         "solution_data": {
-          "format": "A2",
-          "row_number": 3,
-          "side_name": "длина",
-          "round_base": 10,
-          "original_value": 594,
-          "lower_value": 590,
-          "upper_value": 600,
-          "rounded_value": 590
+          "target_format": "A5",
+          "reference_format": "A4",
+          "reference_length_mm": 297,
+          "reference_width_mm": 210,
+          "target_length_mm": 210,
+          "target_width_mm": 148,
+          "operation": "divide_by_2",
+          "value_used": "length",
+          "raw_result": 148.5,
+          "rounding": {
+            "mode": "nearest",
+            "multiple_of": 10
+          },
+          "answer": 150
         },
-        "answer": 590
+        "answer": 150,
+        "skill_source_id": "paper_q3",
+        "help_image_file": "help_paper_pair_A4_A5.png"
       },
       {
         "q_number": 4,
         "pattern": "paper_area",
         "narrative": "area_with_rounding_5",
+        "question_text": "Определи площадь листа бумаги формата A7. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 5.",
         "input_data": {
           "format": "A7"
         },
@@ -2204,12 +2510,15 @@
           "area_raw": 77.7,
           "rounded_area": 80
         },
-        "answer": 80
+        "answer": 80,
+        "skill_source_id": "paper_q4",
+        "help_image_file": null
       },
       {
         "q_number": 5,
         "pattern": "paper_pack_weight",
         "narrative": "pack_weight",
+        "question_text": "В пачке 100 листов бумаги формата A2. Известно, что масса одного квадратного метра бумаги равна 250 грамм. Вычисли массу пачки. Ответ запиши в граммах.",
         "input_data": {
           "format": "A2",
           "sheet_count": 100,
@@ -2221,7 +2530,9 @@
           "weight_one_sheet": 62.5,
           "total_weight": 6250
         },
-        "answer": 6250
+        "answer": 6250,
+        "skill_source_id": "paper_q5",
+        "help_image_file": null
       }
     ]
   },
@@ -2275,6 +2586,7 @@
         "q_number": 1,
         "pattern": "paper_format_match",
         "narrative": "match_formats_to_rows",
+        "question_text": "Установи соответствие между форматами бумаги и номерами листов по данным таблицы. В ответ запиши последовательность четырёх цифр без пробелов.",
         "input_data": {
           "columns_order": [
             "A7",
@@ -2292,12 +2604,15 @@
           },
           "answer_sequence": "4231"
         },
-        "answer": "4231"
+        "answer": "4231",
+        "skill_source_id": "paper_q1",
+        "help_image_file": null
       },
       {
         "q_number": 2,
         "pattern": "paper_split",
         "narrative": "count_subformats",
+        "question_text": "Сколько листов формата A7 можно получить из одного листа формата A3?",
         "input_data": {
           "from_format": "A3",
           "to_format": "A7"
@@ -2306,27 +2621,31 @@
           "index_difference": 4,
           "power_value": 16
         },
-        "answer": 16
+        "answer": 16,
+        "skill_source_id": "paper_q2",
+        "help_image_file": null
       },
       {
         "q_number": 3,
         "pattern": "paper_dimensions",
         "narrative": "find_ratio",
+        "question_text": "Найди отношение бо́льшей стороны листа формата A3 к его меньшей стороне. Ответ округли до десятых.",
         "input_data": {
           "format": "A3"
         },
         "solution_data": {
-          "division_order": "делим бо́льшую сторону на ме́ньшую",
-          "division_expression": "420 ÷ 297",
-          "raw_ratio": 1.41,
-          "rounded_ratio": 1.4
+          "format": "A3",
+          "rounded_ratio": 0.7
         },
-        "answer": 1.4
+        "answer": 0.7,
+        "skill_source_id": "paper_q3",
+        "help_image_file": null
       },
       {
         "q_number": 4,
         "pattern": "paper_area",
         "narrative": "area_with_rounding_10",
+        "question_text": "Определи площадь листа бумаги формата A6. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 10.",
         "input_data": {
           "format": "A6"
         },
@@ -2334,12 +2653,15 @@
           "area_raw": 155.4,
           "rounded_area": 160
         },
-        "answer": 160
+        "answer": 160,
+        "skill_source_id": "paper_q4",
+        "help_image_file": null
       },
       {
         "q_number": 5,
         "pattern": "paper_font_scaling",
         "narrative": "font_scaling",
+        "question_text": "Размер шрифта измеряется в пунктах. Один пункт равен 1/72 дюйма (0,3528 мм). Текст, напечатанный шрифтом высоты 30 пунктов на листе формата A1, требуется разместить на листе формата A3 с сохранением пропорций. Определи, какой размер шрифта (в пунктах) нужно использовать. Округли полученный результат до целого числа и запиши ответ.",
         "input_data": {
           "from_format": "A1",
           "to_format": "A3",
@@ -2349,7 +2671,9 @@
           "step_count": 2,
           "rounded_font": 15
         },
-        "answer": 15
+        "answer": 15,
+        "skill_source_id": "paper_q5",
+        "help_image_file": null
       }
     ]
   },
@@ -2403,6 +2727,7 @@
         "q_number": 1,
         "pattern": "paper_format_match",
         "narrative": "match_formats_to_rows",
+        "question_text": "Установи соответствие между форматами бумаги и номерами листов по данным таблицы. В ответ запиши последовательность четырёх цифр без пробелов.",
         "input_data": {
           "columns_order": [
             "A4",
@@ -2420,12 +2745,15 @@
           },
           "answer_sequence": "2341"
         },
-        "answer": "2341"
+        "answer": "2341",
+        "skill_source_id": "paper_q1",
+        "help_image_file": null
       },
       {
         "q_number": 2,
         "pattern": "paper_split",
         "narrative": "count_subformats",
+        "question_text": "Сколько листов формата A5 можно получить из одного листа формата A3?",
         "input_data": {
           "from_format": "A3",
           "to_format": "A5"
@@ -2434,27 +2762,31 @@
           "index_difference": 2,
           "power_value": 4
         },
-        "answer": 4
+        "answer": 4,
+        "skill_source_id": "paper_q2",
+        "help_image_file": null
       },
       {
         "q_number": 3,
         "pattern": "paper_dimensions",
         "narrative": "find_ratio",
+        "question_text": "Найди отношение меньшей стороны листа формата A4 к его большей стороне. Ответ округли до десятых.",
         "input_data": {
           "format": "A4"
         },
         "solution_data": {
-          "division_order": "делим бо́льшую сторону на ме́ньшую",
-          "division_expression": "297 ÷ 210",
-          "raw_ratio": 1.41,
+          "format": "A4",
           "rounded_ratio": 1.4
         },
-        "answer": 1.4
+        "answer": 1.4,
+        "skill_source_id": "paper_q3",
+        "help_image_file": null
       },
       {
         "q_number": 4,
         "pattern": "paper_area",
         "narrative": "area_basic",
+        "question_text": "Определи площадь листа бумаги формата A5. Ответ запиши в квадратных сантиметрах.",
         "input_data": {
           "format": "A5"
         },
@@ -2463,12 +2795,15 @@
           "width_cm": 14.8,
           "area": 310.8
         },
-        "answer": 310.8
+        "answer": 310.8,
+        "skill_source_id": "paper_q4",
+        "help_image_file": null
       },
       {
         "q_number": 5,
         "pattern": "paper_font_scaling",
         "narrative": "font_scaling",
+        "question_text": "Размер шрифта измеряется в пунктах. Один пункт равен 1/72 дюйма (0,3528 мм). Текст, напечатанный шрифтом высоты 28 пунктов на листе формата A3, требуется разместить на листе формата A6 с сохранением пропорций. Определи, какой размер шрифта (в пунктах) нужно использовать. Округли полученный результат до целого числа и запиши ответ.",
         "input_data": {
           "from_format": "A3",
           "to_format": "A6",
@@ -2478,7 +2813,9 @@
           "step_count": 3,
           "rounded_font": 10
         },
-        "answer": 10
+        "answer": 10,
+        "skill_source_id": "paper_q5",
+        "help_image_file": null
       }
     ]
   },
@@ -2532,6 +2869,7 @@
         "q_number": 1,
         "pattern": "paper_format_match",
         "narrative": "match_formats_to_rows",
+        "question_text": "Установи соответствие между форматами бумаги и номерами листов по данным таблицы. В ответ запиши последовательность четырёх цифр без пробелов.",
         "input_data": {
           "columns_order": [
             "A3",
@@ -2549,12 +2887,15 @@
           },
           "answer_sequence": "4231"
         },
-        "answer": "4231"
+        "answer": "4231",
+        "skill_source_id": "paper_q1",
+        "help_image_file": null
       },
       {
         "q_number": 2,
         "pattern": "paper_split",
         "narrative": "count_subformats",
+        "question_text": "Сколько листов формата A5 можно получить из одного листа формата A2?",
         "input_data": {
           "from_format": "A2",
           "to_format": "A5"
@@ -2563,25 +2904,31 @@
           "index_difference": 3,
           "power_value": 8
         },
-        "answer": 8
+        "answer": 8,
+        "skill_source_id": "paper_q2",
+        "help_image_file": null
       },
       {
         "q_number": 3,
         "pattern": "paper_dimensions",
         "narrative": "find_diagonal_ratio",
+        "question_text": "Вычисли отношение диагонали листа бумаги формата A4 к его большей стороне. Ответ округли до десятых.",
         "input_data": {
-          "format": "A4",
-          "side_type": "большей"
+          "format": "A4"
         },
         "solution_data": {
+          "format": "A4",
           "rounded_ratio": 1.2
         },
-        "answer": 1.2
+        "answer": 1.2,
+        "skill_source_id": "paper_q3",
+        "help_image_file": null
       },
       {
         "q_number": 4,
         "pattern": "paper_area",
         "narrative": "area_with_rounding_10",
+        "question_text": "Определи площадь листа бумаги формата A3. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 10.",
         "input_data": {
           "format": "A3"
         },
@@ -2589,12 +2936,15 @@
           "area_raw": 1247.4,
           "rounded_area": 1250
         },
-        "answer": 1250
+        "answer": 1250,
+        "skill_source_id": "paper_q4",
+        "help_image_file": null
       },
       {
         "q_number": 5,
         "pattern": "paper_font_scaling",
         "narrative": "font_scaling",
+        "question_text": "Размер шрифта измеряется в пунктах. Один пункт равен 1/72 дюйма (0,3528 мм). Текст, напечатанный шрифтом высоты 10 пунктов на листе формата A5, требуется разместить на листе формата A2 с сохранением пропорций. Определи, какой размер шрифта (в пунктах) нужно использовать. Округли полученный результат до целого числа и запиши ответ.",
         "input_data": {
           "from_format": "A5",
           "to_format": "A2",
@@ -2604,7 +2954,9 @@
           "step_count": 3,
           "rounded_font": 28
         },
-        "answer": 28
+        "answer": 28,
+        "skill_source_id": "paper_q5",
+        "help_image_file": null
       }
     ]
   }
