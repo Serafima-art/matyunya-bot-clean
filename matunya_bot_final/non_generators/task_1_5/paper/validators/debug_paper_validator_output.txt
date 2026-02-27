@@ -8,7 +8,7 @@
    🔹 Q1 [match_formats_to_rows]: Ответ = 3241
    🔹 Q2 [count_subformats]: Ответ = 8
    🔹 Q3 [find_width]: Ответ = 210
-   🔹 Q4 [area_with_rounding_10]: Ответ = 1250
+   🔹 Q4 [find_area]: Ответ = 2500.0
    🔹 Q5 [pack_weight]: Ответ = 6400
 
 📂 ВАРИАНТ: paper_2026_var_02
@@ -17,7 +17,7 @@
    🔹 Q1 [match_formats_to_rows]: Ответ = 2143
    🔹 Q2 [count_subformats]: Ответ = 8
    🔹 Q3 [find_width]: Ответ = 300
-   🔹 Q4 [area_with_rounding_10]: Ответ = 80
+   🔹 Q4 [find_area]: Ответ = 310
    🔹 Q5 [font_scaling]: Ответ = 22
 
 📂 ВАРИАНТ: paper_2026_var_03
@@ -26,7 +26,7 @@
    🔹 Q1 [match_formats_to_rows]: Ответ = 1432
    🔹 Q2 [count_subformats]: Ответ = 4
    🔹 Q3 [find_length]: Ответ = 210
-   🔹 Q4 [area_with_rounding_5]: Ответ = 625
+   🔹 Q4 [find_area]: Ответ = 625
    🔹 Q5 [pack_weight]: Ответ = 800
 
 📂 ВАРИАНТ: paper_2026_var_04
@@ -35,7 +35,7 @@
    🔹 Q1 [match_formats_to_rows]: Ответ = 3142
    🔹 Q2 [count_subformats]: Ответ = 4
    🔹 Q3 [find_width]: Ответ = 841
-   🔹 Q4 [area_basic]: Ответ = 310.8
+   🔹 Q4 [find_area]: Ответ = 5000
    🔹 Q5 [font_scaling]: Ответ = 7
 
 📂 ВАРИАНТ: paper_2026_var_05
@@ -44,7 +44,7 @@
    🔹 Q1 [match_formats_to_rows]: Ответ = 3124
    🔹 Q2 [count_subformats]: Ответ = 16
    🔹 Q3 [find_ratio]: Ответ = 1.4
-   🔹 Q4 [area_with_rounding_10]: Ответ = 620
+   🔹 Q4 [find_area]: Ответ = 1250
    🔹 Q5 [pack_weight]: Ответ = 6250
 
 📂 ВАРИАНТ: paper_2026_var_06
@@ -53,7 +53,7 @@
    🔹 Q1 [match_formats_to_rows]: Ответ = 4132
    🔹 Q2 [count_subformats]: Ответ = 16
    🔹 Q3 [find_diagonal_ratio]: Ответ = 1.7
-   🔹 Q4 [area_with_rounding_5]: Ответ = 310
+   🔹 Q4 [find_area]: Ответ = 155
    🔹 Q5 [font_scaling]: Ответ = 40
 
 📂 ВАРИАНТ: paper_2026_var_07
@@ -62,7 +62,7 @@
    🔹 Q1 [match_formats_to_rows]: Ответ = 1324
    🔹 Q2 [count_subformats]: Ответ = 8
    🔹 Q3 [find_diagonal_ratio]: Ответ = 1.2
-   🔹 Q4 [area_with_rounding_10]: Ответ = 160
+   🔹 Q4 [find_area]: Ответ = 10000.0
    🔹 Q5 [pack_weight]: Ответ = 2000
 
 📂 ВАРИАНТ: paper_2026_var_08
@@ -71,7 +71,7 @@
    🔹 Q1 [match_formats_to_rows]: Ответ = 2413
    🔹 Q2 [count_subformats]: Ответ = 8
    🔹 Q3 [find_length]: Ответ = 210
-   🔹 Q4 [area_with_rounding_5]: Ответ = 625
+   🔹 Q4 [find_area]: Ответ = 80
    🔹 Q5 [font_scaling]: Ответ = 17
 
 📂 ВАРИАНТ: paper_2026_var_09
@@ -80,7 +80,7 @@
    🔹 Q1 [match_formats_to_rows]: Ответ = 1342
    🔹 Q2 [count_subformats]: Ответ = 16
    🔹 Q3 [find_width]: Ответ = 150
-   🔹 Q4 [area_with_rounding_10]: Ответ = 160
+   🔹 Q4 [find_area]: Ответ = 156.25
    🔹 Q5 [pack_weight]: Ответ = 6250
 
 📂 ВАРИАНТ: paper_2026_var_10
@@ -89,7 +89,7 @@
    🔹 Q1 [match_formats_to_rows]: Ответ = 3421
    🔹 Q2 [count_subformats]: Ответ = 32
    🔹 Q3 [find_length]: Ответ = 595
-   🔹 Q4 [area_with_rounding_10]: Ответ = 620
+   🔹 Q4 [find_area]: Ответ = 625.0
    🔹 Q5 [font_scaling]: Ответ = 17
 
 📂 ВАРИАНТ: paper_2026_var_11
@@ -98,7 +98,7 @@
    🔹 Q1 [match_formats_to_rows]: Ответ = 2413
    🔹 Q2 [count_subformats]: Ответ = 8
    🔹 Q3 [find_ratio]: Ответ = 1.4
-   🔹 Q4 [area_with_rounding_5]: Ответ = 310
+   🔹 Q4 [find_area]: Ответ = 155
    🔹 Q5 [pack_weight]: Ответ = 1000
 
 📂 ВАРИАНТ: paper_2026_var_12
@@ -107,7 +107,7 @@
    🔹 Q1 [match_formats_to_rows]: Ответ = 2431
    🔹 Q2 [count_subformats]: Ответ = 16
    🔹 Q3 [find_ratio]: Ответ = 1.4
-   🔹 Q4 [area_with_rounding_10]: Ответ = 160
+   🔹 Q4 [find_area]: Ответ = 310
    🔹 Q5 [font_scaling]: Ответ = 28
 
 📂 ВАРИАНТ: paper_2026_var_13
@@ -116,7 +116,7 @@
    🔹 Q1 [match_formats_to_rows]: Ответ = 4123
    🔹 Q2 [count_subformats]: Ответ = 4
    🔹 Q3 [find_diagonal_ratio]: Ответ = 1.7
-   🔹 Q4 [area_basic]: Ответ = 155.4
+   🔹 Q4 [find_area]: Ответ = 312.5
    🔹 Q5 [pack_weight]: Ответ = 2400
 
 📂 ВАРИАНТ: paper_2026_var_14
@@ -125,7 +125,7 @@
    🔹 Q1 [match_formats_to_rows]: Ответ = 2314
    🔹 Q2 [count_subformats]: Ответ = 32
    🔹 Q3 [find_length]: Ответ = 420
-   🔹 Q4 [area_with_rounding_10]: Ответ = 620
+   🔹 Q4 [find_area]: Ответ = 625.0
    🔹 Q5 [font_scaling]: Ответ = 6
 
 📂 ВАРИАНТ: paper_2026_var_15
@@ -134,7 +134,7 @@
    🔹 Q1 [match_formats_to_rows]: Ответ = 4123
    🔹 Q2 [count_subformats]: Ответ = 8
    🔹 Q3 [find_width]: Ответ = 595
-   🔹 Q4 [area_with_rounding_5]: Ответ = 1245
+   🔹 Q4 [find_area]: Ответ = 1250
    🔹 Q5 [font_scaling]: Ответ = 28
 
 📂 ВАРИАНТ: paper_2026_var_16
@@ -143,7 +143,7 @@
    🔹 Q1 [match_formats_to_rows]: Ответ = 1423
    🔹 Q2 [count_subformats]: Ответ = 8
    🔹 Q3 [find_length]: Ответ = 420
-   🔹 Q4 [area_with_rounding_10]: Ответ = 620
+   🔹 Q4 [find_area]: Ответ = 625
    🔹 Q5 [pack_weight]: Ответ = 1200
 
 📂 ВАРИАНТ: paper_2026_var_17
@@ -152,7 +152,7 @@
    🔹 Q1 [match_formats_to_rows]: Ответ = 4132
    🔹 Q2 [count_subformats]: Ответ = 8
    🔹 Q3 [find_width]: Ответ = 150
-   🔹 Q4 [area_with_rounding_5]: Ответ = 80
+   🔹 Q4 [find_area]: Ответ = 78.125
    🔹 Q5 [pack_weight]: Ответ = 6250
 
 📂 ВАРИАНТ: paper_2026_var_18
@@ -161,7 +161,7 @@
    🔹 Q1 [match_formats_to_rows]: Ответ = 4231
    🔹 Q2 [count_subformats]: Ответ = 16
    🔹 Q3 [find_ratio]: Ответ = 0.7
-   🔹 Q4 [area_with_rounding_10]: Ответ = 160
+   🔹 Q4 [find_area]: Ответ = 2500.0
    🔹 Q5 [font_scaling]: Ответ = 15
 
 📂 ВАРИАНТ: paper_2026_var_19
@@ -170,7 +170,7 @@
    🔹 Q1 [match_formats_to_rows]: Ответ = 2341
    🔹 Q2 [count_subformats]: Ответ = 4
    🔹 Q3 [find_ratio]: Ответ = 1.4
-   🔹 Q4 [area_basic]: Ответ = 310.8
+   🔹 Q4 [find_area]: Ответ = 310
    🔹 Q5 [font_scaling]: Ответ = 10
 
 📂 ВАРИАНТ: paper_2026_var_20
@@ -179,7 +179,7 @@
    🔹 Q1 [match_formats_to_rows]: Ответ = 4231
    🔹 Q2 [count_subformats]: Ответ = 8
    🔹 Q3 [find_diagonal_ratio]: Ответ = 1.2
-   🔹 Q4 [area_with_rounding_10]: Ответ = 1250
+   🔹 Q4 [find_area]: Ответ = 80
    🔹 Q5 [font_scaling]: Ответ = 28
 
 ============================================================

@@ -61,7 +61,7 @@ def run_debug() -> None:
                     "variant": variant
                 })
 
-                humanized_text = humanize(solution_core)
+                humanized_text = humanize(solution_core["solution_core"])
 
             except Exception as e:
                 humanized_text = f"❌ ОШИБКА: {e}"

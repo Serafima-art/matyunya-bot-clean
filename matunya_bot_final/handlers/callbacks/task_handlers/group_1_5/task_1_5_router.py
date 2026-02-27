@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from aiogram import Router, F, types, Bot
 from aiogram.fsm.context import FSMContext
+import random
 from sqlalchemy.ext.asyncio import async_sessionmaker
 from pathlib import Path
 import logging
@@ -363,6 +364,7 @@ async def dispatch_focused_screen(callback: types.CallbackQuery, callback_data: 
 
     # Чистим помощь/диалоги
     await cleanup_messages_by_category(bot, state, callback.message.chat.id, "help_panels")
+    await cleanup_messages_by_category(bot, state, callback.message.chat.id, "solution_result")
     await cleanup_messages_by_category(bot, state, callback.message.chat.id, "dialog_messages")
 
     # Отрисовка фокуса
@@ -375,7 +377,10 @@ async def dispatch_focused_screen(callback: types.CallbackQuery, callback_data: 
         question_num=question_num,
     )
 
-    await state.update_data(current_task_index=question_num - 1)
+    await state.update_data(
+        current_task_index=question_num - 1,
+        current_question_number=question_num,
+    )
     await state.set_state(TaskState.waiting_for_answer)
 
 
@@ -514,11 +519,7 @@ async def _load_task_1_5_data(subtype_key: str, state: FSMContext) -> dict | Non
 
     variants_sorted = sorted(variants, key=_sort_key_paper_id)
 
-    # Индекс "по порядку" (в рамках state; циклически)
-    user_data = await state.get_data()
-    idx = int(user_data.get("paper_variant_index", 0))
-    chosen = variants_sorted[idx % len(variants_sorted)]
-    await state.update_data(paper_variant_index=(idx + 1) % len(variants_sorted))
+    chosen = random.choice(variants_sorted)
 
     # Превращаем JSON-структуру в task_1_5_data формата роутера/handler'ов
     # JSON: questions -> tasks

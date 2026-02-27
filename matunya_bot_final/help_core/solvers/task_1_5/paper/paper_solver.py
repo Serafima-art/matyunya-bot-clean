@@ -36,6 +36,27 @@ def solve_paper(task_context: Dict[str, Any]) -> Dict[str, Any]:
     base_variables: Dict[str, Any] = (task.get("solution_data") or {}).copy()
     variables: Dict[str, Any] = base_variables.copy()
 
+    # -----------------------------------------------------
+    # Общие утилиты для "число прописью"
+    # -----------------------------------------------------
+
+    NUM_WORDS = {
+        0: "ноль",
+        1: "один",
+        2: "два",
+        3: "три",
+        4: "четыре",
+        5: "пять",
+        6: "шесть",
+        7: "семь",
+        8: "восемь",
+        9: "девять",
+        10: "десять",
+    }
+
+    def _index_word(n: int) -> str:
+        return NUM_WORDS.get(n, str(n))
+
     # =========================================================
     # 🔵 Q1 — paper_format_match / match_formats_to_rows
     # =========================================================
@@ -79,6 +100,7 @@ def solve_paper(task_context: Dict[str, Any]) -> Dict[str, Any]:
         to_index = int(to_format[1:])
 
         index_difference = int(base_variables["index_difference"])
+        variables["index_word"] = _index_word(index_difference)
 
         # цепочка переходов: A1 → A2 → A3 → A4
         transition_chain = " → ".join(f"A{i}" for i in range(from_index, to_index + 1))
@@ -293,90 +315,164 @@ def solve_paper(task_context: Dict[str, Any]) -> Dict[str, Any]:
             })
 
     # =========================================================
-    # 🔵 ДОСТРОЙКА FACTS ДЛЯ Q4 (paper_area)
+    # 🔵 ДОСТРОЙКА FACTS ДЛЯ Q4 (paper_area → find_area)
     # =========================================================
 
     if pattern == "paper_area":
 
+        if narrative != "find_area":
+            raise ValueError("Q4 поддерживает только narrative = find_area")
+
         fmt = task["input_data"]["format"]
 
-        table_context = variant["table_context"]
-        formats_data = table_context["formats_data"]
+        # размеры из контекста варианта (fallback)
+        formats_data = variant["table_context"]["formats_data"]
+        length_mm_fallback = formats_data[fmt]["length_mm"]
+        width_mm_fallback = formats_data[fmt]["width_mm"]
+        length_cm_fallback = round(length_mm_fallback / 10, 1)
+        width_cm_fallback = round(width_mm_fallback / 10, 1)
 
-        length_mm = formats_data[fmt]["length_mm"]
-        width_mm = formats_data[fmt]["width_mm"]
+        # -----------------------------------------------------
+        # Базовые поля из валидатора (solution_data)
+        # -----------------------------------------------------
 
-        length_cm = round(length_mm / 10, 1)
-        width_cm = round(width_mm / 10, 1)
+        target_format = base_variables.get("target_format") or fmt
+        index_difference = int(base_variables["index_difference"])
 
-        # ---------------------------
-        # area_basic
-        # ---------------------------
-        if narrative == "area_basic":
+        # -----------------------------------------------------
+        # Склонение "раз"
+        # -----------------------------------------------------
 
-            area_value = base_variables["area"]
+        def _decline_raz(n: int) -> str:
+            if 11 <= n % 100 <= 14:
+                return "раз"
+            if n % 10 == 1:
+                return "раз"
+            if 2 <= n % 10 <= 4:
+                return "раза"
+            return "раз"
 
+        def _decline_perehod(n: int) -> str:
+            if 11 <= n % 100 <= 14:
+                return "переходов"
+            if n % 10 == 1:
+                return "переход"
+            if 2 <= n % 10 <= 4:
+                return "перехода"
+            return "переходов"
+
+        raz_word = _decline_raz(index_difference)
+        index_word = _index_word(index_difference)
+
+        area_start = base_variables["area_start"]
+        division_steps = base_variables["division_steps"]
+        area_raw = base_variables["area_raw"]
+
+        rounding = base_variables["rounding"]
+        iso_check = base_variables["iso_check"]
+
+        # -----------------------------------------------------
+        # Цепочка форматов A0 → ... → A_k
+        # -----------------------------------------------------
+
+        format_chain = " → ".join(f"A{i}" for i in range(index_difference + 1))
+
+        # -----------------------------------------------------
+        # Форматирование чисел под эталон
+        # 10000 -> "10 000", 312.5 -> "312,5"
+        # -----------------------------------------------------
+
+        def _fmt_num(x: float) -> str:
+            if x is None:
+                return ""
+
+            sign = "-" if x < 0 else ""
+            x = abs(x)
+
+            integer_part = int(x)
+            decimal_part = x - integer_part
+
+            # форматируем целую часть с пробелами
+            integer_str = f"{integer_part:,}".replace(",", " ")
+
+            # если дробной части нет
+            if abs(decimal_part) < 1e-9:
+                return f"{sign}{integer_str}"
+
+            # получаем дробную часть без лишних нулей
+            decimal_str = f"{decimal_part:.10f}".rstrip("0").rstrip(".")[2:]
+
+            return f"{sign}{integer_str},{decimal_str}"
+
+        # -----------------------------------------------------
+        # Линии деления (как в эталоне)
+        # -----------------------------------------------------
+
+        division_lines: list[str] = []
+        current = area_start
+        for value in division_steps:
+            division_lines.append(f"{_fmt_num(float(current))} : 2 = {_fmt_num(float(value))}")
+            current = value
+
+        division_lines_str = "\n".join(division_lines)
+
+        # -----------------------------------------------------
+        # ISO поля (берём из iso_check, но страхуемся fallback'ом)
+        # -----------------------------------------------------
+
+        iso_length_mm = iso_check.get("length_mm", length_mm_fallback)
+        iso_width_mm = iso_check.get("width_mm", width_mm_fallback)
+        iso_length_cm = iso_check.get("length_cm", length_cm_fallback)
+        iso_width_cm = iso_check.get("width_cm", width_cm_fallback)
+        iso_area_raw = iso_check["area_iso_raw"]
+
+        # -----------------------------------------------------
+        # Достраиваем variables (и структурные, и плоские)
+        # -----------------------------------------------------
+
+        variables.update({
+            # required_fields профиля (структурные)
+            "target_format": target_format,
+            "index_difference": index_difference,
+            "area_start": area_start,
+            "division_steps": division_steps,
+            "area_raw": area_raw,
+            "iso_check": iso_check,
+            "rounding": rounding,
+
+            # для STEP_TEMPLATES (плоские)
+            "format_chain": format_chain,
+            "division_lines": division_lines_str,
+
+            "length_mm": iso_length_mm,
+            "width_mm": iso_width_mm,
+            "length_cm": _fmt_num(float(iso_length_cm)),
+            "width_cm": _fmt_num(float(iso_width_cm)),
+            "area_iso_raw": _fmt_num(float(iso_area_raw)),
+            "raz_word": raz_word,
+            "index_word": index_word,
+            "perehod_word": _decline_perehod(index_difference),
+
+            "rounding_required": rounding["required"],
+            "area_raw_str": _fmt_num(float(area_raw)),  # удобно, если шаблоны хотят строку
+        })
+
+        # -----------------------------------------------------
+        # Округление / допустимые ответы
+        # -----------------------------------------------------
+
+        if rounding["required"]:
             variables.update({
-                "format": fmt,
-                "length_mm": length_mm,
-                "width_mm": width_mm,
-                "length_cm": length_cm,
-                "width_cm": width_cm,
-                "area_raw": area_value,
-                "area_value": area_value,
+                "multiple_of": rounding["multiple_of"],
+                "lower_bound": rounding["lower_bound"],
+                "upper_bound": rounding["upper_bound"],
+                "rounded_area": rounding["rounded_area"],
             })
-
-        # ---------------------------
-        # area_with_rounding_10
-        # ---------------------------
-        if narrative == "area_with_rounding_10":
-
-            area_raw = base_variables["area_raw"]
-            rounded_area = base_variables["rounded_area"]
-
-            round_base = 10
-
-            lower_value = (int(area_raw) // round_base) * round_base
-            upper_value = lower_value + round_base
-
-            variables.update({
-                "format": fmt,
-                "length_mm": length_mm,
-                "width_mm": width_mm,
-                "length_cm": length_cm,
-                "width_cm": width_cm,
-                "area_raw": area_raw,
-                "rounded_area": rounded_area,
-                "round_base": round_base,
-                "lower_value": lower_value,
-                "upper_value": upper_value,
-            })
-
-        # ---------------------------
-        # area_with_rounding_5
-        # ---------------------------
-        if narrative == "area_with_rounding_5":
-
-            area_raw = base_variables["area_raw"]
-            rounded_area = base_variables["rounded_area"]
-
-            round_base = 5
-
-            lower_value = (int(area_raw) // round_base) * round_base
-            upper_value = lower_value + round_base
-
-            variables.update({
-                "format": fmt,
-                "length_mm": length_mm,
-                "width_mm": width_mm,
-                "length_cm": length_cm,
-                "width_cm": width_cm,
-                "area_raw": area_raw,
-                "rounded_area": rounded_area,
-                "round_base": round_base,
-                "lower_value": lower_value,
-                "upper_value": upper_value,
-            })
+        else:
+            acceptable = base_variables.get("acceptable_answers")
+            if acceptable:
+                variables["acceptable_answers"] = acceptable
+                variables["acceptable_answers_str"] = ", ".join(_fmt_num(float(x)) for x in acceptable)
 
     # =========================================================
     # 🔵 Q5 — paper_pack_weight
@@ -404,6 +500,7 @@ def solve_paper(task_context: Dict[str, Any]) -> Dict[str, Any]:
             "from_index": 0,
             "to_index": idx,
             "index_difference": idx,
+            "index_word": _index_word(idx),
 
             "sup_power": sup_power,
 

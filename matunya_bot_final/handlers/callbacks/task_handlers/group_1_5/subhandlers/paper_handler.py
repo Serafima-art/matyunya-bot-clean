@@ -118,7 +118,7 @@ async def send_focused_task_block_paper(
     # Q1 → СНАЧАЛА ТАБЛИЦА, ПОТОМ ТЕКСТ
     # ✅ Таблица нужна для Q1, Q3, Q4, для Q2 её нет
     # =====================================================
-    if question_num in (1, 3, 4):
+    if question_num == 1:
         table_context = task_1_5_data.get("table_context")
         if table_context:
             html_table = build_paper_table(table_context)

@@ -115,13 +115,27 @@ async def handle_ask_question(callback: CallbackQuery, callback_data: TaskCallba
     else:
         dialog_context = "generic"
 
+    current_question_number = data.get("current_question_number")
+    if dialog_context == "task_1_5" and not isinstance(current_question_number, int):
+        current_task_index = data.get("current_task_index")
+        if isinstance(current_task_index, int):
+            current_question_number = current_task_index + 1
+        elif isinstance(task_type, int):
+            current_question_number = task_type
+
+    update_payload = {
+        "dialog_context": dialog_context,
+        "gpt_dialog_history": [],
+        "gpt_system_prompt": None,
+        "current_subtype": subtype,
+    }
+    if dialog_context == "task_1_5" and isinstance(current_question_number, int):
+        update_payload["current_question_number"] = current_question_number
+    if dialog_context == "task_1_5":
+        update_payload["dialog_history"] = []
+
     # Сохраняем контекст и активируем диалоговое состояние
-    await state.update_data(
-        dialog_context=dialog_context,
-        gpt_dialog_history=[],
-        gpt_system_prompt=None,
-        current_subtype=subtype,
-    )
+    await state.update_data(**update_payload)
     await state.set_state(GPState.in_dialog)
 
     # Подбираем приветственную фразу для начала диалога
@@ -269,7 +283,10 @@ async def handle_gpt_dialog_message(message: Message, state: FSMContext, bot: Bo
         return
 
     # 2) История
-    history = _ensure_history(_pick_first(data, _HISTORY_KEYS))
+    if context == "task_1_5":
+        history = _ensure_history(data.get("gpt_dialog_history"))
+    else:
+        history = _ensure_history(_pick_first(data, _HISTORY_KEYS))
 
     # 3) Хендлер контекста
     handler = DIALOG_CONTEXT_HANDLERS.get(context)

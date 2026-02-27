@@ -116,16 +116,36 @@
       {
         "q_number": 4,
         "pattern": "paper_area",
-        "narrative": "area_with_rounding_10",
-        "question_text": "Определи площадь листа бумаги формата A3. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего числа, кратного 10.",
+        "narrative": "find_area",
+        "question_text": "Определи площадь листа бумаги формата A2. Ответ запиши в квадратных сантиметрах.",
         "input_data": {
-          "format": "A3"
+          "format": "A2"
         },
         "solution_data": {
-          "area_raw": 1247.4,
-          "rounded_area": 1250
+          "target_format": "A2",
+          "index_difference": 2,
+          "area_start": 10000,
+          "division_steps": [
+            5000.0,
+            2500.0
+          ],
+          "area_raw": 2500.0,
+          "iso_check": {
+            "length_mm": 594,
+            "width_mm": 420,
+            "length_cm": 59.4,
+            "width_cm": 42.0,
+            "area_iso_raw": 2494.8
+          },
+          "rounding": {
+            "required": false
+          },
+          "acceptable_answers": [
+            2500.0,
+            2494.8
+          ]
         },
-        "answer": 1250,
+        "answer": 2500.0,
         "skill_source_id": "paper_q4",
         "help_image_file": null
       },
@@ -271,16 +291,40 @@
       {
         "q_number": 4,
         "pattern": "paper_area",
-        "narrative": "area_with_rounding_10",
-        "question_text": "Определи площадь листа бумаги формата A7. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего числа, кратного 10.",
+        "narrative": "find_area",
+        "question_text": "Определи площадь листа бумаги формата A5. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего числа, кратного 10.",
         "input_data": {
-          "format": "A7"
+          "format": "A5"
         },
         "solution_data": {
-          "area_raw": 77.7,
-          "rounded_area": 80
+          "target_format": "A5",
+          "index_difference": 5,
+          "area_start": 10000,
+          "division_steps": [
+            5000.0,
+            2500.0,
+            1250.0,
+            625.0,
+            312.5
+          ],
+          "area_raw": 312.5,
+          "iso_check": {
+            "length_mm": 210,
+            "width_mm": 148,
+            "length_cm": 21.0,
+            "width_cm": 14.8,
+            "area_iso_raw": 310.8
+          },
+          "rounding": {
+            "required": true,
+            "multiple_of": 10,
+            "lower_bound": 310,
+            "upper_bound": 320,
+            "rounded_area": 310
+          },
+          "acceptable_answers": null
         },
-        "answer": 80,
+        "answer": 310,
         "skill_source_id": "paper_q4",
         "help_image_file": null
       },
@@ -421,14 +465,37 @@
       {
         "q_number": 4,
         "pattern": "paper_area",
-        "narrative": "area_with_rounding_5",
+        "narrative": "find_area",
         "question_text": "Определи площадь листа бумаги формата A4. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего числа, кратного 5.",
         "input_data": {
           "format": "A4"
         },
         "solution_data": {
-          "area_raw": 623.7,
-          "rounded_area": 625
+          "target_format": "A4",
+          "index_difference": 4,
+          "area_start": 10000,
+          "division_steps": [
+            5000.0,
+            2500.0,
+            1250.0,
+            625.0
+          ],
+          "area_raw": 625.0,
+          "iso_check": {
+            "length_mm": 297,
+            "width_mm": 210,
+            "length_cm": 29.7,
+            "width_cm": 21.0,
+            "area_iso_raw": 623.7
+          },
+          "rounding": {
+            "required": true,
+            "multiple_of": 5,
+            "lower_bound": 625,
+            "upper_bound": 630,
+            "rounded_area": 625
+          },
+          "acceptable_answers": null
         },
         "answer": 625,
         "skill_source_id": "paper_q4",
@@ -573,17 +640,36 @@
       {
         "q_number": 4,
         "pattern": "paper_area",
-        "narrative": "area_basic",
-        "question_text": "Определи площадь листа бумаги формата A5. Ответ запиши в квадратных сантиметрах.",
+        "narrative": "find_area",
+        "question_text": "Определи площадь листа бумаги формата A1. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего числа, кратного 10.",
         "input_data": {
-          "format": "A5"
+          "format": "A1"
         },
         "solution_data": {
-          "length_cm": 21.0,
-          "width_cm": 14.8,
-          "area": 310.8
+          "target_format": "A1",
+          "index_difference": 1,
+          "area_start": 10000,
+          "division_steps": [
+            5000.0
+          ],
+          "area_raw": 5000.0,
+          "iso_check": {
+            "length_mm": 841,
+            "width_mm": 594,
+            "length_cm": 84.1,
+            "width_cm": 59.4,
+            "area_iso_raw": 4995.54
+          },
+          "rounding": {
+            "required": true,
+            "multiple_of": 10,
+            "lower_bound": 5000,
+            "upper_bound": 5010,
+            "rounded_area": 5000
+          },
+          "acceptable_answers": null
         },
-        "answer": 310.8,
+        "answer": 5000,
         "skill_source_id": "paper_q4",
         "help_image_file": null
       },
@@ -715,16 +801,38 @@
       {
         "q_number": 4,
         "pattern": "paper_area",
-        "narrative": "area_with_rounding_10",
-        "question_text": "Определи площадь листа бумаги формата A4. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 10.",
+        "narrative": "find_area",
+        "question_text": "Определи площадь листа бумаги формата A3. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 10.",
         "input_data": {
-          "format": "A4"
+          "format": "A3"
         },
         "solution_data": {
-          "area_raw": 623.7,
-          "rounded_area": 620
+          "target_format": "A3",
+          "index_difference": 3,
+          "area_start": 10000,
+          "division_steps": [
+            5000.0,
+            2500.0,
+            1250.0
+          ],
+          "area_raw": 1250.0,
+          "iso_check": {
+            "length_mm": 420,
+            "width_mm": 297,
+            "length_cm": 42.0,
+            "width_cm": 29.7,
+            "area_iso_raw": 1247.4
+          },
+          "rounding": {
+            "required": true,
+            "multiple_of": 10,
+            "lower_bound": 1250,
+            "upper_bound": 1260,
+            "rounded_area": 1250
+          },
+          "acceptable_answers": null
         },
-        "answer": 620,
+        "answer": 1250,
         "skill_source_id": "paper_q4",
         "help_image_file": null
       },
@@ -858,16 +966,41 @@
       {
         "q_number": 4,
         "pattern": "paper_area",
-        "narrative": "area_with_rounding_5",
-        "question_text": "Определи площадь листа бумаги формата A5. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 5.",
+        "narrative": "find_area",
+        "question_text": "Определи площадь листа бумаги формата A6. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 5.",
         "input_data": {
-          "format": "A5"
+          "format": "A6"
         },
         "solution_data": {
-          "area_raw": 310.8,
-          "rounded_area": 310
+          "target_format": "A6",
+          "index_difference": 6,
+          "area_start": 10000,
+          "division_steps": [
+            5000.0,
+            2500.0,
+            1250.0,
+            625.0,
+            312.5,
+            156.25
+          ],
+          "area_raw": 156.25,
+          "iso_check": {
+            "length_mm": 148,
+            "width_mm": 105,
+            "length_cm": 14.8,
+            "width_cm": 10.5,
+            "area_iso_raw": 155.4
+          },
+          "rounding": {
+            "required": true,
+            "multiple_of": 5,
+            "lower_bound": 155,
+            "upper_bound": 160,
+            "rounded_area": 155
+          },
+          "acceptable_answers": null
         },
-        "answer": 310,
+        "answer": 155,
         "skill_source_id": "paper_q4",
         "help_image_file": null
       },
@@ -999,16 +1132,38 @@
       {
         "q_number": 4,
         "pattern": "paper_area",
-        "narrative": "area_with_rounding_10",
-        "question_text": "Определи площадь листа бумаги формата A6. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 10.",
+        "narrative": "find_area",
+        "question_text": "Определи площадь листа бумаги формата A4. Ответ запиши в квадратных сантиметрах.",
         "input_data": {
-          "format": "A6"
+          "format": "A4"
         },
         "solution_data": {
-          "area_raw": 155.4,
-          "rounded_area": 160
+          "target_format": "A4",
+          "index_difference": 4,
+          "area_start": 10000,
+          "division_steps": [
+            5000.0,
+            2500.0,
+            1250.0,
+            625.0
+          ],
+          "area_raw": 625.0,
+          "iso_check": {
+            "length_mm": 297,
+            "width_mm": 210,
+            "length_cm": 29.7,
+            "width_cm": 21.0,
+            "area_iso_raw": 623.7
+          },
+          "rounding": {
+            "required": false
+          },
+          "acceptable_answers": [
+            625.0,
+            623.7
+          ]
         },
-        "answer": 160,
+        "answer": 625.0,
         "skill_source_id": "paper_q4",
         "help_image_file": null
       },
@@ -1151,16 +1306,42 @@
       {
         "q_number": 4,
         "pattern": "paper_area",
-        "narrative": "area_with_rounding_5",
-        "question_text": "Определи площадь листа бумаги формата A4. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 5.",
+        "narrative": "find_area",
+        "question_text": "Определи площадь листа бумаги формата A7. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 10.",
         "input_data": {
-          "format": "A4"
+          "format": "A7"
         },
         "solution_data": {
-          "area_raw": 623.7,
-          "rounded_area": 625
+          "target_format": "A7",
+          "index_difference": 7,
+          "area_start": 10000,
+          "division_steps": [
+            5000.0,
+            2500.0,
+            1250.0,
+            625.0,
+            312.5,
+            156.25,
+            78.125
+          ],
+          "area_raw": 78.125,
+          "iso_check": {
+            "length_mm": 105,
+            "width_mm": 74,
+            "length_cm": 10.5,
+            "width_cm": 7.4,
+            "area_iso_raw": 77.7
+          },
+          "rounding": {
+            "required": true,
+            "multiple_of": 10,
+            "lower_bound": 70,
+            "upper_bound": 80,
+            "rounded_area": 80
+          },
+          "acceptable_answers": null
         },
-        "answer": 625,
+        "answer": 80,
         "skill_source_id": "paper_q4",
         "help_image_file": null
       },
@@ -1304,16 +1485,40 @@
       {
         "q_number": 4,
         "pattern": "paper_area",
-        "narrative": "area_with_rounding_10",
-        "question_text": "Определи площадь листа бумаги формата A6. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 10.",
+        "narrative": "find_area",
+        "question_text": "Определи площадь листа бумаги формата A6. Ответ запиши в квадратных сантиметрах.",
         "input_data": {
           "format": "A6"
         },
         "solution_data": {
-          "area_raw": 155.4,
-          "rounded_area": 160
+          "target_format": "A6",
+          "index_difference": 6,
+          "area_start": 10000,
+          "division_steps": [
+            5000.0,
+            2500.0,
+            1250.0,
+            625.0,
+            312.5,
+            156.25
+          ],
+          "area_raw": 156.25,
+          "iso_check": {
+            "length_mm": 148,
+            "width_mm": 105,
+            "length_cm": 14.8,
+            "width_cm": 10.5,
+            "area_iso_raw": 155.4
+          },
+          "rounding": {
+            "required": false
+          },
+          "acceptable_answers": [
+            156.25,
+            155.4
+          ]
         },
-        "answer": 160,
+        "answer": 156.25,
         "skill_source_id": "paper_q4",
         "help_image_file": null
       },
@@ -1459,16 +1664,38 @@
       {
         "q_number": 4,
         "pattern": "paper_area",
-        "narrative": "area_with_rounding_10",
-        "question_text": "Определи площадь листа бумаги формата A4. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 10.",
+        "narrative": "find_area",
+        "question_text": "Определи площадь листа бумаги формата A4. Ответ запиши в квадратных сантиметрах.",
         "input_data": {
           "format": "A4"
         },
         "solution_data": {
-          "area_raw": 623.7,
-          "rounded_area": 620
+          "target_format": "A4",
+          "index_difference": 4,
+          "area_start": 10000,
+          "division_steps": [
+            5000.0,
+            2500.0,
+            1250.0,
+            625.0
+          ],
+          "area_raw": 625.0,
+          "iso_check": {
+            "length_mm": 297,
+            "width_mm": 210,
+            "length_cm": 29.7,
+            "width_cm": 21.0,
+            "area_iso_raw": 623.7
+          },
+          "rounding": {
+            "required": false
+          },
+          "acceptable_answers": [
+            625.0,
+            623.7
+          ]
         },
-        "answer": 620,
+        "answer": 625.0,
         "skill_source_id": "paper_q4",
         "help_image_file": null
       },
@@ -1600,16 +1827,41 @@
       {
         "q_number": 4,
         "pattern": "paper_area",
-        "narrative": "area_with_rounding_5",
-        "question_text": "Определи площадь листа бумаги формата A5. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 5.",
+        "narrative": "find_area",
+        "question_text": "Определи площадь листа бумаги формата A6. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 5.",
         "input_data": {
-          "format": "A5"
+          "format": "A6"
         },
         "solution_data": {
-          "area_raw": 310.8,
-          "rounded_area": 310
+          "target_format": "A6",
+          "index_difference": 6,
+          "area_start": 10000,
+          "division_steps": [
+            5000.0,
+            2500.0,
+            1250.0,
+            625.0,
+            312.5,
+            156.25
+          ],
+          "area_raw": 156.25,
+          "iso_check": {
+            "length_mm": 148,
+            "width_mm": 105,
+            "length_cm": 14.8,
+            "width_cm": 10.5,
+            "area_iso_raw": 155.4
+          },
+          "rounding": {
+            "required": true,
+            "multiple_of": 5,
+            "lower_bound": 155,
+            "upper_bound": 160,
+            "rounded_area": 155
+          },
+          "acceptable_answers": null
         },
-        "answer": 310,
+        "answer": 155,
         "skill_source_id": "paper_q4",
         "help_image_file": null
       },
@@ -1743,16 +1995,40 @@
       {
         "q_number": 4,
         "pattern": "paper_area",
-        "narrative": "area_with_rounding_10",
-        "question_text": "Определи площадь листа бумаги формата A6. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 10.",
+        "narrative": "find_area",
+        "question_text": "Определи площадь листа бумаги формата A5. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 10.",
         "input_data": {
-          "format": "A6"
+          "format": "A5"
         },
         "solution_data": {
-          "area_raw": 155.4,
-          "rounded_area": 160
+          "target_format": "A5",
+          "index_difference": 5,
+          "area_start": 10000,
+          "division_steps": [
+            5000.0,
+            2500.0,
+            1250.0,
+            625.0,
+            312.5
+          ],
+          "area_raw": 312.5,
+          "iso_check": {
+            "length_mm": 210,
+            "width_mm": 148,
+            "length_cm": 21.0,
+            "width_cm": 14.8,
+            "area_iso_raw": 310.8
+          },
+          "rounding": {
+            "required": true,
+            "multiple_of": 10,
+            "lower_bound": 310,
+            "upper_bound": 320,
+            "rounded_area": 310
+          },
+          "acceptable_answers": null
         },
-        "answer": 160,
+        "answer": 310,
         "skill_source_id": "paper_q4",
         "help_image_file": null
       },
@@ -1884,17 +2160,39 @@
       {
         "q_number": 4,
         "pattern": "paper_area",
-        "narrative": "area_basic",
-        "question_text": "Определи площадь листа бумаги формата A6. Ответ запиши в квадратных сантиметрах.",
+        "narrative": "find_area",
+        "question_text": "Определи площадь листа бумаги формата A5. Ответ запиши в квадратных сантиметрах.",
         "input_data": {
-          "format": "A6"
+          "format": "A5"
         },
         "solution_data": {
-          "length_cm": 14.8,
-          "width_cm": 10.5,
-          "area": 155.4
+          "target_format": "A5",
+          "index_difference": 5,
+          "area_start": 10000,
+          "division_steps": [
+            5000.0,
+            2500.0,
+            1250.0,
+            625.0,
+            312.5
+          ],
+          "area_raw": 312.5,
+          "iso_check": {
+            "length_mm": 210,
+            "width_mm": 148,
+            "length_cm": 21.0,
+            "width_cm": 14.8,
+            "area_iso_raw": 310.8
+          },
+          "rounding": {
+            "required": false
+          },
+          "acceptable_answers": [
+            312.5,
+            310.8
+          ]
         },
-        "answer": 155.4,
+        "answer": 312.5,
         "skill_source_id": "paper_q4",
         "help_image_file": null
       },
@@ -2040,16 +2338,38 @@
       {
         "q_number": 4,
         "pattern": "paper_area",
-        "narrative": "area_with_rounding_10",
-        "question_text": "Определи площадь листа бумаги формата A4. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 10.",
+        "narrative": "find_area",
+        "question_text": "Определи площадь листа бумаги формата A4. Ответ запиши в квадратных сантиметрах.",
         "input_data": {
           "format": "A4"
         },
         "solution_data": {
-          "area_raw": 623.7,
-          "rounded_area": 620
+          "target_format": "A4",
+          "index_difference": 4,
+          "area_start": 10000,
+          "division_steps": [
+            5000.0,
+            2500.0,
+            1250.0,
+            625.0
+          ],
+          "area_raw": 625.0,
+          "iso_check": {
+            "length_mm": 297,
+            "width_mm": 210,
+            "length_cm": 29.7,
+            "width_cm": 21.0,
+            "area_iso_raw": 623.7
+          },
+          "rounding": {
+            "required": false
+          },
+          "acceptable_answers": [
+            625.0,
+            623.7
+          ]
         },
-        "answer": 620,
+        "answer": 625.0,
         "skill_source_id": "paper_q4",
         "help_image_file": null
       },
@@ -2193,16 +2513,38 @@
       {
         "q_number": 4,
         "pattern": "paper_area",
-        "narrative": "area_with_rounding_5",
-        "question_text": "Определи площадь листа бумаги формата A3. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 5.",
+        "narrative": "find_area",
+        "question_text": "Определи площадь листа бумаги формата A3. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 10.",
         "input_data": {
           "format": "A3"
         },
         "solution_data": {
-          "area_raw": 1247.4,
-          "rounded_area": 1245
+          "target_format": "A3",
+          "index_difference": 3,
+          "area_start": 10000,
+          "division_steps": [
+            5000.0,
+            2500.0,
+            1250.0
+          ],
+          "area_raw": 1250.0,
+          "iso_check": {
+            "length_mm": 420,
+            "width_mm": 297,
+            "length_cm": 42.0,
+            "width_cm": 29.7,
+            "area_iso_raw": 1247.4
+          },
+          "rounding": {
+            "required": true,
+            "multiple_of": 10,
+            "lower_bound": 1250,
+            "upper_bound": 1260,
+            "rounded_area": 1250
+          },
+          "acceptable_answers": null
         },
-        "answer": 1245,
+        "answer": 1250,
         "skill_source_id": "paper_q4",
         "help_image_file": null
       },
@@ -2346,16 +2688,39 @@
       {
         "q_number": 4,
         "pattern": "paper_area",
-        "narrative": "area_with_rounding_10",
-        "question_text": "Определи площадь листа бумаги формата A4. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 10.",
+        "narrative": "find_area",
+        "question_text": "Определи площадь листа бумаги формата A4. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 5.",
         "input_data": {
           "format": "A4"
         },
         "solution_data": {
-          "area_raw": 623.7,
-          "rounded_area": 620
+          "target_format": "A4",
+          "index_difference": 4,
+          "area_start": 10000,
+          "division_steps": [
+            5000.0,
+            2500.0,
+            1250.0,
+            625.0
+          ],
+          "area_raw": 625.0,
+          "iso_check": {
+            "length_mm": 297,
+            "width_mm": 210,
+            "length_cm": 29.7,
+            "width_cm": 21.0,
+            "area_iso_raw": 623.7
+          },
+          "rounding": {
+            "required": true,
+            "multiple_of": 5,
+            "lower_bound": 625,
+            "upper_bound": 630,
+            "rounded_area": 625
+          },
+          "acceptable_answers": null
         },
-        "answer": 620,
+        "answer": 625,
         "skill_source_id": "paper_q4",
         "help_image_file": null
       },
@@ -2501,16 +2866,41 @@
       {
         "q_number": 4,
         "pattern": "paper_area",
-        "narrative": "area_with_rounding_5",
-        "question_text": "Определи площадь листа бумаги формата A7. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 5.",
+        "narrative": "find_area",
+        "question_text": "Определи площадь листа бумаги формата A7. Ответ запиши в квадратных сантиметрах.",
         "input_data": {
           "format": "A7"
         },
         "solution_data": {
-          "area_raw": 77.7,
-          "rounded_area": 80
+          "target_format": "A7",
+          "index_difference": 7,
+          "area_start": 10000,
+          "division_steps": [
+            5000.0,
+            2500.0,
+            1250.0,
+            625.0,
+            312.5,
+            156.25,
+            78.125
+          ],
+          "area_raw": 78.125,
+          "iso_check": {
+            "length_mm": 105,
+            "width_mm": 74,
+            "length_cm": 10.5,
+            "width_cm": 7.4,
+            "area_iso_raw": 77.7
+          },
+          "rounding": {
+            "required": false
+          },
+          "acceptable_answers": [
+            78.125,
+            77.7
+          ]
         },
-        "answer": 80,
+        "answer": 78.125,
         "skill_source_id": "paper_q4",
         "help_image_file": null
       },
@@ -2644,16 +3034,36 @@
       {
         "q_number": 4,
         "pattern": "paper_area",
-        "narrative": "area_with_rounding_10",
-        "question_text": "Определи площадь листа бумаги формата A6. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 10.",
+        "narrative": "find_area",
+        "question_text": "Определи площадь листа бумаги формата A2. Ответ запиши в квадратных сантиметрах.",
         "input_data": {
-          "format": "A6"
+          "format": "A2"
         },
         "solution_data": {
-          "area_raw": 155.4,
-          "rounded_area": 160
+          "target_format": "A2",
+          "index_difference": 2,
+          "area_start": 10000,
+          "division_steps": [
+            5000.0,
+            2500.0
+          ],
+          "area_raw": 2500.0,
+          "iso_check": {
+            "length_mm": 594,
+            "width_mm": 420,
+            "length_cm": 59.4,
+            "width_cm": 42.0,
+            "area_iso_raw": 2494.8
+          },
+          "rounding": {
+            "required": false
+          },
+          "acceptable_answers": [
+            2500.0,
+            2494.8
+          ]
         },
-        "answer": 160,
+        "answer": 2500.0,
         "skill_source_id": "paper_q4",
         "help_image_file": null
       },
@@ -2785,17 +3195,40 @@
       {
         "q_number": 4,
         "pattern": "paper_area",
-        "narrative": "area_basic",
-        "question_text": "Определи площадь листа бумаги формата A5. Ответ запиши в квадратных сантиметрах.",
+        "narrative": "find_area",
+        "question_text": "Определи площадь листа бумаги формата A5. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего числа, кратного 10.",
         "input_data": {
           "format": "A5"
         },
         "solution_data": {
-          "length_cm": 21.0,
-          "width_cm": 14.8,
-          "area": 310.8
+          "target_format": "A5",
+          "index_difference": 5,
+          "area_start": 10000,
+          "division_steps": [
+            5000.0,
+            2500.0,
+            1250.0,
+            625.0,
+            312.5
+          ],
+          "area_raw": 312.5,
+          "iso_check": {
+            "length_mm": 210,
+            "width_mm": 148,
+            "length_cm": 21.0,
+            "width_cm": 14.8,
+            "area_iso_raw": 310.8
+          },
+          "rounding": {
+            "required": true,
+            "multiple_of": 10,
+            "lower_bound": 310,
+            "upper_bound": 320,
+            "rounded_area": 310
+          },
+          "acceptable_answers": null
         },
-        "answer": 310.8,
+        "answer": 310,
         "skill_source_id": "paper_q4",
         "help_image_file": null
       },
@@ -2927,16 +3360,42 @@
       {
         "q_number": 4,
         "pattern": "paper_area",
-        "narrative": "area_with_rounding_10",
-        "question_text": "Определи площадь листа бумаги формата A3. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 10.",
+        "narrative": "find_area",
+        "question_text": "Определи площадь листа бумаги формата A7. Ответ запиши в квадратных сантиметрах, округлив результат до ближайшего целого числа, кратного 5.",
         "input_data": {
-          "format": "A3"
+          "format": "A7"
         },
         "solution_data": {
-          "area_raw": 1247.4,
-          "rounded_area": 1250
+          "target_format": "A7",
+          "index_difference": 7,
+          "area_start": 10000,
+          "division_steps": [
+            5000.0,
+            2500.0,
+            1250.0,
+            625.0,
+            312.5,
+            156.25,
+            78.125
+          ],
+          "area_raw": 78.125,
+          "iso_check": {
+            "length_mm": 105,
+            "width_mm": 74,
+            "length_cm": 10.5,
+            "width_cm": 7.4,
+            "area_iso_raw": 77.7
+          },
+          "rounding": {
+            "required": true,
+            "multiple_of": 5,
+            "lower_bound": 75,
+            "upper_bound": 80,
+            "rounded_area": 80
+          },
+          "acceptable_answers": null
         },
-        "answer": 1250,
+        "answer": 80,
         "skill_source_id": "paper_q4",
         "help_image_file": null
       },

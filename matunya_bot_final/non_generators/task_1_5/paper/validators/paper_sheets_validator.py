@@ -420,54 +420,127 @@ class PaperSheetsValidator:
         raise ValueError("Неизвестный нарратив Q3")
 
     # ================================================================
-    # Q4 — paper_area
+    # Q4 — paper_area (find_area)
     # ================================================================
 
     def _build_q4(self, q_number: int, narrative: str, text: str) -> Dict[str, Any]:
+
+        if narrative != "find_area":
+            raise ValueError("Q4 поддерживает только narrative = find_area")
+
         fmt = self._extract_format(text, err_prefix="Q4")
+        target_index = int(fmt[1:])
+
+        # ------------------------------------------------------------
+        # 1. Идеальная модель (через A0)
+        # ------------------------------------------------------------
+
+        area_start = 10000  # A0 = 10 000 см²
+        index_difference = target_index  # A0 → A_k = k переходов
+
+        area_raw = area_start / (2 ** index_difference)
+
+        # список промежуточных делений
+        division_steps = []
+        current = area_start
+        for _ in range(index_difference):
+            current = current / 2
+            division_steps.append(round(current, 5))
+
+        # ------------------------------------------------------------
+        # 2. ISO-проверка (через реальные размеры)
+        # ------------------------------------------------------------
+
         length_mm, width_mm = self.PAPER_SIZES[fmt]
 
         length_cm = length_mm / 10.0
         width_cm = width_mm / 10.0
-        area = length_cm * width_cm  # см²
+        area_iso_raw = round(length_cm * width_cm, 5)
 
-        # narrative: area_basic
-        if narrative == "area_basic":
-            # В эталоне может быть дробный ответ (623,7). Оставляем 1 знак.
-            area_rounded = self._round_to_1(area)
-            return {
-                "q_number": q_number,
-                "pattern": "paper_area",
-                "narrative": "area_basic",
-                "question_text": text,
-                "input_data": {"format": fmt},
-                "solution_data": {
-                    "length_cm": self._pretty_float(length_cm, 1),
-                    "width_cm": self._pretty_float(width_cm, 1),
-                    "area": area_rounded,
-                },
-                "answer": area_rounded,
+        # ------------------------------------------------------------
+        # 3. Проверяем, требуется ли округление
+        # ------------------------------------------------------------
+
+        rounding_required = "кратного" in text
+
+        rounding_data = None
+        final_answer = None
+        acceptable_answers = None
+
+        if rounding_required:
+
+            if "кратного 10" in text:
+                multiple = 10
+            elif "кратного 5" in text:
+                multiple = 5
+            else:
+                raise ValueError("Q4: не удалось определить кратность округления")
+
+            rounded_area = int(self._round_to_multiple(area_raw, multiple))
+
+            lower_bound = (int(area_raw) // multiple) * multiple
+            upper_bound = lower_bound + multiple
+
+            rounding_data = {
+                "required": True,
+                "multiple_of": multiple,
+                "lower_bound": lower_bound,
+                "upper_bound": upper_bound,
+                "rounded_area": rounded_area
             }
 
-        # rounding narratives: area_with_rounding_10 / area_with_rounding_5
-        if narrative in ("area_with_rounding_10", "area_with_rounding_5"):
-            rounding_to = 10 if narrative.endswith("_10") else 5
-            area_raw = self._round_to_1(area)  # чтобы не было 77.7000000
-            rounded_area = int(self._round_to_multiple(area_raw, rounding_to))
-            return {
-                "q_number": q_number,
-                "pattern": "paper_area",
-                "narrative": narrative,
-                "question_text": text,
-                "input_data": {"format": fmt},
-                "solution_data": {
-                    "area_raw": area_raw,
-                    "rounded_area": rounded_area,
-                },
-                "answer": rounded_area,
+            final_answer = rounded_area
+
+        else:
+            # ------------------------------------------------------------
+            # без округления — допустимы оба способа
+            # ------------------------------------------------------------
+
+            rounding_data = {
+                "required": False
             }
 
-        raise ValueError("Неизвестный нарратив Q4")
+            area_raw_norm = round(area_raw, 5)
+            area_iso_norm = round(area_iso_raw, 5)
+
+            # если совпали — не дублируем
+            if abs(area_raw_norm - area_iso_norm) < 1e-6:
+                acceptable_answers = [area_raw_norm]
+            else:
+                acceptable_answers = [area_raw_norm, area_iso_norm]
+
+            final_answer = area_raw_norm
+
+        # ------------------------------------------------------------
+        # 4. Возвращаем JSON
+        # ------------------------------------------------------------
+
+        return {
+            "q_number": q_number,
+            "pattern": "paper_area",
+            "narrative": "find_area",
+            "question_text": text,
+            "input_data": {
+                "format": fmt
+            },
+            "solution_data": {
+                "target_format": fmt,
+                "index_difference": index_difference,
+                "area_start": area_start,
+                "division_steps": division_steps,
+                "area_raw": round(area_raw, 5),
+                "iso_check": {
+                    "length_mm": length_mm,
+                    "width_mm": width_mm,
+                    "length_cm": length_cm,
+                    "width_cm": width_cm,
+                    "area_iso_raw": area_iso_raw
+                },
+                "rounding": rounding_data,
+                "acceptable_answers": acceptable_answers if not rounding_required else None,
+            },
+            "answer": final_answer
+        }
 
     # ================================================================
     # Q5 — paper_pack_weight / paper_font_scaling

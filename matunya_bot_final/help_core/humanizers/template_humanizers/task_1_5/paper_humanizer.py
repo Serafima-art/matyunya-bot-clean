@@ -93,33 +93,13 @@ IDEA_TEMPLATES: Dict[str, str] = {
     ## Паттерн paper_area
     # ------------------------------------------------------------------
 
-    "area_basic":
-        "Площадь прямоугольного листа (прямоугольника)\n"
-        "равна <b>произведению длины на ширину</b>.\n\n"
-        "Размеры в таблице даны в миллиметрах,\n"
-        "а ответ требуется в квадратных сантиметрах.",
-
-    "area_with_rounding_10":
-        "Площадь прямоугольного листа (прямоугольника)\n"
-        "равна <b>произведению длины на ширину</b>.\n\n"
-        "Размеры в таблице даны в миллиметрах,\n"
-        "а ответ нужен в квадратных сантиметрах.\n\n"
-        "Поэтому:\n"
-        "1️⃣ переводим миллиметры в сантиметры,\n"
-        "2️⃣ вычисляем площадь,\n"
-        "3️⃣ округляем результат до ближайшего числа,\n"
-        "которое делится на 10.",
-
-    "area_with_rounding_5":
-        "Площадь прямоугольника равна:\n\n"
-        "<b>S = длина × ширина</b>\n\n"
-        "Размеры в таблице даны в миллиметрах,\n"
-        "а ответ нужен в квадратных сантиметрах.\n\n"
-        "Поэтому:\n"
-        "1️⃣ переводим миллиметры в сантиметры,\n"
-        "2️⃣ вычисляем площадь,\n"
-        "3️⃣ округляем результат до ближайшего числа,\n"
-        "которое делится на 5.",
+    "find_area":
+        "Формат <b>A0</b> имеет площадь <b>10 000 см²</b> (1 м²).\n\n"
+        "В серии A каждый следующий формат получают,\n"
+        "если предыдущий лист разрезать пополам по длинной стороне.\n\n"
+        "Поэтому:\n\n"
+        "📌 каждый следующий формат имеет площадь\n"
+        "в <b>2 раза меньше</b> предыдущего.",
 
     # ------------------------------------------------------------------
     # 🟫 ВОПРОС 5 (Прикладная задача: масса)
@@ -268,66 +248,66 @@ STEP_TEMPLATES: Dict[str, str] = {
     ## Паттерн paper_area
     # ------------------------------------------------------------------
 
-    # --- 1️⃣ area_basic ---
-    "STEP_AREA_BASIC_SIZES": (
-        "<b>Шаг 1.</b> В таблице находим размеры формата <b>{format}</b>:\n"
-        "➡️ <b>Длина — {length_mm} мм</b>\n"
-        "➡️ <b>Ширина — {width_mm} мм</b>\n\n"
-        "Переводим в сантиметры:\n"
-        "1 см = 10 мм, значит делим на 10.\n\n"
-        "➡️ <b>{length_mm} мм = {length_cm} см</b>\n"
-        "➡️ <b>{width_mm} мм = {width_cm} см</b>"
+    # --- 1️⃣ find_area ---
+
+    #🟣 Шаг 1 — сколько переходов
+    "STEP_AREA_1": (
+        "<b>Шаг 1.</b> Определим, сколько раз нужно разделить лист пополам.\n\n"
+        "Формат <b>{target_format}</b> получаем из A0 за "
+        "<b>{index_word} {perehod_word}</b>:\n\n"
+        "➡️ <b>{format_chain}</b>\n\n"
+        "Значит, нужно разделить площадь на 2 "
+        "<b>{index_word} {raz_word}</b>."
     ),
 
-    "STEP_AREA_BASIC_CALC": (
-        "<b>Шаг 2.</b> Вычисляем площадь:\n"
-        "➡️ <b>S = {length_cm} · {width_cm} = {area_raw} см²</b>"
+    #🟣 Шаг 2 — последовательное деление
+    "STEP_AREA_2": (
+        "<b>Шаг 2.</b> Делим 10 000 на 2 "
+        "<b>{index_word} {raz_word}</b>.\n\n"
+        "{division_lines}\n\n"
+        "➡️ <b>S({target_format}) = {area_raw} см²</b>"
     ),
 
-    # --- 2️⃣ area_with_rounding_10 ---
-    "STEP_AREA_R10_SIZES": (
-        "<b>Шаг 1.</b> В таблице находим размеры листа <b>{format}</b>:\n"
-        "➡️ <b>Длина — {length_mm} мм</b>\n"
-        "➡️ <b>Ширина — {width_mm} мм</b>\n\n"
-        "Переводим в сантиметры:\n"
-        "1 см = 10 мм, значит делим на 10.\n\n"
-        "➡️ <b>{length_mm} мм = {length_cm} см</b>\n"
-        "➡️ <b>{width_mm} мм = {width_cm} см</b>"
-    ),
-
-    "STEP_AREA_R10_CALC": (
-        "<b>Шаг 2.</b> Вычисляем площадь:\n"
-        "➡️ <b>S = {length_cm} · {width_cm} = {area_raw} см²</b>"
-    ),
-
-    "STEP_AREA_R10_ROUND": (
-        "<b>Шаг 3.</b> Округляем до ближайшего числа, кратного <b>{round_base}</b>.\n\n"
-        "Ближайшие десятки: <b>{lower_value} и {upper_value}</b>.\n"
-        "<b>{area_raw}</b> ближе к <b>{rounded_area}</b>.\n\n"
-        "➡️ <b>Округлённая площадь = {rounded_area} см²</b>"
-    ),
-
-    # --- 3️⃣ area_with_rounding_5 ---
-    "STEP_AREA_R5_SIZES": (
-        "<b>Шаг 1.</b> В таблице находим размеры листа <b>{format}</b>:\n"
-        "➡️ <b>Длина — {length_mm} мм</b>\n"
-        "➡️ <b>Ширина — {width_mm} мм</b>\n\n"
-        "Переводим в сантиметры:\n"
-        "1 см = 10 мм, значит делим на 10.\n\n"
-        "➡️ <b>{length_mm} мм = {length_cm} см</b>\n"
-        "➡️ <b>{width_mm} мм = {width_cm} см</b>"
-    ),
-
-    "STEP_AREA_R5_CALC": (
-        "<b>Шаг 2.</b> Вычисляем площадь:\n"
-        "➡️ <b>S = {length_cm} · {width_cm} = {area_raw} см²</b>"
-    ),
-
-    "STEP_AREA_R5_ROUND": (
-        "<b>Шаг 3.</b> Округляем до ближайшего числа, кратного <b>{round_base}</b>.\n\n"
-        "Ближайшие кратные 5 числа: <b>{lower_value} и {upper_value}</b>.\n"
+    #🟣 Шаг 3 — округление (если требуется)
+    "STEP_AREA_3_ROUND": (
+        "<b>Шаг 3.</b> Выполним округление до ближайшего числа, "
+        "кратного <b>{multiple_of}</b>.\n\n"
+        "Ближайшие кратные {multiple_of} числа: "
+        "<b>{lower_bound} и {upper_bound}</b>.\n"
         "➡️ <b>{area_raw} ближе к {rounded_area}</b>.\n\n"
         "➡️ <b>Округлённая площадь = {rounded_area} см²</b>"
+    ),
+
+    #🟣 Шаг 3 (если округления НЕТ)
+    "STEP_AREA_3_NO_ROUND": (
+        "<b>Шаг 3.</b> В условии не требуется округление.\n\n"
+        "Площадь можно записать как <b>{area_raw} см²</b>."
+    ),
+
+    #🟣 ISO-проверка (всегда)
+    "STEP_AREA_ISO_CHECK": (
+        "🔎 <b>Проверка через размеры</b>\n\n"
+        "Размер формата {target_format} по стандарту ISO:\n\n"
+        "<b>{length_mm} мм × {width_mm} мм</b>\n"
+        "или\n"
+        "<b>{length_cm} см × {width_cm} см</b>\n\n"
+        "Перемножим:\n\n"
+        "➡️ <b>{length_cm} × {width_cm} = "
+        "{area_iso_raw} см²</b>"
+    ),
+
+    "STEP_AREA_ROUND_CONFIRM": (
+        "После округления до ближайшего числа, кратного "
+        "<b>{multiple_of}</b>, результат также равен "
+        "<b>{rounded_area} см²</b>."
+    ),
+
+    #🟣 Блок про два допустимых ответа (если без округления)
+    "STEP_AREA_TWO_ANSWERS": (
+        "Если в условии не требуется округление,\n"
+        "допустимо записать любой из полученных результатов, \n"
+        "так как расхождение связано с округлением размеров формата в миллиметрах.\n"
+        "Оба значения считаются правильными."
     ),
 
     # ------------------------------------------------------------------
@@ -464,30 +444,17 @@ TIPS_TEMPLATES: Dict[str, str] = {
     ## Паттерн paper_area
     # ------------------------------------------------------------------
 
-    "area_basic": (
-        "📌 Площадь формата A0 равна 10 000 см² (1 м²).\n"
-        "📌 Каждый следующий формат в 2 раза меньше предыдущего.\n"
-        "📌 Поэтому площадь A4 ❗<b>примерно</b>❗ в 16 раз меньше \n"
-        "площади A0 (2⁴ = 16) — это удобно для проверки.\n\n"
-        "❗ ВАЖНО: в бланк ОГЭ записывай только число без единиц измерений. "
-    ),
-
-    "area_with_rounding_10": (
-        "📌 Чтобы перевести мм в см, нужно разделить на 10 \n"
-        "(перенести запятую на один знак влево).\n"
-        "📌 «Кратно 10» означает, что число заканчивается на 0.\n"
-        "📌 Читай условие внимательно, чтобы не ошибиться при округлении.\n"
-        "Иногда просят округлить просто до целого числа.\n\n"
-        "❗ ВАЖНО: в бланк ОГЭ записывай только число без единиц измерений. "
-    ),
-
-    "area_with_rounding_5": (
-        "📌 Сначала вычисляем точную площадь, затем округляем.\n"
-        "📌 «Кратно 5» означает, что число заканчивается на 0 или 5.\n"
-        "📌 Читай условие внимательно, чтобы не ошибиться при округлении.\n"
-        "Иногда просят округлить просто до целого числа.\n"
-        "📌 Округляем только площадь, а не длину и ширину до умножения.\n\n"
-        "❗ ВАЖНО: в бланк ОГЭ записывай только число без единиц измерений. "
+    "find_area": (
+        "Площадь формата можно найти двумя способами:\n"
+        "1️⃣ через последовательное деление площади A0 пополам\n"
+        "2️⃣ через перемножение реальных размеров сторон.\n\n"
+        "Из-за округления размеров в миллиметрах\n"
+        "результаты могут немного отличаться, это нормально.\n\n"
+        "В задачах ОГЭ используется идеальная модель:\n\n"
+        "➡️ A0 = 10 000 см²\n"
+        "➡️ каждый переход — точное деление на 2.\n\n"
+        "📘 Подробнее о серии форматов A — в разделе «Теория».\n\n"
+        "❗ В бланк ОГЭ записывай только число без единиц измерения."
     ),
 
     # ------------------------------------------------------------------
@@ -657,64 +624,26 @@ NARRATIVE_PROFILES: Dict[str, Dict[str, Any]] = {
     # ===============================
     # Q4 — paper_area
     # ===============================
-    "area_basic": {
-        "idea_key": "area_basic",
+    "find_area": {
+        "idea_key": "find_area",
         "steps": [
-            "STEP_AREA_BASIC_SIZES",
-            "STEP_AREA_BASIC_CALC",
+            "STEP_AREA_1",
+            "STEP_AREA_2",
+            "STEP_AREA_3_ROUND",
+            "STEP_AREA_3_NO_ROUND",
+            "STEP_AREA_ISO_CHECK",
+            "STEP_AREA_TWO_ANSWERS",
+            "STEP_AREA_ROUND_CONFIRM",
         ],
-        "tips_key": "area_basic",
+        "tips_key": "find_area",
         "required_fields": [
-            "format",
-            "length_mm",
-            "width_mm",
-            "length_cm",
-            "width_cm",
+            "target_format",
+            "index_difference",
+            "area_start",
+            "division_steps",
             "area_raw",
-        ],
-    },
-
-    "area_with_rounding_10": {
-        "idea_key": "area_with_rounding_10",
-        "steps": [
-            "STEP_AREA_R10_SIZES",
-            "STEP_AREA_R10_CALC",
-            "STEP_AREA_R10_ROUND",
-        ],
-        "tips_key": "area_with_rounding_10",
-        "required_fields": [
-            "format",
-            "length_mm",
-            "width_mm",
-            "length_cm",
-            "width_cm",
-            "area_raw",
-            "rounded_area",
-            "round_base",
-            "lower_value",
-            "upper_value",
-        ],
-    },
-
-    "area_with_rounding_5": {
-        "idea_key": "area_with_rounding_5",
-        "steps": [
-            "STEP_AREA_R5_SIZES",
-            "STEP_AREA_R5_CALC",
-            "STEP_AREA_R5_ROUND",
-        ],
-        "tips_key": "area_with_rounding_5",
-        "required_fields": [
-            "format",
-            "length_mm",
-            "width_mm",
-            "length_cm",
-            "width_cm",
-            "area_raw",
-            "rounded_area",
-            "round_base",
-            "lower_value",
-            "upper_value",
+            "iso_check",
+            "rounding",
         ],
     },
 
@@ -846,6 +775,34 @@ def _count_subformats_context_builder(variables: Dict[str, Any]) -> Dict[str, An
 
     return context
 
+def _paper_area_find_area_context_builder(arg: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Контекст-билдер для Q4 find_area.
+
+    В проекте humanize() вызывает builder(variables),
+    но на всякий случай поддерживаем и arg=solution_core.
+    """
+
+    # 1) Если пришёл solution_core (есть ключи narrative/variables/final_answer) — достанем variables
+    if "variables" in arg and isinstance(arg.get("variables"), dict):
+        variables = (arg.get("variables") or {}).copy()
+        task = arg.get("task") or {}
+    else:
+        # 2) Если пришли уже variables (как сейчас в humanize) — работаем напрямую
+        variables = arg.copy()
+        task = {}
+
+    # 🔧 страховка от Missing required field
+    if variables.get("target_format") in (None, ""):
+        # если solver пробросил format
+        if variables.get("format"):
+            variables["target_format"] = variables["format"]
+        else:
+            # последний fallback — если вдруг кто-то пробрасывает task (редко)
+            variables["target_format"] = (task.get("input_data") or {}).get("format")
+
+    return variables
+
 # =========================================================
 # 6. CONTEXT BUILDERS
 # =========================================================
@@ -864,6 +821,9 @@ _CONTEXT_BUILDERS["font_scaling"] = _font_scaling_context_builder
 _CONTEXT_BUILDERS["pack_weight"] = _pack_weight_context_builder
 
 _CONTEXT_BUILDERS["count_subformats"] = _count_subformats_context_builder
+
+# 🔵 Q4
+_CONTEXT_BUILDERS["find_area"] = _paper_area_find_area_context_builder
 
 
 # =============================================================================
@@ -927,6 +887,26 @@ def humanize(solution_core: Dict[str, Any]) -> str:
         if narrative in ("find_length", "find_width") and step_key.endswith("_ROUND") and not context.get("rounding"):
             continue
 
+        # 🔵 Условие для find_area
+
+        if narrative == "find_area":
+
+            # если округление требуется — не показываем NO_ROUND
+            if step_key == "STEP_AREA_3_NO_ROUND" and context.get("rounding_required"):
+                continue
+
+            # если округление не требуется — не показываем ROUND
+            if step_key == "STEP_AREA_3_ROUND" and not context.get("rounding_required"):
+                continue
+
+            # блок про два ответа — показываем только если нет округления
+            if step_key == "STEP_AREA_TWO_ANSWERS" and context.get("rounding_required"):
+                continue
+
+            # подтверждение совпадения после ISO — только если есть округление
+            if step_key == "STEP_AREA_ROUND_CONFIRM" and not context.get("rounding_required"):
+                continue
+
         # 💎 Для font_scaling: если НЕ точный случай — используем подробный шаблон
         if narrative == "font_scaling" and original_step_key == "STEP_FONT_SCALE" and not is_exact:
             step_key = "STEP_FONT_SCALE_DETAILED"
@@ -955,7 +935,18 @@ def humanize(solution_core: Dict[str, Any]) -> str:
         parts.append(_render_block("🪜 <b>Пошаговое решение</b>", steps_block))
 
     # ANSWER
-    parts.append(f"🎯 Ответ: <b>{context['final_answer']}</b>.")
+    if narrative == "find_area" and not context.get("rounding_required"):
+        if context.get("acceptable_answers_str"):
+            answers = context["acceptable_answers_str"].split(", ")
+            answers = [a.replace(" ", "") for a in answers]  # ← убираем пробелы
+            pretty_answers = " или ".join(answers)
+            parts.append(
+                f"🎯 Ответ: <b>{pretty_answers}</b>."
+            )
+        else:
+            parts.append(f"🎯 Ответ: <b>{context['final_answer']}</b>.")
+    else:
+        parts.append(f"🎯 Ответ: <b>{context['final_answer']}</b>.")
 
     # TIPS
     tips_key = profile.get("tips_key")

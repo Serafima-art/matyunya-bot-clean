@@ -51,6 +51,10 @@ async def handle_task_1_5_dialog(
     current_q_number = data.get("current_question_number")
     if isinstance(current_q_number, str) and current_q_number.isdigit():
         current_q_number = int(current_q_number)
+    if not isinstance(current_q_number, int):
+        current_task_index = data.get("current_task_index")
+        if isinstance(current_task_index, int):
+            current_q_number = current_task_index + 1
 
     task_text = ""
     tasks = task_data.get("tasks", [])
