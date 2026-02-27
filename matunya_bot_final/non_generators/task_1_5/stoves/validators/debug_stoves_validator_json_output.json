@@ -1,0 +1,1122 @@
+[
+  {
+    "id": "stoves_2026_var_01",
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "wood",
+          "volume_range": "80–120",
+          "volume_max": 120,
+          "mass": 115,
+          "cost": 28000
+        },
+        {
+          "stove_no": 2,
+          "type": "wood",
+          "volume_range": "70–110",
+          "volume_max": 110,
+          "mass": 108,
+          "cost": 26500
+        },
+        {
+          "stove_no": 3,
+          "type": "electric",
+          "volume_range": "36–54",
+          "volume_max": 54,
+          "mass": 10,
+          "cost": 8500
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_volume",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных наибольших объёмов помещения. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            54,
+            110,
+            120
+          ]
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 120,
+            "2": 110,
+            "3": 54
+          },
+          "answer_sequence": "321"
+        },
+        "answer": "321",
+        "skill_source_id": "stoves_q1"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_02",
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "wood",
+          "volume_range": "75–115",
+          "volume_max": 115,
+          "mass": 112,
+          "cost": 29500
+        },
+        {
+          "stove_no": 2,
+          "type": "electric",
+          "volume_range": "40–60",
+          "volume_max": 60,
+          "mass": 11,
+          "cost": 9200
+        },
+        {
+          "stove_no": 3,
+          "type": "wood",
+          "volume_range": "90–130",
+          "volume_max": 130,
+          "mass": 125,
+          "cost": 32500
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_volume",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных наибольших объёмов помещения. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            115,
+            130,
+            60
+          ]
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 115,
+            "2": 60,
+            "3": 130
+          },
+          "answer_sequence": "132"
+        },
+        "answer": "132",
+        "skill_source_id": "stoves_q1"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_03",
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "electric",
+          "volume_range": "36–54",
+          "volume_max": 54,
+          "mass": 10,
+          "cost": 8700
+        },
+        {
+          "stove_no": 2,
+          "type": "wood",
+          "volume_range": "80–120",
+          "volume_max": 120,
+          "mass": 118,
+          "cost": 30500
+        },
+        {
+          "stove_no": 3,
+          "type": "wood",
+          "volume_range": "95–135",
+          "volume_max": 135,
+          "mass": 130,
+          "cost": 34500
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_volume",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных наибольших объёмов помещения. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            54,
+            120,
+            135
+          ]
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 54,
+            "2": 120,
+            "3": 135
+          },
+          "answer_sequence": "123"
+        },
+        "answer": "123",
+        "skill_source_id": "stoves_q1"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_04",
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "wood",
+          "volume_range": "85–125",
+          "volume_max": 125,
+          "mass": 120,
+          "cost": 31200
+        },
+        {
+          "stove_no": 2,
+          "type": "wood",
+          "volume_range": "70–110",
+          "volume_max": 110,
+          "mass": 108,
+          "cost": 27800
+        },
+        {
+          "stove_no": 3,
+          "type": "electric",
+          "volume_range": "44–66",
+          "volume_max": 66,
+          "mass": 12,
+          "cost": 9600
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_volume",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных наибольших объёмов помещения. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            125,
+            66,
+            110
+          ]
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 125,
+            "2": 110,
+            "3": 66
+          },
+          "answer_sequence": "132"
+        },
+        "answer": "132",
+        "skill_source_id": "stoves_q1"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_05",
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "wood",
+          "volume_range": "90–130",
+          "volume_max": 130,
+          "mass": 125,
+          "cost": 33400
+        },
+        {
+          "stove_no": 2,
+          "type": "electric",
+          "volume_range": "40–60",
+          "volume_max": 60,
+          "mass": 11,
+          "cost": 9100
+        },
+        {
+          "stove_no": 3,
+          "type": "wood",
+          "volume_range": "75–115",
+          "volume_max": 115,
+          "mass": 112,
+          "cost": 28900
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_weight",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных значений массы. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            125,
+            11,
+            112
+          ]
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 125,
+            "2": 11,
+            "3": 112
+          },
+          "answer_sequence": "123"
+        },
+        "answer": "123",
+        "skill_source_id": "stoves_q1"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_06",
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "wood",
+          "volume_range": "85–125",
+          "volume_max": 125,
+          "mass": 118,
+          "cost": 31800
+        },
+        {
+          "stove_no": 2,
+          "type": "wood",
+          "volume_range": "95–135",
+          "volume_max": 135,
+          "mass": 132,
+          "cost": 35200
+        },
+        {
+          "stove_no": 3,
+          "type": "electric",
+          "volume_range": "44–66",
+          "volume_max": 66,
+          "mass": 12,
+          "cost": 9800
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_volume",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных наибольших объёмов помещения. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            135,
+            66,
+            125
+          ]
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 125,
+            "2": 135,
+            "3": 66
+          },
+          "answer_sequence": "231"
+        },
+        "answer": "231",
+        "skill_source_id": "stoves_q1"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_07",
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "electric",
+          "volume_range": "38–57",
+          "volume_max": 57,
+          "mass": 10,
+          "cost": 8900
+        },
+        {
+          "stove_no": 2,
+          "type": "wood",
+          "volume_range": "88–128",
+          "volume_max": 128,
+          "mass": 122,
+          "cost": 32900
+        },
+        {
+          "stove_no": 3,
+          "type": "wood",
+          "volume_range": "72–112",
+          "volume_max": 112,
+          "mass": 110,
+          "cost": 28400
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_cost",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            8900,
+            32900,
+            28400
+          ]
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 8900,
+            "2": 32900,
+            "3": 28400
+          },
+          "answer_sequence": "123"
+        },
+        "answer": "123",
+        "skill_source_id": "stoves_q1"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_08",
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "electric",
+          "volume_range": "36–54",
+          "volume_max": 54,
+          "mass": 10,
+          "cost": 8700
+        },
+        {
+          "stove_no": 2,
+          "type": "wood",
+          "volume_range": "80–120",
+          "volume_max": 120,
+          "mass": 118,
+          "cost": 30500
+        },
+        {
+          "stove_no": 3,
+          "type": "wood",
+          "volume_range": "95–135",
+          "volume_max": 135,
+          "mass": 130,
+          "cost": 34500
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_weight",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных значений массы. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            130,
+            10,
+            118
+          ]
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 10,
+            "2": 118,
+            "3": 130
+          },
+          "answer_sequence": "312"
+        },
+        "answer": "312",
+        "skill_source_id": "stoves_q1"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_09",
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "wood",
+          "volume_range": "80–120",
+          "volume_max": 120,
+          "mass": 115,
+          "cost": 28000
+        },
+        {
+          "stove_no": 2,
+          "type": "wood",
+          "volume_range": "70–110",
+          "volume_max": 110,
+          "mass": 108,
+          "cost": 26500
+        },
+        {
+          "stove_no": 3,
+          "type": "electric",
+          "volume_range": "36–54",
+          "volume_max": 54,
+          "mass": 10,
+          "cost": 8500
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_cost",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            28000,
+            8500,
+            26500
+          ]
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 28000,
+            "2": 26500,
+            "3": 8500
+          },
+          "answer_sequence": "132"
+        },
+        "answer": "132",
+        "skill_source_id": "stoves_q1"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_10",
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "wood",
+          "volume_range": "75–115",
+          "volume_max": 115,
+          "mass": 112,
+          "cost": 29500
+        },
+        {
+          "stove_no": 2,
+          "type": "electric",
+          "volume_range": "40–60",
+          "volume_max": 60,
+          "mass": 11,
+          "cost": 9200
+        },
+        {
+          "stove_no": 3,
+          "type": "wood",
+          "volume_range": "90–130",
+          "volume_max": 130,
+          "mass": 125,
+          "cost": 32500
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_weight",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных значений массы. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            11,
+            125,
+            112
+          ]
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 112,
+            "2": 11,
+            "3": 125
+          },
+          "answer_sequence": "231"
+        },
+        "answer": "231",
+        "skill_source_id": "stoves_q1"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_11",
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "electric",
+          "volume_range": "36–54",
+          "volume_max": 54,
+          "mass": 10,
+          "cost": 8700
+        },
+        {
+          "stove_no": 2,
+          "type": "wood",
+          "volume_range": "80–120",
+          "volume_max": 120,
+          "mass": 118,
+          "cost": 30500
+        },
+        {
+          "stove_no": 3,
+          "type": "wood",
+          "volume_range": "95–135",
+          "volume_max": 135,
+          "mass": 130,
+          "cost": 34500
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_cost",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            34500,
+            8700,
+            30500
+          ]
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 8700,
+            "2": 30500,
+            "3": 34500
+          },
+          "answer_sequence": "312"
+        },
+        "answer": "312",
+        "skill_source_id": "stoves_q1"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_12",
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "wood",
+          "volume_range": "90–130",
+          "volume_max": 130,
+          "mass": 125,
+          "cost": 33400
+        },
+        {
+          "stove_no": 2,
+          "type": "electric",
+          "volume_range": "40–60",
+          "volume_max": 60,
+          "mass": 11,
+          "cost": 9100
+        },
+        {
+          "stove_no": 3,
+          "type": "wood",
+          "volume_range": "75–115",
+          "volume_max": 115,
+          "mass": 112,
+          "cost": 28900
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_volume",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных наибольших объёмов помещения. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            115,
+            60,
+            130
+          ]
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 130,
+            "2": 60,
+            "3": 115
+          },
+          "answer_sequence": "321"
+        },
+        "answer": "321",
+        "skill_source_id": "stoves_q1"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_13",
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "wood",
+          "volume_range": "82–122",
+          "volume_max": 122,
+          "mass": 119,
+          "cost": 31700
+        },
+        {
+          "stove_no": 2,
+          "type": "electric",
+          "volume_range": "42–63",
+          "volume_max": 63,
+          "mass": 12,
+          "cost": 9500
+        },
+        {
+          "stove_no": 3,
+          "type": "wood",
+          "volume_range": "90–130",
+          "volume_max": 130,
+          "mass": 127,
+          "cost": 34100
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_volume",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных наибольших объёмов помещения. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            63,
+            122,
+            130
+          ]
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 122,
+            "2": 63,
+            "3": 130
+          },
+          "answer_sequence": "213"
+        },
+        "answer": "213",
+        "skill_source_id": "stoves_q1"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_14",
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "wood",
+          "volume_range": "82–122",
+          "volume_max": 122,
+          "mass": 119,
+          "cost": 31700
+        },
+        {
+          "stove_no": 2,
+          "type": "electric",
+          "volume_range": "42–63",
+          "volume_max": 63,
+          "mass": 12,
+          "cost": 9500
+        },
+        {
+          "stove_no": 3,
+          "type": "wood",
+          "volume_range": "90–130",
+          "volume_max": 130,
+          "mass": 127,
+          "cost": 34100
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_cost",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            34100,
+            31700,
+            9500
+          ]
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 31700,
+            "2": 9500,
+            "3": 34100
+          },
+          "answer_sequence": "312"
+        },
+        "answer": "312",
+        "skill_source_id": "stoves_q1"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_15",
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "wood",
+          "volume_range": "85–125",
+          "volume_max": 125,
+          "mass": 118,
+          "cost": 31800
+        },
+        {
+          "stove_no": 2,
+          "type": "wood",
+          "volume_range": "95–135",
+          "volume_max": 135,
+          "mass": 132,
+          "cost": 35200
+        },
+        {
+          "stove_no": 3,
+          "type": "electric",
+          "volume_range": "44–66",
+          "volume_max": 66,
+          "mass": 12,
+          "cost": 9800
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_cost",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            9800,
+            31800,
+            35200
+          ]
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 31800,
+            "2": 35200,
+            "3": 9800
+          },
+          "answer_sequence": "312"
+        },
+        "answer": "312",
+        "skill_source_id": "stoves_q1"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_16",
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "wood",
+          "volume_range": "90–130",
+          "volume_max": 130,
+          "mass": 125,
+          "cost": 33400
+        },
+        {
+          "stove_no": 2,
+          "type": "electric",
+          "volume_range": "40–60",
+          "volume_max": 60,
+          "mass": 11,
+          "cost": 9100
+        },
+        {
+          "stove_no": 3,
+          "type": "wood",
+          "volume_range": "75–115",
+          "volume_max": 115,
+          "mass": 112,
+          "cost": 28900
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_cost",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            9100,
+            33400,
+            28900
+          ]
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 33400,
+            "2": 9100,
+            "3": 28900
+          },
+          "answer_sequence": "213"
+        },
+        "answer": "213",
+        "skill_source_id": "stoves_q1"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_17",
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "wood",
+          "volume_range": "85–125",
+          "volume_max": 125,
+          "mass": 120,
+          "cost": 31200
+        },
+        {
+          "stove_no": 2,
+          "type": "wood",
+          "volume_range": "70–110",
+          "volume_max": 110,
+          "mass": 108,
+          "cost": 27800
+        },
+        {
+          "stove_no": 3,
+          "type": "electric",
+          "volume_range": "44–66",
+          "volume_max": 66,
+          "mass": 12,
+          "cost": 9600
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_cost",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            27800,
+            31200,
+            9600
+          ]
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 31200,
+            "2": 27800,
+            "3": 9600
+          },
+          "answer_sequence": "213"
+        },
+        "answer": "213",
+        "skill_source_id": "stoves_q1"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_18",
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "electric",
+          "volume_range": "36–54",
+          "volume_max": 54,
+          "mass": 10,
+          "cost": 8700
+        },
+        {
+          "stove_no": 2,
+          "type": "wood",
+          "volume_range": "80–120",
+          "volume_max": 120,
+          "mass": 118,
+          "cost": 30500
+        },
+        {
+          "stove_no": 3,
+          "type": "wood",
+          "volume_range": "95–135",
+          "volume_max": 135,
+          "mass": 130,
+          "cost": 34500
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_cost",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            34500,
+            8700,
+            30500
+          ]
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 8700,
+            "2": 30500,
+            "3": 34500
+          },
+          "answer_sequence": "312"
+        },
+        "answer": "312",
+        "skill_source_id": "stoves_q1"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_19",
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "wood",
+          "volume_range": "75–115",
+          "volume_max": 115,
+          "mass": 112,
+          "cost": 29500
+        },
+        {
+          "stove_no": 2,
+          "type": "electric",
+          "volume_range": "40–60",
+          "volume_max": 60,
+          "mass": 11,
+          "cost": 9200
+        },
+        {
+          "stove_no": 3,
+          "type": "wood",
+          "volume_range": "90–130",
+          "volume_max": 130,
+          "mass": 125,
+          "cost": 32500
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_cost",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            32500,
+            9200,
+            29500
+          ]
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 29500,
+            "2": 9200,
+            "3": 32500
+          },
+          "answer_sequence": "321"
+        },
+        "answer": "321",
+        "skill_source_id": "stoves_q1"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_20",
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "wood",
+          "volume_range": "80–120",
+          "volume_max": 120,
+          "mass": 115,
+          "cost": 28000
+        },
+        {
+          "stove_no": 2,
+          "type": "wood",
+          "volume_range": "70–110",
+          "volume_max": 110,
+          "mass": 108,
+          "cost": 26500
+        },
+        {
+          "stove_no": 3,
+          "type": "electric",
+          "volume_range": "36–54",
+          "volume_max": 54,
+          "mass": 10,
+          "cost": 8500
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_weight",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных значений массы. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            115,
+            108,
+            10
+          ]
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 115,
+            "2": 108,
+            "3": 10
+          },
+          "answer_sequence": "123"
+        },
+        "answer": "123",
+        "skill_source_id": "stoves_q1"
+      }
+    ]
+  }
+]

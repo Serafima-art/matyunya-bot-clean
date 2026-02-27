@@ -7,24 +7,7 @@
 
 Тогда человек на сервере делает:
 
-git pull
-
-Потом:
-
-python -m matunya_bot_final.populate_skills
-
-И только потом:
-
-systemctl restart matyunya
-📦 Почему restart после populate?
-
-Потому что:
-
-populate создаёт новые skills
-
-бот при старте может кешировать данные
-
-лучше всегда перезапустить
+ 
 
 💎 Важно понять одну вещь
 
