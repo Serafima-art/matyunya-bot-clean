@@ -52,6 +52,14 @@ TIRES_SKILLS = [
     "tires_q6_01", "tires_q6_02", "tires_q6_03", "tires_q6_04", "tires_q6_05",
 ]
 
+PAPER_SKILLS = [
+    "paper_q1",
+    "paper_q2",
+    "paper_q3",
+    "paper_q4",
+    "paper_q5",
+]
+
 async def main():
     print("🚀 Запуск наполнения таблицы 'skill_types'...")
 
@@ -73,23 +81,35 @@ async def main():
         print(f"ℹ️  В базе уже существует {len(existing_ids)} навыков.")
 
         new_skills_added = 0
-        for skill_id in TIRES_SKILLS:
+        ALL_SKILLS = TIRES_SKILLS + PAPER_SKILLS
+
+        for skill_id in ALL_SKILLS:
+
             if skill_id not in existing_ids:
+
+                if skill_id.startswith("paper_"):
+                    name_prefix = "Бумага"
+                    description_prefix = "Навык для задания Бумага"
+                elif skill_id.startswith("tires_"):
+                    name_prefix = "Шины"
+                    description_prefix = "Навык для задания Шины"
+                else:
+                    name_prefix = "1-5"
+                    description_prefix = "Навык для задания 1-5"
+
                 new_skill = SkillType(
                     source_id=skill_id,
-                    name=f"Шины: {skill_id}",
+                    name=f"{name_prefix}: {skill_id}",
                     task_number="1-5",
-                    description=f"Навык для задания Шины: {skill_id}"
+                    description=f"{description_prefix}: {skill_id}"
                 )
+
                 session.add(new_skill)
                 new_skills_added += 1
                 print(f"  + Добавляем новый навык: {skill_id}")
 
-        if new_skills_added > 0:
-            await session.commit()
-            print(f"✅ Успешно добавлено {new_skills_added} новых навыков.")
-        else:
-            print("👍 Новых навыков для добавления не найдено. База в актуальном состоянии.")
+        await session.commit()
+        print(f"✅ Готово! Добавлено новых навыков: {new_skills_added}")
 
 
 if __name__ == "__main__":
