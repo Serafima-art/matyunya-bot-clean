@@ -1,6 +1,14 @@
 [
   {
     "id": "stoves_2026_var_01",
+    "room_context": {
+      "length": 3.0,
+      "width": 2.4,
+      "height": 2.2,
+      "door_width_cm": 70.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 9500
+    },
     "table_context": {
       "stoves": [
         {
@@ -40,7 +48,8 @@
             54,
             110,
             120
-          ]
+          ],
+          "column_label": "Объём помещения, м³"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -57,6 +66,14 @@
   },
   {
     "id": "stoves_2026_var_02",
+    "room_context": {
+      "length": 2.8,
+      "width": 2.2,
+      "height": 2.1,
+      "door_width_cm": 60.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 8800
+    },
     "table_context": {
       "stoves": [
         {
@@ -96,7 +113,8 @@
             115,
             130,
             60
-          ]
+          ],
+          "column_label": "Объём помещения, м³"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -113,6 +131,14 @@
   },
   {
     "id": "stoves_2026_var_03",
+    "room_context": {
+      "length": 3.2,
+      "width": 2.5,
+      "height": 2.3,
+      "door_width_cm": 70.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 10200
+    },
     "table_context": {
       "stoves": [
         {
@@ -152,7 +178,8 @@
             54,
             120,
             135
-          ]
+          ],
+          "column_label": "Объём помещения, м³"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -169,6 +196,14 @@
   },
   {
     "id": "stoves_2026_var_04",
+    "room_context": {
+      "length": 2.6,
+      "width": 2.4,
+      "height": 2.0,
+      "door_width_cm": 65.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 9100
+    },
     "table_context": {
       "stoves": [
         {
@@ -208,7 +243,8 @@
             125,
             66,
             110
-          ]
+          ],
+          "column_label": "Объём помещения, м³"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -225,6 +261,14 @@
   },
   {
     "id": "stoves_2026_var_05",
+    "room_context": {
+      "length": 3.5,
+      "width": 2.7,
+      "height": 2.3,
+      "door_width_cm": 80.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 12000
+    },
     "table_context": {
       "stoves": [
         {
@@ -264,7 +308,8 @@
             125,
             11,
             112
-          ]
+          ],
+          "column_label": "Масса печи, кг"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -281,6 +326,14 @@
   },
   {
     "id": "stoves_2026_var_06",
+    "room_context": {
+      "length": 2.9,
+      "width": 2.3,
+      "height": 2.2,
+      "door_width_cm": 70.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 9400
+    },
     "table_context": {
       "stoves": [
         {
@@ -320,7 +373,8 @@
             135,
             66,
             125
-          ]
+          ],
+          "column_label": "Объём помещения, м³"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -337,6 +391,14 @@
   },
   {
     "id": "stoves_2026_var_07",
+    "room_context": {
+      "length": 3.1,
+      "width": 2.6,
+      "height": 2.4,
+      "door_width_cm": 75.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 11000
+    },
     "table_context": {
       "stoves": [
         {
@@ -376,7 +438,8 @@
             8900,
             32900,
             28400
-          ]
+          ],
+          "column_label": "Цена, руб."
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -393,6 +456,14 @@
   },
   {
     "id": "stoves_2026_var_08",
+    "room_context": {
+      "length": 2.7,
+      "width": 2.1,
+      "height": 2.0,
+      "door_width_cm": 60.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 8700
+    },
     "table_context": {
       "stoves": [
         {
@@ -432,7 +503,8 @@
             130,
             10,
             118
-          ]
+          ],
+          "column_label": "Масса печи, кг"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -449,6 +521,14 @@
   },
   {
     "id": "stoves_2026_var_09",
+    "room_context": {
+      "length": 3.3,
+      "width": 2.8,
+      "height": 2.5,
+      "door_width_cm": 80.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 12500
+    },
     "table_context": {
       "stoves": [
         {
@@ -488,7 +568,8 @@
             28000,
             8500,
             26500
-          ]
+          ],
+          "column_label": "Цена, руб."
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -505,6 +586,14 @@
   },
   {
     "id": "stoves_2026_var_10",
+    "room_context": {
+      "length": 2.5,
+      "width": 2.0,
+      "height": 2.1,
+      "door_width_cm": 60.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 8600
+    },
     "table_context": {
       "stoves": [
         {
@@ -544,7 +633,8 @@
             11,
             125,
             112
-          ]
+          ],
+          "column_label": "Масса печи, кг"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -561,6 +651,14 @@
   },
   {
     "id": "stoves_2026_var_11",
+    "room_context": {
+      "length": 3.4,
+      "width": 2.6,
+      "height": 2.3,
+      "door_width_cm": 75.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 11500
+    },
     "table_context": {
       "stoves": [
         {
@@ -600,7 +698,8 @@
             34500,
             8700,
             30500
-          ]
+          ],
+          "column_label": "Цена, руб."
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -617,6 +716,14 @@
   },
   {
     "id": "stoves_2026_var_12",
+    "room_context": {
+      "length": 2.8,
+      "width": 2.5,
+      "height": 2.2,
+      "door_width_cm": 65.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 9200
+    },
     "table_context": {
       "stoves": [
         {
@@ -656,7 +763,8 @@
             115,
             60,
             130
-          ]
+          ],
+          "column_label": "Объём помещения, м³"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -673,6 +781,14 @@
   },
   {
     "id": "stoves_2026_var_13",
+    "room_context": {
+      "length": 3.0,
+      "width": 2.7,
+      "height": 2.4,
+      "door_width_cm": 70.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 10800
+    },
     "table_context": {
       "stoves": [
         {
@@ -712,7 +828,8 @@
             63,
             122,
             130
-          ]
+          ],
+          "column_label": "Объём помещения, м³"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -729,6 +846,14 @@
   },
   {
     "id": "stoves_2026_var_14",
+    "room_context": {
+      "length": 2.9,
+      "width": 2.2,
+      "height": 2.1,
+      "door_width_cm": 60.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 8900
+    },
     "table_context": {
       "stoves": [
         {
@@ -768,7 +893,8 @@
             34100,
             31700,
             9500
-          ]
+          ],
+          "column_label": "Цена, руб."
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -785,6 +911,14 @@
   },
   {
     "id": "stoves_2026_var_15",
+    "room_context": {
+      "length": 3.6,
+      "width": 2.9,
+      "height": 2.5,
+      "door_width_cm": 80.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 13000
+    },
     "table_context": {
       "stoves": [
         {
@@ -824,7 +958,8 @@
             9800,
             31800,
             35200
-          ]
+          ],
+          "column_label": "Цена, руб."
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -841,6 +976,14 @@
   },
   {
     "id": "stoves_2026_var_16",
+    "room_context": {
+      "length": 2.7,
+      "width": 2.4,
+      "height": 2.2,
+      "door_width_cm": 65.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 9050
+    },
     "table_context": {
       "stoves": [
         {
@@ -880,7 +1023,8 @@
             9100,
             33400,
             28900
-          ]
+          ],
+          "column_label": "Цена, руб."
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -897,6 +1041,14 @@
   },
   {
     "id": "stoves_2026_var_17",
+    "room_context": {
+      "length": 3.2,
+      "width": 2.6,
+      "height": 2.3,
+      "door_width_cm": 70.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 11200
+    },
     "table_context": {
       "stoves": [
         {
@@ -936,7 +1088,8 @@
             27800,
             31200,
             9600
-          ]
+          ],
+          "column_label": "Цена, руб."
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -953,6 +1106,14 @@
   },
   {
     "id": "stoves_2026_var_18",
+    "room_context": {
+      "length": 2.6,
+      "width": 2.3,
+      "height": 2.0,
+      "door_width_cm": 60.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 8800
+    },
     "table_context": {
       "stoves": [
         {
@@ -992,7 +1153,8 @@
             34500,
             8700,
             30500
-          ]
+          ],
+          "column_label": "Цена, руб."
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -1009,6 +1171,14 @@
   },
   {
     "id": "stoves_2026_var_19",
+    "room_context": {
+      "length": 3.5,
+      "width": 2.8,
+      "height": 2.4,
+      "door_width_cm": 75.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 11800
+    },
     "table_context": {
       "stoves": [
         {
@@ -1048,7 +1218,8 @@
             32500,
             9200,
             29500
-          ]
+          ],
+          "column_label": "Цена, руб."
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -1065,6 +1236,14 @@
   },
   {
     "id": "stoves_2026_var_20",
+    "room_context": {
+      "length": 2.8,
+      "width": 2.2,
+      "height": 2.1,
+      "door_width_cm": 65.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 9000
+    },
     "table_context": {
       "stoves": [
         {
@@ -1104,7 +1283,8 @@
             115,
             108,
             10
-          ]
+          ],
+          "column_label": "Масса печи, кг"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {

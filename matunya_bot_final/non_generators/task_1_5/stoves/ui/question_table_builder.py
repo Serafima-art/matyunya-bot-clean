@@ -1,55 +1,48 @@
 """
 UI builder для вопроса 1 (stove_match_table).
-
-Строит вторую таблицу:
-Объём/Масса/Стоимость  |  значения
-Номер печи             |  ___ ___ ___
+Компактная мобильная версия.
 """
 
 from typing import Dict, Any
 
 
-def build_stove_question_table(question: Dict[str, Any]) -> str:
-    """
-    Формирует вторую таблицу для Q1 (match_volume / match_weight / match_cost).
-    """
+def build_stoves_question_table(question: Dict[str, Any]) -> str:
 
     input_data = question["input_data"]
     columns = input_data["columns_order"]
     label = input_data["column_label"]
-    narrative = question["narrative"]
 
-    # --- форматируем значения ---
-    values = []
+    values = [str(v) for v in columns]
 
-    for val in columns:
-        if narrative == "match_cost":
-            formatted = f"{val:,}".replace(",", " ")
-        else:
-            formatted = str(val)
+    # ---- определяем ширину каждой колонки ----
+    col_widths = [max(len(v), 5) for v in values]  # минимум 5, чтобы ___ не ломалось
 
-        values.append(formatted)
+    # ---- строка с числами ----
+    values_line_parts = [
+        v.center(col_widths[i])
+        for i, v in enumerate(values)
+    ]
+    values_line = "   ".join(values_line_parts)
 
-    header_1 = label
-    header_2 = "Номер печи"
+    # ---- строка для ответа ----
+    answer_parts = [
+        "___".center(col_widths[i])
+        for i in range(len(values))
+    ]
+    answer_line = "   ".join(answer_parts)
 
-    first_col_width = max(len(header_1), len(header_2))
-    value_width = max(len(v) for v in values)
-
-    row_1 = header_1.ljust(first_col_width) + "   "
-    for v in values:
-        row_1 += v.center(value_width) + "   "
-
-    row_2 = header_2.ljust(first_col_width) + "   "
-    for _ in values:
-        row_2 += "___".center(value_width) + "   "
-
-    separator = "-" * max(len(row_1), len(row_2))
+    # ---- длина линии ----
+    line_length = max(len(values_line), len(label))
+    separator = "─" * line_length
 
     lines = [
-        row_1.rstrip(),
+        label,
         separator,
-        row_2.rstrip()
+        values_line,
+        "",
+        "Номер печи",
+        separator,
+        answer_line,
     ]
 
     return "<pre>\n" + "\n".join(lines) + "\n</pre>"

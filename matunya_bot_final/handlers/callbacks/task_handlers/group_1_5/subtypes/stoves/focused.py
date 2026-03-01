@@ -1,5 +1,3 @@
-# matunya_bot_final/handlers/callbacks/task_handlers/group_1_5/subhandlers/stoves_handler.py
-
 from aiogram import Bot, Router
 from aiogram.fsm.context import FSMContext
 from pathlib import Path
@@ -27,78 +25,6 @@ from matunya_bot_final.non_generators.task_1_5.stoves.ui.intro_builder import (
 
 router = Router()
 logger = logging.getLogger(__name__)
-
-
-# =========================================================
-# 📘 ОБЗОРНЫЙ ЭКРАН (ПЕЧИ)
-# =========================================================
-
-async def send_overview_block_stoves(
-    bot: Bot,
-    state: FSMContext,
-    chat_id: int,
-    task_1_5_data: dict,
-):
-    logger.info("📘 ОБЗОРНЫЙ ЭКРАН: Печи")
-
-    # 0️⃣ INTRO (как в Бумаге)
-    variant = task_1_5_data.get("variant_data") or task_1_5_data
-
-    print("DEBUG STOVES VARIANT STRUCTURE:")
-    print(variant)
-
-    intro_elements = build_stoves_intro(variant)
-
-    for index, element in enumerate(intro_elements, start=1):
-        content = element.get("content", "").strip()
-        if content:
-            await send_tracked_message(
-                bot=bot,
-                chat_id=chat_id,
-                state=state,
-                text=content,
-                message_tag=f"overview_intro_{index}",
-                category="tasks",
-                parse_mode="HTML",
-            )
-
-    # 1️⃣ Таблица печей
-    table_context = task_1_5_data.get("table_context")
-    if table_context:
-        html_table = build_stoves_table(table_context)
-
-        await send_tracked_message(
-            bot=bot,
-            chat_id=chat_id,
-            state=state,
-            text=html_table,
-            message_tag="overview_table_stoves",
-            category="tasks",
-            parse_mode="HTML",
-        )
-
-    # 2️⃣ Пульт выбора задания
-    user_data = await state.get_data()
-    solved_indices = user_data.get("solved_tasks_indices", [])
-    subtype_key = user_data.get("task_subtype", "stoves")
-
-    overview_kb = build_overview_keyboard(
-        tasks_count=len(task_1_5_data.get("tasks", [])),
-        subtype_key=subtype_key,
-        solved_indices=solved_indices,
-    )
-
-    await send_tracked_message(
-        bot=bot,
-        chat_id=chat_id,
-        state=state,
-        text="Выбери номер задания 👇:",
-        reply_markup=overview_kb,
-        message_tag="overview_keyboard_block_stoves",
-        category="menus",
-    )
-
-    logger.info("✅ ОБЗОРНЫЙ ЭКРАН: Печи отправлен")
 
 
 # =========================================================
@@ -161,3 +87,4 @@ async def send_focused_task_block_stoves(
     )
 
     logger.info(f"✅ ФОКУСНЫЙ ЭКРАН: Задание {question_num} отправлено")
+

@@ -231,7 +231,8 @@ class PaperSheetsValidator:
             raise ValueError(f"Q3: формат {fmt} отсутствует в formats_data")
 
         # ------------------------------------------------------------
-        # find_ratio — без изменений (источник истины: formats_data)
+        # find_ratio — источник истины: formats_data
+        # Логика: считаем строго X / Y из формулировки
         # ------------------------------------------------------------
         if narrative == "find_ratio":
             length_mm = formats_data[fmt]["length_mm"]
@@ -240,7 +241,23 @@ class PaperSheetsValidator:
             greater = max(length_mm, width_mm)
             smaller = min(length_mm, width_mm)
 
-            raw_ratio = (greater / smaller) if ("больш" in text.lower()) else (smaller / greater)
+            lower_text = text.lower()
+
+            # Ожидаем формулировку: "отношение X к Y"
+            if "отношение" not in lower_text or " к " not in lower_text:
+                raise ValueError(f"Некорректная формулировка find_ratio: {text}")
+
+            # Берём часть ДО " к "
+            before_k = lower_text.split(" к ")[0]
+
+            # Определяем числитель
+            if "меньш" in before_k:
+                raw_ratio = smaller / greater
+            elif "больш" in before_k:
+                raw_ratio = greater / smaller
+            else:
+                raise ValueError(f"Не удалось определить направление отношения в тексте: {text}")
+
             rounded_ratio = self._round_to_1(raw_ratio)
 
             return {

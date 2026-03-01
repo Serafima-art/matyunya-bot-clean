@@ -62,7 +62,7 @@
    🔹 Q1 [match_formats_to_rows]: Ответ = 1324
    🔹 Q2 [count_subformats]: Ответ = 8
    🔹 Q3 [find_diagonal_ratio]: Ответ = 1.2
-   🔹 Q4 [find_area]: Ответ = 10000.0
+   🔹 Q4 [find_area]: Ответ = 625.0
    🔹 Q5 [pack_weight]: Ответ = 2000
 
 📂 ВАРИАНТ: paper_2026_var_08
@@ -106,7 +106,7 @@
 ✅ Статус: ВАЛИДНО
    🔹 Q1 [match_formats_to_rows]: Ответ = 2431
    🔹 Q2 [count_subformats]: Ответ = 16
-   🔹 Q3 [find_ratio]: Ответ = 1.4
+   🔹 Q3 [find_ratio]: Ответ = 0.7
    🔹 Q4 [find_area]: Ответ = 310
    🔹 Q5 [font_scaling]: Ответ = 28
 
@@ -160,7 +160,7 @@
 ✅ Статус: ВАЛИДНО
    🔹 Q1 [match_formats_to_rows]: Ответ = 4231
    🔹 Q2 [count_subformats]: Ответ = 16
-   🔹 Q3 [find_ratio]: Ответ = 0.7
+   🔹 Q3 [find_ratio]: Ответ = 1.4
    🔹 Q4 [find_area]: Ответ = 2500.0
    🔹 Q5 [font_scaling]: Ответ = 15
 
@@ -169,7 +169,7 @@
 ✅ Статус: ВАЛИДНО
    🔹 Q1 [match_formats_to_rows]: Ответ = 2341
    🔹 Q2 [count_subformats]: Ответ = 4
-   🔹 Q3 [find_ratio]: Ответ = 1.4
+   🔹 Q3 [find_ratio]: Ответ = 0.7
    🔹 Q4 [find_area]: Ответ = 310
    🔹 Q5 [font_scaling]: Ответ = 10
 

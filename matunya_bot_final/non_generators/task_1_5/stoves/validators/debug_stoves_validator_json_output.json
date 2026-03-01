@@ -1,6 +1,14 @@
 [
   {
     "id": "stoves_2026_var_01",
+    "room_context": {
+      "length": 3.0,
+      "width": 2.4,
+      "height": 2.2,
+      "door_width_cm": 70.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 9500
+    },
     "table_context": {
       "stoves": [
         {
@@ -40,7 +48,8 @@
             54,
             110,
             120
-          ]
+          ],
+          "column_label": "Наибольший объём, м³"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -57,6 +66,7 @@
   },
   {
     "id": "stoves_2026_var_02",
+    "room_context": null,
     "table_context": {
       "stoves": [
         {
@@ -96,7 +106,8 @@
             115,
             130,
             60
-          ]
+          ],
+          "column_label": "Наибольший объём, м³"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -113,6 +124,7 @@
   },
   {
     "id": "stoves_2026_var_03",
+    "room_context": null,
     "table_context": {
       "stoves": [
         {
@@ -152,7 +164,8 @@
             54,
             120,
             135
-          ]
+          ],
+          "column_label": "Наибольший объём, м³"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -169,6 +182,7 @@
   },
   {
     "id": "stoves_2026_var_04",
+    "room_context": null,
     "table_context": {
       "stoves": [
         {
@@ -208,7 +222,8 @@
             125,
             66,
             110
-          ]
+          ],
+          "column_label": "Наибольший объём, м³"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -225,6 +240,7 @@
   },
   {
     "id": "stoves_2026_var_05",
+    "room_context": null,
     "table_context": {
       "stoves": [
         {
@@ -264,7 +280,8 @@
             125,
             11,
             112
-          ]
+          ],
+          "column_label": "Масса печи, кг"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -281,6 +298,7 @@
   },
   {
     "id": "stoves_2026_var_06",
+    "room_context": null,
     "table_context": {
       "stoves": [
         {
@@ -320,7 +338,8 @@
             135,
             66,
             125
-          ]
+          ],
+          "column_label": "Наибольший объём, м³"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -337,6 +356,7 @@
   },
   {
     "id": "stoves_2026_var_07",
+    "room_context": null,
     "table_context": {
       "stoves": [
         {
@@ -376,7 +396,8 @@
             8900,
             32900,
             28400
-          ]
+          ],
+          "column_label": "Стоимость печи, руб."
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -393,6 +414,7 @@
   },
   {
     "id": "stoves_2026_var_08",
+    "room_context": null,
     "table_context": {
       "stoves": [
         {
@@ -432,7 +454,8 @@
             130,
             10,
             118
-          ]
+          ],
+          "column_label": "Масса печи, кг"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -449,6 +472,7 @@
   },
   {
     "id": "stoves_2026_var_09",
+    "room_context": null,
     "table_context": {
       "stoves": [
         {
@@ -488,7 +512,8 @@
             28000,
             8500,
             26500
-          ]
+          ],
+          "column_label": "Стоимость печи, руб."
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -505,6 +530,7 @@
   },
   {
     "id": "stoves_2026_var_10",
+    "room_context": null,
     "table_context": {
       "stoves": [
         {
@@ -544,7 +570,8 @@
             11,
             125,
             112
-          ]
+          ],
+          "column_label": "Масса печи, кг"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -561,6 +588,7 @@
   },
   {
     "id": "stoves_2026_var_11",
+    "room_context": null,
     "table_context": {
       "stoves": [
         {
@@ -600,7 +628,8 @@
             34500,
             8700,
             30500
-          ]
+          ],
+          "column_label": "Стоимость печи, руб."
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -617,6 +646,7 @@
   },
   {
     "id": "stoves_2026_var_12",
+    "room_context": null,
     "table_context": {
       "stoves": [
         {
@@ -656,7 +686,8 @@
             115,
             60,
             130
-          ]
+          ],
+          "column_label": "Наибольший объём, м³"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -673,6 +704,7 @@
   },
   {
     "id": "stoves_2026_var_13",
+    "room_context": null,
     "table_context": {
       "stoves": [
         {
@@ -712,7 +744,8 @@
             63,
             122,
             130
-          ]
+          ],
+          "column_label": "Наибольший объём, м³"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -729,6 +762,7 @@
   },
   {
     "id": "stoves_2026_var_14",
+    "room_context": null,
     "table_context": {
       "stoves": [
         {
@@ -768,7 +802,8 @@
             34100,
             31700,
             9500
-          ]
+          ],
+          "column_label": "Стоимость печи, руб."
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -785,6 +820,7 @@
   },
   {
     "id": "stoves_2026_var_15",
+    "room_context": null,
     "table_context": {
       "stoves": [
         {
@@ -824,7 +860,8 @@
             9800,
             31800,
             35200
-          ]
+          ],
+          "column_label": "Стоимость печи, руб."
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -841,6 +878,7 @@
   },
   {
     "id": "stoves_2026_var_16",
+    "room_context": null,
     "table_context": {
       "stoves": [
         {
@@ -880,7 +918,8 @@
             9100,
             33400,
             28900
-          ]
+          ],
+          "column_label": "Стоимость печи, руб."
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -897,6 +936,7 @@
   },
   {
     "id": "stoves_2026_var_17",
+    "room_context": null,
     "table_context": {
       "stoves": [
         {
@@ -936,7 +976,8 @@
             27800,
             31200,
             9600
-          ]
+          ],
+          "column_label": "Стоимость печи, руб."
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -953,6 +994,7 @@
   },
   {
     "id": "stoves_2026_var_18",
+    "room_context": null,
     "table_context": {
       "stoves": [
         {
@@ -992,7 +1034,8 @@
             34500,
             8700,
             30500
-          ]
+          ],
+          "column_label": "Стоимость печи, руб."
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -1009,6 +1052,7 @@
   },
   {
     "id": "stoves_2026_var_19",
+    "room_context": null,
     "table_context": {
       "stoves": [
         {
@@ -1048,7 +1092,8 @@
             32500,
             9200,
             29500
-          ]
+          ],
+          "column_label": "Стоимость печи, руб."
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
@@ -1065,6 +1110,7 @@
   },
   {
     "id": "stoves_2026_var_20",
+    "room_context": null,
     "table_context": {
       "stoves": [
         {
@@ -1104,7 +1150,8 @@
             115,
             108,
             10
-          ]
+          ],
+          "column_label": "Масса печи, кг"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {

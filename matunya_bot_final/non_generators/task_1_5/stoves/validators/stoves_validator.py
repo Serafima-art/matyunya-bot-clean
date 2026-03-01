@@ -4,42 +4,11 @@ from typing import Dict, Any, Tuple, List, Optional
 
 class StovesValidator:
     """
-    Валидатор non_generators для практико-ориентированного подтипа "Печи" (задания 1–5).
+    Валидатор non_generators для подтипа "Печи" (задания 1–5).
 
-    СЕЙЧАС РЕАЛИЗОВАНО:
-      - только ВОПРОС 1 (Q1) с паттерном stove_match_table
-      - три narrative внутри Q1: match_volume / match_weight / match_cost
-
-    Контракт контейнера (stoves):
-    {
-      "id": "stoves_2026_var_01",
-      "table_context": {
-        "stoves": [
-          {
-            "stove_no": 1,
-            "type": "wood" | "electric",
-            "volume_range": "80–120",
-            "volume_max": 120,
-            "mass": 115,
-            "cost": 28000
-          },
-          ...
-        ]
-      },
-      "questions": [
-        {
-          "q_number": 1,
-          "skill_source_id": "stoves_q1",
-          "pattern": "stove_match_table",
-          "narrative": "match_volume" | "match_weight" | "match_cost",
-          ...
-        }
-      ]
-    }
-
-    Минималистичный solution_data для stove_match_table:
-    - stove_no_to_value_mapping (stove_no -> значение по narrative)
-    - answer_sequence (строка из 3 цифр)
+    Сейчас реализовано:
+      - Q1 stove_match_table (match_volume / match_weight / match_cost)
+      - Поддержка ROOM-блока (для intro и будущих Q2–Q5)
     """
 
     # ================================================================
@@ -56,25 +25,51 @@ class StovesValidator:
         if not variant_id:
             return False, {}, ["Не найден VARIANT_CODE"]
 
+        # ------------------------------------------------------------
+        # ROOM
+        # ------------------------------------------------------------
+
+        room_raw = parsed.get("ROOM") or {}
+        room_context = None
+
+        if room_raw:
+            try:
+                room_context = {
+                    "length": float(room_raw.get("LENGTH")),
+                    "width": float(room_raw.get("WIDTH")),
+                    "height": float(room_raw.get("HEIGHT")),
+                    "door_width_cm": float(room_raw.get("DOOR_WIDTH")),
+                    "door_height_m": float(room_raw.get("DOOR_HEIGHT")),
+                    "electric_install_cost": int(room_raw.get("ELECTRIC_INSTALL_COST")),
+                }
+            except Exception:
+                return False, {}, ["Ошибка в ROOM-блоке: некорректные числовые значения"]
+
+        # ------------------------------------------------------------
+        # STOVES TABLE
+        # ------------------------------------------------------------
+
         stoves_raw = parsed.get("STOVES") or {}
         if not stoves_raw:
             return False, {}, ["Не найден блок печей STOVE_1..STOVE_3"]
 
         try:
             stoves = self._build_stoves_table(stoves_raw)
-            self._validate_stoves_types(stoves)  # 2 wood + 1 electric
+            self._validate_stoves_types(stoves)
         except Exception as e:
             return False, {}, [f"Ошибка в таблице печей: {str(e)}"]
 
         container: Dict[str, Any] = {
             "id": variant_id,
+            "room_context": room_context,
             "table_context": {"stoves": stoves},
             "questions": [],
         }
 
         # ------------------------------------------------------------
-        # СЕЙЧАС: валидируем только Q1
+        # Q1
         # ------------------------------------------------------------
+
         q_data = parsed.get("Q1")
         if not q_data:
             return False, {}, ["Не найден Q1"]
@@ -88,7 +83,7 @@ class StovesValidator:
         return len(errors) == 0, container, errors
 
     # ================================================================
-    # Q1 — stove_match_table
+    # Q1
     # ================================================================
 
     def _build_q1(self, q_data: Dict[str, Any], stoves: List[Dict[str, Any]]) -> Dict[str, Any]:
@@ -102,19 +97,13 @@ class StovesValidator:
         if narrative not in ("match_volume", "match_weight", "match_cost"):
             raise ValueError(f"Q1: неизвестный narrative: {narrative}")
 
-        # строим сам match-вопрос
-        question = self._build_match_table(
+        return self._build_match_table(
             q_number=1,
             q_data=q_data,
             narrative=narrative,
             text=text,
             stoves=stoves,
         )
-
-        # skill_source_id в каждом вопросе
-        question["skill_source_id"] = "stoves_q1"
-
-        return question
 
     def _build_match_table(
         self,
@@ -138,68 +127,71 @@ class StovesValidator:
         except Exception:
             raise ValueError("Q1: COLUMNS должен содержать только целые числа")
 
-        # stove_no -> value по выбранному narrative
         stove_no_to_value: Dict[str, int] = {}
+
         for s in stoves:
             no = str(s["stove_no"])
-            if narrative == "match_volume":
-                stove_no_to_value[no] = int(s["volume_max"])
-            elif narrative == "match_weight":
-                stove_no_to_value[no] = int(s["mass"])
-            else:  # match_cost
-                stove_no_to_value[no] = int(s["cost"])
 
-        # однозначность: в рамках выбранного параметра значения должны быть уникальны
+            if narrative == "match_volume":
+                stove_no_to_value[no] = s["volume_max"]
+            elif narrative == "match_weight":
+                stove_no_to_value[no] = s["mass"]
+            else:
+                stove_no_to_value[no] = s["cost"]
+
         values = list(stove_no_to_value.values())
         if len(set(values)) != len(values):
-            raise ValueError(f"Q1: неоднозначно — в таблице есть совпадающие значения для {narrative}")
+            raise ValueError(f"Q1: неоднозначные значения для {narrative}")
 
-        # считаем ответ
         answer_digits: List[str] = []
+
         for value in columns:
-            found_no: Optional[str] = None
+            found = None
             for no, v in stove_no_to_value.items():
                 if v == value:
-                    found_no = no
+                    found = no
                     break
-            if not found_no:
-                raise ValueError(f"Q1: значение {value} не найдено в таблице для {narrative}")
-            answer_digits.append(found_no)
+            if not found:
+                raise ValueError(f"Q1: значение {value} не найдено в таблице")
+            answer_digits.append(found)
 
         answer = "".join(answer_digits)
+
+        column_label_map = {
+            "match_volume": "Объём помещения, м³",
+            "match_weight": "Масса печи, кг",
+            "match_cost": "Цена, руб.",
+        }
 
         return {
             "q_number": q_number,
             "pattern": "stove_match_table",
             "narrative": narrative,
             "question_text": text,
-            "input_data": {"columns_order": columns},
+            "input_data": {
+                "columns_order": columns,
+                "column_label": column_label_map[narrative],
+            },
             "solution_data": {
                 "stove_no_to_value_mapping": stove_no_to_value,
                 "answer_sequence": answer,
             },
             "answer": answer,
+            "skill_source_id": "stoves_q1",
         }
 
     # ================================================================
-    # TABLE BUILDER
+    # TABLE
     # ================================================================
 
     def _build_stoves_table(self, stoves_raw: Dict[str, Dict[str, str]]) -> List[Dict[str, Any]]:
-        """
-        stoves_raw:
-        {
-          "STOVE_1": {"type": "wood", "volume": "80–120", "mass": "115", "cost": "28000"},
-          ...
-        }
-        """
         stoves: List[Dict[str, Any]] = []
 
         for i in range(1, 4):
             key = f"STOVE_{i}"
             block = stoves_raw.get(key)
             if not block:
-                raise ValueError(f"Не найден блок {key}")
+                raise ValueError(f"Не найден {key}")
 
             stove_type = (block.get("type") or "").strip().lower()
             volume_range = (block.get("volume") or "").strip()
@@ -208,10 +200,6 @@ class StovesValidator:
 
             if stove_type not in ("wood", "electric"):
                 raise ValueError(f"{key}: type должен быть wood или electric")
-            if not volume_range:
-                raise ValueError(f"{key}: volume не задан")
-            if not mass_raw or not cost_raw:
-                raise ValueError(f"{key}: mass/cost не заданы")
 
             volume_max = self._parse_volume_max(volume_range)
 
@@ -219,7 +207,7 @@ class StovesValidator:
                 mass = int(mass_raw)
                 cost = int(cost_raw)
             except Exception:
-                raise ValueError(f"{key}: mass/cost должны быть целыми числами")
+                raise ValueError(f"{key}: mass/cost должны быть числами")
 
             stoves.append({
                 "stove_no": i,
@@ -235,7 +223,7 @@ class StovesValidator:
     def _validate_stoves_types(self, stoves: List[Dict[str, Any]]) -> None:
         types = [s["type"] for s in stoves]
         if types.count("wood") != 2 or types.count("electric") != 1:
-            raise ValueError("Нарушено правило: в варианте должно быть 2 wood и 1 electric")
+            raise ValueError("Должно быть 2 wood и 1 electric")
 
     # ================================================================
     # HELPERS
@@ -269,23 +257,25 @@ class StovesValidator:
             if not stripped or stripped.startswith("#"):
                 continue
 
+            # VARIANT
             if stripped.startswith("VARIANT_CODE:"):
                 data["VARIANT_CODE"] = stripped.split(":", 1)[1].strip()
-                current_q = None
-                current_stove = None
                 continue
 
-            if stripped.startswith("IMAGE:"):
-                # сейчас не используем (картинка будет только у Q5 позже),
-                # но оставляем на будущее
-                data["IMAGE"] = stripped.split(":", 1)[1].strip()
+            # ROOM
+            m_room = re.match(r"^ROOM\.([A-Z_]+)\s*:\s*(.*)$", stripped)
+            if m_room:
+                field, val = m_room.groups()
+                if "ROOM" not in data:
+                    data["ROOM"] = {}
+                data["ROOM"][field] = val.strip()
                 continue
 
+            # STOVE BLOCK
             m_stove = re.match(r"^(STOVE_\d+)\s*:\s*$", stripped)
             if m_stove:
                 current_stove = m_stove.group(1)
                 stoves[current_stove] = {}
-                current_q = None
                 continue
 
             if current_stove and re.match(r"^[a-zA-Z_]+\s*:\s*.*$", stripped):
@@ -293,23 +283,18 @@ class StovesValidator:
                 stoves[current_stove][k.strip()] = v.strip()
                 continue
 
+            # Q BLOCK
             m_q = re.match(r"^(Q\d)\.([A-Z_]+)\s*:\s*(.*)$", stripped)
             if m_q:
                 q_num, field, val = m_q.groups()
                 if q_num not in data:
                     data[q_num] = {}
-
-                if field == "TEXT":
-                    data[q_num]["TEXT"] = (val or "").strip()
-                else:
-                    data[q_num][field] = (val or "").strip()
-
+                data[q_num][field] = val.strip()
                 current_q = q_num
-                current_stove = None
                 continue
 
             if current_q and "TEXT" in data.get(current_q, {}):
-                data[current_q]["TEXT"] = (data[current_q]["TEXT"] + " " + stripped).strip()
+                data[current_q]["TEXT"] += " " + stripped
 
         if stoves:
             data["STOVES"] = stoves

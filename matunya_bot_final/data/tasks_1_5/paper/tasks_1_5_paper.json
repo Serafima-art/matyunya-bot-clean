@@ -441,7 +441,7 @@
         "q_number": 3,
         "pattern": "paper_dimensions",
         "narrative": "find_length",
-        "question_text": "Определи длину бо́льшей стороны листа бумаги формата A5. Ответ запиши в миллиметрах.",
+        "question_text": "Определи длину большей стороны листа бумаги формата A5. Ответ запиши в миллиметрах.",
         "input_data": {
           "format": "A5"
         },
@@ -1986,9 +1986,9 @@
         },
         "solution_data": {
           "format": "A1",
-          "rounded_ratio": 1.4
+          "rounded_ratio": 0.7
         },
-        "answer": 1.4,
+        "answer": 0.7,
         "skill_source_id": "paper_q3",
         "help_image_file": null
       },
@@ -3019,15 +3019,15 @@
         "q_number": 3,
         "pattern": "paper_dimensions",
         "narrative": "find_ratio",
-        "question_text": "Найди отношение бо́льшей стороны листа формата A3 к его меньшей стороне. Ответ округли до десятых.",
+        "question_text": "Найди отношение большей стороны листа формата A3 к его меньшей стороне. Ответ округли до десятых.",
         "input_data": {
           "format": "A3"
         },
         "solution_data": {
           "format": "A3",
-          "rounded_ratio": 0.7
+          "rounded_ratio": 1.4
         },
-        "answer": 0.7,
+        "answer": 1.4,
         "skill_source_id": "paper_q3",
         "help_image_file": null
       },
@@ -3186,9 +3186,9 @@
         },
         "solution_data": {
           "format": "A4",
-          "rounded_ratio": 1.4
+          "rounded_ratio": 0.7
         },
-        "answer": 1.4,
+        "answer": 0.7,
         "skill_source_id": "paper_q3",
         "help_image_file": null
       },

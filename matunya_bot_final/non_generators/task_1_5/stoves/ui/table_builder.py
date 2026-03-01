@@ -1,92 +1,103 @@
 """
 Table builder for Stoves (Tasks 1–5).
-
-Формирует текстовую таблицу печей для Telegram.
-Таблица строится по данным из table_context JSON.
-
-Архитектура:
-non_generators → JSON (источник истины) → UI builder → вывод в боте
+Левое выравнивание, расширенная мобильная версия (~340px).
 """
 
 from typing import Dict, Any
 
 
 def build_stoves_table(table_context: Dict[str, Any]) -> str:
-    """
-    Возвращает форматированную таблицу печей.
 
-    :param table_context: dict из JSON:
-        {
-            "stoves": [
-                {
-                    "stove_no": 1,
-                    "type": "wood",
-                    "volume_range": "10–15",
-                    "mass": 35,
-                    "cost": 19000
-                },
-                ...
-            ]
-        }
-    :return: str — текст таблицы для Telegram
-    """
+    stoves = table_context.get("stoves") or []
 
-    stoves = table_context["stoves"]
+    if not stoves:
+        return "<pre>Нет данных о печах</pre>"
 
-    rows_data = []
-
-    # Преобразуем тип к красивому виду
     type_map = {
         "wood": "дровяная",
-        "electric": "электрическая"
+        "electric": "электрическая",
     }
 
+    rows = []
+
     for stove in stoves:
-        rows_data.append({
-            "num": str(stove["stove_no"]),
-            "type": type_map.get(stove["type"], stove["type"]),
-            "volume": stove["volume_range"],
-            "mass": str(stove["mass"]),
-            "cost": f"{stove['cost']:,}".replace(",", " ")
+        num = str(stove.get("stove_no", ""))
+        typ = type_map.get(stove.get("type"), stove.get("type", ""))
+        volume = str(stove.get("volume_range", ""))
+        mass = str(stove.get("mass", ""))
+
+        cost = stove.get("cost", "")
+        if isinstance(cost, int):
+            cost = str(cost)  # без пробелов
+
+        rows.append({
+            "num": num,
+            "type": typ,
+            "volume": volume,
+            "mass": mass,
+            "cost": cost,
         })
 
     # Заголовки
-    headers = {
+    headers_top = {
         "num": "№",
         "type": "Тип",
-        "volume": "Объём (м³)",
-        "mass": "Масса (кг)",
-        "cost": "Стоимость (руб.)"
+        "volume": "Объём",
+        "mass": "Масса",
+        "cost": "Цена",
     }
 
-    # Вычисляем ширины колонок
-    num_width = max(len(row["num"]) for row in rows_data + [{"num": headers["num"]}])
-    type_width = max(len(row["type"]) for row in rows_data + [{"type": headers["type"]}])
-    volume_width = max(len(row["volume"]) for row in rows_data + [{"volume": headers["volume"]}])
-    mass_width = max(len(row["mass"]) for row in rows_data + [{"mass": headers["mass"]}])
-    cost_width = max(len(row["cost"]) for row in rows_data + [{"cost": headers["cost"]}])
+    headers_bottom = {
+        "num": "",
+        "type": "",
+        "volume": "(м³)",
+        "mass": "(кг)",
+        "cost": "(руб)",
+    }
 
-    # Формируем шапку
-    header = (
-        f"{headers['num'].ljust(num_width)}   "
-        f"{headers['type'].ljust(type_width)}   "
-        f"{headers['volume'].ljust(volume_width)}   "
-        f"{headers['mass'].ljust(mass_width)}   "
-        f"{headers['cost'].ljust(cost_width)}"
-    )
+    # Немного увеличенные ширины
+    num_w = max(2, max(len(r["num"]) for r in rows))
+    type_w = max(12, max(len(r["type"]) for r in rows))
+    volume_w = max(8, max(len(r["volume"]) for r in rows))
+    mass_w = max(6, max(len(r["mass"]) for r in rows))
+    cost_w = max(8, max(len(r["cost"]) for r in rows))
 
-    separator = "-" * len(header)
-
-    lines = [header, separator]
-
-    for row in rows_data:
-        line = (
-            f"{row['num'].ljust(num_width)}   "
-            f"{row['type'].ljust(type_width)}   "
-            f"{row['volume'].ljust(volume_width)}   "
-            f"{row['mass'].ljust(mass_width)}   "
-            f"{row['cost'].ljust(cost_width)}"
+    def line(values):
+        return (
+            f"{values[0].ljust(num_w)}"
+            f"{values[1].ljust(type_w)}  "
+            f"{values[2].ljust(volume_w)}  "
+            f"{values[3].ljust(mass_w)}  "
+            f"{values[4].ljust(cost_w)}"
         )
-        lines.append(line)
+
+    lines = []
+
+    lines.append(line([
+        headers_top["num"],
+        headers_top["type"],
+        headers_top["volume"],
+        headers_top["mass"],
+        headers_top["cost"],
+    ]))
+
+    lines.append(line([
+        headers_bottom["num"],
+        headers_bottom["type"],
+        headers_bottom["volume"],
+        headers_bottom["mass"],
+        headers_bottom["cost"],
+    ]))
+
+    lines.append("-" * (len(lines[0]) - 3)) # разделитель
+
+    for r in rows:
+        lines.append(line([
+            r["num"],
+            r["type"],
+            r["volume"],
+            r["mass"],
+            r["cost"],
+        ]))
 
     return "<pre>\n" + "\n".join(lines) + "\n</pre>"

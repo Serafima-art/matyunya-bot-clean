@@ -60,6 +60,15 @@ PAPER_SKILLS = [
     "paper_q5",
 ]
 
+STOVES_SKILLS = [
+    "stoves_q1",
+    # позже добавим:
+    # "stoves_q2",
+    # "stoves_q3",
+    # "stoves_q4",
+    # "stoves_q5",
+]
+
 async def main():
     print("🚀 Запуск наполнения таблицы 'skill_types'...")
 
@@ -81,7 +90,7 @@ async def main():
         print(f"ℹ️  В базе уже существует {len(existing_ids)} навыков.")
 
         new_skills_added = 0
-        ALL_SKILLS = TIRES_SKILLS + PAPER_SKILLS
+        ALL_SKILLS = TIRES_SKILLS + PAPER_SKILLS + STOVES_SKILLS
 
         for skill_id in ALL_SKILLS:
 
@@ -90,6 +99,9 @@ async def main():
                 if skill_id.startswith("paper_"):
                     name_prefix = "Бумага"
                     description_prefix = "Навык для задания Бумага"
+                elif skill_id.startswith("stoves_"):
+                    name_prefix = "Печи"
+                    description_prefix = "Навык для задания Печи"
                 elif skill_id.startswith("tires_"):
                     name_prefix = "Шины"
                     description_prefix = "Навык для задания Шины"

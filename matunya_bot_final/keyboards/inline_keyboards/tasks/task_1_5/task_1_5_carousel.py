@@ -7,11 +7,11 @@ from matunya_bot_final.keyboards.navigation.navigation import back_and_main_kb
 
 # Метаданные подтипов для отображения
 SUBTYPES_DISPLAY = {
+    "stoves": "🔥 Печи",
     "paper": "📄 Бумага",
     "apartment": "🏠 Квартира",
     "tires": "🚗 Шины",
-    "plot": "🌱 Участок",
-    "bath": "🔥 Печи"
+    "plot": "🌱 Участок"
 }
 
 def generate_task_1_5_overview_text(subtypes_list: list, current_key: str) -> str:
@@ -19,7 +19,7 @@ def generate_task_1_5_overview_text(subtypes_list: list, current_key: str) -> st
     Генерирует текст обзора карусели с полным списком подтипов и выделением текущего
 
     Args:
-        subtypes_list: Список ключей подтипов ["apartment", "tires", "plot", "bath"]
+        subtypes_list: Список ключей подтипов ["stoves", "paper", "apartment", "tires", "plot"]
         current_key: Текущий активный ключ подтипа
 
     Returns:
@@ -67,7 +67,7 @@ def get_task_1_5_carousel_keyboard(
     Создает "умную" клавиатуру-карусель для выбора подтипа Заданий 1-5.
 
     Args:
-        subtypes_list: Список ключей подтипов ["paper", "apartment", "tires", "plot", "bath"]
+        subtypes_list: Список ключей подтипов ["stoves", "paper", "apartment", "tires", "plot"]
         current_key: Текущий активный ключ подтипа
     """
     builder = InlineKeyboardBuilder()

@@ -99,28 +99,29 @@ def humanize(solution_core: Dict[str, Any]) -> str:
 # ============================================================
 
 def _humanize_stove_match(profile: Dict[str, Any], variables: Dict[str, Any]) -> str:
-    """
-    variables required (Q1):
-      - column_label: str
-      - columns: list[int] (в порядке задания)
-      - stove_no_to_value_mapping: dict[str,int] (печь -> значение)
-      - answer: str (3 цифры)
-    """
+
+    required = ["column_label", "columns", "stove_no_to_value_mapping", "answer"]
+    missing = [k for k in required if k not in variables]
+    if missing:
+        raise ValueError(f"HUMANIZER Q1: missing variables: {', '.join(missing)}")
 
     column_label = variables["column_label"]
     columns = variables["columns"]
     mapping = variables["stove_no_to_value_mapping"]
     answer = variables["answer"]
 
-    # строки сопоставления
     match_lines = []
+
     for value in columns:
         found_no = None
         for no, v in mapping.items():
             if v == value:
                 found_no = no
                 break
-        # found_no не должен быть None, если validator/solver корректны
+
+        if found_no is None:
+            raise ValueError(f"HUMANIZER Q1: value {value} not found in mapping")
+
         match_lines.append(f"{value} → печь №{found_no}")
 
     idea_text = IDEA_TEMPLATES[profile["idea"]].format(column_label=column_label)

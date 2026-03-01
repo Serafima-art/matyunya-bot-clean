@@ -101,16 +101,19 @@ async def handle_task_1_5_help(
         # 5️⃣ Humanizer (разная логика для subtype)
         # --------------------------------------------------
         try:
-            # 📄 Практико-ориентированные non-generators — template humanizer
+            # 📄 Paper
             if subtype == "paper":
                 from matunya_bot_final.help_core.humanizers.template_humanizers.task_1_5.paper_humanizer import humanize
-
                 humanized_solution = humanize(solution_core)
 
-            # 🛞 Tires — GPT оживление (legacy)
+            # 🔥 Stoves (новый non-generator)
+            elif subtype == "stoves":
+                from matunya_bot_final.help_core.humanizers.template_humanizers.task_1_5.stoves_humanizer import humanize
+                humanized_solution = humanize(solution_core)
+
+            # 🛞 Tires (legacy GPT)
             elif subtype.startswith("tires"):
                 from matunya_bot_final.help_core.humanizers.solution_humanizer import humanize_solution
-
                 student_name = state_data.get("student_name", "ученик")
                 humanized_solution = await humanize_solution(solution_core, state, student_name)
 
