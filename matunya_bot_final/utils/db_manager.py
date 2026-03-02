@@ -305,7 +305,8 @@ async def register_task(
     skill_source_id: str,
     text: str,
     answer: str,
-    theme: Optional[str] = None
+    theme: Optional[str] = None,
+    solution_data: Optional[dict] = None
 ) -> Optional[int]:
     """
     Регистрирует новую задачу в базе данных.
@@ -336,7 +337,8 @@ async def register_task(
             skill_type_id=skill_type.id,
             text=text,
             answer=str(answer),
-            theme=theme
+            theme=theme,
+            solution_data=solution_data
         )
 
         session.add(new_task)

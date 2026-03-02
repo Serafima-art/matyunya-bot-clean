@@ -198,11 +198,15 @@ async def dispatch_overview_screen(
                 question_text = task.get("question_text", "")
                 answer_value = task.get("answer", "")
 
+                solution_data = task.get("solution_data")
+
                 task_id = await register_task(
                     session,
                     str(skill_source_id),
                     str(question_text),
                     str(answer_value),
+                    theme="paper",  # можно явно указать
+                    solution_data=solution_data,
                 )
                 task_ids_from_db.append(task_id)
 

@@ -38,9 +38,9 @@ from matunya_bot_final.utils.answer_utils import answers_equal
 from matunya_bot_final.keyboards.inline_keyboards.tasks.task_1_5.after_task_1_5_keyboard import (
     build_overview_keyboard,
 )
+from matunya_bot_final.keyboards.navigation.navigation import back_and_main_kb
 from matunya_bot_final.gpt.phrases.tasks.correct_answer_feedback import get_random_feedback
 from matunya_bot_final.core.callbacks.tasks_callback import TaskCallback
-from matunya_bot_final.utils.fsm_guards import ensure_task_index
 
 logger = logging.getLogger(__name__)
 router = Router()
@@ -121,7 +121,41 @@ async def process_user_answer(message: Message, state: FSMContext, session_maker
             )
 
             # 3) Сравнение
-            is_correct = answers_equal(user_answer, correct_answer)
+
+            solution_data = getattr(task_obj, "solution_data", None)
+
+            # Всегда пытаемся привести к dict
+            if isinstance(solution_data, str):
+                try:
+                    solution_data = json.loads(solution_data)
+                except Exception:
+                    solution_data = None
+
+            acceptable_answers = []
+            if isinstance(solution_data, dict):
+                acceptable_answers = solution_data.get("acceptable_answers", [])
+
+            # ⬇⬇⬇ ВСТАВИТЬ СЮДА ⬇⬇⬇
+            logger.info(f"DEBUG solution_data type: {type(solution_data)}")
+            logger.info(f"DEBUG acceptable_answers: {acceptable_answers}")
+            # ⬆⬆⬆ ВСТАВИТЬ СЮДА ⬆⬆⬆
+
+            def normalize_number(value: str):
+                try:
+                    return float(value.replace(",", "."))
+                except Exception:
+                    return None
+
+            user_number = normalize_number(user_answer)
+
+            if acceptable_answers and user_number is not None:
+                is_correct = any(
+                    abs(user_number - float(ans)) < 0.01
+                    for ans in acceptable_answers
+                )
+            else:
+                is_correct = answers_equal(user_answer, correct_answer)
+
             logger.info(f"🔍 ANSWER HANDLER: {'✅ ВЕРНО' if is_correct else '❌ НЕВЕРНО'}")
 
             # 4) Получаем внутренний user_id
@@ -348,14 +382,8 @@ async def _handle_incorrect_answer(message: Message, state: FSMContext):
     )
 
 async def _handle_all_tasks_solved(message: Message, state: FSMContext):
-    """
-    Финальный экран, когда решены все 5 задач.
-    Есть защита от повторной отправки (session_completed).
-    """
-
     user_data = await state.get_data()
 
-    # Защита от повторной отправки
     if user_data.get("session_completed"):
         logger.info("🏁 Финал уже был отправлен — пропускаем повтор.")
         return
@@ -370,7 +398,6 @@ async def _handle_all_tasks_solved(message: Message, state: FSMContext):
     bot = message.bot
     chat_id = message.chat.id
 
-    # Гендерная форма
     gender = user_data.get("gender", "мальчик")
     verb = "справилась" if gender == "девочка" else "справился"
 
@@ -381,6 +408,7 @@ async def _handle_all_tasks_solved(message: Message, state: FSMContext):
     )
 
     kb = InlineKeyboardBuilder()
+
     kb.button(
         text="💪 Решить ещё один вариант!",
         callback_data=TaskCallback(
@@ -388,14 +416,19 @@ async def _handle_all_tasks_solved(message: Message, state: FSMContext):
             subtype_key=subtype_key,
         ).pack(),
     )
-    kb.button(
-        text="↩️ Другой подтип",
-        callback_data=TaskCallback(action="show_task_1_5_carousel").pack(),
+
+    # Добавляем стандартный блок ⬅️ Назад + 🏠 В главное меню
+    nav_kb = back_and_main_kb(
+        back_text="💫 Назад",
+        back_callback=TaskCallback(
+            action="show_task_1_5_carousel"
+        ).pack(),
     )
-    kb.button(
-        text="🔝 В главное меню",
-        callback_data="back_to_main",
-    )
+
+    # Переносим строки из nav_kb в текущий builder
+    for row in nav_kb.inline_keyboard:
+        kb.row(*row)
+
     kb.adjust(1, 2)
 
     await send_tracked_message(
