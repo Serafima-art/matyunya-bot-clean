@@ -14,9 +14,11 @@ async def load_stoves_variant() -> dict | None:
 
     questions = chosen.get("questions", [])
     table_context = chosen.get("table_context")
+    room_context = chosen.get("room_context")
 
     return {
         "id": chosen.get("id"),
+        "room_context": room_context,   # ← ВОТ ЭТА СТРОКА НУЖНА
         "table_context": table_context,
         "display_scenario": [],
         "tasks": questions,

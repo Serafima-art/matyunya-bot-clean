@@ -39,12 +39,8 @@ async def send_overview_block_stoves(
 ):
     logger.info("📘 ОБЗОРНЫЙ ЭКРАН: Печи")
 
-    # 0️⃣ INTRO (как в Бумаге)
-    variant = task_1_5_data.get("variant_data") or task_1_5_data
-
-    print("DEBUG STOVES VARIANT STRUCTURE:")
-    print(variant)
-
+    # 0️⃣ INTRO
+    variant = task_1_5_data
     intro_elements = build_stoves_intro(variant)
 
     for index, element in enumerate(intro_elements, start=1):
@@ -74,16 +70,5 @@ async def send_overview_block_stoves(
             category="tasks",
             parse_mode="HTML",
         )
-
-    # 2️⃣ Пульт выбора задания
-    user_data = await state.get_data()
-    solved_indices = user_data.get("solved_tasks_indices", [])
-    subtype_key = user_data.get("task_subtype", "stoves")
-
-    overview_kb = build_overview_keyboard(
-        tasks_count=len(task_1_5_data.get("tasks", [])),
-        subtype_key=subtype_key,
-        solved_indices=solved_indices,
-    )
 
     logger.info("✅ ОБЗОРНЫЙ ЭКРАН: Печи отправлен")

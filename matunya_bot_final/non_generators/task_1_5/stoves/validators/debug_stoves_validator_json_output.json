@@ -6,34 +6,34 @@
       "width": 2.4,
       "height": 2.2,
       "door_width_cm": 70.0,
-      "door_height_m": 2.0,
-      "electric_install_cost": 9500
+      "door_height_m": 1.9,
+      "electric_install_cost": 8600
     },
     "table_context": {
       "stoves": [
         {
           "stove_no": 1,
           "type": "wood",
-          "volume_range": "80–120",
-          "volume_max": 120,
-          "mass": 115,
-          "cost": 28000
+          "volume_range": "10-16.5",
+          "volume_max": 16.5,
+          "mass": 40,
+          "cost": 21000
         },
         {
           "stove_no": 2,
           "type": "wood",
-          "volume_range": "70–110",
-          "volume_max": 110,
-          "mass": 108,
-          "cost": 26500
+          "volume_range": "17-23",
+          "volume_max": 23.0,
+          "mass": 85,
+          "cost": 33200
         },
         {
           "stove_no": 3,
           "type": "electric",
-          "volume_range": "36–54",
-          "volume_max": 54,
-          "mass": 10,
-          "cost": 8500
+          "volume_range": "12-20",
+          "volume_max": 20.0,
+          "mass": 35,
+          "cost": 18000
         }
       ]
     },
@@ -45,110 +45,269 @@
         "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных наибольших объёмов помещения. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
         "input_data": {
           "columns_order": [
-            54,
-            110,
-            120
+            16.5,
+            20.0,
+            23.0
           ],
-          "column_label": "Наибольший объём, м³"
+          "column_label": "Объём помещения, м³"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
-            "1": 120,
-            "2": 110,
-            "3": 54
-          },
-          "answer_sequence": "321"
-        },
-        "answer": "321",
-        "skill_source_id": "stoves_q1"
-      }
-    ]
-  },
-  {
-    "id": "stoves_2026_var_02",
-    "room_context": null,
-    "table_context": {
-      "stoves": [
-        {
-          "stove_no": 1,
-          "type": "wood",
-          "volume_range": "75–115",
-          "volume_max": 115,
-          "mass": 112,
-          "cost": 29500
-        },
-        {
-          "stove_no": 2,
-          "type": "electric",
-          "volume_range": "40–60",
-          "volume_max": 60,
-          "mass": 11,
-          "cost": 9200
-        },
-        {
-          "stove_no": 3,
-          "type": "wood",
-          "volume_range": "90–130",
-          "volume_max": 130,
-          "mass": 125,
-          "cost": 32500
-        }
-      ]
-    },
-    "questions": [
-      {
-        "q_number": 1,
-        "pattern": "stove_match_table",
-        "narrative": "match_volume",
-        "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных наибольших объёмов помещения. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
-        "input_data": {
-          "columns_order": [
-            115,
-            130,
-            60
-          ],
-          "column_label": "Наибольший объём, м³"
-        },
-        "solution_data": {
-          "stove_no_to_value_mapping": {
-            "1": 115,
-            "2": 60,
-            "3": 130
+            "1": 16.5,
+            "2": 23.0,
+            "3": 20.0
           },
           "answer_sequence": "132"
         },
         "answer": "132",
         "skill_source_id": "stoves_q1"
+      },
+      {
+        "q_number": 2,
+        "pattern": "stoves_room_geometry",
+        "narrative": "find_volume",
+        "question_text": "По данным в условии задачи размерам найди объём парного отделения бани. Ответ дай в кубических метрах.",
+        "input_data": {
+          "length": 3.0,
+          "width": 2.4,
+          "height": 2.2
+        },
+        "solution_data": {
+          "formula": "V = a · b · h",
+          "calculation": "3.0 · 2.4 · 2.2",
+          "volume": 15.84
+        },
+        "answer": "15.84",
+        "help_image_file": "help_stoves_room_geometry.png",
+        "skill_source_id": "stoves_q2"
+      },
+      {
+        "q_number": 3,
+        "pattern": "stoves_purchase_cost",
+        "narrative": "find_price_difference",
+        "question_text": "Определи, на сколько рублей стоимость покупки дровяной печи, подходящей по объёму парного отделения, меньше стоимости электрической печи с учётом её установки.",
+        "input_data": {
+          "length": 3.0,
+          "width": 2.4,
+          "height": 2.2
+        },
+        "solution_data": {
+          "room_volume": 15.84,
+          "electric_stove_no": 3,
+          "electric_cost": 18000,
+          "wood_ok_no": 1,
+          "wood_ok_cost": 21000,
+          "electric_install_cost": 8600,
+          "delivery_cost": 0,
+          "electric_total": 26600,
+          "wood_total": 21000,
+          "electric_kwh": null,
+          "electric_price_per_kwh": null,
+          "wood_volume_m3": null,
+          "wood_price_per_m3": null,
+          "electric_oper": null,
+          "wood_oper": null,
+          "result": 5600
+        },
+        "answer": "5600",
+        "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 5,
+        "pattern": "stoves_arc_radius",
+        "narrative": "find_arc_radius",
+        "question_text": "",
+        "input_data": {
+          "a": 32.0,
+          "b": 48.0
+        },
+        "solution_data": {
+          "a": 32.0,
+          "b": 48.0,
+          "half_width": 24.0,
+          "a_squared": 1024.0,
+          "half_width_squared": 576.0,
+          "radius_squared": 1600.0,
+          "radius": 40
+        },
+        "answer": "40",
+        "skill_source_id": "stoves_q5",
+        "image_file": "task_stoves_arc_radius.png",
+        "help_image_file": "help_stoves_arc_radius.png"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_02",
+    "room_context": {
+      "length": 2.8,
+      "width": 2.2,
+      "height": 2.0,
+      "door_width_cm": 60.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 8800
+    },
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "wood",
+          "volume_range": "8-12",
+          "volume_max": 12.0,
+          "mass": 27,
+          "cost": 20500
+        },
+        {
+          "stove_no": 2,
+          "type": "electric",
+          "volume_range": "10-16",
+          "volume_max": 16.0,
+          "mass": 28,
+          "cost": 21200
+        },
+        {
+          "stove_no": 3,
+          "type": "wood",
+          "volume_range": "10.5-18.5",
+          "volume_max": 18.5,
+          "mass": 110,
+          "cost": 28000
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_volume",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных наибольших объёмов помещения. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            18.5,
+            12.0,
+            16.0
+          ],
+          "column_label": "Объём помещения, м³"
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 12.0,
+            "2": 16.0,
+            "3": 18.5
+          },
+          "answer_sequence": "312"
+        },
+        "answer": "312",
+        "skill_source_id": "stoves_q1"
+      },
+      {
+        "q_number": 2,
+        "pattern": "stoves_room_geometry",
+        "narrative": "find_base_area",
+        "question_text": "По данным в условии задачи размерам найди площадь пола парного отделения. Ответ дай в квадратных метрах.",
+        "input_data": {
+          "length": 2.8,
+          "width": 2.2
+        },
+        "solution_data": {
+          "formula": "S = a · b",
+          "calculation": "2.8 · 2.2",
+          "area": 6.16
+        },
+        "answer": "6.16",
+        "help_image_file": "help_stoves_room_geometry.png",
+        "skill_source_id": "stoves_q2"
+      },
+      {
+        "q_number": 3,
+        "pattern": "stoves_purchase_cost",
+        "narrative": "find_wood_stove_total_cost",
+        "question_text": "Определи общую стоимость покупки дровяной печи, подходящей по объёму парного отделения, если доставка на дачный участок стоит 2300 рублей.",
+        "input_data": {
+          "length": 2.8,
+          "width": 2.2,
+          "height": 2.0
+        },
+        "solution_data": {
+          "room_volume": 12.32,
+          "electric_stove_no": 2,
+          "electric_cost": 21200,
+          "wood_ok_no": 3,
+          "wood_ok_cost": 28000,
+          "electric_install_cost": 8800,
+          "delivery_cost": 2300,
+          "electric_total": 32300,
+          "wood_total": 30300,
+          "electric_kwh": null,
+          "electric_price_per_kwh": null,
+          "wood_volume_m3": null,
+          "wood_price_per_m3": null,
+          "electric_oper": null,
+          "wood_oper": null,
+          "result": 30300
+        },
+        "answer": "30300",
+        "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 5,
+        "pattern": "stoves_arc_radius",
+        "narrative": "find_arc_radius",
+        "question_text": "",
+        "input_data": {
+          "a": 45.0,
+          "b": 48.0
+        },
+        "solution_data": {
+          "a": 45.0,
+          "b": 48.0,
+          "half_width": 24.0,
+          "a_squared": 2025.0,
+          "half_width_squared": 576.0,
+          "radius_squared": 2601.0,
+          "radius": 51
+        },
+        "answer": "51",
+        "skill_source_id": "stoves_q5",
+        "image_file": "task_stoves_arc_radius.png",
+        "help_image_file": "help_stoves_arc_radius.png"
       }
     ]
   },
   {
     "id": "stoves_2026_var_03",
-    "room_context": null,
+    "room_context": {
+      "length": 3.0,
+      "width": 2.5,
+      "height": 2.3,
+      "door_width_cm": 70.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 10200
+    },
     "table_context": {
       "stoves": [
         {
           "stove_no": 1,
           "type": "electric",
-          "volume_range": "36–54",
-          "volume_max": 54,
-          "mass": 10,
-          "cost": 8700
+          "volume_range": "10-18",
+          "volume_max": 18.0,
+          "mass": 32,
+          "cost": 22700
         },
         {
           "stove_no": 2,
           "type": "wood",
-          "volume_range": "80–120",
-          "volume_max": 120,
-          "mass": 118,
+          "volume_range": "12-17",
+          "volume_max": 17.0,
+          "mass": 89,
           "cost": 30500
         },
         {
           "stove_no": 3,
           "type": "wood",
-          "volume_range": "95–135",
-          "volume_max": 135,
-          "mass": 130,
+          "volume_range": "14-20",
+          "volume_max": 20.0,
+          "mass": 118,
           "cost": 34500
         }
       ]
@@ -161,53 +320,139 @@
         "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных наибольших объёмов помещения. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
         "input_data": {
           "columns_order": [
-            54,
-            120,
-            135
+            18.0,
+            20.0,
+            17.0
           ],
-          "column_label": "Наибольший объём, м³"
+          "column_label": "Объём помещения, м³"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
-            "1": 54,
-            "2": 120,
-            "3": 135
+            "1": 18.0,
+            "2": 17.0,
+            "3": 20.0
           },
-          "answer_sequence": "123"
+          "answer_sequence": "132"
         },
-        "answer": "123",
+        "answer": "132",
         "skill_source_id": "stoves_q1"
+      },
+      {
+        "q_number": 2,
+        "pattern": "stoves_room_geometry",
+        "narrative": "find_lateral_area",
+        "question_text": "По данным в условии задачи размерам найди суммарную площадь четырёх стен парного отделения. Площадь дверей не учитывай. Ответ дай в квадратных метрах.",
+        "input_data": {
+          "length": 3.0,
+          "width": 2.5,
+          "height": 2.3,
+          "door_width_cm": 70.0,
+          "door_height_m": 2.0
+        },
+        "solution_data": {
+          "formula": "S_стен = P · h − S_двери",
+          "door_width_m": 0.7,
+          "sum_length_width": 5.5,
+          "perimeter": 11.0,
+          "walls_area": 25.3,
+          "door_area": 1.4,
+          "result_area": 23.9
+        },
+        "answer": "23.9",
+        "help_image_file": "help_stoves_room_geometry.png",
+        "skill_source_id": "stoves_q2"
+      },
+      {
+        "q_number": 3,
+        "pattern": "stoves_purchase_cost",
+        "narrative": "find_electric_stove_total_cost",
+        "question_text": "Определи общую стоимость покупки электрической печи с установкой и доставкой на дачный участок, если доставка стоит 4000 рублей.",
+        "input_data": {
+          "length": 3.0,
+          "width": 2.5,
+          "height": 2.3
+        },
+        "solution_data": {
+          "room_volume": 17.25,
+          "electric_stove_no": 1,
+          "electric_cost": 22700,
+          "wood_ok_no": 3,
+          "wood_ok_cost": 34500,
+          "electric_install_cost": 10200,
+          "delivery_cost": 4000,
+          "electric_total": 36900,
+          "wood_total": 38500,
+          "electric_kwh": null,
+          "electric_price_per_kwh": null,
+          "wood_volume_m3": null,
+          "wood_price_per_m3": null,
+          "electric_oper": null,
+          "wood_oper": null,
+          "result": 36900
+        },
+        "answer": "36900",
+        "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 5,
+        "pattern": "stoves_arc_radius",
+        "narrative": "find_arc_radius",
+        "question_text": "",
+        "input_data": {
+          "a": 36.0,
+          "b": 54.0
+        },
+        "solution_data": {
+          "a": 36.0,
+          "b": 54.0,
+          "half_width": 27.0,
+          "a_squared": 1296.0,
+          "half_width_squared": 729.0,
+          "radius_squared": 2025.0,
+          "radius": 45
+        },
+        "answer": "45",
+        "skill_source_id": "stoves_q5",
+        "image_file": "task_stoves_arc_radius.png",
+        "help_image_file": "help_stoves_arc_radius.png"
       }
     ]
   },
   {
     "id": "stoves_2026_var_04",
-    "room_context": null,
+    "room_context": {
+      "length": 2.6,
+      "width": 2.4,
+      "height": 2.0,
+      "door_width_cm": 65.0,
+      "door_height_m": 1.8,
+      "electric_install_cost": 9700
+    },
     "table_context": {
       "stoves": [
         {
           "stove_no": 1,
           "type": "wood",
-          "volume_range": "85–125",
-          "volume_max": 125,
-          "mass": 120,
-          "cost": 31200
+          "volume_range": "8-12",
+          "volume_max": 12.0,
+          "mass": 40,
+          "cost": 22600
         },
         {
           "stove_no": 2,
           "type": "wood",
-          "volume_range": "70–110",
-          "volume_max": 110,
-          "mass": 108,
-          "cost": 27800
+          "volume_range": "10.5-16",
+          "volume_max": 16.0,
+          "mass": 78,
+          "cost": 32800
         },
         {
           "stove_no": 3,
           "type": "electric",
-          "volume_range": "44–66",
-          "volume_max": 66,
-          "mass": 12,
-          "cost": 9600
+          "volume_range": "9-15",
+          "volume_max": 15.0,
+          "mass": 28,
+          "cost": 25600
         }
       ]
     },
@@ -219,51 +464,131 @@
         "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных наибольших объёмов помещения. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
         "input_data": {
           "columns_order": [
-            125,
-            66,
-            110
+            12.0,
+            15.0,
+            16.0
           ],
-          "column_label": "Наибольший объём, м³"
+          "column_label": "Объём помещения, м³"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
-            "1": 125,
-            "2": 110,
-            "3": 66
+            "1": 12.0,
+            "2": 16.0,
+            "3": 15.0
           },
           "answer_sequence": "132"
         },
         "answer": "132",
         "skill_source_id": "stoves_q1"
+      },
+      {
+        "q_number": 2,
+        "pattern": "stoves_room_geometry",
+        "narrative": "find_volume",
+        "question_text": "По данным в условии задачи размерам найди объём парного отделения бани. Ответ дай в кубических метрах.",
+        "input_data": {
+          "length": 2.6,
+          "width": 2.4,
+          "height": 2.0
+        },
+        "solution_data": {
+          "formula": "V = a · b · h",
+          "calculation": "2.6 · 2.4 · 2.0",
+          "volume": 12.48
+        },
+        "answer": "12.48",
+        "help_image_file": "help_stoves_room_geometry.png",
+        "skill_source_id": "stoves_q2"
+      },
+      {
+        "q_number": 3,
+        "pattern": "stoves_purchase_cost",
+        "narrative": "find_price_difference",
+        "question_text": "Определи, на сколько рублей стоимость покупки дровяной печи, подходящей по объёму парного отделения, меньше стоимости электрической печи с учётом её установки.",
+        "input_data": {
+          "length": 2.6,
+          "width": 2.4,
+          "height": 2.0
+        },
+        "solution_data": {
+          "room_volume": 12.48,
+          "electric_stove_no": 3,
+          "electric_cost": 25600,
+          "wood_ok_no": 2,
+          "wood_ok_cost": 32800,
+          "electric_install_cost": 9700,
+          "delivery_cost": 0,
+          "electric_total": 35300,
+          "wood_total": 32800,
+          "electric_kwh": null,
+          "electric_price_per_kwh": null,
+          "wood_volume_m3": null,
+          "wood_price_per_m3": null,
+          "electric_oper": null,
+          "wood_oper": null,
+          "result": 2500
+        },
+        "answer": "2500",
+        "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 5,
+        "pattern": "stoves_arc_radius",
+        "narrative": "find_arc_radius",
+        "question_text": "",
+        "input_data": {
+          "a": 40.0,
+          "b": 60.0
+        },
+        "solution_data": {
+          "a": 40.0,
+          "b": 60.0,
+          "half_width": 30.0,
+          "a_squared": 1600.0,
+          "half_width_squared": 900.0,
+          "radius_squared": 2500.0,
+          "radius": 50
+        },
+        "answer": "50",
+        "skill_source_id": "stoves_q5",
+        "image_file": "task_stoves_arc_radius.png",
+        "help_image_file": "help_stoves_arc_radius.png"
       }
     ]
   },
   {
     "id": "stoves_2026_var_05",
-    "room_context": null,
+    "room_context": {
+      "length": 3.5,
+      "width": 2.5,
+      "height": 2.2,
+      "door_width_cm": 80.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 12000
+    },
     "table_context": {
       "stoves": [
         {
           "stove_no": 1,
           "type": "wood",
-          "volume_range": "90–130",
-          "volume_max": 130,
+          "volume_range": "14-23",
+          "volume_max": 23.0,
           "mass": 125,
           "cost": 33400
         },
         {
           "stove_no": 2,
           "type": "electric",
-          "volume_range": "40–60",
-          "volume_max": 60,
-          "mass": 11,
-          "cost": 9100
+          "volume_range": "12-20",
+          "volume_max": 20.0,
+          "mass": 41,
+          "cost": 28100
         },
         {
           "stove_no": 3,
           "type": "wood",
-          "volume_range": "75–115",
-          "volume_max": 115,
+          "volume_range": "10-18.5",
+          "volume_max": 18.5,
           "mass": 112,
           "cost": 28900
         }
@@ -277,53 +602,132 @@
         "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных значений массы. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
         "input_data": {
           "columns_order": [
-            125,
-            11,
-            112
+            125.0,
+            41.0,
+            112.0
           ],
           "column_label": "Масса печи, кг"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
             "1": 125,
-            "2": 11,
+            "2": 41,
             "3": 112
           },
           "answer_sequence": "123"
         },
         "answer": "123",
         "skill_source_id": "stoves_q1"
+      },
+      {
+        "q_number": 2,
+        "pattern": "stoves_room_geometry",
+        "narrative": "find_base_area",
+        "question_text": "По данным в условии задачи размерам найди площадь потолка парного отделения. Ответ дай в квадратных метрах.",
+        "input_data": {
+          "length": 3.5,
+          "width": 2.5
+        },
+        "solution_data": {
+          "formula": "S = a · b",
+          "calculation": "3.5 · 2.5",
+          "area": 8.75
+        },
+        "answer": "8.75",
+        "help_image_file": "help_stoves_room_geometry.png",
+        "skill_source_id": "stoves_q2"
+      },
+      {
+        "q_number": 3,
+        "pattern": "stoves_purchase_cost",
+        "narrative": "find_operating_cost_difference",
+        "question_text": "За год электрическая печь расходует 3100 киловатт-часов (кВт·ч) электроэнергии по цене 4 руб. за 1 кВт·ч, а дровяная печь — 3 кубометра (куб. м) дров по цене 1500 руб. за 1 куб. м. Определи, на сколько рублей годовые расходы на эксплуатацию дровяной печи, подходящей по отапливаемому объёму парного отделения, меньше расходов на использование электрической печи.",
+        "input_data": {
+          "length": 3.5,
+          "width": 2.5,
+          "height": 2.2
+        },
+        "solution_data": {
+          "room_volume": 19.25,
+          "electric_stove_no": 2,
+          "electric_cost": 28100,
+          "wood_ok_no": 1,
+          "wood_ok_cost": 33400,
+          "electric_install_cost": 12000,
+          "delivery_cost": 0,
+          "electric_total": 40100,
+          "wood_total": 33400,
+          "electric_kwh": 3100,
+          "electric_price_per_kwh": 4.0,
+          "wood_volume_m3": 3.0,
+          "wood_price_per_m3": 1500,
+          "electric_oper": 12400.0,
+          "wood_oper": 4500.0,
+          "result": 7900
+        },
+        "answer": "7900",
+        "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 5,
+        "pattern": "stoves_arc_radius",
+        "narrative": "find_arc_radius",
+        "question_text": "",
+        "input_data": {
+          "a": 24.0,
+          "b": 64.0
+        },
+        "solution_data": {
+          "a": 24.0,
+          "b": 64.0,
+          "half_width": 32.0,
+          "a_squared": 576.0,
+          "half_width_squared": 1024.0,
+          "radius_squared": 1600.0,
+          "radius": 40
+        },
+        "answer": "40",
+        "skill_source_id": "stoves_q5",
+        "image_file": "task_stoves_arc_radius.png",
+        "help_image_file": "help_stoves_arc_radius.png"
       }
     ]
   },
   {
     "id": "stoves_2026_var_06",
-    "room_context": null,
+    "room_context": {
+      "length": 3.0,
+      "width": 2.3,
+      "height": 2.2,
+      "door_width_cm": 70.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 9400
+    },
     "table_context": {
       "stoves": [
         {
           "stove_no": 1,
           "type": "wood",
-          "volume_range": "85–125",
-          "volume_max": 125,
-          "mass": 118,
+          "volume_range": "9-15",
+          "volume_max": 15.0,
+          "mass": 74,
           "cost": 31800
         },
         {
           "stove_no": 2,
           "type": "wood",
-          "volume_range": "95–135",
-          "volume_max": 135,
+          "volume_range": "14-24",
+          "volume_max": 24.0,
           "mass": 132,
           "cost": 35200
         },
         {
           "stove_no": 3,
           "type": "electric",
-          "volume_range": "44–66",
-          "volume_max": 66,
-          "mass": 12,
-          "cost": 9800
+          "volume_range": "9-16.5",
+          "volume_max": 16.5,
+          "mass": 29,
+          "cost": 23800
         }
       ]
     },
@@ -335,53 +739,139 @@
         "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных наибольших объёмов помещения. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
         "input_data": {
           "columns_order": [
-            135,
-            66,
-            125
+            24.0,
+            16.5,
+            15.0
           ],
-          "column_label": "Наибольший объём, м³"
+          "column_label": "Объём помещения, м³"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
-            "1": 125,
-            "2": 135,
-            "3": 66
+            "1": 15.0,
+            "2": 24.0,
+            "3": 16.5
           },
           "answer_sequence": "231"
         },
         "answer": "231",
         "skill_source_id": "stoves_q1"
+      },
+      {
+        "q_number": 2,
+        "pattern": "stoves_room_geometry",
+        "narrative": "find_lateral_area",
+        "question_text": "По данным в условии задачи размерам найди суммарную площадь четырёх стен парного отделения. Площадь дверей не учитывай. Ответ дай в квадратных метрах.",
+        "input_data": {
+          "length": 3.0,
+          "width": 2.3,
+          "height": 2.2,
+          "door_width_cm": 70.0,
+          "door_height_m": 2.0
+        },
+        "solution_data": {
+          "formula": "S_стен = P · h − S_двери",
+          "door_width_m": 0.7,
+          "sum_length_width": 5.3,
+          "perimeter": 10.6,
+          "walls_area": 23.32,
+          "door_area": 1.4,
+          "result_area": 21.92
+        },
+        "answer": "21.92",
+        "help_image_file": "help_stoves_room_geometry.png",
+        "skill_source_id": "stoves_q2"
+      },
+      {
+        "q_number": 3,
+        "pattern": "stoves_purchase_cost",
+        "narrative": "find_wood_stove_total_cost",
+        "question_text": "Определи общую стоимость покупки дровяной печи, подходящей по объёму парного отделения, если доставка на дачный участок стоит 5600 рублей.",
+        "input_data": {
+          "length": 3.0,
+          "width": 2.3,
+          "height": 2.2
+        },
+        "solution_data": {
+          "room_volume": 15.18,
+          "electric_stove_no": 3,
+          "electric_cost": 23800,
+          "wood_ok_no": 2,
+          "wood_ok_cost": 35200,
+          "electric_install_cost": 9400,
+          "delivery_cost": 5600,
+          "electric_total": 38800,
+          "wood_total": 40800,
+          "electric_kwh": null,
+          "electric_price_per_kwh": null,
+          "wood_volume_m3": null,
+          "wood_price_per_m3": null,
+          "electric_oper": null,
+          "wood_oper": null,
+          "result": 40800
+        },
+        "answer": "40800",
+        "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 5,
+        "pattern": "stoves_arc_radius",
+        "narrative": "find_arc_radius",
+        "question_text": "",
+        "input_data": {
+          "a": 60.0,
+          "b": 64.0
+        },
+        "solution_data": {
+          "a": 60.0,
+          "b": 64.0,
+          "half_width": 32.0,
+          "a_squared": 3600.0,
+          "half_width_squared": 1024.0,
+          "radius_squared": 4624.0,
+          "radius": 68
+        },
+        "answer": "68",
+        "skill_source_id": "stoves_q5",
+        "image_file": "task_stoves_arc_radius.png",
+        "help_image_file": "help_stoves_arc_radius.png"
       }
     ]
   },
   {
     "id": "stoves_2026_var_07",
-    "room_context": null,
+    "room_context": {
+      "length": 3.0,
+      "width": 2.6,
+      "height": 2.4,
+      "door_width_cm": 75.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 11000
+    },
     "table_context": {
       "stoves": [
         {
           "stove_no": 1,
           "type": "electric",
-          "volume_range": "38–57",
-          "volume_max": 57,
-          "mass": 10,
-          "cost": 8900
+          "volume_range": "12-20",
+          "volume_max": 20.0,
+          "mass": 31,
+          "cost": 25900
         },
         {
           "stove_no": 2,
           "type": "wood",
-          "volume_range": "88–128",
-          "volume_max": 128,
+          "volume_range": "16-26",
+          "volume_max": 26.0,
           "mass": 122,
-          "cost": 32900
+          "cost": 35900
         },
         {
           "stove_no": 3,
           "type": "wood",
-          "volume_range": "72–112",
-          "volume_max": 112,
+          "volume_range": "10-18.5",
+          "volume_max": 18.5,
           "mass": 110,
-          "cost": 28400
+          "cost": 31400
         }
       ]
     },
@@ -393,749 +883,133 @@
         "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
         "input_data": {
           "columns_order": [
-            8900,
-            32900,
-            28400
+            25900.0,
+            31400.0,
+            35900.0
           ],
-          "column_label": "Стоимость печи, руб."
+          "column_label": "Цена, руб."
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
-            "1": 8900,
-            "2": 32900,
-            "3": 28400
-          },
-          "answer_sequence": "123"
-        },
-        "answer": "123",
-        "skill_source_id": "stoves_q1"
-      }
-    ]
-  },
-  {
-    "id": "stoves_2026_var_08",
-    "room_context": null,
-    "table_context": {
-      "stoves": [
-        {
-          "stove_no": 1,
-          "type": "electric",
-          "volume_range": "36–54",
-          "volume_max": 54,
-          "mass": 10,
-          "cost": 8700
-        },
-        {
-          "stove_no": 2,
-          "type": "wood",
-          "volume_range": "80–120",
-          "volume_max": 120,
-          "mass": 118,
-          "cost": 30500
-        },
-        {
-          "stove_no": 3,
-          "type": "wood",
-          "volume_range": "95–135",
-          "volume_max": 135,
-          "mass": 130,
-          "cost": 34500
-        }
-      ]
-    },
-    "questions": [
-      {
-        "q_number": 1,
-        "pattern": "stove_match_table",
-        "narrative": "match_weight",
-        "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных значений массы. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
-        "input_data": {
-          "columns_order": [
-            130,
-            10,
-            118
-          ],
-          "column_label": "Масса печи, кг"
-        },
-        "solution_data": {
-          "stove_no_to_value_mapping": {
-            "1": 10,
-            "2": 118,
-            "3": 130
-          },
-          "answer_sequence": "312"
-        },
-        "answer": "312",
-        "skill_source_id": "stoves_q1"
-      }
-    ]
-  },
-  {
-    "id": "stoves_2026_var_09",
-    "room_context": null,
-    "table_context": {
-      "stoves": [
-        {
-          "stove_no": 1,
-          "type": "wood",
-          "volume_range": "80–120",
-          "volume_max": 120,
-          "mass": 115,
-          "cost": 28000
-        },
-        {
-          "stove_no": 2,
-          "type": "wood",
-          "volume_range": "70–110",
-          "volume_max": 110,
-          "mass": 108,
-          "cost": 26500
-        },
-        {
-          "stove_no": 3,
-          "type": "electric",
-          "volume_range": "36–54",
-          "volume_max": 54,
-          "mass": 10,
-          "cost": 8500
-        }
-      ]
-    },
-    "questions": [
-      {
-        "q_number": 1,
-        "pattern": "stove_match_table",
-        "narrative": "match_cost",
-        "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
-        "input_data": {
-          "columns_order": [
-            28000,
-            8500,
-            26500
-          ],
-          "column_label": "Стоимость печи, руб."
-        },
-        "solution_data": {
-          "stove_no_to_value_mapping": {
-            "1": 28000,
-            "2": 26500,
-            "3": 8500
+            "1": 25900,
+            "2": 35900,
+            "3": 31400
           },
           "answer_sequence": "132"
         },
         "answer": "132",
         "skill_source_id": "stoves_q1"
-      }
-    ]
-  },
-  {
-    "id": "stoves_2026_var_10",
-    "room_context": null,
-    "table_context": {
-      "stoves": [
-        {
-          "stove_no": 1,
-          "type": "wood",
-          "volume_range": "75–115",
-          "volume_max": 115,
-          "mass": 112,
-          "cost": 29500
-        },
-        {
-          "stove_no": 2,
-          "type": "electric",
-          "volume_range": "40–60",
-          "volume_max": 60,
-          "mass": 11,
-          "cost": 9200
-        },
-        {
-          "stove_no": 3,
-          "type": "wood",
-          "volume_range": "90–130",
-          "volume_max": 130,
-          "mass": 125,
-          "cost": 32500
-        }
-      ]
-    },
-    "questions": [
+      },
       {
-        "q_number": 1,
-        "pattern": "stove_match_table",
-        "narrative": "match_weight",
-        "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных значений массы. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "q_number": 2,
+        "pattern": "stoves_room_geometry",
+        "narrative": "find_volume",
+        "question_text": "По данным в условии задачи размерам найди объём парного отделения бани. Ответ дай в кубических метрах.",
         "input_data": {
-          "columns_order": [
-            11,
-            125,
-            112
-          ],
-          "column_label": "Масса печи, кг"
+          "length": 3.0,
+          "width": 2.6,
+          "height": 2.4
         },
         "solution_data": {
-          "stove_no_to_value_mapping": {
-            "1": 112,
-            "2": 11,
-            "3": 125
-          },
-          "answer_sequence": "231"
+          "formula": "V = a · b · h",
+          "calculation": "3.0 · 2.6 · 2.4",
+          "volume": 18.72
         },
-        "answer": "231",
-        "skill_source_id": "stoves_q1"
-      }
-    ]
-  },
-  {
-    "id": "stoves_2026_var_11",
-    "room_context": null,
-    "table_context": {
-      "stoves": [
-        {
-          "stove_no": 1,
-          "type": "electric",
-          "volume_range": "36–54",
-          "volume_max": 54,
-          "mass": 10,
-          "cost": 8700
-        },
-        {
-          "stove_no": 2,
-          "type": "wood",
-          "volume_range": "80–120",
-          "volume_max": 120,
-          "mass": 118,
-          "cost": 30500
-        },
-        {
-          "stove_no": 3,
-          "type": "wood",
-          "volume_range": "95–135",
-          "volume_max": 135,
-          "mass": 130,
-          "cost": 34500
-        }
-      ]
-    },
-    "questions": [
+        "answer": "18.72",
+        "help_image_file": "help_stoves_room_geometry.png",
+        "skill_source_id": "stoves_q2"
+      },
       {
-        "q_number": 1,
-        "pattern": "stove_match_table",
-        "narrative": "match_cost",
-        "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "q_number": 3,
+        "pattern": "stoves_purchase_cost",
+        "narrative": "find_electric_stove_total_cost",
+        "question_text": "Определи общую стоимость покупки электрической печи с установкой и доставкой на дачный участок, если доставка стоит 2700 рублей.",
         "input_data": {
-          "columns_order": [
-            34500,
-            8700,
-            30500
-          ],
-          "column_label": "Стоимость печи, руб."
+          "length": 3.0,
+          "width": 2.6,
+          "height": 2.4
         },
         "solution_data": {
-          "stove_no_to_value_mapping": {
-            "1": 8700,
-            "2": 30500,
-            "3": 34500
-          },
-          "answer_sequence": "312"
+          "room_volume": 18.72,
+          "electric_stove_no": 1,
+          "electric_cost": 25900,
+          "wood_ok_no": 2,
+          "wood_ok_cost": 35900,
+          "electric_install_cost": 11000,
+          "delivery_cost": 2700,
+          "electric_total": 39600,
+          "wood_total": 38600,
+          "electric_kwh": null,
+          "electric_price_per_kwh": null,
+          "wood_volume_m3": null,
+          "wood_price_per_m3": null,
+          "electric_oper": null,
+          "wood_oper": null,
+          "result": 39600
         },
-        "answer": "312",
-        "skill_source_id": "stoves_q1"
-      }
-    ]
-  },
-  {
-    "id": "stoves_2026_var_12",
-    "room_context": null,
-    "table_context": {
-      "stoves": [
-        {
-          "stove_no": 1,
-          "type": "wood",
-          "volume_range": "90–130",
-          "volume_max": 130,
-          "mass": 125,
-          "cost": 33400
-        },
-        {
-          "stove_no": 2,
-          "type": "electric",
-          "volume_range": "40–60",
-          "volume_max": 60,
-          "mass": 11,
-          "cost": 9100
-        },
-        {
-          "stove_no": 3,
-          "type": "wood",
-          "volume_range": "75–115",
-          "volume_max": 115,
-          "mass": 112,
-          "cost": 28900
-        }
-      ]
-    },
-    "questions": [
+        "answer": "39600",
+        "skill_source_id": "stoves_q3"
+      },
       {
-        "q_number": 1,
-        "pattern": "stove_match_table",
-        "narrative": "match_volume",
-        "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных наибольших объёмов помещения. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "q_number": 5,
+        "pattern": "stoves_arc_radius",
+        "narrative": "find_arc_radius",
+        "question_text": "",
         "input_data": {
-          "columns_order": [
-            115,
-            60,
-            130
-          ],
-          "column_label": "Наибольший объём, м³"
+          "a": 27.0,
+          "b": 72.0
         },
         "solution_data": {
-          "stove_no_to_value_mapping": {
-            "1": 130,
-            "2": 60,
-            "3": 115
-          },
-          "answer_sequence": "321"
+          "a": 27.0,
+          "b": 72.0,
+          "half_width": 36.0,
+          "a_squared": 729.0,
+          "half_width_squared": 1296.0,
+          "radius_squared": 2025.0,
+          "radius": 45
         },
-        "answer": "321",
-        "skill_source_id": "stoves_q1"
+        "answer": "45",
+        "skill_source_id": "stoves_q5",
+        "image_file": "task_stoves_arc_radius.png",
+        "help_image_file": "help_stoves_arc_radius.png"
       }
     ]
   },
   {
-    "id": "stoves_2026_var_13",
-    "room_context": null,
-    "table_context": {
-      "stoves": [
-        {
-          "stove_no": 1,
-          "type": "wood",
-          "volume_range": "82–122",
-          "volume_max": 122,
-          "mass": 119,
-          "cost": 31700
-        },
-        {
-          "stove_no": 2,
-          "type": "electric",
-          "volume_range": "42–63",
-          "volume_max": 63,
-          "mass": 12,
-          "cost": 9500
-        },
-        {
-          "stove_no": 3,
-          "type": "wood",
-          "volume_range": "90–130",
-          "volume_max": 130,
-          "mass": 127,
-          "cost": 34100
-        }
-      ]
+    "id": "stoves_2026_var_08",
+    "room_context": {
+      "length": 2.7,
+      "width": 2.1,
+      "height": 2.0,
+      "door_width_cm": 60.0,
+      "door_height_m": 1.7,
+      "electric_install_cost": 8700
     },
-    "questions": [
-      {
-        "q_number": 1,
-        "pattern": "stove_match_table",
-        "narrative": "match_volume",
-        "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных наибольших объёмов помещения. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
-        "input_data": {
-          "columns_order": [
-            63,
-            122,
-            130
-          ],
-          "column_label": "Наибольший объём, м³"
-        },
-        "solution_data": {
-          "stove_no_to_value_mapping": {
-            "1": 122,
-            "2": 63,
-            "3": 130
-          },
-          "answer_sequence": "213"
-        },
-        "answer": "213",
-        "skill_source_id": "stoves_q1"
-      }
-    ]
-  },
-  {
-    "id": "stoves_2026_var_14",
-    "room_context": null,
     "table_context": {
       "stoves": [
         {
           "stove_no": 1,
           "type": "wood",
-          "volume_range": "82–122",
-          "volume_max": 122,
-          "mass": 119,
-          "cost": 31700
-        },
-        {
-          "stove_no": 2,
-          "type": "electric",
-          "volume_range": "42–63",
-          "volume_max": 63,
-          "mass": 12,
-          "cost": 9500
-        },
-        {
-          "stove_no": 3,
-          "type": "wood",
-          "volume_range": "90–130",
-          "volume_max": 130,
-          "mass": 127,
-          "cost": 34100
-        }
-      ]
-    },
-    "questions": [
-      {
-        "q_number": 1,
-        "pattern": "stove_match_table",
-        "narrative": "match_cost",
-        "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
-        "input_data": {
-          "columns_order": [
-            34100,
-            31700,
-            9500
-          ],
-          "column_label": "Стоимость печи, руб."
-        },
-        "solution_data": {
-          "stove_no_to_value_mapping": {
-            "1": 31700,
-            "2": 9500,
-            "3": 34100
-          },
-          "answer_sequence": "312"
-        },
-        "answer": "312",
-        "skill_source_id": "stoves_q1"
-      }
-    ]
-  },
-  {
-    "id": "stoves_2026_var_15",
-    "room_context": null,
-    "table_context": {
-      "stoves": [
-        {
-          "stove_no": 1,
-          "type": "wood",
-          "volume_range": "85–125",
-          "volume_max": 125,
-          "mass": 118,
-          "cost": 31800
-        },
-        {
-          "stove_no": 2,
-          "type": "wood",
-          "volume_range": "95–135",
-          "volume_max": 135,
-          "mass": 132,
-          "cost": 35200
-        },
-        {
-          "stove_no": 3,
-          "type": "electric",
-          "volume_range": "44–66",
-          "volume_max": 66,
-          "mass": 12,
-          "cost": 9800
-        }
-      ]
-    },
-    "questions": [
-      {
-        "q_number": 1,
-        "pattern": "stove_match_table",
-        "narrative": "match_cost",
-        "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
-        "input_data": {
-          "columns_order": [
-            9800,
-            31800,
-            35200
-          ],
-          "column_label": "Стоимость печи, руб."
-        },
-        "solution_data": {
-          "stove_no_to_value_mapping": {
-            "1": 31800,
-            "2": 35200,
-            "3": 9800
-          },
-          "answer_sequence": "312"
-        },
-        "answer": "312",
-        "skill_source_id": "stoves_q1"
-      }
-    ]
-  },
-  {
-    "id": "stoves_2026_var_16",
-    "room_context": null,
-    "table_context": {
-      "stoves": [
-        {
-          "stove_no": 1,
-          "type": "wood",
-          "volume_range": "90–130",
-          "volume_max": 130,
-          "mass": 125,
-          "cost": 33400
-        },
-        {
-          "stove_no": 2,
-          "type": "electric",
-          "volume_range": "40–60",
-          "volume_max": 60,
-          "mass": 11,
-          "cost": 9100
-        },
-        {
-          "stove_no": 3,
-          "type": "wood",
-          "volume_range": "75–115",
-          "volume_max": 115,
-          "mass": 112,
-          "cost": 28900
-        }
-      ]
-    },
-    "questions": [
-      {
-        "q_number": 1,
-        "pattern": "stove_match_table",
-        "narrative": "match_cost",
-        "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
-        "input_data": {
-          "columns_order": [
-            9100,
-            33400,
-            28900
-          ],
-          "column_label": "Стоимость печи, руб."
-        },
-        "solution_data": {
-          "stove_no_to_value_mapping": {
-            "1": 33400,
-            "2": 9100,
-            "3": 28900
-          },
-          "answer_sequence": "213"
-        },
-        "answer": "213",
-        "skill_source_id": "stoves_q1"
-      }
-    ]
-  },
-  {
-    "id": "stoves_2026_var_17",
-    "room_context": null,
-    "table_context": {
-      "stoves": [
-        {
-          "stove_no": 1,
-          "type": "wood",
-          "volume_range": "85–125",
-          "volume_max": 125,
-          "mass": 120,
-          "cost": 31200
-        },
-        {
-          "stove_no": 2,
-          "type": "wood",
-          "volume_range": "70–110",
-          "volume_max": 110,
-          "mass": 108,
-          "cost": 27800
-        },
-        {
-          "stove_no": 3,
-          "type": "electric",
-          "volume_range": "44–66",
-          "volume_max": 66,
-          "mass": 12,
-          "cost": 9600
-        }
-      ]
-    },
-    "questions": [
-      {
-        "q_number": 1,
-        "pattern": "stove_match_table",
-        "narrative": "match_cost",
-        "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
-        "input_data": {
-          "columns_order": [
-            27800,
-            31200,
-            9600
-          ],
-          "column_label": "Стоимость печи, руб."
-        },
-        "solution_data": {
-          "stove_no_to_value_mapping": {
-            "1": 31200,
-            "2": 27800,
-            "3": 9600
-          },
-          "answer_sequence": "213"
-        },
-        "answer": "213",
-        "skill_source_id": "stoves_q1"
-      }
-    ]
-  },
-  {
-    "id": "stoves_2026_var_18",
-    "room_context": null,
-    "table_context": {
-      "stoves": [
-        {
-          "stove_no": 1,
-          "type": "electric",
-          "volume_range": "36–54",
-          "volume_max": 54,
-          "mass": 10,
-          "cost": 8700
-        },
-        {
-          "stove_no": 2,
-          "type": "wood",
-          "volume_range": "80–120",
-          "volume_max": 120,
-          "mass": 118,
-          "cost": 30500
-        },
-        {
-          "stove_no": 3,
-          "type": "wood",
-          "volume_range": "95–135",
-          "volume_max": 135,
-          "mass": 130,
-          "cost": 34500
-        }
-      ]
-    },
-    "questions": [
-      {
-        "q_number": 1,
-        "pattern": "stove_match_table",
-        "narrative": "match_cost",
-        "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
-        "input_data": {
-          "columns_order": [
-            34500,
-            8700,
-            30500
-          ],
-          "column_label": "Стоимость печи, руб."
-        },
-        "solution_data": {
-          "stove_no_to_value_mapping": {
-            "1": 8700,
-            "2": 30500,
-            "3": 34500
-          },
-          "answer_sequence": "312"
-        },
-        "answer": "312",
-        "skill_source_id": "stoves_q1"
-      }
-    ]
-  },
-  {
-    "id": "stoves_2026_var_19",
-    "room_context": null,
-    "table_context": {
-      "stoves": [
-        {
-          "stove_no": 1,
-          "type": "wood",
-          "volume_range": "75–115",
-          "volume_max": 115,
-          "mass": 112,
-          "cost": 29500
-        },
-        {
-          "stove_no": 2,
-          "type": "electric",
-          "volume_range": "40–60",
-          "volume_max": 60,
-          "mass": 11,
-          "cost": 9200
-        },
-        {
-          "stove_no": 3,
-          "type": "wood",
-          "volume_range": "90–130",
-          "volume_max": 130,
-          "mass": 125,
-          "cost": 32500
-        }
-      ]
-    },
-    "questions": [
-      {
-        "q_number": 1,
-        "pattern": "stove_match_table",
-        "narrative": "match_cost",
-        "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
-        "input_data": {
-          "columns_order": [
-            32500,
-            9200,
-            29500
-          ],
-          "column_label": "Стоимость печи, руб."
-        },
-        "solution_data": {
-          "stove_no_to_value_mapping": {
-            "1": 29500,
-            "2": 9200,
-            "3": 32500
-          },
-          "answer_sequence": "321"
-        },
-        "answer": "321",
-        "skill_source_id": "stoves_q1"
-      }
-    ]
-  },
-  {
-    "id": "stoves_2026_var_20",
-    "room_context": null,
-    "table_context": {
-      "stoves": [
-        {
-          "stove_no": 1,
-          "type": "wood",
-          "volume_range": "80–120",
-          "volume_max": 120,
-          "mass": 115,
+          "volume_range": "6-11",
+          "volume_max": 11.0,
+          "mass": 47,
           "cost": 28000
         },
         {
           "stove_no": 2,
           "type": "wood",
-          "volume_range": "70–110",
-          "volume_max": 110,
-          "mass": 108,
-          "cost": 26500
+          "volume_range": "10-18",
+          "volume_max": 18.0,
+          "mass": 105,
+          "cost": 34500
         },
         {
           "stove_no": 3,
           "type": "electric",
-          "volume_range": "36–54",
-          "volume_max": 54,
-          "mass": 10,
-          "cost": 8500
+          "volume_range": "9.5-12.5",
+          "volume_max": 12.5,
+          "mass": 25,
+          "cost": 21000
         }
       ]
     },
@@ -1147,22 +1021,1777 @@
         "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных значений массы. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
         "input_data": {
           "columns_order": [
-            115,
-            108,
-            10
+            105.0,
+            47.0,
+            25.0
           ],
           "column_label": "Масса печи, кг"
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
-            "1": 115,
-            "2": 108,
-            "3": 10
+            "1": 47,
+            "2": 105,
+            "3": 25
+          },
+          "answer_sequence": "213"
+        },
+        "answer": "213",
+        "skill_source_id": "stoves_q1"
+      },
+      {
+        "q_number": 2,
+        "pattern": "stoves_room_geometry",
+        "narrative": "find_base_area",
+        "question_text": "По данным в условии задачи размерам найди площадь пола парного отделения. Ответ дай в квадратных метрах.",
+        "input_data": {
+          "length": 2.7,
+          "width": 2.1
+        },
+        "solution_data": {
+          "formula": "S = a · b",
+          "calculation": "2.7 · 2.1",
+          "area": 5.67
+        },
+        "answer": "5.67",
+        "help_image_file": "help_stoves_room_geometry.png",
+        "skill_source_id": "stoves_q2"
+      },
+      {
+        "q_number": 3,
+        "pattern": "stoves_purchase_cost",
+        "narrative": "find_operating_cost_difference",
+        "question_text": "За год электрическая печь расходует 2500 киловатт-часов (кВт·ч) электроэнергии по цене 3 руб. за 1 кВт·ч, а дровяная печь — 2 кубометра (куб. м) дров по цене 1200 руб. за 1 куб. м. Определи, на сколько рублей годовые расходы на эксплуатацию дровяной печи, подходящей по отапливаемому объёму парного отделения, меньше расходов на использование электрической печи.",
+        "input_data": {
+          "length": 2.7,
+          "width": 2.1,
+          "height": 2.0
+        },
+        "solution_data": {
+          "room_volume": 11.34,
+          "electric_stove_no": 3,
+          "electric_cost": 21000,
+          "wood_ok_no": 2,
+          "wood_ok_cost": 34500,
+          "electric_install_cost": 8700,
+          "delivery_cost": 0,
+          "electric_total": 29700,
+          "wood_total": 34500,
+          "electric_kwh": 2500,
+          "electric_price_per_kwh": 3.0,
+          "wood_volume_m3": 2.0,
+          "wood_price_per_m3": 1200,
+          "electric_oper": 7500.0,
+          "wood_oper": 2400.0,
+          "result": 5100
+        },
+        "answer": "5100",
+        "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 5,
+        "pattern": "stoves_arc_radius",
+        "narrative": "find_arc_radius",
+        "question_text": "",
+        "input_data": {
+          "a": 40.0,
+          "b": 60.0
+        },
+        "solution_data": {
+          "a": 40.0,
+          "b": 60.0,
+          "half_width": 30.0,
+          "a_squared": 1600.0,
+          "half_width_squared": 900.0,
+          "radius_squared": 2500.0,
+          "radius": 50
+        },
+        "answer": "50",
+        "skill_source_id": "stoves_q5",
+        "image_file": "task_stoves_arc_radius.png",
+        "help_image_file": "help_stoves_arc_radius.png"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_09",
+    "room_context": {
+      "length": 3.0,
+      "width": 2.8,
+      "height": 2.2,
+      "door_width_cm": 70.0,
+      "door_height_m": 1.9,
+      "electric_install_cost": 9300
+    },
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "wood",
+          "volume_range": "14-22",
+          "volume_max": 22.0,
+          "mass": 98,
+          "cost": 33200
+        },
+        {
+          "stove_no": 2,
+          "type": "electric",
+          "volume_range": "16-24",
+          "volume_max": 24.0,
+          "mass": 32,
+          "cost": 25200
+        },
+        {
+          "stove_no": 3,
+          "type": "wood",
+          "volume_range": "10-18",
+          "volume_max": 18.0,
+          "mass": 83,
+          "cost": 25500
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_cost",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            33200.0,
+            25200.0,
+            25500.0
+          ],
+          "column_label": "Цена, руб."
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 33200,
+            "2": 25200,
+            "3": 25500
           },
           "answer_sequence": "123"
         },
         "answer": "123",
         "skill_source_id": "stoves_q1"
+      },
+      {
+        "q_number": 2,
+        "pattern": "stoves_room_geometry",
+        "narrative": "find_lateral_area",
+        "question_text": "По данным в условии задачи размерам найди суммарную площадь четырёх стен парного отделения. Площадь дверей не учитывай. Ответ дай в квадратных метрах.",
+        "input_data": {
+          "length": 3.0,
+          "width": 2.8,
+          "height": 2.2,
+          "door_width_cm": 70.0,
+          "door_height_m": 1.9
+        },
+        "solution_data": {
+          "formula": "S_стен = P · h − S_двери",
+          "door_width_m": 0.7,
+          "sum_length_width": 5.8,
+          "perimeter": 11.6,
+          "walls_area": 25.52,
+          "door_area": 1.33,
+          "result_area": 24.19
+        },
+        "answer": "24.19",
+        "help_image_file": "help_stoves_room_geometry.png",
+        "skill_source_id": "stoves_q2"
+      },
+      {
+        "q_number": 3,
+        "pattern": "stoves_purchase_cost",
+        "narrative": "find_price_difference",
+        "question_text": "Определи, на сколько рублей стоимость покупки дровяной печи, подходящей по объёму парного отделения, меньше стоимости электрической печи с учётом её установки.",
+        "input_data": {
+          "length": 3.0,
+          "width": 2.8,
+          "height": 2.2
+        },
+        "solution_data": {
+          "room_volume": 18.48,
+          "electric_stove_no": 2,
+          "electric_cost": 25200,
+          "wood_ok_no": 1,
+          "wood_ok_cost": 33200,
+          "electric_install_cost": 9300,
+          "delivery_cost": 0,
+          "electric_total": 34500,
+          "wood_total": 33200,
+          "electric_kwh": null,
+          "electric_price_per_kwh": null,
+          "wood_volume_m3": null,
+          "wood_price_per_m3": null,
+          "electric_oper": null,
+          "wood_oper": null,
+          "result": 1300
+        },
+        "answer": "1300",
+        "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 5,
+        "pattern": "stoves_arc_radius",
+        "narrative": "find_arc_radius",
+        "question_text": "",
+        "input_data": {
+          "a": 21.0,
+          "b": 56.0
+        },
+        "solution_data": {
+          "a": 21.0,
+          "b": 56.0,
+          "half_width": 28.0,
+          "a_squared": 441.0,
+          "half_width_squared": 784.0,
+          "radius_squared": 1225.0,
+          "radius": 35
+        },
+        "answer": "35",
+        "skill_source_id": "stoves_q5",
+        "image_file": "task_stoves_arc_radius.png",
+        "help_image_file": "help_stoves_arc_radius.png"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_10",
+    "room_context": {
+      "length": 2.5,
+      "width": 2.0,
+      "height": 2.1,
+      "door_width_cm": 60.0,
+      "door_height_m": 1.8,
+      "electric_install_cost": 8600
+    },
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "electric",
+          "volume_range": "9-12.5",
+          "volume_max": 12.5,
+          "mass": 28,
+          "cost": 20700
+        },
+        {
+          "stove_no": 2,
+          "type": "wood",
+          "volume_range": "8-14",
+          "volume_max": 14.0,
+          "mass": 74,
+          "cost": 30500
+        },
+        {
+          "stove_no": 3,
+          "type": "wood",
+          "volume_range": "12-18",
+          "volume_max": 18.0,
+          "mass": 118,
+          "cost": 34500
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_weight",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных значений массы. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            28.0,
+            118.0,
+            74.0
+          ],
+          "column_label": "Масса печи, кг"
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 28,
+            "2": 74,
+            "3": 118
+          },
+          "answer_sequence": "132"
+        },
+        "answer": "132",
+        "skill_source_id": "stoves_q1"
+      },
+      {
+        "q_number": 2,
+        "pattern": "stoves_room_geometry",
+        "narrative": "find_volume",
+        "question_text": "По данным в условии задачи размерам найди объём парного отделения бани. Ответ дай в кубических метрах.",
+        "input_data": {
+          "length": 2.5,
+          "width": 2.0,
+          "height": 2.1
+        },
+        "solution_data": {
+          "formula": "V = a · b · h",
+          "calculation": "2.5 · 2.0 · 2.1",
+          "volume": 10.5
+        },
+        "answer": "10.5",
+        "help_image_file": "help_stoves_room_geometry.png",
+        "skill_source_id": "stoves_q2"
+      },
+      {
+        "q_number": 3,
+        "pattern": "stoves_purchase_cost",
+        "narrative": "find_wood_stove_total_cost",
+        "question_text": "Определи общую стоимость покупки дровяной печи, подходящей по объёму парного отделения, если доставка на дачный участок стоит 3900 рублей.",
+        "input_data": {
+          "length": 2.5,
+          "width": 2.0,
+          "height": 2.1
+        },
+        "solution_data": {
+          "room_volume": 10.5,
+          "electric_stove_no": 1,
+          "electric_cost": 20700,
+          "wood_ok_no": 2,
+          "wood_ok_cost": 30500,
+          "electric_install_cost": 8600,
+          "delivery_cost": 3900,
+          "electric_total": 33200,
+          "wood_total": 34400,
+          "electric_kwh": null,
+          "electric_price_per_kwh": null,
+          "wood_volume_m3": null,
+          "wood_price_per_m3": null,
+          "electric_oper": null,
+          "wood_oper": null,
+          "result": 34400
+        },
+        "answer": "34400",
+        "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 5,
+        "pattern": "stoves_arc_radius",
+        "narrative": "find_arc_radius",
+        "question_text": "",
+        "input_data": {
+          "a": 40.0,
+          "b": 84.0
+        },
+        "solution_data": {
+          "a": 40.0,
+          "b": 84.0,
+          "half_width": 42.0,
+          "a_squared": 1600.0,
+          "half_width_squared": 1764.0,
+          "radius_squared": 3364.0,
+          "radius": 58
+        },
+        "answer": "58",
+        "skill_source_id": "stoves_q5",
+        "image_file": "task_stoves_arc_radius.png",
+        "help_image_file": "help_stoves_arc_radius.png"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_11",
+    "room_context": {
+      "length": 3.4,
+      "width": 2.5,
+      "height": 2.2,
+      "door_width_cm": 75.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 11500
+    },
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "electric",
+          "volume_range": "12–20",
+          "volume_max": 20.0,
+          "mass": 42,
+          "cost": 30700
+        },
+        {
+          "stove_no": 2,
+          "type": "wood",
+          "volume_range": "15–22",
+          "volume_max": 22.0,
+          "mass": 118,
+          "cost": 36500
+        },
+        {
+          "stove_no": 3,
+          "type": "wood",
+          "volume_range": "20–27.5",
+          "volume_max": 27.5,
+          "mass": 130,
+          "cost": 41500
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_cost",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            36500.0,
+            30700.0,
+            41500.0
+          ],
+          "column_label": "Цена, руб."
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 30700,
+            "2": 36500,
+            "3": 41500
+          },
+          "answer_sequence": "213"
+        },
+        "answer": "213",
+        "skill_source_id": "stoves_q1"
+      },
+      {
+        "q_number": 2,
+        "pattern": "stoves_room_geometry",
+        "narrative": "find_base_area",
+        "question_text": "По данным в условии задачи размерам найди площадь потолка парного отделения. Ответ дай в квадратных метрах.",
+        "input_data": {
+          "length": 3.4,
+          "width": 2.5
+        },
+        "solution_data": {
+          "formula": "S = a · b",
+          "calculation": "3.4 · 2.5",
+          "area": 8.5
+        },
+        "answer": "8.5",
+        "help_image_file": "help_stoves_room_geometry.png",
+        "skill_source_id": "stoves_q2"
+      },
+      {
+        "q_number": 3,
+        "pattern": "stoves_purchase_cost",
+        "narrative": "find_electric_stove_total_cost",
+        "question_text": "Определи общую стоимость покупки электрической печи с установкой и доставкой на дачный участок, если доставка стоит 5200 рублей.",
+        "input_data": {
+          "length": 3.4,
+          "width": 2.5,
+          "height": 2.2
+        },
+        "solution_data": {
+          "room_volume": 18.7,
+          "electric_stove_no": 1,
+          "electric_cost": 30700,
+          "wood_ok_no": 2,
+          "wood_ok_cost": 36500,
+          "electric_install_cost": 11500,
+          "delivery_cost": 5200,
+          "electric_total": 47400,
+          "wood_total": 41700,
+          "electric_kwh": null,
+          "electric_price_per_kwh": null,
+          "wood_volume_m3": null,
+          "wood_price_per_m3": null,
+          "electric_oper": null,
+          "wood_oper": null,
+          "result": 47400
+        },
+        "answer": "47400",
+        "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 5,
+        "pattern": "stoves_arc_radius",
+        "narrative": "find_arc_radius",
+        "question_text": "",
+        "input_data": {
+          "a": 32.0,
+          "b": 48.0
+        },
+        "solution_data": {
+          "a": 32.0,
+          "b": 48.0,
+          "half_width": 24.0,
+          "a_squared": 1024.0,
+          "half_width_squared": 576.0,
+          "radius_squared": 1600.0,
+          "radius": 40
+        },
+        "answer": "40",
+        "skill_source_id": "stoves_q5",
+        "image_file": "task_stoves_arc_radius.png",
+        "help_image_file": "help_stoves_arc_radius.png"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_12",
+    "room_context": {
+      "length": 2.8,
+      "width": 2.5,
+      "height": 2.2,
+      "door_width_cm": 65.0,
+      "door_height_m": 1.8,
+      "electric_install_cost": 9200
+    },
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "wood",
+          "volume_range": "12-17",
+          "volume_max": 17.0,
+          "mass": 112,
+          "cost": 31900
+        },
+        {
+          "stove_no": 2,
+          "type": "electric",
+          "volume_range": "12-18.5",
+          "volume_max": 18.5,
+          "mass": 33,
+          "cost": 27100
+        },
+        {
+          "stove_no": 3,
+          "type": "wood",
+          "volume_range": "16-24",
+          "volume_max": 24.0,
+          "mass": 125,
+          "cost": 33400
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_volume",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных наибольших объёмов помещения. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            24.0,
+            17.0,
+            18.5
+          ],
+          "column_label": "Объём помещения, м³"
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 17.0,
+            "2": 18.5,
+            "3": 24.0
+          },
+          "answer_sequence": "312"
+        },
+        "answer": "312",
+        "skill_source_id": "stoves_q1"
+      },
+      {
+        "q_number": 2,
+        "pattern": "stoves_room_geometry",
+        "narrative": "find_lateral_area",
+        "question_text": "По данным в условии задачи размерам найди суммарную площадь четырёх стен парного отделения. Площадь дверей не учитывай. Ответ дай в квадратных метрах.",
+        "input_data": {
+          "length": 2.8,
+          "width": 2.5,
+          "height": 2.2,
+          "door_width_cm": 65.0,
+          "door_height_m": 1.8
+        },
+        "solution_data": {
+          "formula": "S_стен = P · h − S_двери",
+          "door_width_m": 0.65,
+          "sum_length_width": 5.3,
+          "perimeter": 10.6,
+          "walls_area": 23.32,
+          "door_area": 1.17,
+          "result_area": 22.15
+        },
+        "answer": "22.15",
+        "help_image_file": "help_stoves_room_geometry.png",
+        "skill_source_id": "stoves_q2"
+      },
+      {
+        "q_number": 3,
+        "pattern": "stoves_purchase_cost",
+        "narrative": "find_operating_cost_difference",
+        "question_text": "За год электрическая печь расходует 3500 киловатт-часов (кВт·ч) электроэнергии по цене 4 руб. за 1 кВт·ч, а дровяная печь — 3 кубометра (куб. м) дров по цене 1700 руб. за 1 куб. м. Определи, на сколько рублей годовые расходы на эксплуатацию дровяной печи, подходящей по отапливаемому объёму парного отделения, меньше расходов на использование электрической печи.",
+        "input_data": {
+          "length": 2.8,
+          "width": 2.5,
+          "height": 2.2
+        },
+        "solution_data": {
+          "room_volume": 15.4,
+          "electric_stove_no": 2,
+          "electric_cost": 27100,
+          "wood_ok_no": 1,
+          "wood_ok_cost": 31900,
+          "electric_install_cost": 9200,
+          "delivery_cost": 0,
+          "electric_total": 36300,
+          "wood_total": 31900,
+          "electric_kwh": 3500,
+          "electric_price_per_kwh": 4.0,
+          "wood_volume_m3": 3.0,
+          "wood_price_per_m3": 1700,
+          "electric_oper": 14000.0,
+          "wood_oper": 5100.0,
+          "result": 8900
+        },
+        "answer": "8900",
+        "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 5,
+        "pattern": "stoves_arc_radius",
+        "narrative": "find_arc_radius",
+        "question_text": "",
+        "input_data": {
+          "a": 36.0,
+          "b": 54.0
+        },
+        "solution_data": {
+          "a": 36.0,
+          "b": 54.0,
+          "half_width": 27.0,
+          "a_squared": 1296.0,
+          "half_width_squared": 729.0,
+          "radius_squared": 2025.0,
+          "radius": 45
+        },
+        "answer": "45",
+        "skill_source_id": "stoves_q5",
+        "image_file": "task_stoves_arc_radius.png",
+        "help_image_file": "help_stoves_arc_radius.png"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_13",
+    "room_context": {
+      "length": 3.0,
+      "width": 2.7,
+      "height": 2.0,
+      "door_width_cm": 70.0,
+      "door_height_m": 1.8,
+      "electric_install_cost": 10800
+    },
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "wood",
+          "volume_range": "10–15.5",
+          "volume_max": 15.5,
+          "mass": 82,
+          "cost": 29700
+        },
+        {
+          "stove_no": 2,
+          "type": "electric",
+          "volume_range": "12–18",
+          "volume_max": 18.0,
+          "mass": 29,
+          "cost": 24600
+        },
+        {
+          "stove_no": 3,
+          "type": "wood",
+          "volume_range": "16–22",
+          "volume_max": 22.0,
+          "mass": 127,
+          "cost": 34100
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_volume",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных наибольших объёмов помещения. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            22.0,
+            15.5,
+            18.0
+          ],
+          "column_label": "Объём помещения, м³"
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 15.5,
+            "2": 18.0,
+            "3": 22.0
+          },
+          "answer_sequence": "312"
+        },
+        "answer": "312",
+        "skill_source_id": "stoves_q1"
+      },
+      {
+        "q_number": 2,
+        "pattern": "stoves_room_geometry",
+        "narrative": "find_volume",
+        "question_text": "По данным в условии задачи размерам найди объём парного отделения бани. Ответ дай в кубических метрах.",
+        "input_data": {
+          "length": 3.0,
+          "width": 2.7,
+          "height": 2.0
+        },
+        "solution_data": {
+          "formula": "V = a · b · h",
+          "calculation": "3.0 · 2.7 · 2.0",
+          "volume": 16.2
+        },
+        "answer": "16.2",
+        "help_image_file": "help_stoves_room_geometry.png",
+        "skill_source_id": "stoves_q2"
+      },
+      {
+        "q_number": 3,
+        "pattern": "stoves_purchase_cost",
+        "narrative": "find_price_difference",
+        "question_text": "Определи, на сколько рублей стоимость покупки дровяной печи, подходящей по объёму парного отделения, меньше стоимости электрической печи с учётом её установки.",
+        "input_data": {
+          "length": 3.0,
+          "width": 2.7,
+          "height": 2.0
+        },
+        "solution_data": {
+          "room_volume": 16.2,
+          "electric_stove_no": 2,
+          "electric_cost": 24600,
+          "wood_ok_no": 3,
+          "wood_ok_cost": 34100,
+          "electric_install_cost": 10800,
+          "delivery_cost": 0,
+          "electric_total": 35400,
+          "wood_total": 34100,
+          "electric_kwh": null,
+          "electric_price_per_kwh": null,
+          "wood_volume_m3": null,
+          "wood_price_per_m3": null,
+          "electric_oper": null,
+          "wood_oper": null,
+          "result": 1300
+        },
+        "answer": "1300",
+        "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 5,
+        "pattern": "stoves_arc_radius",
+        "narrative": "find_arc_radius",
+        "question_text": "",
+        "input_data": {
+          "a": 45.0,
+          "b": 56.0
+        },
+        "solution_data": {
+          "a": 45.0,
+          "b": 56.0,
+          "half_width": 28.0,
+          "a_squared": 2025.0,
+          "half_width_squared": 784.0,
+          "radius_squared": 2809.0,
+          "radius": 53
+        },
+        "answer": "53",
+        "skill_source_id": "stoves_q5",
+        "image_file": "task_stoves_arc_radius.png",
+        "help_image_file": "help_stoves_arc_radius.png"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_14",
+    "room_context": {
+      "length": 3.0,
+      "width": 2.2,
+      "height": 2.1,
+      "door_width_cm": 60.0,
+      "door_height_m": 1.7,
+      "electric_install_cost": 8900
+    },
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "wood",
+          "volume_range": "9–14.5",
+          "volume_max": 14.5,
+          "mass": 68,
+          "cost": 27900
+        },
+        {
+          "stove_no": 2,
+          "type": "electric",
+          "volume_range": "10–16",
+          "volume_max": 16.0,
+          "mass": 32,
+          "cost": 24000
+        },
+        {
+          "stove_no": 3,
+          "type": "wood",
+          "volume_range": "15–20",
+          "volume_max": 20.0,
+          "mass": 119,
+          "cost": 33800
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_cost",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            27900.0,
+            33800.0,
+            24000.0
+          ],
+          "column_label": "Цена, руб."
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 27900,
+            "2": 24000,
+            "3": 33800
+          },
+          "answer_sequence": "132"
+        },
+        "answer": "132",
+        "skill_source_id": "stoves_q1"
+      },
+      {
+        "q_number": 2,
+        "pattern": "stoves_room_geometry",
+        "narrative": "find_base_area",
+        "question_text": "По данным в условии задачи размерам найди площадь пола парного отделения. Ответ дай в квадратных метрах.",
+        "input_data": {
+          "length": 3.0,
+          "width": 2.2
+        },
+        "solution_data": {
+          "formula": "S = a · b",
+          "calculation": "3.0 · 2.2",
+          "area": 6.6
+        },
+        "answer": "6.6",
+        "help_image_file": "help_stoves_room_geometry.png",
+        "skill_source_id": "stoves_q2"
+      },
+      {
+        "q_number": 3,
+        "pattern": "stoves_purchase_cost",
+        "narrative": "find_wood_stove_total_cost",
+        "question_text": "Определи общую стоимость покупки дровяной печи, подходящей по объёму парного отделения, если доставка на дачный участок стоит 3200 рублей.",
+        "input_data": {
+          "length": 3.0,
+          "width": 2.2,
+          "height": 2.1
+        },
+        "solution_data": {
+          "room_volume": 13.86,
+          "electric_stove_no": 2,
+          "electric_cost": 24000,
+          "wood_ok_no": 1,
+          "wood_ok_cost": 27900,
+          "electric_install_cost": 8900,
+          "delivery_cost": 3200,
+          "electric_total": 36100,
+          "wood_total": 31100,
+          "electric_kwh": null,
+          "electric_price_per_kwh": null,
+          "wood_volume_m3": null,
+          "wood_price_per_m3": null,
+          "electric_oper": null,
+          "wood_oper": null,
+          "result": 31100
+        },
+        "answer": "31100",
+        "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 5,
+        "pattern": "stoves_arc_radius",
+        "narrative": "find_arc_radius",
+        "question_text": "",
+        "input_data": {
+          "a": 48.0,
+          "b": 72.0
+        },
+        "solution_data": {
+          "a": 48.0,
+          "b": 72.0,
+          "half_width": 36.0,
+          "a_squared": 2304.0,
+          "half_width_squared": 1296.0,
+          "radius_squared": 3600.0,
+          "radius": 60
+        },
+        "answer": "60",
+        "skill_source_id": "stoves_q5",
+        "image_file": "task_stoves_arc_radius.png",
+        "help_image_file": "help_stoves_arc_radius.png"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_15",
+    "room_context": {
+      "length": 3.6,
+      "width": 2.9,
+      "height": 2.5,
+      "door_width_cm": 80.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 13000
+    },
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "wood",
+          "volume_range": "22-26.5",
+          "volume_max": 26.5,
+          "mass": 135,
+          "cost": 40800
+        },
+        {
+          "stove_no": 2,
+          "type": "wood",
+          "volume_range": "20-24",
+          "volume_max": 24.0,
+          "mass": 130,
+          "cost": 38200
+        },
+        {
+          "stove_no": 3,
+          "type": "electric",
+          "volume_range": "20-28",
+          "volume_max": 28.0,
+          "mass": 35,
+          "cost": 32000
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_cost",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            32000.0,
+            38200.0,
+            40800.0
+          ],
+          "column_label": "Цена, руб."
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 40800,
+            "2": 38200,
+            "3": 32000
+          },
+          "answer_sequence": "321"
+        },
+        "answer": "321",
+        "skill_source_id": "stoves_q1"
+      },
+      {
+        "q_number": 2,
+        "pattern": "stoves_room_geometry",
+        "narrative": "find_lateral_area",
+        "question_text": "По данным в условии задачи размерам найди суммарную площадь четырёх стен парного отделения. Площадь дверей не учитывай. Ответ дай в квадратных метрах.",
+        "input_data": {
+          "length": 3.6,
+          "width": 2.9,
+          "height": 2.5,
+          "door_width_cm": 80.0,
+          "door_height_m": 2.0
+        },
+        "solution_data": {
+          "formula": "S_стен = P · h − S_двери",
+          "door_width_m": 0.8,
+          "sum_length_width": 6.5,
+          "perimeter": 13.0,
+          "walls_area": 32.5,
+          "door_area": 1.6,
+          "result_area": 30.9
+        },
+        "answer": "30.9",
+        "help_image_file": "help_stoves_room_geometry.png",
+        "skill_source_id": "stoves_q2"
+      },
+      {
+        "q_number": 3,
+        "pattern": "stoves_purchase_cost",
+        "narrative": "find_electric_stove_total_cost",
+        "question_text": "Определи общую стоимость покупки электрической печи с установкой и доставкой на дачный участок, если доставка стоит 2400 рублей.",
+        "input_data": {
+          "length": 3.6,
+          "width": 2.9,
+          "height": 2.5
+        },
+        "solution_data": {
+          "room_volume": 26.1,
+          "electric_stove_no": 3,
+          "electric_cost": 32000,
+          "wood_ok_no": 1,
+          "wood_ok_cost": 40800,
+          "electric_install_cost": 13000,
+          "delivery_cost": 2400,
+          "electric_total": 47400,
+          "wood_total": 43200,
+          "electric_kwh": null,
+          "electric_price_per_kwh": null,
+          "wood_volume_m3": null,
+          "wood_price_per_m3": null,
+          "electric_oper": null,
+          "wood_oper": null,
+          "result": 47400
+        },
+        "answer": "47400",
+        "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 5,
+        "pattern": "stoves_arc_radius",
+        "narrative": "find_arc_radius",
+        "question_text": "",
+        "input_data": {
+          "a": 48.0,
+          "b": 72.0
+        },
+        "solution_data": {
+          "a": 48.0,
+          "b": 72.0,
+          "half_width": 36.0,
+          "a_squared": 2304.0,
+          "half_width_squared": 1296.0,
+          "radius_squared": 3600.0,
+          "radius": 60
+        },
+        "answer": "60",
+        "skill_source_id": "stoves_q5",
+        "image_file": "task_stoves_arc_radius.png",
+        "help_image_file": "help_stoves_arc_radius.png"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_16",
+    "room_context": {
+      "length": 2.7,
+      "width": 2.4,
+      "height": 2.0,
+      "door_width_cm": 65.0,
+      "door_height_m": 1.7,
+      "electric_install_cost": 7050
+    },
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "wood",
+          "volume_range": "9–13.5",
+          "volume_max": 13.5,
+          "mass": 68,
+          "cost": 25900
+        },
+        {
+          "stove_no": 2,
+          "type": "electric",
+          "volume_range": "10–15",
+          "volume_max": 15.0,
+          "mass": 29,
+          "cost": 22900
+        },
+        {
+          "stove_no": 3,
+          "type": "wood",
+          "volume_range": "15–18",
+          "volume_max": 18.0,
+          "mass": 88,
+          "cost": 30400
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_cost",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            22900.0,
+            25900.0,
+            30400.0
+          ],
+          "column_label": "Цена, руб."
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 25900,
+            "2": 22900,
+            "3": 30400
+          },
+          "answer_sequence": "213"
+        },
+        "answer": "213",
+        "skill_source_id": "stoves_q1"
+      },
+      {
+        "q_number": 2,
+        "pattern": "stoves_room_geometry",
+        "narrative": "find_volume",
+        "question_text": "По данным в условии задачи размерам найди объём парного отделения бани. Ответ дай в кубических метрах.",
+        "input_data": {
+          "length": 2.7,
+          "width": 2.4,
+          "height": 2.0
+        },
+        "solution_data": {
+          "formula": "V = a · b · h",
+          "calculation": "2.7 · 2.4 · 2.0",
+          "volume": 12.96
+        },
+        "answer": "12.96",
+        "help_image_file": "help_stoves_room_geometry.png",
+        "skill_source_id": "stoves_q2"
+      },
+      {
+        "q_number": 3,
+        "pattern": "stoves_purchase_cost",
+        "narrative": "find_operating_cost_difference",
+        "question_text": "За год электрическая печь расходует 2900 киловатт-часов (кВт·ч) электроэнергии по цене 3.5 руб. за 1 кВт·ч, а дровяная печь — 3 кубометра (куб. м) дров по цене 1700 руб. за 1 куб. м. Определи, на сколько рублей годовые расходы на эксплуатацию дровяной печи, подходящей по отапливаемому объёму парного отделения, меньше расходов на использование электрической печи.",
+        "input_data": {
+          "length": 2.7,
+          "width": 2.4,
+          "height": 2.0
+        },
+        "solution_data": {
+          "room_volume": 12.96,
+          "electric_stove_no": 2,
+          "electric_cost": 22900,
+          "wood_ok_no": 1,
+          "wood_ok_cost": 25900,
+          "electric_install_cost": 7050,
+          "delivery_cost": 0,
+          "electric_total": 29950,
+          "wood_total": 25900,
+          "electric_kwh": 2900,
+          "electric_price_per_kwh": 3.5,
+          "wood_volume_m3": 3.0,
+          "wood_price_per_m3": 1700,
+          "electric_oper": 10150.0,
+          "wood_oper": 5100.0,
+          "result": 5050
+        },
+        "answer": "5050",
+        "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 5,
+        "pattern": "stoves_arc_radius",
+        "narrative": "find_arc_radius",
+        "question_text": "",
+        "input_data": {
+          "a": 36.0,
+          "b": 54.0
+        },
+        "solution_data": {
+          "a": 36.0,
+          "b": 54.0,
+          "half_width": 27.0,
+          "a_squared": 1296.0,
+          "half_width_squared": 729.0,
+          "radius_squared": 2025.0,
+          "radius": 45
+        },
+        "answer": "45",
+        "skill_source_id": "stoves_q5",
+        "image_file": "task_stoves_arc_radius.png",
+        "help_image_file": "help_stoves_arc_radius.png"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_17",
+    "room_context": {
+      "length": 3.2,
+      "width": 2.5,
+      "height": 2.3,
+      "door_width_cm": 70.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 11200
+    },
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "wood",
+          "volume_range": "12–16",
+          "volume_max": 16.0,
+          "mass": 82,
+          "cost": 29300
+        },
+        {
+          "stove_no": 2,
+          "type": "wood",
+          "volume_range": "15–18.5",
+          "volume_max": 18.5,
+          "mass": 96,
+          "cost": 34900
+        },
+        {
+          "stove_no": 3,
+          "type": "electric",
+          "volume_range": "14–19",
+          "volume_max": 19.0,
+          "mass": 30,
+          "cost": 25900
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_cost",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            25900.0,
+            29300.0,
+            34900.0
+          ],
+          "column_label": "Цена, руб."
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 29300,
+            "2": 34900,
+            "3": 25900
+          },
+          "answer_sequence": "312"
+        },
+        "answer": "312",
+        "skill_source_id": "stoves_q1"
+      },
+      {
+        "q_number": 2,
+        "pattern": "stoves_room_geometry",
+        "narrative": "find_base_area",
+        "question_text": "По данным в условии задачи размерам найди площадь потолка парного отделения. Ответ дай в квадратных метрах.",
+        "input_data": {
+          "length": 3.2,
+          "width": 2.5
+        },
+        "solution_data": {
+          "formula": "S = a · b",
+          "calculation": "3.2 · 2.5",
+          "area": 8.0
+        },
+        "answer": "8.0",
+        "help_image_file": "help_stoves_room_geometry.png",
+        "skill_source_id": "stoves_q2"
+      },
+      {
+        "q_number": 3,
+        "pattern": "stoves_purchase_cost",
+        "narrative": "find_price_difference",
+        "question_text": "Определи, на сколько рублей стоимость покупки дровяной печи, подходящей по объёму парного отделения, меньше стоимости электрической печи с учётом её установки.",
+        "input_data": {
+          "length": 3.2,
+          "width": 2.5,
+          "height": 2.3
+        },
+        "solution_data": {
+          "room_volume": 18.4,
+          "electric_stove_no": 3,
+          "electric_cost": 25900,
+          "wood_ok_no": 2,
+          "wood_ok_cost": 34900,
+          "electric_install_cost": 11200,
+          "delivery_cost": 0,
+          "electric_total": 37100,
+          "wood_total": 34900,
+          "electric_kwh": null,
+          "electric_price_per_kwh": null,
+          "wood_volume_m3": null,
+          "wood_price_per_m3": null,
+          "electric_oper": null,
+          "wood_oper": null,
+          "result": 2200
+        },
+        "answer": "2200",
+        "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 5,
+        "pattern": "stoves_arc_radius",
+        "narrative": "find_arc_radius",
+        "question_text": "",
+        "input_data": {
+          "a": 45.0,
+          "b": 48.0
+        },
+        "solution_data": {
+          "a": 45.0,
+          "b": 48.0,
+          "half_width": 24.0,
+          "a_squared": 2025.0,
+          "half_width_squared": 576.0,
+          "radius_squared": 2601.0,
+          "radius": 51
+        },
+        "answer": "51",
+        "skill_source_id": "stoves_q5",
+        "image_file": "task_stoves_arc_radius.png",
+        "help_image_file": "help_stoves_arc_radius.png"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_18",
+    "room_context": {
+      "length": 2.6,
+      "width": 2.3,
+      "height": 2.0,
+      "door_width_cm": 60.0,
+      "door_height_m": 1.7,
+      "electric_install_cost": 8800
+    },
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "electric",
+          "volume_range": "8–12",
+          "volume_max": 12.0,
+          "mass": 25,
+          "cost": 21900
+        },
+        {
+          "stove_no": 2,
+          "type": "wood",
+          "volume_range": "8–12",
+          "volume_max": 12.0,
+          "mass": 62,
+          "cost": 25400
+        },
+        {
+          "stove_no": 3,
+          "type": "wood",
+          "volume_range": "12.5–16",
+          "volume_max": 16.0,
+          "mass": 85,
+          "cost": 29400
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_cost",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            25400.0,
+            21900.0,
+            29400.0
+          ],
+          "column_label": "Цена, руб."
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 21900,
+            "2": 25400,
+            "3": 29400
+          },
+          "answer_sequence": "213"
+        },
+        "answer": "213",
+        "skill_source_id": "stoves_q1"
+      },
+      {
+        "q_number": 2,
+        "pattern": "stoves_room_geometry",
+        "narrative": "find_lateral_area",
+        "question_text": "По данным в условии задачи размерам найди суммарную площадь четырёх стен парного отделения. Площадь дверей не учитывай. Ответ дай в квадратных метрах.",
+        "input_data": {
+          "length": 2.6,
+          "width": 2.3,
+          "height": 2.0,
+          "door_width_cm": 60.0,
+          "door_height_m": 1.7
+        },
+        "solution_data": {
+          "formula": "S_стен = P · h − S_двери",
+          "door_width_m": 0.6,
+          "sum_length_width": 4.9,
+          "perimeter": 9.8,
+          "walls_area": 19.6,
+          "door_area": 1.02,
+          "result_area": 18.58
+        },
+        "answer": "18.58",
+        "help_image_file": "help_stoves_room_geometry.png",
+        "skill_source_id": "stoves_q2"
+      },
+      {
+        "q_number": 3,
+        "pattern": "stoves_purchase_cost",
+        "narrative": "find_wood_stove_total_cost",
+        "question_text": "Определи общую стоимость покупки дровяной печи, подходящей по объёму парного отделения, если доставка на дачный участок стоит 5800 рублей.",
+        "input_data": {
+          "length": 2.6,
+          "width": 2.3,
+          "height": 2.0
+        },
+        "solution_data": {
+          "room_volume": 11.96,
+          "electric_stove_no": 1,
+          "electric_cost": 21900,
+          "wood_ok_no": 2,
+          "wood_ok_cost": 25400,
+          "electric_install_cost": 8800,
+          "delivery_cost": 5800,
+          "electric_total": 36500,
+          "wood_total": 31200,
+          "electric_kwh": null,
+          "electric_price_per_kwh": null,
+          "wood_volume_m3": null,
+          "wood_price_per_m3": null,
+          "electric_oper": null,
+          "wood_oper": null,
+          "result": 31200
+        },
+        "answer": "31200",
+        "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 5,
+        "pattern": "stoves_arc_radius",
+        "narrative": "find_arc_radius",
+        "question_text": "",
+        "input_data": {
+          "a": 44.0,
+          "b": 66.0
+        },
+        "solution_data": {
+          "a": 44.0,
+          "b": 66.0,
+          "half_width": 33.0,
+          "a_squared": 1936.0,
+          "half_width_squared": 1089.0,
+          "radius_squared": 3025.0,
+          "radius": 55
+        },
+        "answer": "55",
+        "skill_source_id": "stoves_q5",
+        "image_file": "task_stoves_arc_radius.png",
+        "help_image_file": "help_stoves_arc_radius.png"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_19",
+    "room_context": {
+      "length": 3.5,
+      "width": 2.8,
+      "height": 2.4,
+      "door_width_cm": 75.0,
+      "door_height_m": 2.0,
+      "electric_install_cost": 11800
+    },
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "wood",
+          "volume_range": "20–25",
+          "volume_max": 25.0,
+          "mass": 140,
+          "cost": 42500
+        },
+        {
+          "stove_no": 2,
+          "type": "electric",
+          "volume_range": "18–24.5",
+          "volume_max": 24.5,
+          "mass": 36,
+          "cost": 31200
+        },
+        {
+          "stove_no": 3,
+          "type": "wood",
+          "volume_range": "18–22",
+          "volume_max": 22.0,
+          "mass": 118,
+          "cost": 37000
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_cost",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            31200.0,
+            37000.0,
+            42500.0
+          ],
+          "column_label": "Цена, руб."
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 42500,
+            "2": 31200,
+            "3": 37000
+          },
+          "answer_sequence": "231"
+        },
+        "answer": "231",
+        "skill_source_id": "stoves_q1"
+      },
+      {
+        "q_number": 2,
+        "pattern": "stoves_room_geometry",
+        "narrative": "find_volume",
+        "question_text": "По данным в условии задачи размерам найди объём парного отделения бани. Ответ дай в кубических метрах.",
+        "input_data": {
+          "length": 3.5,
+          "width": 2.8,
+          "height": 2.4
+        },
+        "solution_data": {
+          "formula": "V = a · b · h",
+          "calculation": "3.5 · 2.8 · 2.4",
+          "volume": 23.52
+        },
+        "answer": "23.52",
+        "help_image_file": "help_stoves_room_geometry.png",
+        "skill_source_id": "stoves_q2"
+      },
+      {
+        "q_number": 3,
+        "pattern": "stoves_purchase_cost",
+        "narrative": "find_electric_stove_total_cost",
+        "question_text": "Определи общую стоимость покупки электрической печи с установкой и доставкой на дачный участок, если доставка стоит 5100 рублей.",
+        "input_data": {
+          "length": 3.5,
+          "width": 2.8,
+          "height": 2.4
+        },
+        "solution_data": {
+          "room_volume": 23.52,
+          "electric_stove_no": 2,
+          "electric_cost": 31200,
+          "wood_ok_no": 1,
+          "wood_ok_cost": 42500,
+          "electric_install_cost": 11800,
+          "delivery_cost": 5100,
+          "electric_total": 48100,
+          "wood_total": 47600,
+          "electric_kwh": null,
+          "electric_price_per_kwh": null,
+          "wood_volume_m3": null,
+          "wood_price_per_m3": null,
+          "electric_oper": null,
+          "wood_oper": null,
+          "result": 48100
+        },
+        "answer": "48100",
+        "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 5,
+        "pattern": "stoves_arc_radius",
+        "narrative": "find_arc_radius",
+        "question_text": "",
+        "input_data": {
+          "a": 40.0,
+          "b": 84.0
+        },
+        "solution_data": {
+          "a": 40.0,
+          "b": 84.0,
+          "half_width": 42.0,
+          "a_squared": 1600.0,
+          "half_width_squared": 1764.0,
+          "radius_squared": 3364.0,
+          "radius": 58
+        },
+        "answer": "58",
+        "skill_source_id": "stoves_q5",
+        "image_file": "task_stoves_arc_radius.png",
+        "help_image_file": "help_stoves_arc_radius.png"
+      }
+    ]
+  },
+  {
+    "id": "stoves_2026_var_20",
+    "room_context": {
+      "length": 2.8,
+      "width": 2.2,
+      "height": 2.0,
+      "door_width_cm": 70.0,
+      "door_height_m": 1.7,
+      "electric_install_cost": 9000
+    },
+    "table_context": {
+      "stoves": [
+        {
+          "stove_no": 1,
+          "type": "wood",
+          "volume_range": "7–12",
+          "volume_max": 12.0,
+          "mass": 73,
+          "cost": 29500
+        },
+        {
+          "stove_no": 2,
+          "type": "wood",
+          "volume_range": "12–15.5",
+          "volume_max": 15.5,
+          "mass": 98,
+          "cost": 30900
+        },
+        {
+          "stove_no": 3,
+          "type": "electric",
+          "volume_range": "9–14",
+          "volume_max": 14.0,
+          "mass": 29,
+          "cost": 26300
+        }
+      ]
+    },
+    "questions": [
+      {
+        "q_number": 1,
+        "pattern": "stove_match_table",
+        "narrative": "match_weight",
+        "question_text": "По данным таблицы определи, какой номер печи соответствует каждому из указанных значений массы. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
+        "input_data": {
+          "columns_order": [
+            98.0,
+            29.0,
+            73.0
+          ],
+          "column_label": "Масса печи, кг"
+        },
+        "solution_data": {
+          "stove_no_to_value_mapping": {
+            "1": 73,
+            "2": 98,
+            "3": 29
+          },
+          "answer_sequence": "231"
+        },
+        "answer": "231",
+        "skill_source_id": "stoves_q1"
+      },
+      {
+        "q_number": 2,
+        "pattern": "stoves_room_geometry",
+        "narrative": "find_lateral_area",
+        "question_text": "По данным в условии задачи размерам найди суммарную площадь четырёх стен парного отделения. Площадь дверей не учитывай. Ответ дай в квадратных метрах.",
+        "input_data": {
+          "length": 2.8,
+          "width": 2.2,
+          "height": 2.0,
+          "door_width_cm": 70.0,
+          "door_height_m": 1.7
+        },
+        "solution_data": {
+          "formula": "S_стен = P · h − S_двери",
+          "door_width_m": 0.7,
+          "sum_length_width": 5.0,
+          "perimeter": 10.0,
+          "walls_area": 20.0,
+          "door_area": 1.19,
+          "result_area": 18.81
+        },
+        "answer": "18.81",
+        "help_image_file": "help_stoves_room_geometry.png",
+        "skill_source_id": "stoves_q2"
+      },
+      {
+        "q_number": 3,
+        "pattern": "stoves_purchase_cost",
+        "narrative": "find_operating_cost_difference",
+        "question_text": "За год электрическая печь расходует 2700 киловатт-часов (кВт·ч) электроэнергии по цене 4.5 руб. за 1 кВт·ч, а дровяная печь — 2.8 кубометра (куб. м) дров по цене 1600 руб. за 1 куб. м. Определи, на сколько рублей годовые расходы на эксплуатацию дровяной печи, подходящей по отапливаемому объёму парного отделения, меньше расходов на использование электрической печи.",
+        "input_data": {
+          "length": 2.8,
+          "width": 2.2,
+          "height": 2.0
+        },
+        "solution_data": {
+          "room_volume": 12.32,
+          "electric_stove_no": 3,
+          "electric_cost": 26300,
+          "wood_ok_no": 2,
+          "wood_ok_cost": 30900,
+          "electric_install_cost": 9000,
+          "delivery_cost": 0,
+          "electric_total": 35300,
+          "wood_total": 30900,
+          "electric_kwh": 2700,
+          "electric_price_per_kwh": 4.5,
+          "wood_volume_m3": 2.8,
+          "wood_price_per_m3": 1600,
+          "electric_oper": 12150.0,
+          "wood_oper": 4480.0,
+          "result": 7670
+        },
+        "answer": "7670",
+        "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 5,
+        "pattern": "stoves_arc_radius",
+        "narrative": "find_arc_radius",
+        "question_text": "",
+        "input_data": {
+          "a": 60.0,
+          "b": 64.0
+        },
+        "solution_data": {
+          "a": 60.0,
+          "b": 64.0,
+          "half_width": 32.0,
+          "a_squared": 3600.0,
+          "half_width_squared": 1024.0,
+          "radius_squared": 4624.0,
+          "radius": 68
+        },
+        "answer": "68",
+        "skill_source_id": "stoves_q5",
+        "image_file": "task_stoves_arc_radius.png",
+        "help_image_file": "help_stoves_arc_radius.png"
       }
     ]
   }

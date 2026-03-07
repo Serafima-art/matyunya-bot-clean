@@ -5,7 +5,6 @@ import logging
 
 from matunya_bot_final.keyboards.inline_keyboards.tasks.task_1_5.after_task_1_5_keyboard import (
     build_focused_keyboard,
-    build_overview_keyboard,
 )
 from matunya_bot_final.utils.text_formatters import format_task
 from matunya_bot_final.utils.message_manager import (
@@ -48,17 +47,20 @@ async def send_focused_task_block_stoves(
     task = tasks[question_num - 1]
 
     # Таблица значений (54 | 120 | 135 и т.п.)
-    question_table_html = build_stoves_question_table(task)
+    pattern = task.get("pattern")
 
-    await send_tracked_message(
-        bot=bot,
-        chat_id=chat_id,
-        state=state,
-        text=question_table_html,
-        message_tag=f"focused_question_table_q{question_num}",
-        category="focused_assets",
-        parse_mode="HTML",
-    )
+    if pattern == "stove_match_table":
+        question_table_html = build_stoves_question_table(task)
+
+        await send_tracked_message(
+            bot=bot,
+            chat_id=chat_id,
+            state=state,
+            text=question_table_html,
+            message_tag=f"focused_question_table_q{question_num}",
+            category="focused_assets",
+            parse_mode="HTML",
+        )
 
     # =====================================================
     # ТЕКСТ ЗАДАНИЯ

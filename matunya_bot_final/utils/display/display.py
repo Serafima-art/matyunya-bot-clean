@@ -36,6 +36,9 @@ def format_number(value: int | float | str) -> str:
     # убрать ,0 / ,00
     s = re.sub(r',0+(?!\d)', '', s)
 
+    # обычные пробелы → неразрывные (для Telegram)
+    s = s.replace(" ", "\u202F")
+
     return s
 
 
