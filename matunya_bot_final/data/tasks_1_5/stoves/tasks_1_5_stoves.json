@@ -113,6 +113,27 @@
         "skill_source_id": "stoves_q3"
       },
       {
+        "q_number": 4,
+        "pattern": "stoves_discounts",
+        "narrative": "find_past_price",
+        "question_text": "",
+        "input_data": {},
+        "solution_data": {
+          "stove_no": 3,
+          "price_after_discount": 18000,
+          "discount_stove_1": 25,
+          "discount_stove_2": 10,
+          "discount_stove_3": 20,
+          "discount_percent": 20,
+          "discount_fraction": 0.2,
+          "remaining_percent": 80,
+          "remaining_fraction": 0.8,
+          "original_price": 22500
+        },
+        "answer": "22500",
+        "skill_source_id": "stoves_q4"
+      },
+      {
         "q_number": 5,
         "pattern": "stoves_arc_radius",
         "narrative": "find_arc_radius",
@@ -250,6 +271,27 @@
         "skill_source_id": "stoves_q3"
       },
       {
+        "q_number": 4,
+        "pattern": "stoves_discounts",
+        "narrative": "find_past_price",
+        "question_text": "",
+        "input_data": {},
+        "solution_data": {
+          "stove_no": 2,
+          "price_after_discount": 21200,
+          "discount_stove_1": 15,
+          "discount_stove_2": 20,
+          "discount_stove_3": 10,
+          "discount_percent": 20,
+          "discount_fraction": 0.2,
+          "remaining_percent": 80,
+          "remaining_fraction": 0.8,
+          "original_price": 26500
+        },
+        "answer": "26500",
+        "skill_source_id": "stoves_q4"
+      },
+      {
         "q_number": 5,
         "pattern": "stoves_arc_radius",
         "narrative": "find_arc_radius",
@@ -292,7 +334,7 @@
           "volume_range": "10-18",
           "volume_max": 18.0,
           "mass": 32,
-          "cost": 22700
+          "cost": 22500
         },
         {
           "stove_no": 2,
@@ -366,7 +408,7 @@
         "q_number": 3,
         "pattern": "stoves_purchase_cost",
         "narrative": "find_electric_stove_total_cost",
-        "question_text": "Определи общую стоимость покупки электрической печи с установкой и доставкой на дачный участок, если доставка стоит 4000 рублей.",
+        "question_text": "Определи общую стоимость покупки электрической печи с установкой и доставкой на дачный участок, если доставка стоит 1000 рублей.",
         "input_data": {
           "length": 3.0,
           "width": 2.5,
@@ -375,23 +417,44 @@
         "solution_data": {
           "room_volume": 17.25,
           "electric_stove_no": 1,
-          "electric_cost": 22700,
+          "electric_cost": 22500,
           "wood_ok_no": 3,
           "wood_ok_cost": 34500,
           "electric_install_cost": 10200,
-          "delivery_cost": 4000,
-          "electric_total": 36900,
-          "wood_total": 38500,
+          "delivery_cost": 1000,
+          "electric_total": 33700,
+          "wood_total": 35500,
           "electric_kwh": null,
           "electric_price_per_kwh": null,
           "wood_volume_m3": null,
           "wood_price_per_m3": null,
           "electric_oper": null,
           "wood_oper": null,
-          "result": 36900
+          "result": 33700
         },
-        "answer": "36900",
+        "answer": "33700",
         "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 4,
+        "pattern": "stoves_discounts",
+        "narrative": "find_past_price",
+        "question_text": "",
+        "input_data": {},
+        "solution_data": {
+          "stove_no": 1,
+          "price_after_discount": 22500,
+          "discount_stove_1": 10,
+          "discount_stove_2": 20,
+          "discount_stove_3": 25,
+          "discount_percent": 10,
+          "discount_fraction": 0.1,
+          "remaining_percent": 90,
+          "remaining_fraction": 0.9,
+          "original_price": 25000
+        },
+        "answer": "25000",
+        "skill_source_id": "stoves_q4"
       },
       {
         "q_number": 5,
@@ -532,6 +595,27 @@
         "skill_source_id": "stoves_q3"
       },
       {
+        "q_number": 4,
+        "pattern": "stoves_discounts",
+        "narrative": "find_past_price",
+        "question_text": "",
+        "input_data": {},
+        "solution_data": {
+          "stove_no": 2,
+          "price_after_discount": 32800,
+          "discount_stove_1": 25,
+          "discount_stove_2": 20,
+          "discount_stove_3": 10,
+          "discount_percent": 20,
+          "discount_fraction": 0.2,
+          "remaining_percent": 80,
+          "remaining_fraction": 0.8,
+          "original_price": 41000
+        },
+        "answer": "41000",
+        "skill_source_id": "stoves_q4"
+      },
+      {
         "q_number": 5,
         "pattern": "stoves_arc_radius",
         "narrative": "find_arc_radius",
@@ -590,7 +674,7 @@
           "volume_range": "10-18.5",
           "volume_max": 18.5,
           "mass": 112,
-          "cost": 28900
+          "cost": 28800
         }
       ]
     },
@@ -669,6 +753,27 @@
         "skill_source_id": "stoves_q3"
       },
       {
+        "q_number": 4,
+        "pattern": "stoves_discounts",
+        "narrative": "find_past_price",
+        "question_text": "",
+        "input_data": {},
+        "solution_data": {
+          "stove_no": 3,
+          "price_after_discount": 28800,
+          "discount_stove_1": 15,
+          "discount_stove_2": 20,
+          "discount_stove_3": 10,
+          "discount_percent": 10,
+          "discount_fraction": 0.1,
+          "remaining_percent": 90,
+          "remaining_fraction": 0.9,
+          "original_price": 32000
+        },
+        "answer": "32000",
+        "skill_source_id": "stoves_q4"
+      },
+      {
         "q_number": 5,
         "pattern": "stoves_arc_radius",
         "narrative": "find_arc_radius",
@@ -711,7 +816,7 @@
           "volume_range": "9-15",
           "volume_max": 15.0,
           "mass": 74,
-          "cost": 31800
+          "cost": 32000
         },
         {
           "stove_no": 2,
@@ -785,7 +890,7 @@
         "q_number": 3,
         "pattern": "stoves_purchase_cost",
         "narrative": "find_wood_stove_total_cost",
-        "question_text": "Определи общую стоимость покупки дровяной печи, подходящей по объёму парного отделения, если доставка на дачный участок стоит 5600 рублей.",
+        "question_text": "Определи общую стоимость покупки дровяной печи, подходящей по объёму парного отделения, если доставка на дачный участок стоит 1600 рублей.",
         "input_data": {
           "length": 3.0,
           "width": 2.3,
@@ -798,19 +903,38 @@
           "wood_ok_no": 2,
           "wood_ok_cost": 35200,
           "electric_install_cost": 9400,
-          "delivery_cost": 5600,
-          "electric_total": 38800,
-          "wood_total": 40800,
+          "delivery_cost": 1600,
+          "electric_total": 34800,
+          "wood_total": 36800,
           "electric_kwh": null,
           "electric_price_per_kwh": null,
           "wood_volume_m3": null,
           "wood_price_per_m3": null,
           "electric_oper": null,
           "wood_oper": null,
-          "result": 40800
+          "result": 36800
         },
-        "answer": "40800",
+        "answer": "36800",
         "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 4,
+        "pattern": "stoves_discounts",
+        "narrative": "find_discounted_price",
+        "question_text": "",
+        "input_data": {},
+        "solution_data": {
+          "stove_no": 1,
+          "original_price": 32000,
+          "discount_percent": 15,
+          "discount_fraction": 0.15,
+          "remaining_percent": 85,
+          "remaining_fraction": 0.85,
+          "discount_amount": 4800,
+          "price_after_discount": 27200
+        },
+        "answer": "27200",
+        "skill_source_id": "stoves_q4"
       },
       {
         "q_number": 5,
@@ -863,7 +987,7 @@
           "volume_range": "16-26",
           "volume_max": 26.0,
           "mass": 122,
-          "cost": 35900
+          "cost": 36000
         },
         {
           "stove_no": 3,
@@ -885,14 +1009,14 @@
           "columns_order": [
             25900.0,
             31400.0,
-            35900.0
+            36000.0
           ],
           "column_label": "Цена, руб."
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
             "1": 25900,
-            "2": 35900,
+            "2": 36000,
             "3": 31400
           },
           "answer_sequence": "132"
@@ -934,11 +1058,11 @@
           "electric_stove_no": 1,
           "electric_cost": 25900,
           "wood_ok_no": 2,
-          "wood_ok_cost": 35900,
+          "wood_ok_cost": 36000,
           "electric_install_cost": 11000,
           "delivery_cost": 2700,
           "electric_total": 39600,
-          "wood_total": 38600,
+          "wood_total": 38700,
           "electric_kwh": null,
           "electric_price_per_kwh": null,
           "wood_volume_m3": null,
@@ -949,6 +1073,25 @@
         },
         "answer": "39600",
         "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 4,
+        "pattern": "stoves_discounts",
+        "narrative": "find_discounted_price",
+        "question_text": "",
+        "input_data": {},
+        "solution_data": {
+          "stove_no": 2,
+          "original_price": 36000,
+          "discount_percent": 10,
+          "discount_fraction": 0.1,
+          "remaining_percent": 90,
+          "remaining_fraction": 0.9,
+          "discount_amount": 3600,
+          "price_after_discount": 32400
+        },
+        "answer": "32400",
+        "skill_source_id": "stoves_q4"
       },
       {
         "q_number": 5,
@@ -1086,6 +1229,25 @@
         },
         "answer": "5100",
         "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 4,
+        "pattern": "stoves_discounts",
+        "narrative": "find_discounted_price",
+        "question_text": "",
+        "input_data": {},
+        "solution_data": {
+          "stove_no": 2,
+          "original_price": 34500,
+          "discount_percent": 20,
+          "discount_fraction": 0.2,
+          "remaining_percent": 80,
+          "remaining_fraction": 0.8,
+          "discount_amount": 6900,
+          "price_after_discount": 27600
+        },
+        "answer": "27600",
+        "skill_source_id": "stoves_q4"
       },
       {
         "q_number": 5,
@@ -1232,6 +1394,25 @@
         "skill_source_id": "stoves_q3"
       },
       {
+        "q_number": 4,
+        "pattern": "stoves_discounts",
+        "narrative": "find_discounted_price",
+        "question_text": "",
+        "input_data": {},
+        "solution_data": {
+          "stove_no": 3,
+          "original_price": 25500,
+          "discount_percent": 20,
+          "discount_fraction": 0.2,
+          "remaining_percent": 80,
+          "remaining_fraction": 0.8,
+          "discount_amount": 5100,
+          "price_after_discount": 20400
+        },
+        "answer": "20400",
+        "skill_source_id": "stoves_q4"
+      },
+      {
         "q_number": 5,
         "pattern": "stoves_arc_radius",
         "narrative": "find_arc_radius",
@@ -1274,7 +1455,7 @@
           "volume_range": "9-12.5",
           "volume_max": 12.5,
           "mass": 28,
-          "cost": 20700
+          "cost": 22000
         },
         {
           "stove_no": 2,
@@ -1342,7 +1523,7 @@
         "q_number": 3,
         "pattern": "stoves_purchase_cost",
         "narrative": "find_wood_stove_total_cost",
-        "question_text": "Определи общую стоимость покупки дровяной печи, подходящей по объёму парного отделения, если доставка на дачный участок стоит 3900 рублей.",
+        "question_text": "Определи общую стоимость покупки дровяной печи, подходящей по объёму парного отделения, если доставка на дачный участок стоит 1900 рублей.",
         "input_data": {
           "length": 2.5,
           "width": 2.0,
@@ -1351,23 +1532,42 @@
         "solution_data": {
           "room_volume": 10.5,
           "electric_stove_no": 1,
-          "electric_cost": 20700,
+          "electric_cost": 22000,
           "wood_ok_no": 2,
           "wood_ok_cost": 30500,
           "electric_install_cost": 8600,
-          "delivery_cost": 3900,
-          "electric_total": 33200,
-          "wood_total": 34400,
+          "delivery_cost": 1900,
+          "electric_total": 32500,
+          "wood_total": 32400,
           "electric_kwh": null,
           "electric_price_per_kwh": null,
           "wood_volume_m3": null,
           "wood_price_per_m3": null,
           "electric_oper": null,
           "wood_oper": null,
-          "result": 34400
+          "result": 32400
         },
-        "answer": "34400",
+        "answer": "32400",
         "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 4,
+        "pattern": "stoves_discounts",
+        "narrative": "find_discounted_price",
+        "question_text": "",
+        "input_data": {},
+        "solution_data": {
+          "stove_no": 1,
+          "original_price": 22000,
+          "discount_percent": 10,
+          "discount_fraction": 0.1,
+          "remaining_percent": 90,
+          "remaining_fraction": 0.9,
+          "discount_amount": 2200,
+          "price_after_discount": 19800
+        },
+        "answer": "19800",
+        "skill_source_id": "stoves_q4"
       },
       {
         "q_number": 5,
@@ -1412,7 +1612,7 @@
           "volume_range": "12–20",
           "volume_max": 20.0,
           "mass": 42,
-          "cost": 30700
+          "cost": 32000
         },
         {
           "stove_no": 2,
@@ -1441,14 +1641,14 @@
         "input_data": {
           "columns_order": [
             36500.0,
-            30700.0,
+            32000.0,
             41500.0
           ],
           "column_label": "Цена, руб."
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
-            "1": 30700,
+            "1": 32000,
             "2": 36500,
             "3": 41500
           },
@@ -1479,7 +1679,7 @@
         "q_number": 3,
         "pattern": "stoves_purchase_cost",
         "narrative": "find_electric_stove_total_cost",
-        "question_text": "Определи общую стоимость покупки электрической печи с установкой и доставкой на дачный участок, если доставка стоит 5200 рублей.",
+        "question_text": "Определи общую стоимость покупки электрической печи с установкой и доставкой на дачный участок, если доставка стоит 1200 рублей.",
         "input_data": {
           "length": 3.4,
           "width": 2.5,
@@ -1488,23 +1688,48 @@
         "solution_data": {
           "room_volume": 18.7,
           "electric_stove_no": 1,
-          "electric_cost": 30700,
+          "electric_cost": 32000,
           "wood_ok_no": 2,
           "wood_ok_cost": 36500,
           "electric_install_cost": 11500,
-          "delivery_cost": 5200,
-          "electric_total": 47400,
-          "wood_total": 41700,
+          "delivery_cost": 1200,
+          "electric_total": 44700,
+          "wood_total": 37700,
           "electric_kwh": null,
           "electric_price_per_kwh": null,
           "wood_volume_m3": null,
           "wood_price_per_m3": null,
           "electric_oper": null,
           "wood_oper": null,
-          "result": 47400
+          "result": 44700
         },
-        "answer": "47400",
+        "answer": "44700",
         "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 4,
+        "pattern": "stoves_discounts",
+        "narrative": "conditional_discount",
+        "question_text": "",
+        "input_data": {},
+        "solution_data": {
+          "stove_no": 1,
+          "original_price": 32000,
+          "threshold": 30000,
+          "threshold_passed": true,
+          "stove_discount_percent": 15,
+          "remaining_percent": 85,
+          "remaining_fraction": 0.85,
+          "stove_price_after_discount": 27200,
+          "delivery_cost": 1500,
+          "delivery_discount_percent": 20,
+          "delivery_remaining_percent": 80,
+          "delivery_remaining_fraction": 0.8,
+          "delivery_price_after_discount": 1200,
+          "total_price": 28400
+        },
+        "answer": "28400",
+        "skill_source_id": "stoves_q4"
       },
       {
         "q_number": 5,
@@ -1651,6 +1876,31 @@
         "skill_source_id": "stoves_q3"
       },
       {
+        "q_number": 4,
+        "pattern": "stoves_discounts",
+        "narrative": "conditional_discount",
+        "question_text": "",
+        "input_data": {},
+        "solution_data": {
+          "stove_no": 2,
+          "original_price": 27100,
+          "threshold": 20000,
+          "threshold_passed": true,
+          "stove_discount_percent": 10,
+          "remaining_percent": 90,
+          "remaining_fraction": 0.9,
+          "stove_price_after_discount": 24390,
+          "delivery_cost": 2600,
+          "delivery_discount_percent": 15,
+          "delivery_remaining_percent": 85,
+          "delivery_remaining_fraction": 0.85,
+          "delivery_price_after_discount": 2210,
+          "total_price": 26600
+        },
+        "answer": "26600",
+        "skill_source_id": "stoves_q4"
+      },
+      {
         "q_number": 5,
         "pattern": "stoves_arc_radius",
         "narrative": "find_arc_radius",
@@ -1693,7 +1943,7 @@
           "volume_range": "10–15.5",
           "volume_max": 15.5,
           "mass": 82,
-          "cost": 29700
+          "cost": 30000
         },
         {
           "stove_no": 2,
@@ -1787,6 +2037,31 @@
         },
         "answer": "1300",
         "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 4,
+        "pattern": "stoves_discounts",
+        "narrative": "conditional_discount",
+        "question_text": "",
+        "input_data": {},
+        "solution_data": {
+          "stove_no": 1,
+          "original_price": 30000,
+          "threshold": 25000,
+          "threshold_passed": true,
+          "stove_discount_percent": 10,
+          "remaining_percent": 90,
+          "remaining_fraction": 0.9,
+          "stove_price_after_discount": 27000,
+          "delivery_cost": 2000,
+          "delivery_discount_percent": 20,
+          "delivery_remaining_percent": 80,
+          "delivery_remaining_fraction": 0.8,
+          "delivery_price_after_discount": 1600,
+          "total_price": 28600
+        },
+        "answer": "28600",
+        "skill_source_id": "stoves_q4"
       },
       {
         "q_number": 5,
@@ -1926,6 +2201,31 @@
         "skill_source_id": "stoves_q3"
       },
       {
+        "q_number": 4,
+        "pattern": "stoves_discounts",
+        "narrative": "conditional_discount",
+        "question_text": "",
+        "input_data": {},
+        "solution_data": {
+          "stove_no": 2,
+          "original_price": 24000,
+          "threshold": 20000,
+          "threshold_passed": true,
+          "stove_discount_percent": 10,
+          "remaining_percent": 90,
+          "remaining_fraction": 0.9,
+          "stove_price_after_discount": 21600,
+          "delivery_cost": 2000,
+          "delivery_discount_percent": 15,
+          "delivery_remaining_percent": 85,
+          "delivery_remaining_fraction": 0.85,
+          "delivery_price_after_discount": 1700,
+          "total_price": 23300
+        },
+        "answer": "23300",
+        "skill_source_id": "stoves_q4"
+      },
+      {
         "q_number": 5,
         "pattern": "stoves_arc_radius",
         "narrative": "find_arc_radius",
@@ -1968,7 +2268,7 @@
           "volume_range": "22-26.5",
           "volume_max": 26.5,
           "mass": 135,
-          "cost": 40800
+          "cost": 41000
         },
         {
           "stove_no": 2,
@@ -1998,13 +2298,13 @@
           "columns_order": [
             32000.0,
             38200.0,
-            40800.0
+            41000.0
           ],
           "column_label": "Цена, руб."
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
-            "1": 40800,
+            "1": 41000,
             "2": 38200,
             "3": 32000
           },
@@ -2053,11 +2353,11 @@
           "electric_stove_no": 3,
           "electric_cost": 32000,
           "wood_ok_no": 1,
-          "wood_ok_cost": 40800,
+          "wood_ok_cost": 41000,
           "electric_install_cost": 13000,
           "delivery_cost": 2400,
           "electric_total": 47400,
-          "wood_total": 43200,
+          "wood_total": 43400,
           "electric_kwh": null,
           "electric_price_per_kwh": null,
           "wood_volume_m3": null,
@@ -2068,6 +2368,31 @@
         },
         "answer": "47400",
         "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 4,
+        "pattern": "stoves_discounts",
+        "narrative": "conditional_discount",
+        "question_text": "",
+        "input_data": {},
+        "solution_data": {
+          "stove_no": 1,
+          "original_price": 41000,
+          "threshold": 40000,
+          "threshold_passed": true,
+          "stove_discount_percent": 10,
+          "remaining_percent": 90,
+          "remaining_fraction": 0.9,
+          "stove_price_after_discount": 36900,
+          "delivery_cost": 2500,
+          "delivery_discount_percent": 20,
+          "delivery_remaining_percent": 80,
+          "delivery_remaining_fraction": 0.8,
+          "delivery_price_after_discount": 2000,
+          "total_price": 38900
+        },
+        "answer": "38900",
+        "skill_source_id": "stoves_q4"
       },
       {
         "q_number": 5,
@@ -2102,7 +2427,7 @@
       "height": 2.0,
       "door_width_cm": 65.0,
       "door_height_m": 1.7,
-      "electric_install_cost": 7050
+      "electric_install_cost": 7500
     },
     "table_context": {
       "stoves": [
@@ -2120,7 +2445,7 @@
           "volume_range": "10–15",
           "volume_max": 15.0,
           "mass": 29,
-          "cost": 22900
+          "cost": 23000
         },
         {
           "stove_no": 3,
@@ -2140,7 +2465,7 @@
         "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
         "input_data": {
           "columns_order": [
-            22900.0,
+            23000.0,
             25900.0,
             30400.0
           ],
@@ -2149,7 +2474,7 @@
         "solution_data": {
           "stove_no_to_value_mapping": {
             "1": 25900,
-            "2": 22900,
+            "2": 23000,
             "3": 30400
           },
           "answer_sequence": "213"
@@ -2189,12 +2514,12 @@
         "solution_data": {
           "room_volume": 12.96,
           "electric_stove_no": 2,
-          "electric_cost": 22900,
+          "electric_cost": 23000,
           "wood_ok_no": 1,
           "wood_ok_cost": 25900,
-          "electric_install_cost": 7050,
+          "electric_install_cost": 7500,
           "delivery_cost": 0,
-          "electric_total": 29950,
+          "electric_total": 30500,
           "wood_total": 25900,
           "electric_kwh": 2900,
           "electric_price_per_kwh": 3.5,
@@ -2206,6 +2531,27 @@
         },
         "answer": "5050",
         "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 4,
+        "pattern": "stoves_discounts",
+        "narrative": "discount_and_setup",
+        "question_text": "",
+        "input_data": {},
+        "solution_data": {
+          "stove_no": 2,
+          "original_price": 23000,
+          "discount_percent": 10,
+          "discount_fraction": 0.1,
+          "remaining_percent": 90,
+          "remaining_fraction": 0.9,
+          "price_after_discount": 20700,
+          "delivery_cost": 1300,
+          "install_cost": 7500,
+          "total_price": 29500
+        },
+        "answer": "29500",
+        "skill_source_id": "stoves_q4"
       },
       {
         "q_number": 5,
@@ -2266,7 +2612,7 @@
           "volume_range": "14–19",
           "volume_max": 19.0,
           "mass": 30,
-          "cost": 25900
+          "cost": 26000
         }
       ]
     },
@@ -2278,7 +2624,7 @@
         "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
         "input_data": {
           "columns_order": [
-            25900.0,
+            26000.0,
             29300.0,
             34900.0
           ],
@@ -2288,7 +2634,7 @@
           "stove_no_to_value_mapping": {
             "1": 29300,
             "2": 34900,
-            "3": 25900
+            "3": 26000
           },
           "answer_sequence": "312"
         },
@@ -2326,12 +2672,12 @@
         "solution_data": {
           "room_volume": 18.4,
           "electric_stove_no": 3,
-          "electric_cost": 25900,
+          "electric_cost": 26000,
           "wood_ok_no": 2,
           "wood_ok_cost": 34900,
           "electric_install_cost": 11200,
           "delivery_cost": 0,
-          "electric_total": 37100,
+          "electric_total": 37200,
           "wood_total": 34900,
           "electric_kwh": null,
           "electric_price_per_kwh": null,
@@ -2339,10 +2685,31 @@
           "wood_price_per_m3": null,
           "electric_oper": null,
           "wood_oper": null,
-          "result": 2200
+          "result": 2300
         },
-        "answer": "2200",
+        "answer": "2300",
         "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 4,
+        "pattern": "stoves_discounts",
+        "narrative": "discount_and_setup",
+        "question_text": "",
+        "input_data": {},
+        "solution_data": {
+          "stove_no": 3,
+          "original_price": 26000,
+          "discount_percent": 10,
+          "discount_fraction": 0.1,
+          "remaining_percent": 90,
+          "remaining_fraction": 0.9,
+          "price_after_discount": 23400,
+          "delivery_cost": 1600,
+          "install_cost": 11200,
+          "total_price": 36200
+        },
+        "answer": "36200",
+        "skill_source_id": "stoves_q4"
       },
       {
         "q_number": 5,
@@ -2387,7 +2754,7 @@
           "volume_range": "8–12",
           "volume_max": 12.0,
           "mass": 25,
-          "cost": 21900
+          "cost": 22000
         },
         {
           "stove_no": 2,
@@ -2416,14 +2783,14 @@
         "input_data": {
           "columns_order": [
             25400.0,
-            21900.0,
+            22000.0,
             29400.0
           ],
           "column_label": "Цена, руб."
         },
         "solution_data": {
           "stove_no_to_value_mapping": {
-            "1": 21900,
+            "1": 22000,
             "2": 25400,
             "3": 29400
           },
@@ -2461,7 +2828,7 @@
         "q_number": 3,
         "pattern": "stoves_purchase_cost",
         "narrative": "find_wood_stove_total_cost",
-        "question_text": "Определи общую стоимость покупки дровяной печи, подходящей по объёму парного отделения, если доставка на дачный участок стоит 5800 рублей.",
+        "question_text": "Определи общую стоимость покупки дровяной печи, подходящей по объёму парного отделения, если доставка на дачный участок стоит 1800 рублей.",
         "input_data": {
           "length": 2.6,
           "width": 2.3,
@@ -2470,23 +2837,44 @@
         "solution_data": {
           "room_volume": 11.96,
           "electric_stove_no": 1,
-          "electric_cost": 21900,
+          "electric_cost": 22000,
           "wood_ok_no": 2,
           "wood_ok_cost": 25400,
           "electric_install_cost": 8800,
-          "delivery_cost": 5800,
-          "electric_total": 36500,
-          "wood_total": 31200,
+          "delivery_cost": 1800,
+          "electric_total": 32600,
+          "wood_total": 27200,
           "electric_kwh": null,
           "electric_price_per_kwh": null,
           "wood_volume_m3": null,
           "wood_price_per_m3": null,
           "electric_oper": null,
           "wood_oper": null,
-          "result": 31200
+          "result": 27200
         },
-        "answer": "31200",
+        "answer": "27200",
         "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 4,
+        "pattern": "stoves_discounts",
+        "narrative": "discount_and_setup",
+        "question_text": "",
+        "input_data": {},
+        "solution_data": {
+          "stove_no": 1,
+          "original_price": 22000,
+          "discount_percent": 20,
+          "discount_fraction": 0.2,
+          "remaining_percent": 80,
+          "remaining_fraction": 0.8,
+          "price_after_discount": 17600,
+          "delivery_cost": 1400,
+          "install_cost": 8800,
+          "total_price": 27800
+        },
+        "answer": "27800",
+        "skill_source_id": "stoves_q4"
       },
       {
         "q_number": 5,
@@ -2539,7 +2927,7 @@
           "volume_range": "18–24.5",
           "volume_max": 24.5,
           "mass": 36,
-          "cost": 31200
+          "cost": 32000
         },
         {
           "stove_no": 3,
@@ -2559,7 +2947,7 @@
         "question_text": "По данным таблицы определи, какой номер печи соответствует каждой из указанных стоимостей. В ответе запиши последовательность трёх цифр подряд, без пробелов и знаков препинания.",
         "input_data": {
           "columns_order": [
-            31200.0,
+            32000.0,
             37000.0,
             42500.0
           ],
@@ -2568,7 +2956,7 @@
         "solution_data": {
           "stove_no_to_value_mapping": {
             "1": 42500,
-            "2": 31200,
+            "2": 32000,
             "3": 37000
           },
           "answer_sequence": "231"
@@ -2599,7 +2987,7 @@
         "q_number": 3,
         "pattern": "stoves_purchase_cost",
         "narrative": "find_electric_stove_total_cost",
-        "question_text": "Определи общую стоимость покупки электрической печи с установкой и доставкой на дачный участок, если доставка стоит 5100 рублей.",
+        "question_text": "Определи общую стоимость покупки электрической печи с установкой и доставкой на дачный участок, если доставка стоит 2100 рублей.",
         "input_data": {
           "length": 3.5,
           "width": 2.8,
@@ -2608,23 +2996,44 @@
         "solution_data": {
           "room_volume": 23.52,
           "electric_stove_no": 2,
-          "electric_cost": 31200,
+          "electric_cost": 32000,
           "wood_ok_no": 1,
           "wood_ok_cost": 42500,
           "electric_install_cost": 11800,
-          "delivery_cost": 5100,
-          "electric_total": 48100,
-          "wood_total": 47600,
+          "delivery_cost": 2100,
+          "electric_total": 45900,
+          "wood_total": 44600,
           "electric_kwh": null,
           "electric_price_per_kwh": null,
           "wood_volume_m3": null,
           "wood_price_per_m3": null,
           "electric_oper": null,
           "wood_oper": null,
-          "result": 48100
+          "result": 45900
         },
-        "answer": "48100",
+        "answer": "45900",
         "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 4,
+        "pattern": "stoves_discounts",
+        "narrative": "discount_and_setup",
+        "question_text": "",
+        "input_data": {},
+        "solution_data": {
+          "stove_no": 2,
+          "original_price": 32000,
+          "discount_percent": 15,
+          "discount_fraction": 0.15,
+          "remaining_percent": 85,
+          "remaining_fraction": 0.85,
+          "price_after_discount": 27200,
+          "delivery_cost": 1800,
+          "install_cost": 11800,
+          "total_price": 40800
+        },
+        "answer": "40800",
+        "skill_source_id": "stoves_q4"
       },
       {
         "q_number": 5,
@@ -2685,7 +3094,7 @@
           "volume_range": "9–14",
           "volume_max": 14.0,
           "mass": 29,
-          "cost": 26300
+          "cost": 26000
         }
       ]
     },
@@ -2752,12 +3161,12 @@
         "solution_data": {
           "room_volume": 12.32,
           "electric_stove_no": 3,
-          "electric_cost": 26300,
+          "electric_cost": 26000,
           "wood_ok_no": 2,
           "wood_ok_cost": 30900,
           "electric_install_cost": 9000,
           "delivery_cost": 0,
-          "electric_total": 35300,
+          "electric_total": 35000,
           "wood_total": 30900,
           "electric_kwh": 2700,
           "electric_price_per_kwh": 4.5,
@@ -2769,6 +3178,27 @@
         },
         "answer": "7670",
         "skill_source_id": "stoves_q3"
+      },
+      {
+        "q_number": 4,
+        "pattern": "stoves_discounts",
+        "narrative": "discount_and_setup",
+        "question_text": "",
+        "input_data": {},
+        "solution_data": {
+          "stove_no": 3,
+          "original_price": 26000,
+          "discount_percent": 10,
+          "discount_fraction": 0.1,
+          "remaining_percent": 90,
+          "remaining_fraction": 0.9,
+          "price_after_discount": 23400,
+          "delivery_cost": 1600,
+          "install_cost": 9000,
+          "total_price": 34000
+        },
+        "answer": "34000",
+        "skill_source_id": "stoves_q4"
       },
       {
         "q_number": 5,

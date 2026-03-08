@@ -62,11 +62,10 @@ PAPER_SKILLS = [
 
 STOVES_SKILLS = [
     "stoves_q1",
-    # позже добавим:
-    # "stoves_q2",
-    # "stoves_q3",
-    # "stoves_q4",
-    # "stoves_q5",
+    "stoves_q2",
+    "stoves_q3",
+    "stoves_q4",
+    "stoves_q5",
 ]
 
 async def main():

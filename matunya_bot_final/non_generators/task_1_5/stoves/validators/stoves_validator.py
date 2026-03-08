@@ -20,10 +20,12 @@ class StovesValidator:
             - find_wood_stove_total_cost
             - find_electric_stove_total_cost
             - find_operating_cost_difference
+      ✅ Q4 stoves_discounts
+            - find_past_price
+            - find_discounted_price
+            - conditional_discount
+            - discount_and_setup
       ✅ Q5 stoves_arc_radius (find_arc_radius)
-
-    Дальше будет добавляться:
-      ⬜ Q4 …
     """
 
     # ================================================================
@@ -108,16 +110,20 @@ class StovesValidator:
                 errors.append(f"Ошибка в Q3: {str(e)}")
 
         # ------------------------------------------------------------
-        # Q4 (TODO)
+        # Q4
         # ------------------------------------------------------------
-        # ✅ СЮДА ДОБАВИШЬ:
-        # q4_data = parsed.get("Q4")
-        # if q4_data:
-        #     try:
-        #         q4 = self._build_q4(q_data=q4_data, room=room_context, stoves=stoves)
-        #         container["questions"].append(q4)
-        #     except Exception as e:
-        #         errors.append(f"Ошибка в Q4: {str(e)}")
+        q4_data = parsed.get("Q4")
+        if q4_data:
+            try:
+                q4 = self._build_q4(
+                    q_data=q4_data,
+                    room=room_context,
+                    stoves=stoves
+                )
+                self._validate_question_structure(q4)
+                container["questions"].append(q4)
+            except Exception as e:
+                errors.append(f"Ошибка в Q4: {str(e)}")
 
         # ------------------------------------------------------------
         # Q5
@@ -591,11 +597,332 @@ class StovesValidator:
         }
 
     # ================================================================
-    # Q4 (TODO)
+    # Q4
     # ================================================================
-    # ✅ ДОБАВИШЬ СЮДА НОВЫЙ МЕТОД:
-    # def _build_q4(self, q_data: Dict[str, Any], room: Dict[str, Any], stoves: List[Dict[str, Any]]) -> Dict[str, Any]:
-    #     ...
+    def _build_q4(
+        self,
+        q_data: Dict[str, Any],
+        room: Dict[str, Any],
+        stoves: List[Dict[str, Any]],
+    ) -> Dict[str, Any]:
+
+        pattern = q_data.get("PATTERN")
+        narrative = q_data.get("NARRATIVE")
+        question_text = (q_data.get("TEXT") or "").strip()
+
+        solution_data: Dict[str, Any] | None = None
+        answer: Any | None = None
+
+        if pattern != "stoves_discounts":
+            raise ValueError(f"Q4: неизвестный pattern: {pattern}")
+
+        # ---------------------------------------------------------
+        # печи
+        # ---------------------------------------------------------
+
+        stove_map = {s["stove_no"]: s for s in stoves}
+
+        electric = next((s for s in stoves if s["type"] == "electric"), None)
+        if electric is None:
+            raise ValueError("Q4: электрическая печь не найдена")
+
+        # ---------------------------------------------------------
+        # find_past_price
+        # ---------------------------------------------------------
+
+        if narrative == "find_past_price":
+
+            stove_no_raw = q_data.get("STOVE")
+            d1_raw = q_data.get("DISCOUNT_STOVE_1")
+            d2_raw = q_data.get("DISCOUNT_STOVE_2")
+            d3_raw = q_data.get("DISCOUNT_STOVE_3")
+
+            required = {
+                "STOVE": stove_no_raw,
+                "DISCOUNT_STOVE_1": d1_raw,
+                "DISCOUNT_STOVE_2": d2_raw,
+                "DISCOUNT_STOVE_3": d3_raw,
+            }
+            missing = [k for k, v in required.items() if v is None]
+            if missing:
+                raise ValueError(
+                    f"Q4 find_past_price: отсутствуют поля: {', '.join(missing)}"
+                )
+
+            stove_no = int(stove_no_raw)
+            stove = stove_map.get(stove_no)
+
+            if stove is None:
+                raise ValueError(f"Q4: печь №{stove_no} не найдена")
+
+            price_after_discount = stove["cost"]
+
+            d1 = int(d1_raw)
+            d2 = int(d2_raw)
+            d3 = int(d3_raw)
+
+            discount_map = {
+                1: d1,
+                2: d2,
+                3: d3,
+            }
+
+            discount_percent = discount_map[stove_no]
+            discount_fraction = discount_percent / 100
+
+            remaining_percent = 100 - discount_percent
+            remaining_fraction = remaining_percent / 100
+
+            original_price = self._clean_float(price_after_discount / remaining_fraction)
+
+            if isinstance(original_price, float) and original_price.is_integer():
+                original_price = int(original_price)
+
+            solution_data = {
+                "stove_no": stove_no,
+                "price_after_discount": price_after_discount,
+
+                "discount_stove_1": d1,
+                "discount_stove_2": d2,
+                "discount_stove_3": d3,
+
+                "discount_percent": discount_percent,
+                "discount_fraction": discount_fraction,
+
+                "remaining_percent": remaining_percent,
+                "remaining_fraction": remaining_fraction,
+
+                "original_price": original_price,
+            }
+
+            answer = original_price
+
+        # ---------------------------------------------------------
+        # find_discounted_price
+        # ---------------------------------------------------------
+
+        elif narrative == "find_discounted_price":
+
+            stove_no_raw = q_data.get("STOVE")
+            discount_percent_raw = q_data.get("DISCOUNT_PERCENT")
+
+            required = {
+                "STOVE": stove_no_raw,
+                "DISCOUNT_PERCENT": discount_percent_raw,
+            }
+            missing = [k for k, v in required.items() if v is None]
+            if missing:
+                raise ValueError(
+                    f"Q4 find_discounted_price: отсутствуют поля: {', '.join(missing)}"
+                )
+
+            stove_no = int(stove_no_raw)
+            stove = stove_map.get(stove_no)
+
+            if stove is None:
+                raise ValueError(f"Q4: печь №{stove_no} не найдена")
+
+            original_price = stove["cost"]
+
+            discount_percent = int(discount_percent_raw)
+            discount_fraction = discount_percent / 100
+
+            remaining_percent = 100 - discount_percent
+            remaining_fraction = remaining_percent / 100
+
+            discount_amount = self._clean_float(original_price * discount_fraction)
+            price_after_discount = self._clean_float(original_price * remaining_fraction)
+
+            if isinstance(discount_amount, float) and discount_amount.is_integer():
+                discount_amount = int(discount_amount)
+
+            if isinstance(price_after_discount, float) and price_after_discount.is_integer():
+                price_after_discount = int(price_after_discount)
+
+            solution_data = {
+                "stove_no": stove_no,
+                "original_price": original_price,
+
+                "discount_percent": discount_percent,
+                "discount_fraction": discount_fraction,
+
+                "remaining_percent": remaining_percent,
+                "remaining_fraction": remaining_fraction,
+
+                "discount_amount": discount_amount,
+                "price_after_discount": price_after_discount,
+            }
+
+            answer = price_after_discount
+
+        # ---------------------------------------------------------
+        # conditional_discount
+        # ---------------------------------------------------------
+
+        elif narrative == "conditional_discount":
+
+            stove_no_raw = q_data.get("STOVE")
+            threshold_raw = q_data.get("THRESHOLD")
+            delivery_cost_raw = q_data.get("DELIVERY_COST")
+            stove_discount_raw = q_data.get("STOVE_DISCOUNT")
+            delivery_discount_raw = q_data.get("DELIVERY_DISCOUNT")
+
+            required = {
+                "STOVE": stove_no_raw,
+                "THRESHOLD": threshold_raw,
+                "DELIVERY_COST": delivery_cost_raw,
+                "STOVE_DISCOUNT": stove_discount_raw,
+                "DELIVERY_DISCOUNT": delivery_discount_raw,
+            }
+            missing = [k for k, v in required.items() if v is None]
+            if missing:
+                raise ValueError(
+                    f"Q4 conditional_discount: отсутствуют поля: {', '.join(missing)}"
+                )
+
+            stove_no = int(stove_no_raw)
+            stove = stove_map.get(stove_no)
+
+            if stove is None:
+                raise ValueError(f"Q4: печь №{stove_no} не найдена")
+
+            original_price = stove["cost"]
+
+            threshold = int(threshold_raw)
+            delivery_cost = int(delivery_cost_raw)
+
+            stove_discount_percent = int(stove_discount_raw)
+            delivery_discount_percent = int(delivery_discount_raw)
+
+            threshold_passed = original_price > threshold
+
+            remaining_percent = 100 - stove_discount_percent
+            remaining_fraction = remaining_percent / 100
+
+            delivery_remaining_percent = 100 - delivery_discount_percent
+            delivery_remaining_fraction = delivery_remaining_percent / 100
+
+            if threshold_passed:
+                stove_price_after_discount = self._clean_float(
+                    original_price * remaining_fraction
+                )
+                delivery_price_after_discount = self._clean_float(
+                    delivery_cost * delivery_remaining_fraction
+                )
+            else:
+                stove_price_after_discount = original_price
+                delivery_price_after_discount = delivery_cost
+
+            if isinstance(stove_price_after_discount, float) and stove_price_after_discount.is_integer():
+                stove_price_after_discount = int(stove_price_after_discount)
+
+            if isinstance(delivery_price_after_discount, float) and delivery_price_after_discount.is_integer():
+                delivery_price_after_discount = int(delivery_price_after_discount)
+
+            total_price = stove_price_after_discount + delivery_price_after_discount
+
+            if isinstance(total_price, float) and total_price.is_integer():
+                total_price = int(total_price)
+
+            solution_data = {
+                "stove_no": stove_no,
+                "original_price": original_price,
+
+                "threshold": threshold,
+                "threshold_passed": threshold_passed,
+
+                "stove_discount_percent": stove_discount_percent,
+                "remaining_percent": remaining_percent,
+                "remaining_fraction": remaining_fraction,
+                "stove_price_after_discount": stove_price_after_discount,
+
+                "delivery_cost": delivery_cost,
+                "delivery_discount_percent": delivery_discount_percent,
+                "delivery_remaining_percent": delivery_remaining_percent,
+                "delivery_remaining_fraction": delivery_remaining_fraction,
+                "delivery_price_after_discount": delivery_price_after_discount,
+
+                "total_price": total_price,
+            }
+
+            answer = total_price
+
+        # ---------------------------------------------------------
+        # discount_and_setup
+        # ---------------------------------------------------------
+
+        elif narrative == "discount_and_setup":
+
+            discount_percent_raw = q_data.get("DISCOUNT_PERCENT")
+            delivery_cost_raw = q_data.get("DELIVERY_COST")
+
+            required = {
+                "DISCOUNT_PERCENT": discount_percent_raw,
+                "DELIVERY_COST": delivery_cost_raw,
+            }
+            missing = [k for k, v in required.items() if v is None]
+            if missing:
+                raise ValueError(
+                    f"Q4 discount_and_setup: отсутствуют поля: {', '.join(missing)}"
+                )
+
+            original_price = electric["cost"]
+            stove_no = electric["stove_no"]
+
+            discount_percent = int(discount_percent_raw)
+            delivery_cost = int(delivery_cost_raw)
+
+            install_cost = int(room["electric_install_cost"])
+
+            discount_fraction = discount_percent / 100
+
+            remaining_percent = 100 - discount_percent
+            remaining_fraction = remaining_percent / 100
+
+            price_after_discount = self._clean_float(
+                original_price * remaining_fraction
+            )
+
+            if isinstance(price_after_discount, float) and price_after_discount.is_integer():
+                price_after_discount = int(price_after_discount)
+
+            total_price = price_after_discount + delivery_cost + install_cost
+
+            if isinstance(total_price, float) and total_price.is_integer():
+                total_price = int(total_price)
+
+            solution_data = {
+                "stove_no": stove_no,
+                "original_price": original_price,
+
+                "discount_percent": discount_percent,
+                "discount_fraction": discount_fraction,
+                "remaining_percent": remaining_percent,
+                "remaining_fraction": remaining_fraction,
+
+                "price_after_discount": price_after_discount,
+
+                "delivery_cost": delivery_cost,
+                "install_cost": install_cost,
+
+                "total_price": total_price,
+            }
+
+            answer = total_price
+
+        else:
+            raise ValueError(f"Q4: неизвестный narrative: {narrative}")
+
+        return {
+            "q_number": 4,
+            "pattern": pattern,
+            "narrative": narrative,
+            "question_text": question_text,
+            "input_data": {},
+            "solution_data": solution_data,
+            "answer": str(answer),
+            "skill_source_id": "stoves_q4",
+        }
 
     # ================================================================
     # Q5
@@ -820,7 +1147,7 @@ class StovesValidator:
             # --------------------------------------------------------
             # Q BLOCK
             # --------------------------------------------------------
-            m_q = re.match(r"^(Q\d)\.([A-Z_]+)\s*:\s*(.*)$", stripped)
+            m_q = re.match(r"^(Q\d)\.([A-Z0-9_]+)\s*:\s*(.*)$", stripped)
             if m_q:
                 current_stove = None  # выходим из блока печей
                 q_num, field, val = m_q.groups()

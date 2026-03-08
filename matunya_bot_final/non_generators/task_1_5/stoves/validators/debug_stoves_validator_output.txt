@@ -8,6 +8,7 @@
    🔹 Q1 [match_volume]: Ответ = 132
    🔹 Q2 [find_volume]: Ответ = 15.84
    🔹 Q3 [find_price_difference]: Ответ = 5600
+   🔹 Q4 [find_past_price]: Ответ = 22500
    🔹 Q5 [find_arc_radius]: Ответ = 40
 
 📂 ВАРИАНТ: stoves_2026_var_02
@@ -16,6 +17,7 @@
    🔹 Q1 [match_volume]: Ответ = 312
    🔹 Q2 [find_base_area]: Ответ = 6.16
    🔹 Q3 [find_wood_stove_total_cost]: Ответ = 30300
+   🔹 Q4 [find_past_price]: Ответ = 26500
    🔹 Q5 [find_arc_radius]: Ответ = 51
 
 📂 ВАРИАНТ: stoves_2026_var_03
@@ -23,7 +25,8 @@
 ✅ Статус: ВАЛИДНО
    🔹 Q1 [match_volume]: Ответ = 132
    🔹 Q2 [find_lateral_area]: Ответ = 23.9
-   🔹 Q3 [find_electric_stove_total_cost]: Ответ = 36900
+   🔹 Q3 [find_electric_stove_total_cost]: Ответ = 33700
+   🔹 Q4 [find_past_price]: Ответ = 25000
    🔹 Q5 [find_arc_radius]: Ответ = 45
 
 📂 ВАРИАНТ: stoves_2026_var_04
@@ -32,6 +35,7 @@
    🔹 Q1 [match_volume]: Ответ = 132
    🔹 Q2 [find_volume]: Ответ = 12.48
    🔹 Q3 [find_price_difference]: Ответ = 2500
+   🔹 Q4 [find_past_price]: Ответ = 41000
    🔹 Q5 [find_arc_radius]: Ответ = 50
 
 📂 ВАРИАНТ: stoves_2026_var_05
@@ -40,6 +44,7 @@
    🔹 Q1 [match_weight]: Ответ = 123
    🔹 Q2 [find_base_area]: Ответ = 8.75
    🔹 Q3 [find_operating_cost_difference]: Ответ = 7900
+   🔹 Q4 [find_past_price]: Ответ = 32000
    🔹 Q5 [find_arc_radius]: Ответ = 40
 
 📂 ВАРИАНТ: stoves_2026_var_06
@@ -47,7 +52,8 @@
 ✅ Статус: ВАЛИДНО
    🔹 Q1 [match_volume]: Ответ = 231
    🔹 Q2 [find_lateral_area]: Ответ = 21.92
-   🔹 Q3 [find_wood_stove_total_cost]: Ответ = 40800
+   🔹 Q3 [find_wood_stove_total_cost]: Ответ = 36800
+   🔹 Q4 [find_discounted_price]: Ответ = 27200
    🔹 Q5 [find_arc_radius]: Ответ = 68
 
 📂 ВАРИАНТ: stoves_2026_var_07
@@ -56,6 +62,7 @@
    🔹 Q1 [match_cost]: Ответ = 132
    🔹 Q2 [find_volume]: Ответ = 18.72
    🔹 Q3 [find_electric_stove_total_cost]: Ответ = 39600
+   🔹 Q4 [find_discounted_price]: Ответ = 32400
    🔹 Q5 [find_arc_radius]: Ответ = 45
 
 📂 ВАРИАНТ: stoves_2026_var_08
@@ -64,6 +71,7 @@
    🔹 Q1 [match_weight]: Ответ = 213
    🔹 Q2 [find_base_area]: Ответ = 5.67
    🔹 Q3 [find_operating_cost_difference]: Ответ = 5100
+   🔹 Q4 [find_discounted_price]: Ответ = 27600
    🔹 Q5 [find_arc_radius]: Ответ = 50
 
 📂 ВАРИАНТ: stoves_2026_var_09
@@ -72,6 +80,7 @@
    🔹 Q1 [match_cost]: Ответ = 123
    🔹 Q2 [find_lateral_area]: Ответ = 24.19
    🔹 Q3 [find_price_difference]: Ответ = 1300
+   🔹 Q4 [find_discounted_price]: Ответ = 20400
    🔹 Q5 [find_arc_radius]: Ответ = 35
 
 📂 ВАРИАНТ: stoves_2026_var_10
@@ -79,7 +88,8 @@
 ✅ Статус: ВАЛИДНО
    🔹 Q1 [match_weight]: Ответ = 132
    🔹 Q2 [find_volume]: Ответ = 10.5
-   🔹 Q3 [find_wood_stove_total_cost]: Ответ = 34400
+   🔹 Q3 [find_wood_stove_total_cost]: Ответ = 32400
+   🔹 Q4 [find_discounted_price]: Ответ = 19800
    🔹 Q5 [find_arc_radius]: Ответ = 58
 
 📂 ВАРИАНТ: stoves_2026_var_11
@@ -87,7 +97,8 @@
 ✅ Статус: ВАЛИДНО
    🔹 Q1 [match_cost]: Ответ = 213
    🔹 Q2 [find_base_area]: Ответ = 8.5
-   🔹 Q3 [find_electric_stove_total_cost]: Ответ = 47400
+   🔹 Q3 [find_electric_stove_total_cost]: Ответ = 44700
+   🔹 Q4 [conditional_discount]: Ответ = 28400
    🔹 Q5 [find_arc_radius]: Ответ = 40
 
 📂 ВАРИАНТ: stoves_2026_var_12
@@ -96,6 +107,7 @@
    🔹 Q1 [match_volume]: Ответ = 312
    🔹 Q2 [find_lateral_area]: Ответ = 22.15
    🔹 Q3 [find_operating_cost_difference]: Ответ = 8900
+   🔹 Q4 [conditional_discount]: Ответ = 26600
    🔹 Q5 [find_arc_radius]: Ответ = 45
 
 📂 ВАРИАНТ: stoves_2026_var_13
@@ -104,6 +116,7 @@
    🔹 Q1 [match_volume]: Ответ = 312
    🔹 Q2 [find_volume]: Ответ = 16.2
    🔹 Q3 [find_price_difference]: Ответ = 1300
+   🔹 Q4 [conditional_discount]: Ответ = 28600
    🔹 Q5 [find_arc_radius]: Ответ = 53
 
 📂 ВАРИАНТ: stoves_2026_var_14
@@ -112,6 +125,7 @@
    🔹 Q1 [match_cost]: Ответ = 132
    🔹 Q2 [find_base_area]: Ответ = 6.6
    🔹 Q3 [find_wood_stove_total_cost]: Ответ = 31100
+   🔹 Q4 [conditional_discount]: Ответ = 23300
    🔹 Q5 [find_arc_radius]: Ответ = 60
 
 📂 ВАРИАНТ: stoves_2026_var_15
@@ -120,6 +134,7 @@
    🔹 Q1 [match_cost]: Ответ = 321
    🔹 Q2 [find_lateral_area]: Ответ = 30.9
    🔹 Q3 [find_electric_stove_total_cost]: Ответ = 47400
+   🔹 Q4 [conditional_discount]: Ответ = 38900
    🔹 Q5 [find_arc_radius]: Ответ = 60
 
 📂 ВАРИАНТ: stoves_2026_var_16
@@ -128,6 +143,7 @@
    🔹 Q1 [match_cost]: Ответ = 213
    🔹 Q2 [find_volume]: Ответ = 12.96
    🔹 Q3 [find_operating_cost_difference]: Ответ = 5050
+   🔹 Q4 [discount_and_setup]: Ответ = 29500
    🔹 Q5 [find_arc_radius]: Ответ = 45
 
 📂 ВАРИАНТ: stoves_2026_var_17
@@ -135,7 +151,8 @@
 ✅ Статус: ВАЛИДНО
    🔹 Q1 [match_cost]: Ответ = 312
    🔹 Q2 [find_base_area]: Ответ = 8.0
-   🔹 Q3 [find_price_difference]: Ответ = 2200
+   🔹 Q3 [find_price_difference]: Ответ = 2300
+   🔹 Q4 [discount_and_setup]: Ответ = 36200
    🔹 Q5 [find_arc_radius]: Ответ = 51
 
 📂 ВАРИАНТ: stoves_2026_var_18
@@ -143,7 +160,8 @@
 ✅ Статус: ВАЛИДНО
    🔹 Q1 [match_cost]: Ответ = 213
    🔹 Q2 [find_lateral_area]: Ответ = 18.58
-   🔹 Q3 [find_wood_stove_total_cost]: Ответ = 31200
+   🔹 Q3 [find_wood_stove_total_cost]: Ответ = 27200
+   🔹 Q4 [discount_and_setup]: Ответ = 27800
    🔹 Q5 [find_arc_radius]: Ответ = 55
 
 📂 ВАРИАНТ: stoves_2026_var_19
@@ -151,7 +169,8 @@
 ✅ Статус: ВАЛИДНО
    🔹 Q1 [match_cost]: Ответ = 231
    🔹 Q2 [find_volume]: Ответ = 23.52
-   🔹 Q3 [find_electric_stove_total_cost]: Ответ = 48100
+   🔹 Q3 [find_electric_stove_total_cost]: Ответ = 45900
+   🔹 Q4 [discount_and_setup]: Ответ = 40800
    🔹 Q5 [find_arc_radius]: Ответ = 58
 
 📂 ВАРИАНТ: stoves_2026_var_20
@@ -160,6 +179,7 @@
    🔹 Q1 [match_weight]: Ответ = 231
    🔹 Q2 [find_lateral_area]: Ответ = 18.81
    🔹 Q3 [find_operating_cost_difference]: Ответ = 7670
+   🔹 Q4 [discount_and_setup]: Ответ = 34000
    🔹 Q5 [find_arc_radius]: Ответ = 68
 
 ============================================================

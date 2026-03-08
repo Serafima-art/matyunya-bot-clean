@@ -1,0 +1,811 @@
+DEBUG STOVES UI
+
+Файл базы: C:\Users\user\Documents\matunya\matunya_bot_final\data\tasks_1_5\stoves\tasks_1_5_stoves.json
+Всего записей: 20
+
+============================================================
+VARIANT: stoves_2026_var_01
+============================================================
+
+Q1 | stove_match_table | match_volume
+INPUT DATA: {'columns_order': [16.5, 20.0, 23.0], 'column_label': 'Объём помещения, м³'}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q2 | stoves_room_geometry | find_volume
+INPUT DATA: {'length': 3.0, 'width': 2.4, 'height': 2.2}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'help_image_file', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q3 | stoves_purchase_cost | find_price_difference
+INPUT DATA: {'length': 3.0, 'width': 2.4, 'height': 2.2}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q4 | stoves_discounts | find_past_price
+INPUT DATA: {}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+✔ OK
+До начала сезонной распродажи цены на банные печи были выше. В рамках акции стоимость модели №1 снизили на 25%, модели №2 — на 10%, а модели №3 — на 20%. Вычисли, по какой цене (в рублях) продавалась печь №3 до объявления этих скидок?
+
+
+Q5 | stoves_arc_radius | find_arc_radius
+INPUT DATA: {'a': 32.0, 'b': 48.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id', 'image_file', 'help_image_file']
+✔ OK
+Хозяин выбрал дровяную печь с кожухом вокруг дверцы топки. Верхняя часть кожуха выполнена в виде арки, приваренной к передней стенке печи по дуге окружности с центром в середине нижней части кожуха.
+
+Высота a кожуха равна 32 см, а его ширина b — 48 см.
+
+Найди радиус R дуги окружности, образующей арку кожуха.
+Ответ дай в сантиметрах.
+
+============================================================
+VARIANT: stoves_2026_var_02
+============================================================
+
+Q1 | stove_match_table | match_volume
+INPUT DATA: {'columns_order': [18.5, 12.0, 16.0], 'column_label': 'Объём помещения, м³'}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q2 | stoves_room_geometry | find_base_area
+INPUT DATA: {'length': 2.8, 'width': 2.2}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'help_image_file', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q3 | stoves_purchase_cost | find_wood_stove_total_cost
+INPUT DATA: {'length': 2.8, 'width': 2.2, 'height': 2.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q4 | stoves_discounts | find_past_price
+INPUT DATA: {}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+✔ OK
+До начала сезонной распродажи цены на банные печи были выше. В рамках акции стоимость модели №1 снизили на 15%, модели №2 — на 20%, а модели №3 — на 10%. Вычисли, по какой цене (в рублях) продавалась печь №2 до объявления этих скидок?
+
+
+Q5 | stoves_arc_radius | find_arc_radius
+INPUT DATA: {'a': 45.0, 'b': 48.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id', 'image_file', 'help_image_file']
+✔ OK
+Хозяин выбрал дровяную печь с кожухом вокруг дверцы топки. Верхняя часть кожуха выполнена в виде арки, приваренной к передней стенке печи по дуге окружности с центром в середине нижней части кожуха.
+
+Высота a кожуха равна 45 см, а его ширина b — 48 см.
+
+Найди радиус R дуги окружности, образующей арку кожуха.
+Ответ дай в сантиметрах.
+
+============================================================
+VARIANT: stoves_2026_var_03
+============================================================
+
+Q1 | stove_match_table | match_volume
+INPUT DATA: {'columns_order': [18.0, 20.0, 17.0], 'column_label': 'Объём помещения, м³'}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q2 | stoves_room_geometry | find_lateral_area
+INPUT DATA: {'length': 3.0, 'width': 2.5, 'height': 2.3, 'door_width_cm': 70.0, 'door_height_m': 2.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'help_image_file', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q3 | stoves_purchase_cost | find_electric_stove_total_cost
+INPUT DATA: {'length': 3.0, 'width': 2.5, 'height': 2.3}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q4 | stoves_discounts | find_past_price
+INPUT DATA: {}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+✔ OK
+До начала сезонной распродажи цены на банные печи были выше. В рамках акции стоимость модели №1 снизили на 10%, модели №2 — на 20%, а модели №3 — на 25%. Вычисли, по какой цене (в рублях) продавалась печь №1 до объявления этих скидок?
+
+
+Q5 | stoves_arc_radius | find_arc_radius
+INPUT DATA: {'a': 36.0, 'b': 54.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id', 'image_file', 'help_image_file']
+✔ OK
+Хозяин выбрал дровяную печь с кожухом вокруг дверцы топки. Верхняя часть кожуха выполнена в виде арки, приваренной к передней стенке печи по дуге окружности с центром в середине нижней части кожуха.
+
+Высота a кожуха равна 36 см, а его ширина b — 54 см.
+
+Найди радиус R дуги окружности, образующей арку кожуха.
+Ответ дай в сантиметрах.
+
+============================================================
+VARIANT: stoves_2026_var_04
+============================================================
+
+Q1 | stove_match_table | match_volume
+INPUT DATA: {'columns_order': [12.0, 15.0, 16.0], 'column_label': 'Объём помещения, м³'}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q2 | stoves_room_geometry | find_volume
+INPUT DATA: {'length': 2.6, 'width': 2.4, 'height': 2.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'help_image_file', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q3 | stoves_purchase_cost | find_price_difference
+INPUT DATA: {'length': 2.6, 'width': 2.4, 'height': 2.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q4 | stoves_discounts | find_past_price
+INPUT DATA: {}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+✔ OK
+До начала сезонной распродажи цены на банные печи были выше. В рамках акции стоимость модели №1 снизили на 25%, модели №2 — на 20%, а модели №3 — на 10%. Вычисли, по какой цене (в рублях) продавалась печь №2 до объявления этих скидок?
+
+
+Q5 | stoves_arc_radius | find_arc_radius
+INPUT DATA: {'a': 40.0, 'b': 60.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id', 'image_file', 'help_image_file']
+✔ OK
+Хозяин выбрал дровяную печь с кожухом вокруг дверцы топки. Верхняя часть кожуха выполнена в виде арки, приваренной к передней стенке печи по дуге окружности с центром в середине нижней части кожуха.
+
+Высота a кожуха равна 40 см, а его ширина b — 60 см.
+
+Найди радиус R дуги окружности, образующей арку кожуха.
+Ответ дай в сантиметрах.
+
+============================================================
+VARIANT: stoves_2026_var_05
+============================================================
+
+Q1 | stove_match_table | match_weight
+INPUT DATA: {'columns_order': [125.0, 41.0, 112.0], 'column_label': 'Масса печи, кг'}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q2 | stoves_room_geometry | find_base_area
+INPUT DATA: {'length': 3.5, 'width': 2.5}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'help_image_file', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q3 | stoves_purchase_cost | find_operating_cost_difference
+INPUT DATA: {'length': 3.5, 'width': 2.5, 'height': 2.2}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q4 | stoves_discounts | find_past_price
+INPUT DATA: {}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+✔ OK
+До начала сезонной распродажи цены на банные печи были выше. В рамках акции стоимость модели №1 снизили на 15%, модели №2 — на 20%, а модели №3 — на 10%. Вычисли, по какой цене (в рублях) продавалась печь №3 до объявления этих скидок?
+
+
+Q5 | stoves_arc_radius | find_arc_radius
+INPUT DATA: {'a': 24.0, 'b': 64.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id', 'image_file', 'help_image_file']
+✔ OK
+Хозяин выбрал дровяную печь с кожухом вокруг дверцы топки. Верхняя часть кожуха выполнена в виде арки, приваренной к передней стенке печи по дуге окружности с центром в середине нижней части кожуха.
+
+Высота a кожуха равна 24 см, а его ширина b — 64 см.
+
+Найди радиус R дуги окружности, образующей арку кожуха.
+Ответ дай в сантиметрах.
+
+============================================================
+VARIANT: stoves_2026_var_06
+============================================================
+
+Q1 | stove_match_table | match_volume
+INPUT DATA: {'columns_order': [24.0, 16.5, 15.0], 'column_label': 'Объём помещения, м³'}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q2 | stoves_room_geometry | find_lateral_area
+INPUT DATA: {'length': 3.0, 'width': 2.3, 'height': 2.2, 'door_width_cm': 70.0, 'door_height_m': 2.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'help_image_file', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q3 | stoves_purchase_cost | find_wood_stove_total_cost
+INPUT DATA: {'length': 3.0, 'width': 2.3, 'height': 2.2}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q4 | stoves_discounts | find_discounted_price
+INPUT DATA: {}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+✔ OK
+Магазин предоставляет покупателям специальную скидку 15% на печь №1. Определи итоговую стоимость этой печи (в рублях) с учётом заявленной скидки.
+
+
+Q5 | stoves_arc_radius | find_arc_radius
+INPUT DATA: {'a': 60.0, 'b': 64.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id', 'image_file', 'help_image_file']
+✔ OK
+Хозяин выбрал дровяную печь с кожухом вокруг дверцы топки. Верхняя часть кожуха выполнена в виде арки, приваренной к передней стенке печи по дуге окружности с центром в середине нижней части кожуха.
+
+Высота a кожуха равна 60 см, а его ширина b — 64 см.
+
+Найди радиус R дуги окружности, образующей арку кожуха.
+Ответ дай в сантиметрах.
+
+============================================================
+VARIANT: stoves_2026_var_07
+============================================================
+
+Q1 | stove_match_table | match_cost
+INPUT DATA: {'columns_order': [25900.0, 31400.0, 36000.0], 'column_label': 'Цена, руб.'}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q2 | stoves_room_geometry | find_volume
+INPUT DATA: {'length': 3.0, 'width': 2.6, 'height': 2.4}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'help_image_file', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q3 | stoves_purchase_cost | find_electric_stove_total_cost
+INPUT DATA: {'length': 3.0, 'width': 2.6, 'height': 2.4}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q4 | stoves_discounts | find_discounted_price
+INPUT DATA: {}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+✔ OK
+Магазин предоставляет покупателям специальную скидку 10% на печь №2. Определи итоговую стоимость этой печи (в рублях) с учётом заявленной скидки.
+
+
+Q5 | stoves_arc_radius | find_arc_radius
+INPUT DATA: {'a': 27.0, 'b': 72.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id', 'image_file', 'help_image_file']
+✔ OK
+Хозяин выбрал дровяную печь с кожухом вокруг дверцы топки. Верхняя часть кожуха выполнена в виде арки, приваренной к передней стенке печи по дуге окружности с центром в середине нижней части кожуха.
+
+Высота a кожуха равна 27 см, а его ширина b — 72 см.
+
+Найди радиус R дуги окружности, образующей арку кожуха.
+Ответ дай в сантиметрах.
+
+============================================================
+VARIANT: stoves_2026_var_08
+============================================================
+
+Q1 | stove_match_table | match_weight
+INPUT DATA: {'columns_order': [105.0, 47.0, 25.0], 'column_label': 'Масса печи, кг'}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q2 | stoves_room_geometry | find_base_area
+INPUT DATA: {'length': 2.7, 'width': 2.1}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'help_image_file', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q3 | stoves_purchase_cost | find_operating_cost_difference
+INPUT DATA: {'length': 2.7, 'width': 2.1, 'height': 2.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q4 | stoves_discounts | find_discounted_price
+INPUT DATA: {}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+✔ OK
+Магазин предоставляет покупателям специальную скидку 20% на печь №2. Определи итоговую стоимость этой печи (в рублях) с учётом заявленной скидки.
+
+
+Q5 | stoves_arc_radius | find_arc_radius
+INPUT DATA: {'a': 40.0, 'b': 60.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id', 'image_file', 'help_image_file']
+✔ OK
+Хозяин выбрал дровяную печь с кожухом вокруг дверцы топки. Верхняя часть кожуха выполнена в виде арки, приваренной к передней стенке печи по дуге окружности с центром в середине нижней части кожуха.
+
+Высота a кожуха равна 40 см, а его ширина b — 60 см.
+
+Найди радиус R дуги окружности, образующей арку кожуха.
+Ответ дай в сантиметрах.
+
+============================================================
+VARIANT: stoves_2026_var_09
+============================================================
+
+Q1 | stove_match_table | match_cost
+INPUT DATA: {'columns_order': [33200.0, 25200.0, 25500.0], 'column_label': 'Цена, руб.'}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q2 | stoves_room_geometry | find_lateral_area
+INPUT DATA: {'length': 3.0, 'width': 2.8, 'height': 2.2, 'door_width_cm': 70.0, 'door_height_m': 1.9}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'help_image_file', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q3 | stoves_purchase_cost | find_price_difference
+INPUT DATA: {'length': 3.0, 'width': 2.8, 'height': 2.2}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q4 | stoves_discounts | find_discounted_price
+INPUT DATA: {}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+✔ OK
+Магазин предоставляет покупателям специальную скидку 20% на печь №3. Определи итоговую стоимость этой печи (в рублях) с учётом заявленной скидки.
+
+
+Q5 | stoves_arc_radius | find_arc_radius
+INPUT DATA: {'a': 21.0, 'b': 56.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id', 'image_file', 'help_image_file']
+✔ OK
+Хозяин выбрал дровяную печь с кожухом вокруг дверцы топки. Верхняя часть кожуха выполнена в виде арки, приваренной к передней стенке печи по дуге окружности с центром в середине нижней части кожуха.
+
+Высота a кожуха равна 21 см, а его ширина b — 56 см.
+
+Найди радиус R дуги окружности, образующей арку кожуха.
+Ответ дай в сантиметрах.
+
+============================================================
+VARIANT: stoves_2026_var_10
+============================================================
+
+Q1 | stove_match_table | match_weight
+INPUT DATA: {'columns_order': [28.0, 118.0, 74.0], 'column_label': 'Масса печи, кг'}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q2 | stoves_room_geometry | find_volume
+INPUT DATA: {'length': 2.5, 'width': 2.0, 'height': 2.1}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'help_image_file', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q3 | stoves_purchase_cost | find_wood_stove_total_cost
+INPUT DATA: {'length': 2.5, 'width': 2.0, 'height': 2.1}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q4 | stoves_discounts | find_discounted_price
+INPUT DATA: {}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+✔ OK
+Магазин предоставляет покупателям специальную скидку 10% на печь №1. Определи итоговую стоимость этой печи (в рублях) с учётом заявленной скидки.
+
+
+Q5 | stoves_arc_radius | find_arc_radius
+INPUT DATA: {'a': 40.0, 'b': 84.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id', 'image_file', 'help_image_file']
+✔ OK
+Хозяин выбрал дровяную печь с кожухом вокруг дверцы топки. Верхняя часть кожуха выполнена в виде арки, приваренной к передней стенке печи по дуге окружности с центром в середине нижней части кожуха.
+
+Высота a кожуха равна 40 см, а его ширина b — 84 см.
+
+Найди радиус R дуги окружности, образующей арку кожуха.
+Ответ дай в сантиметрах.
+
+============================================================
+VARIANT: stoves_2026_var_11
+============================================================
+
+Q1 | stove_match_table | match_cost
+INPUT DATA: {'columns_order': [36500.0, 32000.0, 41500.0], 'column_label': 'Цена, руб.'}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q2 | stoves_room_geometry | find_base_area
+INPUT DATA: {'length': 3.4, 'width': 2.5}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'help_image_file', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q3 | stoves_purchase_cost | find_electric_stove_total_cost
+INPUT DATA: {'length': 3.4, 'width': 2.5, 'height': 2.2}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q4 | stoves_discounts | conditional_discount
+INPUT DATA: {}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+✔ OK
+Услуга по доставке приобретённой печи до дачи обходится в 1500 рублей. Однако магазин проводит акцию: если стоимость выбранной печи превышает 30000 рублей, покупатель получает скидку 15% на саму печь, а цена доставки снижается на 20%. Рассчитай общую сумму (в рублях), которую придётся заплатить за приобретение печи №1 вместе с её доставкой на этих условиях.
+
+
+Q5 | stoves_arc_radius | find_arc_radius
+INPUT DATA: {'a': 32.0, 'b': 48.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id', 'image_file', 'help_image_file']
+✔ OK
+Хозяин выбрал дровяную печь с кожухом вокруг дверцы топки. Верхняя часть кожуха выполнена в виде арки, приваренной к передней стенке печи по дуге окружности с центром в середине нижней части кожуха.
+
+Высота a кожуха равна 32 см, а его ширина b — 48 см.
+
+Найди радиус R дуги окружности, образующей арку кожуха.
+Ответ дай в сантиметрах.
+
+============================================================
+VARIANT: stoves_2026_var_12
+============================================================
+
+Q1 | stove_match_table | match_volume
+INPUT DATA: {'columns_order': [24.0, 17.0, 18.5], 'column_label': 'Объём помещения, м³'}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q2 | stoves_room_geometry | find_lateral_area
+INPUT DATA: {'length': 2.8, 'width': 2.5, 'height': 2.2, 'door_width_cm': 65.0, 'door_height_m': 1.8}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'help_image_file', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q3 | stoves_purchase_cost | find_operating_cost_difference
+INPUT DATA: {'length': 2.8, 'width': 2.5, 'height': 2.2}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q4 | stoves_discounts | conditional_discount
+INPUT DATA: {}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+✔ OK
+Услуга по доставке приобретённой печи до дачи обходится в 2600 рублей. Однако магазин проводит акцию: если стоимость выбранной печи превышает 20000 рублей, покупатель получает скидку 10% на саму печь, а цена доставки снижается на 15%. Рассчитай общую сумму (в рублях), которую придётся заплатить за приобретение печи №2 вместе с её доставкой на этих условиях.
+
+
+Q5 | stoves_arc_radius | find_arc_radius
+INPUT DATA: {'a': 36.0, 'b': 54.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id', 'image_file', 'help_image_file']
+✔ OK
+Хозяин выбрал дровяную печь с кожухом вокруг дверцы топки. Верхняя часть кожуха выполнена в виде арки, приваренной к передней стенке печи по дуге окружности с центром в середине нижней части кожуха.
+
+Высота a кожуха равна 36 см, а его ширина b — 54 см.
+
+Найди радиус R дуги окружности, образующей арку кожуха.
+Ответ дай в сантиметрах.
+
+============================================================
+VARIANT: stoves_2026_var_13
+============================================================
+
+Q1 | stove_match_table | match_volume
+INPUT DATA: {'columns_order': [22.0, 15.5, 18.0], 'column_label': 'Объём помещения, м³'}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q2 | stoves_room_geometry | find_volume
+INPUT DATA: {'length': 3.0, 'width': 2.7, 'height': 2.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'help_image_file', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q3 | stoves_purchase_cost | find_price_difference
+INPUT DATA: {'length': 3.0, 'width': 2.7, 'height': 2.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q4 | stoves_discounts | conditional_discount
+INPUT DATA: {}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+✔ OK
+Услуга по доставке приобретённой печи до дачи обходится в 2000 рублей. Однако магазин проводит акцию: если стоимость выбранной печи превышает 25000 рублей, покупатель получает скидку 10% на саму печь, а цена доставки снижается на 20%. Рассчитай общую сумму (в рублях), которую придётся заплатить за приобретение печи №1 вместе с её доставкой на этих условиях.
+
+
+Q5 | stoves_arc_radius | find_arc_radius
+INPUT DATA: {'a': 45.0, 'b': 56.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id', 'image_file', 'help_image_file']
+✔ OK
+Хозяин выбрал дровяную печь с кожухом вокруг дверцы топки. Верхняя часть кожуха выполнена в виде арки, приваренной к передней стенке печи по дуге окружности с центром в середине нижней части кожуха.
+
+Высота a кожуха равна 45 см, а его ширина b — 56 см.
+
+Найди радиус R дуги окружности, образующей арку кожуха.
+Ответ дай в сантиметрах.
+
+============================================================
+VARIANT: stoves_2026_var_14
+============================================================
+
+Q1 | stove_match_table | match_cost
+INPUT DATA: {'columns_order': [27900.0, 33800.0, 24000.0], 'column_label': 'Цена, руб.'}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q2 | stoves_room_geometry | find_base_area
+INPUT DATA: {'length': 3.0, 'width': 2.2}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'help_image_file', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q3 | stoves_purchase_cost | find_wood_stove_total_cost
+INPUT DATA: {'length': 3.0, 'width': 2.2, 'height': 2.1}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q4 | stoves_discounts | conditional_discount
+INPUT DATA: {}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+✔ OK
+Услуга по доставке приобретённой печи до дачи обходится в 2000 рублей. Однако магазин проводит акцию: если стоимость выбранной печи превышает 20000 рублей, покупатель получает скидку 10% на саму печь, а цена доставки снижается на 15%. Рассчитай общую сумму (в рублях), которую придётся заплатить за приобретение печи №2 вместе с её доставкой на этих условиях.
+
+
+Q5 | stoves_arc_radius | find_arc_radius
+INPUT DATA: {'a': 48.0, 'b': 72.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id', 'image_file', 'help_image_file']
+✔ OK
+Хозяин выбрал дровяную печь с кожухом вокруг дверцы топки. Верхняя часть кожуха выполнена в виде арки, приваренной к передней стенке печи по дуге окружности с центром в середине нижней части кожуха.
+
+Высота a кожуха равна 48 см, а его ширина b — 72 см.
+
+Найди радиус R дуги окружности, образующей арку кожуха.
+Ответ дай в сантиметрах.
+
+============================================================
+VARIANT: stoves_2026_var_15
+============================================================
+
+Q1 | stove_match_table | match_cost
+INPUT DATA: {'columns_order': [32000.0, 38200.0, 41000.0], 'column_label': 'Цена, руб.'}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q2 | stoves_room_geometry | find_lateral_area
+INPUT DATA: {'length': 3.6, 'width': 2.9, 'height': 2.5, 'door_width_cm': 80.0, 'door_height_m': 2.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'help_image_file', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q3 | stoves_purchase_cost | find_electric_stove_total_cost
+INPUT DATA: {'length': 3.6, 'width': 2.9, 'height': 2.5}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q4 | stoves_discounts | conditional_discount
+INPUT DATA: {}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+✔ OK
+Услуга по доставке приобретённой печи до дачи обходится в 2500 рублей. Однако магазин проводит акцию: если стоимость выбранной печи превышает 40000 рублей, покупатель получает скидку 10% на саму печь, а цена доставки снижается на 20%. Рассчитай общую сумму (в рублях), которую придётся заплатить за приобретение печи №1 вместе с её доставкой на этих условиях.
+
+
+Q5 | stoves_arc_radius | find_arc_radius
+INPUT DATA: {'a': 48.0, 'b': 72.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id', 'image_file', 'help_image_file']
+✔ OK
+Хозяин выбрал дровяную печь с кожухом вокруг дверцы топки. Верхняя часть кожуха выполнена в виде арки, приваренной к передней стенке печи по дуге окружности с центром в середине нижней части кожуха.
+
+Высота a кожуха равна 48 см, а его ширина b — 72 см.
+
+Найди радиус R дуги окружности, образующей арку кожуха.
+Ответ дай в сантиметрах.
+
+============================================================
+VARIANT: stoves_2026_var_16
+============================================================
+
+Q1 | stove_match_table | match_cost
+INPUT DATA: {'columns_order': [23000.0, 25900.0, 30400.0], 'column_label': 'Цена, руб.'}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q2 | stoves_room_geometry | find_volume
+INPUT DATA: {'length': 2.7, 'width': 2.4, 'height': 2.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'help_image_file', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q3 | stoves_purchase_cost | find_operating_cost_difference
+INPUT DATA: {'length': 2.7, 'width': 2.4, 'height': 2.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q4 | stoves_discounts | discount_and_setup
+INPUT DATA: {}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+✔ OK
+На покупку электрической печи действует разовая скидка в размере 10%. Рассчитай, в какую общую сумму (в рублях) обойдётся приобретение этой печи вместе с её транспортировкой и полным монтажом (включая покупку специального кабеля), если за доставку до участка транспортная компания просит 1300 рублей.
+
+
+Q5 | stoves_arc_radius | find_arc_radius
+INPUT DATA: {'a': 36.0, 'b': 54.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id', 'image_file', 'help_image_file']
+✔ OK
+Хозяин выбрал дровяную печь с кожухом вокруг дверцы топки. Верхняя часть кожуха выполнена в виде арки, приваренной к передней стенке печи по дуге окружности с центром в середине нижней части кожуха.
+
+Высота a кожуха равна 36 см, а его ширина b — 54 см.
+
+Найди радиус R дуги окружности, образующей арку кожуха.
+Ответ дай в сантиметрах.
+
+============================================================
+VARIANT: stoves_2026_var_17
+============================================================
+
+Q1 | stove_match_table | match_cost
+INPUT DATA: {'columns_order': [26000.0, 29300.0, 34900.0], 'column_label': 'Цена, руб.'}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q2 | stoves_room_geometry | find_base_area
+INPUT DATA: {'length': 3.2, 'width': 2.5}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'help_image_file', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q3 | stoves_purchase_cost | find_price_difference
+INPUT DATA: {'length': 3.2, 'width': 2.5, 'height': 2.3}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q4 | stoves_discounts | discount_and_setup
+INPUT DATA: {}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+✔ OK
+На покупку электрической печи действует разовая скидка в размере 10%. Рассчитай, в какую общую сумму (в рублях) обойдётся приобретение этой печи вместе с её транспортировкой и полным монтажом (включая покупку специального кабеля), если за доставку до участка транспортная компания просит 1600 рублей.
+
+
+Q5 | stoves_arc_radius | find_arc_radius
+INPUT DATA: {'a': 45.0, 'b': 48.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id', 'image_file', 'help_image_file']
+✔ OK
+Хозяин выбрал дровяную печь с кожухом вокруг дверцы топки. Верхняя часть кожуха выполнена в виде арки, приваренной к передней стенке печи по дуге окружности с центром в середине нижней части кожуха.
+
+Высота a кожуха равна 45 см, а его ширина b — 48 см.
+
+Найди радиус R дуги окружности, образующей арку кожуха.
+Ответ дай в сантиметрах.
+
+============================================================
+VARIANT: stoves_2026_var_18
+============================================================
+
+Q1 | stove_match_table | match_cost
+INPUT DATA: {'columns_order': [25400.0, 22000.0, 29400.0], 'column_label': 'Цена, руб.'}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q2 | stoves_room_geometry | find_lateral_area
+INPUT DATA: {'length': 2.6, 'width': 2.3, 'height': 2.0, 'door_width_cm': 60.0, 'door_height_m': 1.7}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'help_image_file', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q3 | stoves_purchase_cost | find_wood_stove_total_cost
+INPUT DATA: {'length': 2.6, 'width': 2.3, 'height': 2.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q4 | stoves_discounts | discount_and_setup
+INPUT DATA: {}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+✔ OK
+На покупку электрической печи действует разовая скидка в размере 20%. Рассчитай, в какую общую сумму (в рублях) обойдётся приобретение этой печи вместе с её транспортировкой и полным монтажом (включая покупку специального кабеля), если за доставку до участка транспортная компания просит 1400 рублей.
+
+
+Q5 | stoves_arc_radius | find_arc_radius
+INPUT DATA: {'a': 44.0, 'b': 66.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id', 'image_file', 'help_image_file']
+✔ OK
+Хозяин выбрал дровяную печь с кожухом вокруг дверцы топки. Верхняя часть кожуха выполнена в виде арки, приваренной к передней стенке печи по дуге окружности с центром в середине нижней части кожуха.
+
+Высота a кожуха равна 44 см, а его ширина b — 66 см.
+
+Найди радиус R дуги окружности, образующей арку кожуха.
+Ответ дай в сантиметрах.
+
+============================================================
+VARIANT: stoves_2026_var_19
+============================================================
+
+Q1 | stove_match_table | match_cost
+INPUT DATA: {'columns_order': [32000.0, 37000.0, 42500.0], 'column_label': 'Цена, руб.'}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q2 | stoves_room_geometry | find_volume
+INPUT DATA: {'length': 3.5, 'width': 2.8, 'height': 2.4}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'help_image_file', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q3 | stoves_purchase_cost | find_electric_stove_total_cost
+INPUT DATA: {'length': 3.5, 'width': 2.8, 'height': 2.4}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q4 | stoves_discounts | discount_and_setup
+INPUT DATA: {}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+✔ OK
+На покупку электрической печи действует разовая скидка в размере 15%. Рассчитай, в какую общую сумму (в рублях) обойдётся приобретение этой печи вместе с её транспортировкой и полным монтажом (включая покупку специального кабеля), если за доставку до участка транспортная компания просит 1800 рублей.
+
+
+Q5 | stoves_arc_radius | find_arc_radius
+INPUT DATA: {'a': 40.0, 'b': 84.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id', 'image_file', 'help_image_file']
+✔ OK
+Хозяин выбрал дровяную печь с кожухом вокруг дверцы топки. Верхняя часть кожуха выполнена в виде арки, приваренной к передней стенке печи по дуге окружности с центром в середине нижней части кожуха.
+
+Высота a кожуха равна 40 см, а его ширина b — 84 см.
+
+Найди радиус R дуги окружности, образующей арку кожуха.
+Ответ дай в сантиметрах.
+
+============================================================
+VARIANT: stoves_2026_var_20
+============================================================
+
+Q1 | stove_match_table | match_weight
+INPUT DATA: {'columns_order': [98.0, 29.0, 73.0], 'column_label': 'Масса печи, кг'}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q2 | stoves_room_geometry | find_lateral_area
+INPUT DATA: {'length': 2.8, 'width': 2.2, 'height': 2.0, 'door_width_cm': 70.0, 'door_height_m': 1.7}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'help_image_file', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q3 | stoves_purchase_cost | find_operating_cost_difference
+INPUT DATA: {'length': 2.8, 'width': 2.2, 'height': 2.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+⏭ BUILDER НЕ НАЗНАЧЕН
+
+
+Q4 | stoves_discounts | discount_and_setup
+INPUT DATA: {}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id']
+✔ OK
+На покупку электрической печи действует разовая скидка в размере 10%. Рассчитай, в какую общую сумму (в рублях) обойдётся приобретение этой печи вместе с её транспортировкой и полным монтажом (включая покупку специального кабеля), если за доставку до участка транспортная компания просит 1600 рублей.
+
+
+Q5 | stoves_arc_radius | find_arc_radius
+INPUT DATA: {'a': 60.0, 'b': 64.0}
+TASK KEYS: ['q_number', 'pattern', 'narrative', 'question_text', 'input_data', 'solution_data', 'answer', 'skill_source_id', 'image_file', 'help_image_file']
+✔ OK
+Хозяин выбрал дровяную печь с кожухом вокруг дверцы топки. Верхняя часть кожуха выполнена в виде арки, приваренной к передней стенке печи по дуге окружности с центром в середине нижней части кожуха.
+
+Высота a кожуха равна 60 см, а его ширина b — 64 см.
+
+Найди радиус R дуги окружности, образующей арку кожуха.
+Ответ дай в сантиметрах.
+
+============================================================
+ИТОГ
+============================================================
+OK: 40
+ERRORS: 0
+SKIPPED: 60

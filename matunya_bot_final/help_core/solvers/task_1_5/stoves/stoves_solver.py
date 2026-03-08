@@ -1,5 +1,7 @@
 from typing import Dict, Any
 
+from pathlib import Path
+
 
 def solve_stoves(task_context: Dict[str, Any]) -> Dict[str, Any]:
 
@@ -355,6 +357,203 @@ def solve_stoves(task_context: Dict[str, Any]) -> Dict[str, Any]:
             raise ValueError(f"Unsupported narrative for stoves_purchase_cost: {narrative}")
 
     # =========================================================
+    # 🟪 PATTERN: stoves_discounts
+    # =========================================================
+
+    elif pattern == "stoves_discounts":
+
+        # -----------------------------------------------------
+        # find_past_price
+        # -----------------------------------------------------
+        if narrative == "find_past_price":
+
+            stove_no = base_variables.get("stove_no")
+            price_after_discount = base_variables.get("price_after_discount")
+
+            discount_percent = base_variables.get("discount_percent")
+            remaining_percent = base_variables.get("remaining_percent")
+            remaining_fraction = base_variables.get("remaining_fraction")
+
+            original_price = base_variables.get("original_price")
+
+            required = {
+                "stove_no": stove_no,
+                "price_after_discount": price_after_discount,
+                "discount_percent": discount_percent,
+                "remaining_percent": remaining_percent,
+                "remaining_fraction": remaining_fraction,
+                "original_price": original_price,
+            }
+
+            missing = [k for k, v in required.items() if v is None]
+            if missing:
+                raise ValueError(
+                    f"SOLVER Q4 find_past_price: missing fields: {', '.join(missing)}"
+                )
+
+            variables.update({
+                "stove_no": stove_no,
+                "price_after_discount": price_after_discount,
+                "discount_percent": discount_percent,
+                "remaining_percent": remaining_percent,
+                "remaining_fraction": remaining_fraction,
+                "original_price": original_price,
+                "answer": original_price,
+            })
+
+            explanation_idea = "find_past_price"
+
+        # -----------------------------------------------------
+        # find_discounted_price
+        # -----------------------------------------------------
+        elif narrative == "find_discounted_price":
+
+            original_price = base_variables.get("original_price")
+
+            discount_percent = base_variables.get("discount_percent")
+            remaining_percent = base_variables.get("remaining_percent")
+            remaining_fraction = base_variables.get("remaining_fraction")
+
+            price_after_discount = base_variables.get("price_after_discount")
+
+            required = {
+                "original_price": original_price,
+                "discount_percent": discount_percent,
+                "remaining_percent": remaining_percent,
+                "remaining_fraction": remaining_fraction,
+                "price_after_discount": price_after_discount,
+            }
+
+            missing = [k for k, v in required.items() if v is None]
+            if missing:
+                raise ValueError(
+                    f"SOLVER Q4 find_discounted_price: missing fields: {', '.join(missing)}"
+                )
+
+            variables.update({
+                "original_price": original_price,
+                "discount_percent": discount_percent,
+                "remaining_percent": remaining_percent,
+                "remaining_fraction": remaining_fraction,
+                "price_after_discount": price_after_discount,
+                "answer": price_after_discount,
+            })
+
+            explanation_idea = "find_discounted_price"
+
+        # -----------------------------------------------------
+        # conditional_discount
+        # -----------------------------------------------------
+        elif narrative == "conditional_discount":
+
+            stove_no = base_variables.get("stove_no")
+
+            original_price = base_variables.get("original_price")
+            threshold = base_variables.get("threshold")
+
+            stove_discount_percent = base_variables.get("stove_discount_percent")
+            remaining_percent = base_variables.get("remaining_percent")
+            remaining_fraction = base_variables.get("remaining_fraction")
+
+            stove_price_after_discount = base_variables.get("stove_price_after_discount")
+
+            delivery_cost = base_variables.get("delivery_cost")
+            delivery_discount_percent = base_variables.get("delivery_discount_percent")
+            delivery_remaining_fraction = base_variables.get("delivery_remaining_fraction")
+            delivery_price_after_discount = base_variables.get("delivery_price_after_discount")
+
+            total_price = base_variables.get("total_price")
+
+            required = {
+                "stove_no": stove_no,
+                "original_price": original_price,
+                "threshold": threshold,
+                "stove_discount_percent": stove_discount_percent,
+                "remaining_fraction": remaining_fraction,
+                "stove_price_after_discount": stove_price_after_discount,
+                "delivery_cost": delivery_cost,
+                "delivery_discount_percent": delivery_discount_percent,
+                "delivery_remaining_fraction": delivery_remaining_fraction,
+                "delivery_price_after_discount": delivery_price_after_discount,
+                "total_price": total_price,
+            }
+
+            missing = [k for k, v in required.items() if v is None]
+            if missing:
+                raise ValueError(
+                    f"SOLVER Q4 conditional_discount: missing fields: {', '.join(missing)}"
+                )
+
+            variables.update({
+                "stove_no": stove_no,
+                "original_price": original_price,
+                "threshold": threshold,
+                "stove_discount_percent": stove_discount_percent,
+                "remaining_percent": remaining_percent,
+                "remaining_fraction": remaining_fraction,
+                "stove_price_after_discount": stove_price_after_discount,
+                "delivery_cost": delivery_cost,
+                "delivery_discount_percent": delivery_discount_percent,
+                "delivery_remaining_fraction": delivery_remaining_fraction,
+                "delivery_price_after_discount": delivery_price_after_discount,
+                "total_price": total_price,
+                "answer": total_price,
+            })
+
+            explanation_idea = "conditional_discount"
+
+        # -----------------------------------------------------
+        # discount_and_setup
+        # -----------------------------------------------------
+        elif narrative == "discount_and_setup":
+
+            original_price = base_variables.get("original_price")
+
+            discount_percent = base_variables.get("discount_percent")
+            remaining_percent = base_variables.get("remaining_percent")
+            remaining_fraction = base_variables.get("remaining_fraction")
+
+            price_after_discount = base_variables.get("price_after_discount")
+
+            delivery_cost = base_variables.get("delivery_cost")
+            install_cost = base_variables.get("install_cost")
+
+            total_price = base_variables.get("total_price")
+
+            required = {
+                "original_price": original_price,
+                "discount_percent": discount_percent,
+                "remaining_fraction": remaining_fraction,
+                "price_after_discount": price_after_discount,
+                "delivery_cost": delivery_cost,
+                "install_cost": install_cost,
+                "total_price": total_price,
+            }
+
+            missing = [k for k, v in required.items() if v is None]
+            if missing:
+                raise ValueError(
+                    f"SOLVER Q4 discount_and_setup: missing fields: {', '.join(missing)}"
+                )
+
+            variables.update({
+                "original_price": original_price,
+                "discount_percent": discount_percent,
+                "remaining_percent": remaining_percent,
+                "remaining_fraction": remaining_fraction,
+                "price_after_discount": price_after_discount,
+                "delivery_cost": delivery_cost,
+                "install_cost": install_cost,
+                "total_price": total_price,
+                "answer": total_price,
+            })
+
+            explanation_idea = "discount_and_setup"
+
+        else:
+            raise ValueError(f"Unsupported narrative for stoves_discounts: {narrative}")
+
+    # =========================================================
     # 🟩 PATTERN: stoves_arc_radius
     # =========================================================
 
@@ -422,8 +621,32 @@ def solve_stoves(task_context: Dict[str, Any]) -> Dict[str, Any]:
         "final_answer": task.get("answer"),
         "variables": variables,
         "hints": [],
+        "help_image_file": task.get("help_image_file"),
     }
 
+    # ---------------------------------------------------------
+    # 📷 help_image (как в Paper)
+    # ---------------------------------------------------------
+
+    help_image = None
+    help_image_file = task.get("help_image_file")
+
+    if help_image_file:
+        assets_dir = (
+            Path(__file__)
+            .resolve()
+            .parents[4]
+            / "non_generators"
+            / "task_1_5"
+            / "stoves"
+            / "assets"
+        )
+
+        help_image = {
+            "file": str(assets_dir / help_image_file)
+        }
+
     return {
-        "solution_core": solution_core
+        "solution_core": solution_core,
+        "help_image": help_image
     }
