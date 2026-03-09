@@ -57,12 +57,33 @@ class StovesValidator:
             return False, {}, errors
 
         # ------------------------------------------------------------
+        # TEXT TABLE (для GPT)
+        # ------------------------------------------------------------
+
+        table_lines = ["ТАБЛИЦА ПЕЧЕЙ\n"]
+
+        for s in stoves:
+            type_ru = "дровяная" if s["type"] == "wood" else "электрическая"
+
+            table_lines.append(
+                f"Печь №{s['stove_no']} — {type_ru}\n"
+                f"Подходит для объёма: {s['volume_range']} м³\n"
+                f"Масса: {s['mass']} кг\n"
+                f"Стоимость: {s['cost']} руб.\n"
+            )
+
+        table_text = "\n".join(table_lines)
+
+        # ------------------------------------------------------------
         # CONTAINER
         # ------------------------------------------------------------
         container: Dict[str, Any] = {
             "id": variant_id,
             "room_context": room_context,
-            "table_context": {"stoves": stoves},
+            "table_context": {
+                "stoves": stoves,
+                "table_text": table_text
+            },
             "questions": [],
         }
 

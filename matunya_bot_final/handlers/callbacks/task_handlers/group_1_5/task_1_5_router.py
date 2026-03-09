@@ -167,6 +167,7 @@ async def dispatch_overview_screen(
         session_completed=False,
         last_help_task_id=None,
         task_1_5_solution_core=None,
+        help_image=None,  # ← очищаем картинку предыдущего задания
         tracked_messages={},
         message_tags_by_category={},
         task_type="1-5",
@@ -205,7 +206,7 @@ async def dispatch_overview_screen(
                     str(skill_source_id),
                     str(question_text),
                     str(answer_value),
-                    theme="paper",  # можно явно указать
+                    theme=subtype_key,
                     solution_data=solution_data,
                 )
                 task_ids_from_db.append(task_id)

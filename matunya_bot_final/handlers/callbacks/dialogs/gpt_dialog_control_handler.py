@@ -204,8 +204,13 @@ async def handle_dismiss_help_panel(callback: CallbackQuery, bot: Bot, state: FS
 @router.callback_query(TaskCallback.filter(F.action == "hide_help"))
 async def handle_hide_help(callback: CallbackQuery, bot: Bot, state: FSMContext) -> None:
     chat_id = callback.message.chat.id if callback.message else callback.from_user.id
+
     await cleanup_messages_by_category(bot, state, chat_id, "solution_result")
     await cleanup_messages_by_category(bot, state, chat_id, "dialog_messages")
+
+    # 🔹 очищаем help_image, чтобы не тянулась в следующую задачу
+    await state.update_data(help_image=None)
+
     logger.info("Help panel closed (solution_result cleared)")
     await callback.answer("Помощь закрыта")
 

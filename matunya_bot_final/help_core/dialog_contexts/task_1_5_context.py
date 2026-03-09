@@ -30,6 +30,22 @@ async def handle_task_1_5_dialog(
         return None
 
     # --------------------------------------------------
+    # 🔹 TABLE CONTEXT (таблица задачи)
+    # --------------------------------------------------
+    table_context = (
+        task_data.get("table_context", {}).get("table_text", "")
+    )
+
+    # --------------------------------------------------
+    # 🔹 IMAGE CONTEXT (описание картинки для GPT)
+    # --------------------------------------------------
+    help_image = data.get("help_image")
+    image_context = ""
+
+    if isinstance(help_image, dict):
+        image_context = help_image.get("description_for_gpt", "")
+
+    # --------------------------------------------------
     # 2️⃣ Собираем текст, который видел ученик
     # --------------------------------------------------
     # display_scenario — это то, что реально показывалось в чате
@@ -130,6 +146,8 @@ async def handle_task_1_5_dialog(
         student_name=data.get("student_name"),
         gender=data.get("gender"),
         dialog_strategy=dialog_strategy,
+        table_context=table_context,
+        image_context=image_context,
     )
 
 

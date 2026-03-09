@@ -400,12 +400,6 @@ async def send_solution_result(
             message_tag=f"solution_{task_subtype}"
         )
 
-        # --------------------------------------------------
-        # 3️⃣ Чистим help_image из state
-        # --------------------------------------------------
-        if help_image:
-            await state.update_data(help_image=None)
-
     except Exception as e:
         logger.error(f"Ошибка отправки решения: {e}")
 
