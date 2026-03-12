@@ -8,13 +8,12 @@ from pathlib import Path
 
 from aiogram import Bot
 from aiogram.fsm.context import FSMContext
-from aiogram.types import FSInputFile
 from aiogram.types import CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton
 
 from matunya_bot_final.utils.message_manager import (
-    send_tracked_photo,
     send_tracked_message,
     cleanup_messages_by_category,
+    track_existing_message,
 )
 
 from matunya_bot_final.keyboards.navigation.emergency import emergency_nav_kb
@@ -22,6 +21,8 @@ from matunya_bot_final.core.callbacks.tasks_callback import TaskCallback
 from matunya_bot_final.help_core.humanizers.solution_humanizer import humanize_solution
 from matunya_bot_final.keyboards.inline_keyboards.help_core_keyboard import create_solution_keyboard
 from matunya_bot_final.utils.text_formatters import sanitize_gpt_response
+from matunya_bot_final.utils.telegram_file_cache import send_cached_photo
+from matunya_bot_final.utils.message_manager import track_existing_message
 
 logger = logging.getLogger(__name__)
 
@@ -373,16 +374,17 @@ async def send_solution_result(
             if file_path:
                 logger.info(f"HELP IMAGE PATH: {file_path}")
 
-                photo = FSInputFile(file_path)
-
-                await send_tracked_photo(
+                msg = await send_cached_photo(
                     bot=bot,
                     chat_id=callback.message.chat.id,
+                    path=Path(file_path)
+                )
+
+                await track_existing_message(
                     state=state,
-                    photo=photo,
+                    message_id=msg.message_id,
                     message_tag=f"help_image_{task_subtype}",
-                    caption=caption,
-                    category=category,
+                    category="solution_result",
                 )
 
         # --------------------------------------------------

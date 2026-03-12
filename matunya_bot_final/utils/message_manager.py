@@ -73,6 +73,8 @@ async def send_tracked_message(
             message_tags_by_category[category] = []
         message_tags_by_category[category].append(message_tag)
 
+    print("DEBUG tracked_messages:", len(tracked_messages))
+
     # Обновляем state
     await state.update_data(
         tracked_messages=tracked_messages,

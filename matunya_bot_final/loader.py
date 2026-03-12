@@ -36,6 +36,7 @@ def load_all_tasks():
     task_files = {
         "1_5_paper": DATA_DIR / "tasks_1_5" / "paper" / "tasks_1_5_paper.json",
         "1_5_stoves": DATA_DIR / "tasks_1_5" / "stoves" / "tasks_1_5_stoves.json",
+        "1_5_apartments": DATA_DIR / "tasks_1_5" / "apartments" / "tasks_1_5_apartments.json",
         "6": DATA_DIR / "tasks_6" / "tasks_6.json",
         "7": DATA_DIR / "tasks_7" / "tasks_7.json",
         "8": DATA_DIR / "tasks_8" / "tasks_8.json",

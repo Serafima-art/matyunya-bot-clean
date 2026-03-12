@@ -372,7 +372,7 @@ class StovesValidator:
                     "volume": volume,
                 },
                 "answer": str(volume),
-                "help_image_file": "help_stoves_room_geometry.png",
+                "help_image_file": "help_stoves_room_geometry.jpg",
                 "skill_source_id": "stoves_q2",
             }
 
@@ -391,7 +391,7 @@ class StovesValidator:
                     "area": area,
                 },
                 "answer": str(area),
-                "help_image_file": "help_stoves_room_geometry.png",
+                "help_image_file": "help_stoves_room_geometry.jpg",
                 "skill_source_id": "stoves_q2",
             }
 
@@ -435,7 +435,7 @@ class StovesValidator:
                     "result_area": result_area,
                 },
                 "answer": str(result_area),
-                "help_image_file": "help_stoves_room_geometry.png",
+                "help_image_file": "help_stoves_room_geometry.jpg",
                 "skill_source_id": "stoves_q2",
             }
 
@@ -1025,8 +1025,8 @@ class StovesValidator:
             "skill_source_id": "stoves_q5",
 
             # картинки
-            "image_file": "task_stoves_arc_radius.png",
-            "help_image_file": "help_stoves_arc_radius.png",
+            "image_file": "task_stoves_arc_radius.jpg",
+            "help_image_file": "help_stoves_arc_radius.jpg",
         }
 
     # ================================================================

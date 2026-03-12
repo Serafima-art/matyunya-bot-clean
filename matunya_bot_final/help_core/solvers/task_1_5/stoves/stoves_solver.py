@@ -651,7 +651,7 @@ def solve_stoves(task_context: Dict[str, Any]) -> Dict[str, Any]:
 
         description_for_gpt = "На изображении показана схема, связанная с текущей задачей."
 
-        if help_image_file == "help_stoves_arc_radius.png":
+        if help_image_file == "help_stoves_arc_radius.jpg":
 
             description_for_gpt = (
                 "На изображении показана схема передней части банной печи. "
@@ -668,7 +668,7 @@ def solve_stoves(task_context: Dict[str, Any]) -> Dict[str, Any]:
                 "Поэтому радиус можно найти по теореме Пифагора."
             )
 
-        elif help_image_file == "help_stoves_room_geometry.png":
+        elif help_image_file == "help_stoves_room_geometry.jpg":
 
             description_for_gpt = (
                 "На изображении показана схема парного отделения бани. "

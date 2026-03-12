@@ -1,8 +1,9 @@
 from aiogram import Bot, Router
 from aiogram.fsm.context import FSMContext
-from aiogram.types import FSInputFile
 import logging
 from pathlib import Path
+
+from matunya_bot_final.utils.telegram_file_cache import send_cached_photo
 
 from matunya_bot_final.keyboards.inline_keyboards.tasks.task_1_5.after_task_1_5_keyboard import (
     build_focused_keyboard,
@@ -21,11 +22,13 @@ from matunya_bot_final.non_generators.task_1_5.stoves.ui.q5_builder import (
 
 from matunya_bot_final.utils.message_manager import (
     send_tracked_message,
-    send_tracked_photo,
+    track_existing_message,
 )
 
 router = Router()
 logger = logging.getLogger(__name__)
+
+BASE_DIR = Path(__file__).resolve().parents[6]
 
 
 # =========================================================
@@ -65,11 +68,14 @@ async def send_focused_task_block_stoves(
             parse_mode="HTML",
         )
 
+    # =====================================================
+    # КАРТИНКА ЗАДАНИЯ
+    # =====================================================
     image_file = task.get("image_file")
 
     if image_file:
         image_path = (
-            Path(__file__).resolve().parents[6]
+            BASE_DIR
             / "non_generators"
             / "task_1_5"
             / "stoves"
@@ -78,11 +84,15 @@ async def send_focused_task_block_stoves(
         )
 
         if image_path.exists():
-            await send_tracked_photo(
+            msg = await send_cached_photo(
                 bot=bot,
                 chat_id=chat_id,
+                path=image_path,
+            )
+
+            await track_existing_message(
                 state=state,
-                 photo=FSInputFile(str(image_path)),
+                message_id=msg.message_id,
                 message_tag=f"focused_task_image_q{question_num}",
                 category="focused_assets",
             )
@@ -124,4 +134,3 @@ async def send_focused_task_block_stoves(
     )
 
     logger.info(f"✅ ФОКУСНЫЙ ЭКРАН: Задание {question_num} отправлено")
-

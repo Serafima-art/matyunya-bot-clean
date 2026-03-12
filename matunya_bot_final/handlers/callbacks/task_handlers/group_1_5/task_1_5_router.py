@@ -40,13 +40,24 @@ router = Router()
 # =================================================================
 # КОНФИГУРАЦИЯ ПОДТИПОВ (готовы к расширению)
 # =================================================================
-TASK_1_5_SUBTYPES = ["stoves", "paper", "apartment", "plot"]
+TASK_1_5_SUBTYPES = ["stoves", "paper", "apartments", "plot"]
 SUBTYPES_META = {
     "stoves": {"name": "🔥 Печи", "available": True},
     "paper": {"name": "📄 Бумага (A0–A7)", "available": True},
-    "apartment": {"name": "🏠 Квартира", "available": False},
+    "apartments": {"name": "🏠 Квартира", "available": True},
     "plot": {"name": "🌱 Участок", "available": False},
 }
+
+# =================================================================
+# Пути к ассетам Apartments
+# =================================================================
+APARTMENTS_ASSETS_DIR = (
+    DATA_DIR.parent
+    / "non_generators"
+    / "task_1_5"
+    / "apartments"
+    / "assets"
+)
 
 # =================================================================
 # Пути к ассетам Stoves

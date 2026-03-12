@@ -1,12 +1,12 @@
 # =========================================================================
 # ТЕМА: stoves
-# Изображение: task_stoves_table.png
+# Изображение: task_stoves_table.jpg
 # Формат: Монолитный вариант (1–5)
 # =========================================================================
 
 === VARIANT START ===
 VARIANT_CODE: stoves_2026_var_01
-IMAGE: task_stoves_table.png
+IMAGE: task_stoves_table.jpg
 ------------------------------------------------------------
 ПАРАМЕТРЫ ПАРНОЙ (В метрах!)
 ------------------------------------------------------------
@@ -55,7 +55,7 @@ Q1.TEXT:
 
 #-------------------------------------------------------------------------
 # ВОПРОС 2 (Геометрия)
-# help_stoves_room_geometry.png
+# help_stoves_room_geometry.jpg
 #-------------------------------------------------------------------------
 
 Q2.PATTERN: stoves_room_geometry
@@ -92,8 +92,8 @@ Q4.DISCOUNT_STOVE_3: 20
 
 #-------------------------------------------------------------------------
 # ВОПРОС 5 (Радиус арки кожуха)
-# task_stoves_arc_radius.png
-# help_stoves_arc_radius.png
+# task_stoves_arc_radius.jpg
+# help_stoves_arc_radius.jpg
 #-------------------------------------------------------------------------
 
 Q5.PATTERN: stoves_arc_radius
@@ -107,7 +107,7 @@ Q5.B: 48
 === VARIANT START ===
 
 VARIANT_CODE: stoves_2026_var_02
-IMAGE: task_stoves_table.png
+IMAGE: task_stoves_table.jpg
 
 # ------------------------------------------------------------
 # ПАРАМЕТРЫ ПАРНОЙ (исходные данные)
@@ -160,7 +160,7 @@ Q1.TEXT:
 
 #-------------------------------------------------------------------------
 # ВОПРОС 2 (Геометрия)
-# help_stoves_room_geometry.png
+# help_stoves_room_geometry.jpg
 #-------------------------------------------------------------------------
 
 Q2.PATTERN: stoves_room_geometry
@@ -197,8 +197,8 @@ Q4.DISCOUNT_STOVE_3: 10
 
 #-------------------------------------------------------------------------
 # ВОПРОС 5 (Радиус арки кожуха)
-# task_stoves_arc_radius.png
-# help_stoves_arc_radius.png
+# task_stoves_arc_radius.jpg
+# help_stoves_arc_radius.jpg
 #-------------------------------------------------------------------------
 
 Q5.PATTERN: stoves_arc_radius
@@ -212,7 +212,7 @@ Q5.B: 48
 === VARIANT START ===
 
 VARIANT_CODE: stoves_2026_var_03
-IMAGE: task_stoves_table.png, help_stoves_table.png
+IMAGE: task_stoves_table.jpg, help_stoves_table.jpg
 
 # ------------------------------------------------------------
 # ПАРАМЕТРЫ ПАРНОЙ (исходные данные)
@@ -263,7 +263,7 @@ Q1.TEXT:
 
 #-------------------------------------------------------------------------
 # ВОПРОС 2 (Геометрия)
-# help_stoves_room_geometry.png
+# help_stoves_room_geometry.jpg
 #-------------------------------------------------------------------------
 
 Q2.PATTERN: stoves_room_geometry
@@ -300,8 +300,8 @@ Q4.DISCOUNT_STOVE_3: 25
 
 #-------------------------------------------------------------------------
 # ВОПРОС 5 (Радиус арки кожуха)
-# task_stoves_arc_radius.png
-# help_stoves_arc_radius.png
+# task_stoves_arc_radius.jpg
+# help_stoves_arc_radius.jpg
 #-------------------------------------------------------------------------
 
 Q5.PATTERN: stoves_arc_radius
@@ -315,7 +315,7 @@ Q5.B: 54
 === VARIANT START ===
 
 VARIANT_CODE: stoves_2026_var_04
-IMAGE: task_stoves_table.png
+IMAGE: task_stoves_table.jpg
 
 # ------------------------------------------------------------
 # ПАРАМЕТРЫ ПАРНОЙ (исходные данные)
@@ -367,7 +367,7 @@ Q1.TEXT:
 
 #-------------------------------------------------------------------------
 # ВОПРОС 2 (Геометрия)
-# help_stoves_room_geometry.png
+# help_stoves_room_geometry.jpg
 #-------------------------------------------------------------------------
 
 Q2.PATTERN: stoves_room_geometry
@@ -404,8 +404,8 @@ Q4.DISCOUNT_STOVE_3: 10
 
 #-------------------------------------------------------------------------
 # ВОПРОС 5 (Радиус арки кожуха)
-# task_stoves_arc_radius.png
-# help_stoves_arc_radius.png
+# task_stoves_arc_radius.jpg
+# help_stoves_arc_radius.jpg
 #-------------------------------------------------------------------------
 
 Q5.PATTERN: stoves_arc_radius
@@ -419,7 +419,7 @@ Q5.B: 60
 === VARIANT START ===
 
 VARIANT_CODE: stoves_2026_var_05
-IMAGE: task_stoves_table.png
+IMAGE: task_stoves_table.jpg
 
 # ------------------------------------------------------------
 # ПАРАМЕТРЫ ПАРНОЙ (исходные данные)
@@ -470,7 +470,7 @@ Q1.TEXT:
 
 #-------------------------------------------------------------------------
 # ВОПРОС 2 (Геометрия)
-# help_stoves_room_geometry.png
+# help_stoves_room_geometry.jpg
 #-------------------------------------------------------------------------
 
 Q2.PATTERN: stoves_room_geometry
@@ -516,8 +516,8 @@ Q4.DISCOUNT_STOVE_3: 10
 
 #-------------------------------------------------------------------------
 # ВОПРОС 5 (Радиус арки кожуха)
-# task_stoves_arc_radius.png
-# help_stoves_arc_radius.png
+# task_stoves_arc_radius.jpg
+# help_stoves_arc_radius.jpg
 #-------------------------------------------------------------------------
 
 Q5.PATTERN: stoves_arc_radius
@@ -531,7 +531,7 @@ Q5.B: 64
 === VARIANT START ===
 
 VARIANT_CODE: stoves_2026_var_06
-IMAGE: task_stoves_table.png
+IMAGE: task_stoves_table.jpg
 
 # ------------------------------------------------------------
 # ПАРАМЕТРЫ ПАРНОЙ (исходные данные)
@@ -580,7 +580,7 @@ Q1.TEXT:
 
 #-------------------------------------------------------------------------
 # ВОПРОС 2 (Геометрия)
-# help_stoves_room_geometry.png
+# help_stoves_room_geometry.jpg
 #-------------------------------------------------------------------------
 
 Q2.PATTERN: stoves_room_geometry
@@ -615,8 +615,8 @@ Q4.DISCOUNT_PERCENT: 15
 
 #-------------------------------------------------------------------------
 # ВОПРОС 5 (Радиус арки кожуха)
-# task_stoves_arc_radius.png
-# help_stoves_arc_radius.png
+# task_stoves_arc_radius.jpg
+# help_stoves_arc_radius.jpg
 #-------------------------------------------------------------------------
 
 Q5.PATTERN: stoves_arc_radius
@@ -630,7 +630,7 @@ Q5.B: 64
 === VARIANT START ===
 
 VARIANT_CODE: stoves_2026_var_07
-IMAGE: task_stoves_table.png
+IMAGE: task_stoves_table.jpg
 
 # ------------------------------------------------------------
 # ПАРАМЕТРЫ ПАРНОЙ (исходные данные)
@@ -682,7 +682,7 @@ Q1.TEXT:
 
 #-------------------------------------------------------------------------
 # ВОПРОС 2 (Геометрия)
-# help_stoves_room_geometry.png
+# help_stoves_room_geometry.jpg
 #-------------------------------------------------------------------------
 Q2.PATTERN: stoves_room_geometry
 Q2.NARRATIVE: find_volume
@@ -715,8 +715,8 @@ Q4.DISCOUNT_PERCENT: 10
 
 #-------------------------------------------------------------------------
 # ВОПРОС 5 (Радиус арки кожуха)
-# task_stoves_arc_radius.png
-# help_stoves_arc_radius.png
+# task_stoves_arc_radius.jpg
+# help_stoves_arc_radius.jpg
 #-------------------------------------------------------------------------
 
 Q5.PATTERN: stoves_arc_radius
@@ -730,7 +730,7 @@ Q5.B: 72
 === VARIANT START ===
 
 VARIANT_CODE: stoves_2026_var_08
-IMAGE: task_stoves_table.png
+IMAGE: task_stoves_table.jpg
 
 # ------------------------------------------------------------
 # ПАРАМЕТРЫ ПАРНОЙ (исходные данные)
@@ -782,7 +782,7 @@ Q1.TEXT:
 
 #-------------------------------------------------------------------------
 # ВОПРОС 2 (Геометрия)
-# help_stoves_room_geometry.png
+# help_stoves_room_geometry.jpg
 #-------------------------------------------------------------------------
 
 Q2.PATTERN: stoves_room_geometry
@@ -825,8 +825,8 @@ Q4.DISCOUNT_PERCENT: 20
 
 #-------------------------------------------------------------------------
 # ВОПРОС 5 (Радиус арки кожуха)
-# task_stoves_arc_radius.png
-# help_stoves_arc_radius.png
+# task_stoves_arc_radius.jpg
+# help_stoves_arc_radius.jpg
 #-------------------------------------------------------------------------
 
 Q5.PATTERN: stoves_arc_radius
@@ -841,7 +841,7 @@ Q5.B: 60
 === VARIANT START ===
 
 VARIANT_CODE: stoves_2026_var_09
-IMAGE: task_stoves_table.png
+IMAGE: task_stoves_table.jpg
 
 # ------------------------------------------------------------
 # ПАРАМЕТРЫ ПАРНОЙ (исходные данные)
@@ -892,7 +892,7 @@ Q1.TEXT:
 
 #-------------------------------------------------------------------------
 # ВОПРОС 2 (Геометрия)
-# help_stoves_room_geometry.png
+# help_stoves_room_geometry.jpg
 #-------------------------------------------------------------------------
 
 Q2.PATTERN: stoves_room_geometry
@@ -927,8 +927,8 @@ Q4.DISCOUNT_PERCENT: 20
 
 #-------------------------------------------------------------------------
 # ВОПРОС 5 (Радиус арки кожуха)
-# task_stoves_arc_radius.png
-# help_stoves_arc_radius.png
+# task_stoves_arc_radius.jpg
+# help_stoves_arc_radius.jpg
 #-------------------------------------------------------------------------
 
 Q5.PATTERN: stoves_arc_radius
@@ -942,7 +942,7 @@ Q5.B: 56
 === VARIANT START ===
 
 VARIANT_CODE: stoves_2026_var_10
-IMAGE: task_stoves_table.png
+IMAGE: task_stoves_table.jpg
 
 # ------------------------------------------------------------
 # ПАРАМЕТРЫ ПАРНОЙ (исходные данные)
@@ -994,7 +994,7 @@ Q1.TEXT:
 
 #-------------------------------------------------------------------------
 # ВОПРОС 2 (Геометрия)
-# help_stoves_room_geometry.png
+# help_stoves_room_geometry.jpg
 #-------------------------------------------------------------------------
 Q2.PATTERN: stoves_room_geometry
 Q2.NARRATIVE: find_volume
@@ -1026,8 +1026,8 @@ Q4.DISCOUNT_PERCENT: 10
 
 #-------------------------------------------------------------------------
 # ВОПРОС 5 (Радиус арки кожуха)
-# task_stoves_arc_radius.png
-# help_stoves_arc_radius.png
+# task_stoves_arc_radius.jpg
+# help_stoves_arc_radius.jpg
 #-------------------------------------------------------------------------
 Q5.PATTERN: stoves_arc_radius
 Q5.NARRATIVE: find_arc_radius
@@ -1041,7 +1041,7 @@ Q5.B: 84
 === VARIANT START ===
 
 VARIANT_CODE: stoves_2026_var_11
-IMAGE: task_stoves_table.png
+IMAGE: task_stoves_table.jpg
 
 # ------------------------------------------------------------
 # ПАРАМЕТРЫ ПАРНОЙ (исходные данные)
@@ -1093,7 +1093,7 @@ Q1.TEXT:
 
 #-------------------------------------------------------------------------
 # ВОПРОС 2 (Геометрия)
-# help_stoves_room_geometry.png
+# help_stoves_room_geometry.jpg
 #-------------------------------------------------------------------------
 
 Q2.PATTERN: stoves_room_geometry
@@ -1130,8 +1130,8 @@ Q4.DELIVERY_DISCOUNT: 20
 
 #-------------------------------------------------------------------------
 # ВОПРОС 5 (Радиус арки кожуха)
-# task_stoves_arc_radius.png
-# help_stoves_arc_radius.png
+# task_stoves_arc_radius.jpg
+# help_stoves_arc_radius.jpg
 #-------------------------------------------------------------------------
 
 Q5.PATTERN: stoves_arc_radius
@@ -1146,7 +1146,7 @@ Q5.B: 48
 === VARIANT START ===
 
 VARIANT_CODE: stoves_2026_var_12
-IMAGE: task_stoves_table.png
+IMAGE: task_stoves_table.jpg
 
 # ------------------------------------------------------------
 # ПАРАМЕТРЫ ПАРНОЙ (исходные данные)
@@ -1198,7 +1198,7 @@ Q1.TEXT:
 
 #-------------------------------------------------------------------------
 # ВОПРОС 2 (Геометрия)
-# help_stoves_room_geometry.png
+# help_stoves_room_geometry.jpg
 #-------------------------------------------------------------------------
 
 Q2.PATTERN: stoves_room_geometry
@@ -1245,8 +1245,8 @@ Q4.DELIVERY_DISCOUNT: 15
 
 #-------------------------------------------------------------------------
 # ВОПРОС 5 (Радиус арки кожуха)
-# task_stoves_arc_radius.png
-# help_stoves_arc_radius.png
+# task_stoves_arc_radius.jpg
+# help_stoves_arc_radius.jpg
 #-------------------------------------------------------------------------
 
 Q5.PATTERN: stoves_arc_radius
@@ -1260,7 +1260,7 @@ Q5.B: 54
 === VARIANT START ===
 
 VARIANT_CODE: stoves_2026_var_13
-IMAGE: task_stoves_table.png
+IMAGE: task_stoves_table.jpg
 
 # ------------------------------------------------------------
 # ПАРАМЕТРЫ ПАРНОЙ (исходные данные)
@@ -1312,7 +1312,7 @@ Q1.TEXT:
 
 #-------------------------------------------------------------------------
 # ВОПРОС 2 (Геометрия)
-# help_stoves_room_geometry.png
+# help_stoves_room_geometry.jpg
 #-------------------------------------------------------------------------
 Q2.PATTERN: stoves_room_geometry
 Q2.NARRATIVE: find_volume
@@ -1347,8 +1347,8 @@ Q4.DELIVERY_DISCOUNT: 20
 
 #-------------------------------------------------------------------------
 # ВОПРОС 5 (Радиус арки кожуха)
-# task_stoves_arc_radius.png
-# help_stoves_arc_radius.png
+# task_stoves_arc_radius.jpg
+# help_stoves_arc_radius.jpg
 #-------------------------------------------------------------------------
 Q5.PATTERN: stoves_arc_radius
 Q5.NARRATIVE: find_arc_radius
@@ -1361,7 +1361,7 @@ Q5.B: 56
 === VARIANT START ===
 
 VARIANT_CODE: stoves_2026_var_14
-IMAGE: task_stoves_table.png
+IMAGE: task_stoves_table.jpg
 
 # ------------------------------------------------------------
 # ПАРАМЕТРЫ ПАРНОЙ (исходные данные)
@@ -1413,7 +1413,7 @@ Q1.TEXT:
 
 #-------------------------------------------------------------------------
 # ВОПРОС 2 (Геометрия)
-# help_stoves_room_geometry.png
+# help_stoves_room_geometry.jpg
 #-------------------------------------------------------------------------
 
 Q2.PATTERN: stoves_room_geometry
@@ -1450,8 +1450,8 @@ Q4.DELIVERY_DISCOUNT: 15
 
 #-------------------------------------------------------------------------
 # ВОПРОС 5 (Радиус арки кожуха)
-# task_stoves_arc_radius.png
-# help_stoves_arc_radius.png
+# task_stoves_arc_radius.jpg
+# help_stoves_arc_radius.jpg
 #-------------------------------------------------------------------------
 
 Q5.PATTERN: stoves_arc_radius
@@ -1465,7 +1465,7 @@ Q5.B: 72
 === VARIANT START ===
 
 VARIANT_CODE: stoves_2026_var_15
-IMAGE: task_stoves_table.png
+IMAGE: task_stoves_table.jpg
 
 # ------------------------------------------------------------
 # ПАРАМЕТРЫ ПАРНОЙ (исходные данные)
@@ -1517,7 +1517,7 @@ Q1.TEXT:
 
 #-------------------------------------------------------------------------
 # ВОПРОС 2 (Геометрия)
-# help_stoves_room_geometry.png
+# help_stoves_room_geometry.jpg
 #-------------------------------------------------------------------------
 
 Q2.PATTERN: stoves_room_geometry
@@ -1555,8 +1555,8 @@ Q4.DELIVERY_DISCOUNT: 20
 
 #-------------------------------------------------------------------------
 # ВОПРОС 5 (Радиус арки кожуха)
-# task_stoves_arc_radius.png
-# help_stoves_arc_radius.png
+# task_stoves_arc_radius.jpg
+# help_stoves_arc_radius.jpg
 #-------------------------------------------------------------------------
 
 Q5.PATTERN: stoves_arc_radius
@@ -1570,7 +1570,7 @@ Q5.B: 72
 === VARIANT START ===
 
 VARIANT_CODE: stoves_2026_var_16
-IMAGE: task_stoves_table.png
+IMAGE: task_stoves_table.jpg
 
 # ------------------------------------------------------------
 # ПАРАМЕТРЫ ПАРНОЙ (исходные данные)
@@ -1622,7 +1622,7 @@ Q1.TEXT:
 
 #-------------------------------------------------------------------------
 # ВОПРОС 2 (Геометрия)
-# help_stoves_room_geometry.png
+# help_stoves_room_geometry.jpg
 #-------------------------------------------------------------------------
 Q2.PATTERN: stoves_room_geometry
 Q2.NARRATIVE: find_volume
@@ -1664,8 +1664,8 @@ Q4.DELIVERY_COST: 1300
 
 #-------------------------------------------------------------------------
 # ВОПРОС 5 (Радиус арки кожуха)
-# task_stoves_arc_radius.png
-# help_stoves_arc_radius.png
+# task_stoves_arc_radius.jpg
+# help_stoves_arc_radius.jpg
 #-------------------------------------------------------------------------
 
 Q5.PATTERN: stoves_arc_radius
@@ -1679,7 +1679,7 @@ Q5.B: 54
 === VARIANT START ===
 
 VARIANT_CODE: stoves_2026_var_17
-IMAGE: task_stoves_table.png
+IMAGE: task_stoves_table.jpg
 
 # ------------------------------------------------------------
 # ПАРАМЕТРЫ ПАРНОЙ (исходные данные)
@@ -1731,7 +1731,7 @@ Q1.TEXT:
 
 #-------------------------------------------------------------------------
 # ВОПРОС 2 (Геометрия)
-# help_stoves_room_geometry.png
+# help_stoves_room_geometry.jpg
 #-------------------------------------------------------------------------
 
 Q2.PATTERN: stoves_room_geometry
@@ -1765,8 +1765,8 @@ Q4.DELIVERY_COST: 1600
 
 #-------------------------------------------------------------------------
 # ВОПРОС 5 (Радиус арки кожуха)
-# task_stoves_arc_radius.png
-# help_stoves_arc_radius.png
+# task_stoves_arc_radius.jpg
+# help_stoves_arc_radius.jpg
 #-------------------------------------------------------------------------
 
 Q5.PATTERN: stoves_arc_radius
@@ -1781,7 +1781,7 @@ Q5.B: 48
 === VARIANT START ===
 
 VARIANT_CODE: stoves_2026_var_18
-IMAGE: task_stoves_table.png
+IMAGE: task_stoves_table.jpg
 
 # ------------------------------------------------------------
 # ПАРАМЕТРЫ ПАРНОЙ (исходные данные)
@@ -1833,7 +1833,7 @@ Q1.TEXT:
 
 #-------------------------------------------------------------------------
 # ВОПРОС 2 (Геометрия)
-# help_stoves_room_geometry.png
+# help_stoves_room_geometry.jpg
 #-------------------------------------------------------------------------
 
 Q2.PATTERN: stoves_room_geometry
@@ -1868,8 +1868,8 @@ Q4.DELIVERY_COST: 1400
 
 #-------------------------------------------------------------------------
 # ВОПРОС 5 (Радиус арки кожуха)
-# task_stoves_arc_radius.png
-# help_stoves_arc_radius.png
+# task_stoves_arc_radius.jpg
+# help_stoves_arc_radius.jpg
 #-------------------------------------------------------------------------
 
 Q5.PATTERN: stoves_arc_radius
@@ -1883,7 +1883,7 @@ Q5.B: 66
 === VARIANT START ===
 
 VARIANT_CODE: stoves_2026_var_19
-IMAGE: task_stoves_table.png
+IMAGE: task_stoves_table.jpg
 
 # ------------------------------------------------------------
 # ПАРАМЕТРЫ ПАРНОЙ (исходные данные)
@@ -1935,7 +1935,7 @@ Q1.TEXT:
 
 #-------------------------------------------------------------------------
 # ВОПРОС 2 (Геометрия)
-# help_stoves_room_geometry.png
+# help_stoves_room_geometry.jpg
 #-------------------------------------------------------------------------
 
 Q2.PATTERN: stoves_room_geometry
@@ -1969,8 +1969,8 @@ Q4.DELIVERY_COST: 1800
 
 #-------------------------------------------------------------------------
 # ВОПРОС 5 (Радиус арки кожуха)
-# task_stoves_arc_radius.png
-# help_stoves_arc_radius.png
+# task_stoves_arc_radius.jpg
+# help_stoves_arc_radius.jpg
 #-------------------------------------------------------------------------
 
 Q5.PATTERN: stoves_arc_radius
@@ -1984,7 +1984,7 @@ Q5.B: 84
 === VARIANT START ===
 
 VARIANT_CODE: stoves_2026_var_20
-IMAGE: task_stoves_table.png
+IMAGE: task_stoves_table.jpg
 
 # ------------------------------------------------------------
 # ПАРАМЕТРЫ ПАРНОЙ (исходные данные)
@@ -2035,7 +2035,7 @@ Q1.TEXT:
 
 #-------------------------------------------------------------------------
 # ВОПРОС 2 (Геометрия)
-# help_stoves_room_geometry.png
+# help_stoves_room_geometry.jpg
 #-------------------------------------------------------------------------
 
 Q2.PATTERN: stoves_room_geometry
@@ -2079,8 +2079,8 @@ Q4.DELIVERY_COST: 1600
 
 #-------------------------------------------------------------------------
 # ВОПРОС 5 (Радиус арки кожуха)
-# task_stoves_arc_radius.png
-# help_stoves_arc_radius.png
+# task_stoves_arc_radius.jpg
+# help_stoves_arc_radius.jpg
 #-------------------------------------------------------------------------
 
 Q5.PATTERN: stoves_arc_radius
